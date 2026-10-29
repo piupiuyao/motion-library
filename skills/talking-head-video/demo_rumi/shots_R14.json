@@ -1,0 +1,8 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "c76", "params": {"name": "RUMI", "title": "your inbox coach", "at": "Stop"}},
+  {"words": "17-23", "template": "c01", "params": {"keywords": ["the hard part."]}},
+  {"words": "34-42", "template": "c08", "params": {"title": "RIGHT\nNOW"}},
+  {"words": "43-48", "template": "c07", "params": {"text": "WORKS"}},
+  {"words": "69-81", "template": "c11", "params": {"keywords": ["4 hours", "40 minutes."]}},
+  {"words": "95-101", "template": "c09", "params": {}}
+]}

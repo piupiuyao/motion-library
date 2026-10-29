@@ -1,0 +1,68 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "2-13",
+   "template": "c109",
+   "params": {
+    "start": 0.2,
+    "dur": 3.6,
+    "top": "me with 3,000<br>unread messages",
+    "bottom": "*this is fine*"
+   }
+  },
+  {
+   "words": "24-33",
+   "template": "c103",
+   "params": {
+    "side": "left"
+   }
+  },
+  {
+   "words": "61-68",
+   "template": "c35",
+   "params": {
+    "image": "assets/docs/notify.jpg",
+    "label": "OFF!"
+   }
+  },
+  {
+   "words": "69-81",
+   "template": "c26",
+   "params": {
+    "items": [
+     {
+      "emoji": "😩",
+      "at": "before"
+     },
+     {
+      "emoji": "😵",
+      "at": "hours"
+     },
+     {
+      "emoji": "🥳",
+      "at": "40"
+     }
+    ]
+   }
+  },
+  {
+   "words": "82-94",
+   "template": "c25",
+   "params": {
+    "items": [
+     {
+      "kind": "speech",
+      "text": "How do you reply so fast?",
+      "at": "last"
+     },
+     {
+      "kind": "burst",
+      "text": "WOW!",
+      "at": "how"
+     }
+    ]
+   }
+  }
+ ]
+}

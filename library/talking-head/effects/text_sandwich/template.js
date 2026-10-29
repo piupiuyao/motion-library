@@ -3,7 +3,7 @@ TEMPLATES.text_sandwich = {
   setup(ctx) {
     const txt = (ctx.params.text || '').toUpperCase();
     const size = Math.min(330, Math.floor(980 / (Math.max(txt.length, 3) * .78)));
-    const y = Math.round(ctx.focus[1] * 1920 - size * .95);
+    const y = ctx.params.y ?? Math.round(ctx.focus[1] * 1920 - size * .95);
     this.big = el('div', `position:absolute;left:0;right:0;top:${y}px;text-align:center;font-size:${size}px;color:var(--accent);
       -webkit-text-stroke:6px var(--ink);paint-order:stroke fill;white-space:nowrap`, txt);
     this.big.className = 'display';

@@ -1,0 +1,52 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "2-13",
+   "template": "keyword_pop",
+   "params": {
+    "keywords": [
+     "3000 unread messages"
+    ]
+   }
+  },
+  {
+   "words": "14-21",
+   "template": "dashed_focus",
+   "params": {
+    "label": "the truth",
+    "targets": [
+     {
+      "x": 0.5,
+      "y": 0.41,
+      "r": 300
+     }
+    ]
+   }
+  },
+  {
+   "words": "30-42",
+   "template": "mono_shrink",
+   "params": {
+    "label": "RIGHT NOW"
+   }
+  },
+  {
+   "words": "69-78",
+   "template": "broll_circle",
+   "params": {
+    "broll": {
+     "frames": "assets/broll_inbox",
+     "fps": 30,
+     "count": 165
+    },
+    "label": "4 hours a day in my inbox"
+   }
+  },
+  {
+   "words": "95-101",
+   "template": "push_in",
+   "params": {}
+  }
+ ]
+}

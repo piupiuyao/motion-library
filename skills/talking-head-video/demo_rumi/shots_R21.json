@@ -1,0 +1,133 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-6",
+   "template": "c30",
+   "params": {
+    "text": "STOP<br>SCROLLING",
+    "size": 140,
+    "frames": [
+     20,
+     300,
+     700,
+     1100
+    ]
+   }
+  },
+  {
+   "words": "14-23",
+   "template": "c15",
+   "params": {
+    "text": "Here's the truth: replying isn't the hard part. Deciding is.",
+    "name": "Rumi",
+    "handle": "@rumi",
+    "likes": 18400
+   }
+  },
+  {
+   "words": "24-33",
+   "template": "c28",
+   "params": {
+    "label": "EVERY SINGLE DAY",
+    "images": [
+     "assets/docs/gmail.jpg",
+     "assets/docs/chat.jpg",
+     "assets/docs/notify.jpg",
+     "assets/broll_inbox/000060.jpg",
+     "assets/docs/chat.jpg"
+    ],
+    "notes": [
+     "email",
+     "WhatsApp",
+     "Slack",
+     "Telegram"
+    ]
+   }
+  },
+  {
+   "words": "34-42",
+   "template": "c29",
+   "params": {
+    "text": "RIGHT<br><span style=\"color:var(--accent)\">NOW</span>"
+   }
+  },
+  {
+   "words": "43-48",
+   "template": "c16",
+   "params": {
+    "query": "what actually works for",
+    "suggestions": [
+     "what actually works for inbox overload",
+     "what actually works for replying faster",
+     "what actually works for too many messages"
+    ]
+   }
+  },
+  {
+   "words": "49-68",
+   "template": "c19",
+   "params": {
+    "groups": [
+     {
+      "title": "Reply in batches",
+      "labels": [
+       "twice a day",
+       "not all day"
+      ]
+     },
+     {
+      "title": "Keep it short",
+      "labels": [
+       "short answers",
+       "no essays"
+      ]
+     },
+     {
+      "title": "Notifications off",
+      "labels": [
+       "every one",
+       "you don't need"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "words": "69-78",
+   "template": "c22",
+   "params": {
+    "emoji": "⏰",
+    "label": "4 hours a day"
+   }
+  },
+  {
+   "words": "82-94",
+   "template": "c14",
+   "params": {
+    "them": "Sarah",
+    "messages": [
+     {
+      "from": "them",
+      "text": "Hey! Quick question 👀"
+     },
+     {
+      "from": "them",
+      "text": "How do you reply so fast?"
+     },
+     {
+      "from": "me",
+      "text": "It's a system 😉"
+     }
+    ]
+   }
+  },
+  {
+   "words": "95-101",
+   "template": "c18",
+   "params": {
+    "label": "it's a system"
+   }
+  }
+ ]
+}

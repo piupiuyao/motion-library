@@ -1,10 +1,10 @@
 // 逐词弹跳字幕 · 字体：一个词一个词「弹」出来（从 0 放大到略大再回落），出现前完全不可见；同屏累积 3–4 个词后整句清掉
 TEMPLATES.c81 = {
   // The demo footage has an old blank caption pill burned in (y≈1445–1577). With the pill caption switched
-  // off it would show, so when captions are off we paint over it with the rows just above/below it.
+  // off it would show, so with hideOld:true (old Monica footage only) we paint over it with the rows above/below.
   oldBarSetup(ctx) {
     this.patch = null;
-    if (ctx.params.hideOld === false || typeof TL === 'undefined' || TL.captions !== false) return;
+    if (ctx.params.hideOld !== true || typeof TL === 'undefined' || TL.captions !== false) return;
     this.patch = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 50%');
     this.patch.width = 1080; this.patch.height = 1920;
     ctx.L.back.appendChild(this.patch);

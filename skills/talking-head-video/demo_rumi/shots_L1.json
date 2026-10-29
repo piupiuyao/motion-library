@@ -1,0 +1,102 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-6",
+   "template": "hook_bigword",
+   "params": {
+    "text": "STOP SCROLLING"
+   }
+  },
+  {
+   "words": "17-23",
+   "template": "text_sandwich",
+   "params": {
+    "text": "DECIDING",
+    "y": 330
+   }
+  },
+  {
+   "words": "28-33",
+   "template": "doc_fly",
+   "params": {
+    "images": [
+     "assets/docs/gmail.jpg",
+     "assets/docs/chat.jpg",
+     "assets/docs/notify.jpg"
+    ],
+    "at": [
+     "email",
+     "WhatsApp",
+     "Telegram"
+    ]
+   }
+  },
+  {
+   "words": "43-48",
+   "template": "frame_layer",
+   "params": {
+    "label": "three things"
+   }
+  },
+  {
+   "words": "49-68",
+   "template": "bg_switch",
+   "params": {
+    "patterns": [
+     "neon",
+     "dots",
+     "grid"
+    ],
+    "at": [
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "words": "69-81",
+   "template": "data_chart",
+   "params": {
+    "title": "Time in my inbox, per day",
+    "items": [
+     {
+      "label": "Before",
+      "value": 240
+     },
+     {
+      "label": "After",
+      "value": 40
+     }
+    ],
+    "unit": " min"
+   }
+  },
+  {
+   "words": "82-94",
+   "template": "sticker_outline",
+   "params": {}
+  },
+  {
+   "words": "95-101",
+   "template": "scanline_word",
+   "params": {
+    "words": [
+     "not",
+     "talent",
+     "a",
+     "system"
+    ],
+    "y": 600
+   }
+  },
+  {
+   "words": "105-117",
+   "template": "end_title",
+   "params": {
+    "title": "Comment “system”",
+    "sub": "FOLLOW FOR PART 2"
+   }
+  }
+ ]
+}

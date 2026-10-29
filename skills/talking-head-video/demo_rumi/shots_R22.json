@@ -1,0 +1,97 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "2-13",
+   "template": "c13",
+   "params": {
+    "app": "whatsapp",
+    "sender": "Sarah",
+    "text": "Hey, did you see my message? 👀",
+    "more": [
+     {
+      "app": "mail",
+      "sender": "Inbox",
+      "text": "3,000 unread messages",
+      "time": "now"
+     },
+     {
+      "app": "message",
+      "sender": "Slack",
+      "text": "@you can you answer this right now?",
+      "time": "now"
+     }
+    ]
+   }
+  },
+  {
+   "words": "14-23",
+   "template": "c32",
+   "params": {
+    "top": "what people see: replying",
+    "bottom": "the hard part: deciding"
+   }
+  },
+  {
+   "words": "26-33",
+   "template": "c102",
+   "params": {
+    "steps": [
+     {
+      "icon": "mail",
+      "at": "email"
+     },
+     {
+      "icon": "chat",
+      "at": "whatsapp"
+     },
+     {
+      "icon": "slack",
+      "at": "slack"
+     },
+     {
+      "icon": "plane",
+      "at": "telegram"
+     }
+    ]
+   }
+  },
+  {
+   "words": "49-68",
+   "template": "c20",
+   "params": {
+    "title": "THREE THINGS",
+    "numbers": true,
+    "steps": [
+     "Reply in batches",
+     "Keep answers short",
+     "Notifications off"
+    ]
+   }
+  },
+  {
+   "words": "69-78",
+   "template": "c27",
+   "params": {
+    "text": "4 HOURS A DAY",
+    "media": {
+     "frames": "assets/broll_inbox",
+     "fps": 30,
+     "count": 165
+    }
+   }
+  },
+  {
+   "words": "82-94",
+   "template": "c23",
+   "params": {
+    "emoji": "📱"
+   }
+  },
+  {
+   "words": "95-101",
+   "template": "c24",
+   "params": {}
+  }
+ ]
+}

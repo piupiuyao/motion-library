@@ -1,0 +1,11 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "c48", "params": {"name": "Rumi", "handle": "@rumi.replies", "at": 0.2, "hold": 2.4}},
+  {"words": "17-23", "template": "c93", "params": {"lines": [{"text": "REPLYING", "at": "Replying"}, {"text": "ISN'T HARD", "at": "hard"}, {"text": "DECIDING IS", "at": "Deciding", "accent": true}]}},
+  {"words": "28-33", "template": "c38", "params": {"media": "assets/docs/gmail.jpg", "label": "email", "at": 0.2}},
+  {"words": "34-42", "template": "c91", "params": {"t0": 0.2, "radius": 400}},
+  {"words": "43-48", "template": "c66", "params": {"title": "What actually works", "num": "03", "at": 0.3, "hold": 1.4}},
+  {"words": "49-68", "template": "c42", "params": {"at": [56, 61], "labels": ["Reply in batches", "Keep it short", "Notifications off"]}},
+  {"words": "69-81", "template": "c108", "params": {}},
+  {"words": "82-94", "template": "c64", "params": {"media": "assets/docs/chat.jpg", "pos": "50% 30%", "label": "Sarah 💬", "at": 0.3}},
+  {"words": "102-117", "template": "c100", "params": {"title": "Watch next", "next": "Part 2: my reply system", "handle": "@rumi", "button": "FOLLOW"}}
+]}

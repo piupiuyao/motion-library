@@ -1,0 +1,5 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6",    "template": "title_bar",   "params": {"title": "REPLY FASTER", "sub": "3 THINGS THAT WORK"}},
+  {"words": "14-23",  "template": "cutout_card", "params": {"text": "Replying isn't the hard part. Deciding is."}},
+  {"words": "29-42",  "template": "paper_props", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg", "assets/docs/notify.jpg"]}}
+]}

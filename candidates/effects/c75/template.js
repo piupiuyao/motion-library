@@ -8,7 +8,9 @@ TEMPLATES.c75 = {
       radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--accent) 70%, #000), #0c0c10 75%)`;
     ctx.personCv.style.filter = outline(9, '#fff');
     // the matte has a hole where the laptop is: let the cutout fade out at the chest, inside the card
-    ctx.person.style.webkitMaskImage = 'linear-gradient(180deg, #000 64%, transparent 72%)';
+    // fade: [from, to] height fractions; false = keep the whole cutout (footage without a laptop)
+    const fade = P.fade === false ? null : (P.fade || [.64, .72]);
+    if (fade) ctx.person.style.webkitMaskImage = `linear-gradient(180deg, #000 ${fade[0] * 100}%, transparent ${fade[1] * 100}%)`;
     ctx.base.style.transformOrigin = '50% 45%';
     this.txt = el('div', `position:absolute;left:0;right:0;top:${P.top || 150}px;text-align:center;font-size:${P.size || 170}px;text-transform:uppercase;
       transform-origin:50% 50%;color:transparent;-webkit-background-clip:text;background-clip:text;

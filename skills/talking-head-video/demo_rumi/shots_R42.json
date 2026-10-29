@@ -1,0 +1,10 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "c96", "params": {"text": "RUMI", "sub": "host · creator"}},
+  {"words": "14-21", "template": "c55", "params": {}},
+  {"words": "28-33", "template": "c70", "params": {"at": "email", "to": "assets/docs/gmail.jpg"}},
+  {"words": "34-42", "template": "c52", "params": {}},
+  {"words": "43-48", "template": "c60", "params": {"steps": [{"at": "So", "scale": 0.72, "hand": [800, 1250]}, {"at": "Three", "scale": 1.25, "hand": [800, 1250]}], "fade": false}},
+  {"words": "69-78", "template": "c62", "params": {}},
+  {"words": "82-94", "template": "c98", "params": {}},
+  {"words": "95-101", "template": "c97", "params": {"at": ["talent", "system"], "word": "SYSTEM"}}
+]}

@@ -7,8 +7,9 @@ TEMPLATES.c60 = {
     ctx.base.style.opacity = 0;
     ctx.personCv.style.filter = outline(7, '#fff');
     // the matte has a hole where the laptop is: fade the cutout out above it so it reads as a clean bust
-    const fade = P.fade || [.64, .73];
-    ctx.person.style.webkitMaskImage = `linear-gradient(180deg, #000 ${fade[0] * 100}%, transparent ${fade[1] * 100}%)`;
+    // fade: false = no fade (footage without a laptop, the bust reaches the bottom edge)
+    const fade = P.fade === false ? null : (P.fade || [.64, .73]);
+    if (fade) ctx.person.style.webkitMaskImage = `linear-gradient(180deg, #000 ${fade[0] * 100}%, transparent ${fade[1] * 100}%)`;
     const steps = P.steps || [{ at: null, scale: .72 }, { at: null, scale: 1.25 }];
     this.steps = steps.map((st, k) => ({
       scale: st.scale,

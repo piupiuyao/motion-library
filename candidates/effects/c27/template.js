@@ -44,7 +44,7 @@ TEMPLATES.c27 = {
       <div style="position:absolute;right:90px;bottom:-34px;width:70px;height:40px;background:#0e0e0e;border-radius:0 0 10px 10px"></div>`;
     this.scene.appendChild(this.tv);
     this.im = this.tv.querySelector('.im'); this.roll = this.tv.querySelector('.roll');
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165 };
+    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 1.2 };
     this.title = el('div', `position:absolute;left:30px;right:30px;top:${P.top || 1130}px;text-align:center;font:900 ${P.size || 150}px/.9 Impact,'Avenir Next Condensed','Arial Narrow',sans-serif;
       color:#fff;letter-spacing:.01em;text-transform:uppercase;text-shadow:0 8px 30px rgba(0,0,0,.8)`, P.text || 'MY INBOX');
     this.scene.appendChild(this.title);

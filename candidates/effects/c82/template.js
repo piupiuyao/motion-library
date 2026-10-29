@@ -1,10 +1,10 @@
 // 当前词变色大字幕 · 字体：Hormozi 式，每次 2–4 个全大写超粗词，白字黑粗描边；正在说的词变亮黄/绿并瞬间放大再回落；整组硬切
 TEMPLATES.c82 = {
   // The demo footage has an old blank caption pill burned in (y≈1445–1577). With the pill caption switched
-  // off it would show, so when captions are off we paint over it with the rows just above/below it.
+  // off it would show, so with hideOld:true (old Monica footage only) we paint over it with the rows above/below.
   oldBarSetup(ctx) {
     this.patch = null;
-    if (ctx.params.hideOld === false || typeof TL === 'undefined' || TL.captions !== false) return;
+    if (ctx.params.hideOld !== true || typeof TL === 'undefined' || TL.captions !== false) return;
     this.patch = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 50%');
     this.patch.width = 1080; this.patch.height = 1920;
     ctx.L.back.appendChild(this.patch);

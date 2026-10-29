@@ -4,8 +4,8 @@ TEMPLATES.c29 = {
     const P = ctx.params;
     const pool = P.images || [
       'assets/docs/gmail.jpg', 'assets/docs/chat.jpg', 'assets/docs/notify.jpg',
-      ...[10, 40, 70, 100, 130, 160].map(n => `assets/broll_inbox/${String(n).padStart(6, '0')}.jpg`),
-      ...[60, 300, 520, 800, 1000, 1250, 1500].map(n => `work/frames_src/${String(n).padStart(6, '0')}.jpg`),
+      ...[40, 70, 100, 130, 160].map(n => `assets/broll_inbox/${String(n).padStart(6, '0')}.jpg`),
+      ...[60, 300, 520, 800, 1000, 1200, 1400].map(n => `work/frames_src/${String(n).padStart(6, '0')}.jpg`),
     ];
     this.bgc = el('div', 'position:absolute;inset:0;background:radial-gradient(circle at 50% 43%, var(--bg-b), var(--bg-a) 70%)');
     ctx.L.back.appendChild(this.bgc);

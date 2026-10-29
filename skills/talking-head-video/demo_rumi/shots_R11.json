@@ -1,0 +1,10 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "c12", "params": {"text": "me with 3,000 unread messages", "emoji": "😩", "y": 230}},
+  {"words": "17-23", "template": "c10", "params": {"line1": "Replying isn't hard.", "line2": "*Deciding* is.", "size": 110, "y": 120}},
+  {"words": "28-36", "template": "c04", "params": {"cards": [{"text": "EMAIL", "at": "email,"}, {"text": "WHATSAPP", "at": "WhatsApp,"}, {"text": "SLACK", "at": "Slack,"}, {"text": "TELEGRAM", "at": "Telegram,"}], "end": "every"}},
+  {"words": "43-48", "template": "c84", "params": {"from": 3, "t0": 0.2, "pos": [800, 260], "size": 320}},
+  {"words": "69-78", "template": "c77", "params": {"at": "Before,", "text": "me, 4 hours a day", "hold": 2.0, "size": 92}},
+  {"words": "82-94", "template": "c78", "params": {"title": "Last week", "sub": "a true story"}},
+  {"words": "96-101", "template": "c03", "params": {"text": "NOT TALENT", "at": "it's", "y": 1260}},
+  {"words": "102-110", "template": "c79", "params": {"handle": "@rumi"}}
+]}

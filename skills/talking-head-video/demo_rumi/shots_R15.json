@@ -1,0 +1,5 @@
+{"skin": "clean", "shots": [
+  {"words": "2-13", "template": "c02", "params": {"to": 3000, "label": "unread messages", "at": "3000", "dur": 1.2}},
+  {"words": "43-48", "template": "c86", "params": {"text": "3 THINGS", "t0": 0.1}},
+  {"words": "95-101", "template": "c90", "params": {"lines": ["IT'S A", "SYSTEM"]}}
+]}

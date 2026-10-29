@@ -7,6 +7,10 @@ TEMPLATES.c102 = {
     chat: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#25d366"/>
       <path d="M50 20 a30 30 0 1 1 -16 55 l-14 4 l4 -13 A30 30 0 0 1 50 20z" fill="none" stroke="#fff" stroke-width="6"/>
       <path d="M38 36 c-3 3 -3 9 3 16 s13 9 16 6 l3 -4 l-7 -5 l-3 3 c-3 -1 -8 -6 -9 -9 l3 -3 l-5 -7z" fill="#fff"/></svg>`,
+    slack: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#fff"/>
+      <g stroke-linecap="round" stroke-width="11"><path d="M40 22 V48" stroke="#36c5f0"/><path d="M22 60 H48" stroke="#2eb67d"/>
+      <path d="M60 52 V78" stroke="#e01e5a"/><path d="M52 40 H78" stroke="#ecb22e"/></g>
+      <g stroke-linecap="round" stroke-width="11"><path d="M22 40 h4" stroke="#36c5f0"/><path d="M60 22 v4" stroke="#2eb67d"/><path d="M78 60 h-4" stroke="#e01e5a"/><path d="M40 78 v-4" stroke="#ecb22e"/></g></svg>`,
     plane: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#2aabee"/>
       <path d="M20 49 L78 26 L68 76 L50 63 L41 72 L42 58 L68 36 L36 54Z" fill="#fff"/></svg>`,
   },

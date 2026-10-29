@@ -1,0 +1,9 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "c05", "params": {"title": "STOP\nSCROLLING"}},
+  {"words": "14-23", "template": "c87", "params": {"words": [{"text": "THE TRUTH", "at": "Here's"}, {"text": "DECIDING", "at": "Deciding"}]}},
+  {"words": "31-42", "template": "c85", "params": {"label": "INBOX PRESSURE", "value": 99}},
+  {"words": "43-48", "template": "c89", "params": {"text": "WORKS?"}},
+  {"words": "69-81", "template": "c83", "params": {"text": "4 HOURS|40 MIN"}},
+  {"words": "82-88", "template": "c06", "params": {"text": "LAST WEEK", "sub": "Sarah texted me"}},
+  {"words": "95-101", "template": "c88", "params": {"text": "NOT TALENT • A SYSTEM • "}}
+]}

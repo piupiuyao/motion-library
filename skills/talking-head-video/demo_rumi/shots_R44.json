@@ -1,0 +1,5 @@
+{"skin": "clean", "shots": [
+  {"words": "4-13", "template": "c50", "params": {"at": "3000", "keywords": ["3000"]}},
+  {"words": "82-94", "template": "c107", "params": {"name": "Sarah Lin", "text": "How do you reply so fast? 👀"}},
+  {"words": "95-101", "template": "c69", "params": {"at": "it's", "title": "It's a system", "subtitle": "not talent"}}
+]}

@@ -5,7 +5,8 @@ TEMPLATES.c39 = {
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.L.bg.style.background = 'radial-gradient(ellipse at 30% 30%, var(--bg-b), var(--bg-a) 70%)';
-    this.card = el('div', `position:absolute;left:34px;top:400px;width:620px;padding:44px 38px 34px;border-radius:30px;background:var(--paper);
+    this.shift = P.shift != null ? P.shift : 310;
+    this.card = el('div', `position:absolute;left:34px;top:400px;width:${P.width || 620}px;box-sizing:border-box;padding:44px 38px 34px;border-radius:30px;background:var(--paper);
       box-shadow:0 30px 60px rgba(0,0,0,.35)`);
     if (P.title) {
       const h = el('div', 'font-size:66px;color:var(--ink);margin-bottom:28px', P.title);
@@ -32,7 +33,7 @@ TEMPLATES.c39 = {
   frame(ctx) {
     const pin = ease.out(enter(ctx.t, 0, .5)), pout = ease.inOut(enter(ctx.t, ctx.d - .4, .4));
     const k = pin * (1 - pout);
-    ctx.base.style.transform = `translateX(${310 * k}px) scale(${ctx.seg.zoom || 1})`;
+    ctx.base.style.transform = `translateX(${this.shift * k}px) scale(${ctx.seg.zoom || 1})`;
     this.card.style.transform = `translateX(${lerp(-720, 0, ease.back(enter(ctx.t, .1, .5)))}px)`;
     this.card.style.opacity = 1 - pout;
     for (const it of this.items) {

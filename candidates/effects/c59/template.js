@@ -5,12 +5,14 @@ TEMPLATES.c59 = {
     const labels = P.labels || [];
     const at = (P.at || []).map(a => (ctx.words.find(w => n(w.w) === n(a)) || {}).s);
     const dx = P.offset || 390;
+    // fade: [from, to] height fractions where the clones fade out (old footage had a laptop hole); false = full body
+    const fade = P.fade === false ? null : (P.fade || [.62, .74]);
+    const mask = fade ? `-webkit-mask-image:linear-gradient(180deg,#000 ${fade[0] * 100}%,transparent ${fade[1] * 100}%)` : '';
     // each clone is the person from a slightly earlier frame (delay, seconds), so it moves half a beat behind
     this.clones = [
       { x: -dx, mirror: true, s0: .15, delay: .35 }, { x: dx, mirror: false, s0: .3, delay: .7 },
     ].map((c, k) => {
-      const cv = el('canvas', `position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 100%;
-        -webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 74%)`);
+      const cv = el('canvas', `position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 100%;${mask}`);
       cv.width = 540; cv.height = 960;
       ctx.L.back.appendChild(cv);
       let bub = null;

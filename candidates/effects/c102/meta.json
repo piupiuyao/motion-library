@@ -13,7 +13,7 @@
  ],
  "ref_moment": "4:37–5:37（3D Flip Animation）",
  "params": {
-  "steps": "图标序列 [{icon: mail|chat|plane, at: 词} 或 {img: 图片路径, at: 词}]，每说到一个词翻到下一个",
+  "steps": "图标序列 [{icon: mail|chat|slack|plane, at: 词} 或 {img: 图片路径, at: 词}]，每说到一个词翻到下一个",
   "size": "图标边长（像素），默认 280",
   "x": "中心横坐标，默认 860",
   "y": "中心纵坐标，默认 330"
