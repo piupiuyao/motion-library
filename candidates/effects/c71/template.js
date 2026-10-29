@@ -48,8 +48,8 @@ TEMPLATES.c71 = {
   frame(ctx) {
     const D = ctx.params.dur || .9, dt = ctx.t - this.T;
     this.sc.update(Math.max(0, dt));
-    const p = ease.inOut(clamp(dt / D));
-    const X = lerp(-900, 1980, p); // band centre at mid-height
+    const q = clamp(dt / D), p = q * q * (3 - 2 * q); // gentle ease so the sweep is readable
+    const X = lerp(-450, 1550, p); // band centre at mid-height
     const tn = this.tan;
     this.band.style.transform = `translateX(${X}px) rotate(18deg)`;
     this.band.style.opacity = dt > 0 && dt < D ? 1 : 0;

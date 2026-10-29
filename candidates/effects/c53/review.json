@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "fetched",
+  "checked": "Reference (xCl_zqJdjAc) cuts between a wide shot and a ~1.4-1.5x face close-up. Ours alternates 1.0 / 1.4 on word starts about every second.",
+  "fixed": "Moved to D2 words 138-148 (old range had a burned-in battery icon).",
+  "left": "Real edits cut on sentence breaks every 2-4 s; the demo cuts faster to show it in 3 s."
+}

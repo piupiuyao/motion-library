@@ -2,30 +2,40 @@
  "skin": "clean",
  "shots": [
   {
-   "words": "0-8",
-   "template": "c15",
-   "params": {}
-  },
-  {
-   "words": "9-19",
+   "words": "0-15",
    "template": "c16",
    "params": {
-    "query": "why is replying to messages so",
+    "query": "why hasn't AI solved",
     "suggestions": [
-     "why is replying to messages so exhausting",
-     "why is replying to messages so hard",
-     "why is replying to messages so draining"
+     "why hasn't AI solved replying to messages",
+     "why hasn't AI solved email yet",
+     "why hasn't AI solved texting"
     ]
    }
   },
   {
+   "words": "16-29",
+   "template": "c15",
+   "params": {
+    "text": "Replying to messages is the most draining thing I do every day. Why hasn't AI fixed this yet?"
+   }
+  },
+  {
    "words": "30-39",
+   "template": "c17",
+   "params": {
+    "highlight": "Emails, WhatsApp, Telegram: replying to messages is the task people say drains them most.",
+    "at": "emails"
+   }
+  },
+  {
+   "words": "40-47",
    "template": "c13",
    "params": {
     "app": "whatsapp",
     "sender": "Sarah",
     "text": "Hey, did you see my message? 👀",
-    "at": "replying",
+    "at": "every",
     "more": [
      {
       "app": "mail",
@@ -43,7 +53,23 @@
    }
   },
   {
-   "words": "40-48",
+   "words": "58-66",
+   "template": "c26",
+   "params": {
+    "items": [
+     {
+      "emoji": "😳",
+      "at": "honest"
+     },
+     {
+      "emoji": "😩",
+      "at": "emotional"
+     }
+    ]
+   }
+  },
+  {
+   "words": "67-79",
    "template": "c14",
    "params": {
     "messages": [
@@ -64,48 +90,25 @@
    }
   },
   {
-   "words": "49-57",
-   "template": "c26",
-   "params": {
-    "items": [
-     {
-      "emoji": "😱",
-      "at": "ridiculous"
-     },
-     {
-      "emoji": "😩",
-      "at": "amount"
-     }
-    ]
-   }
-  },
-  {
-   "words": "58-66",
-   "template": "c17",
-   "params": {
-    "highlight": "Put together, they take up a ridiculous amount of the day, and a lot of emotional energy."
-   }
-  },
-  {
-   "words": "80-89",
+   "words": "90-97",
    "template": "c25",
    "params": {
     "items": [
      {
       "kind": "thought",
-      "text": "How do I say no...?",
-      "at": "sometimes"
+      "text": "Not now...",
+      "at": "someone"
      },
      {
       "kind": "burst",
-      "text": "NO!",
-      "at": "no"
+      "text": "UGH!",
+      "at": "long"
      }
     ]
    }
   },
   {
-   "words": "90-97",
+   "words": "108-114",
    "template": "c18",
    "params": {
     "label": "long message!"

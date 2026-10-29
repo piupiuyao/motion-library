@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "fetched",
+  "checked": "Tutorial frames are CapCut UI only. Circle grows from 0 to full screen revealing the next image.",
+  "fixed": "Circle now opens from the face by default and reaches the far corners; moved the trigger to 'which' so the reveal covers the burned-in 'replying to messages' text.",
+  "left": ""
+}

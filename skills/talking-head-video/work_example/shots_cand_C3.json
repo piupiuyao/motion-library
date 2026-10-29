@@ -1,9 +1,8 @@
 {"skin": "clean", "shots": [
-  {"words": "0-8", "template": "c48", "params": {"name": "Monica", "handle": "@monica.replies"}},
-  {"words": "32-45", "template": "c40", "params": {"title": "Where replies pile up", "items": [
-    {"icon": "📧", "text": "Emails", "at": "Emails", "color": "#ffd9d9"},
-    {"icon": "💬", "text": "WhatsApp", "at": "WhatsApp", "color": "#d4f5d4"},
-    {"icon": "✈️", "text": "Telegram", "at": "Telegram", "color": "#d6eaff"}]}},
+  {"words": "32-45", "template": "c40", "params": {"title": "Where replies pile up", "items": [{"icon": "📧", "text": "Emails", "at": "Emails", "color": "#ffd9d9"}, {"icon": "💬", "text": "WhatsApp", "at": "WhatsApp", "color": "#d4f5d4"}, {"icon": "✈️", "text": "Telegram", "at": "Telegram", "color": "#d6eaff"}]}},
   {"words": "46-57", "template": "c44", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"]}},
-  {"words": "90-104", "template": "c38", "params": {"media": "assets/docs/chat.jpg", "label": "like this"}}
+  {"words": "58-66", "template": "c48", "params": {"name": "Monica", "handle": "@monica.replies"}},
+  {"words": "67-79", "template": "c43", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"], "at": [74]}},
+  {"words": "90-104", "template": "c38", "params": {"media": "assets/docs/chat.jpg", "label": "like this"}},
+  {"words": "127-140", "template": "c36", "params": {"label": "taking so long"}}
 ]}

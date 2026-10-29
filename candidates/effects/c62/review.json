@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "description-only",
+  "checked": "gotranscript page is text only. Low-fps hold frames, grain, scratches, warm vignette.",
+  "fixed": "Grain stronger (opacity .4) so it reads in the preview; shot trimmed to words 62-66 to skip the INBOX PRESSURE overlay.",
+  "left": "Stutter only visible in video, not stills."
+}

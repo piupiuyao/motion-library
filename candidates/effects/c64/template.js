@@ -5,7 +5,8 @@ TEMPLATES.c64 = {
     this.t0 = P.at != null ? P.at : .6;
     this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
     this.bgEl = el('div', `position:absolute;inset:0;background:${P.bg ? pattern(P.bg) : pattern('paper')}`);
-    this.bgEl.appendChild(el('div', 'position:absolute;inset:0;background:repeating-linear-gradient(-30deg, rgba(0,0,0,.05) 0 3px, transparent 3px 14px)'));
+    // tint the crumpled paper with the accent colour (multiply keeps the creases visible)
+    if (!P.bg) this.bgEl.appendChild(el('div', `position:absolute;inset:0;background:${P.tint || 'var(--accent)'};mix-blend-mode:multiply`));
     ctx.L.front.appendChild(this.bgEl);
     let seed = 11; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
     // torn rectangle: jagged on all four sides

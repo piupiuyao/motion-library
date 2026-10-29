@@ -1,6 +1,10 @@
 {"skin": "clean", "shots": [
-  {"words": "9-20", "template": "c73", "params": {"at": "one", "title": "The one thing AI hasn't solved"}},
-  {"words": "30-39", "template": "c72", "params": {"at": "Emails", "to": "assets/docs/chat.jpg"}},
+  {"words": "22-29", "template": "c73", "params": {"at": "things", "title": "Every single day"}},
+  {"words": "30-39", "template": "c72", "params": {"at": "which", "to": "assets/docs/chat.jpg"}},
   {"words": "40-48", "template": "c70", "params": {"at": "small", "to": "assets/docs/notify.jpg"}},
-  {"words": "67-79", "template": "c71", "params": {"at": "sometimes", "title": "Not just typing"}}
+  {"words": "67-79", "template": "c71", "params": {"at": "sometimes", "title": "Not just typing"}},
+  {"words": "90-97", "template": "c51", "params": {"at": "long"}},
+  {"words": "123-130", "template": "c50", "params": {"at": "harder"}},
+  {"words": "131-137", "template": "c52", "params": {}},
+  {"words": "138-148", "template": "c53", "params": {}}
 ]}

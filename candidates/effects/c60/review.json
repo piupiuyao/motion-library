@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "description-only",
+  "checked": "Douyin source not fetchable. No hand detection: checked the source frames by eye, she raises her right hand at ~44.6 s ('hours').",
+  "fixed": "Bust now fades out above the laptop hole (was a hard broken edge), gesture is two touch dots that pinch/spread at the hand position, which follows the body as it scales; second step lands on her real hand raise. Steps take a manual 'hand' [x,y].",
+  "left": "Hand position/timing is hand-set per shot; the shrink step (at 'leave') has no real hand in frame. When small, her hand is cut at the source frame edge; the DELAY TIMELINE overlay is hidden because the background is replaced."
+}

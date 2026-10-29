@@ -13,7 +13,7 @@ TEMPLATES.c27 = {
     this.scene = el('div', 'position:absolute;inset:0;transform-origin:50% 45%');
     // bright smoke behind the set, dark floor and corners
     this.scene.appendChild(el('div', `position:absolute;inset:0;background:
-      radial-gradient(ellipse 60% 34% at 50% 40%, #ffffff, rgba(235,235,235,.85) 35%, rgba(120,120,120,.4) 70%, transparent 100%),
+      radial-gradient(ellipse 75% 40% at 50% 40%, #ffffff, rgba(240,240,240,.9) 40%, rgba(140,140,140,.45) 72%, transparent 100%),
       linear-gradient(#2a2a2a, #111 60%, #050505)`));
     this.smoke = [0, 1, 2, 3, 4, 5].map(k => {
       const e = el('div', `position:absolute;left:${[60, 560, 180, 640, 20, 420][k]}px;top:${[420, 380, 700, 650, 560, 520][k]}px;width:${520 + k * 40}px;height:${380 + k * 30}px;border-radius:50%;
@@ -32,7 +32,7 @@ TEMPLATES.c27 = {
         box-shadow:0 50px 80px rgba(0,0,0,.75), inset 0 4px 0 rgba(255,255,255,.18), inset 0 -12px 20px rgba(0,0,0,.6)"></div>
       <div style="position:absolute;left:36px;top:40px;width:560px;height:520px;border-radius:64px/56px;background:#060606;box-shadow:inset 0 0 0 10px #262626, inset 0 0 30px #000"></div>
       <div class="scr" style="position:absolute;left:60px;top:64px;width:512px;height:472px;border-radius:56px/48px;overflow:hidden;background:#111">
-        <img class="im" style="position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;filter:grayscale(1) contrast(1.35) brightness(1.15)">
+        <img class="im" style="position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;filter:grayscale(1) brightness(1.9) contrast(1.25)">
         <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(0,0,0,.32) 0 2px, transparent 2px 5px)"></div>
         <div class="roll" style="position:absolute;left:0;right:0;height:90px;background:linear-gradient(transparent, rgba(255,255,255,.16), transparent)"></div>
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 35% 25%, rgba(255,255,255,.28), transparent 40%), radial-gradient(ellipse, transparent 50%, rgba(0,0,0,.75))"></div></div>

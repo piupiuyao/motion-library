@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "description-only",
+  "checked": "gotranscript page is text only. Bright diagonal light sweep that swaps the scene under it.",
+  "fixed": "Sweep was too fast to see (cubic ease, ~0.2 s on screen); now smoothstep over 0.9 s, wider glow with screen blend and a slight whole-frame flare.",
+  "left": "Light passes under the caption pill, not over it (no layer above captions; needs an engine change)."
+}

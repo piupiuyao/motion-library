@@ -15,7 +15,7 @@ TEMPLATES.c47 = {
     this.dot = this.rec.firstChild;
     this.tc = el('div', `position:absolute;right:${m + 50}px;top:${m + 46}px`, '00:00:00:00');
     this.box.append(this.rec, this.tc);
-    this.box.appendChild(el('div', `position:absolute;left:${m + 50}px;bottom:${m + 50}px;font-size:34px;letter-spacing:.02em`, P.info || '4K&nbsp;&nbsp;30FPS&nbsp;&nbsp;1/60&nbsp;&nbsp;F2.8&nbsp;&nbsp;ISO 400&nbsp;&nbsp;5600K'));
+    this.box.appendChild(el('div', `position:absolute;left:${m + 50}px;bottom:${m + 50}px;font-size:34px;letter-spacing:.02em`, P.info || '4K&nbsp;&nbsp;30FPS&nbsp;&nbsp;1/60&nbsp;&nbsp;F2.8&nbsp;&nbsp;ISO400'));
     this.box.appendChild(el('div', `position:absolute;right:${m + 50}px;bottom:${m + 50}px;display:flex;align-items:center;gap:4px`,
       `<span style="display:inline-flex;gap:5px;padding:5px;border:4px solid #fff;border-radius:8px;width:92px;height:34px;box-sizing:content-box">
         <i style="flex:1;background:#fff"></i><i style="flex:1;background:#fff"></i><i style="flex:1;background:#fff"></i><i style="flex:1;background:rgba(255,255,255,.25)"></i></span>

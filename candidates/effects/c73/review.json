@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "fetched",
+  "checked": "Reference (aULMmeQFqxk) shows the real 开幕分屏: from black, three vertical panels open from thin slits, each with a different shot of the same person. Ours was the old frame sliding apart as 4 curtains.",
+  "fixed": "New default mode 'panels' matching the reference: black, three panels (wide / close-up / mirrored crop of the live footage) open middle-first, optional title. Old curtain version kept as mode:'curtain'. Moved to D2 words 22-29 (old range had CODE cards).",
+  "left": ""
+}

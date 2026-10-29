@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "description-only",
+  "checked": "Pippit template page has no fetchable preview. Clone effects normally show copies of the person in the same real scene.",
+  "fixed": "Rewritten: kept the real room as background (was a grid), two clones slide out from behind her to left/right, one mirrored, each drawn from an earlier frame (0.35 s / 0.7 s delay) so they move half a beat behind; bubbles kept.",
+  "left": "Clones fade out at the waist (the matte has a hole where the laptop is); they are smaller and stand behind her, not full-size side by side."
+}
