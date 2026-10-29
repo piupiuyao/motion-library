@@ -12,5 +12,14 @@
  "sources": [
   "https://www.youtube.com/watch?v=tvhMBCQLZLs&t=0s"
  ],
- "ref_moment": "0:00–0:15 开头成品（3D 旋转视频）"
+ "ref_moment": "0:00–0:15 开头成品（3D 旋转视频）",
+ "params": {
+  "media": "屏幕里放的图片或帧序列，默认 Gmail 截图",
+  "angle": "斜放角度（度），默认 36",
+  "side": "放在人哪一边：left / right，默认 left",
+  "w": "屏幕宽，默认 570",
+  "h": "屏幕高，默认 550",
+  "x": "左上角横坐标（可选）",
+  "y": "左上角纵坐标，默认 880"
+ }
 }

@@ -5,7 +5,7 @@ TEMPLATES.c88 = {
     let txt = String(P.text || 'REPETITIVE • TIME-CONSUMING • ').toUpperCase();
     this.size = P.size || 74;
     this.cx = P.cx || 540; this.cy = P.y || 985;
-    this.rx = P.rx || 450; this.ry = P.ry || 95;
+    this.rx = P.rx || 450; this.ry = P.ry || 110;
     this.period = P.period || 3.6;
     const mk = () => { const c = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 50%'); c.width = 1080; c.height = 1920; return c; };
     this.back = mk(); this.front = mk();
@@ -13,7 +13,8 @@ TEMPLATES.c88 = {
     // repeat the slogan until it fills the whole circumference
     const c = this.front.getContext('2d');
     c.font = `900 ${this.size}px "Avenir Next","Arial Black",sans-serif`;
-    const circ = Math.PI * (3 * (this.rx + this.ry) - Math.sqrt((3 * this.rx + this.ry) * (this.rx + 3 * this.ry)));
+    // seen from the side the belt is a circle of radius rx, so letters are spaced along 2πrx
+    const circ = 2 * Math.PI * this.rx;
     // ring width measured at front scale so letters sit snugly
     let unit = c.measureText(txt).width;
     let reps = Math.max(1, Math.round(circ / unit));
@@ -43,13 +44,13 @@ TEMPLATES.c88 = {
       const c = z >= 0 ? cf : cb;
       c.save();
       c.translate(x, y);
-      c.globalAlpha = k * (z >= 0 ? 1 : lerp(.45, .8, (z + 1)));
+      c.globalAlpha = k * (z >= 0 ? 1 : lerp(.7, .95, (z + 1)));
       // letters face outward: squeezed towards the sides, mirrored on the far side
       c.scale(Math.cos(a) * persp || .001, persp);
       c.font = `900 ${this.size}px "Avenir Next","Arial Black",sans-serif`;
       c.textAlign = 'center'; c.textBaseline = 'middle';
       if (z >= 0) { c.lineWidth = 8; c.strokeStyle = 'rgba(0,0,0,.35)'; c.strokeText(ch, 0, 3); }
-      c.fillStyle = z >= 0 ? this.color : '#d9d9d9';
+      c.fillStyle = z >= 0 ? this.color : '#e6e6e6';
       c.fillText(ch, 0, 0);
       c.restore();
     });

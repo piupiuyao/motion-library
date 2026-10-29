@@ -12,8 +12,8 @@ TEMPLATES.c84 = {
     this.box.innerHTML = `<svg width="${D}" height="${D}" viewBox="0 0 ${D} ${D}" style="position:absolute;inset:0;overflow:visible">
       <defs><linearGradient id="c84g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d2ff"/><stop offset="1" stop-color="#1667ff"/></linearGradient></defs>
       <circle cx="${D / 2}" cy="${D / 2}" r="${R + 20}" fill="rgba(8,10,16,.55)"/>
-      <circle cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="rgba(120,124,135,.55)" stroke-width="26"/>
-      <circle class="arc" cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="url(#c84g)" stroke-width="26" stroke-linecap="butt"
+      <circle cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="rgba(120,124,135,.55)" stroke-width="34"/>
+      <circle class="arc" cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="url(#c84g)" stroke-width="34" stroke-linecap="butt"
         transform="rotate(-90 ${D / 2} ${D / 2})" stroke-dasharray="${C} ${C}" style="filter:drop-shadow(0 0 10px rgba(20,140,255,.9))"/>
       <g class="num"></g></svg>`;
     ctx.L.front.appendChild(this.box);

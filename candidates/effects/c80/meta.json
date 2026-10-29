@@ -9,5 +9,11 @@
  "sources": [
   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=408s"
  ],
- "ref_moment": "6:48–7:45（Multiple Word Slide Up 段，7:40 左右有和第二行组合后的成品）"
+ "ref_moment": "6:48–7:45（Multiple Word Slide Up 段，7:40 左右有和第二行组合后的成品）",
+ "params": {
+  "per": "可选。每行最多几个词，默认 4（太宽会自动提前换行）",
+  "size": "可选。字号，默认 84",
+  "y": "可选。字幕行顶部 y，默认 1075（下巴下方）",
+  "hideOld": "可选。false 时不遮演示素材里烧进去的旧字幕底条（只在关掉胶囊字幕时才会遮）"
+ }
 }

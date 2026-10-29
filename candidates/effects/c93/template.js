@@ -10,7 +10,7 @@ TEMPLATES.c93 = {
     this.box = el('div', `position:absolute;left:0;right:0;top:${P.y || 170}px;text-align:center`);
     ctx.L.back.appendChild(this.box);
     this.lines = lines.map((l, j) => {
-      const size = l.size || Math.min(230, Math.floor(1040 / (l.text.length * .66)));
+      const size = l.size || Math.min(230, Math.floor(1000 / (l.text.length * .8)));
       const e = el('div', `font-size:${size}px;line-height:.95;color:${l.accent ? 'var(--accent)' : '#fff'};white-space:nowrap`, l.text);
       e.className = 'display';
       this.box.appendChild(e);

@@ -6,8 +6,8 @@ TEMPLATES.c109 = {
     const w = P.at && ctx.words.find(x => n(x.w) === n(P.at));
     this.t0 = w ? w.s - .05 : (P.start ?? ctx.d * .5);
     this.dur = P.dur || 1.3;
-    const S = P.size || 520;
-    this.box = el('div', `position:absolute;left:${P.x ?? 540}px;top:${P.y ?? 170}px;width:${S}px;transform-origin:50% 60%`);
+    const S = P.size || 450;
+    this.box = el('div', `position:absolute;left:${P.x ?? 600}px;top:${P.y ?? 70}px;width:${S}px;transform-origin:50% 60%`);
     // a nervous sweating blob character, drawn here; white sticker edge = "keyed-out meme" look
     this.box.innerHTML = `
       <div style="font:400 ${S * .13}px/1.02 Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;color:#fff;-webkit-text-stroke:${S * .016}px #000;paint-order:stroke fill;
@@ -25,7 +25,13 @@ TEMPLATES.c109 = {
         <path d="M160 70 Q172 92 160 102 Q148 92 160 70Z" fill="#7fd3ff" stroke="#2a8acb" stroke-width="3"/>
         <path d="M44 60 Q52 76 44 84 Q36 76 44 60Z" fill="#7fd3ff" stroke="#2a8acb" stroke-width="3"/>
         <path d="M172 122 Q180 136 172 142 Q164 136 172 122Z" fill="#7fd3ff" stroke="#2a8acb" stroke-width="3"/>
-      </svg>`;
+        <g transform="rotate(-12 150 168)"><rect x="128" y="132" width="44" height="72" rx="8" fill="#222" stroke="#fff" stroke-width="5"/>
+          <rect x="133" y="140" width="34" height="56" rx="4" fill="#9fd0ff"/>
+          <circle cx="170" cy="134" r="13" fill="#ff2d3d" stroke="#fff" stroke-width="3"/><text x="170" y="139" font-size="13" font-weight="900" text-anchor="middle" fill="#fff" font-family="Arial">99</text></g>
+        <path d="M120 186 Q134 176 140 160" stroke="#f5b400" stroke-width="13" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div style="font:400 ${S * .1}px/1.02 Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;color:#fff;-webkit-text-stroke:${S * .014}px #000;paint-order:stroke fill;
+        text-align:center;text-transform:uppercase;margin-top:${S * .01}px">${P.bottom || '*sweats nervously*'}</div>`;
     ctx.L.front.appendChild(this.box);
   },
   frame(ctx) {

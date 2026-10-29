@@ -11,5 +11,14 @@
  "sources": [
   "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=140s"
  ],
- "ref_moment": "2:20–4:37（Loading Bar 段）"
+ "ref_moment": "2:20–4:37（Loading Bar 段）",
+ "params": {
+  "value": "目标百分比，默认 87",
+  "label": "可选。条左上方的小标题",
+  "at": "可选。从哪个词开始填充",
+  "t0": "可选。不用 at 时第几秒开始，默认 0.35",
+  "dur": "可选。填充用时，默认 1.6 秒",
+  "width": "可选。条宽，默认 720",
+  "y": "可选。顶部 y，默认 1130"
+ }
 }

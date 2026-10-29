@@ -2,7 +2,7 @@
 TEMPLATES.c100 = {
   setup(ctx) {
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165 };
+    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
     // blurred background: draw the frame tiny + soft, scale up (cheap compared with CSS blur on a full frame)
     this.bl = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px');
     this.bl.width = 108; this.bl.height = 192;

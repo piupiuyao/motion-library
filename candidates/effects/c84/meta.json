@@ -11,5 +11,12 @@
  "sources": [
   "https://www.youtube.com/watch?v=H6nWHe0D36I&t=453s"
  ],
- "ref_moment": "7:33–9:10（Timer Ring 段，结尾有成品）"
+ "ref_moment": "7:33–9:10（Timer Ring 段，结尾有成品）",
+ "params": {
+  "from": "从几开始倒数，默认 5；整圈走完正好到 0",
+  "pos": "可选。圆环中心 [x,y]，默认 [770,330]",
+  "size": "可选。圆环直径，默认 380",
+  "t0": "可选。第几秒开始走，默认 0.25",
+  "hold": "可选。归零后停留秒数，默认 0.45"
+ }
 }

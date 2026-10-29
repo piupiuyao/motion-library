@@ -11,5 +11,13 @@
  "sources": [
   "https://www.youtube.com/watch?v=lXKu-4ShHoc&t=0s"
  ],
- "ref_moment": "整段 2:17（开头即演示跟踪模糊）"
+ "ref_moment": "整段 2:17（开头即演示跟踪模糊）",
+ "params": {
+  "name": "截图上被打码的名字",
+  "text": "消息内容",
+  "blur": "模糊强度（像素），默认 18",
+  "start": "开始变模糊的时间（秒），默认 0.7",
+  "y": "卡片竖直位置，默认 1010",
+  "box_w": "模糊框宽度，默认 540"
+ }
 }

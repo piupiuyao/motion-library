@@ -9,5 +9,12 @@
  "sources": [
   "https://www.youtube.com/watch?v=bKEPRjz6c-Q&t=66s"
  ],
- "ref_moment": "1:06–1:25（发布前评论以贴纸形式叠在视频上）"
+ "ref_moment": "1:06–1:25（发布前评论以贴纸形式叠在视频上）",
+ "params": {
+  "user": "被回复的用户名，默认 jess.k",
+  "text": "评论内容",
+  "rotate": "倾斜角度，默认 -2",
+  "y": "竖直位置，默认 200",
+  "width": "最大宽度，默认 780"
+ }
 }

@@ -9,5 +9,15 @@
  "sources": [
   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=678s"
  ],
- "ref_moment": "11:18–12:03（Font Shift Effect 段）"
+ "ref_moment": "11:18–12:03（Font Shift Effect 段）",
+ "params": {
+  "text": "关键词",
+  "at": "可选。说到哪个词时开始轮换",
+  "t0": "可选。不用 at 时第几秒开始，默认 0.1",
+  "dur": "可选。轮换持续秒数，默认 0.8",
+  "size": "可选。字号，默认 190",
+  "y": "可选。顶部 y，默认 210",
+  "fonts": "可选。轮换用的 CSS font 列表",
+  "final": "可选。最后停住的 CSS font，默认皮肤标题字体"
+ }
 }

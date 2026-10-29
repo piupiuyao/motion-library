@@ -9,5 +9,8 @@
  "sources": [
   "https://www.youtube.com/watch?v=TnOP0z0EwoM&t=120s"
  ],
- "ref_moment": "2:00–2:56（How to add light flares），前面 0:24–1:35 是黑白 + 暗角 + 滤镜"
+ "ref_moment": "2:00–2:56（How to add light flares），前面 0:24–1:35 是黑白 + 暗角 + 滤镜",
+ "params": {
+  "saturation": "画面饱和度（0=黑白，1=原色），默认 0.15"
+ }
 }

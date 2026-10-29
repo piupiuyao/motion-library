@@ -8,9 +8,9 @@ TEMPLATES.c104 = {
     this.text = (P.text || (w && w.w.replace(/[^\w'-]/g, '')) || (g && g.text) || 'BIG').toUpperCase();
     this.t0 = w ? w.s : g ? g.s : .3;
     this.dir = P.dir || 'y';
-    this.sy = P.scale || 2.6;
-    const fs = P.size || (this.text.length > 9 ? 150 : 190);
-    this.word = el('div', `position:absolute;left:0;right:0;top:${(P.y || 420) - fs * .8}px;text-align:center;white-space:nowrap;font-size:${fs}px;
+    this.sy = P.scale || 2.4;
+    const fs = P.size || (this.text.length > 9 ? 140 : 165);
+    this.word = el('div', `position:absolute;left:0;right:0;top:${(P.y || 440) - fs * .92}px;text-align:center;white-space:nowrap;font-size:${fs}px;
       color:#fff;-webkit-text-stroke:10px var(--ink);paint-order:stroke fill;text-shadow:0 10px 0 var(--ink);letter-spacing:-.02em;transform-origin:50% 100%`, this.text);
     this.word.className = 'display';
     ctx.L.front.appendChild(this.word);

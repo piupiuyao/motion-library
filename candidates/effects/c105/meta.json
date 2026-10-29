@@ -10,5 +10,15 @@
   "https://www.youtube.com/watch?v=TnOP0z0EwoM&t=259s",
   "https://www.youtube.com/watch?v=I49YEojjtf8&t=968s"
  ],
- "ref_moment": "Trevor Jones 4:19–5:35（Type on effect）；Modern Millie 16:08 起（Typing Effect）"
+ "ref_moment": "Trevor Jones 4:19–5:35（Type on effect）；Modern Millie 16:08 起（Typing Effect）",
+ "params": {
+  "text": "要打出来的句子，默认用这段的原话",
+  "start": "开始打字的时间（秒），默认 0.3",
+  "cps": "每秒字母数下限，默认 12（句子长时会自动加快，保证说完前打完）",
+  "name": "卡片上的名字，默认 Monica",
+  "handle": "账号，默认 @monica",
+  "light": "true=白底黑字卡片",
+  "mono": "true=等宽字体",
+  "y": "卡片竖直位置，默认 110"
+ }
 }

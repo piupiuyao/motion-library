@@ -14,8 +14,8 @@ TEMPLATES.c101 = {
     // speech-bubble tail
     this.bub.appendChild(el('div', 'position:absolute;left:70px;bottom:-26px;width:0;height:0;border-left:0 solid transparent;border-right:40px solid transparent;border-top:34px solid #fff'));
     this.wrap.appendChild(this.bub);
-    this.arrow = el('div', `position:absolute;left:${P.arrow_x || 860}px;top:${this.y + 190}px;width:120px;height:150px`);
-    this.arrow.innerHTML = `<svg viewBox="0 0 60 75" width="120" height="150"><path d="M30 4 V52 M10 36 L30 58 L50 36" fill="none" stroke="#111" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    this.arrow = el('div', `position:absolute;left:${P.arrow_x || 860}px;top:${this.y + 190}px;width:150px;height:190px`);
+    this.arrow.innerHTML = `<svg viewBox="0 0 60 75" width="150" height="190"><path d="M30 4 V52 M10 36 L30 58 L50 36" fill="none" stroke="#111" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M30 4 V52 M10 36 L30 58 L50 36" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     ctx.L.front.append(this.wrap, this.arrow);
   },

@@ -7,10 +7,10 @@ TEMPLATES.c85 = {
     this.t0 = w ? w.s - .1 : (P.t0 != null ? P.t0 : .35);
     this.target = P.value != null ? P.value : 87;
     this.dur = P.dur || 1.6;
-    const W = P.width || 660;
+    const W = P.width || 720;
     this.box = el('div', `position:absolute;left:${(1080 - W) / 2}px;top:${P.y || 1130}px;width:${W}px;transform-origin:50% 50%`);
     const head = el('div', 'display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px');
-    head.appendChild(el('div', `font:800 44px var(--font-body);color:#fff;letter-spacing:.04em;text-shadow:0 3px 12px rgba(0,0,0,.55)`, P.label || ''));
+    head.appendChild(el('div', `font:800 44px var(--font-body);color:#fff;letter-spacing:.04em;white-space:nowrap;text-shadow:0 3px 12px rgba(0,0,0,.55)`, P.label || ''));
     this.pct = el('div', `font:800 92px/1 var(--font-body);color:#fff;text-shadow:0 4px 16px rgba(0,0,0,.55);font-variant-numeric:tabular-nums`, '0%');
     head.appendChild(this.pct);
     this.track = el('div', `position:relative;height:50px;border-radius:25px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35);overflow:hidden`);

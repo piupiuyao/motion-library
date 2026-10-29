@@ -11,5 +11,10 @@
  "sources": [
   "https://www.youtube.com/watch?v=pkyDzEHpZao&t=35s"
  ],
- "ref_moment": "0:35–2:08（Darken Background 段）"
+ "ref_moment": "0:35–2:08（Darken Background 段）",
+ "params": {
+  "lines": "人身后的大字行：[{\"text\":\"LONG\",\"at\":\"long\",\"accent\":false}, …]",
+  "dark": "可选。压暗不透明度，默认 0.72",
+  "y": "可选。大字顶部 y，默认 170"
+ }
 }

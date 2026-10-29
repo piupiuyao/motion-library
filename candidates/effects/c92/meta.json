@@ -11,5 +11,10 @@
  "sources": [
   "https://elements.envato.com/computer-popup-window-8F37VTH"
  ],
- "ref_moment": "Envato 预览视频全程"
+ "ref_moment": "Envato 预览视频全程",
+ "params": {
+  "windows": "窗口列表（最多 3 个）：[{\"image\":\"assets/docs/gmail.jpg\",\"title\":\"Mail\",\"at\":\"emotionally\"}, …]；at 是弹出的词",
+  "spots": "可选。每个窗口的 [x,y,宽,高]",
+  "gap": "可选。不写 at 时窗口间隔秒数，默认 0.7"
+ }
 }

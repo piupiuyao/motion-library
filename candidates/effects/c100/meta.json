@@ -11,5 +11,12 @@
  "sources": [
   "https://www.youtube.com/watch?v=eR3HQanWgPo&t=5s"
  ],
- "ref_moment": "0:05–0:55 依次展示多个版式"
+ "ref_moment": "0:05–0:55 依次展示多个版式",
+ "params": {
+  "media": "下一条视频的封面：图片路径或帧序列 {frames,fps,count}，默认收件箱 B-roll",
+  "title": "标题，默认 Watch next",
+  "next": "卡片上的视频标题",
+  "handle": "头像下的账号名，默认 @monica",
+  "button": "按钮文字，默认 SUBSCRIBE"
+ }
 }

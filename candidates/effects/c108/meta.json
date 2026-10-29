@@ -12,5 +12,13 @@
  "sources": [
   "https://www.youtube.com/watch?v=eV7QmDITJYM&t=63s"
  ],
- "ref_moment": "1:03–1:12（成品播放）"
+ "ref_moment": "1:03–1:12（成品播放）",
+ "params": {
+  "after": "可选。「之后」用的另一张图/帧序列；不填=同一段画面调色后",
+  "before_filter": "「之前」的 CSS 滤镜，默认去色压灰",
+  "after_filter": "「之后」的 CSS 滤镜，默认提饱和提对比",
+  "before_label": "右上角标，默认 BEFORE",
+  "after_label": "左上角标，默认 AFTER",
+  "knob_y": "圆形手柄的竖直位置，默认 1180"
+ }
 }

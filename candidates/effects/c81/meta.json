@@ -9,5 +9,11 @@
  "sources": [
   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=607s"
  ],
- "ref_moment": "10:07–11:00（Pop Animated Captions 段）"
+ "ref_moment": "10:07–11:00（Pop Animated Captions 段）",
+ "params": {
+  "per": "可选。同屏累积几个词后清掉，默认 4",
+  "size": "可选。字号，默认 92",
+  "y": "可选。字幕行顶部 y，默认 1070",
+  "hideOld": "可选。同 c80"
+ }
 }

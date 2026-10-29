@@ -4,7 +4,7 @@ TEMPLATES.c107 = {
     const P = ctx.params;
     this.amount = P.blur || 18;
     this.t0 = P.start ?? .7;
-    this.card = el('div', `position:absolute;left:110px;top:${P.y || 1040}px;width:860px;padding:30px 34px 36px;box-sizing:border-box;background:#fff;
+    this.card = el('div', `position:absolute;left:110px;top:${P.y || 1010}px;width:860px;padding:30px 34px 36px;box-sizing:border-box;background:#fff;
       border-radius:36px;box-shadow:0 26px 60px rgba(0,0,0,.4);transform-origin:50% 50%`);
     this.card.innerHTML = `<div style="display:flex;align-items:center;gap:22px;margin-bottom:22px">
         <div style="width:96px;height:96px;border-radius:50%;flex:none;background:linear-gradient(135deg,#7f8cff,#c36bff);display:flex;align-items:center;
@@ -13,9 +13,9 @@ TEMPLATES.c107 = {
           <div style="font:500 30px var(--font-body);color:#20b050">online</div></div>
         <div style="margin-left:auto;font:500 30px var(--font-body);color:#999">11:42 PM</div></div>
       <div style="background:#eef0f4;border-radius:10px 34px 34px 34px;padding:24px 30px;font:500 40px/1.3 var(--font-body);color:#222">${P.text ||
-        'hey… I know it’s late but I really need to talk about what happened today. I’ve been thinking about it all night and honestly I don’t even know where to start'}</div>`;
+        'hey… I know it’s late but I really need to talk about what happened today 😞'}</div>`;
     // the blur box: a small rounded rect over the name + avatar, child of the card so it tracks it
-    this.box = el('div', `position:absolute;left:20px;top:18px;width:${P.box_w || 470}px;height:120px;border-radius:26px;background:rgba(255,255,255,.08)`);
+    this.box = el('div', `position:absolute;left:20px;top:18px;width:${P.box_w || 540}px;height:120px;border-radius:26px;background:rgba(255,255,255,.08)`);
     this.card.appendChild(this.box);
     ctx.L.front.appendChild(this.card);
   },

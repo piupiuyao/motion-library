@@ -9,5 +9,13 @@
  "sources": [
   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=282s"
  ],
- "ref_moment": "4:42–5:30（Vertical Scale Effect）"
+ "ref_moment": "4:42–5:30（Vertical Scale Effect）",
+ "params": {
+  "at": "要拉伸的词（字幕里的原词）",
+  "text": "可选。直接指定显示的字",
+  "dir": "y=纵向拉高（默认），x=横向拉宽",
+  "scale": "拉伸倍数，默认 2.4",
+  "size": "字号（可选，默认按字数）",
+  "y": "字底部的竖直位置，默认 440"
+ }
 }

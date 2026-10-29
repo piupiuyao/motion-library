@@ -1,6 +1,6 @@
 {"skin": "clean", "shots": [
   {"words": "18-29", "template": "c96", "params": {"text": "MONICA", "sub": "host · creator"}},
-  {"words": "62-79", "template": "c108", "params": {}},
+  {"words": "62-73", "template": "c108", "params": {}},
   {"words": "90-97", "template": "c107", "params": {}},
   {"words": "123-137", "template": "c97", "params": {"at": ["harder", "guilty"], "word": "GUILTY"}},
   {"words": "138-148", "template": "c100", "params": {"title": "Watch next", "next": "How I reply 10× faster"}}

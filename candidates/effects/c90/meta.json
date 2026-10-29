@@ -11,5 +11,11 @@
  "sources": [
   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=723s"
  ],
- "ref_moment": "12:03–13:40（Outline Reveal Effect）"
+ "ref_moment": "12:03–13:40（Outline Reveal Effect）",
+ "params": {
+  "lines": "一到两行大字，例如 [\"OUTLINE\",\"REVEAL\"]",
+  "color": "可选。字色，默认红 #e3101a",
+  "size": "可选。最大字号，默认 330（按字数自动缩）",
+  "y": "可选。顶部 y，默认 380"
+ }
 }

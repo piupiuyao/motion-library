@@ -10,5 +10,15 @@
   "https://elements.envato.com/comment-call-out-4L7XH5U",
   "https://www.youtube.com/watch?v=gPslMYkPpqY&t=0s"
  ],
- "ref_moment": "Envato 预览全程；YouTube 一组 7 个竖屏 CTA 动画 0:00–0:42"
+ "ref_moment": "Envato 预览全程；YouTube 一组 7 个竖屏 CTA 动画 0:00–0:42",
+ "params": {
+  "keyword": "高亮的关键词，默认 AI",
+  "lead": "关键词前的字，默认 Comment",
+  "sub": "气泡第一行灰色小字（账号名后面），默认 reply below",
+  "handle": "账号名，默认 @monica",
+  "avatar": "头像里的字母，默认 M",
+  "y": "气泡竖直位置，默认 1080",
+  "start": "弹出时间（秒），默认 0.25",
+  "arrow_x": "箭头横向位置，默认 860"
+ }
 }

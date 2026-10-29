@@ -6,7 +6,7 @@ TEMPLATES.c90 = {
     const color = P.color || '#e3101a';
     this.groups = [];
     for (const [layer, solid] of [[ctx.L.back, true], [ctx.L.front, false]]) {
-      const box = el('div', `position:absolute;left:0;right:0;top:${P.y || 420}px;text-align:center;transform-origin:50% 40%`);
+      const box = el('div', `position:absolute;left:0;right:0;top:${P.y || 380}px;text-align:center;transform-origin:50% 40%`);
       lines.forEach((t, k) => {
         const size = Math.min(P.size || 330, Math.floor(1060 / (t.length * .6)));
         box.appendChild(el('div', `font:900 ${size}px/.86 "Avenir Next Condensed","Impact",sans-serif;letter-spacing:-.01em;white-space:nowrap;

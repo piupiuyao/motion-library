@@ -2,7 +2,7 @@
 TEMPLATES.c91 = {
   setup(ctx) {
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165 };
+    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 1 };  // the clip's first frames are a transition with the speaker in it
     this.img = el('img', 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover');
     ctx.L.bg.style.background = '#111';
     ctx.L.bg.appendChild(this.img);

@@ -19,7 +19,7 @@ TEMPLATES.c102 = {
       t: k === 0 ? (s.at ? ((ctx.words.find(w => n(w.w) === n(s.at)) || { s: 0 }).s) : 0)
         : ((ctx.words.find(w => n(w.w) === n(s.at || '')) || { s: ctx.d * k / steps.length }).s) }));
     this.steps[0].t = Math.max(0, this.steps[0].t - .1);
-    const S = this.size = P.size || 250;
+    const S = this.size = P.size || 280;
     this.pos = [P.x ?? 860, P.y ?? 330];
     this.scene = el('div', `position:absolute;left:${this.pos[0] - S / 2}px;top:${this.pos[1] - S / 2}px;width:${S}px;height:${S}px;perspective:900px`);
     this.cube = el('div', `position:absolute;inset:0;transform-style:preserve-3d`);

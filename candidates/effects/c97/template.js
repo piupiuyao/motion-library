@@ -51,7 +51,7 @@ TEMPLATES.c97 = {
     const fr = Math.round((ctx.shot.start + t) * 30);
     const j = hit ? (1 - since / .3) * 14 : 0;
     const sx = Math.sin(fr * 12.9898) * j, sy = Math.cos(fr * 78.233) * j;
-    this.cv.style.transform = `translate(${sx}px, ${sy}px)`;
+    this.cv.style.transform = `translate(${sx}px, ${sy}px) scale(${hit ? 1.03 : 1})`;
     this.cv.style.opacity = Math.min(enter(t, 0, .2), leave(ctx)) || 0;
     ctx.person.style.opacity = hit ? 0 : 1;   // person turns to dots too during the flash
     const wq = enter(t, .15, .4);

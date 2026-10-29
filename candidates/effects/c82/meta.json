@@ -9,5 +9,12 @@
  "sources": [
   "https://www.youtube.com/watch?v=HdbPgh_OEmE&t=37s"
  ],
- "ref_moment": "0:37–1:20（用 Submagic 生成的 Hormozi 字幕成品演示）"
+ "ref_moment": "0:37–1:20（用 Submagic 生成的 Hormozi 字幕成品演示）",
+ "params": {
+  "per": "可选。每组几个词，默认 3（遇逗号句号提前换组）",
+  "size": "可选。字号，默认 104",
+  "y": "可选。顶部 y，默认 1080",
+  "colors": "可选。当前词高亮色列表，按组轮换，默认 [\"#ffe600\",\"#3dff5a\"]",
+  "hideOld": "可选。同 c80"
+ }
 }

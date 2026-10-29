@@ -9,5 +9,11 @@
  "sources": [
   "https://www.youtube.com/watch?v=N7caOY-JCsY&t=0s"
  ],
- "ref_moment": "0:00–0:15 开头成品"
+ "ref_moment": "0:00–0:15 开头成品",
+ "params": {
+  "at": "重音词（一个或数组），说到时错位拉大并乱抖；不填用高亮词组",
+  "base": "平时三色错开的像素，默认 4",
+  "amp": "重音时额外错开的像素，默认 28",
+  "hold": "每次抖动持续秒数，默认 0.4"
+ }
 }

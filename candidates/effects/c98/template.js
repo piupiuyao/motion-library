@@ -3,7 +3,7 @@ TEMPLATES.c98 = {
   setup(ctx) {
     const P = ctx.params;
     this.sat = P.saturation ?? .15;
-    this.glow = el('div', `position:absolute;left:0;top:0;width:1800px;height:1800px;margin:-900px 0 0 -900px;border-radius:50%;mix-blend-mode:screen;
+    this.glow = el('div', `position:absolute;left:0;top:0;width:1800px;height:1800px;margin:-900px 0 0 -900px;border-radius:50%;mix-blend-mode:plus-lighter;
       background:radial-gradient(circle, rgba(255,236,190,1) 0%, rgba(255,170,70,.95) 12%, rgba(255,110,25,.62) 30%, rgba(230,70,0,.3) 50%, rgba(160,40,0,.1) 62%, transparent 72%)`);
     this.wash = el('div', `position:absolute;inset:0;mix-blend-mode:screen;background:linear-gradient(150deg, rgba(255,120,30,.55), rgba(255,80,0,.12) 50%, transparent 75%)`);
     this.streak = el('div', `position:absolute;left:0;top:0;width:1700px;height:26px;margin:-13px 0 0 -850px;mix-blend-mode:screen;border-radius:50%;
@@ -23,8 +23,8 @@ TEMPLATES.c98 = {
     const t = ctx.t, d = ctx.d, p = ctx.p;
     const on = Math.min(enter(t, 0, .6), leave(ctx, .4));
     // light source drifts from the top-left corner across the top of the frame
-    const sx = lerp(-80, 760, ease.inOut(p)), sy = lerp(-60, 260, ease.inOut(p)) + Math.sin(t * 1.3) * 30;
-    const breathe = .85 + .15 * Math.sin(t * 2.1);
+    const sx = lerp(60, 900, ease.inOut(p)), sy = lerp(160, 330, ease.inOut(p)) + Math.sin(t * 1.3) * 30;
+    const breathe = .9 + .1 * Math.sin(t * 2.1);
     this.glow.style.transform = `translate(${sx}px, ${sy}px) scale(${breathe})`;
     this.glow.style.opacity = on;
     this.wash.style.opacity = on * (.7 + .3 * Math.sin(t * 1.7));

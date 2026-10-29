@@ -12,5 +12,15 @@
  "sources": [
   "https://www.youtube.com/watch?v=bHmYXC1Yow4&t=0s"
  ],
- "ref_moment": "0:00–0:20 开头就是这个效果（作者自己的教程视频格式）"
+ "ref_moment": "0:00–0:20 开头就是这个效果（作者自己的教程视频格式）",
+ "params": {
+  "media": "可选。铺满全屏的截图路径或 B-roll 帧，默认 broll_inbox",
+  "diameter": "可选。角落圆形直径，默认 340",
+  "corner": "可选。bl 左下（默认）/ br 右下",
+  "center": "可选。圆心 [x,y]，覆盖 corner",
+  "radius": "可选。从原画面里以脸为中心裁的圆半径，默认 360",
+  "ring": "可选。描边颜色，默认 --accent",
+  "border": "可选。描边粗细，默认 9",
+  "t0": "可选。第几秒开始缩小，默认 0.25"
+ }
 }

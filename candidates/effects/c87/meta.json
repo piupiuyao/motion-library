@@ -10,5 +10,12 @@
   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=330s",
   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=823s"
  ],
- "ref_moment": "Matt Loui 5:30–6:52（Flicker Text Effect）；Patrik Key 13:43–14:13（Flicker Effect）"
+ "ref_moment": "Matt Loui 5:30–6:52（Flicker Text Effect）；Patrik Key 13:43–14:13（Flicker Effect）",
+ "params": {
+  "words": "要闪出来的词列表：[{\"text\":\"EXACTLY\",\"at\":\"exactly\"}, …]，每个词在说到 at 时闪着出",
+  "size": "可选。字号，默认 120",
+  "y": "可选。顶部 y，默认 1110",
+  "gradient": "可选。字的渐变色 CSS",
+  "pattern": "可选。闪烁时每帧的透明度序列"
+ }
 }

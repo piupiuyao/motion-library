@@ -5,7 +5,7 @@ TEMPLATES.c89 = {
   setup(ctx) {
     const P = ctx.params;
     const txt = String(P.text || 'HARDER').toUpperCase();
-    this.size = P.size || Math.min(330, Math.floor(1040 / (txt.length * .7)));
+    this.size = P.size || Math.min(330, Math.floor(980 / (txt.length * .78)));
     this.y = P.y || Math.round(ctx.focus[1] * 1920 - this.size * .45);
     this.word = el('div', `position:absolute;left:0;right:0;top:${this.y}px;text-align:center;font-size:${this.size}px;line-height:1;white-space:nowrap;
       color:${P.color || 'var(--accent)'};-webkit-text-stroke:5px var(--ink);paint-order:stroke fill;text-shadow:0 10px 30px rgba(0,0,0,.35)`, txt);

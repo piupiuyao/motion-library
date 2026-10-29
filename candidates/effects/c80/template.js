@@ -42,15 +42,20 @@ TEMPLATES.c80 = {
     const P = ctx.params, per = P.per || 4;
     const ws = ctx.words.filter(w => w.w.trim());
     // lines of up to `per` words, broken after punctuation
+    // lines of up to `per` words that also fit the frame width at full size, broken after punctuation
+    const size = P.size || 84;
+    const mc = document.createElement('canvas').getContext('2d');
+    mc.font = `800 ${size}px "Avenir Next", sans-serif`;
+    const wid = w => mc.measureText(w.w).width + size * .26;
     this.lines = [];
-    let cur = [];
+    let cur = [], cw = 0;
     ws.forEach((w, j) => {
-      cur.push(w);
-      if (cur.length >= per || /[.,!?;:]$/.test(w.w) || j === ws.length - 1) { this.lines.push(cur); cur = []; }
+      if (cur.length && cw + wid(w) > 990) { this.lines.push(cur); cur = []; cw = 0; }
+      cur.push(w); cw += wid(w);
+      if (cur.length >= per || /[.,!?;:]$/.test(w.w) || j === ws.length - 1) { this.lines.push(cur); cur = []; cw = 0; }
     });
     this.box = el('div', `position:absolute;left:40px;right:40px;top:${P.y || 1075}px;height:200px`);
     ctx.L.front.appendChild(this.box);
-    const size = P.size || 84;
     this.lines = this.lines.map((ln, k) => {
       const row = el('div', `position:absolute;left:0;right:0;top:0;display:flex;justify-content:center;flex-wrap:nowrap;gap:0 ${Math.round(size * .26)}px;
         font:800 ${size}px/1.1 var(--font-body);color:#fff;letter-spacing:-.01em;text-shadow:0 3px 14px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.5);white-space:nowrap`);

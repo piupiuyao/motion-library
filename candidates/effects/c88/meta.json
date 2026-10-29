@@ -11,5 +11,14 @@
  "sources": [
   "https://www.youtube.com/watch?v=fpJdfEcuGe0&t=30s"
  ],
- "ref_moment": "0:30–3:30（教程用的是绕杯子转的 rolling text，方法同样用于人）"
+ "ref_moment": "0:30–3:30（教程用的是绕杯子转的 rolling text，方法同样用于人）",
+ "params": {
+  "text": "一圈的文字（会自动重复填满一圈），默认 \"REPETITIVE • TIME-CONSUMING • \"",
+  "y": "可选。圆环中心高度，默认 985（下巴下方/脖子）",
+  "rx": "可选。圆环横向半径，默认 450",
+  "ry": "可选。透视纵向半径，默认 110",
+  "period": "可选。转一圈的秒数，默认 3.6",
+  "size": "可选。字号，默认 74",
+  "color": "可选。前半圈字色"
+ }
 }

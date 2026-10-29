@@ -2,14 +2,14 @@
 TEMPLATES.c103 = {
   setup(ctx) {
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165 };
-    this.angle = P.angle ?? 30;
+    this.media = P.media || 'assets/docs/gmail.jpg';
+    this.angle = P.angle ?? 36;
     this.side = P.side || 'left';
-    const w = P.w || 540, h = P.h || 500;
+    const w = P.w || 570, h = P.h || 550;
     const x = this.side === 'left' ? (P.x ?? 40) : (P.x ?? 1080 - 40 - w);
-    this.scene = el('div', `position:absolute;left:${x}px;top:${P.y ?? 900}px;width:${w}px;height:${h}px;perspective:1400px`);
+    this.scene = el('div', `position:absolute;left:${x}px;top:${P.y ?? 880}px;width:${w}px;height:${h}px;perspective:1000px;perspective-origin:50% 40%`);
     this.pane = el('div', `position:absolute;inset:0;border-radius:34px;background:#0d0d0f;padding:14px;box-sizing:border-box;
-      box-shadow:0 40px 70px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.18) inset;transform-origin:${this.side === 'left' ? '0%' : '100%'} 50%`);
+      box-shadow:0 40px 70px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.18) inset;transform-origin:${this.side === 'left' ? '20%' : '80%'} 50%`);
     const scr = el('div', 'position:relative;width:100%;height:100%;border-radius:22px;overflow:hidden;background:#222');
     this.img = el('img', 'position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover');
     this.gloss = el('div', 'position:absolute;inset:0;background:linear-gradient(115deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 38%)');

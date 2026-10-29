@@ -35,7 +35,7 @@ TEMPLATES.c83 = {
       this.board.appendChild(cell);
       const k = ri * cols + ci;
       // blank cells settle almost at once; the rest stop one after another, left to right
-      const settle = c === ' ' ? 3 : 10 + Math.round(ci * 2.6 + ri * 3);
+      const settle = c === " " ? 3 : 8 + Math.round(ci * 1.8 + ri * 2);
       this.cells.push({ top, bot, fT, fB, target: c, settle, k, SET });
     }));
     this.dt = P.flip || .065;
