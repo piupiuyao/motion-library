@@ -1,5 +1,27 @@
-{"skin": "clean", "captions": false, "shots": [
-  {"words": "22-29", "template": "c80", "params": {}},
-  {"words": "90-97", "template": "c82", "params": {}},
-  {"words": "129-137", "template": "c81", "params": {}}
-]}
+{
+ "skin": "clean",
+ "captions": false,
+ "shots": [
+  {
+   "words": "22-29",
+   "template": "c80",
+   "params": {
+    "hideOld": true
+   }
+  },
+  {
+   "words": "90-97",
+   "template": "c82",
+   "params": {
+    "hideOld": true
+   }
+  },
+  {
+   "words": "129-137",
+   "template": "c81",
+   "params": {
+    "hideOld": true
+   }
+  }
+ ]
+}

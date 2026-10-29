@@ -14,6 +14,7 @@ TEMPLATES.c34 = {
     this.n = P.ticks || 25;
     this.lo = -135; this.hi = 135;
     this.level = P.level ?? .88;
+    this.from = P.from ?? 0;
     this.ticks = [];
     for (let i = 0; i < this.n; i++) {
       const a = this.lo + (this.hi - this.lo) * i / (this.n - 1), big = i % 4 === 0;
@@ -49,7 +50,7 @@ TEMPLATES.c34 = {
     this.dial.style.opacity = Math.min(clamp(pin * 2), out);
     this.dial.style.transform = `scale(${lerp(.35, 1, ease.back(pin))})`;
     this.title.style.opacity = Math.min(pin, out);
-    const turn = this.level * ease.back(enter(t, .5, Math.min(1.4, ctx.d * .4)));
+    const turn = Math.max(-.02, lerp(this.from, this.level, ease.back(enter(t, .5, Math.min(1.4, ctx.d * .4)))));
     const ang = this.lo + (this.hi - this.lo) * turn;
     this.knob.style.transform = `rotate(${ang}deg)`;
     // purple light beam fanning out from the knob over the active range
