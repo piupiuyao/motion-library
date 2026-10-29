@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "description-only",
+  "checked": "Motion Array page is blocked to scripts. Checked pop-in, held and collapse stills",
+  "fixed": "No change needed; the card also covers the burned-in red icon at ~38.5s.",
+  "left": "Not compared with the real macro."
+}

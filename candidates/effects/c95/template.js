@@ -27,7 +27,7 @@ TEMPLATES.c95 = {
   setup(ctx) {
     const P = ctx.params;
     this.hc = document.createElement('canvas'); this.hc.width = 54; this.hc.height = 96;
-    this.dx = P.dx ?? 150; this.dy = P.dy ?? -70;      // sticker offset from the top of the head
+    this.dx = P.dx ?? 200; this.dy = P.dy ?? 30;      // sticker offset from the top of the head
     this.wrap = el('div', 'position:absolute;left:0;top:0;width:0;height:0');
     this.tag = el('div', `position:absolute;left:0;top:0;transform:translate(-50%,-100%);white-space:nowrap;display:flex;align-items:center;gap:16px;
       padding:18px 34px 22px;background:var(--paper);color:var(--ink);border-radius:999px;font:800 62px var(--font-body);

@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "fetched",
+  "checked": "Envato camera-frame overlay: thin corner brackets, bottom info row (fps, shutter, f-stop, codec, card time, battery %, L/R audio meters)",
+  "fixed": "Added L/R audio meters that bounce, battery %, card-time line, fuller exposure readout; REC dot now blinks with a 1 s rhythm (visible 60% of the time); moved shot to words 127-140 to get away from the burned-in CODE cards.",
+  "left": ""
+}

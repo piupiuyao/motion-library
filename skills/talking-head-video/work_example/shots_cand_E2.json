@@ -1,0 +1,14 @@
+{"skin": "clean", "shots": [
+  {"words": "0-4", "template": "c86", "params": {"text": "MONICA", "at": "Monica"}},
+  {"words": "15-25", "template": "c88", "params": {"text": "REPETITIVE • TIME-CONSUMING • "}},
+  {"words": "26-34", "template": "c92", "params": {"windows": [{"image": "assets/docs/gmail.jpg", "title": "Mail", "at": "every"}, {"image": "assets/docs/chat.jpg", "title": "WhatsApp", "at": "which"}, {"image": "assets/docs/notify.jpg", "title": "Notifications", "at": "replying"}]}},
+  {"words": "35-45", "template": "c91", "params": {}},
+  {"words": "59-66", "template": "c85", "params": {"label": "EMOTIONAL ENERGY", "value": 87, "at": "my"}},
+  {"words": "67-73", "template": "c90", "params": {"lines": ["NOT JUST", "TYPING"]}},
+  {"words": "90-97", "template": "c93", "params": {}},
+  {"words": "98-104", "template": "c83", "params": {"text": "ENERGY|0%", "at": "simply"}},
+  {"words": "105-114", "template": "c84", "params": {"from": 5}},
+  {"words": "123-128", "template": "c89", "params": {"text": "HARDER"}},
+  {"words": "129-137", "template": "c94", "params": {"icon": "😔", "text": "Guilty for<br>taking so long"}},
+  {"words": "138-148", "template": "c87", "params": {"words": [{"text": "EXACTLY", "at": "exactly"}, {"text": "THIS", "at": "kind"}, {"text": "PROBLEM", "at": "problem"}]}}
+]}

@@ -25,7 +25,7 @@
    "template": "c17",
    "params": {
     "highlight": "Emails, WhatsApp, Telegram: replying to messages is the task people say drains them most.",
-    "at": "emails"
+    "at": 1.8
    }
   },
   {
@@ -53,7 +53,7 @@
    }
   },
   {
-   "words": "58-66",
+   "words": "61-66",
    "template": "c26",
    "params": {
     "items": [
@@ -111,7 +111,7 @@
    "words": "108-114",
    "template": "c18",
    "params": {
-    "label": "long message!"
+    "label": "just leave it..."
    }
   },
   {

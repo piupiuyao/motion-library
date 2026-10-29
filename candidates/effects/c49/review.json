@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "fetched",
+  "checked": "Envato multi-step progress bars: segmented bar, active step highlighted, step label",
+  "fixed": "No change needed: segmented top bar fills and shows a 'STEP n/4 · label' chip.",
+  "left": "Envato's version sits in a white rounded box with numbered nodes and checkmarks; ours is a slimmer Stories-style bar. Burned-in INBOX PRESSURE card shows in this window (19-22s)."
+}

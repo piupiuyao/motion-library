@@ -11,7 +11,7 @@ TEMPLATES.c43 = {
     const ts = (P.at || []).map(at);
     this.times = imgs.map((_, j) => j === 0 ? 0 : ts[j - 1] != null ? ts[j - 1] : j * ctx.d / imgs.length);
     this.panels = imgs.map((src, j) => {
-      const c = el('div', `position:absolute;top:330px;width:640px;padding:16px;border-radius:30px;background:#fff;box-shadow:0 26px 60px rgba(0,0,0,.4)`);
+      const c = el('div', `position:absolute;top:280px;width:680px;padding:16px;border-radius:30px;background:#fff;box-shadow:0 26px 60px rgba(0,0,0,.4)`);
       const img = el('img', 'display:block;width:100%;border-radius:18px');
       img.src = url(src); pending.push(img.decode().catch(() => {}));
       c.appendChild(img);
@@ -32,7 +32,7 @@ TEMPLATES.c43 = {
     ctx.person.style.transform = `translateX(${x}px) scale(${lerp(ctx.seg.zoom || 1, .82, pin)})`;
     this.panels.forEach((c, j) => {
       const s = side(j);               // panel sits opposite the person
-      const left = s < 0 ? 400 : 40;
+      const left = s < 0 ? 372 : 28;
       let off, op = 1;
       if (j === k) { const q = j ? ease.out(enter(ctx.t, this.times[j] + .1, .5)) : pin; off = (1 - q) * 1100 * (s < 0 ? 1 : -1); op = clamp(q * 3); }
       else if (j === k - 1) { off = sw * 1100 * (s < 0 ? 1 : -1); op = 1 - sw; }

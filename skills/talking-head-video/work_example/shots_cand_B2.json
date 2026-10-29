@@ -31,12 +31,14 @@
    }
   },
   {
-   "words": "58-66",
+   "words": "61-66",
    "template": "c22",
    "params": {
-    "emoji": "🪫",
-    "label": "Emotional energy",
-    "at": "lot"
+    "emoji": "🔋",
+    "label": "Low battery",
+    "at": "lot",
+    "dx": 330,
+    "dy": 60
    }
   },
   {

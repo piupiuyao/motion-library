@@ -1,0 +1,9 @@
+{"skin": "clean", "shots": [
+  {"words": "18-29", "template": "c95", "params": {"text": "so drained", "emoji": "😮‍💨"}},
+  {"words": "62-66", "template": "c99", "params": {"at": ["emotional", "energy"]}},
+  {"words": "67-73", "template": "c105", "params": {"text": "Replying isn't just typing or saying."}},
+  {"words": "90-97", "template": "c106", "params": {"user": "jess.k", "text": "how do you answer the long emotional texts?? 😭"}},
+  {"words": "106-114", "template": "c98", "params": {}},
+  {"words": "123-137", "template": "c109", "params": {"at": "guilty"}},
+  {"words": "138-148", "template": "c101", "params": {"keyword": "AI", "sub": "I'll send you my setup"}}
+]}

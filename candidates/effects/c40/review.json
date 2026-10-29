@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "fetched",
+  "checked": "Ali Abdaal CapCut tutorial: inverted (black) newspaper texture, list as plain white text with small pictures, check circles",
+  "fixed": "List restyled to match Ali: no white cards, white text straight on the newspaper with tilted picture tiles that have a white border; accent-coloured title with a dark glow; newspaper a bit dimmer so the list stands out; shot trimmed to words 35-45 so the burned-in 'replying to messages' text is gone.",
+  "left": "Newspaper is drawn with CSS (fake headlines + stripes), not a real scanned page. A burned-in Slack icon still passes through the cut-out at ~14s (it's in the matte)."
+}

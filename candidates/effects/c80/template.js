@@ -62,6 +62,11 @@ TEMPLATES.c80 = {
         return { e, s: Math.min(w.s, t0 + j * .14) - .05 };
       });
       this.box.appendChild(row);
+      // shrink long lines so they never run off the frame
+      row.style.justifyContent = 'flex-start';
+      const wid = row.scrollWidth;
+      row.style.justifyContent = 'center';
+      if (wid > 980) row.style.fontSize = Math.floor(size * 980 / wid) + 'px';
       return { row, items, s: t0 - .05 };
     });
   },

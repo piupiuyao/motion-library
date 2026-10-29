@@ -14,13 +14,14 @@
   ],
   "params": {
     "number": "卡上往上跳的数字，默认 12453",
-    "label": "数字说明，默认 Unread emails",
-    "icon": "图标 emoji，默认 ✉️",
+    "label": "卡片标题，默认 Unread messages",
+    "icon": "卡右侧淡淡的大图标：mail / eye / people，或任意 emoji",
     "iconBg": "图标底色 CSS",
-    "delta": "数字下方小字，默认 +128 today",
+    "delta": "数字下方小字，可空",
     "prefix": "数字前缀，如 $",
     "suffix": "数字后缀，如 K",
-    "radius": "绕人的半径像素，默认 350",
-    "dy": "绕行高度相对脸的下移像素，默认 330"
+    "radius": "绕人的半径像素，默认 360",
+    "unit": "数字后面的小字单位，如 Views / unread",
+    "color": "玻璃卡主色，默认紫色 #8b5cff"
   }
 }

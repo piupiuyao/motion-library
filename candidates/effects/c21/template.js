@@ -22,11 +22,11 @@ TEMPLATES.c21 = {
       <div style="position:absolute;inset:0;background:linear-gradient(115deg, rgba(255,255,255,.28), transparent 38%)"></div>
       <div style="position:relative;font:600 40px var(--font-body);opacity:.95">${P.label || 'Unread messages'}</div>
       <div style="position:relative;display:flex;align-items:baseline;gap:14px;margin-top:22px">
-        <span class="n" style="font:800 84px/1 var(--font-body);letter-spacing:-.02em;text-shadow:0 0 26px color-mix(in srgb, ${col} 90%, #fff)">0</span>
+        <span class="n" style="font:800 76px/1 var(--font-body);letter-spacing:-.02em;text-shadow:0 0 26px color-mix(in srgb, ${col} 90%, #fff)">0</span>
         <span style="font:600 30px var(--font-body);opacity:.85">${P.unit || ''}</span></div>
       <div style="position:relative;margin-top:18px;font:700 32px var(--font-body);color:#d9ccff">${P.delta || ''}</div>`;
     this.n = this.card.querySelector('.n');
-    this.R = P.radius || 400;
+    this.R = P.radius || 360;
     this.fallback = [ctx.focus[0] * 1080, ctx.focus[1] * 1920 - 300];
     ctx.L.front.appendChild(this.card);
   },
@@ -48,9 +48,9 @@ TEMPLATES.c21 = {
     const t = ctx.t, P = ctx.params;
     const [hx, hy] = this.head(ctx);
     // one turn: enter at the right side, pass behind the head, around the left, across the chest, settle front-right
-    const dur = Math.max(2.2, ctx.d * .62);
-    const u = ease.inOut(clamp((t - .1) / dur));
-    const th = Math.PI * .5 + u * Math.PI * 1.94;
+    const dur = Math.max(2.4, ctx.d * .72);
+    const u = 1 - Math.pow(1 - clamp((t - .1) / dur), 1.7);   // steady through the back pass, settles at the end
+    const th = Math.PI * .5 + u * Math.PI * 1.88;
     const z = Math.cos(th);                               // 1 = nearest the camera, -1 = behind the person
     const x = hx + this.R * Math.sin(th);
     const y = hy + 380 + 300 * z;                         // tilted ring: far side at the forehead, near side at the chest

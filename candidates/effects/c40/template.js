@@ -8,7 +8,7 @@ TEMPLATES.c40 = {
     ctx.L.bg.style.background = '#141414';
     // an "inverted" newspaper page drawn with CSS: masthead, headlines, columns of grey text lines
     const paper = this.paper = el('div', `position:absolute;left:-160px;top:-160px;width:1400px;height:2300px;padding:60px 70px;box-sizing:border-box;
-      color:#d9d4c7;font-family:Georgia,'Times New Roman',serif;opacity:.55`);
+      color:#d9d4c7;font-family:Georgia,'Times New Roman',serif;opacity:.6`);
     paper.appendChild(el('div', 'text-align:center;font:900 150px/1 "Old English Text MT",Georgia,serif;letter-spacing:.02em;border-bottom:6px double #d9d4c7;padding-bottom:20px', 'The Daily Inbox'));
     paper.appendChild(el('div', 'display:flex;justify-content:space-between;font:400 28px Georgia;padding:10px 0;border-bottom:2px solid #d9d4c7', '<span>VOL. CXII</span><span>MONDAY EDITION</span><span>PRICE 5 CENTS</span>'));
     const heads = ['MESSAGES PILE UP AGAIN', 'Replies Delayed For Days', 'Readers Report Guilt', 'Inbox Zero Remains a Myth', 'Experts Baffled'];
@@ -28,19 +28,20 @@ TEMPLATES.c40 = {
     ctx.L.bg.appendChild(paper);
     ctx.L.bg.appendChild(el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, transparent 30%, rgba(0,0,0,.65))'));
     ctx.personCv.style.filter = outline(6, '#fff');
-    this.list = el('div', 'position:absolute;left:50px;top:300px;width:600px;display:flex;flex-direction:column;gap:26px');
+    this.list = el('div', 'position:absolute;left:50px;top:300px;width:600px;display:flex;flex-direction:column;gap:40px');
     if (P.title) {
-      const h = el('div', 'font-size:72px;color:var(--paper);margin-bottom:8px;text-shadow:0 4px 18px rgba(0,0,0,.6)', P.title);
+      const h = el('div', 'font-size:76px;color:var(--accent);margin-bottom:4px;text-shadow:0 0 10px #000, 0 4px 24px #000', P.title);
       h.className = 'display';
       this.list.appendChild(h);
       this.title = h;
     }
     const items = P.items || [];
     this.items = items.map((it, j) => {
-      const row = el('div', `display:flex;align-items:center;gap:22px;padding:16px 26px 16px 16px;border-radius:22px;background:var(--paper);
-        box-shadow:0 18px 36px rgba(0,0,0,.45);transform-origin:0 50%;width:max-content`);
-      row.appendChild(el('div', `flex:none;width:96px;height:96px;border-radius:18px;background:${it.color || 'var(--accent)'};display:flex;align-items:center;justify-content:center;font-size:58px`, it.icon || '•'));
-      row.appendChild(el('div', 'font:800 54px var(--font-body);color:var(--ink);white-space:nowrap', `<span style="opacity:.35;margin-right:14px">${j + 1}</span>${it.text}`));
+      // Ali Abdaal look: no card, just a small picture tile + white text straight on the dark newspaper
+      const row = el('div', `display:flex;align-items:center;gap:24px;transform-origin:0 50%;width:max-content`);
+      row.appendChild(el('div', `flex:none;width:104px;height:104px;border-radius:16px;background:${it.color || 'var(--accent)'};display:flex;align-items:center;justify-content:center;font-size:62px;
+        box-shadow:0 0 0 5px #fff, 0 12px 26px rgba(0,0,0,.6);transform:rotate(${j % 2 ? 3 : -3}deg)`, it.icon || '•'));
+      row.appendChild(el('div', 'font:800 60px var(--font-body);color:#fff;white-space:nowrap;text-shadow:0 3px 14px rgba(0,0,0,.85)', it.text));
       this.list.appendChild(row);
       const t = it.at != null ? at(it.at) : null;
       return { row, t: t != null ? t : .6 + j * .6 };

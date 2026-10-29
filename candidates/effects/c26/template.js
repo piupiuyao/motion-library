@@ -11,7 +11,7 @@ TEMPLATES.c26 = {
     const items = P.items || [{ emoji: '😱', at: null }, { emoji: '🔥', at: null }];
     const spots = [[fx - 310, fy + 150, -14], [fx + 300, fy - 40, 12], [fx - 300, fy + 420, 10], [fx + 300, fy + 330, -10]];
     this.pops = items.map((it, k) => {
-      const [x, y, r] = spots[k % 4];
+      const [x0, y, r] = spots[k % 4], x = clamp(x0, 170, 910);
       const e = el('div', `position:absolute;left:${x - 140}px;top:${y - 140}px;width:280px;height:280px;font-size:230px;line-height:280px;text-align:center`, it.emoji);
       ctx.L.front.appendChild(e);
       return { e, r, t0: this.at(ctx, it.at, .2 + k * ctx.d / (items.length + 1)) };
