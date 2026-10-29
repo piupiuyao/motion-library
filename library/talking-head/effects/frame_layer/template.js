@@ -20,7 +20,7 @@ TEMPLATES.frame_layer = {
     ctx.base.style.transformOrigin = ctx.person.style.transformOrigin = '0 0';
     ctx.base.style.clipPath = `inset(${w.y}px ${1080 - w.x - w.w}px ${1920 - w.y - w.h}px ${w.x}px)`;
     ctx.person.style.clipPath = `inset(0 0 ${1920 - w.y - w.h}px 0)`;
-    ctx.personCv.style.filter = 'drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff) drop-shadow(0 16px 24px rgba(0,0,0,.3))';
+    ctx.personCv.style.filter = outline(5, '#fff');
     this.stickers = P.stickers === false ? [] : [
       ['★', 'left:60px;top:420px;font-size:150px;color:var(--accent);-webkit-text-stroke:5px var(--ink)', -12, .35],
       ['', 'left:720px;top:440px;width:260px;height:70px;background:var(--accent-2);opacity:.85', 18, .5],

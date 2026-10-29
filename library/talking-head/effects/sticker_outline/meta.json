@@ -1,0 +1,36 @@
+{
+  "id": "sticker_outline",
+  "name": "人像贴纸描边",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "换话题"
+  ],
+  "style": [
+    "网感",
+    "拼贴"
+  ],
+  "needs": [
+    "抠像"
+  ],
+  "use_for": [
+    "段落开头",
+    "想让人「跳出来」的时候"
+  ],
+  "needs_assets": [],
+  "layers": [
+    "虚化压暗的原画面（或图案背景）",
+    "抠出的人像（粗白边）"
+  ],
+  "duration": "2–4 秒",
+  "params": {
+    "background": "可选。dots / grid / neon / paper，不写就用虚化的原画面",
+    "width": "可选。描边粗细，默认 12",
+    "color": "可选。描边颜色，默认白色"
+  },
+  "source": {
+    "from": "我李哥豆儿「4 套剪辑手法打破扁平画面」（视频号，refs/95_1793056112）",
+    "note": "B 全片几乎都加了描边；抠出的人像加白色或彩色描边，像一张贴纸"
+  }
+}

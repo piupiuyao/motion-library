@@ -13,10 +13,9 @@
 tags.json                         标签取值表（唯一来源）
 library/
   talking-head/                   口播
-    effects/<id>/                 能出片：meta.json + template.js + preview.mp4 + poster.jpg
-    refs/<id>/                    参考：只拆了别人的片子，还没做成模板（meta.json + 原片片段）
-  launch/                         产品发布片
-    refs/<id>/                    Monica Taste Gallery 的 22 条（整片参考）
+    effects/<id>/                 每个动效：meta.json + template.js + preview.mp4 + poster.jpg
+inspiration/
+  launch/refs/<id>/               Monica Taste Gallery 的 22 条产品发布片（整片，还没拆成动效，不进库页面）
 skills/
   talking-head-video/             口播一键成片 skill（转写 → 粗剪 → 抠像 → 镜头表 → 出片），模板从 library 取
 tools/
@@ -28,7 +27,7 @@ gallery/index.html                库页面
 ## 严格区分的规则
 
 1. **视频类型由文件夹决定**：放在 `library/talking-head/` 下的，`video_type` 必须是 `talking-head`，不一致直接报错。
-2. **状态由子文件夹决定**：`effects/` 是能出片（必须有 `template.js`），`refs/` 是参考。
+2. **库里只放做出来的动效**：每个都有 `template.js` 和用同一段口播渲染的预览。别人的整片放 `inspiration/`，拆成动效、写好代码后才进库。
 3. **替代只在同一类型里找**：口播动效不会推荐产品发布片的东西。
 
 ## 每条的标签
@@ -43,9 +42,7 @@ gallery/index.html                库页面
 
 ## 加一条
 
-- **参考**：建 `library/<类型>/refs/<id>/meta.json`，放一段原片片段 `preview.mp4`（几秒，裁掉手机界面）或一张 `poster.jpg`。
-- **能出片**：建 `library/<类型>/effects/<id>/`，写 `meta.json` + `template.js`（写法见 `skills/talking-head-video/SKILL.md`「加新模板」），在示例镜头表 `shots_showcase.json` 里用一次，跑 `python3 tools/previews.py <id>`。
-- 一个参考做成模板后：把文件夹从 `refs/` 移到 `effects/`，补上代码和参数。
+- 建 `library/<类型>/effects/<id>/`，写 `meta.json` + `template.js`（写法见 `skills/talking-head-video/SKILL.md`「加新模板」），在示例镜头表 `shots_showcase.json` 里用一次，跑 `python3 tools/previews.py <id>`。
 - 最后都跑 `python3 tools/catalog.py`。
 
-参考片段截自别人的视频，只做内部学习用，这个库不要公开。
+`inspiration/` 里的缩略图和介绍来自别人的片子，只做内部学习用，这个库不要公开。

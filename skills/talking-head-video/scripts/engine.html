@@ -71,6 +71,29 @@ function mediaSrc(m, t) {
   const n = Math.min(m.count || 1e9, 1 + Math.floor(((m.offset || 0) + t) * (m.fps || TL.fps)));
   return frameUrl(m.frames, n);
 }
+// background patterns shared by templates: dots | grid | neon | paper | plain
+function crumpled(seed = 3) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1080' height='1920'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='${seed}'/>`
+    + `<feDiffuseLighting lighting-color='#f1ede4' surfaceScale='3.2'><feDistantLight azimuth='45' elevation='58'/></feDiffuseLighting></filter>`
+    + `<rect width='100%' height='100%' filter='url(%23f)'/></svg>`;
+  return `url("data:image/svg+xml;utf8,${svg.replace(/</g, '%3C').replace(/>/g, '%3E').replace(/'/g, '%27')}") center/cover, #ece7dc`;
+}
+function pattern(name) {
+  return {
+    dots: 'radial-gradient(circle, rgba(255,255,255,.16) 13px, transparent 14px) 0 0/72px 72px, var(--bg-a)',
+    grid: 'repeating-linear-gradient(0deg, transparent 0 58px, rgba(255,255,255,.12) 58px 60px), repeating-linear-gradient(90deg, var(--bg-a) 0 58px, rgba(255,255,255,.12) 58px 60px)',
+    neon: 'repeating-linear-gradient(90deg, transparent 0 120px, rgba(255,255,255,.05) 120px 124px), radial-gradient(ellipse at 30% 20%, rgba(150,60,255,.75), transparent 60%), radial-gradient(ellipse at 80% 85%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 55%), #120a24',
+    paper: crumpled(),
+    plain: 'var(--bg-a)',
+  }[name] || name;
+}
+// sticker-style outline around the cutout person. Drawn into the cutout canvas (see cutout()), not as CSS
+// drop-shadows: stacked filters cost ~5s a frame at 1080x1920. Returns the (cheap) soft shadow filter, if any.
+let outlineCfg = null;
+function outline(px = 6, color = '#fff', shadow = true) {
+  outlineCfg = { px, color };
+  return shadow ? 'drop-shadow(0 16px 22px rgba(0,0,0,.32))' : '';
+}
 const pending = [];
 function setImg(img, src) {
   if (img.getAttribute('src') !== src) { img.src = src; pending.push(img.decode().catch(() => {})); }
@@ -84,6 +107,8 @@ const base = byId('base'), baseImg = byId('baseImg'), person = byId('person'), p
 const pctx = personCv.getContext('2d', { willReadFrequently: true });
 const maskCv = document.createElement('canvas'); maskCv.width = W; maskCv.height = H;
 const mctx = maskCv.getContext('2d', { willReadFrequently: true });
+const lineCv = document.createElement('canvas'); lineCv.width = W; lineCv.height = H;
+const lctx = lineCv.getContext('2d');
 const maskImg = new Image(), srcImg = new Image();
 document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
 
@@ -104,6 +129,7 @@ function resetLayers() {
   for (const m of [base, person]) { m.style.cssText = ''; }
   baseImg.style.cssText = ''; personCv.style.cssText = '';
   person.style.display = 'none';
+  outlineCfg = null;
 }
 
 async function cutout(srcUrl, maskUrl) {
@@ -112,10 +138,25 @@ async function cutout(srcUrl, maskUrl) {
   mctx.clearRect(0, 0, W, H); mctx.drawImage(maskImg, 0, 0, W, H);
   const m = mctx.getImageData(0, 0, W, H), d = m.data;
   for (let i = 0; i < d.length; i += 4) { d[i + 3] = d[i]; }
+  mctx.putImageData(m, 0, 0);
   pctx.globalCompositeOperation = 'copy';
-  pctx.putImageData(m, 0, 0);
+  pctx.drawImage(maskCv, 0, 0);
   pctx.globalCompositeOperation = 'source-in';
   pctx.drawImage(srcImg, 0, 0, W, H);
+  if (outlineCfg) {
+    // stamp the mask in a ring of offsets, colour it, and slide it under the person
+    const { px, color } = outlineCfg;
+    lctx.globalCompositeOperation = 'source-over';
+    lctx.clearRect(0, 0, W, H);
+    // three rings so the soft matte edge still gives a solid line
+    for (const r of [px, px * .66, px * .33])
+      for (let a = 0; a < 16; a++) lctx.drawImage(maskCv, Math.cos(a * Math.PI / 8) * r, Math.sin(a * Math.PI / 8) * r);
+    lctx.globalCompositeOperation = 'source-in';
+    lctx.fillStyle = color;
+    lctx.fillRect(0, 0, W, H);
+    pctx.globalCompositeOperation = 'destination-over';
+    pctx.drawImage(lineCv, 0, 0);
+  }
   pctx.globalCompositeOperation = 'source-over';
 }
 

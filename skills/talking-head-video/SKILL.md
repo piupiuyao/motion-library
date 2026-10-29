@@ -11,7 +11,7 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
 - **规则层**：这句话在说什么（观点 / 吐槽 / 数据 / 资料 / 细节 / 情绪高点 / 列举）→ 该用哪类画面。
 - **模板层**：每个模板是一套分好层的画面（背景 / 原画面 / 人后文字 / 抠出的人像 / 人前元素），把人像放进去就出画面。换颜色和字体（皮肤）就是另一种风格。
 
-模板放在共用的动效库里：**`../../library/talking-head/effects/`**。总表和速查见 `../../library/README.md`，可视化的库页面是 `../../gallery/index.html`。标签取值见 `../../tags.json`，只选 `status: ready` 的（`refs/` 里的是参考，还不能出片）。
+模板放在共用的动效库里：**`../../library/talking-head/effects/`**。总表和速查见 `../../library/README.md`，可视化的库页面是 `../../gallery/index.html`。标签取值见 `../../tags.json`。现在有 17 个，分字体 / 素材 / 版式 / 镜头特效 / 片头片尾五类。
 
 ## 硬规则
 
@@ -86,7 +86,6 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
 
 1. 新建 `library/talking-head/effects/<id>/`，写 `meta.json`（标签按 `tags.json`：类别、句子用途、风格、需要什么；再加分层、参数、出处）和 `template.js`（`setup` 搭画面，`frame` 每帧按时间改样式）。照现有 8 个的写法，只用 `engine.html` 里的皮肤变量（`--accent` 等），换皮肤才会跟着变。
 2. 在 `work_example/shots_showcase.json` 里用一次，跑 `python3 tools/previews.py <id>` 出预览，再跑 `python3 tools/catalog.py` 更新总表和库页面（标签写错会报错）。
-3. 如果是从 `refs/` 里的参考做出来的，把那个参考文件夹删掉。
 
 ## 环境
 

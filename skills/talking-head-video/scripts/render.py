@@ -118,7 +118,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
         src_frame = int((seg['src'] + start - seg['out']) * FPS) + 1
         shots.append({'template': s['template'], 'params': params, 'purpose': s.get('purpose'), 'start': round(start, 3),
                       'end': round(ws[-1]['e'] + .12, 3), 'words': ws, 'keys': keys, 'groups': groups,
-                      'matte': bool(tmpl[s['template']].get('needs_matte')),
+                      'matte': '抠像' in tmpl[s['template']].get('needs', []),
                       'focus': s.get('focus') or head_focus(matte_dir, src_frame) or [.5, .33]})
     # close small gaps so templates hand over cleanly; never overlap
     for a, b in zip(shots, shots[1:]):

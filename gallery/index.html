@@ -83,7 +83,7 @@
 <body>
 <header>
   <h1>动效库</h1>
-  <div class="sub">口播和产品发布片分开放。<b style="color:var(--accent)">能出片</b>＝有模板，剪片时可以直接用；<b style="color:var(--ref)">参考</b>＝只拆了别人的片子，还没做成模板。</div>
+  <div class="sub">每个动效用同一段口播演示。鼠标放上去播放，点开看参数和可以替换的动效。</div>
   <div class="tabs" id="tabs"></div>
   <div class="filters" id="filters"></div>
   <div class="tools">
@@ -97,7 +97,7 @@
 <script src="data.js"></script>
 <script>
 const { tags: TAGS, types: TYPES, entries: ALL } = window.LIB;
-const FACETS = [['status', '状态'], ['category', '类别'], ['purpose', '句子用途'], ['style', '风格'], ['needs', '需要']];
+const FACETS = [['category', '类别'], ['purpose', '句子用途'], ['style', '风格'], ['needs', '需要']];
 const STATUS = { ready: '能出片', reference: '参考' };
 const state = { type: 'talking-head', q: '', sel: {} };
 const byId = Object.fromEntries(ALL.map(e => [e.id, e]));
@@ -122,7 +122,9 @@ function match(e, skip) {
 }
 
 function drawTabs() {
-  $('#tabs').innerHTML = Object.keys(TAGS.video_type).map(t => {
+  const types = Object.keys(TAGS.video_type).filter(t => ALL.some(e => e.video_type === t));
+  $('#tabs').style.display = types.length > 1 ? '' : 'none';
+  $('#tabs').innerHTML = types.map(t => {
     const n = ALL.filter(e => e.video_type === t).length;
     return `<button class="tab ${t === state.type ? 'on' : ''}" data-t="${t}">${esc(TYPES[t] || t)}<small>${n}</small></button>`;
   }).join('');
@@ -158,7 +160,6 @@ function card(e) {
     <div class="thumb">
       ${e._poster ? `<img src="${src(e._poster)}" loading="lazy" alt="">` : ''}
       ${e._preview ? `<video muted loop playsinline preload="none" data-src="${src(e._preview)}"></video>` : ''}
-      <span class="badge ${e.status === 'reference' ? 'ref' : ''}">${STATUS[e.status]}</span>
     </div>
     <div class="meta"><div class="name">${esc(e.name)}</div>
       <div class="tags">${tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></div>
@@ -168,11 +169,7 @@ function card(e) {
 function drawGrid() {
   const list = inType().filter(e => match(e));
   $('#count').textContent = `${list.length} 条`;
-  const groups = [['ready', '能出片'], ['reference', '参考：只拆了，还没做成模板']];
-  const html = groups.map(([st, title]) => {
-    const g = list.filter(e => e.status === st);
-    return g.length ? `<div class="sect">${title} · ${g.length}</div><div class="grid ${state.type === 'launch' ? 'launch' : ''}">${g.map(card).join('')}</div>` : '';
-  }).join('');
+  const html = list.length ? `<div class="grid">${list.map(card).join('')}</div>` : '';
   $('#main').innerHTML = html || '<div class="empty">没有符合的条目，换个筛选试试。</div>';
 }
 
@@ -204,12 +201,12 @@ function openEntry(id) {
   d.innerHTML = `<button class="x" aria-label="关闭">×</button><div class="dlg">
     <div class="media">${media}</div>
     <div class="body">
-      <h2>${esc(e.name)}</h2><div class="id">${esc(e.id)} · ${esc(TYPES[e.video_type])} · ${STATUS[e.status]}</div>
+      <h2>${esc(e.name)}</h2><div class="id">${esc(e.id)} · ${esc(TYPES[e.video_type])}</div>
       <div class="kv">
         <span>类别</span><span>${esc(e.category)}</span>
         ${e.purpose?.length ? `<span>句子用途</span><span>${esc(e.purpose.join('、'))}</span>` : ''}
         <span>风格</span><span>${esc((e.style || []).join('、'))}</span>
-        ${e.status === 'ready' ? `<span>需要</span><span>${esc(e.needs.join('、') || '不用准备')}</span>` : ''}
+        <span>需要</span><span>${esc((e.needs || []).join('、') || '不用准备')}</span>
         ${e.duration ? `<span>时长</span><span>${esc(e.duration)}</span>` : ''}
       </div>
       ${e.what ? `<h3>画面</h3><div>${esc(e.what)}</div>` : ''}
@@ -220,7 +217,7 @@ function openEntry(id) {
       ${params ? `<h3>参数（写在 shots.json 里）</h3><ul>${params}</ul>` : ''}
       ${e.rule ? `<h3>注意</h3><div>${esc(e.rule)}</div>` : ''}
       ${alts ? `<h3>可以换成</h3><div class="alts">${alts}</div>` : ''}
-      <h3>出处</h3><div>${esc(s.credit || s.from || '')}${s.note ? '：' + esc(s.note) : ''}${s.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">原片</a>` : ''}</div>
+      <h3>灵感来源</h3><div>${esc(s.credit || s.from || '')}${s.note ? '：' + esc(s.note) : ''}${s.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">原片</a>` : ''}</div>
       <h3>文件</h3><div><code>${esc(e._dir)}</code></div>
     </div></div>`;
   d.querySelector('.x').onclick = () => d.close();

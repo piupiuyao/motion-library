@@ -1,0 +1,14 @@
+{
+  "skin": "clean",
+  "shots": [
+    {"words": "0-8",   "purpose": "全片常驻", "template": "title_bar",       "params": {"title": "OKEIGHT", "sub": "AI FOR REPLIES"}},
+    {"words": "9-20",  "purpose": "开场钩子", "template": "hook_bigword",    "params": {"text": "HASN'T SOLVED"}},
+    {"words": "30-39", "purpose": "展示细节", "template": "dashed_focus",    "params": {"label": "replying", "targets": [{"x": 0.5, "y": 0.31, "r": 250}, {"x": 0.55, "y": 0.68, "r": 280, "at": "Emails", "label": "messages"}]}},
+    {"words": "40-57", "purpose": "换话题",   "template": "bg_switch",       "params": {"patterns": ["neon", "dots", "grid"], "at": ["Putting", "ridiculous"]}},
+    {"words": "58-66", "purpose": "核心观点", "template": "scanline_word",   "params": {"keywords": ["emotional energy"]}},
+    {"words": "67-79", "purpose": "换话题",   "template": "sticker_outline", "params": {}},
+    {"words": "80-97", "purpose": "展示细节", "template": "paper_props",     "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg", "assets/docs/notify.jpg"]}},
+    {"words": "98-114","purpose": "核心观点", "template": "cutout_card",     "params": {"text": "No energy for the right response"}},
+    {"words": "138-148","purpose": "结尾",    "template": "end_title",       "params": {"title": "AI should be solving this", "sub": "OKEIGHT"}}
+  ]
+}
