@@ -1,0 +1,7 @@
+{
+ "status": "good",
+ "ref": "fetched",
+ "checked": "对照 Submagic 成品帧：全大写超粗、白字黑粗描边、当前词黄/绿、位置在胸口上方、两行",
+ "fixed": "当前词瞬间放大到 118% 再落到 106%，按组轮换黄/绿，整组硬切；遮掉旧字幕底条",
+ "left": "字体用的是 Arial Black（没有 Montserrat/Komika）"
+}
