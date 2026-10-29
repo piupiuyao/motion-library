@@ -111,6 +111,15 @@ for cat in cats:
         out.append(f"| {n} | **{name}** | {what}{extra} | {use} | {'、'.join(needs) or '—'} | {DIFF[diff]} | {links}{' ⚠️来源较弱' if weak else ''} |")
         rows.append({'n': n, 'id': f'c{n:02d}', 'name': name, 'category': cat, 'what': what, 'use': use, 'needs': needs, 'difficulty': diff, 'sources': srcs, 'note': note})
     out.append('')
+# 第二批（横向扩展，10-28 夜）：batch2.json 里按顺序接着编号
+B2 = os.path.join(os.path.dirname(__file__), 'batch2.json')
+if os.path.exists(B2):
+    for b in json.load(open(B2)):
+        n += 1
+        rows.append({'n': n, 'id': f'c{n:02d}', 'name': b['name'], 'category': b['category'], 'what': b['what'], 'use': b['use'],
+                     'needs': b['needs'], 'difficulty': b['difficulty'], 'sources': b['sources'], 'note': b.get('note', ''),
+                     'ref_moment': b.get('ref_moment', ''), 'batch': 2})
+    out += ['## 第二批（横向扩展）', '', f'见 batch2.json，共 {n - len(C)} 条。', '']
 open(os.path.join(os.path.dirname(__file__), 'review.md'), 'w').write('\n'.join(out))
 json.dump(rows, open(os.path.join(os.path.dirname(__file__), 'candidates.json'), 'w'), ensure_ascii=False, indent=1)
 from collections import Counter
@@ -127,5 +136,24 @@ for r in rows:
     if os.path.exists(os.path.join(d, 'preview.mp4')):
         r['preview'] = 'file://' + os.path.join(d, 'preview.mp4')
         r['poster'] = 'file://' + os.path.join(d, 'poster.jpg')
+# 二级分类 + 自审结果 + 库里已有的（只展示，不用审）
+tax = json.load(open(os.path.join(base, 'taxonomy.json')))
+sub = {i: (cat, k) for cat, v in tax.items() if not cat.startswith('_') for k, ids in v.items() for i in ids}
+for r in rows:
+    r['sub'] = sub.get(r['id'], (r['category'], '其他'))[1]
+    rv = os.path.join(base, 'effects', r['id'], 'review.json')
+    if os.path.exists(rv):
+        r['review'] = json.load(open(rv))
+LIB = os.path.join(os.path.dirname(base), 'library', 'talking-head', 'effects')
+for i in sorted(os.listdir(LIB)):
+    m = os.path.join(LIB, i, 'meta.json')
+    if not os.path.exists(m):
+        continue
+    m = json.load(open(m))
+    cat, k = sub.get(i, (m['category'], '其他'))
+    rows.append({'n': i, 'id': i, 'name': m['name'], 'category': cat, 'sub': k, 'what': ' + '.join(m.get('layers', [])),
+                 'use': '、'.join(m.get('use_for', [])), 'needs': m.get('needs', []), 'difficulty': 'easy',
+                 'sources': [], 'note': '', 'lib': True,
+                 'preview': 'file://' + os.path.join(LIB, i, 'preview.mp4'), 'poster': 'file://' + os.path.join(LIB, i, 'poster.jpg')})
 html = open(os.path.join(os.path.dirname(__file__), 'review_template.html')).read().replace('/*DATA*/[]', json.dumps(rows, ensure_ascii=False))
 open(os.path.join(os.path.dirname(__file__), 'review.html'), 'w').write(html)

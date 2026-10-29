@@ -24,7 +24,14 @@
   .btn { border:0; background:var(--ink); color:var(--bg); border-radius:8px; padding:6px 14px; font:inherit; font-size:13px; cursor:pointer; }
   .btn.ghost { background:var(--chip); color:var(--ink); }
   main { padding:18px 24px 80px; max-width:1280px; margin:0 auto; }
-  h2 { font-size:15px; color:var(--mute); margin:22px 0 10px; font-weight:600; }
+  h2 { font-size:17px; margin:28px 0 4px; font-weight:700; }
+  h3 { font-size:14px; color:var(--mute); margin:16px 0 10px; font-weight:600; }
+  .chip.small { font-size:12px; padding:2px 8px; }
+  .tag.good { color:var(--yes); background:var(--yes-soft); }
+  .tag.rough { color:var(--no); background:var(--no-soft); }
+  .tag.lib { color:var(--bg); background:var(--ink); }
+  .card.lib { border-style:dashed; }
+  .review { font-size:12.5px; color:var(--mute); }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
   .card { background:var(--panel); border:2px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
   .card.yes { border-color:var(--yes); }
@@ -60,8 +67,9 @@
 <body>
 <header>
   <h1>候选动效审核</h1>
-  <div class="sub">网上三路找来 98 条，合并重复、去掉库里已有的，剩 <span id="total"></span> 条。每条都是我们用同一段口播做的快速演示，鼠标放上去播放；想看原出处点下面的来源链接。每条点「要」或「不要」，选完点「复制结果」发给我。选择会自动保存在这个浏览器里。</div>
+  <div class="sub">候选 <span id="total"></span> 条 + 库里已有 <span id="libn"></span> 条，按「大类 → 小类」排。每条都是我们用同一段口播做的演示，鼠标放上去播放，点一下出声；想看原出处点来源链接。「自审」标签是我们对照原出处检查后的结论：<b>像</b>＝看得出是原版，<b>差不多</b>＝意思对、细节不同，<b>粗糙</b>＝只是个草样。候选每条点「要」或「不要」，选完点「复制结果」发给我；选择自动存在这个浏览器里。</div>
   <div class="bar" id="cats"></div>
+  <div class="bar" id="subs" style="margin-top:6px"></div>
   <div class="bar" style="margin-top:8px">
     <span id="views"></span>
     <span class="tally" id="tally"></span>
@@ -75,15 +83,18 @@
 const DATA = /*DATA*/[];
 const DIFF = { easy: '容易', medium: '中等', hard: '难' };
 const CATS = ['全部', '字体', '素材', '版式', '镜头特效', '转场', '片头片尾'];
-const VIEWS = [['all', '全部'], ['todo', '未选'], ['yes', '要'], ['no', '不要']];
+const VIEWS = [['all', '全部'], ['todo', '未选'], ['yes', '要'], ['no', '不要'], ['lib', '已入库']];
+const RV = { good: ['像', 'good'], ok: ['差不多', ''], rough: ['粗糙', 'rough'] };
+const CAND = DATA.filter(c => !c.lib);
 const KEY = 'motion-review-1028';
 let pick = {};
 try { pick = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(pick)); } catch (e) {} };
-const st = { cat: '全部', view: 'all' };
+const st = { cat: '全部', sub: '', view: 'all' };
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-$('#total').textContent = DATA.length;
+$('#total').textContent = CAND.length;
+$('#libn').textContent = DATA.length - CAND.length;
 
 function ytId(u) { const m = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/); return m && m[1]; }
 function host(u) { try { return new URL(u).hostname.replace(/^www\./, '').replace('elements.envato.com', 'Envato').replace('youtube.com', 'YouTube').replace('douyin.com', '抖音'); } catch (e) { return '链接'; } }
@@ -102,18 +113,20 @@ function thumb(c) {
   return `<a class="thumb" href="${esc(first)}" target="_blank" rel="noopener"><span class="ph">没有缩略图<br>点这里打开 ${esc(host(first))}</span></a>`;
 }
 function card(c) {
-  const p = pick[c.n] || '';
+  const p = c.lib ? 'lib' : (pick[c.n] || '');
+  const rv = c.review && RV[c.review.status];
   const weak = /来源只|只看了|只看到|第三方/.test(c.note);
   return `<div class="card ${p}" data-n="${c.n}">
     ${thumb(c)}
     <div class="body">
-      <div class="top"><span class="num">#${c.n}</span><span class="name">${esc(c.name)}</span><span class="diff">${DIFF[c.difficulty]}</span></div>
+      <div class="top">${c.lib ? '' : `<span class="num">#${c.n}</span>`}<span class="name">${esc(c.name)}</span>${c.lib ? '<span class="diff tag lib">已入库</span>' : `<span class="diff">${DIFF[c.difficulty]}</span>`}</div>
       <div class="what">${esc(c.what)}</div>
       <div class="use">适合：${esc(c.use)}</div>
-      <div class="tags"><span class="tag">${esc(c.category)}</span>${c.needs.map(x => `<span class="tag">要${esc(x)}</span>`).join('')}${weak ? '<span class="tag warn">⚠️ 来源较弱</span>' : ''}</div>
+      <div class="tags"><span class="tag">${esc(c.sub)}</span>${rv ? `<span class="tag ${rv[1]}">自审：${rv[0]}</span>` : ''}${c.batch === 2 ? '<span class="tag">第二批</span>' : ''}${c.needs.map(x => `<span class="tag">要${esc(x)}</span>`).join('')}${weak ? '<span class="tag warn">⚠️ 来源较弱</span>' : ''}</div>
       ${c.note ? `<div class="note">${esc(c.note)}</div>` : ''}
+      ${c.review && c.review.left ? `<div class="review">还差：${esc(c.review.left)}</div>` : ''}
       <div class="src">${c.sources.map((s, i) => `<a href="${esc(s)}" target="_blank" rel="noopener">来源${i + 1} · ${esc(host(s))}</a>`).join('')}</div>
-      <div class="act"><button class="y">要</button><button class="n">不要</button></div>
+      ${c.lib ? '' : '<div class="act"><button class="y">要</button><button class="n">不要</button></div>'}
     </div></div>`;
 }
 function draw() {
@@ -121,18 +134,26 @@ function draw() {
     const n = c === '全部' ? DATA.length : DATA.filter(x => x.category === c).length;
     return `<button class="chip ${st.cat === c ? 'on' : ''}" data-cat="${c}">${c} ${n}</button>`;
   }).join('');
+  const subs = st.cat === '全部' ? [] : [...new Set(DATA.filter(x => x.category === st.cat).map(x => x.sub))];
+  $('#subs').innerHTML = subs.length ? [['', '全部小类'], ...subs.map(k => [k, k])].map(([k, l]) =>
+    `<button class="chip small ${st.sub === k ? 'on' : ''}" data-sub="${esc(k)}">${esc(l)} ${k ? DATA.filter(x => x.category === st.cat && x.sub === k).length : ''}</button>`).join('') : '';
   $('#views').innerHTML = VIEWS.map(([k, l]) => `<button class="chip ${st.view === k ? 'on' : ''}" data-view="${k}">${l}</button>`).join(' ');
-  const yes = DATA.filter(c => pick[c.n] === 'yes').length, no = DATA.filter(c => pick[c.n] === 'no').length;
-  $('#tally').innerHTML = `要 <b>${yes}</b> · 不要 ${no} · 未选 ${DATA.length - yes - no}`;
-  const list = DATA.filter(c => (st.cat === '全部' || c.category === st.cat) &&
-    (st.view === 'all' || (st.view === 'todo' ? !pick[c.n] : pick[c.n] === st.view)));
+  const yes = CAND.filter(c => pick[c.n] === 'yes').length, no = CAND.filter(c => pick[c.n] === 'no').length;
+  $('#tally').innerHTML = `要 <b>${yes}</b> · 不要 ${no} · 未选 ${CAND.length - yes - no}`;
+  const list = DATA.filter(c => (st.cat === '全部' || c.category === st.cat) && (!st.sub || c.sub === st.sub) &&
+    (st.view === 'all' || (st.view === 'lib' ? c.lib : !c.lib && (st.view === 'todo' ? !pick[c.n] : pick[c.n] === st.view))));
   const cats = CATS.slice(1).filter(k => list.some(c => c.category === k));
-  $('#main').innerHTML = cats.map(k => `<h2>${k}</h2><div class="grid">${list.filter(c => c.category === k).map(card).join('')}</div>`).join('')
+  $('#main').innerHTML = cats.map(k => {
+    const inCat = list.filter(c => c.category === k);
+    return `<h2>${k}</h2>` + [...new Set(inCat.map(c => c.sub))].map(sb =>
+      `<h3>${esc(sb)}</h3><div class="grid">${inCat.filter(c => c.sub === sb).map(card).join('')}</div>`).join('');
+  }).join('')
     || '<p style="color:var(--mute)">这里没有条目。</p>';
 }
 document.addEventListener('click', ev => {
   const b = ev.target.closest('button'); if (!b) return;
-  if (b.dataset.cat) { st.cat = b.dataset.cat; draw(); return; }
+  if (b.dataset.cat) { st.cat = b.dataset.cat; st.sub = ''; draw(); return; }
+  if (b.dataset.sub != null) { st.sub = b.dataset.sub; draw(); return; }
   if (b.dataset.view) { st.view = b.dataset.view; draw(); return; }
   const cardEl = b.closest('.card');
   if (cardEl && (b.classList.contains('y') || b.classList.contains('n'))) {
@@ -155,7 +176,7 @@ document.addEventListener('click', ev => {
 });
 $('#reset').onclick = () => { pick = {}; save(); draw(); };
 $('#copy').onclick = async () => {
-  const yes = DATA.filter(c => pick[c.n] === 'yes'), no = DATA.filter(c => pick[c.n] === 'no');
+  const yes = CAND.filter(c => pick[c.n] === 'yes'), no = CAND.filter(c => pick[c.n] === 'no');
   const txt = `要（${yes.length}）：${yes.map(c => `#${c.n} ${c.name}`).join('、') || '无'}\n不要（${no.length}）：${no.map(c => '#' + c.n).join(' ') || '无'}`;
   try { await navigator.clipboard.writeText(txt); toast('已复制，直接粘贴发给我'); }
   catch (e) { prompt('复制下面这段发给我：', txt); }
