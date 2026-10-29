@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "HQvV75kjblY t=489-501: preview pane goes from zoomed-in to normal",
   "fixed": "No change needed: canvas mesh fisheye bulge then flattens and pulls back (fast then slow), with the same move going back to the person.",
-  "left": "Burned-in red icon from the old edit is visible at ~38.5s, just before the transition."
+  "left": "[Rumi] The shot is short (~2.9 s), so the B-roll only stays up for ~1.5 s before it switches back.",
+  "footage": "rumi"
 }

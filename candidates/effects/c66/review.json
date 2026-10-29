@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Ref video at t=655-675 shows a colourful background card behind the speaker (tutorial UI), not exactly a slide-down",
   "fixed": "Card shadow now on both edges (0 0 70px) so the top edge reads when the card slides away downward.",
-  "left": "The caption pill stays on top of the title card (engine draws captions above everything)."
+  "left": "The caption pill stays on top of the title card (engine draws captions above everything).",
+  "footage": "rumi"
 }

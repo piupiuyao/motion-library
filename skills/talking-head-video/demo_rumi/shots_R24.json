@@ -6,16 +6,23 @@
    "template": "c109",
    "params": {
     "start": 0.2,
-    "dur": 3.6,
+    "dur": 3.85,
     "top": "me with 3,000<br>unread messages",
-    "bottom": "*this is fine*"
+    "bottom": "*this is fine*",
+    "x": 660,
+    "y": 30,
+    "size": 380
    }
   },
   {
    "words": "24-33",
    "template": "c103",
    "params": {
-    "side": "left"
+    "side": "left",
+    "y": 950,
+    "w": 520,
+    "h": 500,
+    "x": 20
    }
   },
   {
@@ -23,7 +30,10 @@
    "template": "c35",
    "params": {
     "image": "assets/docs/notify.jpg",
-    "label": "OFF!"
+    "label": "OFF!",
+    "x": 850,
+    "y": 1120,
+    "w": 320
    }
   },
   {

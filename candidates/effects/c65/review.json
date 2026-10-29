@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "wxlDksHicW8 paper-ball tutorial (small ball pops in and unfolds into a sheet with a graphic) + Ali's 'unfolding paper' frames",
   "fixed": "Rewritten: the paper is a jittered triangle mesh on a half-res canvas. It squeezes into a faceted, shaded ball that pops in and spins, then spreads flat over the screen with faint creases left. The picture is multiplied onto the paper so the creases show through. The ball's shadow is drawn in the canvas (no full-frame CSS filter).",
-  "left": "Ball edge is a bit spiky and the flat sheet has a faint low-poly look rather than real crumples. The unfold happens in ~0.6 s, so most stills catch either the ball or the flat sheet."
+  "left": "Ball edge is a bit spiky and the flat sheet has a faint low-poly look rather than real crumples. The unfold happens in ~0.6 s, so most stills catch either the ball or the flat sheet. [Rumi] The paper shows chat.jpg plus Sarah's line handwritten underneath.",
+  "footage": "rumi"
 }

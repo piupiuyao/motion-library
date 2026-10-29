@@ -3,5 +3,6 @@
  "ref": "fetched",
  "checked": "参考是 CapCut 里 logo 在蓝底上做 3D 翻转；看 34.8/35.5/35.9/36.9/38.0s",
  "fixed": "3D 透视翻转带厚度（叠 12 层做侧边），先转一整圈弹入，之后每说到一个词翻 180° 换到下一个图标（聊天→纸飞机→邮件），最后斜 28° 定住上下浮动；图标放大到 280",
- "left": "图标是自己画的仿 App 图标；换词段避开了原片里烧进去的 Gmail/WhatsApp 图标"
+ "left": "图标是自己画的仿 App 图标；换词段避开了原片里烧进去的 Gmail/WhatsApp 图标 | Round 3 (rumi): Added a Slack icon (icon: slack) so the demo can flip email → WhatsApp → Slack → Telegram.",
+ "footage": "rumi"
 }

@@ -3,5 +3,6 @@
   "ref": "description-only",
   "checked": "Opus blog source has no video. Checked person-left / swap / person-right stills",
   "fixed": "Moved to C3 words 67-79 (switch at word 74), away from the burned-in inbox card. Image panels bigger (680px) and higher up.",
-  "left": "The person matte also catches the laptop at the bottom, so it gets a white outline too. Not compared with a real Tom Scott clip."
+  "left": "Not compared with a real Tom Scott clip. [Rumi] Added top/shift params (defaults unchanged). The first image's label is partly hidden behind her.",
+  "footage": "rumi"
 }

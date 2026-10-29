@@ -1,7 +1,8 @@
 {
-  "status": "good",
-  "ref": "fetched",
-  "checked": "Envato preview (iOS notification pack: white frosted cards, stacked groups) vs our single top banner",
-  "fixed": "Now stacks 3 notifications (WhatsApp/Mail/Messages), each new one pushes the older down, then all retract; moved shot to words 40-47 (clean footage, 'every message looks so small, putting them together')",
-  "left": "Ref pack also has music/low-battery widgets and mid-frame placement; we only do top banners"
+ "status": "good",
+ "ref": "fetched",
+ "checked": "Envato preview (iOS notification pack: white frosted cards, stacked groups) vs our single top banner",
+ "fixed": "Now stacks 3 notifications (WhatsApp/Mail/Messages), each new one pushes the older down, then all retract; moved shot to words 40-47 (clean footage, 'every message looks so small, putting them together')",
+ "left": "Ref pack also has music/low-battery widgets and mid-frame placement; we only do top banners",
+ "footage": "rumi"
 }

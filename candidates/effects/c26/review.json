@@ -1,7 +1,8 @@
 {
-  "status": "ok",
-  "ref": "description-only",
-  "checked": "Motion Array page blocked; from description (FB-live style floating reactions + big emoji by the face)",
-  "fixed": "Face emojis kept on screen and moved off the old card; shot moved to words 61-66 (clean)",
-  "left": "-"
+ "status": "ok",
+ "ref": "description-only",
+ "checked": "Motion Array page blocked; from description (FB-live style floating reactions + big emoji by the face)",
+ "fixed": "Face emojis kept on screen and moved off the old card; shot moved to words 61-66 (clean)",
+ "left": "-",
+ "footage": "rumi"
 }

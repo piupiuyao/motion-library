@@ -3,5 +3,6 @@
   "ref": "description-only",
   "checked": "Tried YouTube t=405-435 twice; the effect isn't in that window. Checked stills at slide-in / held / out",
   "fixed": "Title font 76->68px so 'emotional' no longer touches the panel edge.",
-  "left": "Reference moment not found; built from the description. Small red burned-in icon near the top at ~39.4s."
+  "left": "Reference moment not found; built from the description. [Rumi] No screenshot of Sarah's actual text exists, so the panel shows chat.jpg (an iMessage screenshot).",
+  "footage": "rumi"
 }

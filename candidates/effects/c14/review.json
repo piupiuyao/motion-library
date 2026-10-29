@@ -1,7 +1,8 @@
 {
-  "status": "good",
-  "ref": "fetched",
-  "checked": "Envato chat-bubble preview: name label above, time below, avatars, full conversation down the frame",
-  "fixed": "Added sender names, timestamps and a letter avatar; darker top shade; moved shot to words 67-79 (clean)",
-  "left": "Ref uses purple/cyan bubbles; we keep iMessage grey/blue per the description"
+ "status": "good",
+ "ref": "fetched",
+ "checked": "Envato chat-bubble preview: name label above, time below, avatars, full conversation down the frame",
+ "fixed": "Added sender names, timestamps and a letter avatar; darker top shade; moved shot to words 67-79 (clean)",
+ "left": "Ref uses purple/cyan bubbles; we keep iMessage grey/blue per the description",
+ "footage": "rumi"
 }

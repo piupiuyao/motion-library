@@ -1,7 +1,8 @@
 {
-  "status": "ok",
-  "ref": "description-only",
-  "checked": "Ref section was the editor UI only; compared with the description",
-  "fixed": "No change (cork board, red string, blurred edges, warm)",
-  "left": "-"
+ "status": "ok",
+ "ref": "description-only",
+ "checked": "Ref section was the editor UI only; compared with the description",
+ "fixed": "No change (cork board, red string, blurred edges, warm)",
+ "left": "-",
+ "footage": "rumi"
 }

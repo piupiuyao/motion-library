@@ -1,7 +1,8 @@
 {
-  "status": "ok",
-  "ref": "fetched",
-  "checked": "Ref shows small rounded clips popping around a title on a light grey phone layout",
-  "fixed": "No change",
-  "left": "Ref is light/white; ours is dark. Cards form a ring as described"
+ "status": "ok",
+ "ref": "fetched",
+ "checked": "Ref shows small rounded clips popping around a title on a light grey phone layout",
+ "fixed": "No change",
+ "left": "Ref is light/white; ours is dark. Cards form a ring as described | Round 3 (rumi): Default pool no longer uses broll frame 10 (old presenter) or source frame 1500 (beyond rumi's 1435 frames).",
+ "footage": "rumi"
 }

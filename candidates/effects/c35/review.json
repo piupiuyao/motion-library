@@ -1,7 +1,8 @@
 {
-  "status": "ok",
-  "ref": "fetched",
-  "checked": "Tutorial imports a 3D iPhone 14 Pro and places it in front of the person",
-  "fixed": "Phone now has a real back (titanium + triple camera) that swings past during the spin, sits beside the face instead of covering it, slower spin",
-  "left": "Not a true 3D model; shards are flat"
+ "status": "ok",
+ "ref": "fetched",
+ "checked": "Tutorial imports a 3D iPhone 14 Pro and places it in front of the person",
+ "fixed": "Phone now has a real back (titanium + triple camera) that swings past during the spin, sits beside the face instead of covering it, slower spin",
+ "left": "Not a true 3D model; shards are flat | Round 3 (rumi): Phone moved to x 850 / y 1120 (rumi is centred); screenshot notify.jpg still shows old OKEight UI text.",
+ "footage": "rumi"
 }

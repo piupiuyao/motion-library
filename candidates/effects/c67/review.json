@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Envato Massive Camera Transitions: blurry zoom frames between shots",
   "fixed": "Zoom blur rebuilt: 12 copies with opacity 1/(i+1), which averages into a smooth radial blur instead of visible ghost copies. Flash lowered to 0.3.",
-  "left": ""
+  "left": "",
+  "footage": "rumi"
 }

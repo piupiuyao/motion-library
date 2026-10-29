@@ -3,5 +3,6 @@
   "ref": "description-only",
   "checked": "Douyin link not tried (usually fails). Checked all three cells at each speaker change",
   "fixed": "Bottom cell's crop moved so the face sits mostly below the caption pill, and that cell's label moved to the top.",
-  "left": "Caption still covers the forehead in cell 3. The burned-in 🙅 emoji shows as a purple patch in cell 2 at ~32s."
+  "left": "[Rumi] Added a crops param (defaults unchanged): her head is bigger and lower than in the old footage, so the three framings are passed in. Caption still sits over the hair in cell 3.",
+  "footage": "rumi"
 }

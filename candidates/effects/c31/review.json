@@ -1,7 +1,8 @@
 {
-  "status": "good",
-  "ref": "fetched",
-  "checked": "Ali Abdaal paper graphics: ransom-note paper letters, collage cut-outs unfolding",
-  "fixed": "Letters are now ransom-note scraps (each a different paper, font and ragged edge); paper-cut envelope opens, letter rises, bubble unfolds",
-  "left": "No halftone photo collage pieces"
+ "status": "good",
+ "ref": "fetched",
+ "checked": "Ali Abdaal paper graphics: ransom-note paper letters, collage cut-outs unfolding",
+ "fixed": "Letters are now ransom-note scraps (each a different paper, font and ragged edge); paper-cut envelope opens, letter rises, bubble unfolds",
+ "left": "No halftone photo collage pieces | Round 3 (rumi): Added optional x/y for the envelope; rumi sits centred, so the demo puts it beside her shoulder (x 660, y 900).",
+ "footage": "rumi"
 }

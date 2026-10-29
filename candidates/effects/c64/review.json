@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Ali Abdaal tutorial: clip inside a torn paper piece with a shadow, on a textured collage background",
   "fixed": "Background is now crumpled paper tinted with the accent colour (was flat), new 'tint' param.",
-  "left": "The crumpled texture barely shows after tinting, so it still looks mostly flat lime. No collage elements like Ali's."
+  "left": "The crumpled texture barely shows after tinting, so it still looks mostly flat lime. No collage elements like Ali's. [Rumi] The paper piece shows chat.jpg (iMessage), not Sarah's real text.",
+  "footage": "rumi"
 }

@@ -27,8 +27,9 @@
     "title": "NOTIFICATIONS",
     "min": "OFF",
     "max": "ALL",
-    "level": 0.08,
-    "word": "OFF"
+    "level": 0,
+    "word": "OFF",
+    "from": 0.9
    }
   },
   {
@@ -51,7 +52,9 @@
    "words": "96-101",
    "template": "c31",
    "params": {
-    "text": "SYSTEM"
+    "text": "SYSTEM",
+    "x": 660,
+    "y": 900
    }
   }
  ]

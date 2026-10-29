@@ -33,7 +33,7 @@ TEMPLATES.c31 = {
     ctx.L.front.appendChild(this.row);
     // paper-cut envelope on the free side of the frame
     const fx = ctx.focus[0] * 1080, left = fx > 540 ? 40 : 640;
-    this.art = el('div', `position:absolute;left:${left}px;top:640px;width:400px;height:560px;perspective:1100px`);
+    this.art = el('div', `position:absolute;left:${P.x ?? left}px;top:${P.y ?? 640}px;width:400px;height:560px;perspective:1100px`);
     const kraft = '#c9a46a', kraft2 = '#b48b50';
     this.paper = el('div', `position:absolute;left:50px;top:300px;width:300px;height:250px;background:#fbfaf5;clip-path:${jag(4)};
       background-image:repeating-linear-gradient(0deg, transparent 0 34px, rgba(60,110,200,.35) 34px 37px);padding:0`);

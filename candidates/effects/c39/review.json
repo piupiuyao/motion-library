@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Envato checkbox-list preview: items appear one by one with check/cross boxes. YouTube t=498 didn't show it",
   "fixed": "Card bigger (620px wide, 66px title, 54px rows) and moved down a little so it reads at phone size.",
-  "left": "The 🙅 emoji burned into the footage shows at ~32.6s above the head."
+  "left": "[Rumi] Added shift/width params (defaults unchanged): her head is bigger, so the card is narrower and she moves further right. Item text wraps to two lines.",
+  "footage": "rumi"
 }

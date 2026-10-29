@@ -1,6 +1,6 @@
 {"skin": "clean", "shots": [
   {"words": "0-6", "template": "c48", "params": {"name": "Rumi", "handle": "@rumi.replies", "at": 0.2, "hold": 2.4}},
-  {"words": "17-23", "template": "c93", "params": {"lines": [{"text": "REPLYING?", "at": "Replying"}, {"text": "DECIDING.", "at": "Deciding", "accent": true}], "y": 110}},
+  {"words": "17-23", "template": "c93", "params": {"lines": [{"text": "REPLYING?", "at": "Replying", "size": 170}, {"text": "DECIDING.", "at": "Deciding", "accent": true, "size": 170}], "y": 230}},
   {"words": "28-33", "template": "c38", "params": {"media": "assets/docs/gmail.jpg", "label": "email", "at": 0.2}},
   {"words": "34-42", "template": "c91", "params": {"t0": 0.2, "radius": 400}},
   {"words": "43-48", "template": "c66", "params": {"title": "What actually works", "num": "03", "at": 0.3, "hold": 1.4}},

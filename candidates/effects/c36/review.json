@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Premiere tutorial frames (top clip / bottom clip split) vs our stills at slide-in, middle, slide-out",
   "fixed": "Halves now slide in from opposite sides over the untouched full frame (person half from the right, B-roll from the left), instead of the person just cropping in place. Moved the shot to C3 words 127-140 so the old burned-in Gmail/Slack/'replying to messages' overlays aren't in it; label changed to 'taking so long'.",
-  "left": "Second YouTube and Envato refs not fetched (first one was enough)."
+  "left": "Second YouTube and Envato refs not fetched (first one was enough).",
+  "footage": "rumi"
 }

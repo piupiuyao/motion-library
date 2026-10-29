@@ -1,7 +1,8 @@
 {
-  "status": "ok",
-  "ref": "fetched",
-  "checked": "Ali Abdaal tutorial: yellow neon glowing text labels; the 'rising from behind shoulder' moment itself wasn't in the clip",
-  "fixed": "Label is now Ali-style yellow neon text; prop is a battery emoji peeking from behind the head; shot moved to words 61-66 (clean)",
-  "left": "Prop is an emoji, not a real cut-out image"
+ "status": "ok",
+ "ref": "fetched",
+ "checked": "Ali Abdaal tutorial: yellow neon glowing text labels; the 'rising from behind shoulder' moment itself wasn't in the clip",
+ "fixed": "Label is now Ali-style yellow neon text; prop is a battery emoji peeking from behind the head; shot moved to words 61-66 (clean)",
+ "left": "Prop is an emoji, not a real cut-out image",
+ "footage": "rumi"
 }

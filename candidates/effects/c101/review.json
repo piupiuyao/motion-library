@@ -1,7 +1,8 @@
 {
- "status": "good",
- "ref": "fetched",
- "checked": "YouTube 来源是一组白色圆角 CTA 按钮（Comment / DM Me 等，带图标和点击），Envato 页没抓；看 51.0/52.0/52.5/53.6s",
- "fixed": "白色评论气泡（头像 + 灰色账号行 + Comment “AI” 关键词荧光块 + 气泡尾巴）从下方弹到胸前，右侧箭头上下跳动指向下方；箭头放大",
- "left": "没有鼠标点击动作（参考里有，但描述没要求）"
+  "status": "good",
+  "ref": "fetched",
+  "checked": "YouTube 来源是一组白色圆角 CTA 按钮（Comment / DM Me 等，带图标和点击），Envato 页没抓；看 51.0/52.0/52.5/53.6s",
+  "fixed": "白色评论气泡（头像 + 灰色账号行 + Comment “AI” 关键词荧光块 + 气泡尾巴）从下方弹到胸前，右侧箭头上下跳动指向下方；箭头放大",
+  "left": "没有鼠标点击动作（参考里有，但描述没要求）。[Rumi] 气泡放到 y=1150（她胸前），箭头在字幕条右边",
+  "footage": "rumi"
 }

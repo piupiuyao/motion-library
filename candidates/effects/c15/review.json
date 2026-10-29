@@ -1,7 +1,8 @@
 {
-  "status": "good",
-  "ref": "fetched",
-  "checked": "Envato tweets pack (white tweet cards, blue shape morph in) vs our card pop/tilt/fly-away",
-  "fixed": "Moved shot to words 16-29 (clean, away from old CODE cards) and rewrote the tweet text",
-  "left": "No blue shape-morph build-in like the pack"
+ "status": "good",
+ "ref": "fetched",
+ "checked": "Envato tweets pack (white tweet cards, blue shape morph in) vs our card pop/tilt/fly-away",
+ "fixed": "Moved shot to words 16-29 (clean, away from old CODE cards) and rewrote the tweet text",
+ "left": "No blue shape-morph build-in like the pack | Round 3 (rumi): Card top 975 so it sits under rumi's chin.",
+ "footage": "rumi"
 }

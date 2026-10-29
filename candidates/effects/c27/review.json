@@ -1,7 +1,8 @@
 {
-  "status": "good",
-  "ref": "fetched",
-  "checked": "Ref frame: black-and-white, dark CRT TV in front of a bright smoky backdrop, big white condensed text below",
-  "fixed": "Rebuilt: grayscale grainy scene, dark CRT with rabbit ears and knobs, bright drifting smoke, picture in B&W with scanlines/flicker, big white Impact text under the TV, slow push-in",
-  "left": "-"
+ "status": "good",
+ "ref": "fetched",
+ "checked": "Ref frame: black-and-white, dark CRT TV in front of a bright smoky backdrop, big white condensed text below",
+ "fixed": "Rebuilt: grayscale grainy scene, dark CRT with rabbit ears and knobs, bright drifting smoke, picture in B&W with scanlines/flicker, big white Impact text under the TV, slow push-in",
+ "left": "Round 3 (rumi): Default B-roll now starts at offset 1.2 s (first frames of broll_inbox show the old presenter); rumi demo shows the Gmail screenshot in the TV.",
+ "footage": "rumi"
 }
