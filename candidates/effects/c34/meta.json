@@ -1,0 +1,22 @@
+{
+  "id": "c34",
+  "name": "质感旋钮仪表",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "数字"
+  ],
+  "what": "深色颗粒背景上一个带立体感的旋钮，放大出现，指针转到某一档，刻度跟着亮",
+  "use": "「调高/调低」某样东西、表示程度、风险",
+  "sources": [
+    "https://www.youtube.com/watch?v=EehfkRZXq6o"
+  ],
+  "params": {
+    "title": "旋钮上方标题，默认 TONE",
+    "min": "最低档标签，默认 WARM",
+    "max": "最高档标签，默认 COLD",
+    "level": "指针转到的位置 0–1，默认 0.88",
+    "word": "转完后下方显示的大字，默认 TOO COLD",
+    "ticks": "刻度数量，默认 25"
+  }
+}

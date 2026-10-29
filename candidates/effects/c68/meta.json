@@ -1,0 +1,19 @@
+{
+  "id": "c68",
+  "name": "鱼眼拉远",
+  "video_type": "talking-head",
+  "category": "转场",
+  "needs": [],
+  "what": "画面一开始像鱼眼一样鼓起来，然后快速变平并拉远，先快后慢",
+  "use": "揭开新场景、进入动画段、能量拉满",
+  "sources": [
+    "https://www.youtube.com/watch?v=HQvV75kjblY&t=492s"
+  ],
+  "params": {
+    "to": "可选。新画面：B-roll 帧或图片路径，默认 broll_inbox",
+    "at": "可选。第几秒切到新画面，默认 0.8",
+    "back": "可选。false = 不切回人；默认结尾同样方式切回",
+    "backAt": "可选。距结尾多少秒切回，默认 1.1",
+    "fx": "可选。新画面横向裁切位置 0–1（0 左 1 右），默认 1"
+  }
+}

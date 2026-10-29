@@ -1,0 +1,15 @@
+{
+  "id": "c14",
+  "name": "聊天气泡对话",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "iMessage/WhatsApp 样式的气泡一条条弹出（左灰右蓝），每条前面先出「正在输入」三个点",
+  "use": "讲故事、复述对话、吐槽「然后他回我……」",
+  "sources": [
+    "https://elements.envato.com/reels-message-bubble-chat-7CV9QP3"
+  ],
+  "params": {
+    "messages": "气泡列表 [{from: 'them'|'me', text}]，them 在左（灰），me 在右（蓝），按镜头时长平均依次出现，每条前先出「正在输入」"
+  }
+}

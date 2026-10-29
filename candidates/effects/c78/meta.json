@@ -1,0 +1,20 @@
+{
+  "id": "c78",
+  "name": "电影黑边拉开",
+  "video_type": "talking-head",
+  "category": "片头片尾",
+  "needs": [],
+  "what": "画面从全黑开始，上下两条黑边往外拉开露出画面，停在宽银幕比例，黑边上可以放标题",
+  "use": "讲故事模式「给你讲个故事」、严肃/戏剧化的开场或结尾",
+  "sources": [
+    "https://www.youtube.com/watch?v=ruIomvLW_AY",
+    "https://www.choppity.com/tools/recreate-video-editing-style/tom-noske/"
+  ],
+  "params": {
+    "title": "可选。上黑边里的标题",
+    "sub": "可选。标题下的小字",
+    "band": "可选。拉开后露出的画面高度（px），默认 780",
+    "center": "可选。露出画面的中心位置，默认 770",
+    "size": "可选。标题字号，默认 64"
+  }
+}

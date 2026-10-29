@@ -1,0 +1,20 @@
+{
+  "id": "c37",
+  "name": "侧屏滑入",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "图片",
+    "视频"
+  ],
+  "what": "另一块画面（B-roll、截图或文字卡）从一侧滑进来，人同时往另一侧滑，最后各占半边，人不缩小",
+  "use": "对比、边讲边补充一个画面、换话题",
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=426s"
+  ],
+  "params": {
+    "media": "可选。滑进来的图片路径或 B-roll 帧，默认 chat.jpg",
+    "title": "可选。面板上方的标题字",
+    "side": "可选。面板从哪边进：right（默认）/ left"
+  }
+}

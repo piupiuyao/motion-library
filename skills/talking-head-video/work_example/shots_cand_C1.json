@@ -1,0 +1,20 @@
+{"skin": "clean", "shots": [
+  {"words": "0-10", "template": "c45", "params": {"text": "SAW THIS ON MY FEED", "handle": "@monica", "desc": "AI still can't reply for me…"}},
+  {"words": "22-31", "template": "c66", "params": {"title": "Replying to messages", "num": "01"}},
+  {"words": "32-45", "template": "c41", "params": {"items": [
+    {"icon": "📧", "text": "Emails", "at": "Emails", "color": "#ffe1e1"},
+    {"icon": "💬", "text": "WhatsApp", "at": "WhatsApp", "color": "#d9f7d9"},
+    {"icon": "✈️", "text": "Telegram", "at": "Telegram", "color": "#dbeeff"},
+    {"icon": "📨", "text": "Every message", "at": "message", "color": "#fff3c4"}]}},
+  {"words": "46-57", "template": "c49", "params": {"steps": 4, "from": 0.2, "to": 0.7, "labels": ["Messages", "Time", "Energy", "Fix"]}},
+  {"words": "69-85", "template": "c39", "params": {"title": "Replying is…", "items": [
+    {"text": "Just typing", "at": "typing", "mark": "x"},
+    {"text": "Sound thoughtful", "at": "thoughtful"},
+    {"text": "Say no, not cold", "at": "no"}]}},
+  {"words": "90-104", "template": "c37", "params": {"media": "assets/docs/chat.jpg", "title": "A long emotional message"}},
+  {"words": "111-128", "template": "c46", "params": {"cards": [
+    {"top": "A FEW", "big": "HOURS", "at": "hours"},
+    {"top": "BECOMES A FEW", "big": "DAYS", "at": "days"},
+    {"top": "REPLYING GETS", "big": "HARDER", "at": "harder"}]}},
+  {"words": "138-148", "template": "c67", "params": {"to": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}}
+]}

@@ -1,0 +1,16 @@
+{
+  "id": "c19",
+  "name": "引线标注图解",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "手写数字套在画好的圆圈里，用会动的虚线连到几个标签，镜头从一组标注平移到下一组",
+  "use": "讲步骤、讲框架、讲几个点之间的关系",
+  "sources": [
+    "https://www.youtube.com/watch?v=y60ohM4nr4Y",
+    "https://www.youtube.com/watch?v=HQvV75kjblY&t=759s"
+  ],
+  "params": {
+    "groups": "标注组数组 [{title, labels:[两个标签]}]，每组一个手写编号圈，最多建议 3 组，镜头依次平移"
+  }
+}

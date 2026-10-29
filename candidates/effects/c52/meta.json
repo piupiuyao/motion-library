@@ -1,0 +1,15 @@
+{
+  "id": "c52",
+  "name": "手持晃动",
+  "video_type": "talking-head",
+  "category": "镜头特效",
+  "needs": [],
+  "what": "整个画面加一点点随机晃动和旋转，三脚架拍的画面看起来像手持，更有生气",
+  "use": "开场、高能的句子、太静的段落打断一下",
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=550s"
+  ],
+  "params": {
+    "amount": "可选。晃动幅度倍数，默认 1（0.5 更轻，2 更猛）"
+  }
+}

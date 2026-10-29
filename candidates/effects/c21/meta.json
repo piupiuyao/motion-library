@@ -1,0 +1,26 @@
+{
+  "id": "c21",
+  "name": "玻璃卡绕身",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "抠像",
+    "数字"
+  ],
+  "what": "一张半透明发光玻璃卡（图标 + 往上跳的数字，如粉丝数）在 3D 空间里转一圈，从人背后穿过",
+  "use": "讲战绩/社会证明、介绍工具",
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=1152s"
+  ],
+  "params": {
+    "number": "卡上往上跳的数字，默认 12453",
+    "label": "数字说明，默认 Unread emails",
+    "icon": "图标 emoji，默认 ✉️",
+    "iconBg": "图标底色 CSS",
+    "delta": "数字下方小字，默认 +128 today",
+    "prefix": "数字前缀，如 $",
+    "suffix": "数字后缀，如 K",
+    "radius": "绕人的半径像素，默认 350",
+    "dy": "绕行高度相对脸的下移像素，默认 330"
+  }
+}

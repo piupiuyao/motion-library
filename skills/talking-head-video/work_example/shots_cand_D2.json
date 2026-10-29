@@ -1,0 +1,6 @@
+{"skin": "clean", "shots": [
+  {"words": "9-20", "template": "c73", "params": {"at": "one", "title": "The one thing AI hasn't solved"}},
+  {"words": "30-39", "template": "c72", "params": {"at": "Emails", "to": "assets/docs/chat.jpg"}},
+  {"words": "40-48", "template": "c70", "params": {"at": "small", "to": "assets/docs/notify.jpg"}},
+  {"words": "67-79", "template": "c71", "params": {"at": "sometimes", "title": "Not just typing"}}
+]}

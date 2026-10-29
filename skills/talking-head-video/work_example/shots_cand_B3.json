@@ -1,0 +1,64 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-8",
+   "template": "c30",
+   "params": {
+    "text": "HEY GUYS!"
+   }
+  },
+  {
+   "words": "22-34",
+   "template": "c29",
+   "params": {
+    "text": "EVERY<br><span style=\"color:var(--accent)\">DAY</span>"
+   }
+  },
+  {
+   "words": "35-45",
+   "template": "c27",
+   "params": {
+    "text": "MY INBOX",
+    "media": {
+     "frames": "assets/broll_inbox",
+     "fps": 30,
+     "count": 165
+    }
+   }
+  },
+  {
+   "words": "46-57",
+   "template": "c28",
+   "params": {
+    "label": "IT ADDS UP"
+   }
+  },
+  {
+   "words": "58-66",
+   "template": "c32",
+   "params": {
+    "top": "what people see: typing",
+    "bottom": "what it costs: emotional energy"
+   }
+  },
+  {
+   "words": "67-73",
+   "template": "c31",
+   "params": {
+    "text": "REPLY"
+   }
+  },
+  {
+   "words": "80-89",
+   "template": "c34",
+   "params": {
+    "title": "TONE",
+    "min": "WARM",
+    "max": "COLD",
+    "level": 0.88,
+    "word": "TOO COLD"
+   }
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "c40",
+  "name": "报纸底清单",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "抠像",
+    "图片"
+  ],
+  "what": "背景是反色（变暗）的旧报纸慢慢漂移，清单条目带小图一条条弹出",
+  "use": "列举（3 个理由 / 5 个技巧）",
+  "sources": [
+    "https://www.youtube.com/watch?v=5FtsVft5Vn8"
+  ],
+  "params": {
+    "items": "必填。条目列表 [{\"icon\":\"emoji\",\"text\":\"文字\",\"at\":\"说到哪个词弹出\",\"color\":\"图标底色\"}]（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）",
+    "title": "可选。清单标题"
+  }
+}

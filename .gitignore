@@ -3,10 +3,11 @@
 *.log
 .DS_Store
 skills/talking-head-video/scripts/matte
-skills/talking-head-video/scripts/.render.html
+skills/talking-head-video/scripts/.render*.html
 skills/talking-head-video/work_example/raw.mp4
 skills/talking-head-video/work_example/out*.mp4
 skills/talking-head-video/work_example/*_镜头清单.md
 skills/talking-head-video/refs/*/frames/
 skills/talking-head-video/refs/*/video.mp4
 skills/talking-head-video/refs/*/*.jpg
+**/__pycache__/

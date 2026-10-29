@@ -1,0 +1,18 @@
+{
+  "id": "c65",
+  "name": "纸团展开",
+  "video_type": "talking-head",
+  "category": "转场",
+  "needs": [],
+  "what": "一个揉皱的纸团展开铺满屏幕，下一张图/画面出现在展平的纸上，配纸张声",
+  "use": "换话题、揭晓答案或下一个点",
+  "sources": [
+    "https://www.youtube.com/watch?v=5FtsVft5Vn8",
+    "https://www.youtube.com/watch?v=wxlDksHicW8"
+  ],
+  "params": {
+    "to": "可选。展开后纸上出现的图片路径，默认 chat.jpg",
+    "title": "可选。图片下面的手写字",
+    "at": "可选。第几秒纸团出现，默认 1.0"
+  }
+}

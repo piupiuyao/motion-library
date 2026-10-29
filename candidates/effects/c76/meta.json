@@ -1,0 +1,23 @@
+{
+  "id": "c76",
+  "name": "定格人物介绍",
+  "video_type": "talking-head",
+  "category": "片头片尾",
+  "needs": [
+    "抠像"
+  ],
+  "what": "画面定格，背景虚化压暗，抠出的人加描边放大挪到一边，笔刷贴纸滑进来写上名字/身份，配打字声或嗖声",
+  "use": "自我介绍、介绍嘉宾、综艺感出场",
+  "sources": [
+    "https://www.douyin.com/video/7620297661396176137",
+    "https://www.youtube.com/watch?v=W79u8d2VpVA&t=38s"
+  ],
+  "params": {
+    "name": "必填。名字",
+    "title": "可选。身份那行小字",
+    "at": "可选。说到哪个词时定格，默认 0.6 秒",
+    "side": "可选。人挪到哪边 left / right，默认 left（贴纸在另一边）",
+    "y": "可选。贴纸竖直位置，默认 760",
+    "size": "可选。名字字号，默认 120"
+  }
+}

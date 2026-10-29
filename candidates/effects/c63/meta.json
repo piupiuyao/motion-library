@@ -1,0 +1,17 @@
+{
+  "id": "c63",
+  "name": "撕纸转场",
+  "video_type": "talking-head",
+  "category": "转场",
+  "needs": [],
+  "what": "当前画面沿着锯齿状的纸边撕开（白色纸纤维边 + 阴影），露出下面的新画面",
+  "use": "换话题、「第二部分」、前后对比揭晓",
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=123s",
+    "https://elements.envato.com/paperflow-vertical-handcrafted-paper-texture-trans-7EZ6N65"
+  ],
+  "params": {
+    "to": "可选。下一个画面：图片路径（如 assets/docs/gmail.jpg）、B-roll 帧 {\"frames\":\"assets/broll_inbox\",\"fps\":30,\"count\":165,\"offset\":2.5}，或标题卡 {\"title\":\"PART 2\",\"sub\":\"副标题\"}；默认标题卡",
+    "at": "可选。第几秒开撕，默认 1.0"
+  }
+}

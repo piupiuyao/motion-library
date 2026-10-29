@@ -1,0 +1,20 @@
+{
+  "id": "c44",
+  "name": "绿幕讲解",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "抠像",
+    "图片"
+  ],
+  "what": "一个网页/文章/截图铺满做背景，抠出的人站在下方大大地讲，背景可以滚动、推近",
+  "use": "对新闻做反应、讲解一个页面「你看这个」",
+  "sources": [
+    "https://www.capcut.com/explore/green-screen-in-capcut"
+  ],
+  "params": {
+    "images": "可选。拼成网页背景的截图列表（从上往下排），默认 gmail.jpg、chat.jpg",
+    "address": "可选。浏览器地址栏里的字",
+    "scroll": "可选。整段往上滚多少像素，默认 500"
+  }
+}

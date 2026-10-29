@@ -1,0 +1,23 @@
+{
+  "id": "c36",
+  "name": "上下分屏",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "视频",
+    "图片"
+  ],
+  "what": "竖屏上下一分为二：一半是人，另一半放 B-roll/对比图，从两边滑进来，中间可以压字幕",
+  "use": "对比（之前/之后、对/错）、边讲边给例子",
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=205s",
+    "https://www.youtube.com/watch?v=wkWkHwFKcNE",
+    "https://elements.envato.com/vertical-multiscreen-before-after-KCT47XG"
+  ],
+  "params": {
+    "media": "可选。另一半放的图片路径或 B-roll 帧，默认 broll_inbox",
+    "label": "可选。压在中缝的一行字",
+    "tags": "可选。两半各自的小标签，如 [\"BEFORE\",\"AFTER\"]",
+    "flip": "可选。true = 人在下半、B-roll 在上半"
+  }
+}

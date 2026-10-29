@@ -1,0 +1,17 @@
+{
+  "id": "c41",
+  "name": "白卡图标环绕",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "图片"
+  ],
+  "what": "几张白色圆角小卡（图标 + 一行字）一张张弹到人四周的角落，不挡脸",
+  "use": "列举几样东西/工具、总结几个选项",
+  "sources": [
+    "https://www.youtube.com/watch?v=YWoWti-hSo0"
+  ],
+  "params": {
+    "items": "必填。最多 6 张卡 [{\"icon\":\"emoji\",\"text\":\"一行字\",\"at\":\"说到哪个词弹出\",\"color\":\"图标底色\"}]，按 左上/右上/左下/右下/左中/右中 依次摆放（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）"
+  }
+}

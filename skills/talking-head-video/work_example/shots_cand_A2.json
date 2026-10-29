@@ -1,0 +1,6 @@
+{"skin": "clean", "shots": [
+  {"words": "0-8", "template": "c76", "params": {"name": "MONICA", "title": "your host", "at": "Monica"}},
+  {"words": "9-20", "template": "c05", "params": {"title": "AI still\nhasn't solved it"}},
+  {"words": "67-73", "template": "c07", "params": {"text": "REPLY"}},
+  {"words": "90-110", "template": "c78", "params": {"title": "The long message", "sub": "a true story"}}
+]}

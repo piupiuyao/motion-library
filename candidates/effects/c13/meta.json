@@ -1,0 +1,20 @@
+{
+  "id": "c13",
+  "name": "手机通知弹窗",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "一条 iOS 样式的毛玻璃通知从顶上滑下来（图标、发件人、一行字），停 1–2 秒再收回",
+  "use": "开场「我刚收到这条消息」、反转、引用客户/老板的话",
+  "sources": [
+    "https://elements.envato.com/reels-mobile-notification-HRYPGJN"
+  ],
+  "params": {
+    "text": "通知正文一行（默认 Hey, did you see my message?）",
+    "sender": "发件人名字，默认 Sarah",
+    "app": "图标样式：message / whatsapp / mail，默认 message",
+    "time": "右上角时间，默认 now",
+    "at": "可选。原话里的一个词，说到它时通知滑下；不填则开头 0.25 秒",
+    "hold": "可选。停留秒数，默认停到镜头快结束"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "c20",
+  "name": "发光流程线",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "深色渐变背景上一条发光的线画过屏幕，圆角标签沿线一个个弹出，整组跟着往下移",
+  "use": "讲流程、步骤、因果链",
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=164s"
+  ],
+  "params": {
+    "steps": "流程步骤文字数组（建议 3–5 条），沿发光线依次弹出",
+    "color": "线和标签发光色，默认 var(--accent)"
+  }
+}

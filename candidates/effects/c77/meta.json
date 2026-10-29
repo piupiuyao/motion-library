@@ -1,0 +1,20 @@
+{
+  "id": "c77",
+  "name": "定格快门",
+  "video_type": "talking-head",
+  "category": "片头片尾",
+  "needs": [],
+  "what": "在节拍点上画面白闪 + 快门声定格，像一张照片停一秒（常配抠像 + 一行字），然后继续播放",
+  "use": "开场钩子、「这是当时的我」、关键句前的停顿",
+  "sources": [
+    "https://www.douyin.com/shipin/7642894718157899839",
+    "https://www.kapwing.com/resources/how-to-make-videos-like-garyvee/"
+  ],
+  "params": {
+    "text": "可选。定格照片下的一行字",
+    "at": "可选。说到哪个词时定格，默认 0.6 秒",
+    "hold": "可选。定格多少秒，默认 1.1",
+    "y": "可选。那行字的位置，默认 1250",
+    "size": "可选。字号，默认 92"
+  }
+}

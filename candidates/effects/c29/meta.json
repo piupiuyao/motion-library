@@ -1,0 +1,20 @@
+{
+  "id": "c29",
+  "name": "素材环形阵列",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "视频",
+    "图片"
+  ],
+  "what": "很多小圆角卡片（截图/B-roll）一张张弹出，围着中间的标题排成一圈，然后镜头拉远",
+  "use": "讲坚持/数量「连发 30 天」、很多结果一起展示",
+  "sources": [
+    "https://www.youtube.com/watch?v=MNG51L8ikQw&t=601s"
+  ],
+  "params": {
+    "images": "卡片用的图片路径数组（会循环使用），默认用素材截图、B-roll 帧和口播帧",
+    "text": "中间标题（可含 HTML，如 <br>）",
+    "size": "标题字号，默认 120"
+  }
+}

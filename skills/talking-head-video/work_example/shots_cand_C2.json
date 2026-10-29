@@ -1,0 +1,10 @@
+{"skin": "clean", "shots": [
+  {"words": "0-10", "template": "c47", "params": {"start": 754}},
+  {"words": "11-21", "template": "c63", "params": {"at": 1.2, "to": {"title": "PART 2", "sub": "The most draining thing"}}},
+  {"words": "22-34", "template": "c64", "params": {"label": "my inbox"}},
+  {"words": "35-45", "template": "c36", "params": {"label": "every message looks small"}},
+  {"words": "46-61", "template": "c43", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"], "at": ["ridiculous"]}},
+  {"words": "62-73", "template": "c65", "params": {"to": "assets/docs/chat.jpg"}},
+  {"words": "74-93", "template": "c42", "params": {"at": [80, 90], "labels": ["Sound thoughtful", "Say no", "Long message"]}},
+  {"words": "98-114", "template": "c68", "params": {"to": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}}
+]}

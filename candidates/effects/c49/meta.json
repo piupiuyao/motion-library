@@ -1,0 +1,20 @@
+{
+  "id": "c49",
+  "name": "进度条",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [],
+  "what": "底部或顶部一条进度条：整条视频从左到右慢慢填满，或者分成几段、讲到第几步亮到第几段",
+  "use": "长一点的视频、多步骤教程，让人看到最后",
+  "sources": [
+    "https://www.kapwing.com/resources/how-to-make-videos-like-garyvee/",
+    "https://elements.envato.com/multi-step-progress-bars-GTG4ATT"
+  ],
+  "params": {
+    "steps": "可选。分几段，默认 4",
+    "from": "可选。镜头开始时进度（0–1），默认 0.15",
+    "to": "可选。镜头结束时进度（0–1），默认 0.62",
+    "labels": "可选。每段的名字，显示在「STEP x/n」后",
+    "y": "可选。进度条纵向位置，默认 70（顶部）"
+  }
+}

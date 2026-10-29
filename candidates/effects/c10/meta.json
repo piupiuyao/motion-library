@@ -1,0 +1,18 @@
+{
+  "id": "c10",
+  "name": "渐变混排标题",
+  "video_type": "talking-head",
+  "category": "字体",
+  "needs": [],
+  "what": "两行段落标题：前半句白灰渐变无衬线，关键词换成斜体衬线、红橙渐变",
+  "use": "段落开头、点出这段讲什么",
+  "sources": [
+    "https://www.youtube.com/watch?v=Qbntd8yud0o"
+  ],
+  "params": {
+    "line1": "必填。第一行",
+    "line2": "必填。第二行；用 *星号* 包住的词变成斜体衬线红橙渐变（第一行也可以用）",
+    "y": "可选。竖直位置，默认 230",
+    "size": "可选。字号，默认 128"
+  }
+}

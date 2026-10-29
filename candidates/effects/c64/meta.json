@@ -1,0 +1,22 @@
+{
+  "id": "c64",
+  "name": "撕纸边画面",
+  "video_type": "talking-head",
+  "category": "转场",
+  "needs": [
+    "图片",
+    "视频"
+  ],
+  "what": "一段 B-roll 或口播装在一张撕边纸片里（带投影），从纸面/彩色背景上滑进来",
+  "use": "引出一个例子或小故事、换话题",
+  "sources": [
+    "https://www.youtube.com/watch?v=5FtsVft5Vn8"
+  ],
+  "params": {
+    "media": "可选。纸片里放的 B-roll 帧或图片，默认 broll_inbox",
+    "label": "可选。纸片顶上胶带上的手写字",
+    "bg": "可选。背景色，默认主题色",
+    "at": "可选。第几秒滑入，默认 0.6",
+    "pos": "可选。画面裁切位置（CSS object-position），默认 100% 50%"
+  }
+}

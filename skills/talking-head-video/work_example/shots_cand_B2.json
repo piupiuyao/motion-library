@@ -1,0 +1,88 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "22-34",
+   "template": "c19",
+   "params": {
+    "groups": [
+     {
+      "title": "Emotionally draining",
+      "labels": [
+       "tone",
+       "guilt"
+      ]
+     },
+     {
+      "title": "Every day",
+      "labels": [
+       "email",
+       "WhatsApp"
+      ]
+     },
+     {
+      "title": "Replying",
+      "labels": [
+       "typing",
+       "deciding"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "words": "35-45",
+   "template": "c21",
+   "params": {
+    "number": 12453,
+    "label": "Unread messages",
+    "icon": "✉️",
+    "delta": "+128 today"
+   }
+  },
+  {
+   "words": "46-57",
+   "template": "c22",
+   "params": {
+    "emoji": "⏰",
+    "label": "Hours a day",
+    "at": "together"
+   }
+  },
+  {
+   "words": "74-89",
+   "template": "c24",
+   "params": {
+    "at": "thoughtful"
+   }
+  },
+  {
+   "words": "90-97",
+   "template": "c23",
+   "params": {
+    "emoji": "📱",
+    "at": "sends"
+   }
+  },
+  {
+   "words": "111-122",
+   "template": "c33",
+   "params": {
+    "from": "A few hours",
+    "to": "A few days"
+   }
+  },
+  {
+   "words": "138-148",
+   "template": "c20",
+   "params": {
+    "steps": [
+     "New message",
+     "AI reads the tone",
+     "Drafts a reply",
+     "You hit send"
+    ]
+   }
+  }
+ ]
+}

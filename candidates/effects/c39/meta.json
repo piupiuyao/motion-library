@@ -1,0 +1,17 @@
+{
+  "id": "c39",
+  "name": "清单打勾",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [],
+  "what": "人往一边让开，一张清单卡滑进来，说到哪条，哪条就打个勾（或红叉），字变亮",
+  "use": "列步骤/技巧、误区 vs 事实、「这几件你做了吗」",
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=498s",
+    "https://elements.envato.com/checkbox-list-constructor-ABASNAE"
+  ],
+  "params": {
+    "items": "必填。清单条目列表 [{\"text\":\"条目\",\"at\":\"说到哪个词打勾\",\"mark\":\"x 表示红叉，不写是绿勾\"}]（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）",
+    "title": "可选。清单卡标题"
+  }
+}

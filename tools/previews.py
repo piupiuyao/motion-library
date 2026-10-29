@@ -18,7 +18,10 @@ ap = argparse.ArgumentParser()
 ap.add_argument('ids', nargs='*')
 ap.add_argument('--proj', default=os.path.join(SKILL, 'work_example'))
 ap.add_argument('--shots', default='shots_showcase.json')
+ap.add_argument('--effects', help='folder of draft effects (default: the library)')
 a = ap.parse_args()
+if a.effects:
+    render.EFFECTS = os.path.abspath(a.effects)
 tmpl = render.load_templates()
 tl, _ = render.build_timeline(a.proj, tmpl, a.shots)
 first = {}
@@ -33,7 +36,8 @@ for i in a.ids or sorted(tmpl):
     with tempfile.TemporaryDirectory() as td:
         raw = os.path.join(td, 'p.mp4')
         subprocess.run([sys.executable, os.path.join(SKILL, 'scripts', 'render.py'), a.proj, '--shots', a.shots, '--preview',
-                        '--from', str(t0), '--to', str(t1), '--out', raw], check=True, stdout=subprocess.DEVNULL)
+                        '--from', str(t0), '--to', str(t1), '--out', raw] + (['--effects', render.EFFECTS] if a.effects else []),
+                       check=True, stdout=subprocess.DEVNULL)
         d = os.path.join(render.EFFECTS, i)
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-vf', 'scale=360:-2', '-c:v', 'libx264', '-crf', '27',
                         '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '64k', '-movflags', '+faststart',

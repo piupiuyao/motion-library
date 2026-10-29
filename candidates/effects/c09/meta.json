@@ -1,0 +1,20 @@
+{
+  "id": "c09",
+  "name": "3D投影大字",
+  "video_type": "talking-head",
+  "category": "字体",
+  "needs": [],
+  "what": "粗窄全大写字幕，黄/橙色，带一层厚厚的粉红色斜向 3D 投影，放大砸进画面下方",
+  "use": "高能金句、开场",
+  "sources": [
+    "https://www.choppity.com/tools/recreate-video-editing-style/tom-noske/"
+  ],
+  "params": {
+    "per": "可选。每次显示几个词，默认 2",
+    "color": "可选。字色，默认黄橙 #ffc21a",
+    "shadow": "可选。投影颜色，默认粉红 #ff4fa3",
+    "depth": "可选。投影厚度（px），默认 16",
+    "y": "可选。竖直位置，默认 1150",
+    "size": "可选。最大字号，默认 200"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "c04",
+  "name": "文字快闪",
+  "video_type": "talking-head",
+  "category": "字体",
+  "needs": [],
+  "what": "口播画面突然切成一串纯色卡，每张砸一两个大字，踩着节拍快速闪过，再切回人",
+  "use": "开场快速抛出 3–5 个关键词、高能列举",
+  "sources": [
+    "https://elements.envato.com/stomp-intro-slides-pr-TQ9EC79"
+  ],
+  "params": {
+    "cards": "必填。每张色卡上的字（1–2 个词一张），按顺序闪",
+    "start": "可选。从她说到哪个词开始闪，默认 0.3 秒",
+    "step": "可选。每张卡停留秒数，默认 0.3"
+  }
+}

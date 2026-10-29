@@ -1,0 +1,19 @@
+{
+  "id": "c03",
+  "name": "盖章印戳",
+  "video_type": "talking-head",
+  "category": "字体",
+  "needs": [],
+  "what": "一个红色做旧印章（「避坑」「APPROVED」「FAKE」）斜着砸下来，带一下震动和油墨质感",
+  "use": "下结论、辟谣、推荐或否定某样东西",
+  "sources": [
+    "https://elements.envato.com/confirmed-stamp-AYVSGTC"
+  ],
+  "params": {
+    "text": "必填。印章上的字，如 APPROVED / FAKE",
+    "at": "可选。说到哪个词时盖下去，默认 0.4 秒",
+    "color": "可选。印泥颜色，默认红色",
+    "rotate": "可选。倾斜角度，默认 -14",
+    "y": "可选。印章中心的竖直位置，默认 1020"
+  }
+}

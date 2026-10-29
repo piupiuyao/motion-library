@@ -1,0 +1,18 @@
+{
+  "id": "c06",
+  "name": "反色混合字",
+  "video_type": "talking-head",
+  "category": "字体",
+  "needs": [],
+  "what": "粗体字用「差值」混合，压在人身上或亮处的部分颜色自动反转，像刻进画面里",
+  "use": "人名/身份介绍、时间地点标签、有格调的强调",
+  "sources": [
+    "https://www.youtube.com/watch?v=HQvV75kjblY&t=350s"
+  ],
+  "params": {
+    "text": "必填。反色大字，如名字",
+    "sub": "可选。下面一行小字（身份、地点等）",
+    "y": "可选。竖直位置，默认 980",
+    "size": "可选。字号"
+  }
+}

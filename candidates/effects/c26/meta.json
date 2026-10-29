@@ -1,0 +1,16 @@
+{
+  "id": "c26",
+  "name": "表情包弹出",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "大号表情（😂😱🔥）在说到对应的词时弹到脸旁，或者像直播一样往上飘",
+  "use": "玩笑、情绪词、轻量强调",
+  "sources": [
+    "https://motionarray.com/stock-motion-graphics/facebook-emoji-reactions-vertical-pack-842485/"
+  ],
+  "params": {
+    "items": "脸旁弹出的大表情 [{emoji, at}]，at 是原话里的词（最多 4 个位置轮流）",
+    "float": "往上飘的表情列表；false 表示不要飘的"
+  }
+}

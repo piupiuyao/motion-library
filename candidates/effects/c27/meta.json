@@ -1,0 +1,20 @@
+{
+  "id": "c27",
+  "name": "复古电视框",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "图片",
+    "视频"
+  ],
+  "what": "一段截图/视频装进老式显像管电视里播放，背景做旧，电视上压大字，慢慢推近",
+  "use": "提到某个内容/媒体、怀旧、引用网上看到的东西",
+  "sources": [
+    "https://www.youtube.com/watch?v=q-qbKk8Qams&t=1118s"
+  ],
+  "params": {
+    "media": "电视里播放的内容：图片路径或帧序列 {frames, fps, count}，默认 B-roll 收件箱",
+    "text": "压在电视上方的大字",
+    "size": "大字字号，默认 170"
+  }
+}

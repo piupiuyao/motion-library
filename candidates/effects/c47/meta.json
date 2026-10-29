@@ -1,0 +1,16 @@
+{
+  "id": "c47",
+  "name": "录像取景框",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [],
+  "what": "画面上叠一层摄像机取景框：四角括号、闪烁的红色 REC、走动的时间码、电量",
+  "use": "幕后花絮、坦白/真心话、开场",
+  "sources": [
+    "https://elements.envato.com/recording-camera-frame-overlay-RKZAFQL"
+  ],
+  "params": {
+    "start": "可选。时间码起始秒数，默认 0",
+    "info": "可选。左下角的字，默认 4K · 30FPS"
+  }
+}

@@ -1,0 +1,108 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-8",
+   "template": "c15",
+   "params": {}
+  },
+  {
+   "words": "9-19",
+   "template": "c16",
+   "params": {
+    "query": "why is replying to messages so",
+    "suggestions": [
+     "why is replying to messages so exhausting",
+     "why is replying to messages so hard",
+     "why is replying to messages so draining"
+    ]
+   }
+  },
+  {
+   "words": "30-39",
+   "template": "c13",
+   "params": {
+    "app": "whatsapp",
+    "sender": "Sarah",
+    "text": "Hey, did you see my message? 👀",
+    "at": "replying"
+   }
+  },
+  {
+   "words": "40-48",
+   "template": "c14",
+   "params": {
+    "messages": [
+     {
+      "from": "them",
+      "text": "Hey, quick question 👀"
+     },
+     {
+      "from": "me",
+      "text": "Sure, what's up?"
+     },
+     {
+      "from": "them",
+      "text": "Can you check the Q3 report tonight?"
+     }
+    ]
+   }
+  },
+  {
+   "words": "49-57",
+   "template": "c26",
+   "params": {
+    "items": [
+     {
+      "emoji": "😱",
+      "at": "ridiculous"
+     },
+     {
+      "emoji": "😩",
+      "at": "day"
+     }
+    ]
+   }
+  },
+  {
+   "words": "58-66",
+   "template": "c17",
+   "params": {
+    "highlight": "Put together, they take up a ridiculous amount of the day, and a lot of emotional energy."
+   }
+  },
+  {
+   "words": "80-89",
+   "template": "c25",
+   "params": {
+    "items": [
+     {
+      "kind": "thought",
+      "text": "How do I say no...?",
+      "at": "sometimes"
+     },
+     {
+      "kind": "burst",
+      "text": "NO!",
+      "at": "no"
+     }
+    ]
+   }
+  },
+  {
+   "words": "90-97",
+   "template": "c18",
+   "params": {
+    "label": "long message!"
+   }
+  },
+  {
+   "words": "123-137",
+   "template": "c35",
+   "params": {
+    "at": "harder",
+    "label": "DON'T"
+   }
+  }
+ ]
+}

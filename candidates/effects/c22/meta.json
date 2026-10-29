@@ -1,0 +1,25 @@
+{
+  "id": "c22",
+  "name": "背后冒出物",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "抠像",
+    "图片"
+  ],
+  "what": "一张图或图标从人肩膀后面升起来（被人挡住一部分），旁边弹出发光标签",
+  "use": "引出一个概念或东西「咖啡因是……」",
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=307s"
+  ],
+  "params": {
+    "emoji": "升起的图标 emoji，默认 ⏰（和 image 二选一）",
+    "image": "可选。升起的图片路径",
+    "label": "旁边弹出的发光标签文字",
+    "at": "可选。原话里的词，说到时开始升起",
+    "side": "right / left，从哪边肩膀后升起，默认 right",
+    "size": "物体尺寸像素，默认 440",
+    "dx": "离脸中心的水平距离，默认 300",
+    "dy": "相对脸中心的垂直位置，默认 140"
+  }
+}

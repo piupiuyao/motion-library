@@ -171,6 +171,29 @@ def cut_audio(proj, edit, out):
                     '-map', '[a]', '-ar', '48000', out], check=True)
 
 
+def free_mb():
+    """macOS: free + inactive + speculative pages, in MB (what a new process can get without swapping)."""
+    try:
+        out = subprocess.run(['vm_stat'], capture_output=True, text=True).stdout
+        page = int(re.search(r'page size of (\d+)', out).group(1))
+        n = sum(int(re.search(rf'{k}:\s+(\d+)', out).group(1)) for k in ('Pages free', 'Pages inactive', 'Pages speculative'))
+        return n * page // 2**20
+    except Exception:
+        return 1e9
+
+
+def wait_for_render_slot(min_mb=1500):
+    """One browser render at a time on this machine (memory is tight), and only when there is memory to spare.
+    The lock is held until this process exits."""
+    import fcntl
+    global _lock
+    _lock = open(os.path.join(os.path.expanduser('~'), '.motion-render.lock'), 'w')
+    fcntl.flock(_lock, fcntl.LOCK_EX)
+    while free_mb() < min_mb:
+        print(f'waiting for memory ({free_mb()} MB free)', flush=True)
+        time.sleep(15)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('project')
@@ -181,7 +204,12 @@ def main():
     ap.add_argument('--sheet', type=float)
     ap.add_argument('--preview', action='store_true')
     ap.add_argument('--shots', default='shots.json', help='shot list inside PROJECT (default shots.json)')
+    ap.add_argument('--effects', help='folder of effect templates (default: the motion library); for trying drafts')
     a = ap.parse_args()
+    global EFFECTS
+    if a.effects:
+        EFFECTS = os.path.abspath(a.effects)
+    stem = '' if a.shots == 'shots.json' else os.path.splitext(os.path.basename(a.shots))[0]
     proj = os.path.abspath(a.project)
     tmpl = load_templates()
 
@@ -193,11 +221,14 @@ def main():
                         os.path.join(frames, '%06d.jpg')], check=True)
     tl, edit = build_timeline(proj, tmpl, a.shots)
     check_face_time(tl, tmpl)
-    json.dump(tl, open(os.path.join(proj, 'work', 'timeline.json'), 'w'), ensure_ascii=False, indent=1)
+    json.dump(tl, open(os.path.join(proj, 'work', f"timeline{'_' + stem if stem else ''}.json"), 'w'), ensure_ascii=False, indent=1)
     html = open(os.path.join(HERE, 'engine.html')).read().replace('/*TIMELINE*/null', json.dumps(tl, ensure_ascii=False))
-    open(os.path.join(HERE, '.render.html'), 'w').write(html)
+    page = f'.render-{os.getpid()}.html'  # one per process, so several renders can run at once
+    open(os.path.join(HERE, page), 'w').write(html)
     srv = serve(proj)
-    page_url = f'http://127.0.0.1:{srv.server_port}/.render.html'
+    page_url = f'http://127.0.0.1:{srv.server_port}/{page}'
+    import atexit
+    atexit.register(lambda: os.path.exists(os.path.join(HERE, page)) and os.remove(os.path.join(HERE, page)))
 
     if a.stills or a.sheet:
         times = ([float(x) for x in a.stills.split(',')] if a.stills
@@ -209,6 +240,7 @@ def main():
 
     from playwright.sync_api import sync_playwright
     scale = .5 if a.preview else 1
+    wait_for_render_slot()
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page(viewport={'width': 1080, 'height': 1920}, device_scale_factor=scale)
@@ -218,7 +250,7 @@ def main():
         pg.evaluate('window.ready')
         stage = pg.locator('#stage')
         if times is not None:
-            sd = os.path.join(proj, 'stills')
+            sd = os.path.join(proj, 'stills', stem) if stem else os.path.join(proj, 'stills')
             os.makedirs(sd, exist_ok=True)
             paths = []
             for t in times:
@@ -256,12 +288,14 @@ def main():
         ff.wait()
         b.close()
 
-    audio = os.path.join(proj, 'work', 'audio_cut.wav')
+    audio = os.path.join(proj, 'work', f'audio_cut_{os.getpid()}.wav')
     cut_audio(proj, edit, audio)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', silent, '-ss', str(a.t0), '-i', audio, '-map', '0:v', '-map', '1:a',
                     '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', out], check=True)
+    os.remove(audio)
     os.remove(silent)
-    write_report(proj, tl, tmpl, out)
+    if not a.effects:
+        write_report(proj, tl, tmpl, out)
 
 
 def write_report(proj, tl, tmpl, out):

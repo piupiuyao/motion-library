@@ -1,0 +1,21 @@
+{
+  "id": "c43",
+  "name": "左右轮换图文",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [
+    "抠像",
+    "图片"
+  ],
+  "what": "抠出的人站在左或右三分之一，另外三分之二放图/图表；每 4–6 秒换图，人换边站",
+  "use": "图多的讲解、数据和对比",
+  "sources": [
+    "https://www.opus.pro/blog/editing-aesthetics-dominating-short-form-2026"
+  ],
+  "params": {
+    "images": "可选。轮换的图片列表，默认 gmail.jpg、chat.jpg",
+    "at": "可选。从第二张起每张在哪个词换（人同时换边）（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）；不写就平均分",
+    "labels": "可选。每张图下面的说明字",
+    "pattern": "可选。背景图案 dots/grid/neon/paper/plain，默认 grid"
+  }
+}

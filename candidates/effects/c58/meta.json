@@ -1,0 +1,17 @@
+{
+  "id": "c58",
+  "name": "霓虹涂鸦描边",
+  "video_type": "talking-head",
+  "category": "镜头特效",
+  "needs": [
+    "抠像"
+  ],
+  "what": "一圈发光的粉/蓝/绿手绘线沿着人的轮廓一直抖动（逐帧沸腾），头旁边冒出小星星、爱心",
+  "use": "兴奋时刻、俏皮的插话、自我介绍",
+  "sources": [
+    "https://www.freevisuals.net/post/neon-scribble-templates-illuminating-videos-with-glowing-creativity"
+  ],
+  "params": {
+    "colors": "可选。三条描边的颜色，默认 [\"#ff3fd2\",\"#33e6ff\",\"#9dff3a\"]（粉/蓝/绿）"
+  }
+}

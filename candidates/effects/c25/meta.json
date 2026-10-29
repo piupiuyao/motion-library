@@ -1,0 +1,15 @@
+{
+  "id": "c25",
+  "name": "漫画对白气泡",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [],
+  "what": "漫画样式的对话框/思考泡或爆炸字（「WHAT?!」）带网点，从人头旁边弹出",
+  "use": "内心独白、反讽、反应、复述别人说的话",
+  "sources": [
+    "https://elements.envato.com/comic-elements-VRHJEWX"
+  ],
+  "params": {
+    "items": "气泡数组 [{kind: 'speech'|'thought'|'burst', text, at}]；speech/thought 出现在头右上方，burst（爆炸字）在头左上方；at 是原话里的词"
+  }
+}

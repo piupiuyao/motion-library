@@ -1,0 +1,23 @@
+{
+  "id": "c17",
+  "name": "文章荧光高亮",
+  "video_type": "talking-head",
+  "category": "素材",
+  "needs": [
+    "图片"
+  ],
+  "what": "一张文章/文件截图铺满屏幕慢慢推近，荧光笔扫过其中一句，其余部分变暗",
+  "use": "引用证据、新闻标题、原文",
+  "sources": [
+    "https://www.youtube.com/watch?v=QLM2upiiyGc"
+  ],
+  "params": {
+    "highlight": "被荧光笔扫过的那一句",
+    "headline": "文章标题",
+    "kicker": "标题上方小栏目名，默认 WORK & LIFE",
+    "before": "高亮句之前的段落数组",
+    "after": "高亮句之后的段落数组",
+    "color": "荧光笔颜色，默认 #f7e84a",
+    "at": "可选。开始划线的秒数（相对镜头开头），默认约 1 秒"
+  }
+}

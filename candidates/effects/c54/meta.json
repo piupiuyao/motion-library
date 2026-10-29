@@ -1,0 +1,18 @@
+{
+  "id": "c54",
+  "name": "局部留色",
+  "video_type": "talking-head",
+  "category": "镜头特效",
+  "needs": [
+    "抠像"
+  ],
+  "what": "画面变黑白，只留一样东西有颜色：人、手里的道具，或字幕里的关键词",
+  "use": "整条片子的风格、只想让一样东西抢眼的时候",
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=431s",
+    "https://www.choppity.com/tools/recreate-video-editing-style/ali-abdaal/"
+  ],
+  "params": {
+    "start": "可选。第几秒开始褪色，默认 0.25"
+  }
+}

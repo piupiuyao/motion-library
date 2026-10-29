@@ -1,0 +1,22 @@
+{
+  "id": "c48",
+  "name": "账号名牌条",
+  "video_type": "talking-head",
+  "category": "版式",
+  "needs": [],
+  "what": "一个胶囊形标签（平台图标 + 名字 + @账号，可带「关注」按钮）从下方滑进来，2–3 秒后收回",
+  "use": "开头自我介绍、亮身份「我做了 10 年猎头」",
+  "sources": [
+    "https://videohive.net/item/vertical-lower-thirds/60452077"
+  ],
+  "params": {
+    "name": "可选。名字，默认 Monica",
+    "handle": "可选。@账号",
+    "follow": "可选。按钮字，默认 Follow；false = 不要按钮",
+    "icon": "可选。图标（HTML/emoji），默认画一个相机图标",
+    "iconBg": "可选。图标底色",
+    "at": "可选。第几秒滑入，默认 0.3",
+    "hold": "可选。停留秒数，默认 2.6",
+    "y": "可选。纵向位置，默认 1240"
+  }
+}
