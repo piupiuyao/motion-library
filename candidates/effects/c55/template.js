@@ -9,10 +9,10 @@ TEMPLATES.c55 = {
     cv.width = 540; cv.height = 960;
     const g = cv.getContext('2d'), x = fx / 2, top = -10, bot = (fy + 380) / 2;
     const grad = g.createLinearGradient(0, top, 0, bot);
-    grad.addColorStop(0, 'rgba(255,240,205,.16)'); grad.addColorStop(.6, 'rgba(255,240,205,.07)'); grad.addColorStop(1, 'rgba(255,240,205,0)');
+    grad.addColorStop(0, 'rgba(255,240,205,.085)'); grad.addColorStop(.6, 'rgba(255,240,205,.04)'); grad.addColorStop(1, 'rgba(255,240,205,0)');
     g.fillStyle = grad;
-    for (let k = 0; k < 7; k++) {
-      const w0 = 30 + k * 8, w1 = 170 + k * 26;
+    for (let k = 0; k < 14; k++) {
+      const w0 = 30 + k * 4, w1 = 170 + k * 13;
       g.beginPath(); g.moveTo(x - w0, top); g.lineTo(x + w0, top); g.lineTo(x + w1, bot); g.lineTo(x - w1, bot); g.closePath(); g.fill();
     }
     this.beam = cv;

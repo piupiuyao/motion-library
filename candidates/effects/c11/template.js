@@ -22,7 +22,7 @@ TEMPLATES.c11 = {
     this.lh = P.line_height || 96;
     this.col = el('div', `position:absolute;${this.side > 0 ? 'right:40px' : 'left:40px'};top:${P.y || 300}px;width:${P.width || 470}px`);
     this.items = lines.map(ln => {
-      const e = el('div', `height:${this.lh}px;font:${P.size || 60}px/1.2 "Bradley Hand","Noteworthy","Marker Felt",cursive;font-weight:700;color:#fff;
+      const e = el('div', `height:${this.lh}px;font:${P.size || 66}px/1.2 "Bradley Hand","Noteworthy","Marker Felt",cursive;font-weight:700;color:#fff;
         white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5);text-align:${this.side > 0 ? 'left' : 'right'}`,
         ln.map(w => keyIdx.has(w.i) ? `<span style="color:#ffd84a">${w.w}</span>` : w.w).join(' '));
       this.col.appendChild(e);
@@ -30,6 +30,8 @@ TEMPLATES.c11 = {
     });
     this.maxLines = P.max_lines || 9;
     ctx.L.front.appendChild(this.col);
+    // the side text replaces the centred subtitle pill (style lives in #front, so it is wiped with the shot)
+    if (P.keep_caption !== true) ctx.L.front.appendChild(el('style', '', '#caption{visibility:hidden}'));
   },
   frame(ctx) {
     const p = ease.inOut(enter(ctx.t, 0, .5));

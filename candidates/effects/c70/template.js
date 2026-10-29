@@ -51,7 +51,6 @@ TEMPLATES.c70 = {
       <div style="${c}right:80px;top:220px;border-right-width:10px;border-top-width:10px"></div>
       <div style="${c}left:80px;top:1260px;border-left-width:10px;border-bottom-width:10px"></div>
       <div style="${c}right:80px;top:1260px;border-right-width:10px;border-bottom-width:10px"></div>
-      <div style="position:absolute;left:120px;top:250px;font:800 44px var(--font-body);color:#fff"><span style="color:#ff3b30">●</span> REC</div>
       <div style="position:absolute;left:510px;top:${ctx.focus[1] * 1920 - 30}px;width:60px;height:60px;border:6px solid #fff;border-radius:50%;box-sizing:border-box"></div>`;
     this.barT = el('div', 'position:absolute;left:0;right:0;top:0;height:0;background:#000');
     this.barB = el('div', 'position:absolute;left:0;right:0;bottom:0;height:0;background:#000');

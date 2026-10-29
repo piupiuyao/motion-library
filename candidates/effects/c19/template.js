@@ -13,7 +13,7 @@ TEMPLATES.c19 = {
     ctx.L.back.appendChild(this.bgc);
     this.strip = el('div', `position:absolute;left:0;top:0;width:${1080 * this.n}px;height:1920px`);
     ctx.L.back.appendChild(this.strip);
-    const spots = [[[-330, -420], [300, 380]], [[310, -430], [-320, 400]], [[-320, -420], [320, 400]]];
+    const spots = [[[-250, -400], [250, 380]], [[250, -410], [-250, 390]], [[-250, -400], [250, 380]]];
     let svg = '';
     this.parts = [];
     groups.forEach((g, k) => {

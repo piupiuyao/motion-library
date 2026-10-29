@@ -4,7 +4,7 @@ TEMPLATES.c66 = {
     const P = ctx.params;
     this.t0 = P.at != null ? P.at : .4;
     this.hold = P.hold || 1.3;
-    this.card = el('div', `position:absolute;inset:0;background:${P.bg || 'var(--accent)'};box-shadow:0 30px 60px rgba(0,0,0,.4)`);
+    this.card = el('div', `position:absolute;inset:0;background:${P.bg || 'var(--accent)'};box-shadow:0 0 70px rgba(0,0,0,.45)`);
     this.card.appendChild(el('div', 'position:absolute;inset:0;background:repeating-linear-gradient(0deg, transparent 0 58px, rgba(0,0,0,.07) 58px 60px), repeating-linear-gradient(90deg, transparent 0 58px, rgba(0,0,0,.07) 58px 60px)'));
     this.num = el('div', 'position:absolute;left:90px;top:560px;font-size:220px;color:var(--ink);opacity:.18', P.num || '02');
     this.num.className = 'display';

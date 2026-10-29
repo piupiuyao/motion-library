@@ -5,6 +5,9 @@ TEMPLATES.c36 = {
     this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
     this.flip = !!P.flip; // true: person at the bottom
     ctx.L.bg.style.background = 'var(--bg-a)';
+    // the untouched full frame stays underneath while the two halves slide in over it from opposite sides
+    this.full = el('img', 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%');
+    ctx.L.bg.appendChild(this.full);
     this.panel = el('div', `position:absolute;left:0;top:${this.flip ? 0 : 960}px;width:1080px;height:960px;overflow:hidden;background:var(--bg-b)`);
     this.img = el('img', 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover');
     this.panel.appendChild(this.img);
@@ -29,14 +32,19 @@ TEMPLATES.c36 = {
     }
   },
   frame(ctx) {
-    const pin = ease.out(enter(ctx.t, 0, .55)), pout = ease.inOut(enter(ctx.t, ctx.d - .45, .45));
+    const pin = ease.out(enter(ctx.t, 0, .5)), pout = ease.inOut(enter(ctx.t, ctx.d - .45, .45));
     const k = pin * (1 - pout);
-    // show source rows 330..1290 (the face) in one half
-    const top = 330 * k, bot = 630 * k, dy = this.flip ? 630 * k : -330 * k;
-    ctx.base.style.transform = `translateY(${dy}px) scale(${lerp(ctx.seg.zoom || 1, 1, k)})`;
-    ctx.base.style.clipPath = `inset(${top}px 0 ${bot}px 0)`;
+    const z = ctx.seg.zoom || 1, f = this.flip ? -1 : 1;
+    setImg(this.full, ctx.baseImg.getAttribute('src'));
+    this.full.style.transform = `scale(${z})`;
+    this.full.style.display = k < 1 ? '' : 'none';
+    // person half: source rows 330..1290 (the face) shown in one half, sliding in from the right
+    const dy = this.flip ? 630 : -330;
+    ctx.base.style.transform = `translateX(${(1 - k) * 1080 * f}px) translateY(${dy}px)`;
+    ctx.base.style.clipPath = `inset(330px 0 630px 0)`;
+    ctx.base.style.boxShadow = 'none';
     setImg(this.img, mediaSrc(this.media, ctx.t));
-    this.panel.style.transform = `translateX(${lerp(-1080, 0, k)}px)`;
+    this.panel.style.transform = `translateX(${lerp(-1080 * f, 0, k)}px)`;
     this.line.style.transform = `scaleX(${k})`;
     if (this.chip) {
       const q = enter(ctx.t, .45, .4);

@@ -17,11 +17,11 @@ TEMPLATES.c69 = {
         l.className = 'display'; root.appendChild(l);
       }
     } else {
-      root.style.background = 'var(--accent)';
-      const l = el('div', 'position:absolute;left:70px;right:70px;top:560px;text-align:center;font-size:150px;color:var(--ink);text-transform:uppercase', P.title || 'Next up');
+      root.style.background = 'radial-gradient(ellipse at 50% 35%, #3a2a22, #121014 75%)';
+      const l = el('div', 'position:absolute;left:70px;right:70px;top:560px;text-align:center;font-size:150px;color:var(--paper);text-transform:uppercase', P.title || 'Next up');
       l.className = 'display'; root.appendChild(l);
       if (P.subtitle) {
-        const s = el('div', 'position:absolute;left:70px;right:70px;top:1180px;text-align:center;font:700 56px var(--font-body);color:var(--ink);opacity:.75', P.subtitle);
+        const s = el('div', 'position:absolute;left:70px;right:70px;top:1180px;text-align:center;font:700 56px var(--font-body);color:var(--paper);opacity:.75', P.subtitle);
         root.appendChild(s);
       }
     }
@@ -39,20 +39,26 @@ TEMPLATES.c69 = {
     this.T = this.hit(ctx, ctx.params.at, clamp(ctx.d * .3, .6, 1.5));
     this.sc = this.scene(ctx);
     this.sc.root.style.opacity = 0;
-    this.leak = el('div', `position:absolute;left:-1080px;top:-200px;width:2160px;height:2320px;opacity:0;
-      background:radial-gradient(ellipse 30% 45% at 50% 45%, rgba(255,255,240,.95), rgba(255,190,90,.75) 40%, rgba(255,110,30,.35) 70%, transparent 100%),
-                 radial-gradient(ellipse 18% 30% at 30% 70%, rgba(255,120,40,.6), transparent 100%)`);
-    this.white = el('div', 'position:absolute;inset:0;background:#fff8ec;opacity:0');
+    // light leak: big soft warm blobs (orange/red/yellow) added on top with screen blending
+    this.leak = el('div', `position:absolute;left:-900px;top:-500px;width:2400px;height:2900px;opacity:0;mix-blend-mode:screen;
+      background:radial-gradient(ellipse 22% 30% at 52% 46%, rgba(255,250,225,1), rgba(255,200,90,.95) 35%, rgba(255,120,30,.75) 65%, rgba(255,60,20,0) 100%),
+                 radial-gradient(ellipse 14% 40% at 30% 55%, rgba(255,80,30,.9), rgba(255,40,10,0) 100%),
+                 radial-gradient(ellipse 12% 25% at 72% 38%, rgba(255,210,80,.85), rgba(255,160,40,0) 100%)`);
+    this.white = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, #fffdf5, #ffe2b0);opacity:0');
     ctx.L.front.append(this.sc.root, this.leak, this.white);
   },
   frame(ctx) {
-    const dt = ctx.t - this.T, D = ctx.params.dur || 1.0;
+    const dt = ctx.t - this.T, D = ctx.params.dur || 1.2;
     this.sc.update(Math.max(0, dt));
-    const p = clamp((dt + D * .5) / D); // leak travels over D seconds, peak at T
-    this.leak.style.opacity = Math.sin(Math.PI * p);
-    this.leak.style.transform = `translateX(${lerp(-500, 1500, ease.inOut(p))}px) rotate(12deg)`;
-    this.white.style.opacity = .95 * Math.max(0, 1 - Math.abs(dt) / (D * .35));
+    const p = clamp((dt + D * .5) / D); // leak travels over D seconds, brightest at T (the cut)
+    this.leak.style.opacity = Math.pow(Math.sin(Math.PI * p), .7);
+    this.leak.style.transform = `translate(${lerp(-420, 520, p)}px, ${lerp(250, -200, p)}px) rotate(${lerp(-10, 16, p)}deg)`;
+    // overexposure: the old shot burns out toward white just before the cut, the new one comes up out of it
+    const burn = Math.max(0, 1 - Math.abs(dt) / (D * .2));
+    this.white.style.opacity = .92 * Math.pow(burn, 1.4);
+    ctx.baseImg.style.filter = dt < 0 ? `brightness(${1 + 1.2 * burn}) saturate(${1 + .4 * burn})` : '';
     this.sc.root.style.opacity = dt >= 0 ? 1 : 0;
+    this.sc.root.style.filter = dt >= 0 && burn > 0 ? `brightness(${1 + 1.2 * burn})` : '';
     this.sc.root.style.transform = `scale(${dt >= 0 ? lerp(1.06, 1, ease.out(clamp(dt / 1.2))) : 1})`;
   },
 };

@@ -9,7 +9,7 @@ TEMPLATES.c26 = {
     const P = ctx.params;
     const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920;
     const items = P.items || [{ emoji: '😱', at: null }, { emoji: '🔥', at: null }];
-    const spots = [[fx - 360, fy - 260, -14], [fx + 330, fy - 120, 12], [fx - 330, fy + 180, 10], [fx + 320, fy + 260, -10]];
+    const spots = [[fx - 310, fy + 150, -14], [fx + 300, fy - 40, 12], [fx - 300, fy + 420, 10], [fx + 300, fy + 330, -10]];
     this.pops = items.map((it, k) => {
       const [x, y, r] = spots[k % 4];
       const e = el('div', `position:absolute;left:${x - 140}px;top:${y - 140}px;width:280px;height:280px;font-size:230px;line-height:280px;text-align:center`, it.emoji);

@@ -1,4 +1,4 @@
-// 开幕分屏 · 转场：当前画面分成四条，像幕布一样从中间往两边拉开，露出下面的新画面或标题
+// 开幕分屏 · 转场：画面压黑，三条竖向分屏从细缝往两边打开（中间先开），每条是同一个人的不同景别；mode:"curtain" 时改为当前画面裂成几条像幕布拉开露出新画面
 TEMPLATES.c73 = {
   // next scene for the demo: params.to = image path | {frames,...} B-roll | omitted -> title card (params.title)
   scene(ctx) {
@@ -37,6 +37,59 @@ TEMPLATES.c73 = {
   },
   setup(ctx) {
     this.T = this.hit(ctx, ctx.params.at, clamp(ctx.d * .35, .7, 1.6));
+    this.mode = ctx.params.mode || 'panels';
+    if (this.mode === 'curtain') return this.setupCurtain(ctx);
+    // panels (like the reference): screen drops to black, three vertical panels open from thin slits
+    // (middle first), each showing the speaker from a different "angle" (wide / close-up / mirrored)
+    const gut = 14, pw = (1080 - 2 * gut) / 3;
+    this.pw = pw;
+    this.black = el('div', 'position:absolute;inset:0;background:#000;opacity:0');
+    ctx.L.front.appendChild(this.black);
+    const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920;
+    const crops = ctx.params.crops || [{ zoom: 1.05 }, { zoom: 1.7 }, { zoom: 1.3, mirror: true }];
+    this.panels = crops.slice(0, 3).map((c, i) => {
+      const cv = el('canvas', `position:absolute;top:0;left:${i * (pw + gut)}px;width:${pw}px;height:1920px`);
+      cv.width = Math.round(pw / 2); cv.height = 960;
+      ctx.L.front.appendChild(cv);
+      const z = c.zoom || 1, sw = pw / z, sh = 1920 / z;
+      const sx = clamp(fx - sw / 2, 0, 1080 - sw), sy = clamp(fy - .36 * sh, 0, 1920 - sh);
+      return { cv, g: cv.getContext('2d'), i, sx, sy, sw, sh, mirror: !!c.mirror, delay: i === 1 ? 0 : .12 };
+    });
+    if (ctx.params.title) {
+      this.title = el('div', 'position:absolute;left:60px;right:60px;top:1180px;text-align:center;font-size:96px;color:#fff;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.6);opacity:0', ctx.params.title);
+      this.title.className = 'display';
+      ctx.L.front.appendChild(this.title);
+    }
+  },
+  frame(ctx) {
+    if (this.mode === 'curtain') return this.frameCurtain(ctx);
+    const dt = ctx.t - this.T, D = ctx.params.dur || .55, on = dt >= 0;
+    this.black.style.opacity = on ? 1 : 0;
+    const draws = [];
+    for (const p of this.panels) {
+      const q = ease.out(clamp((dt - p.delay) / D));
+      const w = this.pw * q;
+      p.cv.style.display = on && q > 0 ? '' : 'none';
+      p.cv.style.clipPath = `inset(0 ${(this.pw - w) / 2}px)`;
+      p.cv.style.opacity = .35 + .65 * q;
+      if (on && q > 0) draws.push(p);
+    }
+    if (draws.length) pending.push(ctx.baseImg.decode().catch(() => {}).then(() => {
+      for (const p of draws) {
+        p.g.save();
+        if (p.mirror) { p.g.translate(p.cv.width, 0); p.g.scale(-1, 1); }
+        p.g.drawImage(ctx.baseImg, p.sx, p.sy, p.sw, p.sh, 0, 0, p.cv.width, 960);
+        p.g.restore();
+      }
+    }));
+    if (this.title) {
+      const tq = enter(dt, D + .15, .35);
+      this.title.style.opacity = tq;
+      this.title.style.transform = `translateY(${lerp(40, 0, ease.out(tq))}px)`;
+    }
+  },
+  // ---- curtain mode: the current frame splits into strips that slide apart to reveal the next scene ----
+  setupCurtain(ctx) {
     this.N = ctx.params.strips || 4;
     this.sc = this.scene(ctx);
     ctx.L.front.appendChild(this.sc.root);
@@ -58,7 +111,7 @@ TEMPLATES.c73 = {
       s.g.drawImage(img, sx, 960 - 960 / z, w / z, 1920 / z, 0, 0, s.cv.width, 960);
     }
   },
-  frame(ctx) {
+  frameCurtain(ctx) {
     const dt = ctx.t - this.T, D = ctx.params.dur || .8, w = 1080 / this.N;
     this.sc.update(Math.max(0, dt));
     const on = dt >= 0;

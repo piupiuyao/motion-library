@@ -3,7 +3,7 @@ TEMPLATES.c62 = {
   setup(ctx) {
     this.fps = ctx.params.fps || 7;
     ctx.baseImg.style.filter = 'sepia(.5) contrast(1.18) saturate(.8) brightness(.95)';
-    this.grain = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:.28;mix-blend-mode:overlay');
+    this.grain = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:.4;mix-blend-mode:overlay');
     this.grain.width = 360; this.grain.height = 640;
     this.gg = this.grain.getContext('2d');
     this.img = this.gg.createImageData(360, 640);

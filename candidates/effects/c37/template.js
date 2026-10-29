@@ -8,7 +8,7 @@ TEMPLATES.c37 = {
     this.panel = el('div', `position:absolute;top:0;${this.dir > 0 ? 'left:540px' : 'left:0'};width:540px;height:1920px;overflow:hidden;
       background:radial-gradient(ellipse at 50% 30%, var(--bg-b), var(--bg-a) 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px`);
     if (P.title) {
-      const t = el('div', 'width:460px;color:var(--paper);font-size:76px;text-align:left', P.title);
+      const t = el('div', 'width:460px;color:var(--paper);font-size:68px;text-align:left', P.title);
       t.className = 'display';
       this.panel.appendChild(t);
     }

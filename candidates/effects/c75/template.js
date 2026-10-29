@@ -7,6 +7,8 @@ TEMPLATES.c75 = {
     ctx.L.bg.style.background = `repeating-linear-gradient(-9deg, transparent 0 60px, rgba(255,255,255,.06) 60px 64px),
       radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--accent) 70%, #000), #0c0c10 75%)`;
     ctx.personCv.style.filter = outline(9, '#fff');
+    // the matte has a hole where the laptop is: let the cutout fade out at the chest, inside the card
+    ctx.person.style.webkitMaskImage = 'linear-gradient(180deg, #000 64%, transparent 72%)';
     ctx.base.style.transformOrigin = '50% 45%';
     this.txt = el('div', `position:absolute;left:0;right:0;top:${P.top || 150}px;text-align:center;font-size:${P.size || 170}px;text-transform:uppercase;
       transform-origin:50% 50%;color:transparent;-webkit-background-clip:text;background-clip:text;
@@ -22,9 +24,11 @@ TEMPLATES.c75 = {
     const grow = ease.out(clamp(dt / .35)), snap = ease.back(clamp((dt - .55) / .22));
     const tilt = on ? -9 * ease.out(clamp(dt / .25)) : 0;
     const mirror = on ? -1 : 1;
-    const half = lerp(lerp(.32, .75, grow), .3, snap); // half-size of the window as a fraction of the frame
-    const ins = (.5 - half) * 100;
-    ctx.base.style.clipPath = on ? `inset(${clamp(ins + 4, -20, 50)}% ${clamp(ins, -20, 50)}% ${clamp(ins - 4, -20, 50)}% ${clamp(ins, -20, 50)}% round 40px)` : 'none';
+    // window (fraction of the frame): starts as a card, grows past the edges, then snaps to a lower card
+    // so her head pops out above its top edge
+    const A = [.16, .16, .16, .16], B = [-.12, -.12, -.12, -.12], C = [.36, .1, .2, .1]; // top right bottom left insets
+    const ins = A.map((v, i) => lerp(lerp(v, B[i], grow), C[i], snap) * 100);
+    ctx.base.style.clipPath = on ? `inset(${ins[0]}% ${ins[1]}% ${ins[2]}% ${ins[3]}% round 36px)` : 'none';
     ctx.base.style.transform = on ? `rotate(${tilt}deg) scale(${mirror * z * 1.15}, ${z * 1.15})` : `scale(${z})`;
     ctx.baseImg.style.filter = on ? `brightness(${lerp(1, .7, snap)})` : '';
     // the cut-out person pops forward once the card has snapped

@@ -38,7 +38,7 @@ TEMPLATES.c72 = {
   setup(ctx) {
     const P = ctx.params;
     this.T = this.hit(ctx, P.at, clamp(ctx.d * .3, .6, 1.5));
-    this.c = P.center || [540, 760];
+    this.c = P.center || [ctx.focus[0] * 1080, ctx.focus[1] * 1920 + 60]; // default: opens from the face
     this.sc = this.scene(ctx);
     this.ring = el('div', 'position:absolute;border-radius:50%;border:12px solid var(--accent);box-sizing:border-box;box-shadow:0 0 30px rgba(0,0,0,.35)');
     ctx.L.front.append(this.sc.root, this.ring);
@@ -46,7 +46,7 @@ TEMPLATES.c72 = {
   frame(ctx) {
     const D = ctx.params.dur || .8, dt = ctx.t - this.T;
     this.sc.update(Math.max(0, dt));
-    const R = dt <= 0 ? 0 : lerp(0, 1400, ease.inOut(clamp(dt / D)));
+    const R = dt <= 0 ? 0 : lerp(0, 1550, ease.inOut(clamp(dt / D)));
     const [cx, cy] = this.c;
     this.sc.root.style.clipPath = `circle(${R}px at ${cx}px ${cy}px)`;
     Object.assign(this.ring.style, {

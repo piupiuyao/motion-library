@@ -25,7 +25,21 @@
     "app": "whatsapp",
     "sender": "Sarah",
     "text": "Hey, did you see my message? 👀",
-    "at": "replying"
+    "at": "replying",
+    "more": [
+     {
+      "app": "mail",
+      "sender": "Mark (work)",
+      "text": "Re: Q3 report — any update?",
+      "time": "now"
+     },
+     {
+      "app": "message",
+      "sender": "Mom",
+      "text": "Call me when you're free ❤️",
+      "time": "now"
+     }
+    ]
    }
   },
   {
@@ -45,7 +59,8 @@
       "from": "them",
       "text": "Can you check the Q3 report tonight?"
      }
-    ]
+    ],
+    "them": "Sarah"
    }
   },
   {
@@ -59,7 +74,7 @@
      },
      {
       "emoji": "😩",
-      "at": "day"
+      "at": "amount"
      }
     ]
    }

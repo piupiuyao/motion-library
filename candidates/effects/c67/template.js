@@ -29,7 +29,7 @@ TEMPLATES.c67 = {
   setup(ctx) {
     const P = ctx.params;
     this.t0 = P.at != null ? P.at : .9;
-    this.N = 8;
+    this.N = 12; // copies; stacked with opacity 1/(i+1) they average into a smooth radial blur
     // zoom-blur = several copies stacked at growing scales
     this.outBox = el('div', 'position:absolute;inset:0');
     this.outs = Array.from({ length: this.N }, (_, i) => {
@@ -52,23 +52,26 @@ TEMPLATES.c67 = {
     this.outBox.style.display = outOn ? '' : 'none';
     this.inBox.style.display = inOn ? '' : 'none';
     ctx.base.style.opacity = outOn || inOn ? 0 : 1;
+    const N = this.N;
     if (outOn) {
       const e = pOut * pOut, src = ctx.baseImg.getAttribute('src'), z = ctx.seg.zoom || 1;
+      const sc = z * (1 + e * 1.3), spread = e * .55; // spread = blur length
       this.outs.forEach((img, i) => {
         setImg(img, src);
-        img.style.transform = `scale(${z * (1 + e * 1.4) * (1 + i * e * .09)})`;
-        img.style.opacity = i ? .3 * e + (1 - e) * 0 : 1;
+        img.style.transform = `scale(${sc * (1 + spread * i / (N - 1))})`;
+        img.style.opacity = 1 / (i + 1);
       });
     }
     if (inOn) {
       const e = 1 - ease.out(pIn);
+      const sc = 1 + e * 1.1, spread = e * .55;
       this.ins.forEach((s, i) => {
         s.tick(ctx.t - t0);
-        s.box.style.transform = `scale(${(1 + e * 1.2) * (1 + i * e * .08)})`;
-        s.box.style.opacity = i ? .3 * e : 1;
+        s.box.style.transform = `scale(${sc * (1 + spread * i / (N - 1))})`;
+        s.box.style.opacity = 1 / (i + 1);
       });
     }
     const f = Math.max(0, 1 - Math.abs(ctx.t - t0) / .12);
-    this.flash.style.opacity = f * .6;
+    this.flash.style.opacity = f * .3;
   },
 };

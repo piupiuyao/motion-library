@@ -9,7 +9,7 @@ TEMPLATES.c07 = {
     const c = cv.getContext('2d');
     let size = 600;
     c.font = `900 ${size}px ${font}`;
-    size = Math.min(900, Math.floor(size * 980 / c.measureText(txt).width));
+    size = Math.min(900, Math.floor(size * 880 / c.measureText(txt).width));
     c.font = `900 ${size}px ${font}`;
     const cy = P.y || 900;
     c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = '#000';

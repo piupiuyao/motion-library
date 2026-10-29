@@ -11,18 +11,15 @@ TEMPLATES.c05 = {
     this.wrap = el('div', `position:absolute;left:0;right:0;top:${P.y || 600}px;display:flex;flex-direction:column;align-items:center`);
     // three stacked copies of the title: shadow+glow underneath, gradient fill, and the light sweep on top
     // (separate copies because filters/text-shadow do not show on background-clip:text)
-    const stack = el('div', 'display:grid;position:relative');
+    const stack = el('div', 'position:relative');
     const html = lines.join('<br>');
-    const common = `grid-area:1/1;font-size:${size}px;text-transform:uppercase;line-height:1;text-align:center;`;
-    const glow = el('div', common + `color:#000;opacity:.85;text-shadow:0 18px 26px rgba(0,0,0,.75), 0 0 60px rgba(255,170,70,.75), 0 0 120px rgba(255,120,40,.5)`, html);
-    const fill = el('div', common + `background:linear-gradient(180deg,#fff3cf 0%,#ffc35a 45%,#ff7a2a 100%);-webkit-background-clip:text;background-clip:text;color:transparent`, html);
-    this.shine = el('div', common + `background:linear-gradient(115deg, transparent 0 42%, rgba(255,255,255,.0) 44%, #fff 49%, #fff 51%, rgba(255,255,255,0) 56%, transparent 58% 100%) no-repeat;
+    const common = `font-size:${size}px;text-transform:uppercase;line-height:1;text-align:center;`;
+    const glow = el('div', common + `position:absolute;left:0;right:0;top:0;color:#000;opacity:.85;text-shadow:0 18px 26px rgba(0,0,0,.75), 0 0 60px rgba(255,170,70,.75), 0 0 120px rgba(255,120,40,.5)`, html);
+    const fill = el('div', common + `position:relative;background:linear-gradient(180deg,#fff3cf 0%,#ffc35a 45%,#ff7a2a 100%);-webkit-background-clip:text;background-clip:text;color:transparent`, html);
+    this.shine = el('div', common + `position:absolute;left:0;right:0;top:0;background:linear-gradient(115deg, transparent 0 42%, rgba(255,255,255,.0) 44%, #fff 49%, #fff 51%, rgba(255,255,255,0) 56%, transparent 58% 100%) no-repeat;
       background-size:320% 100%;-webkit-background-clip:text;background-clip:text;color:transparent`, html);
-    // a soft flare that travels with the sweep across the whole title block
-    this.flare = el('div', `position:absolute;top:-10%;bottom:-10%;width:34%;left:0;background:linear-gradient(115deg, transparent, rgba(255,240,210,.28), transparent);
-      mix-blend-mode:screen;pointer-events:none`);
     for (const e of [glow, fill, this.shine]) e.className = 'display';
-    stack.append(glow, fill, this.shine, this.flare);
+    stack.append(glow, fill, this.shine);
     this.stack = stack;
     this.wrap.appendChild(stack);
     if (P.sub) {
@@ -44,7 +41,5 @@ TEMPLATES.c05 = {
     const s = ease.inOut(enter(ctx.t, this.t0 + .45, .8));
     this.shine.style.backgroundPosition = `${lerp(100, 0, s)}% 0`;
     this.shine.style.opacity = s > 0 && s < 1 ? 1 : 0;
-    this.flare.style.left = `${lerp(-40, 110, s)}%`;
-    this.flare.style.opacity = s > 0 && s < 1 ? 1 : 0;
   },
 };

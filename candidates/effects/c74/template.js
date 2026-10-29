@@ -8,12 +8,12 @@ TEMPLATES.c74 = {
     this.step = P.step || .2;
     const fs = 104, Y = P.y || 700;
     const A = P.articles || [
-      { bg: '#f6f1e7', ink: '#1a1a1a', font: 'Georgia, serif', mast: 'THE DAILY LEDGER', l: 'Why', r: 'is the new email', img: 'assets/docs/gmail.jpg' },
+      { bg: '#f6f1e7', ink: '#1a1a1a', font: 'Georgia, serif', mast: 'THE DAILY LEDGER', tex: 1, l: 'Why', r: 'is the new email', img: 'assets/docs/gmail.jpg' },
       { bg: '#ffffff', ink: '#111', font: "'Helvetica Neue', Arial, sans-serif", mast: 'tech/weekly', l: 'The hidden cost of', r: 'late at night', img: null },
       { bg: '#fff4f0', ink: '#3a0d00', font: "'Times New Roman', serif", mast: 'Morning Herald', l: 'Stop', r: 'to everything', img: 'assets/docs/chat.jpg' },
       { bg: '#eef3ff', ink: '#0b1d4a', font: "'Avenir Next', sans-serif", mast: 'WORK LIFE', l: 'Inbox zero:', r: 'burnout', img: null },
       { bg: '#1d1d22', ink: '#f2f2f2', font: 'Georgia, serif', mast: 'THE EVENING POST', l: 'Is', r: 'killing your focus?', img: 'assets/docs/notify.jpg' },
-      { bg: '#fffbe6', ink: '#222', font: "'Courier New', monospace", mast: 'inbox digest', l: 'Why we hate', r: 'so much', img: null },
+      { bg: '#fffbe6', ink: '#222', font: "'Courier New', monospace", mast: 'inbox digest', tex: 1, l: 'Why we hate', r: 'so much', img: null },
       { bg: '#f0f7ee', ink: '#0f2a12', font: "'Helvetica Neue', sans-serif", mast: 'Modern Office', l: 'The art of', r: 'well and fast', img: 'assets/docs/gmail.jpg' },
       { bg: '#ffffff', ink: '#111', font: 'Didot, Georgia, serif', mast: 'QUARTERLY', l: 'AI and the', r: 'fatigue', img: null },
     ];
@@ -21,7 +21,7 @@ TEMPLATES.c74 = {
     const lines = (top, k, ink) => `<div style="position:absolute;left:80px;right:80px;top:${top}px;height:${k * 46}px;
       background:repeating-linear-gradient(180deg, ${ink} 0 18px, transparent 18px 46px);opacity:.18"></div>`;
     this.arts = A.slice(0, this.n).map((a, k) => {
-      const d = el('div', `position:absolute;inset:0;background:${a.bg};color:${a.ink};font-family:${a.font};display:none;overflow:hidden`);
+      const d = el('div', `position:absolute;inset:0;background:${a.tex ? pattern('paper') : a.bg};color:${a.ink};font-family:${a.font};display:none;overflow:hidden`);
       d.innerHTML = `<div style="position:absolute;left:80px;right:80px;top:150px;border-bottom:4px solid ${a.ink};padding-bottom:16px;font:700 64px ${a.font};letter-spacing:.04em;text-align:${k % 2 ? 'left' : 'center'}">${a.mast}</div>
         <div style="position:absolute;left:80px;top:270px;font:500 30px ${a.font};opacity:.6">${['MON', 'TUE', 'WED', 'THU', 'FRI'][k % 5]} · ${3 + k} MIN READ</div>
         ${lines(360, 5 + (k % 3), a.ink)}

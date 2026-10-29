@@ -1,6 +1,6 @@
 {"skin": "clean", "shots": [
   {"words": "0-8", "template": "c61", "params": {}},
-  {"words": "9-14", "template": "c50", "params": {"at": "solved"}},
+  {"words": "9-14", "template": "c50", "params": {"at": "hasn't"}},
   {"words": "15-20", "template": "c57", "params": {"at": "repetitive"}},
   {"words": "22-29", "template": "c55", "params": {}},
   {"words": "30-39", "template": "c74", "params": {"word": "Replying", "at": "replying"}},
@@ -10,9 +10,9 @@
   {"words": "67-73", "template": "c59", "params": {"labels": ["typing?", "saying?"], "at": ["typing", "saying"]}},
   {"words": "74-79", "template": "c58", "params": {}},
   {"words": "80-89", "template": "c51", "params": {"at": "no"}},
-  {"words": "90-97", "template": "c54", "params": {}},
+  {"words": "90-97", "template": "c54", "params": {"keywords": ["emotional"]}},
   {"words": "98-110", "template": "c53", "params": {}},
-  {"words": "111-122", "template": "c60", "params": {"steps": [{"at": "leave", "scale": 0.62}, {"at": "days", "scale": 1.3}]}},
+  {"words": "111-122", "template": "c60", "params": {"steps": [{"at": "leave", "scale": 0.72, "hand": [820, 1120]}, {"at": "hours", "scale": 1.25, "hand": [830, 950]}]}},
   {"words": "123-137", "template": "c69", "params": {"at": "because", "title": "Then comes the guilt"}},
   {"words": "138-148", "template": "c75", "params": {"text": "Solve this", "at": "This"}}
 ]}

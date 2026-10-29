@@ -8,7 +8,7 @@ TEMPLATES.c46 = {
     this.cv = el('canvas', 'position:absolute;inset:0;width:1080px;height:1920px');
     this.cv.width = 54; this.cv.height = 96;
     this.cx = this.cv.getContext('2d');
-    this.dim = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, rgba(5,8,20,.45), rgba(5,8,20,.85))');
+    this.dim = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, rgba(5,8,20,.6), rgba(5,8,20,.92))');
     ctx.L.back.append(this.cv, this.dim);
     const spots = ['left:60px;top:200px', 'right:60px;top:600px', 'left:60px;top:1000px', 'right:60px;top:1240px'];
     const glow = P.glow || 'var(--accent)';

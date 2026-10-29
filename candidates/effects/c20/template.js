@@ -10,7 +10,7 @@ TEMPLATES.c20 = {
     ctx.L.back.appendChild(this.bgc);
     this.grp = el('div', 'position:absolute;left:0;top:0;width:1080px;height:3000px');
     ctx.L.back.appendChild(this.grp);
-    const gap = P.gap || 230, y0 = 500;
+    const gap = P.gap || 210, y0 = 560;
     const pts = steps.map((_, k) => [k % 2 ? 700 : 380, y0 + k * gap]);
     let d = `M${pts[0][0] + 120} ${pts[0][1] - 260} C ${pts[0][0] + 120} ${pts[0][1] - 120}, ${pts[0][0]} ${pts[0][1] - 120}, ${pts[0][0]} ${pts[0][1]}`;
     pts.forEach(([x, y], k) => {
@@ -37,7 +37,7 @@ TEMPLATES.c20 = {
       this.grp.append(lb);
       return { lb, frac: k / Math.max(1, steps.length - 1) };
     });
-    this.title = el('div', `position:absolute;left:40px;right:40px;top:230px;text-align:center;font:800 96px/1 var(--font-body);color:#fff;letter-spacing:.01em;
+    this.title = el('div', `position:absolute;left:40px;right:40px;top:210px;text-align:center;font:800 76px/1 var(--font-body);color:#fff;letter-spacing:.01em;
       text-shadow:0 0 24px rgba(255,255,255,.55), 0 0 60px color-mix(in srgb, ${col} 60%, transparent)`, P.title || '');
     ctx.L.back.appendChild(this.title);
   },
@@ -53,7 +53,7 @@ TEMPLATES.c20 = {
       lb.style.opacity = q;
       lb.style.transform = `scale(${lerp(.3, 1, ease.pop(q))})`;
     });
-    this.grp.style.transform = `translateY(${lerp(-120, 140, ease.inOut(clamp(t / ctx.d)))}px)`;
+    this.grp.style.transform = `translateY(${lerp(0, 160, ease.inOut(clamp(t / ctx.d)))}px)`;
     const tq = enter(t, .1, .4);
     this.title.style.opacity = Math.min(tq, out);
     this.title.style.transform = `translateY(${lerp(-30, 0, ease.out(tq))}px)`;

@@ -15,7 +15,7 @@
   "params": {
     "media": "可选。纸片里放的 B-roll 帧或图片，默认 broll_inbox",
     "label": "可选。纸片顶上胶带上的手写字",
-    "bg": "可选。背景色，默认主题色",
+    "bg": "可选。背景：颜色或 pattern 名（paper|dots|grid|neon|plain），默认揉皱纸面",
     "at": "可选。第几秒滑入，默认 0.6",
     "pos": "可选。画面裁切位置（CSS object-position），默认 100% 50%"
   }

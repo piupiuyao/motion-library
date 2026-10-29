@@ -5,7 +5,7 @@ TEMPLATES.c56 = {
     const cw = 960, ch = Math.round(cw * (P.ratio || 1060 / 1080));
     this.card = { x: 60, y: P.top || 250, w: cw, h: ch };
     this.z = P.zoom || 2.3; this.R = P.lens || 175;
-    this.path = P.path || [[.3, .36], [.86, .2]];
+    this.path = P.path || [[.28, .38], [.66, .2]];
     this.dim = el('div', 'position:absolute;inset:0;background:rgba(10,10,14,.6);opacity:0');
     const c = this.card;
     this.cardEl = el('div', `position:absolute;left:${c.x}px;top:${c.y}px;width:${c.w}px;height:${c.h}px;border-radius:26px;overflow:hidden;

@@ -3,7 +3,7 @@ TEMPLATES.c18 = {
   setup(ctx) {
     const P = ctx.params;
     const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920 + 70;
-    const col = P.color || 'var(--accent)';
+    const col = P.color || '#ffffff';
     const jit = (s, k) => Math.sin(s * 12.9898 + k * 78.233) * 43758.5453 % 1;
     // wobbly circle around the head
     const circ = (cx, cy, rx, ry) => {
@@ -22,17 +22,21 @@ TEMPLATES.c18 = {
     const wave = (x, y, w) => { let d = `M${x} ${y}`; for (let i = 1; i <= 6; i++) d += ` Q${x + (i - .5) * w / 6} ${y + (i % 2 ? -26 : 26)} ${x + i * w / 6} ${y}`; return d; };
     const shapes = [
       { d: circ(fx, fy - 20, 300, 360), w: 13, t: .1, dur: .7 },
-      { d: `M140 ${fy - 520} C 200 ${fy - 380}, 260 ${fy - 300}, ${fx - 330} ${fy - 210}`, w: 13, t: .7, dur: .45 },
-      { d: `M${fx - 400} ${fy - 270} L ${fx - 330} ${fy - 210} L ${fx - 420} ${fy - 170}`, w: 13, t: 1.1, dur: .2 },
+      // loop-de-loop arrow from the label down to the face, with a little burst where it lands
+      { d: `M120 ${fy - 540} C 160 ${fy - 420}, 330 ${fy - 470}, 290 ${fy - 380} C 250 ${fy - 290}, 150 ${fy - 360}, 220 ${fy - 410} C 290 ${fy - 460}, ${fx - 330} ${fy - 330}, ${fx - 320} ${fy - 200}`, w: 11, t: .65, dur: .6 },
+      { d: `M${fx - 375} ${fy - 245} L ${fx - 320} ${fy - 200} L ${fx - 285} ${fy - 262}`, w: 11, t: 1.2, dur: .18 },
+      { d: `M${fx - 300} ${fy - 170} l 26 18 M${fx - 330} ${fy - 150} l 4 32 M${fx - 280} ${fy - 200} l 32 -2`, w: 7, t: 1.35, dur: .2 },
+      // >>> chevrons
+      { d: `M${fx - 300} ${fy + 300} l 40 34 l -40 34 M${fx - 240} ${fy + 300} l 40 34 l -40 34 M${fx - 180} ${fy + 300} l 40 34 l -40 34`, w: 10, t: 2.0, dur: .35 },
       { d: star(fx + 360, fy - 380, 70), w: 10, t: 1.3, dur: .45 },
       { d: star(fx + 300, fy - 520, 38), w: 8, t: 1.6, dur: .3 },
-      { d: wave(fx - 260, fy + 420, 520), w: 12, t: 1.8, dur: .5 },
+      { d: wave(fx - 60, fy + 440, 360), w: 11, t: 1.8, dur: .5 },
       { d: `M${fx + 330} ${fy + 60} l 50 -20 M${fx + 340} ${fy + 120} l 60 0 M${fx + 330} ${fy + 180} l 50 20`, w: 10, t: 2.2, dur: .3 },
     ];
     const sc = Math.max(.6, Math.min(1.2, (ctx.d - .4) / 2.6));
     this.svg = el('div', 'position:absolute;inset:0');
     this.svg.innerHTML = `<svg width="1080" height="1920" style="position:absolute;inset:0;overflow:visible">${shapes.map(s =>
-      `<path d="${s.d}" transform="translate(0 6)" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="${s.w}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/><path d="${s.d}" fill="none" stroke="${col}" stroke-width="${s.w}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>`).join('')}</svg>`;
+      `<path d="${s.d}" transform="translate(0 4)" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="${s.w + 4}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/><path d="${s.d}" fill="none" stroke="${col}" stroke-width="${s.w}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>`).join('')}</svg>`;
     this.paths = [...this.svg.querySelectorAll('path')].map((p, k) => ({ p, t: shapes[k >> 1].t * sc, dur: shapes[k >> 1].dur }));
     ctx.L.front.appendChild(this.svg);
     if (P.label) {

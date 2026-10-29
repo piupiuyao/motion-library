@@ -27,7 +27,7 @@ TEMPLATES.c76 = {
         const g = c.getContext('2d'); g.filter = f || 'none';
         const w = W * zoom, h = H * zoom; g.drawImage(img, (W - w) / 2, (H - h) / 2, w, h);
       };
-      draw(sharp, src); draw(blur, src, 'blur(22px) brightness(.42) saturate(.8)');
+      draw(sharp, src); draw(blur, src, 'blur(20px) brightness(.45) saturate(.25)');
       // person cut-out with a white sticker outline
       const m = document.createElement('canvas'); m.width = W; m.height = H;
       const mg = m.getContext('2d', { willReadFrequently: true });

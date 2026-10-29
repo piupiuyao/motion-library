@@ -1,0 +1,7 @@
+{
+ "status": "good",
+ "ref": "description-only",
+ "checked": "来源是第三方的风格分析页面，没有视频。按描述来比：黄色、窄粗、全大写，带粉色斜向 3D 厚投影，放大砸进画面下方。旧版遇到长词组（如 WITHOUT SOUNDING）会超出画面左右两边。",
+ "fixed": "字号改为按实际字宽算，保证一行放得下（最宽约 900px，给投影留了位置）。",
+ "left": "Mac 上没有真正的窄体粗字体，实际用的是 Avenir Next Condensed，比 Tom Noske 用的字略宽。"
+}

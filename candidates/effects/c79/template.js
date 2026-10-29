@@ -17,7 +17,7 @@ TEMPLATES.c79 = {
     this.ring = el('div', 'position:absolute;width:60px;height:60px;border-radius:50%;border:6px solid #fff;opacity:0');
     this.burst = el('div', `position:absolute;left:540px;top:${this.y + 74}px;width:0;height:0`);
     this.parts = Array.from({ length: 14 }, (_, j) => {
-      const e = el('div', `position:absolute;left:50%;top:50%;width:${18 + (j % 3) * 8}px;height:${18 + (j % 3) * 8}px;margin:-12px;border-radius:50%;
+      const e = el('div', `position:absolute;left:50%;top:50%;width:${26 + (j % 3) * 12}px;height:${26 + (j % 3) * 12}px;margin:-20px;border-radius:50%;
         background:${['#ff2d55', 'var(--accent)', '#3d7bff', '#ffd400'][j % 4]};opacity:0`);
       this.burst.appendChild(e);
       return { e, a: j / 14 * Math.PI * 2 + (j % 2) * .2, r: 260 + (j * 53) % 160 };

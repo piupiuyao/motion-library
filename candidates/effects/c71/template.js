@@ -39,18 +39,22 @@ TEMPLATES.c71 = {
     this.T = this.hit(ctx, ctx.params.at, clamp(ctx.d * .3, .6, 1.5));
     this.sc = this.scene(ctx);
     this.tan = Math.tan(18 * Math.PI / 180);
-    this.band = el('div', `position:absolute;left:0;top:-400px;width:700px;height:2720px;margin-left:-350px;transform-origin:50% 50%;
-      background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.15) 25%, rgba(255,255,255,.75) 42%, #fff 50%, rgba(255,255,255,.75) 58%, rgba(255,255,255,.15) 75%, transparent 100%)`);
-    ctx.L.front.append(this.sc.root, this.band);
+    // wide soft glow + a hot white core, screen-blended so it brightens whatever is under it
+    this.band = el('div', `position:absolute;left:0;top:-400px;width:1000px;height:2720px;margin-left:-500px;transform-origin:50% 50%;mix-blend-mode:screen;
+      background:linear-gradient(90deg, transparent 0%, rgba(255,250,235,.12) 20%, rgba(255,250,235,.45) 38%, rgba(255,255,255,.95) 46%, #fff 50%, rgba(255,255,255,.95) 54%, rgba(255,250,235,.45) 62%, rgba(255,250,235,.12) 80%, transparent 100%)`);
+    this.lift = el('div', 'position:absolute;inset:0;background:#fff;opacity:0;mix-blend-mode:screen');
+    ctx.L.front.append(this.sc.root, this.lift, this.band);
   },
   frame(ctx) {
-    const D = ctx.params.dur || .7, dt = ctx.t - this.T;
+    const D = ctx.params.dur || .9, dt = ctx.t - this.T;
     this.sc.update(Math.max(0, dt));
     const p = ease.inOut(clamp(dt / D));
-    const X = lerp(-750, 1830, p); // band centre at mid-height
+    const X = lerp(-900, 1980, p); // band centre at mid-height
     const tn = this.tan;
     this.band.style.transform = `translateX(${X}px) rotate(18deg)`;
     this.band.style.opacity = dt > 0 && dt < D ? 1 : 0;
+    // the whole frame flares a little while the light crosses it
+    this.lift.style.opacity = dt > 0 && dt < D ? .28 * Math.sin(Math.PI * dt / D) : 0;
     // everything left of the band centre line is already the new scene
     const xt = X + 960 * tn, xb = X - 960 * tn;
     this.sc.root.style.clipPath = dt <= 0 ? 'inset(0 100% 0 0)' : dt >= D ? 'none' : `polygon(0 0, ${xt}px 0, ${xb}px 1920px, 0 1920px)`;
