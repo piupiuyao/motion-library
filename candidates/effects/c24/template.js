@@ -22,9 +22,10 @@ TEMPLATES.c24 = {
       w.innerHTML = `<svg width="500" height="240" viewBox="-250 -120 500 240" style="overflow:visible">
         <defs><clipPath id="hc${clip}"><rect x="-260" y="${clip === 'b' ? -130 : 0}" width="520" height="130"/></clipPath></defs>
         <g clip-path="url(#hc${clip})">
-          <path d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-opacity=".35" stroke-width="34" stroke-linecap="round"/>
-          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-width="13" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
-          <path class="ln" d="${loop(.6, 52)}" fill="none" stroke="#fff6c8" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-opacity=".16" stroke-width="64" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-opacity=".32" stroke-width="34" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-width="15" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="#fff8d8" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
         </g></svg>`;
       return w;
     };
@@ -54,14 +55,15 @@ TEMPLATES.c24 = {
     for (let x = 100; x < 980; x += 6) if (d[(yb * 1080 + x) * 4 + 3] > 140) { sx += x; n++; }
     const hx = n ? sx / n : 540;
     const z = ctx.seg.zoom || 1;
-    return [540 + (hx - 540) * z, 960 + (top - 960) * z];
+    return [540 + (hx - 540) * z, 960 + (top - 960) * z, n * 6 * z];
   },
   frame(ctx) {
     const t = ctx.t, out = leave(ctx, .3);
-    const [hx, hy] = this.head(ctx);
+    const [hx, hy, hw] = this.head(ctx);
+    const k = clamp((hw || 340) / 340, .85, 1.3);
     const q = enter(t, this.t0, .7);
-    const x = hx + Math.sin(t * 2.1) * 6, y = hy - 70 + Math.sin(t * 2.7) * 10 - lerp(120, 0, ease.out(q));
-    const tf = `translate(${x}px,${y}px) rotate(${-6 + Math.sin(t * 1.6) * 3}deg) scale(${lerp(.6, 1, ease.pop(q))})`;
+    const x = hx + Math.sin(t * 2.1) * 6, y = hy - 60 * k + Math.sin(t * 2.7) * 10 - lerp(120, 0, ease.out(q));
+    const tf = `translate(${x}px,${y}px) rotate(${-6 + Math.sin(t * 1.6) * 3}deg) scale(${lerp(.6, 1, ease.pop(q)) * k})`;
     this.back.style.transform = this.front.style.transform = tf;
     const o = Math.min(clamp(q * 3), out);
     this.back.style.opacity = this.front.style.opacity = o;

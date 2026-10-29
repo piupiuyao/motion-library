@@ -1,0 +1,15 @@
+{
+ "id": "c90",
+ "name": "描边字透过人",
+ "video_type": "talking-head",
+ "category": "字体",
+ "needs": [
+  "抠像"
+ ],
+ "what": "人后面放一个大号实心字（彩色），同一个字的空心描边版本叠在人前面、位置完全重合。结果：没被人挡住的地方看到实心字，被人挡住的地方看到一层细描边从人身上透出来，像能「看穿」人。",
+ "use": "开场大标题、品牌名、和 text_sandwich 交替使用增加变化",
+ "sources": [
+  "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=723s"
+ ],
+ "ref_moment": "12:03–13:40（Outline Reveal Effect）"
+}

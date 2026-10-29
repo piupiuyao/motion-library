@@ -1,0 +1,15 @@
+{
+ "id": "c100",
+ "name": "竖屏片尾推荐卡",
+ "video_type": "talking-head",
+ "category": "片头片尾",
+ "needs": [
+  "图片"
+ ],
+ "what": "视频最后 3–5 秒，背景虚化压暗，上面一个大圆角卡片位（放下一条视频的封面）+ 一个圆形头像位（带「订阅」按钮），配「下一条看这个 / Watch next」标题；元素依次滑入弹出，线条和发光点缀。",
+ "use": "结尾引导看下一条、订阅",
+ "sources": [
+  "https://www.youtube.com/watch?v=eR3HQanWgPo&t=5s"
+ ],
+ "ref_moment": "0:05–0:55 依次展示多个版式"
+}

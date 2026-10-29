@@ -1,0 +1,13 @@
+{
+ "id": "c86",
+ "name": "字体快速轮换",
+ "video_type": "talking-head",
+ "category": "字体",
+ "needs": [],
+ "what": "一个关键词停在原位不动，但它的字体每 2–3 帧换一次（衬线→手写→等宽→粗黑→像素…），持续约 0.5–1 秒，像在「洗牌」，最后落回原来的字体停住。颜色大小基本不变，可配滴答声。词在人前或人后均可。",
+ "use": "强调一个概念/名字，想让它「闪」一下吸引注意；开场钩子里的关键词",
+ "sources": [
+  "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=678s"
+ ],
+ "ref_moment": "11:18–12:03（Font Shift Effect 段）"
+}

@@ -1,0 +1,16 @@
+{
+ "id": "c97",
+ "name": "半调网点",
+ "video_type": "talking-head",
+ "category": "镜头特效",
+ "needs": [
+  "抠像"
+ ],
+ "what": "画面变成报纸/漫画印刷的网点效果：亮的地方点小、暗的地方点大，通常单色（黑点 + 米白/彩色底），可以只给背景做网点、人保持原样，或者在重音时整屏网点闪一下并轻微抖动。",
+ "use": "复古、漫画感、标题出现时的重音；做人后面的背景质感",
+ "sources": [
+  "https://www.youtube.com/watch?v=1qx118g3psM&t=0s",
+  "https://www.youtube.com/watch?v=lURCwwwy4MM&t=0s"
+ ],
+ "ref_moment": "两条都是开头展示成品（nishi 0:00–0:20；TR EDITZ 0:00–0:15 是网点背景 + 人后水印大字）"
+}

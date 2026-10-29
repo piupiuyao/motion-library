@@ -1,0 +1,14 @@
+{
+ "id": "c101",
+ "name": "评论关键词引导",
+ "video_type": "talking-head",
+ "category": "片头片尾",
+ "needs": [],
+ "what": "结尾时一个仿社交评论的白色圆角气泡（头像 + 一行字「Comment 'GUIDE'」）从下方弹到胸前，关键词用高亮色块，旁边一个向下指的箭头上下跳动，指向评论区位置；停 2–3 秒。",
+ "use": "「评论 XX 我发你」「在评论区告诉我」这类结尾",
+ "sources": [
+  "https://elements.envato.com/comment-call-out-4L7XH5U",
+  "https://www.youtube.com/watch?v=gPslMYkPpqY&t=0s"
+ ],
+ "ref_moment": "Envato 预览全程；YouTube 一组 7 个竖屏 CTA 动画 0:00–0:42"
+}

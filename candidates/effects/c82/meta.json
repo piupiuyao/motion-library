@@ -1,0 +1,13 @@
+{
+ "id": "c82",
+ "name": "当前词变色大字幕",
+ "video_type": "talking-head",
+ "category": "字体",
+ "needs": [],
+ "what": "Hormozi 式字幕：画面中下部每次只显示 2–4 个词，全大写、超粗无衬线（类似 Montserrat Black/Komika），白字加黑色粗描边和投影；正在说的那个词变成亮黄或亮绿，并瞬间放大约 110–120% 再回落，其余词保持白色。词组按说话节奏整组切换，没有过渡。字在人前面。",
+ "use": "干货/观点类口播，每一句都想让观众跟着读，尤其是商业、励志类",
+ "sources": [
+  "https://www.youtube.com/watch?v=HdbPgh_OEmE&t=37s"
+ ],
+ "ref_moment": "0:37–1:20（用 Submagic 生成的 Hormozi 字幕成品演示）"
+}

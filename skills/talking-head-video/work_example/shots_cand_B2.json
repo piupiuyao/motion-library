@@ -35,9 +35,9 @@
    "template": "c21",
    "params": {
     "number": 12453,
-    "label": "Unread messages",
-    "icon": "✉️",
-    "delta": "+128 today"
+    "label": "Inbox",
+    "unit": "unread",
+    "icon": "mail"
    }
   },
   {
@@ -81,7 +81,8 @@
      "AI reads the tone",
      "Drafts a reply",
      "You hit send"
-    ]
+    ],
+    "title": "HOW AI SHOULD HELP"
    }
   }
  ]

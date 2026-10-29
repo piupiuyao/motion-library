@@ -3,10 +3,10 @@ TEMPLATES.c10 = {
   setup(ctx) {
     const P = ctx.params;
     const lines = [P.line1 || 'Replying isn\'t', P.line2 || 'just *typing*'];
-    const size = P.size || 128;
+    const size = P.size || 142;
     this.dark = el('div', 'position:absolute;left:0;right:0;top:0;height:820px;background:linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,0))');
     ctx.L.back.appendChild(this.dark);
-    this.box = el('div', `position:absolute;left:80px;right:60px;top:${P.y || 230}px`);
+    this.box = el('div', `position:absolute;left:40px;right:40px;top:${P.y || 210}px;text-align:${P.align || 'center'}`);
     const sans = `background:linear-gradient(180deg,#ffffff 10%,#9a9aa3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
       font:700 ${size}px/1.08 var(--font-body);letter-spacing:-.02em`;
     const serif = `background:linear-gradient(100deg,#ff2d3a 0%,#ff7a2f 60%,#ffb347 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
@@ -30,7 +30,7 @@ TEMPLATES.c10 = {
       const q = ease.out(enter(ctx.t, .1 + j * .3, .55));
       ln.row.style.opacity = Math.min(q, out);
       ln.row.style.transform = `translateY(${lerp(50, 0, q)}px)`;
-      ln.row.style.clipPath = `inset(0 ${100 - q * 100}% -20% 0)`;
+      ln.row.style.clipPath = `inset(-20% ${100 - q * 100}% -30% 0)`;
       for (const k of ln.keys) {
         const r = ease.back(enter(ctx.t, .35 + j * .3, .5));
         k.style.transform = `translateY(${lerp(30, 0, r)}px) scale(${lerp(.85, 1, r)})`;

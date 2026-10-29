@@ -13,12 +13,16 @@ TEMPLATES.c07 = {
     c.font = `900 ${size}px ${font}`;
     const cy = P.y || 900;
     c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = '#000';
+    // stretch the letters vertically so the word is tall like the poster-style reference
+    const sy = P.stretch || 1.6;
+    c.setTransform(1, 0, 0, sy, 0, cy * (1 - sy));
     c.fillText(txt, W / 2, cy);
+    c.setTransform(1, 0, 0, 1, 0, 0);
     const d = c.getImageData(0, 0, W, H).data;
     const on = (x, y) => x >= 0 && y >= 0 && x < W && y < H && d[(y * W + x) * 4 + 3] > 200;
     let best = [W / 2, cy], bd = 1e9;
     const r = Math.max(8, size * .05);
-    for (let y = cy - size; y < cy + size; y += 6) for (let x = 0; x < W; x += 6) {
+    for (let y = cy - size * sy; y < cy + size * sy; y += 6) for (let x = 0; x < W; x += 6) {
       if (!on(x, y)) continue;
       let ok = true;
       for (let a = 0; a < 8 && ok; a++) ok = on(Math.round(x + Math.cos(a * .785) * r), Math.round(y + Math.sin(a * .785) * r));
@@ -27,10 +31,10 @@ TEMPLATES.c07 = {
       if (dist < bd) { bd = dist; best = [x, y]; }
     }
     this.pt = best;
-    const fill = P.color || 'var(--accent)';
+    const fill = P.color || '#0b0b0d';
     this.svg = el('div', 'position:absolute;inset:0');
     this.svg.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="position:absolute;inset:0"><defs><mask id="c07m" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}">
-      <rect width="${W}" height="${H}" fill="#fff"/><g id="c07g"><text x="${W / 2}" y="${cy}" text-anchor="middle" dominant-baseline="middle"
+      <rect width="${W}" height="${H}" fill="#fff"/><g id="c07g"><text transform="matrix(1 0 0 ${sy} 0 ${cy * (1 - sy)})" x="${W / 2}" y="${cy}" text-anchor="middle" dominant-baseline="middle"
       style="font:900 ${size}px ${font.replace(/"/g, "'")}" fill="#000">${txt}</text></g></mask></defs>
       <rect width="${W}" height="${H}" style="fill:${fill}" mask="url(#c07m)"/></svg>`;
     ctx.L.front.appendChild(this.svg);
@@ -40,7 +44,7 @@ TEMPLATES.c07 = {
   frame(ctx) {
     const [px, py] = this.pt;
     const z = enter(ctx.t, this.zoomAt, .75);
-    const hold = 1 + .06 * clamp(ctx.t / this.zoomAt);
+    const hold = 1 + .14 * ease.inOut(clamp(ctx.t / this.zoomAt));
     const s = hold * Math.exp(Math.log(60) * z * z * z);
     this.g.setAttribute('transform', `translate(${px} ${py}) scale(${s}) translate(${-px} ${-py})`);
     this.svg.style.opacity = 1 - clamp((z - .8) / .2);

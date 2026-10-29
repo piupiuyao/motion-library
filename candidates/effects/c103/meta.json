@@ -1,0 +1,16 @@
+{
+ "id": "c103",
+ "name": "透视斜放屏幕",
+ "video_type": "talking-head",
+ "category": "素材",
+ "needs": [
+  "图片",
+  "视频"
+ ],
+ "what": "一块视频/截图画面像一张立着的平板斜放在人旁边：绕竖轴转 20–35° 有透视，带圆角和投影，缓慢上下漂浮；可从扁平转到斜角入场。人在旁边讲，屏幕在人一侧，不挡脸。",
+ "use": "展示作品、产品界面、案例视频",
+ "sources": [
+  "https://www.youtube.com/watch?v=tvhMBCQLZLs&t=0s"
+ ],
+ "ref_moment": "0:00–0:15 开头成品（3D 旋转视频）"
+}

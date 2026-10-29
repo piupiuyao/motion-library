@@ -1,0 +1,13 @@
+{
+ "id": "c104",
+ "name": "关键词纵向拉伸",
+ "video_type": "talking-head",
+ "category": "字体",
+ "needs": [],
+ "what": "字幕里一个词在 0.3–0.5 秒内只在竖直方向拉高（高度到 200–300%，宽度不变），像被拉长的橡皮筋，然后停住或回弹；也可以做横向拉宽版本。",
+ "use": "想强调一个词又不想用常规放大时：「巨大」「很高」「突然」",
+ "sources": [
+  "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=282s"
+ ],
+ "ref_moment": "4:42–5:30（Vertical Scale Effect）"
+}

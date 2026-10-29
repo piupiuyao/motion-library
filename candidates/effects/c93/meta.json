@@ -1,0 +1,15 @@
+{
+ "id": "c93",
+ "name": "背景压暗人保持亮",
+ "video_type": "talking-head",
+ "category": "版式",
+ "needs": [
+  "抠像"
+ ],
+ "what": "背景变暗（叠一层约 60–80% 不透明的黑），但抠出来的人保持原亮度，看起来人从暗背景里浮出来；同时在人身后（压暗层之上、人之下）放大字或图形。进入和退出都是 0.3 秒淡入淡出。",
+ "use": "关键结论、要放一句大字或图表又不想挡人的时候",
+ "sources": [
+  "https://www.youtube.com/watch?v=pkyDzEHpZao&t=35s"
+ ],
+ "ref_moment": "0:35–2:08（Darken Background 段）"
+}

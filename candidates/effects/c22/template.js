@@ -21,10 +21,9 @@ TEMPLATES.c22 = {
         <div style="position:relative;font-size:${size * .72}px;line-height:1">${P.emoji || '⏰'}</div>`;
     }
     ctx.L.back.appendChild(this.obj);
-    this.label = el('div', `position:absolute;top:${this.y - size / 2 - 150}px;${side > 0 ? 'right:40px' : 'left:40px'};padding:18px 40px;border-radius:24px;
-      background:rgba(15,15,20,.6);border:3px solid var(--accent);color:#fff;font:800 66px var(--font-body);white-space:nowrap;
-      box-shadow:0 0 34px color-mix(in srgb, var(--accent) 70%, transparent), inset 0 0 18px color-mix(in srgb, var(--accent) 35%, transparent);
-      text-shadow:0 0 18px color-mix(in srgb, var(--accent) 90%, transparent)`, P.label || 'Hours a day');
+    this.label = el('div', `position:absolute;top:${this.y - size / 2 - 140}px;${side > 0 ? 'right:50px' : 'left:50px'};color:#ffe23d;font:900 92px/1 var(--font-body);
+      white-space:nowrap;letter-spacing:.01em;text-transform:uppercase;
+      text-shadow:0 0 6px #fff3a0, 0 0 22px #ffcc00, 0 0 48px rgba(255,190,0,.85), 0 6px 0 rgba(60,40,0,.35)`, P.label || 'Hours a day');
     ctx.L.front.appendChild(this.label);
     this.t0 = this.at(ctx, P.at, .2);
     this.size = size;

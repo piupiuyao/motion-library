@@ -1247,5 +1247,531 @@
    "https://elements.envato.com/subscribe-elements-YZPLXTK"
   ],
   "note": ""
+ },
+ {
+  "n": 80,
+  "id": "c80",
+  "name": "逐词上滑字幕",
+  "category": "字体",
+  "what": "下巴下方一行 3–4 个词的白色粗体字幕，每个词单独从下方约 40px 处往上滑到位并从透明变实（每个词动画 0.6 秒，相邻词间隔很短、几乎连着出），一整行出完停住，下一句整行换掉。词与词挨得较紧、整行居中。可以叠第二行更小的字（教程里叫 Real Estate Captions）放在下面。字在人前面，不压脸。",
+  "use": "任何口播句子都能用，适合节奏快、想让字幕本身有动感但不抢戏的视频",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=408s"
+  ],
+  "note": "Patrik Key 的 10 种爆款字幕教程之一，CapCut「slide up」动画；和现有 c11/c12 静态样式不同，是逐词入场",
+  "ref_moment": "6:48–7:45（Multiple Word Slide Up 段，7:40 左右有和第二行组合后的成品）",
+  "batch": 2
+ },
+ {
+  "n": 81,
+  "id": "c81",
+  "name": "逐词弹跳字幕",
+  "category": "字体",
+  "what": "一句话拆成一个个词，按说话节奏一个词一个词「弹」出来：每个词从约 0 放大到略大于原尺寸再回落到 100%（pop，0.8 秒内完成，回弹明显），出现的那一帧之前完全不可见（教程用透明度关键帧把弹出前的底部残影去掉）。白色粗体、下巴下方居中，同屏累积 3–4 个词后整句清掉。",
+  "use": "情绪强、语速快的句子；想要比上滑更活泼、更「蹦」的字幕",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=607s"
+  ],
+  "note": "同上 Patrik Key 教程；与逐词上滑的区别在动作：放大回弹而不是位移",
+  "ref_moment": "10:07–11:00（Pop Animated Captions 段）",
+  "batch": 2
+ },
+ {
+  "n": 82,
+  "id": "c82",
+  "name": "当前词变色大字幕",
+  "category": "字体",
+  "what": "Hormozi 式字幕：画面中下部每次只显示 2–4 个词，全大写、超粗无衬线（类似 Montserrat Black/Komika），白字加黑色粗描边和投影；正在说的那个词变成亮黄或亮绿，并瞬间放大约 110–120% 再回落，其余词保持白色。词组按说话节奏整组切换，没有过渡。字在人前面。",
+  "use": "干货/观点类口播，每一句都想让观众跟着读，尤其是商业、励志类",
+  "needs": [],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=HdbPgh_OEmE&t=37s"
+  ],
+  "note": "Alex Hormozi 带火的字幕样式，Submagic/CapCut 都有预设，短视频里最常见的字幕之一；是否要单独开「逐词动态字幕」子类见报告",
+  "ref_moment": "0:37–1:20（用 Submagic 生成的 Hormozi 字幕成品演示）",
+  "batch": 2
+ },
+ {
+  "n": 83,
+  "id": "c83",
+  "name": "翻牌数字",
+  "category": "字体",
+  "what": "一排深灰/黑色的机场翻牌格子（每格一个字符，格子中间有一条横缝，上下半片略有明暗差），格子里的字符从随机字母/数字快速上下翻片，逐格依次停到目标值（如 2024、$5,000、70%），整排从左到右陆续定住，约 1–2 秒。格子放在人胸前或画面上半空白处，在人前面，带一点投影。",
+  "use": "报年份、价格、排名、关键数字揭晓的句子：「答案是……」",
+  "needs": [
+   "数字"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://elements.envato.com/split-flap-titles-maker-STUBSCC",
+   "https://www.youtube.com/watch?v=7U5iJC3c1Bc&t=5s"
+  ],
+  "note": "Envato/Motion Array 上的翻牌标题模板；口播里不算最常见，但和 c02 滚动计数是明显不同的数字动画（翻片 vs 滚动）",
+  "ref_moment": "Motion Array 预览视频 0:05–0:40（整段都是翻牌效果演示）",
+  "batch": 2
+ },
+ {
+  "n": 84,
+  "id": "c84",
+  "name": "圆环倒计时",
+  "category": "字体",
+  "what": "画面中央（或人一侧）一个细线圆环：底下是一圈灰色环，上面一圈亮色（蓝）环随时间顺时针被「吃掉」，圆环中间是正在递减的大数字（10、9、8…），细圆体字。整圈走完正好倒数到 0。圆环在人前面，可半透明。",
+  "use": "「给你 10 秒想一想」「3 个步骤」「倒数」、限时、等待感的句子；也可做百分比环",
+  "needs": [
+   "数字"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=H6nWHe0D36I&t=453s"
+  ],
+  "note": "Zeven 7「7 个 CapCut 效果」之一；与 c02 计数不同在于有环形进度",
+  "ref_moment": "7:33–9:10（Timer Ring 段，结尾有成品）",
+  "batch": 2
+ },
+ {
+  "n": 85,
+  "id": "c85",
+  "name": "加载条百分比",
+  "category": "字体",
+  "what": "一条横向圆角长条：白色底条，上面一条绿色条从左往右填充，旁边/上方的百分比数字同步从 0% 跳到目标值（如 87%），填满时轻微弹一下。长条放在人胸前或脸下方，宽约屏幕 60%，在人前面。",
+  "use": "「完成度」「进度」「还差一点」「X% 的人」这种带比例或阶段的句子",
+  "needs": [
+   "数字"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=140s"
+  ],
+  "note": "Patrik Key 教程，原话称它是制造「后面有东西要来」的心理触发；和 c49（整条视频的进度条）不同，这是一句话里的数字条",
+  "ref_moment": "2:20–4:37（Loading Bar 段）",
+  "batch": 2
+ },
+ {
+  "n": 86,
+  "id": "c86",
+  "name": "字体快速轮换",
+  "category": "字体",
+  "what": "一个关键词停在原位不动，但它的字体每 2–3 帧换一次（衬线→手写→等宽→粗黑→像素…），持续约 0.5–1 秒，像在「洗牌」，最后落回原来的字体停住。颜色大小基本不变，可配滴答声。词在人前或人后均可。",
+  "use": "强调一个概念/名字，想让它「闪」一下吸引注意；开场钩子里的关键词",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=678s"
+  ],
+  "note": "Matt Loui「10 个爆款 CapCut 文字效果」，原话说这效果在社媒上到处都是",
+  "ref_moment": "11:18–12:03（Font Shift Effect 段）",
+  "batch": 2
+ },
+ {
+  "n": 87,
+  "id": "c87",
+  "name": "闪烁出字",
+  "category": "字体",
+  "what": "一行字出现时不是渐显，而是像接触不良的灯管一样闪：透明度在 0 和 100% 之间逐帧来回跳 6 次左右（约 0.2–0.3 秒），然后稳定亮着。常配渐变色字或发光。可以连续几个词各自闪着出。",
+  "use": "悬念句、反转句、科技/神秘感的标题",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=330s",
+   "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=823s"
+  ],
+  "note": "两位 CapCut 教程作者都单列了这个效果",
+  "ref_moment": "Matt Loui 5:30–6:52（Flicker Text Effect）；Patrik Key 13:43–14:13（Flicker Effect）",
+  "batch": 2
+ },
+ {
+  "n": 88,
+  "id": "c88",
+  "name": "文字绕人旋转",
+  "category": "字体",
+  "what": "一圈文字（如一句标语重复两遍）像腰带一样水平绕着人的胸口/头部转：前半圈的字在人前面、后半圈被人身体挡住，整圈有透视（前面的字大、后面的字小且稍暗），匀速旋转一圈约 3–4 秒。白色或品牌色粗体。",
+  "use": "品牌名、口号、话题标签；开场介绍自己或产品时",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "hard",
+  "sources": [
+   "https://www.youtube.com/watch?v=fpJdfEcuGe0&t=30s"
+  ],
+  "note": "CapCut「rolling text」做法；参考里是绕物体，口播里用于绕人是同一做法，需前后半圈分层 + 抠像遮挡",
+  "ref_moment": "0:30–3:30（教程用的是绕杯子转的 rolling text，方法同样用于人）",
+  "batch": 2
+ },
+ {
+  "n": 89,
+  "id": "c89",
+  "name": "人走过显字",
+  "category": "字体",
+  "what": "大字一开始看不见，随着人（或人的手/身体）从画面一侧移到另一侧，人经过的地方文字被「擦」出来，像字一直藏在人背后、被人带出来；字始终在人后面。显出过程跟人的位置同步，约 1–2 秒。",
+  "use": "人侧身、挥手或走动时引出一个标题；开场",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=lINZBP0skrE&t=146s"
+  ],
+  "note": "duekneel 的 CapCut 教程；需要人有横向动作，可以用抠像轮廓的最右边缘位置作为擦除线",
+  "ref_moment": "2:26–2:34（最终成品），做法在 0:00–2:26",
+  "batch": 2
+ },
+ {
+  "n": 90,
+  "id": "c90",
+  "name": "描边字透过人",
+  "category": "字体",
+  "what": "人后面放一个大号实心字（彩色），同一个字的空心描边版本叠在人前面、位置完全重合。结果：没被人挡住的地方看到实心字，被人挡住的地方看到一层细描边从人身上透出来，像能「看穿」人。",
+  "use": "开场大标题、品牌名、和 text_sandwich 交替使用增加变化",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=723s"
+  ],
+  "note": "Matt Loui 提到这是 Jihad 的 reel，5.1 万赞；和 text_sandwich 的区别是人身上多一层描边",
+  "ref_moment": "12:03–13:40（Outline Reveal Effect）",
+  "batch": 2
+ },
+ {
+  "n": 91,
+  "id": "c91",
+  "name": "圆形人头角落",
+  "category": "版式",
+  "what": "反过来的画中画：截图/录屏/B-roll 铺满全屏，说话的人缩进左下或右下角一个圆形里（直径约屏宽 30%，带白色或彩色描边和投影），圆形从全屏人像缩小飞到角落，讲完再放大回来。",
+  "use": "边讲边展示屏幕、软件、网页、证据的段落",
+  "needs": [
+   "图片",
+   "视频"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=bHmYXC1Yow4&t=0s"
+  ],
+  "note": "Cory Malveaux，教程/评测类短视频常见；和 c38 不同：人变小，素材变全屏",
+  "ref_moment": "0:00–0:20 开头就是这个效果（作者自己的教程视频格式）",
+  "batch": 2
+ },
+ {
+  "n": 92,
+  "id": "c92",
+  "name": "电脑窗口弹窗",
+  "category": "版式",
+  "what": "一个 macOS 风格的窗口（顶部浅灰标题栏 + 左上角红黄绿三个圆点、圆角、阴影）从小放大弹出在画面上半部，窗口里放截图/网页/视频；可以连续弹 2–3 个窗口错位叠起来，最后一起缩回消失。人在下方保持全屏。",
+  "use": "提到某个网站、软件、文章、搜索结果时",
+  "needs": [
+   "图片"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://elements.envato.com/computer-popup-window-8F37VTH"
+  ],
+  "note": "只找到模板页（Apple Motion/FCP 模板），口播中「浏览器窗口弹出」很常见，但没找到带时间点的真实口播示例；和 c38 区别是有系统窗口外观并可叠多个",
+  "ref_moment": "Envato 预览视频全程",
+  "batch": 2
+ },
+ {
+  "n": 93,
+  "id": "c93",
+  "name": "背景压暗人保持亮",
+  "category": "版式",
+  "what": "背景变暗（叠一层约 60–80% 不透明的黑），但抠出来的人保持原亮度，看起来人从暗背景里浮出来；同时在人身后（压暗层之上、人之下）放大字或图形。进入和退出都是 0.3 秒淡入淡出。",
+  "use": "关键结论、要放一句大字或图表又不想挡人的时候",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=pkyDzEHpZao&t=35s"
+  ],
+  "note": "Matt Loui 原话：reels 和 TikTok 上到处都用，他自己好几个爆款用过；和 c46 区别：人不虚化不变暗、卡片在人后面",
+  "ref_moment": "0:35–2:08（Darken Background 段）",
+  "batch": 2
+ },
+ {
+  "n": 94,
+  "id": "c94",
+  "name": "液态玻璃卡",
+  "category": "版式",
+  "what": "苹果 iOS 新设计风格的玻璃框：一个大圆角矩形（圆角约 25%）白色 75% 半透明，框内的画面被模糊扭曲（毛玻璃 + 边缘有折射弯曲），框里放白字或图标；框从小到大弹出并略有漂浮，人和背景透过玻璃可见。",
+  "use": "放定义、要点、一句金句；科技、产品、苹果相关话题",
+  "needs": [],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=oXV3eZMq3n8&t=0s"
+  ],
+  "note": "Zephyr 教程（2.8 万播放），2025 年苹果 Liquid Glass 后流行；浏览器里用 backdrop-filter + SVG 位移滤镜能做出折射边",
+  "ref_moment": "0:00–0:10 开头成品，做法 0:10–2:12",
+  "batch": 2
+ },
+ {
+  "n": 95,
+  "id": "c95",
+  "name": "文字跟着脸走",
+  "category": "镜头特效",
+  "what": "一行文字/贴纸（如「100K subscribers」）钉在人脸旁边，人左右上下晃动时文字跟着同样移动，像粘在头上；不跟着缩放旋转，只跟位置。",
+  "use": "给人加标签、身份、情绪标注；人动得多的口播",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=KVws1GVHoA0&t=576s",
+   "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=591s"
+  ],
+  "note": "浏览器里可以用抠像蒙版的人头区域质心逐帧算位置来跟",
+  "ref_moment": "Matt Loui 9:36–10:20（Tracking）；Patrik Key 9:51–10:50（Tracking Subject）",
+  "batch": 2
+ },
+ {
+  "n": 96,
+  "id": "c96",
+  "name": "跟踪引线标签",
+  "category": "镜头特效",
+  "what": "人/物体上一个小圆点，从圆点拉出一条折线（先斜后平）到一边，线的末端文字从左往右擦出来，带下划线；整个圆点 + 线 + 字跟着被指的东西移动。白色线和字，线画出约 0.4 秒。",
+  "use": "指出画面里的某个东西：「我手上这个」「这件衣服」「这个人」",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=LLjtp-7C1xM&t=114s"
+  ],
+  "note": "Himel 356 的 CapCut 教程；和 c19（静态引线标注）不同在于跟着动",
+  "ref_moment": "0:00–1:50 做引线动画，1:54 起加跟踪，结尾 2:00 左右成品",
+  "batch": 2
+ },
+ {
+  "n": 97,
+  "id": "c97",
+  "name": "半调网点",
+  "category": "镜头特效",
+  "what": "画面变成报纸/漫画印刷的网点效果：亮的地方点小、暗的地方点大，通常单色（黑点 + 米白/彩色底），可以只给背景做网点、人保持原样，或者在重音时整屏网点闪一下并轻微抖动。",
+  "use": "复古、漫画感、标题出现时的重音；做人后面的背景质感",
+  "needs": [
+   "抠像"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=1qx118g3psM&t=0s",
+   "https://www.youtube.com/watch?v=lURCwwwy4MM&t=0s"
+  ],
+  "note": "CapCut 教程作者 nishi、TR EDITZ；没找到口播创作者带时间点的示例，多见于剪辑向账号",
+  "ref_moment": "两条都是开头展示成品（nishi 0:00–0:20；TR EDITZ 0:00–0:15 是网点背景 + 人后水印大字）",
+  "batch": 2
+ },
+ {
+  "n": 98,
+  "id": "c98",
+  "name": "漏光光斑叠加",
+  "category": "镜头特效",
+  "what": "黑白或低饱和的口播画面上，叠一层暖橙/金色的镜头光晕：一团柔光从画面一角缓慢飘过，带几个六边形光斑，用「滤色/叠加」混合，持续整段或 2–4 秒；四周加暗角。",
+  "use": "讲故事、回忆、情绪段落；想要电影感时",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=TnOP0z0EwoM&t=120s"
+  ],
+  "note": "Trevor Jones「像 Alex Hormozi 一样剪」；和 c69 漏光转场不同，这是持续叠加的质感",
+  "ref_moment": "2:00–2:56（How to add light flares），前面 0:24–1:35 是黑白 + 暗角 + 滤镜",
+  "batch": 2
+ },
+ {
+  "n": 99,
+  "id": "c99",
+  "name": "RGB 色散抖动",
+  "category": "镜头特效",
+  "what": "画面复制成红、绿、蓝三层，彼此横向错开几个像素，在重音时错开幅度突然加大（10–30px）并随机抖动 0.2–0.5 秒，再收回；边缘出现彩色重影。",
+  "use": "重音、震惊、反转的瞬间；科技/故障感话题",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=N7caOY-JCsY&t=0s"
+  ],
+  "note": "教程来自卡点/kpop 剪辑账号（2 万播放），口播里一般只在重音点用一下；把握不大是否口播常用",
+  "ref_moment": "0:00–0:15 开头成品",
+  "batch": 2
+ },
+ {
+  "n": 100,
+  "id": "c100",
+  "name": "竖屏片尾推荐卡",
+  "category": "片头片尾",
+  "what": "视频最后 3–5 秒，背景虚化压暗，上面一个大圆角卡片位（放下一条视频的封面）+ 一个圆形头像位（带「订阅」按钮），配「下一条看这个 / Watch next」标题；元素依次滑入弹出，线条和发光点缀。",
+  "use": "结尾引导看下一条、订阅",
+  "needs": [
+   "图片"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=eR3HQanWgPo&t=5s"
+  ],
+  "note": "Envato 作者 BRAXXU 的 YouTube Shorts End Screens 模板；和 end_title（结尾标题卡）、c79（点关注）不同在于有视频推荐位",
+  "ref_moment": "0:05–0:55 依次展示多个版式",
+  "batch": 2
+ },
+ {
+  "n": 101,
+  "id": "c101",
+  "name": "评论关键词引导",
+  "category": "片头片尾",
+  "what": "结尾时一个仿社交评论的白色圆角气泡（头像 + 一行字「Comment 'GUIDE'」）从下方弹到胸前，关键词用高亮色块，旁边一个向下指的箭头上下跳动，指向评论区位置；停 2–3 秒。",
+  "use": "「评论 XX 我发你」「在评论区告诉我」这类结尾",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://elements.envato.com/comment-call-out-4L7XH5U",
+   "https://www.youtube.com/watch?v=gPslMYkPpqY&t=0s"
+  ],
+  "note": "Instagram「评论关键词领资料」（ManyChat 自动私信）结尾非常常见，但没找到带时间点的真实口播示例，只有模板；具体气泡样子需看预览确认",
+  "ref_moment": "Envato 预览全程；YouTube 一组 7 个竖屏 CTA 动画 0:00–0:42",
+  "batch": 2
+ },
+ {
+  "n": 102,
+  "id": "c102",
+  "name": "3D翻转图标",
+  "category": "素材",
+  "what": "一个 logo/图标/产品图在人身边做 3D 翻转：绕竖轴转一圈或翻到一个斜角定住，有透视（转到侧面时变窄、近大远小），可带一点厚度阴影。放在人肩膀旁或头顶上方，在人前面。",
+  "use": "提到品牌、App、产品名时",
+  "needs": [
+   "图片"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=277s"
+  ],
+  "note": "Patrik Key，CapCut「flip」系列动画；用 CSS 3D transform 即可",
+  "ref_moment": "4:37–5:37（3D Flip Animation）",
+  "batch": 2
+ },
+ {
+  "n": 103,
+  "id": "c103",
+  "name": "透视斜放屏幕",
+  "category": "素材",
+  "what": "一块视频/截图画面像一张立着的平板斜放在人旁边：绕竖轴转 20–35° 有透视，带圆角和投影，缓慢上下漂浮；可从扁平转到斜角入场。人在旁边讲，屏幕在人一侧，不挡脸。",
+  "use": "展示作品、产品界面、案例视频",
+  "needs": [
+   "图片",
+   "视频"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=tvhMBCQLZLs&t=0s"
+  ],
+  "note": "Incyte Feedbacks 教程，30 万播放；和 c21 玻璃卡绕身不同：不绕到人后、是一块定住的斜屏",
+  "ref_moment": "0:00–0:15 开头成品（3D 旋转视频）",
+  "batch": 2
+ },
+ {
+  "n": 104,
+  "id": "c104",
+  "name": "关键词纵向拉伸",
+  "category": "字体",
+  "what": "字幕里一个词在 0.3–0.5 秒内只在竖直方向拉高（高度到 200–300%，宽度不变），像被拉长的橡皮筋，然后停住或回弹；也可以做横向拉宽版本。",
+  "use": "想强调一个词又不想用常规放大时：「巨大」「很高」「突然」",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=282s"
+  ],
+  "note": "Matt Loui 说灵感来自 Cam Studios；和 keyword_pop（等比放大）不同在于只拉一个方向",
+  "ref_moment": "4:42–5:30（Vertical Scale Effect）",
+  "batch": 2
+ },
+ {
+  "n": 105,
+  "id": "c105",
+  "name": "打字机出字",
+  "category": "字体",
+  "what": "一句话或关键词一个字母一个字母打出来，末尾一个竖线光标在闪；等宽或无衬线字体，白字或黑底白字，每字约 2–3 帧，可配键盘声。可以放在画面中间或仿推特输入框里。",
+  "use": "引用原话、标题、「我写下了……」类句子",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=TnOP0z0EwoM&t=259s",
+   "https://www.youtube.com/watch?v=I49YEojjtf8&t=968s"
+  ],
+  "note": "Hormozi 风格剪辑里常用；和 c16 搜索框打字不同：不需要搜索框，单纯打字",
+  "ref_moment": "Trevor Jones 4:19–5:35（Type on effect）；Modern Millie 16:08 起（Typing Effect）",
+  "batch": 2
+ },
+ {
+  "n": 106,
+  "id": "c106",
+  "name": "评论回复贴纸",
+  "category": "素材",
+  "what": "TikTok「回复评论」样式：画面上方一块白色圆角贴纸，左边小圆头像，第一行灰色小字「Reply to 用户名's comment」，下面黑色正文是评论内容，贴纸略倾斜或水平，整段视频一直挂着或开头弹出 3 秒。",
+  "use": "回答粉丝问题的视频开头：「有人问我……」",
+  "needs": [],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=bKEPRjz6c-Q&t=66s"
+  ],
+  "note": "TikTok 原生功能，抖音/Reels 都有类似样式；和 c15 推文卡片不同：是长期挂着的平台原生评论贴纸",
+  "ref_moment": "1:06–1:25（发布前评论以贴纸形式叠在视频上）",
+  "batch": 2
+ },
+ {
+  "n": 107,
+  "id": "c107",
+  "name": "跟踪模糊打码",
+  "category": "镜头特效",
+  "what": "画面中一块区域（脸、车牌、截图里的名字）被高斯模糊或马赛克盖住，框是圆角矩形或椭圆，跟着目标一起移动；可以出现时从清楚变模糊。",
+  "use": "隐私、「这里不能说」、制造悬念（「名字先不告诉你」）",
+  "needs": [
+   "图片"
+  ],
+  "difficulty": "medium",
+  "sources": [
+   "https://www.youtube.com/watch?v=lXKu-4ShHoc&t=0s"
+  ],
+  "note": "Creator Fix 教程；该视频没有字幕，时间点没细查",
+  "ref_moment": "整段 2:17（开头即演示跟踪模糊）",
+  "batch": 2
+ },
+ {
+  "n": 108,
+  "id": "c108",
+  "name": "前后对比滑杆",
+  "category": "版式",
+  "what": "两段画面（之前/之后）重叠，一条白色竖分割线从左往右扫过整屏（约 1–2 秒），线左边是「之后」，右边是「之前」；线上可带圆形拖拽手柄，两边上角标「BEFORE / AFTER」。",
+  "use": "效果对比、改造前后、用之前用之后",
+  "needs": [
+   "图片",
+   "视频"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=eV7QmDITJYM&t=63s"
+  ],
+  "note": "Robert Kalengayi 的 CapCut 教程；现有分类里没有专门的前后对比，c36/c37 分屏是并排不是擦除，建议新增子类",
+  "ref_moment": "1:03–1:12（成品播放）",
+  "batch": 2
+ },
+ {
+  "n": 109,
+  "id": "c109",
+  "name": "梗图插入",
+  "category": "素材",
+  "what": "说到好笑或反差处，一张梗图/抠好的梗角色（绿幕抠掉背景）突然出现在人旁边或盖住半屏，常伴随快速放大 + 轻微抖动，0.5–1.5 秒后直接消失。",
+  "use": "自嘲、反转、吐槽句子",
+  "needs": [
+   "图片",
+   "视频"
+  ],
+  "difficulty": "easy",
+  "sources": [
+   "https://www.youtube.com/watch?v=ZsesUw8K-84&t=95s"
+  ],
+  "note": "Trevor Nace 教程；梗素材需要用户提供；和 c26 表情包弹出不同：是图片/视频梗而不是 emoji，建议新增子类或并入「道具和贴纸」",
+  "ref_moment": "1:35–1:45（抠掉绿幕后的梗叠在视频上）",
+  "batch": 2
  }
 ]

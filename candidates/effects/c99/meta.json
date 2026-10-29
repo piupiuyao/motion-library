@@ -1,0 +1,13 @@
+{
+ "id": "c99",
+ "name": "RGB 色散抖动",
+ "video_type": "talking-head",
+ "category": "镜头特效",
+ "needs": [],
+ "what": "画面复制成红、绿、蓝三层，彼此横向错开几个像素，在重音时错开幅度突然加大（10–30px）并随机抖动 0.2–0.5 秒，再收回；边缘出现彩色重影。",
+ "use": "重音、震惊、反转的瞬间；科技/故障感话题",
+ "sources": [
+  "https://www.youtube.com/watch?v=N7caOY-JCsY&t=0s"
+ ],
+ "ref_moment": "0:00–0:15 开头成品"
+}

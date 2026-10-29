@@ -1,4 +1,4 @@
-// 漫画集中线 · 镜头特效：黑白放射速度线从四周冲向脸，闪 0.5–1 秒后消失，同时画面猛推一下
+// 漫画集中线 · 镜头特效：白色（可选黑色）放射速度线从四周冲向脸，闪 0.5–1 秒后消失，同时画面猛推一下
 TEMPLATES.c57 = {
   hit(ctx, a, def) {
     const n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
@@ -13,7 +13,8 @@ TEMPLATES.c57 = {
     this.cv.width = 540; this.cv.height = 960;
     this.g = this.cv.getContext('2d');
     ctx.L.front.appendChild(this.cv);
-    this.cx = ctx.focus[0] * 540; this.cy = ctx.focus[1] * 960 + 20;
+    this.cx = ctx.focus[0] * 540; this.cy = ctx.focus[1] * 960 + 25;
+    this.ink = P.color === 'black' ? '#000' : '#fff';
     ctx.base.style.transformOrigin = `${ctx.focus[0] * 100}% ${ctx.focus[1] * 100}%`;
   },
   frame(ctx) {
@@ -28,19 +29,22 @@ TEMPLATES.c57 = {
     const rnd = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
     const fade = Math.min(clamp(dt / .06), clamp((this.D - dt) / .15));
     g.globalAlpha = fade;
-    // white wash at the very edges so the black lines read on any footage
-    const wash = g.createRadialGradient(this.cx, this.cy, 230, this.cx, this.cy, 720);
-    wash.addColorStop(0, 'rgba(255,255,255,0)'); wash.addColorStop(1, 'rgba(255,255,255,.85)');
-    g.fillStyle = wash; g.fillRect(0, 0, 540, 960);
-    g.fillStyle = '#000';
-    const N = 110;
+    const cx = this.cx, cy = this.cy, ink = this.ink;
+    // darken the edges a little so the speed lines read on any footage (clear oval stays on the face)
+    const vg = g.createRadialGradient(cx, cy, 200, cx, cy, 760);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, ink === '#fff' ? 'rgba(0,0,0,.55)' : 'rgba(255,255,255,.75)');
+    g.fillStyle = vg; g.fillRect(0, 0, 540, 960);
+    g.fillStyle = ink;
+    // thin wedges that start on a clear oval around the face and run off the frame edge
+    const N = 150, rx = 175, ry = 215;
     for (let i = 0; i < N; i++) {
-      const a = (i + rnd() * .8) / N * Math.PI * 2, w = .006 + rnd() * .018;
-      const r0 = 170 + rnd() * 130, r1 = 1200;
+      const a = (i + rnd() * .9) / N * Math.PI * 2, w = .002 + rnd() * .011;
+      const k = .95 + rnd() * .75; // how far in the line reaches (1 = oval edge)
+      const x0 = cx + Math.cos(a) * rx * k, y0 = cy + Math.sin(a) * ry * k;
       g.beginPath();
-      g.moveTo(this.cx + Math.cos(a) * r0, this.cy + Math.sin(a) * r0);
-      g.lineTo(this.cx + Math.cos(a - w) * r1, this.cy + Math.sin(a - w) * r1);
-      g.lineTo(this.cx + Math.cos(a + w) * r1, this.cy + Math.sin(a + w) * r1);
+      g.moveTo(x0, y0);
+      g.lineTo(cx + Math.cos(a - w) * 1300, cy + Math.sin(a - w) * 1300);
+      g.lineTo(cx + Math.cos(a + w) * 1300, cy + Math.sin(a + w) * 1300);
       g.closePath(); g.fill();
     }
     g.globalAlpha = 1;

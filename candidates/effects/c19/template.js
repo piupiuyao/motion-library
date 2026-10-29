@@ -46,7 +46,7 @@ TEMPLATES.c19 = {
     s.innerHTML = `<svg width="${1080 * this.n}" height="1920" style="position:absolute;inset:0">${svg}</svg>`;
     this.strip.insertBefore(s, this.strip.firstChild);
     this.svg = s.querySelector('svg');
-    this.seg = (ctx.d - .5) / this.n;
+    this.seg = (ctx.d - .2) / this.n;
   },
   frame(ctx) {
     const t = ctx.t, out = leave(ctx, .3), pin = enter(t, 0, .3);
@@ -54,29 +54,33 @@ TEMPLATES.c19 = {
     this.strip.style.opacity = Math.min(pin, out);
     // camera: hold on each group, pan to the next
     let x = 0;
-    for (let k = 1; k < this.n; k++) x += ease.inOut(enter(t, .2 + k * this.seg - .4, .4));
-    this.strip.style.transform = `translateX(${-x * 1080}px)`;
+    for (let k = 1; k < this.n; k++) x += ease.inOut(enter(t, k * this.seg - .38, .42));
+    // the camera dips back a little while it travels
+    let travel = 0;
+    for (let k = 1; k < this.n; k++) travel = Math.max(travel, Math.sin(Math.PI * enter(t, k * this.seg - .38, .42)));
+    this.strip.style.transformOrigin = `${540 + x * 1080}px 800px`;
+    this.strip.style.transform = `translateX(${-x * 1080}px) scale(${1 - .1 * travel})`;
     for (let k = 0; k < this.n; k++) {
-      const t0 = k ? k * this.seg - .1 : .2;
+      const t0 = k ? k * this.seg + .02 : .12;
       const c = ease.out(enter(t, t0, .3));
       const ci = this.svg.querySelector('.ci' + k);
       ci.style.strokeDashoffset = 1 - c;
       for (let j = 0; j < 2; j++) {
         const ln = this.svg.querySelector(`.ln${k}_${j}`);
         if (!ln) continue;
-        const q = ease.out(enter(t, t0 + .2 + j * .12, .25));
+        const q = ease.out(enter(t, t0 + .22 + j * .12, .22));
         ln.style.opacity = q > 0 ? 1 : 0;
         ln.style.strokeDashoffset = -t * 60;
         const x1 = +ln.getAttribute('x1'), y1 = +ln.getAttribute('y1');
         ln.setAttribute('x2', lerp(x1, +ln.dataset.x, q)); ln.setAttribute('y2', lerp(y1, +ln.dataset.y, q));
       }
       const cn = this.svg.querySelector('.cn' + k);
-      if (cn) { cn.style.strokeDashoffset = -t * 50; cn.style.opacity = enter(t, t0 + .7, .3); }
+      if (cn) { cn.style.strokeDashoffset = -t * 50; cn.style.opacity = enter(t, t0 + .6, .25); }
     }
     for (const it of this.parts) {
-      const t0 = it.k ? it.k * this.seg - .1 : .2;
+      const t0 = it.k ? it.k * this.seg + .02 : .12;
       if (it.lb) {
-        const q = enter(t, t0 + .35 + it.j * .12, .25);
+        const q = enter(t, t0 + .36 + it.j * .12, .22);
         it.lb.style.opacity = q; it.lb.style.transform = `scale(${lerp(.5, 1, ease.pop(q))}) rotate(${it.j ? 2 : -2}deg)`;
       } else {
         const q = enter(t, t0 + .12, .2);

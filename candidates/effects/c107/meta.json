@@ -1,0 +1,15 @@
+{
+ "id": "c107",
+ "name": "跟踪模糊打码",
+ "video_type": "talking-head",
+ "category": "镜头特效",
+ "needs": [
+  "图片"
+ ],
+ "what": "画面中一块区域（脸、车牌、截图里的名字）被高斯模糊或马赛克盖住，框是圆角矩形或椭圆，跟着目标一起移动；可以出现时从清楚变模糊。",
+ "use": "隐私、「这里不能说」、制造悬念（「名字先不告诉你」）",
+ "sources": [
+  "https://www.youtube.com/watch?v=lXKu-4ShHoc&t=0s"
+ ],
+ "ref_moment": "整段 2:17（开头即演示跟踪模糊）"
+}

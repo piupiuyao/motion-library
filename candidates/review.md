@@ -116,3 +116,7 @@
 | 77 | **定格快门** | 在节拍点上画面白闪 + 快门声定格，像一张照片停一秒（常配抠像 + 一行字），然后继续播放<br>💬 GaryVee 也用（定格 + 品牌音） | 开场钩子、「这是当时的我」、关键句前的停顿 | 音效 | 容易 | [1](https://www.douyin.com/shipin/7642894718157899839) [2](https://www.kapwing.com/resources/how-to-make-videos-like-garyvee/) |
 | 78 | **电影黑边拉开** | 画面从全黑开始，上下两条黑边往外拉开露出画面，停在宽银幕比例，黑边上可以放标题 | 讲故事模式「给你讲个故事」、严肃/戏剧化的开场或结尾 | — | 容易 | [1](https://www.youtube.com/watch?v=ruIomvLW_AY) [2](https://www.choppity.com/tools/recreate-video-editing-style/tom-noske/) |
 | 79 | **光标点关注** | 一个「关注/点赞」按钮弹出，鼠标或手指滑过来点一下，按钮变成「已关注」或变红，炸一下消失 | 中途或结尾的行动号召「关注看下集」 | 音效 | 容易 | [1](https://elements.envato.com/subscribe-elements-YZPLXTK) |
+
+## 第二批（横向扩展）
+
+见 batch2.json，共 30 条。
