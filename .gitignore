@@ -12,3 +12,5 @@ skills/talking-head-video/refs/*/video.mp4
 skills/talking-head-video/refs/*/*.jpg
 **/__pycache__/
 candidates/refs/
+skills/talking-head-video/demo_rumi/raw.mp4
+skills/talking-head-video/demo_rumi/heygen_raw.mp4
