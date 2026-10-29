@@ -3,5 +3,6 @@
   "ref": "description-only",
   "checked": "Douyin source not fetchable. No hand detection: checked the source frames by eye, she raises her right hand at ~44.6 s ('hours').",
   "fixed": "Bust now fades out above the laptop hole (was a hard broken edge), gesture is two touch dots that pinch/spread at the hand position, which follows the body as it scales; second step lands on her real hand raise. Steps take a manual 'hand' [x,y].",
-  "left": "Hand position/timing is hand-set per shot; the shrink step (at 'leave') has no real hand in frame. When small, her hand is cut at the source frame edge; the DELAY TIMELINE overlay is hidden because the background is replaced."
+  "left": "Hand position/timing is hand-set per shot (no hand detection). Rumi: no laptop, so fade:false (new option) keeps the whole bust down to the frame edge. Rumi's hands are out of frame on this line, so the two touch dots are drawn on her right chest/shoulder [800,1250] as a screen-gesture demo, not on a real hand.",
+  "footage": "rumi"
 }

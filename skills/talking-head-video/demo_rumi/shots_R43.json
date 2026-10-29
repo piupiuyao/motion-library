@@ -1,8 +1,64 @@
-{"skin": "clean", "shots": [
-  {"words": "2-13", "template": "c56", "params": {"path": [[0.16, 0.325], [0.86, 0.205]]}},
-  {"words": "17-23", "template": "c74", "params": {"word": "Replying", "at": "Replying"}},
-  {"words": "34-42", "template": "c95", "params": {"text": "answer NOW", "emoji": "😵‍💫"}},
-  {"words": "69-78", "template": "c104", "params": {"at": "4", "text": "4 HOURS"}},
-  {"words": "82-94", "template": "c72", "params": {"at": "friend", "to": "assets/docs/chat.jpg"}},
-  {"words": "95-101", "template": "c54", "params": {"keywords": ["system"]}}
-]}
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "2-13",
+   "template": "c56",
+   "params": {
+    "path": [
+     [
+      0.16,
+      0.325
+     ],
+     [
+      0.86,
+      0.205
+     ]
+    ]
+   }
+  },
+  {
+   "words": "17-23",
+   "template": "c74",
+   "params": {
+    "word": "Replying",
+    "at": "Replying",
+    "step": 0.3
+   }
+  },
+  {
+   "words": "34-42",
+   "template": "c95",
+   "params": {
+    "text": "answer NOW",
+    "emoji": "😵‍💫"
+   }
+  },
+  {
+   "words": "69-78",
+   "template": "c104",
+   "params": {
+    "at": "4",
+    "text": "4 HOURS"
+   }
+  },
+  {
+   "words": "82-94",
+   "template": "c72",
+   "params": {
+    "at": "friend",
+    "title": "“How do you reply so fast?”",
+    "subtitle": "— Sarah"
+   }
+  },
+  {
+   "words": "95-101",
+   "template": "c54",
+   "params": {
+    "keywords": [
+     "system"
+    ]
+   }
+  }
+ ]
+}

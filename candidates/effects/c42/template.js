@@ -9,7 +9,7 @@ TEMPLATES.c42 = {
     const ts = (P.at || []).map(at);
     this.times = [0, ts[0] != null ? ts[0] : ctx.d / 3, ts[1] != null ? ts[1] : ctx.d * 2 / 3, ctx.d];
     // fy = where the face lands inside the cell; the bottom cell keeps the face below the caption band
-    const crops = [{ z: 1.0, x: 0, fy: 330 }, { z: 1.35, x: -40, fy: 330 }, { z: 1.12, x: 50, fy: 470 }];
+    const crops = P.crops || [{ z: 1.0, x: 0, fy: 330 }, { z: 1.35, x: -40, fy: 330 }, { z: 1.12, x: 50, fy: 470 }];
     const labels = P.labels || [];
     this.cells = crops.map((c, j) => {
       const cell = el('div', `position:absolute;left:0;top:${j * 640}px;width:1080px;height:640px;overflow:hidden;background:#111`);

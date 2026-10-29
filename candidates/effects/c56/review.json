@@ -3,5 +3,6 @@
   "ref": "description-only",
   "checked": "Douyin source not fetchable. Card + magnifier with zoomed content inside the lens.",
   "fixed": "Lens path now ends inside the frame (it used to slide off the right edge and lose its handle).",
-  "left": "Card covers the face; the magnifier is not demoed on the face/product."
+  "left": "Card covers the face; the magnifier is not demoed on the face/product.",
+  "footage": "rumi"
 }

@@ -1,5 +1,5 @@
 {"skin": "clean", "captions": false, "shots": [
-  {"words": "14-23", "template": "c80", "params": {}},
-  {"words": "49-60", "template": "c82", "params": {}},
-  {"words": "102-117", "template": "c81", "params": {}}
+  {"words": "14-23", "template": "c80", "params": {"y": 1160}},
+  {"words": "49-60", "template": "c82", "params": {"y": 1160}},
+  {"words": "102-117", "template": "c81", "params": {"y": 1160}}
 ]}

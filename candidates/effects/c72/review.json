@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Tutorial frames are CapCut UI only. Circle grows from 0 to full screen revealing the next image.",
   "fixed": "Circle now opens from the face by default and reaches the far corners; moved the trigger to 'which' so the reveal covers the burned-in 'replying to messages' text.",
-  "left": ""
+  "left": "Rumi: chat.jpg shows an unrelated OKEight chat, so the reveal opens onto a title card with Sarah's quote instead.",
+  "footage": "rumi"
 }

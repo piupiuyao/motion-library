@@ -10,7 +10,7 @@ TEMPLATES.c46 = {
     this.cx = this.cv.getContext('2d');
     this.dim = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, rgba(5,8,20,.6), rgba(5,8,20,.92))');
     ctx.L.back.append(this.cv, this.dim);
-    const spots = ['left:60px;top:200px', 'right:60px;top:600px', 'left:60px;top:1000px', 'right:60px;top:1240px'];
+    const spots = P.spots || ['left:60px;top:200px', 'right:60px;top:600px', 'left:60px;top:1000px', 'right:60px;top:1240px'];
     const glow = P.glow || 'var(--accent)';
     this.cards = (P.cards || []).slice(0, 4).map((c, j) => {
       const e = el('div', `position:absolute;${spots[j]};min-width:420px;padding:28px 40px 34px;border-radius:30px;

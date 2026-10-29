@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Tutorial frames: background goes B&W, subject keeps colour. Ours: background drains to grey, cut-out person stays in colour.",
   "fixed": "Highlighted the keyword 'emotional' in the caption (keywords param) so the colour accent also lands on the word.",
-  "left": ""
+  "left": "",
+  "footage": "rumi"
 }

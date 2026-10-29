@@ -11,7 +11,7 @@ TEMPLATES.c43 = {
     const ts = (P.at || []).map(at);
     this.times = imgs.map((_, j) => j === 0 ? 0 : ts[j - 1] != null ? ts[j - 1] : j * ctx.d / imgs.length);
     this.panels = imgs.map((src, j) => {
-      const c = el('div', `position:absolute;top:280px;width:680px;padding:16px;border-radius:30px;background:#fff;box-shadow:0 26px 60px rgba(0,0,0,.4)`);
+      const c = el('div', `position:absolute;top:${P.top || 280}px;width:680px;padding:16px;border-radius:30px;background:#fff;box-shadow:0 26px 60px rgba(0,0,0,.4)`);
       const img = el('img', 'display:block;width:100%;border-radius:18px');
       img.src = url(src); pending.push(img.decode().catch(() => {}));
       c.appendChild(img);
@@ -26,7 +26,7 @@ TEMPLATES.c43 = {
     const side = j => (j % 2 ? 1 : -1); // person side for segment j: -1 left, 1 right
     const sw = k ? ease.inOut(enter(ctx.t, this.times[k], .55)) : 1;
     const pin = ease.out(enter(ctx.t, 0, .45));
-    const x = lerp(side(k - 1 < 0 ? 0 : k - 1), side(k), sw) * 300 * pin;
+    const x = lerp(side(k - 1 < 0 ? 0 : k - 1), side(k), sw) * (ctx.params.shift || 300) * pin;
     ctx.L.bg.style.opacity = clamp(pin * 2);
     ctx.person.style.transformOrigin = '50% 100%';
     ctx.person.style.transform = `translateX(${x}px) scale(${lerp(ctx.seg.zoom || 1, .82, pin)})`;

@@ -7,7 +7,7 @@ TEMPLATES.c11 = {
     const keyIdx = new Set(ctx.groups.flatMap(g => g.idx));
     ctx.L.bg.style.background = 'linear-gradient(90deg, #15151a, #24242a)';
     const g = this.side > 0 ? '90deg' : '270deg';
-    this.shade = el('div', `position:absolute;inset:0;background:linear-gradient(${g}, transparent 40%, rgba(12,12,16,.55) 62%, rgba(12,12,16,.88) 82%)`);
+    this.shade = el('div', `position:absolute;inset:0;background:linear-gradient(${g}, transparent 38%, rgba(12,12,16,.6) 58%, rgba(12,12,16,.93) 76%)`);
     ctx.L.back.appendChild(this.shade);
     // lines: up to 3 words / ~15 chars, break after punctuation
     const lines = []; let cur = [];

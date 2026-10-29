@@ -17,7 +17,7 @@ TEMPLATES.c59 = {
       ctx.L.back.appendChild(cv);
       let bub = null;
       if (labels[k]) {
-        bub = el('div', `position:absolute;top:300px;left:${540 + c.x * 1.05 - 170}px;width:340px;text-align:center;padding:18px 0 22px;background:var(--paper);color:var(--ink);
+        bub = el('div', `position:absolute;top:300px;left:${clamp(540 + c.x * 1.05 - 170, 30, 710)}px;width:340px;text-align:center;padding:18px 0 22px;background:var(--paper);color:var(--ink);
           border-radius:40px;font-size:62px;box-shadow:0 14px 30px rgba(0,0,0,.3);transform-origin:50% 100%`, labels[k]);
         bub.className = 'display';
         ctx.L.front.appendChild(bub);

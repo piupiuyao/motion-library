@@ -1,7 +1,8 @@
 {
- "status": "good",
- "ref": "fetched",
- "checked": "对照 FLICKER EFFECT 成品：白色粗体、逐词闪着出、闪的时候半透明残影",
- "fixed": "每词出现时按 12 帧透明度序列闪烁后稳定；白色带淡蓝渐变和光晕",
- "left": "—"
+  "status": "good",
+  "ref": "fetched",
+  "checked": "对照 FLICKER EFFECT 成品：白色粗体、逐词闪着出、闪的时候半透明残影",
+  "fixed": "每词出现时按 12 帧透明度序列闪烁后稳定；白色带淡蓝渐变和光晕",
+  "left": "—",
+  "footage": "rumi"
 }

@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Tutorial frames (Filmora camera-shake) not very informative from stills; compared against the usual handheld look: smooth drift plus small rotation.",
   "fixed": "Added a faint fast tremor on top of the slow drift, reduced rotation, overscan 1.09 so corners never show. Moved to D2 words 131-137 (old range had the INBOX PRESSURE overlay).",
-  "left": "Only ~1.9 s in the demo; motion can only be judged in the preview video."
+  "left": "Only ~1.9 s in the demo; motion can only be judged in the preview video.",
+  "footage": "rumi"
 }

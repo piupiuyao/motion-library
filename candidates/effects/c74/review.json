@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Reference (fQX20G0gxMs) shows article screenshots with the same highlighted word fixed in place and headline text running off the frame edges. Ours clipped the headline mid-letter inside the frame.",
   "fixed": "Headline halves now bleed off the frame edges like a zoomed-in screenshot, longer headlines, paper texture on two articles.",
-  "left": "After the 1.6 s match-cut the shot returns to the talking head, which has the burned-in 'replying to messages' text (~13.3 s)."
+  "left": "After the 1.6 s match-cut the shot returns to the talking head, which has the burned-in 'replying to messages' text (~13.3 s). Rumi: uses the template's default 'Replying' articles on L3; step 0.3 so the cut run fills most of the shot.",
+  "footage": "rumi"
 }

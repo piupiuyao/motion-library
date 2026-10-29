@@ -1,7 +1,8 @@
 {
- "status": "good",
- "ref": "fetched",
- "checked": "对照 OUTLINE REVEAL 成品：红色超粗窄体两行大字压在人头部，人身上透出同位置的红色细描边",
- "fixed": "两行实心红字在人后、同位置空心描边在人前；字放到头部高度",
- "left": "字体是 Avenir Next Condensed，参考更粗更窄"
+  "status": "good",
+  "ref": "fetched",
+  "checked": "对照 OUTLINE REVEAL 成品：红色超粗窄体两行大字压在人头部，人身上透出同位置的红色细描边",
+  "fixed": "两行实心红字在人后、同位置空心描边在人前；字放到头部高度",
+  "left": "字体是 Avenir Next Condensed，参考更粗更窄",
+  "footage": "rumi"
 }

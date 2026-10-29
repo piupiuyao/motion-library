@@ -3,5 +3,6 @@
   "ref": "fetched",
   "checked": "Tutorial frames (CapCut UI) unclear. Ours: blurry, slightly zoomed and hazy, sharpens into focus over ~1.4 s.",
   "fixed": "Shortened the shot to words 0-5 with dur 1.4 so it ends before the burned-in CODE cards appear (~2.5 s).",
-  "left": ""
+  "left": "",
+  "footage": "rumi"
 }

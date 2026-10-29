@@ -1,4 +1,4 @@
 {"skin": "clean", "shots": [
-  {"words": "0-6", "template": "c51", "params": {"at": "Stop"}},
+  {"words": "0-6", "template": "c51", "params": {"at": "scrolling"}},
   {"words": "14-21", "template": "c57", "params": {"at": "truth"}}
 ]}

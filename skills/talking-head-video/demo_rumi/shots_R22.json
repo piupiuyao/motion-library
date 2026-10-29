@@ -17,8 +17,8 @@
      },
      {
       "app": "message",
-      "sender": "Slack",
-      "text": "@you can you answer this right now?",
+      "sender": "Alex",
+      "text": "can you answer this right now?",
       "time": "now"
      }
     ]
@@ -38,8 +38,7 @@
    "params": {
     "steps": [
      {
-      "icon": "mail",
-      "at": "email"
+      "icon": "mail"
      },
      {
       "icon": "chat",
@@ -74,18 +73,15 @@
    "template": "c27",
    "params": {
     "text": "4 HOURS A DAY",
-    "media": {
-     "frames": "assets/broll_inbox",
-     "fps": 30,
-     "count": 165
-    }
+    "media": "assets/docs/gmail.jpg"
    }
   },
   {
-   "words": "82-94",
+   "words": "82-88",
    "template": "c23",
    "params": {
-    "emoji": "📱"
+    "emoji": "📱",
+    "y": 1280
    }
   },
   {

@@ -1,7 +1,8 @@
 {
- "status": "good",
- "ref": "fetched",
- "checked": "对照 CapCut Loading Bar：白色圆角底条+绿色填充，成片里也有放在画面里的用法",
- "fixed": "数字 0%→87% 同步跳、填到目标时轻弹并变绿；标题不换行、条宽 720",
- "left": "参考里另有一版紫色进度条，没做"
+  "status": "good",
+  "ref": "fetched",
+  "checked": "对照 CapCut Loading Bar：白色圆角底条+绿色填充，成片里也有放在画面里的用法",
+  "fixed": "数字 0%→87% 同步跳、填到目标时轻弹并变绿；标题不换行、条宽 720",
+  "left": "参考里另有一版紫色进度条，没做",
+  "footage": "rumi"
 }
