@@ -1,5 +1,44 @@
-{"skin": "clean", "shots": [
-  {"words": "18-29", "template": "c104", "params": {"at": "draining"}},
-  {"words": "67-79", "template": "c103", "params": {"side": "left"}},
-  {"words": "90-97", "template": "c102", "params": {"steps": [{"icon": "chat", "at": "sometimes"}, {"icon": "plane", "at": "sends"}, {"icon": "mail", "at": "message"}]}}
-]}
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "18-29",
+   "template": "c104",
+   "params": {
+    "at": "draining"
+   }
+  },
+  {
+   "words": "67-79",
+   "template": "c103",
+   "params": {
+    "side": "left"
+   }
+  },
+  {
+   "words": "90-97",
+   "template": "c102",
+   "params": {
+    "steps": [
+     {
+      "icon": "chat",
+      "at": "sometimes"
+     },
+     {
+      "icon": "plane",
+      "at": "sends"
+     },
+     {
+      "icon": "mail",
+      "at": "message"
+     }
+    ]
+   }
+  },
+  {
+   "words": "123-137",
+   "template": "c98",
+   "params": {}
+  }
+ ]
+}

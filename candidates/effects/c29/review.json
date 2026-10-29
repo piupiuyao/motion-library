@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "fetched",
+  "checked": "Ref shows small rounded clips popping around a title on a light grey phone layout",
+  "fixed": "No change",
+  "left": "Ref is light/white; ours is dark. Cards form a ring as described"
+}

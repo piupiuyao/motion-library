@@ -4,8 +4,8 @@ TEMPLATES.c88 = {
     const P = ctx.params;
     let txt = String(P.text || 'REPETITIVE • TIME-CONSUMING • ').toUpperCase();
     this.size = P.size || 74;
-    this.cx = P.cx || 540; this.cy = P.y || 1080;
-    this.rx = P.rx || 480; this.ry = P.ry || 80;
+    this.cx = P.cx || 540; this.cy = P.y || 985;
+    this.rx = P.rx || 450; this.ry = P.ry || 95;
     this.period = P.period || 3.6;
     const mk = () => { const c = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 50%'); c.width = 1080; c.height = 1920; return c; };
     this.back = mk(); this.front = mk();

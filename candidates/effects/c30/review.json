@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "description-only",
+  "checked": "Ref section had no clear view of the effect; from description",
+  "fixed": "Three of the four flashes now cut the person out (matte) and put her in a different scene (pink studio, blue night, orange sunset), so it reads as 'same framing, different shoots'; clean source frames",
+  "left": "Reads the project's work/frames_src + matte_src directly when no images are given"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "fetched",
+  "checked": "Envato comic pack preview showed only the title card (halftone dots)",
+  "fixed": "New texts for the new line; moved to words 90-97 (avoids old 🙅 emoji)",
+  "left": "-"
+}

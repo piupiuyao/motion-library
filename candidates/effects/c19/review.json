@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "description-only",
+  "checked": "Both YouTube links fetched but the numbered-callout moment wasn't in the sampled sections; compared against the description",
+  "fixed": "Tighter per-group timing so each group's number + dashed lines + labels finish before the camera moves; camera dips back while panning; labels kept on screen",
+  "left": "Each group holds only ~1.2 s in a 5 s shot; full-screen lined paper is our guess at the look"
+}

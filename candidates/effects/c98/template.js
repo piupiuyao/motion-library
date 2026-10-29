@@ -3,19 +3,19 @@ TEMPLATES.c98 = {
   setup(ctx) {
     const P = ctx.params;
     this.sat = P.saturation ?? .15;
-    this.glow = el('div', `position:absolute;left:0;top:0;width:1500px;height:1500px;margin:-750px 0 0 -750px;border-radius:50%;mix-blend-mode:screen;
-      background:radial-gradient(circle, rgba(255,214,140,.95) 0%, rgba(255,150,50,.75) 16%, rgba(255,95,20,.38) 38%, rgba(200,50,0,.12) 56%, transparent 70%)`);
-    this.wash = el('div', `position:absolute;inset:0;mix-blend-mode:screen;background:linear-gradient(150deg, rgba(255,120,30,.35), transparent 55%)`);
+    this.glow = el('div', `position:absolute;left:0;top:0;width:1800px;height:1800px;margin:-900px 0 0 -900px;border-radius:50%;mix-blend-mode:screen;
+      background:radial-gradient(circle, rgba(255,236,190,1) 0%, rgba(255,170,70,.95) 12%, rgba(255,110,25,.62) 30%, rgba(230,70,0,.3) 50%, rgba(160,40,0,.1) 62%, transparent 72%)`);
+    this.wash = el('div', `position:absolute;inset:0;mix-blend-mode:screen;background:linear-gradient(150deg, rgba(255,120,30,.55), rgba(255,80,0,.12) 50%, transparent 75%)`);
     this.streak = el('div', `position:absolute;left:0;top:0;width:1700px;height:26px;margin:-13px 0 0 -850px;mix-blend-mode:screen;border-radius:50%;
       background:radial-gradient(ellipse, rgba(255,230,190,.85), rgba(255,140,60,.35) 35%, transparent 70%)`);
-    const hexes = [[.45, 70, .26], [.75, 150, .14], [1.15, 46, .3], [1.45, 230, .1], [1.8, 110, .17], [2.15, 64, .22]];
+    const hexes = [[.45, 70, .45], [.75, 150, .26], [1.15, 46, .5], [1.45, 230, .2], [1.8, 110, .32], [2.15, 64, .4]];
     this.hex = hexes.map(([k, s, a], j) => {
       const e = el('div', `position:absolute;left:0;top:0;width:${s * 2}px;height:${s * 2}px;margin:-${s}px 0 0 -${s}px;mix-blend-mode:screen;
         clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);
         background:radial-gradient(circle, rgba(255,${180 + j * 10},${110 + j * 15},${a * .6}) 40%, rgba(255,170,90,${a}) 92%, rgba(255,230,200,${a * 1.6}) 100%)`);
       return { e, k };
     });
-    this.vig = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 42%, transparent 45%, rgba(0,0,0,.72) 100%)');
+    this.vig = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 42%, transparent 35%, rgba(0,0,0,.85) 100%)');
     ctx.L.front.append(this.wash, this.glow, this.streak, ...this.hex.map(h => h.e), this.vig);
     ctx.baseImg.style.filter = `saturate(${this.sat}) contrast(1.12) brightness(.92)`;
   },

@@ -13,7 +13,7 @@ TEMPLATES.c105 = {
     head.appendChild(el('div', 'flex:1', `<div style="font:800 44px var(--font-body)">${P.name || 'Monica'}
       <span style="display:inline-block;width:34px;height:34px;border-radius:50%;background:#1d9bf0;color:#fff;font:900 24px/34px var(--font-body);text-align:center;vertical-align:4px">✓</span></div>
       <div style="font:500 34px var(--font-body);color:#8b8b93">${P.handle || '@monica'}</div>`));
-    head.appendChild(el('div', 'width:56px;height:56px;flex:none', `<svg viewBox="0 0 24 24" width="56" height="56"><path d="M3 3 L21 21 M21 3 L3 21" stroke="${P.light ? '#111' : '#fff'}" stroke-width="2.6" stroke-linecap="round"/></svg>`));
+    head.appendChild(el('div', 'width:56px;height:56px;flex:none', `<svg viewBox="0 0 24 24" width="56" height="56"><path d="M2.5 3 H8.5 L21.5 21 H15.5 Z" fill="none" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.6" stroke-linejoin="round"/><path d="M20.5 3 L13.6 10.8 M3.6 21 L10.4 13.3" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.8" stroke-linecap="round"/></svg>`));
     this.body = el('div', `font:600 60px/1.22 ${P.mono ? '"SF Mono", Menlo, monospace' : 'var(--font-body)'};min-height:74px;word-break:break-word`);
     this.txt = document.createTextNode('');
     this.cur = el('span', `display:inline-block;width:6px;height:64px;margin-left:6px;vertical-align:-10px;background:var(--accent)`);
@@ -25,7 +25,9 @@ TEMPLATES.c105 = {
     const t = ctx.t, p = enter(t, 0, .35);
     this.card.style.opacity = Math.min(clamp(p * 3), leave(ctx));
     this.card.style.transform = `translateY(${lerp(-40, 0, ease.out(p))}px) scale(${lerp(.92, 1, ease.out(p))})`;
-    const n = clamp(Math.floor((t - this.t0) * this.cps), 0, this.text.length);
+    // never slower than the speech: finish typing ~0.5 s before the shot ends
+    const cps = Math.max(this.cps, this.text.length / Math.max(.5, ctx.d - this.t0 - .5));
+    const n = clamp(Math.floor((t - this.t0) * cps), 0, this.text.length);
     this.txt.data = this.text.slice(0, n);
     const typing = n > 0 && n < this.text.length;
     this.cur.style.opacity = typing || Math.floor(t * 2.4) % 2 === 0 ? 1 : 0;
