@@ -1,0 +1,22 @@
+{
+  "id": "s23eg9i9vx5xihgpt1fz",
+  "name": "ChatCut：缩略图卡片云 → 输入框",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "米白网格上，几十张视频缩略图 3D 环绕 “The power of AI”，再围住 “Just chat”。插入模糊大字 “Nex…” 和 logo。结尾粉色上，玻璃光球变成带 Generate 按钮的输入框。",
+  "why": "卡片云展示丰富成果，不必列功能。",
+  "duration": "15.9 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "ChatCut",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "用卡片云表现数量，再收拢成那个能生成这一切的输入框。"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "seed-kimi",
+  "name": "Kimi K3：从桌上的草图到可玩的世界",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "纸艺"
+  ],
+  "needs": [],
+  "what": "骑马人铅笔草图在输入框下变成 3D，代码从旁飘过。成果装在带标签的卡片里（“Swing Physics”）；黑底写着 “Kimi is debugging…”；收尾是衬线字 “meet kimi k3”，卡片环绕。",
+  "why": "统一的卡片 + 标签，让各异的成果像精选而非杂乱。",
+  "duration": "58.1 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Kimi (Moonshot AI)",
+    "url": "",
+    "gallery_cat": "paper"
+  },
+  "steal": "从草图变形到成品，不要硬切；用一句简短的状态当作呼吸点。"
+}

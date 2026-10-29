@@ -1,0 +1,22 @@
+{
+  "id": "seed-flow",
+  "name": "心流动效：铁屑成形与手绘",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "纸艺"
+  ],
+  "needs": [],
+  "what": "俯拍：铁屑沿磁场线聚拢；手在牛皮纸上一笔笔画出骑马人。输入框升起盖住画纸，画纸虚化。",
+  "why": "静止画面中心只有一个缓慢过程，令人着迷，让人平静专注。",
+  "duration": "7.3 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "paper"
+  },
+  "steal": "机位俯拍固定不动，每次只让一样东西在变化。"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "seed-r8-1014",
+  "name": "OpenCompute：黑白照片网格 + 红色强调",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "排版",
+    "电影感"
+  ],
+  "needs": [],
+  "what": "黑白照片（云、键盘）在深蓝上铺成网格，红色方块跳动，下方是巨大红色字标，深色界面从代码和照片碎片中浮出。",
+  "why": "黑白加一个品牌色，把空镜绑到品牌。",
+  "duration": "7.3 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "OpenCompute",
+    "url": "",
+    "gallery_cat": "transition"
+  },
+  "steal": "空镜调成黑白，让品牌色来负责“选中”的动作。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "data_chart",
+  "name": "图表叠加",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "数据对比"
+  ],
+  "style": [
+    "克制"
+  ],
+  "needs": [
+    "数字"
+  ],
+  "use_for": [
+    "罗列数据",
+    "做对比（之前/之后、少/多）"
+  ],
+  "needs_assets": [],
+  "layers": [
+    "原画面",
+    "人前：图表卡片"
+  ],
+  "duration": "3–6 秒",
+  "params": {
+    "title": "必填。图表标题",
+    "items": "必填。[{\"label\": \"…\", \"value\": 数字}]，2–4 项",
+    "show_values": "可选，默认 true。数字是示意、不是真实数据时设 false，只显示长短",
+    "unit": "可选。数字后面的单位"
+  },
+  "source": {
+    "from": "剪辑师白菜「告别廉价口播」（视频号，refs/94_1793056051）",
+    "note": "参考视频 A「罗列数据就配上图表」"
+  },
+  "rule": "数字必须来自口播原话或用户给的资料，不许编；没有真实数字就 show_values=false"
+}

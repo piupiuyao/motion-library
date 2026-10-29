@@ -1,0 +1,116 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-8",
+   "template": "keyword_pop",
+   "params": {
+    "keywords": [
+     "AI is powerful"
+    ]
+   }
+  },
+  {
+   "words": "13-21",
+   "template": "mono_shrink",
+   "params": {
+    "keywords": [
+     "repetitive"
+    ]
+   }
+  },
+  {
+   "words": "22-29",
+   "template": "text_sandwich",
+   "params": {
+    "text": "DRAINING"
+   }
+  },
+  {
+   "words": "30-45",
+   "template": "doc_fly",
+   "params": {
+    "images": [
+     "assets/docs/gmail.jpg",
+     "assets/docs/notify.jpg",
+     "assets/docs/chat.jpg"
+    ],
+    "at": [
+     "replying",
+     "WhatsApp",
+     "Telegram"
+    ]
+   }
+  },
+  {
+   "words": "46-57",
+   "template": "data_chart",
+   "params": {
+    "title": "Each one looks small",
+    "items": [
+     {
+      "label": "One message",
+      "value": 1
+     },
+     {
+      "label": "All of them, every day",
+      "value": 10
+     }
+    ],
+    "show_values": false
+   }
+  },
+  {
+   "words": "58-66",
+   "template": "mono_shrink",
+   "params": {
+    "label": "EMOTIONAL ENERGY",
+    "keywords": [
+     "emotional energy"
+    ]
+   }
+  },
+  {
+   "words": "74-89",
+   "template": "frame_layer",
+   "params": {
+    "label": "sometimes I need to…",
+    "keywords": [
+     "sound thoughtful",
+     "say no",
+     "too cold"
+    ]
+   }
+  },
+  {
+   "words": "111-122",
+   "template": "broll_circle",
+   "params": {
+    "broll": {
+     "frames": "assets/broll_inbox",
+     "fps": 30,
+     "count": 165
+    },
+    "label": "a few hours → a few days"
+   }
+  },
+  {
+   "words": "123-137",
+   "template": "push_in",
+   "params": {
+    "keywords": [
+     "guilty"
+    ]
+   }
+  },
+  {
+   "words": "138-148",
+   "template": "keyword_pop",
+   "params": {
+    "keywords": [
+     "AI should be solving"
+    ]
+   }
+  }
+ ]
+}

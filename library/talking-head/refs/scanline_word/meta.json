@@ -1,0 +1,20 @@
+{
+  "id": "scanline_word",
+  "name": "扫描线质感 + 大字",
+  "video_type": "talking-head",
+  "status": "reference",
+  "category": "镜头特效",
+  "purpose": [
+    "核心观点",
+    "结尾"
+  ],
+  "style": [
+    "复古"
+  ],
+  "needs": [],
+  "what": "画面加扫描线、噪点质感，中间压一句大字总结",
+  "source": {
+    "from": "我李哥豆儿「4 套剪辑手法打破扁平画面」（视频号，refs/95_1793056112）",
+    "note": "B 30–40s「塑造画面空间是摆脱平庸剪辑的关键一步」"
+  }
+}

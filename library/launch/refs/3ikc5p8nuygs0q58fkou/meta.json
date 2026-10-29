@@ -1,0 +1,22 @@
+{
+  "id": "3ikc5p8nuygs0q58fkou",
+  "name": "生活实拍 TVC + 一个输入框",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "电影感"
+  ],
+  "needs": [],
+  "what": "暖调浅景深的生活片段：俯拍街头足球、鱼眼骑车、挤满的酒吧。产品只是虚化画面上的白色输入框：“Help me keep up with the football.”",
+  "why": "每个镜头都是产品能帮上的瞬间，UI 小而克制，像广告不像演示。",
+  "duration": "18.6 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "retro"
+  },
+  "steal": "多拍物件和手、少拍完整人脸，用一个输入框代表整个产品。"
+}

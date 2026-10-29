@@ -1,0 +1,22 @@
+{
+  "id": "seed-retro",
+  "name": "消息简史：从打字机到群聊",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "复古"
+  ],
+  "needs": [],
+  "what": "打字机打出 “I HOPE”，手拿起绿色转盘电话，拇指在手机打字；剪辑加快：群聊、推近 “stay connected”、气泡，最后是带头像的深绿渐变。",
+  "why": "低对比、抬高黑位，仅一个强调绿（电话，呼应结尾渐变），整段像一段记忆。",
+  "duration": "12.4 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "retro"
+  },
+  "steal": "让同一句话跨媒介出现（聊天界面、气泡、印刷品），作为从过去切到产品的匹配剪辑。"
+}

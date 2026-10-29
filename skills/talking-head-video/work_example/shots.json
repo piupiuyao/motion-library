@@ -1,0 +1,12 @@
+{
+  "skin": "clean",
+  "shots": [
+    {"words": "0-8", "purpose": "开场钩子", "template": "keyword_pop", "params": {"keywords": ["AI is powerful"]}},
+    {"words": "13-29", "purpose": "吐槽痛点", "template": "mono_shrink", "params": {"keywords": ["emotionally draining"]}},
+    {"words": "30-45", "purpose": "引用资料", "template": "doc_fly", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/notify.jpg", "assets/docs/chat.jpg"], "at": ["replying", "WhatsApp", "Telegram"]}},
+    {"words": "67-89", "purpose": "列举", "template": "frame_layer", "params": {"label": "sometimes I need to…", "keywords": ["sound thoughtful", "say no", "too cold"]}},
+    {"words": "111-122", "purpose": "展示细节", "template": "broll_circle", "params": {"broll": {"frames": "assets/broll_inbox", "fps": 30, "count": 165}, "label": "a few hours → a few days"}},
+    {"words": "123-137", "purpose": "情绪高点", "template": "push_in", "params": {"keywords": ["guilty"]}},
+    {"words": "138-148", "purpose": "结尾", "template": "keyword_pop", "params": {"keywords": ["AI should be solving"]}}
+  ]
+}

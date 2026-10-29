@@ -1,0 +1,22 @@
+{
+  "id": "seed-r1-1014",
+  "name": "设计动效合集：充气字与光斑",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "一组动效练习：粉蓝渐变上的发光胶囊导航，发光爱心前由模糊聚焦的 “introducing”，蓝色光球前的粗体 “DESIGN PARTNER”，充气 3D 字母。",
+  "why": "模糊到清晰的揭晓、字后一团光，成本低却显高级。",
+  "duration": "17.1 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "other"
+  },
+  "steal": "让产品名从模糊里聚焦出来，背后只放一个柔和的光斑。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cutout_card",
+  "name": "抠像出镜 + 重点卡",
+  "video_type": "talking-head",
+  "status": "reference",
+  "category": "版式",
+  "purpose": [
+    "核心观点"
+  ],
+  "style": [
+    "克制"
+  ],
+  "needs": [
+    "抠像"
+  ],
+  "what": "人抠出来放在深色背景上，旁边配「重点」文字卡",
+  "source": {
+    "from": "剪辑师白菜「告别廉价口播」（视频号，refs/94_1793056051）",
+    "note": "A 11–13s「输出观点 → 抠像出镜」"
+  }
+}

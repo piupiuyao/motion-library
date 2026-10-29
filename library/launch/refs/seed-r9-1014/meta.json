@@ -1,0 +1,22 @@
+{
+  "id": "seed-r9-1014",
+  "name": "Lovable：质疑推文墙 → 创始人来电",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "电影感"
+  ],
+  "needs": [],
+  "what": "黑底推文（“Lovable is just a toy”）铺满屏幕。白底逐字回应，夹一个故障的 “for”，然后 “Incoming call… Anton Osika”，创始人视频出镜。",
+  "why": "真实质疑开场抓注意力；视频通话框让口播亲近，不像摆拍。",
+  "duration": "10.4 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Lovable",
+    "url": "",
+    "gallery_cat": "talk"
+  },
+  "steal": "让创始人以“来电”的形式出镜，通话界面会让任何背景都显得自然。"
+}

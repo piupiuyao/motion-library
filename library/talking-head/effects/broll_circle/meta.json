@@ -1,0 +1,38 @@
+{
+  "id": "broll_circle",
+  "name": "圆窗 B-roll",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "展示细节",
+    "引用资料"
+  ],
+  "style": [
+    "通用"
+  ],
+  "needs": [
+    "视频"
+  ],
+  "use_for": [
+    "展示细节",
+    "说到一个具体场景、产品画面",
+    "需要观众看别的东西但人还在讲"
+  ],
+  "needs_assets": [
+    "B-roll：一段视频（拆成帧的文件夹）或一张图"
+  ],
+  "layers": [
+    "背景：B-roll（模糊铺底 + 清晰主体）",
+    "原画面缩进圆窗"
+  ],
+  "duration": "3–6 秒",
+  "params": {
+    "broll": "必填。图片路径，或 {\"frames\": \"assets/xxx\", \"fps\": 30, \"count\": 帧数}",
+    "label": "可选。B-roll 上方一行说明字"
+  },
+  "source": {
+    "from": "剪辑师白菜「告别廉价口播」（视频号，refs/94_1793056051）",
+    "note": "参考视频 A「展示 B-roll 细节就加蒙版」"
+  }
+}

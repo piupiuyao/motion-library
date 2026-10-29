@@ -1,0 +1,22 @@
+{
+  "id": "ag49n14nu6ce7ot9fepu",
+  "name": "Future Proof 2026《In the Fold》：纸艺动效",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "纸艺"
+  ],
+  "needs": [],
+  "what": "红黄蓝粉放射色块在纸面旋转，散落手剪图形；红纸折开成白色四角星。",
+  "why": "纸纹和高饱和平涂带来手工触感。",
+  "duration": "20.7 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Future Proof 2026",
+    "url": "",
+    "gallery_cat": "paper"
+  },
+  "steal": "加一层纸张纹理，只用四种平涂色，用折、剪代替淡入淡出。"
+}

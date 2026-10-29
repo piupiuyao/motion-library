@@ -1,0 +1,22 @@
+{
+  "id": "seed-r2-1014",
+  "name": "无限推进：眼睛 → 虹膜 → 世界 → 纸上一个点",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "电影感"
+  ],
+  "needs": [],
+  "what": "一镜到底：眼睛、虹膜、其中的世界、曼陀罗、相机光圈，落到米白纸上的黑点。无剪切。",
+  "why": "连续推进带观众逐个概念走，注意力不断。",
+  "duration": "8.6 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "transition"
+  },
+  "steal": "生成一组套娃式画面（每张的中心就是下一张），再用代码连续放大穿过去。"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "54o3znqkwv1ro5su5bam",
+  "name": "Cardboard：TOKYO 瑞士海报式动态排版",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "排版"
+  ],
+  "needs": [],
+  "what": "浅灰网格上红黑大字逐个落位（TOK / YO / JAPAN），黑白城市照片像贴纸围着红方块叠起，红色折扇、自行车、寿司插在字间。",
+  "why": "强调色加黑白照片，拼贴热闹仍统一。",
+  "duration": "16.5 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Cardboard",
+    "url": "",
+    "gallery_cat": "other"
+  },
+  "steal": "只选一个强调色，照片全部黑白，再加经纬度这类真实的小字。"
+}

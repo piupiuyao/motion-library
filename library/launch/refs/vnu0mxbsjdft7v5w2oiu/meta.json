@@ -1,0 +1,22 @@
+{
+  "id": "vnu0mxbsjdft7v5w2oiu",
+  "name": "Ideogram 4.5：生成图满屏 + 衬线词 + 选框",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "生成图满屏铺开，各配一个四角选框里的衬线词（Art / Photography）。单词和图块在浅色网格上散落，logo 带选择手柄放大，标语落在流体渐变上。",
+  "why": "选框和手柄借用编辑工具的语言，动效即说明产品。",
+  "duration": "20.3 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Ideogram",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "把你产品自己的界面元素（手柄、光标、选框）当作动效语言。"
+}

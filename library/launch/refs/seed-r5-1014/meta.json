@@ -1,0 +1,22 @@
+{
+  "id": "seed-r5-1014",
+  "name": "立体书：从巴黎到罗马",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "纸艺"
+  ],
+  "needs": [],
+  "what": "书打开，埃菲尔铁塔立起；翻页，斗兽场升起。扁平插画、纸纹，青绿砖红米黄。",
+  "why": "“翻一页，换个地方”，一看就懂。",
+  "duration": "20.0 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "other"
+  },
+  "steal": "如果你的视频要换场景，就把每个新地方做成新的一页。"
+}

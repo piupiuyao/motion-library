@@ -1,0 +1,22 @@
+{
+  "id": "seed-r4-1014",
+  "name": "档案胶片：过去怎么找到你 → TODAY,",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "复古"
+  ],
+  "needs": [],
+  "what": "60–70 年代高饱和胶片（大桥、打字机），标着 “— NEW YORK, 1964”。粗体大写逐行堆叠，旧行变淡：SEARCHED. / PICKED A ROUTE. / FOLLOWED IT TO YOUR DOOR. 巨大的 “TODAY,” 透出胶片，切到运行 AI 助手的手机。",
+  "why": "“过去 vs 今天”，十几秒讲清一个行为变化。",
+  "duration": "12.6 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "retro"
+  },
+  "steal": "脚本这样写：过去人们怎么做这件事 → TODAY, → 现在怎么做 → 你的产品。"
+}

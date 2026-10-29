@@ -1,0 +1,22 @@
+{
+  "id": "t1ehdxhnq6fari49j3re",
+  "name": "AI 图像工具发布：柔光渐变 + 半调云朵",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "暖色里模糊人影发光，“Imagine to have all your…” 淡入；“{ intro[图片] ducing }” 嵌进小图。主画面是半调蓝天，巨大衬线字标在毛玻璃输入框后，打字时推近大字。",
+  "why": "半调让生成图像设计而非 AI，推近大字让提示词有分量。",
+  "duration": "59.3 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "在单词中间嵌一张小图；用户打字时把镜头推进文字里。"
+}

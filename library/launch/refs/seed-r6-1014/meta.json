@@ -1,0 +1,23 @@
+{
+  "id": "seed-r6-1014",
+  "name": "Base44：贴纸拼贴 + 单词转盘",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "拼贴",
+    "纸艺"
+  ],
+  "needs": [],
+  "what": "米白网格上一句话拆开，贴纸、照片、手绘箭头堆起。logo 落中央，暖调办公室实拍，竖排单词转盘滚动（Build Websites → Build it all）。",
+  "why": "转盘列尽产品能力，不用一个项目符号。",
+  "duration": "11.6 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Base44",
+    "url": "",
+    "gallery_cat": "paper"
+  },
+  "steal": "功能列表用单词转盘来展示，只有中间一行是实色。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "bg_switch",
+  "name": "每段换背景",
+  "video_type": "talking-head",
+  "status": "reference",
+  "category": "版式",
+  "purpose": [
+    "换话题"
+  ],
+  "style": [
+    "网感"
+  ],
+  "needs": [
+    "抠像"
+  ],
+  "what": "人抠出，每个段落换一种背景（霓虹、波点、格子、皱纸），段落一眼分开",
+  "source": {
+    "from": "我李哥豆儿「4 套剪辑手法打破扁平画面」（视频号，refs/95_1793056112）",
+    "note": "B 全片"
+  }
+}

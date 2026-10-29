@@ -1,0 +1,22 @@
+{
+  "id": "seed-r7-1014",
+  "name": "Agent 产品片：渐变马赛克 → 光球 → 输入框",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "产品卡片裂成渐变方块和代码面板，收拢成矩形，缩成玻璃光球，再展开成 “Ask Architect” 胶囊和玫红底的输入框。",
+  "why": "转场全是形状变形，没有硬切；单一主色让画面沉静。",
+  "duration": "8.4 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "状态之间用变形过渡（方块 → 光球 → 输入框）代替硬切，只用一个主色。"
+}

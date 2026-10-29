@@ -1,0 +1,19 @@
+{
+  "id": "title_bar",
+  "name": "顶部固定标题栏",
+  "video_type": "talking-head",
+  "status": "reference",
+  "category": "字体",
+  "purpose": [
+    "全片常驻"
+  ],
+  "style": [
+    "克制"
+  ],
+  "needs": [],
+  "what": "画面顶部一直挂着节目名大标题 + 一行小字副标题",
+  "source": {
+    "from": "剪辑师白菜「告别廉价口播」（视频号，refs/94_1793056051）",
+    "note": "A 全片（BAI CAI EDITING / 告别廉价口播）"
+  }
+}

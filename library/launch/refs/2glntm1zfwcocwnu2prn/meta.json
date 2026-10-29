@@ -1,0 +1,22 @@
+{
+  "id": "2glntm1zfwcocwnu2prn",
+  "name": "Base44：流体渐变 + 句中嵌入提示词卡",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "米白底上 logo 呼吸，橙紫流体渐变衬着 “Just You”。提示词卡片嵌在句中（“Building [提示词] Your App”），成品界面浮在上方。",
+  "why": "界面嵌进句子，一拍讲清产品；渐变让静帧有生命。",
+  "duration": "16.2 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Base44",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "标题留一个空，把你的产品放进这个空里。"
+}

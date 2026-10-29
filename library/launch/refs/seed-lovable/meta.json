@@ -1,0 +1,22 @@
+{
+  "id": "seed-lovable",
+  "name": "Lovable：高能光斑 + 光标演示",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "光感"
+  ],
+  "needs": [],
+  "what": "粉橙蓝模糊光斑；单词撑满画面（“Faster”）；数字滚到 52,978。应用从黑色胶囊输入框的渐变光晕里长出。带名字的光标飞入，头像弹出，镜头推进真实界面。",
+  "why": "功能全由光标演示，几乎不用旁白。",
+  "duration": "66.1 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "Lovable",
+    "url": "",
+    "gallery_cat": "glow"
+  },
+  "steal": "用光标演示代替旁白，给每个光标挂上名字标签。"
+}

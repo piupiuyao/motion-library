@@ -1,0 +1,33 @@
+{
+  "id": "mono_shrink",
+  "name": "黑白缩小",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "吐槽痛点"
+  ],
+  "style": [
+    "克制"
+  ],
+  "needs": [],
+  "use_for": [
+    "吐槽、痛点",
+    "负面情绪、无奈",
+    "讲「以前多糟」"
+  ],
+  "needs_assets": [],
+  "layers": [
+    "深色背景",
+    "原画面去色、缩进圆角小框",
+    "可选：上方一行字"
+  ],
+  "duration": "2–5 秒",
+  "params": {
+    "label": "可选。小框上方的一行字（如 DRAINED）"
+  },
+  "source": {
+    "from": "剪辑师白菜「告别廉价口播」（视频号，refs/94_1793056051）",
+    "note": "参考视频 A「吐槽行业痛点就变黑白、缩小画面」"
+  }
+}

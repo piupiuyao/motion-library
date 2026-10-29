@@ -1,0 +1,22 @@
+{
+  "id": "seed-r3-1014",
+  "name": "黑白电影感：taste vs AVERAGE.",
+  "video_type": "launch",
+  "status": "reference",
+  "category": "整片参考",
+  "purpose": [],
+  "style": [
+    "电影感"
+  ],
+  "needs": [],
+  "what": "黑位压深的高反差黑白：眼睛大特写、吐照片的复印机、老 CRT 上的 “taste.”、大笑的影院观众。网格拼贴定格在巨大的 “AVERAGE.” 下。",
+  "why": "黑白把迥异镜头统一成一种情绪；屏幕上的字是后期加的，非生成。",
+  "duration": "17.5 秒",
+  "source": {
+    "from": "Monica 的 Taste Gallery（Clico taste-gallery 分支）",
+    "credit": "",
+    "url": "",
+    "gallery_cat": "retro"
+  },
+  "steal": "空镜头调成黑白；画面里需要的文字一律自己后加。"
+}

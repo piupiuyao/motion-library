@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* Skins: one set of variables per look. Templates only use these variables, so a new skin = a new look. */
+  :root, .skin-clean {
+    --accent: #c6f432; --accent-2: #ffffff; --ink: #111111; --paper: #ffffff; --dim: rgba(10, 10, 12, .78);
+    --bg-a: #17171a; --bg-b: #26262b; --cap-bg: rgba(255, 255, 255, .94); --cap-ink: #8a8a8a; --cap-on: #111111;
+    --font-display: "Avenir Next", "PingFang SC", sans-serif; --display-weight: 800;
+    --font-body: "Avenir Next", "PingFang SC", sans-serif;
+  }
+  .skin-pop {
+    --accent: #ffd400; --accent-2: #3d7bff; --ink: #111111; --paper: #fffdf6; --dim: rgba(20, 16, 40, .7);
+    --bg-a: #ffd6e8; --bg-b: #ff9ec7; --cap-bg: rgba(255, 255, 255, .96); --cap-ink: #9a9a9a; --cap-on: #111111;
+    --font-display: "Avenir Next Condensed", "PingFang SC", sans-serif; --display-weight: 900;
+    --font-body: "Avenir Next", "PingFang SC", sans-serif;
+  }
+  html, body { margin: 0; background: #000; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg-a); font-family: var(--font-body); }
+  .layer { position: absolute; inset: 0; }
+  .media { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; transform-origin: 50% 50%; }
+  .media img, .media canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  #caption { position: absolute; left: 60px; right: 60px; top: 1452px; display: flex; justify-content: center; }
+  #caption .pill { background: var(--cap-bg); border-radius: 22px; padding: 14px 30px 18px; font: 800 60px/1.15 var(--font-body);
+                   color: var(--cap-ink); text-align: center; box-shadow: 0 8px 30px rgba(0, 0, 0, .18); max-width: 900px; }
+  #caption .on { color: var(--cap-on); }
+  #caption .key { color: var(--cap-on); background: var(--accent); border-radius: 10px; padding: 0 8px; }
+  .display { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: -.01em; line-height: .92; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <div id="base" class="media"><img id="baseImg"></div>
+  <div id="back" class="layer"></div>
+  <div id="person" class="media"><canvas id="personCv" width="1080" height="1920"></canvas></div>
+  <div id="front" class="layer"></div>
+  <div id="caption"></div>
+</div>
+<script>
+const TL = /*TIMELINE*/null;
+const TEMPLATES = {};
+const W = 1080, H = 1920;
+
+// ---------- helpers templates can use ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const ease = {
+  out: p => 1 - Math.pow(1 - clamp(p), 3),
+  inOut: p => (p = clamp(p), p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2),
+  back: p => (p = clamp(p), 1 + 2.4 * Math.pow(p - 1, 3) + 1.4 * Math.pow(p - 1, 2)),
+  // springy pop: overshoots then settles
+  pop: p => (p = clamp(p), p === 1 ? 1 : 1 - Math.exp(-7 * p) * Math.cos(10 * p)),
+};
+// progress of an entrance that starts at t0 and lasts d seconds
+const enter = (t, t0, d) => clamp((t - t0) / d);
+// fade-out over the last d seconds of a shot
+const leave = (ctx, d = .25) => 1 - clamp((ctx.t - (ctx.d - d)) / d);
+function el(tag, css, html) {
+  const e = document.createElement(tag);
+  if (css) e.style.cssText = css;
+  if (html != null) e.innerHTML = html;
+  return e;
+}
+const url = p => (p.startsWith('http') || p.startsWith('/') ? p : '/proj/' + p);
+function frameUrl(dir, n, ext = 'jpg') { return url(dir) + '/' + String(n).padStart(6, '0') + '.' + ext; }
+// media param: a still image path, or a folder of numbered frames ({frames: "assets/broll1", fps: 30})
+function mediaSrc(m, t) {
+  if (typeof m === 'string') return url(m);
+  const n = Math.min(m.count || 1e9, 1 + Math.floor(((m.offset || 0) + t) * (m.fps || TL.fps)));
+  return frameUrl(m.frames, n);
+}
+const pending = [];
+function setImg(img, src) {
+  if (img.getAttribute('src') !== src) { img.src = src; pending.push(img.decode().catch(() => {})); }
+}
+
+// ---------- engine ----------
+const L = { bg: bgEl(), back: byId('back'), front: byId('front') };
+function byId(i) { return document.getElementById(i); }
+function bgEl() { return document.getElementById('bg'); }
+const base = byId('base'), baseImg = byId('baseImg'), person = byId('person'), personCv = byId('personCv');
+const pctx = personCv.getContext('2d', { willReadFrequently: true });
+const maskCv = document.createElement('canvas'); maskCv.width = W; maskCv.height = H;
+const mctx = maskCv.getContext('2d', { willReadFrequently: true });
+const maskImg = new Image(), srcImg = new Image();
+document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
+
+function segAt(t) {
+  let s = TL.segments[0];
+  for (const g of TL.segments) if (t >= g.out) s = g;
+  return s;
+}
+function shotAt(t) {
+  for (const s of TL.shots) if (t >= s.start && t < s.end) return s;
+  return null;
+}
+let current = null;
+
+function resetLayers() {
+  L.bg.innerHTML = ''; L.bg.style.cssText = '';
+  L.back.innerHTML = ''; L.front.innerHTML = '';
+  for (const m of [base, person]) { m.style.cssText = ''; }
+  baseImg.style.cssText = ''; personCv.style.cssText = '';
+  person.style.display = 'none';
+}
+
+async function cutout(srcUrl, maskUrl) {
+  srcImg.src = srcUrl; maskImg.src = maskUrl;
+  await Promise.all([srcImg.decode(), maskImg.decode()]);
+  mctx.clearRect(0, 0, W, H); mctx.drawImage(maskImg, 0, 0, W, H);
+  const m = mctx.getImageData(0, 0, W, H), d = m.data;
+  for (let i = 0; i < d.length; i += 4) { d[i + 3] = d[i]; }
+  pctx.globalCompositeOperation = 'copy';
+  pctx.putImageData(m, 0, 0);
+  pctx.globalCompositeOperation = 'source-in';
+  pctx.drawImage(srcImg, 0, 0, W, H);
+  pctx.globalCompositeOperation = 'source-over';
+}
+
+function captionAt(t) {
+  const cap = byId('caption');
+  if (TL.captions === false) { cap.innerHTML = ''; return; }
+  const line = TL.lines.find(l => t >= l.start && t < l.end);
+  if (!line) { cap.innerHTML = ''; return; }
+  const keys = new Set((current && current.keys) || []);
+  let html = '', inKey = false;
+  line.words.forEach((w, j) => {
+    const k = keys.has(w.i);
+    if (k && !inKey) html += (j ? ' ' : '') + '<span class="key">';
+    else if (!k && inKey) html += '</span> ';
+    else if (j) html += ' ';
+    html += k ? w.w : `<span class="${t >= w.s ? 'on' : ''}">${w.w}</span>`;
+    inKey = k;
+  });
+  cap.innerHTML = '<div class="pill">' + html + (inKey ? '</span>' : '') + '</div>';
+}
+
+window.renderFrame = async function (k) {
+  const t = k / TL.fps;
+  const seg = segAt(t);
+  const srcFrame = Math.max(1, Math.round((seg.src + (t - seg.out)) * TL.srcFps) + 1);
+  const shot = shotAt(t);
+  if (shot !== current) {
+    resetLayers();
+    current = shot;
+    if (shot) TEMPLATES[shot.template].setup(ctxFor(shot, t, seg));
+  }
+  base.style.transform = `scale(${seg.zoom || 1})`;
+  setImg(baseImg, frameUrl(TL.frames, srcFrame));
+  if (shot && shot.matte) {
+    person.style.display = '';
+    person.style.transform = base.style.transform;
+    await cutout(frameUrl(TL.frames, srcFrame), frameUrl(TL.matte, srcFrame, 'png'));
+  }
+  if (shot) TEMPLATES[shot.template].frame(ctxFor(shot, t, seg));
+  captionAt(t);
+  await Promise.all(pending.splice(0));
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  return srcFrame;
+};
+
+function ctxFor(shot, t, seg) {
+  const lt = t - shot.start, d = shot.end - shot.start;
+  return {
+    t: lt, d, p: clamp(lt / d), params: shot.params || {}, shot, seg, L,
+    base, baseImg, person, personCv,
+    // shot words with times local to the shot start
+    words: shot.words.map(w => ({ ...w, s: w.s - shot.start, e: w.e - shot.start })),
+    groups: shot.groups.map(g => ({ ...g, s: g.s - shot.start, e: g.e - shot.start })),
+    focus: shot.focus || [.5, .33],
+  };
+}
+
+window.ready = (async () => {
+  for (const id of TL.templateIds) {
+    await new Promise((ok, bad) => {
+      const s = document.createElement('script');
+      s.src = `/lib/${id}/template.js`; s.onload = ok; s.onerror = () => bad(new Error('template ' + id));
+      document.head.appendChild(s);
+    });
+  }
+  await document.fonts.ready;
+  return true;
+})();
+</script>
+</body>
+</html>
