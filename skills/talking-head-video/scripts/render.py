@@ -155,6 +155,18 @@ def serve(proj):
                     return os.path.join(root, *path[len(pre):].split('/'))
             return os.path.join(HERE, path.lstrip('/'))
 
+        def do_GET(self):
+            if self.path.startswith('/icon?'):  # /icon?q=Slack → {kind, name, svg, hex} or null (see icons.py)
+                import icons
+                from urllib.parse import parse_qs, urlparse
+                body = json.dumps(icons.find(parse_qs(urlparse(self.path).query).get('q', [''])[0])).encode()
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            super().do_GET()
+
         def log_message(self, *a):
             pass
     srv = http.server.ThreadingHTTPServer(('127.0.0.1', 0), H)

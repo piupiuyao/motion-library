@@ -13,7 +13,7 @@ TEMPLATES.c79 = {
         display:flex;align-items:center;justify-content:center;font:900 54px var(--font-body);color:var(--ink)`, String(P.handle).replace(/^@/, '')[0].toUpperCase()));
       this.card.appendChild(el('div', 'font:800 50px var(--font-body);color:#111', P.handle));
     } else this.card.style.padding = '22px';
-    this.btn = el('div', `padding:20px 40px 24px;border-radius:999px;background:var(--accent);color:var(--ink);font:800 52px var(--font-body);min-width:250px;text-align:center`);
+    this.btn = el('div', `padding:20px 40px 24px;border-radius:999px;background:#ff2d55;color:#fff;font:800 52px var(--font-body);min-width:250px;text-align:center`);
     this.btnA = P.label || '+ Follow'; this.btnB = P.done || '✓ Following';
     this.card.appendChild(this.btn);
     this.wrap.appendChild(this.card);
@@ -35,8 +35,8 @@ TEMPLATES.c79 = {
     const pop = enter(t, T.pop, .45);
     const done = t >= T.click;
     this.btn.textContent = done ? this.btnB : this.btnA;
-    this.btn.style.background = done ? '#d9d9de' : 'var(--accent)';
-    this.btn.style.color = done ? '#333' : 'var(--ink)';
+    this.btn.style.background = done ? '#d9d9de' : '#ff2d55';
+    this.btn.style.color = done ? '#333' : '#fff';
     const press = t >= T.click - .08 && t < T.click + .25 ? Math.sin(clamp((t - T.click + .08) / .33) * Math.PI) : 0;
     const bq = clamp((t - T.burst) / .3);
     const sc = lerp(.3, 1, ease.pop(pop)) * (1 - .06 * press) * (t >= T.burst ? lerp(1.1, 0, ease.out(bq)) : 1);

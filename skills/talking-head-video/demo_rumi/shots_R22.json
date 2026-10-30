@@ -38,19 +38,16 @@
    "params": {
     "steps": [
      {
-      "icon": "mail"
+      "at": "email"
      },
      {
-      "icon": "chat",
-      "at": "whatsapp"
+      "at": "WhatsApp"
      },
      {
-      "icon": "slack",
-      "at": "slack"
+      "at": "Slack"
      },
      {
-      "icon": "plane",
-      "at": "telegram"
+      "at": "Telegram"
      }
     ]
    }

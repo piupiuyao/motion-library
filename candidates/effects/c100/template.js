@@ -41,8 +41,8 @@ TEMPLATES.c100 = {
       border:4px solid color-mix(in srgb, var(--accent) 80%, transparent);box-shadow:0 0 30px color-mix(in srgb, var(--accent) 50%, transparent)`);
     this.ring2 = el('div', 'position:absolute;left:400px;top:980px;width:280px;height:280px;border-radius:50%;border:3px solid rgba(255,255,255,.5)');
     this.name = el('div', 'position:absolute;left:0;right:0;top:1265px;text-align:center;color:#fff;font:700 44px var(--font-body)', P.handle || '');
-    this.sub = el('div', `position:absolute;left:340px;top:1335px;width:400px;height:96px;border-radius:999px;background:var(--accent);color:var(--ink);
-      font:800 46px/96px var(--font-body);text-align:center;letter-spacing:.04em;box-shadow:0 12px 30px color-mix(in srgb, var(--accent) 45%, transparent)`, P.button || 'SUBSCRIBE');
+    this.sub = el('div', `position:absolute;left:340px;top:1335px;width:400px;height:96px;border-radius:999px;background:#ff1f3d;color:#fff;
+      font:800 46px/96px var(--font-body);text-align:center;letter-spacing:.04em;box-shadow:0 12px 30px rgba(255,31,61,.45)`, P.button || 'SUBSCRIBE');
     ctx.L.front.append(this.deco, this.title, this.bar, this.card, this.ring2, this.ring, this.av, this.name, this.sub);
     this.fx = ctx.focus[0] * W; this.fy = ctx.focus[1] * H;
   },

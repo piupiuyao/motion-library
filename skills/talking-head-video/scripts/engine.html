@@ -64,6 +64,34 @@ function el(tag, css, html) {
   return e;
 }
 const url = p => (p.startsWith('http') || p.startsWith('/') ? p : '/proj/' + p);
+// Icons for spoken words (library/icons): iconFind('Slack') → {kind: logo|brand|ui, name, svg, hex} or null.
+// iconTile(q, size) → an app-style rounded tile element, or null when nothing fits (leave the item out).
+const _icons = {};
+function iconFind(q) {
+  if (!q) return null;
+  if (!(q in _icons)) {
+    const r = new XMLHttpRequest(); r.open('GET', '/icon?q=' + encodeURIComponent(q), false); r.send();
+    _icons[q] = r.status === 200 ? JSON.parse(r.responseText) : null;
+  }
+  return _icons[q];
+}
+function iconSvg(ic, color) {  // the bare icon as an <svg> string sized to its box
+  if (!ic) return '';
+  let s = ic.svg.replace(/<svg[^>]*>/, m => m.replace(/ (width|height)="[^"]*"/g, '').replace('<svg', '<svg width="100%" height="100%"'));
+  if (ic.kind === 'brand') s = s.replace('<svg', `<svg fill="${color || ic.hex}"`);
+  if (ic.kind === 'ui' && color && !color.startsWith('var(')) s = s.replace(/stroke="currentColor"/, `stroke="${color}"`);  // else follows CSS color
+  return s;
+}
+function iconTile(q, size = 200, opt = {}) {
+  const ic = typeof q === 'string' ? iconFind(q) : q;
+  if (!ic) return null;
+  // logo: full-colour mark on white · brand: white mark on its brand colour · ui: line icon on the theme accent
+  const bg = opt.bg || (ic.kind === 'logo' ? '#ffffff' : ic.kind === 'brand' ? ic.hex : 'var(--accent)');
+  const fg = opt.fg || (ic.kind === 'brand' ? '#ffffff' : 'var(--ink)');
+  const pad = ic.kind === 'ui' ? .24 : .2;
+  return el('div', `width:${size}px;height:${size}px;border-radius:${size * .23}px;background:${bg};box-sizing:border-box;
+    padding:${size * pad}px;box-shadow:0 ${size * .06}px ${size * .16}px rgba(0,0,0,.28);color:${fg}`, iconSvg(ic, ic.kind === 'logo' ? null : fg));
+}
 function frameUrl(dir, n, ext = 'jpg') { return url(dir) + '/' + String(n).padStart(6, '0') + '.' + ext; }
 // media param: a still image path, or a folder of numbered frames ({frames: "assets/broll1", fps: 30})
 function mediaSrc(m, t) {

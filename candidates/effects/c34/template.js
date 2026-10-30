@@ -65,7 +65,7 @@ TEMPLATES.c34 = {
     }
     const q = enter(t, .5 + Math.min(1.4, ctx.d * .4) - .1, .3);
     this.val.textContent = Math.round(clamp(turn) * 100) + '%';
-    if (q > 0 && this.word) this.val.innerHTML = `<span style="color:var(--accent)">${this.word}</span>`;
+    if (q > 0 && this.word) this.val.innerHTML = `<span style="color:#ff4a3d">${this.word}</span>`;
     this.val.style.opacity = Math.min(enter(t, .5, .3), out);
     this.val.style.transform = `scale(${q > 0 ? ease.pop(q) : 1})`;
   },

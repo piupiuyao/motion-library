@@ -8,7 +8,7 @@ TEMPLATES.c24 = {
   setup(ctx) {
     const P = ctx.params;
     const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
-    const col = P.color || cssv('--accent') || '#ffd84a';
+    const col = P.color || '#ffd84a';  // gold = halo; kept fixed on purpose
     const core = `color-mix(in srgb, ${col} 15%, #fff)`;
     // hand-drawn ellipse: two slightly different loops
     const loop = (k, ry) => {

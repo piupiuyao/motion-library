@@ -1,21 +1,21 @@
 {
-  "id": "c102",
-  "name": "3D翻转图标",
-  "video_type": "talking-head",
-  "category": "素材",
-  "needs": [
-    "图片"
-  ],
-  "what": "一个 logo/图标/产品图在人身边做 3D 翻转：绕竖轴转一圈或翻到一个斜角定住，有透视（转到侧面时变窄、近大远小），可带一点厚度阴影。放在人肩膀旁或头顶上方，在人前面。",
-  "use": "提到品牌、App、产品名时",
-  "sources": [
-    "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=277s"
-  ],
-  "ref_moment": "4:37–5:37（3D Flip Animation）",
-  "params": {
-    "steps": "必填。图标序列 [{icon: mail|chat|slack|plane, at: 词} 或 {img: 用户上传的图标图片, at: 词}]，每说到一个词翻到下一个；不写就不显示",
-    "size": "图标边长（像素），默认 280",
-    "x": "中心横坐标，默认 860",
-    "y": "中心纵坐标，默认 330"
-  }
+ "id": "c102",
+ "name": "3D翻转图标",
+ "video_type": "talking-head",
+ "category": "素材",
+ "needs": [
+  "图片"
+ ],
+ "what": "一个 logo/图标/产品图在人身边做 3D 翻转：绕竖轴转一圈或翻到一个斜角定住，有透视（转到侧面时变窄、近大远小），可带一点厚度阴影。放在人肩膀旁或头顶上方，在人前面。",
+ "use": "提到品牌、App、产品名时",
+ "sources": [
+  "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=277s"
+ ],
+ "ref_moment": "4:37–5:37（3D Flip Animation）",
+ "params": {
+  "steps": "必填。图标序列 [{at: 说到的词, icon: 可选，图标名或别的词，如 Slack / gym / ui:wallet}]，不写 icon 就按说的那个词自动找图标（品牌词出官方 logo，普通词出线条图标）；找不到的那一项自动跳过。也可 {img: 用户上传的图标图片, at: 词}",
+  "size": "图标边长（像素），默认 280",
+  "x": "中心横坐标，默认 860",
+  "y": "中心纵坐标，默认 330"
+ }
 }

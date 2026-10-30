@@ -1,27 +1,16 @@
 // 3D翻转图标 · 素材：一个 App 图标在人身边带厚度做 3D 翻转（近大远小），每提到一个名字翻到下一个，最后斜着定住轻轻浮动
 TEMPLATES.c102 = {
-  icons: {
-    mail: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#fff"/>
-      <path d="M18 30 h64 v42 h-64z" fill="#fff" stroke="#e8e8e8" stroke-width="2"/><path d="M18 30 v42 h12 V44 L50 59 L70 44 V72 h12 V30 L50 52 Z" fill="#ea4335"/>
-      <path d="M18 30 L30 39 V72 H18Z" fill="#4285f4"/><path d="M82 30 L70 39 V72 H82Z" fill="#34a853"/><path d="M18 30 L50 52 L82 30 L74 30 L50 47 L26 30Z" fill="#c5221f"/></svg>`,
-    chat: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#25d366"/>
-      <path d="M50 20 a30 30 0 1 1 -16 55 l-14 4 l4 -13 A30 30 0 0 1 50 20z" fill="none" stroke="#fff" stroke-width="6"/>
-      <path d="M38 36 c-3 3 -3 9 3 16 s13 9 16 6 l3 -4 l-7 -5 l-3 3 c-3 -1 -8 -6 -9 -9 l3 -3 l-5 -7z" fill="#fff"/></svg>`,
-    slack: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#fff"/>
-      <g stroke-linecap="round" stroke-width="11"><path d="M40 22 V48" stroke="#36c5f0"/><path d="M22 60 H48" stroke="#2eb67d"/>
-      <path d="M60 52 V78" stroke="#e01e5a"/><path d="M52 40 H78" stroke="#ecb22e"/></g>
-      <g stroke-linecap="round" stroke-width="11"><path d="M22 40 h4" stroke="#36c5f0"/><path d="M60 22 v4" stroke="#2eb67d"/><path d="M78 60 h-4" stroke="#e01e5a"/><path d="M40 78 v-4" stroke="#ecb22e"/></g></svg>`,
-    plane: `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" rx="22" fill="#2aabee"/>
-      <path d="M20 49 L78 26 L68 76 L50 63 L41 72 L42 58 L68 36 L36 54Z" fill="#fff"/></svg>`,
-  },
   setup(ctx) {
     this.off = false;
     const P = ctx.params;
     const n = s => s.toLowerCase().replace(/[^\w]/g, '');
     // steps: [{icon, at}] — the first appears at its word, each next one flips in at its word
-    const steps = P.steps || [];
+    // icon = a name/word ('Slack', 'gym', 'ui:wallet'); default = the spoken word itself. No matching icon → that step is left out.
+    const tile = q => { const e = iconTile(q, 100); if (!e) return null; e.style.cssText += ';width:100%;height:100%;border-radius:22%;box-shadow:none'; return e.outerHTML; };
+    const steps = (P.steps || []).map(s => ({ ...s, html: s.img ? `<img src="${url(s.img)}" style="width:100%;height:100%;object-fit:cover;border-radius:22%">` : tile(s.icon || s.at) }))
+      .filter(s => s.html);
     if (!steps.length) { this.off = true; return; } // required: not shown without steps
-    this.steps = steps.map((s, k) => ({ html: s.img ? `<img src="${url(s.img)}" style="width:100%;height:100%;object-fit:cover;border-radius:22%">` : this.icons[s.icon] || this.icons.mail,
+    this.steps = steps.map((s, k) => ({ html: s.html,
       t: k === 0 ? (s.at ? ((ctx.words.find(w => n(w.w) === n(s.at)) || { s: 0 }).s) : 0)
         : ((ctx.words.find(w => n(w.w) === n(s.at || '')) || { s: ctx.d * k / steps.length }).s) }));
     this.steps[0].t = Math.max(0, this.steps[0].t - .1);

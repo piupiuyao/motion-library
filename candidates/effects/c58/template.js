@@ -4,7 +4,7 @@ TEMPLATES.c58 = {
     const P = ctx.params;
     // default: theme accent + accent-2 + a fixed neon cyan as the third line
     const css = getComputedStyle(document.getElementById('stage')), v = k => css.getPropertyValue(k).trim();
-    this.colors = P.colors || [v('--accent') || '#ff3fd2', v('--accent-2') || '#33e6ff', '#33e6ff'];
+    this.colors = P.colors || ['#ff3fd2', '#33e6ff', '#9dff3a'];  // neon trio kept fixed on purpose
     // tiny copy of the cutout, used to find the silhouette edge by casting rays from the chest
     this.small = document.createElement('canvas'); this.small.width = 135; this.small.height = 240;
     this.sg = this.small.getContext('2d', { willReadFrequently: true });

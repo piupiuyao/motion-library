@@ -12,7 +12,7 @@ TEMPLATES.c25 = {
     const items = (P.items || []).filter(it => it && it.text);
     if (!items.length) { this.off = true; return; }   // 必填: no bubbles → render nothing
     const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
-    const acc = cssv('--accent') || '#ffe14d', acc2 = cssv('--accent-2') || '#e8261c';
+    const acc = P.color || '#ffe14d', acc2 = P.color2 || '#e8261c';  // classic comic yellow/red; kept fixed on purpose
     const font = "'Bangers','Impact','Arial Black',sans-serif";
     const dots = (id, c) => `<pattern id="${id}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="11" cy="11" r="5" style="fill:${c}"/></pattern>`;
     this.items = items.map((it, k) => {
