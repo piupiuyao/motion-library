@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "圈画标注",
+  "style": [
+    "通用"
+  ],
   "duration": "2–5 秒",
   "use_for": "「看这里」、指一个细节或这句的重点",
   "needs": [],

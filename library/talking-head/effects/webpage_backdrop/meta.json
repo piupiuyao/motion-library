@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "抠像配大图",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "4–10 秒",
   "use_for": "对新闻、网页做反应「你看这个」：网页铺满做背景，人站在前面讲",
   "needs": [

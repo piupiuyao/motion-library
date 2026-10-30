@@ -11,6 +11,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "顶部常驻条",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "整段都可以",
   "use_for": "整条片子顶部挂节目名，人缩进下面的框",
   "needs": [],

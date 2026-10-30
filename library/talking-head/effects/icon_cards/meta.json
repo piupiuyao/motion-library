@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "环绕",
   "group": "图标",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "3–6 秒",
   "use_for": "列举几样东西或工具：白色图标小卡弹到人四周",
   "needs": [],

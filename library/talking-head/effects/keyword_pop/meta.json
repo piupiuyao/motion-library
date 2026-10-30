@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "上方大字",
+  "style": [
+    "通用",
+    "网感活泼"
+  ],
   "duration": "2–6 秒",
   "use_for": "一句话里最该记住的短语，头顶弹出大字条",
   "needs": [],

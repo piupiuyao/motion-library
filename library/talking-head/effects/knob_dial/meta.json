@@ -13,6 +13,10 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "进度图表",
+  "style": [
+    "科技感",
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "「调高/调低」某样东西、程度、风险：旋钮转到某一档",
   "needs": [

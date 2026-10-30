@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "闪光转场",
+  "style": [
+    "电影感"
+  ],
   "duration": "1.5–3 秒",
   "use_for": "引出一张照片/证据、干脆跳到新的点：快门白闪切走",
   "needs": [],

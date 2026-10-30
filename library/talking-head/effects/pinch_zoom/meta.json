@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "抠像换背景",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "3–6 秒",
   "use_for": "俏皮开场、「放大看」、大小对比：手势一捏，人跟着缩放",
   "needs": [

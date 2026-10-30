@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "进度图表",
+  "style": [
+    "科技感"
+  ],
   "duration": "2–6 秒",
   "use_for": "「给你 10 秒」、倒数、限时：圆环倒计时",
   "needs": [

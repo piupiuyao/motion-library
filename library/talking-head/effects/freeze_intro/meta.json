@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "定格高光",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "自我介绍、介绍嘉宾：画面定格，人描边挪到一边，贴纸写名字",
   "needs": [

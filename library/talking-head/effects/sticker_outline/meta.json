@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "抠像换背景",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "段落开头或亮相：人像加白描边贴在新背景上",
   "needs": [

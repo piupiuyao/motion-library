@@ -11,6 +11,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "人缩进框",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–5 秒",
   "use_for": "吐槽、无奈、「以前多糟」：画面变黑白缩小",
   "needs": [],

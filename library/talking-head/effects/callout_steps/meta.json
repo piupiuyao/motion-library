@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "全屏图解",
+  "style": [
+    "复古手作"
+  ],
   "duration": "4–8 秒",
   "use_for": "讲几个步骤、一个框架：编号圈 + 虚线标注，镜头一组组平移",
   "needs": [],

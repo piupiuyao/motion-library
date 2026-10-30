@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "闪光转场",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "柔和换话题、回忆「那一刻我意识到……」：暖光扫过过曝换画面",
   "needs": [],

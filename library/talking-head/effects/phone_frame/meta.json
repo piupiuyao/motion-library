@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "设备框",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "3–5 秒",
   "use_for": "「我在抖音刷到……」、讲 app 怎么用：整个画面缩进手机框",
   "needs": [],

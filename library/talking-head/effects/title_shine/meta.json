@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "中部",
   "group": "开场大标题",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "开场钩子标题：背景虚化压暗，大标题落下扫一道光",
   "needs": [],

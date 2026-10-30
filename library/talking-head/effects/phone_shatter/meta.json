@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "3D道具",
+  "style": [
+    "科技感"
+  ],
   "duration": "2–3 秒",
   "use_for": "「千万别这样做」、辟谣、强烈否定：手机转进来碎成渣",
   "needs": [],

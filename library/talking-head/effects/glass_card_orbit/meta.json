@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "环绕",
   "group": "绕人旋转",
+  "style": [
+    "科技感"
+  ],
   "duration": "3–5 秒",
   "use_for": "讲战绩、粉丝数等社会证明，或介绍一个工具：玻璃卡绕身转一圈",
   "needs": [

@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "消息卡片",
+  "style": [
+    "通用"
+  ],
   "duration": "2–4 秒",
   "use_for": "隐私、「名字先不告诉你」：消息卡上的名字被模糊打码",
   "needs": [],

@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "上方要点卡",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "3–6 秒",
   "use_for": "点题的一句：抠像换深色底，上方出要点卡",
   "needs": [

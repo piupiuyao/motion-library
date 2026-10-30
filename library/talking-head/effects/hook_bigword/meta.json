@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "开场大标题",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "1.5–3 秒",
   "use_for": "前 3 秒的钩子句：画面变黑白，胸前一块白底大字",
   "needs": [],

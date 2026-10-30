@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "搞笑贴纸",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "玩笑、情绪词：大表情弹到脸旁（默认不加，用户打开才用）",
   "needs": [],

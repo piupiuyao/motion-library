@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "环绕",
   "group": "圈画标注",
+  "style": [
+    "网感活泼",
+    "复古手作"
+  ],
   "duration": "2–4 秒",
   "use_for": "轻松的强调、「看这里」：粉笔箭头、圈圈围着人画出来",
   "needs": [],

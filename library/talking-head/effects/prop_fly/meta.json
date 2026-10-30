@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "3D道具",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–3 秒",
   "use_for": "把比喻或具体名词画出来：道具转着圈从人前面飞过",
   "needs": [],

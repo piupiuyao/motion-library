@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "镂空字",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–3 秒",
   "use_for": "开场或章节名：满屏色块上一个词透出画面，再放大铺满",
   "needs": [],

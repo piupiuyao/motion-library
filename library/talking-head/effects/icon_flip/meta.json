@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "图标",
+  "style": [
+    "科技感"
+  ],
   "duration": "2–4 秒",
   "use_for": "提到品牌、App、产品名：图标在人头旁 3D 翻转",
   "needs": [],

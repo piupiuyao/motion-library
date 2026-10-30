@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "漫画感",
+  "style": [
+    "复古手作"
+  ],
   "duration": "2–5 秒",
   "use_for": "复古漫画感、标题出现时的重音：背景变印刷网点",
   "needs": [

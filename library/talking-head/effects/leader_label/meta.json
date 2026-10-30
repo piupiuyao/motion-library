@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "跟踪标签",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "2–4 秒",
   "use_for": "指出画面里的人或东西「我手上这个」：圆点拉出引线写标签",
   "needs": [

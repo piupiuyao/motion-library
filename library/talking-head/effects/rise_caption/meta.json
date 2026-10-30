@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "字幕样式",
+  "style": [
+    "通用"
+  ],
   "duration": "整段都可以",
   "use_for": "任何口播都能用：下巴下方逐词上滑的白色粗体字幕",
   "needs": [],

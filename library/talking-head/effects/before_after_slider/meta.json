@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "分屏",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "2–4 秒",
   "use_for": "效果对比、改造前后：一条分割线扫过，左边之后右边之前",
   "needs": [],

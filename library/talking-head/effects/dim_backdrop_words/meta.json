@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "压暗突出人",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–5 秒",
   "use_for": "关键结论：背景压暗、人保持亮，人身后出大字",
   "needs": [

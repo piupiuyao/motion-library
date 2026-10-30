@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "快速闪切",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "1.5–3 秒",
   "use_for": "开场或一口气列举 3–5 个词：全屏色卡踩点快闪",
   "needs": [],

@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "截图小窗",
+  "style": [
+    "简洁商务",
+    "科技感"
+  ],
   "duration": "3–5 秒",
   "use_for": "提到网站、软件、文章、搜索结果：上半部弹出电脑窗口",
   "needs": [],

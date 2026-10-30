@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "重音冲击",
+  "style": [
+    "科技感"
+  ],
   "duration": "1–3 秒",
   "use_for": "重音、震惊、反转，科技/故障感话题：RGB 三色错开乱抖",
   "needs": [],

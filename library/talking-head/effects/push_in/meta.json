@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "推近",
+  "style": [
+    "通用"
+  ],
   "duration": "2–6 秒",
   "use_for": "重要或走心的一句慢慢推近；不算动效，单机位每 5–8 秒可推一次",
   "needs": [],

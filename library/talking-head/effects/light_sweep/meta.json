@@ -13,6 +13,10 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "闪光转场",
+  "style": [
+    "科技感",
+    "电影感"
+  ],
   "duration": "1.5–3 秒",
   "use_for": "换话题、从开场进入正文：一道亮光斜扫过画面换掉",
   "needs": [],

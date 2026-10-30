@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "原生文字框",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "1–4 秒",
   "use_for": "开场钩子：白底圆角文字框，像 Instagram 原生快拍字",
   "needs": [],

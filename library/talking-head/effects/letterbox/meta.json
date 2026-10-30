@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "画框叠加",
+  "style": [
+    "电影感"
+  ],
   "duration": "3–8 秒",
   "use_for": "「给你讲个故事」、严肃戏剧化的开场或结尾：上下黑边拉开",
   "needs": [],

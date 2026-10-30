@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "上方要点卡",
+  "style": [
+    "科技感",
+    "简洁商务"
+  ],
   "duration": "2–5 秒",
   "use_for": "放定义、要点、一句金句：上方弹出 iOS 液态玻璃卡",
   "needs": [],

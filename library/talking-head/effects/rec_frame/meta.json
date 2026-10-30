@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "环绕",
   "group": "画框叠加",
+  "style": [
+    "网感活泼",
+    "复古手作"
+  ],
   "duration": "3–10 秒",
   "use_for": "幕后花絮、坦白、真心话：叠一层摄像机取景框",
   "needs": [],

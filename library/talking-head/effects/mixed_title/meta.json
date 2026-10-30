@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "上方大字",
+  "style": [
+    "简洁商务",
+    "电影感"
+  ],
   "duration": "2–5 秒",
   "use_for": "段落开头点出这段讲什么：两行标题，关键词换斜体变色",
   "needs": [],

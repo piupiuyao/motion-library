@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "结尾卡",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "3–5 秒",
   "use_for": "结尾引导看下一条、订阅：虚化背景上出下一条视频卡",
   "needs": [],

@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "清单",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "4–8 秒",
   "use_for": "列步骤/技巧、误区 vs 事实：人让开，清单卡说到哪条勾哪条",
   "needs": [],

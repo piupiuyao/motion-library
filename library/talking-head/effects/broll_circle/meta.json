@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "素材铺满人进小窗",
+  "style": [
+    "通用"
+  ],
   "duration": "3–6 秒",
   "use_for": "说到具体场景、产品或屏幕：B-roll 铺满，人缩进圆窗",
   "needs": [],

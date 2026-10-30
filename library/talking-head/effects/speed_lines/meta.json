@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "环绕",
   "group": "漫画感",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "0.5–1.5 秒",
   "use_for": "震惊、包袱、「等等什么？」：漫画集中线冲向脸",
   "needs": [],

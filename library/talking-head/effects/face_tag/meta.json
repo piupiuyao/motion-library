@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "跟踪标签",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–5 秒",
   "use_for": "给人加标签、身份、情绪标注：一行字粘在头旁跟着走",
   "needs": [

@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "调色质感",
+  "style": [
+    "电影感"
+  ],
   "duration": "3–10 秒",
   "use_for": "只想让人或关键词抢眼：画面变黑白，只留一样东西有颜色",
   "needs": [

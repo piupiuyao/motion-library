@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "字幕样式",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "整段都可以",
   "use_for": "高能的一段：字幕换成两词一组的粗窄 3D 投影大字",
   "needs": [],

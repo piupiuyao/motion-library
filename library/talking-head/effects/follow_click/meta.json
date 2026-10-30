@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "账号胶囊",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–3 秒",
   "use_for": "「关注看下集」：关注按钮被点一下变成已关注",
   "needs": [],

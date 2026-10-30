@@ -97,7 +97,7 @@
 <script src="data.js"></script>
 <script>
 const { tags: TAGS, types: TYPES, entries: ALL } = window.LIB;
-const FACETS = [['purpose', '句子用途'], ['weight', '分量'], ['face', '挡脸'], ['zone', '位置'], ['group', '组'], ['needs', '前提'], ['needs_assets', '素材'], ['category', '类别']];
+const FACETS = [['purpose', '句子用途'], ['style', '风格'], ['weight', '分量'], ['face', '挡脸'], ['zone', '位置'], ['group', '组'], ['needs', '前提'], ['needs_assets', '素材'], ['category', '类别']];
 const FACE = { '不挡脸': '脸一直露着', '挡脸': '脸被盖住、虚化或缩进小窗' };
 const STATUS = { ready: '能出片', reference: '参考' };
 const state = { type: 'talking-head', q: '', sel: {} };
@@ -207,6 +207,7 @@ function openEntry(id) {
       <h2>${esc(e.name)}</h2><div class="id">${esc(e.id)}${e.was ? ` · 原 ${esc(e.was)}` : ''} · ${esc(TYPES[e.video_type])}</div>
       <div class="kv">
         ${e.purpose?.length ? `<span>句子用途</span><span>${esc(e.purpose.join('、'))}</span>` : ''}
+        ${e.style?.length ? `<span>风格</span><span>${esc(e.style.join('、'))}</span>` : ''}
         <span>分量</span><span>${esc(e.weight)}${e.covers_face ? '（挡脸）' : ''}</span>
         <span>位置</span><span>${esc(e.zone)}</span>
         <span>组</span><span>${esc(e.group)}</span>

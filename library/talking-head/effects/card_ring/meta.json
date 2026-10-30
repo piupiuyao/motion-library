@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "多图铺满",
+  "style": [
+    "科技感"
+  ],
   "duration": "3–5 秒",
   "use_for": "讲数量和坚持「连发 30 天」、很多结果一起展示",
   "needs": [],

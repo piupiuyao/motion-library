@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "设备框",
+  "style": [
+    "复古手作"
+  ],
   "duration": "3–5 秒",
   "use_for": "提到网上看到的内容、怀旧：素材装进老电视里播放，压大字",
   "needs": [],

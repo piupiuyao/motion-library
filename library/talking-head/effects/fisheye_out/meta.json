@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "冲击转场",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "揭开新场景、切 B-roll：鱼眼鼓起再拉平拉远",
   "needs": [],

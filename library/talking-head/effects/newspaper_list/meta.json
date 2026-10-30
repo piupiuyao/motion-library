@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "清单",
+  "style": [
+    "复古手作"
+  ],
   "duration": "4–8 秒",
   "use_for": "列举 3 个理由 / 5 个技巧：旧报纸背景上清单一条条弹出",
   "needs": [

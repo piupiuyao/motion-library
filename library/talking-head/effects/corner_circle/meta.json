@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "素材铺满人进小窗",
+  "style": [
+    "通用"
+  ],
   "duration": "3–8 秒",
   "use_for": "边讲边展示屏幕、软件、网页：素材铺满，人缩进角落圆形",
   "needs": [],

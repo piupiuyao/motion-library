@@ -12,6 +12,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "数字跳动",
+  "style": [
+    "复古手作",
+    "科技感"
+  ],
   "duration": "2–4 秒",
   "use_for": "报年份、价格、排名，「答案是……」：机场翻牌逐格停到目标值",
   "needs": [

@@ -13,6 +13,10 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "定格高光",
+  "style": [
+    "网感活泼",
+    "电影感"
+  ],
   "duration": "2–3 秒",
   "use_for": "「这是当时的我」、关键句前停一拍：白闪定格成一张照片",
   "needs": [],

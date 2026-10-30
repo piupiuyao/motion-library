@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "消息卡片",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "2–4 秒",
   "use_for": "「我刚收到这条消息」、引用客户/老板的话、提到某个 app",
   "needs": [],

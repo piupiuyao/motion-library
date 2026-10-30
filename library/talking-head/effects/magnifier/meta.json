@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "上方",
   "group": "截图细看",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "3–5 秒",
   "use_for": "指截图里的细节、小字「仔细看」：放大镜在截图上移动",
   "needs": [],

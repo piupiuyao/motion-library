@@ -11,6 +11,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "结尾卡",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "2–4 秒",
   "use_for": "最后一句收尾：人缩进小框，上方出标题",
   "needs": [],

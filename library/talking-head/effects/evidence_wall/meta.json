@@ -13,6 +13,10 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "多图铺满",
+  "style": [
+    "电影感",
+    "复古手作"
+  ],
   "duration": "3–5 秒",
   "use_for": "串证据、「大家都在做 X」：几张截图钉在墙上用红线连起来",
   "needs": [],

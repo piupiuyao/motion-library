@@ -11,7 +11,7 @@ Library layout (video types are kept strictly apart, one folder each):
 Whole-film inspiration that is not yet broken into effects lives outside the library, in inspiration/.
 
 Tag fields every ready effect carries (values only from tags.json):
-  purpose 1-3 · weight · covers_face (bool) · zone · group · needs · needs_assets · category (browsing label)
+  purpose 1-3 · style 1-2 (first = main) · weight · covers_face (bool) · zone · group · needs · needs_assets · category (browsing label)
   plus name, duration, use_for (one Chinese line) and fills {param: "必填：…" | "可选：…"} (params the planner fills from the speech).
 """
 import json, os, re, sys
@@ -22,7 +22,7 @@ TAGS = json.load(open(os.path.join(ROOT, 'tags.json')))
 TYPE_NAME = {'talking-head': '口播', 'launch': '产品发布片'}
 SINGLE = ('category', 'weight', 'zone', 'group')
 MULTI = ('purpose', 'needs', 'needs_assets')
-PLANNER = ('id', 'name', 'purpose', 'weight', 'covers_face', 'zone', 'group', 'fills', 'needs', 'needs_assets', 'duration', 'use_for')
+PLANNER = ('id', 'name', 'purpose', 'weight', 'covers_face', 'zone', 'group', 'style', 'fills', 'needs', 'needs_assets', 'duration', 'use_for')
 
 
 def check(m, where, d, status):
@@ -41,6 +41,9 @@ def check(m, where, d, status):
     if status != 'ready':
         return errs
     if not 1 <= len(m.get('purpose') or []) <= 3: errs.append(f'{where}: purpose needs 1-3 values')
+    st = m.get('style')
+    if not isinstance(st, list) or not 1 <= len(st) <= 2 or any(x not in TAGS['style'] for x in st):
+        errs.append(f'{where}: style needs 1-2 values from tags.json')
     if not isinstance(m.get('covers_face'), bool): errs.append(f'{where}: covers_face must be true/false')
     for k in ('name', 'duration', 'use_for'):
         if not isinstance(m.get(k), str) or not m[k].strip(): errs.append(f'{where}: {k} must be a non-empty string')

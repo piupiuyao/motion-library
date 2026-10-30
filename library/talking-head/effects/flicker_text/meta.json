@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "大字特效",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "悬念句、反转句：字像接触不良的灯管闪着出来",
   "needs": [],

@@ -13,6 +13,10 @@
   "covers_face": true,
   "zone": "中部",
   "group": "虚化背景出卡",
+  "style": [
+    "简洁商务",
+    "科技感"
+  ],
   "duration": "2–4 秒",
   "use_for": "用问题开场「怎么……」、「大家都在搜这个」",
   "needs": [],

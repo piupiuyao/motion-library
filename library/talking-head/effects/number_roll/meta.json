@@ -12,6 +12,10 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "数字跳动",
+  "style": [
+    "通用",
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "报收入、结果、价格等一个真实数字，大数字往上滚",
   "needs": [

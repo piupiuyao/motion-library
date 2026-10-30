@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "形状揭示",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "换话题、大揭晓：画面分成几条像幕布拉开",
   "needs": [],

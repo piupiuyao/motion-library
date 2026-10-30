@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "字幕样式",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "整段都可以",
   "use_for": "干货/观点类口播：全大写粗字幕，正在说的词变色放大",
   "needs": [],

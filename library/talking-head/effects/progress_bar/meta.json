@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "顶部常驻条",
+  "style": [
+    "通用"
+  ],
   "duration": "整段都可以",
   "use_for": "长一点的视频、多步骤教程：顶部进度条讲到第几步亮第几段",
   "needs": [],

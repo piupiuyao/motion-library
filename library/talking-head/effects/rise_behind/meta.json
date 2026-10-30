@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "图标",
+  "style": [
+    "科技感"
+  ],
   "duration": "2–4 秒",
   "use_for": "引出一个概念或东西：从肩膀后面升起来，旁边弹标签",
   "needs": [

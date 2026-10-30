@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "评论引导",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–4 秒",
   "use_for": "「评论 XX 我发你」：胸前弹出评论气泡，箭头指向评论区",
   "needs": [],

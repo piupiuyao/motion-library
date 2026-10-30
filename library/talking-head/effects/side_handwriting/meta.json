@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "中部",
   "group": "字幕样式",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "5–20 秒",
   "use_for": "平静讲解、反思的一段：人挪到一边，另一侧手写字幕一句句叠下来",
   "needs": [],

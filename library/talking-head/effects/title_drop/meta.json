@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "章节标题卡",
+  "style": [
+    "通用"
+  ],
   "duration": "2–3 秒",
   "use_for": "章节/话题切换「第二点」：全屏标题卡滑下盖住人再滑走",
   "needs": [],

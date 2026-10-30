@@ -12,6 +12,10 @@
   "covers_face": false,
   "zone": "胸口",
   "group": "进度图表",
+  "style": [
+    "简洁商务",
+    "科技感"
+  ],
   "duration": "2–4 秒",
   "use_for": "「X% 的人」、完成度、还差一点：加载条填到某个百分比",
   "needs": [

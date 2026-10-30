@@ -12,6 +12,10 @@
   "covers_face": false,
   "zone": "上方",
   "group": "进度图表",
+  "style": [
+    "简洁商务",
+    "科技感"
+  ],
   "duration": "3–6 秒",
   "use_for": "前后对比的几个真实数字",
   "needs": [

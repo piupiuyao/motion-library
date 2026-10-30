@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "形状揭示",
+  "style": [
+    "电影感"
+  ],
   "duration": "2–4 秒",
   "use_for": "揭示一个例子、给出答案、引用一句话：圆形从脸上扩开露出新画面",
   "needs": [],

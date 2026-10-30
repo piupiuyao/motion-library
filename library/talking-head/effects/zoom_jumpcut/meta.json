@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "推近",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "整段都可以",
   "use_for": "剪切点在全景和特写之间来回切，假装两台机位；不算动效",
   "needs": [],

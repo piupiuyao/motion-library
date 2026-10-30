@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "全屏",
   "group": "抠像配大图",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "4–10 秒",
   "use_for": "图多的讲解、数据和对比：人站一侧，另一侧轮换大图",
   "needs": [

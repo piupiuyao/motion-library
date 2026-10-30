@@ -12,6 +12,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "手持晃动",
+  "style": [
+    "通用"
+  ],
   "duration": "整段都可以",
   "use_for": "太静的段落加点生气：画面轻微手持晃动；不算动效",
   "needs": [],

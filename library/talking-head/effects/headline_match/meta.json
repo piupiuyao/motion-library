@@ -13,6 +13,10 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "快速闪切",
+  "style": [
+    "电影感",
+    "简洁商务"
+  ],
   "duration": "2–3 秒",
   "use_for": "「所有人都在讲 X」：一串文章快切，同一个词钉在原位",
   "needs": [],

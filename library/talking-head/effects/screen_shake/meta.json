@@ -13,6 +13,9 @@
   "covers_face": false,
   "zone": "整体",
   "group": "重音冲击",
+  "style": [
+    "网感活泼"
+  ],
   "duration": "0.5–2 秒",
   "use_for": "重音词、吐槽、爆出惊人数字：整个画面猛抖几下",
   "needs": [],

@@ -13,6 +13,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "纸感转场",
+  "style": [
+    "复古手作"
+  ],
   "duration": "2–4 秒",
   "use_for": "换话题、揭晓答案：纸团展开铺满屏幕",
   "needs": [],

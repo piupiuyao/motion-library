@@ -11,6 +11,9 @@
   "covers_face": false,
   "zone": "上方",
   "group": "压暗突出人",
+  "style": [
+    "科技感"
+  ],
   "duration": "2–5 秒",
   "use_for": "点题的一句：画面压暗加扫描线，大字逐词跳出",
   "needs": [],

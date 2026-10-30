@@ -12,6 +12,9 @@
   "covers_face": true,
   "zone": "全屏",
   "group": "多图铺满",
+  "style": [
+    "简洁商务"
+  ],
   "duration": "3–6 秒",
   "use_for": "引用真实资料、新闻、截图，或一口气列举好几样东西",
   "needs": [],
