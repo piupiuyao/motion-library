@@ -1,0 +1,7 @@
+{"skin": "clean", "shots": [
+  {"words": "0-9",   "purpose": "开场钩子", "template": "hook_bigword", "params": {"text": "4 SUBSCRIPTIONS"}},
+  {"words": "23-35", "purpose": "提到具体东西", "template": "icon_flip", "params": {"steps": [{"at": "Netflix"}, {"at": "Spotify"}, {"at": "Disney"}, {"at": "gym"}]}},
+  {"words": "40-72", "purpose": "清单步骤", "template": "checklist", "params": {"items": [{"text": "Search \"subscription\"", "at": "search"}, {"text": "Cancel unused 30 days", "at": "cancel"}, {"text": "Auto-save on payday", "at": "move"}]}},
+  {"words": "88-96", "purpose": "数字", "template": "number_roll", "params": {"to": 2500, "prefix": "$", "label": "a year", "at": "$2,500"}},
+  {"words": "97-108", "purpose": "结尾号召", "template": "comment_cta", "params": {"keyword": "money"}}
+]}

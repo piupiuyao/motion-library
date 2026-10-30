@@ -17,3 +17,6 @@ skills/talking-head-video/demo_rumi/heygen_raw.mp4
 research/density/
 
 skills/talking-head-video/*/out*.mp4
+skills/talking-head-video/test_*/raw.mp4
+skills/talking-head-video/test_*/heygen_raw.mp4
+skills/talking-head-video/test_*/work/
