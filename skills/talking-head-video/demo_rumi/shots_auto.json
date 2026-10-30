@@ -1,0 +1,8 @@
+{"skin": "clean", "shots": [
+  {"words": "0-8",   "purpose": "开场钩子", "template": "hook_bigword", "params": {"text": "STOP SCROLLING"}},
+  {"words": "26-42", "purpose": "提到具体东西", "template": "icon_flip", "params": {"steps": [{"at": "email"}, {"at": "WhatsApp"}, {"at": "Slack"}, {"at": "Telegram"}]}},
+  {"words": "47-71", "purpose": "清单步骤", "template": "checklist", "params": {"title": "Three things", "items": [{"text": "Reply in batches", "at": "batches"}, {"text": "Keep answers short", "at": "short"}, {"text": "Turn off notifications", "at": "notification"}]}},
+  {"words": "79-81", "purpose": "数字", "template": "number_roll", "params": {"to": 40, "suffix": " minutes", "label": "After", "at": "40"}},
+  {"words": "89-94", "purpose": "引用证据", "template": "chat_bubbles", "params": {"them": "Sarah", "messages": [{"from": "them", "text": "How do you reply so fast?"}]}},
+  {"words": "105-117", "purpose": "结尾号召", "template": "comment_cta", "params": {"keyword": "system"}}
+]}
