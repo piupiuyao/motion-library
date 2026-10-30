@@ -15,9 +15,12 @@
     "https://elements.envato.com/vertical-multiscreen-before-after-KCT47XG"
   ],
   "params": {
-    "media": "可选。另一半放的图片路径或 B-roll 帧，默认 broll_inbox",
+    "media": "必填素材。另一半放的 B-roll 帧 {frames, fps, count} 或图片路径；不填不显示",
     "label": "可选。压在中缝的一行字",
     "tags": "可选。两半各自的小标签，如 [\"BEFORE\",\"AFTER\"]",
     "flip": "可选。true = 人在下半、B-roll 在上半"
-  }
+  },
+  "needs_assets": [
+    "B-roll视频"
+  ]
 }

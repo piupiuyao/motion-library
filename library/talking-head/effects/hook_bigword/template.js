@@ -1,6 +1,8 @@
 // 黑白 + 白底大字钩子 · 片头片尾：画面去色，中间砸下一块白底大字，带一下抖动，先戳痛点
 TEMPLATES.hook_bigword = {
   setup(ctx) {
+    this.off = !ctx.params.text; // required text missing: render nothing
+    if (this.off) return;
     const txt = ctx.params.text || '';
     const size = Math.min(200, Math.floor(900 / (Math.max(txt.length, 4) * .62)));
     this.box = el('div', `position:absolute;left:50%;top:${ctx.params.y || 1020}px;padding:18px 44px 26px;background:#fff;
@@ -11,6 +13,7 @@ TEMPLATES.hook_bigword = {
     ctx.L.front.appendChild(this.box);
   },
   frame(ctx) {
+    if (this.off) return;
     const p = enter(ctx.t, .1, .3);
     ctx.baseImg.style.filter = `grayscale(${ease.out(enter(ctx.t, 0, .2))}) contrast(1.15)`;
     const shake = (1 - clamp((ctx.t - .4) / .35)) * (ctx.t > .4 ? 1 : 0);

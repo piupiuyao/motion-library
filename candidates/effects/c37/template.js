@@ -1,9 +1,11 @@
 // 侧屏滑入 · 版式：另一块画面从一侧滑进来，人同时往另一侧滑，最后各占半边，人不缩小
 TEMPLATES.c37 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     this.dir = P.side === 'left' ? -1 : 1; // which side the new panel comes from
-    this.media = P.media || 'assets/docs/chat.jpg';
+    if (!P.media) { this.off = true; return; }   // needs_assets: no picture / B-roll → render nothing
+    this.media = P.media;
     ctx.L.bg.style.background = 'var(--bg-a)';
     this.panel = el('div', `position:absolute;top:0;${this.dir > 0 ? 'left:540px' : 'left:0'};width:540px;height:1920px;overflow:hidden;
       background:radial-gradient(ellipse at 50% 30%, var(--bg-b), var(--bg-a) 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px`);
@@ -26,6 +28,7 @@ TEMPLATES.c37 = {
     ctx.L.front.appendChild(this.panel);
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = ease.inOut(enter(ctx.t, .1, .55)), pout = ease.inOut(enter(ctx.t, ctx.d - .5, .5));
     const k = pin * (1 - pout), d = this.dir;
     // person keeps full size: shift by a quarter and crop to the half it now owns

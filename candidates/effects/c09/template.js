@@ -12,7 +12,7 @@ TEMPLATES.c09 = {
       if (cur.length >= per || /[.,!?;]$/.test(w.w)) { this.chunks.push(cur); cur = []; }
     }
     if (cur.length) this.chunks.push(cur);
-    const depth = P.depth || 16, col = P.shadow || '#ff4fa3';
+    const depth = P.depth || 16, col = P.shadow || 'color-mix(in srgb, var(--accent) 40%, #000)';
     const sh = Array.from({ length: depth }, (_, i) => `${i + 1}px ${i + 1}px 0 ${col}`).join(',');
     const font = '"Avenir Next Condensed","Impact",sans-serif';
     const mc = document.createElement('canvas').getContext('2d');
@@ -22,7 +22,7 @@ TEMPLATES.c09 = {
       // fit to ~900px wide (leaves room for the 3D shadow and the pop overshoot)
       const size = Math.min(P.size || 210, Math.floor(100 * (900 - depth) / mc.measureText(txt).width));
       const e = el('div', `position:absolute;left:0;right:0;top:${P.y || 1150}px;text-align:center;white-space:nowrap;
-        font:900 ${size}px/1 ${font};letter-spacing:.01em;color:${P.color || '#ffc21a'};
+        font:900 ${size}px/1 ${font};letter-spacing:.01em;color:${P.color || 'var(--accent)'};
         text-shadow:${sh}, ${depth + 4}px ${depth + 8}px 18px rgba(0,0,0,.35);transform-origin:50% 60%;opacity:0`, txt);
       ctx.L.front.appendChild(e);
       const nx = this.chunks[j + 1];

@@ -2,7 +2,7 @@
   {"words": "2-13", "template": "c44", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"], "address": "mail.google.com/inbox", "scroll": 450}},
   {"words": "28-42", "template": "c43", "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg", "assets/docs/notify.jpg"], "at": ["WhatsApp", "Slack"], "labels": ["Email", "Messages", "Slack"], "top": 170, "shift": 320}},
   {"words": "43-48", "template": "c67", "params": {"at": 0.8, "to": {"title": "WHAT WORKS?", "sub": "three things"}}},
-  {"words": "49-68", "template": "c40", "params": {"title": "3 things", "items": [{"icon": "📦", "text": "Reply in batches", "at": 50, "color": "#ffe1a8"}, {"icon": "✂️", "text": "Keep it short", "at": 57, "color": "#d4f5d4"}, {"icon": "🔕", "text": "Mute notifications", "at": 62, "color": "#d6eaff"}]}},
+  {"words": "49-68", "template": "c40", "params": {"title": "3 things", "items": [{"icon": "📦", "text": "Reply in batches", "at": 50, "color": "#ffe1a8"}, {"icon": "✂️", "text": "Keep it short", "at": 57, "color": "#d4f5d4"}, {"icon": "🔕", "text": "Mute notifications", "at": 62, "color": "#d6eaff"}], "masthead": "The Daily Inbox", "heads": ["MESSAGES PILE UP AGAIN", "Replies Delayed For Days", "Readers Report Guilt", "Inbox Zero Remains a Myth", "Experts Baffled"]}},
   {"words": "69-81", "template": "c46", "params": {"cards": [{"top": "BEFORE", "big": "4 HOURS", "at": 69}, {"top": "AFTER", "big": "40 MIN", "at": 80}], "spots": ["left:60px;top:170px", "right:60px;top:1150px"]}},
   {"words": "82-94", "template": "c65", "params": {"to": "assets/docs/chat.jpg", "title": "How do you reply so fast?", "at": 0.5}}
 ]}

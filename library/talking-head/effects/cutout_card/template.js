@@ -1,6 +1,8 @@
 // 抠像出镜 + 重点卡 · 版式：人抠出来站在深色背景上，旁边弹出一张「重点」文字卡
 TEMPLATES.cutout_card = {
   setup(ctx) {
+    this.off = !ctx.params.text; // required text missing: render nothing
+    if (this.off) return;
     const P = ctx.params;
     ctx.L.bg.style.background = 'radial-gradient(ellipse at 70% 30%, var(--bg-b), var(--bg-a) 70%)';
     this.grid = el('div', `position:absolute;inset:0;background:repeating-linear-gradient(0deg, transparent 0 90px, rgba(255,255,255,.05) 90px 92px),
@@ -17,6 +19,7 @@ TEMPLATES.cutout_card = {
     ctx.L.front.appendChild(this.card);
   },
   frame(ctx) {
+    if (this.off) return;
     const p = ease.out(enter(ctx.t, 0, .45));
     ctx.L.bg.style.opacity = clamp(p * 2);
     // person slides from centre to the right third

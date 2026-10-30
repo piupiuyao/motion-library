@@ -1,8 +1,10 @@
 // 画中画弹窗 · 版式：人保持全屏，角落弹开一个带阴影的圆角卡片放 B-roll/图片，过一会儿收起
 TEMPLATES.c38 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.media = P.media || 'assets/docs/chat.jpg';
+    if (!P.media) { this.off = true; return; }   // needs_assets: no picture / B-roll → render nothing
+    this.media = P.media;
     const pos = { tr: 'left:520px;top:110px', tl: 'left:60px;top:110px', top: 'left:270px;top:90px' }[P.corner || 'tr'];
     this.origin = { tr: '100% 0', tl: '0 0', top: '50% 0' }[P.corner || 'tr'];
     this.card = el('div', `position:absolute;${pos};width:500px;height:440px;border-radius:34px;overflow:hidden;background:#fff;
@@ -15,6 +17,7 @@ TEMPLATES.c38 = {
     this.t0 = P.at != null ? P.at : .3;
   },
   frame(ctx) {
+    if (this.off) return;
     const q = enter(ctx.t, this.t0, .5), out = ease.inOut(enter(ctx.t, ctx.d - .55, .4));
     const s = ease.pop(q) * (1 - out);
     this.card.style.transformOrigin = this.origin;

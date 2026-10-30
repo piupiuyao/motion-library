@@ -6,13 +6,15 @@ TEMPLATES.c35 = {
     return w ? w.s : def;
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.image) { this.off = true; return; }   // needs_assets 截图: no screenshot → render nothing
     const PW = P.w || 360, PH = Math.round((P.w || 360) * 2.05);
     this.PW = PW; this.PH = PH;
     this.cx = P.x || 700; this.cy = P.y || 1000;
     const phoneHTML = `<div style="position:absolute;inset:0;border-radius:64px;background:linear-gradient(135deg,#3a3a40,#0e0e10);box-shadow:inset 0 0 0 4px #55555c"></div>
       <div style="position:absolute;left:18px;top:18px;right:18px;bottom:18px;border-radius:50px;overflow:hidden;background:#fff">
-        <img src="${url(P.image || 'assets/docs/chat.jpg')}" style="width:100%;height:100%;object-fit:cover;object-position:${P.pos || '60% 0%'}">
+        <img src="${url(P.image)}" style="width:100%;height:100%;object-fit:cover;object-position:${P.pos || '60% 0%'}">
         <div style="position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,255,255,.35), transparent 40%)"></div></div>
       <div style="position:absolute;left:50%;top:30px;width:110px;height:32px;margin-left:-55px;border-radius:16px;background:#000"></div>`;
     // the phone is a two-sided card: screen in front, titanium back with a camera bump behind
@@ -67,11 +69,12 @@ TEMPLATES.c35 = {
     this.tCrack = this.at(ctx, P.at, Math.min(1.3, ctx.d * .4));
     this.tBreak = this.tCrack + .35;
     if (P.label) {
-      this.label = el('div', `position:absolute;left:0;right:0;top:160px;text-align:center;font-size:130px;color:#ff3b30;-webkit-text-stroke:6px #fff;paint-order:stroke fill`, P.label);
+      this.label = el('div', `position:absolute;left:0;right:0;top:160px;text-align:center;font-size:130px;color:var(--accent);-webkit-text-stroke:6px var(--ink);paint-order:stroke fill`, P.label);
       this.label.className = 'display'; ctx.L.front.appendChild(this.label);
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3);
     this.dim.style.opacity = Math.min(enter(t, 0, .3), out);
     const pin = 1 - Math.pow(1 - enter(t, this.tIn, 1.1), 2.2);   // slow enough to see the back of the phone swing past

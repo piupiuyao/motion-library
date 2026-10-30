@@ -6,7 +6,7 @@ TEMPLATES.c93 = {
     const at = a => { const w = ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     this.dim = el('div', `position:absolute;inset:0;background:rgba(0,0,0,${P.dark || .72})`);
     ctx.L.back.appendChild(this.dim);
-    const lines = P.lines || [{ text: 'LONG', at: 'long' }, { text: 'EMOTIONAL', at: 'emotional', accent: true }, { text: 'MESSAGE', at: 'message' }];
+    const lines = P.lines || []; // no lines: just the dimmed background with the bright person
     this.box = el('div', `position:absolute;left:0;right:0;top:${P.y || 170}px;text-align:center`);
     ctx.L.back.appendChild(this.box);
     this.lines = lines.map((l, j) => {

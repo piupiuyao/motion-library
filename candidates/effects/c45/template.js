@@ -12,8 +12,8 @@ TEMPLATES.c45 = {
     this.ui = el('div', 'position:absolute;inset:0;transform-origin:50% 50%');
     const icon = (ch, n) => `<div style="display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;font:800 40px var(--font-body);text-shadow:0 2px 8px rgba(0,0,0,.5)"><span style="font-size:96px;line-height:1">${ch}</span>${n}</div>`;
     this.ui.appendChild(el('div', 'position:absolute;right:50px;top:860px;display:flex;flex-direction:column;gap:40px', icon('♥', '12.4K') + icon('💬', '318') + icon('↗', 'Share')));
-    this.ui.appendChild(el('div', 'position:absolute;left:60px;top:1330px;color:#fff;font:800 64px var(--font-body);text-shadow:0 2px 10px rgba(0,0,0,.6)', P.handle || '@monica'));
-    this.ui.appendChild(el('div', 'position:absolute;left:60px;top:1420px;width:760px;color:#fff;font:500 50px/1.2 var(--font-body);text-shadow:0 2px 10px rgba(0,0,0,.6)', P.desc || 'AI still can\'t reply for me…'));
+    this.ui.appendChild(el('div', 'position:absolute;left:60px;top:1330px;color:#fff;font:800 64px var(--font-body);text-shadow:0 2px 10px rgba(0,0,0,.6)', P.handle || ''));
+    this.ui.appendChild(el('div', 'position:absolute;left:60px;top:1420px;width:760px;color:#fff;font:500 50px/1.2 var(--font-body);text-shadow:0 2px 10px rgba(0,0,0,.6)', P.desc || ''));
     ctx.L.front.appendChild(this.ui);
     this.label = el('div', 'position:absolute;left:0;right:0;top:95px;text-align:center;font-size:92px;color:var(--ink)', P.text || 'SAW THIS ON MY FEED');
     this.label.className = 'display';

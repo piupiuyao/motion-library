@@ -1,7 +1,9 @@
 // 清单打勾 · 版式：人往一边让开，一张清单卡滑进来，说到哪条哪条就打勾（或红叉），字变亮
 TEMPLATES.c39 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!(P.items || []).length) { this.off = true; return; }   // 必填: no items → render nothing
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.L.bg.style.background = 'radial-gradient(ellipse at 30% 30%, var(--bg-b), var(--bg-a) 70%)';
@@ -31,6 +33,7 @@ TEMPLATES.c39 = {
     ctx.L.front.appendChild(this.card);
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = ease.out(enter(ctx.t, 0, .5)), pout = ease.inOut(enter(ctx.t, ctx.d - .4, .4));
     const k = pin * (1 - pout);
     ctx.base.style.transform = `translateX(${this.shift * k}px) scale(${ctx.seg.zoom || 1})`;

@@ -10,8 +10,8 @@
     "https://elements.envato.com/reels-message-bubble-chat-7CV9QP3"
   ],
   "params": {
-    "messages": "气泡列表 [{from: 'them'|'me', text}]，them 在左（灰），me 在右（蓝），按镜头时长平均依次出现，每条前先出「正在输入」",
-    "them": "对方名字（气泡上方小字和头像字母），默认 Sarah",
+    "messages": "必填。气泡列表 [{from: 'them'|'me', text}]，them 在左（灰），me 在右（蓝），按镜头时长平均依次出现，每条前先出「正在输入」；不填不显示",
+    "them": "对方名字（气泡上方小字和头像字母），不填留空",
     "me": "自己名字，默认 You"
   }
 }

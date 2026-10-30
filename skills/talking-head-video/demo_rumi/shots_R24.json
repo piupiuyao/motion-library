@@ -11,7 +11,8 @@
     "bottom": "*this is fine*",
     "x": 660,
     "y": 30,
-    "size": 380
+    "size": 380,
+    "phone": true
    }
   },
   {
@@ -22,7 +23,8 @@
     "y": 950,
     "w": 520,
     "h": 500,
-    "x": 20
+    "x": 20,
+    "media": "assets/docs/gmail.jpg"
    }
   },
   {

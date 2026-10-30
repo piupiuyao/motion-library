@@ -8,7 +8,7 @@ TEMPLATES.c01 = {
     let top = 'M0,' + (6 + rnd() * 4).toFixed(1), bot = '';
     for (let x = 0; x <= 200; x += 5) top += ` L${x},${(4 + rnd() * 5).toFixed(1)}`;
     for (let x = 200; x >= 0; x -= 5) bot += ` L${x},${(34 + rnd() * 5).toFixed(1)}`;
-    const col = P.color || '#ffe53b';
+    const col = P.color || getComputedStyle(document.getElementById('stage')).getPropertyValue('--accent').trim() || '#ffe53b';
     const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 42' preserveAspectRatio='none'>`
       + `<path d='${top}${bot} Z' fill='${col}' fill-opacity='.9'/>`
       + `<path d='M0,8 L200,6 L200,10 L0,12Z' fill='${col}' fill-opacity='.35'/></svg>`;

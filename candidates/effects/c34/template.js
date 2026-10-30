@@ -2,7 +2,7 @@
 TEMPLATES.c34 = {
   setup(ctx) {
     const P = ctx.params;
-    this.col = P.color || '#8b5cff';
+    this.col = P.color || 'var(--accent)';
     const nc = el('canvas'); nc.width = nc.height = 256;
     const c = nc.getContext('2d'), im = c.createImageData(256, 256);
     let s = 9;
@@ -37,11 +37,11 @@ TEMPLATES.c34 = {
         <div style="position:absolute;left:222px;top:40px;width:16px;height:120px;border-radius:8px;background:#fff;box-shadow:0 0 18px ${this.col}, 0 0 4px #fff"></div></div>`);
     this.knob = this.dial.querySelector('.knob');
     const lab = (txt, x) => this.dial.appendChild(el('div', `position:absolute;top:720px;${x};font:800 44px var(--font-body);letter-spacing:.12em;color:#8a8a92`, txt));
-    lab(P.min || 'WARM', 'left:40px'); lab(P.max || 'COLD', 'right:40px');
-    this.title = el('div', `position:absolute;left:0;right:0;top:220px;text-align:center;font:800 54px var(--font-body);letter-spacing:.3em;color:#9a9aa2`, P.title || 'TONE');
+    lab(P.min || '', 'left:40px'); lab(P.max || '', 'right:40px');
+    this.title = el('div', `position:absolute;left:0;right:0;top:220px;text-align:center;font:800 54px var(--font-body);letter-spacing:.3em;color:#9a9aa2`, P.title || '');
     this.val = el('div', `position:absolute;left:0;right:0;top:1280px;text-align:center;font-size:130px;color:#fff`, '');
     this.val.className = 'display';
-    this.word = P.word || 'TOO COLD';
+    this.word = P.word || '';   // no word → the dial shows the percentage
     ctx.L.back.append(this.dial, this.title, this.val);
   },
   frame(ctx) {
@@ -65,7 +65,7 @@ TEMPLATES.c34 = {
     }
     const q = enter(t, .5 + Math.min(1.4, ctx.d * .4) - .1, .3);
     this.val.textContent = Math.round(clamp(turn) * 100) + '%';
-    if (q > 0) this.val.innerHTML = `<span style="color:#ff4a3d">${this.word}</span>`;
+    if (q > 0 && this.word) this.val.innerHTML = `<span style="color:var(--accent)">${this.word}</span>`;
     this.val.style.opacity = Math.min(enter(t, .5, .3), out);
     this.val.style.transform = `scale(${q > 0 ? ease.pop(q) : 1})`;
   },

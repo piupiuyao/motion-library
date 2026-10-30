@@ -1,6 +1,8 @@
 // 图表叠加 · 素材：画面上方一张白卡，横条一条条长出来
 TEMPLATES.data_chart = {
   setup(ctx) {
+    this.off = !(ctx.params.items || []).length; // required items missing: render nothing
+    if (this.off) return;
     const P = ctx.params, items = P.items || [];
     const max = Math.max(...items.map(i => i.value), 1);
     this.card = el('div', 'position:absolute;left:70px;right:70px;top:230px;padding:44px 48px 50px;background:var(--paper);border-radius:40px;box-shadow:0 30px 80px rgba(0,0,0,.3)');
@@ -22,6 +24,7 @@ TEMPLATES.data_chart = {
     ctx.L.front.appendChild(this.card);
   },
   frame(ctx) {
+    if (this.off) return;
     const p = enter(ctx.t, 0, .4), out = leave(ctx);
     this.card.style.opacity = Math.min(p, out);
     this.card.style.transform = `translateY(${lerp(-80, 0, ease.back(p))}px)`;

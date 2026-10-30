@@ -15,7 +15,7 @@ TEMPLATES.c75 = {
     this.txt = el('div', `position:absolute;left:0;right:0;top:${P.top || 150}px;text-align:center;font-size:${P.size || 170}px;text-transform:uppercase;
       transform-origin:50% 50%;color:transparent;-webkit-background-clip:text;background-clip:text;
       background-image:linear-gradient(105deg, var(--accent) 0 40%, #fff 47%, #fff 53%, var(--accent) 60% 100%);background-size:300% 100%;
-      filter:drop-shadow(0 8px 0 rgba(0,0,0,.55))`, P.text || 'Solve this');
+      filter:drop-shadow(0 8px 0 rgba(0,0,0,.55))`, P.text || ''); // no text: just the card move
     this.txt.className = 'display';
     ctx.L.front.appendChild(this.txt);
   },

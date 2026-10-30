@@ -13,8 +13,11 @@
     "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=426s"
   ],
   "params": {
-    "media": "可选。滑进来的图片路径或 B-roll 帧，默认 chat.jpg",
+    "media": "必填素材。滑进来的图片路径或 B-roll 帧；不填不显示",
     "title": "可选。面板上方的标题字",
     "side": "可选。面板从哪边进：right（默认）/ left"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

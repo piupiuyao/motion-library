@@ -1,7 +1,9 @@
 // 报纸底清单 · 版式：背景换成反色（变暗）的旧报纸慢慢漂移，人抠出站一边，清单条目带小图一条条弹出
 TEMPLATES.c40 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!(P.items || []).length) { this.off = true; return; }   // 必填: no items → render nothing
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.base.style.opacity = 0;
@@ -9,9 +11,10 @@ TEMPLATES.c40 = {
     // an "inverted" newspaper page drawn with CSS: masthead, headlines, columns of grey text lines
     const paper = this.paper = el('div', `position:absolute;left:-160px;top:-160px;width:1400px;height:2300px;padding:60px 70px;box-sizing:border-box;
       color:#d9d4c7;font-family:Georgia,'Times New Roman',serif;opacity:.6`);
-    paper.appendChild(el('div', 'text-align:center;font:900 150px/1 "Old English Text MT",Georgia,serif;letter-spacing:.02em;border-bottom:6px double #d9d4c7;padding-bottom:20px', 'The Daily Inbox'));
+    paper.appendChild(el('div', 'text-align:center;font:900 150px/1 "Old English Text MT",Georgia,serif;letter-spacing:.02em;border-bottom:6px double #d9d4c7;padding-bottom:20px', P.masthead || 'The Daily News'));
     paper.appendChild(el('div', 'display:flex;justify-content:space-between;font:400 28px Georgia;padding:10px 0;border-bottom:2px solid #d9d4c7', '<span>VOL. CXII</span><span>MONDAY EDITION</span><span>PRICE 5 CENTS</span>'));
-    const heads = ['MESSAGES PILE UP AGAIN', 'Replies Delayed For Days', 'Readers Report Guilt', 'Inbox Zero Remains a Myth', 'Experts Baffled'];
+    // neutral filler headlines (it is background texture); 'heads' param can make them match the topic
+    const heads = P.heads || ['LATEST NEWS', 'Special Report', 'Weekend Edition', 'Letters to the Editor', 'In Brief'];
     const cols = el('div', 'display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:30px');
     const lines = 'repeating-linear-gradient(180deg, #d9d4c7 0 9px, transparent 9px 26px)';
     for (let c = 0; c < 4; c++) {
@@ -49,6 +52,7 @@ TEMPLATES.c40 = {
     ctx.L.front.appendChild(this.list);
   },
   frame(ctx) {
+    if (this.off) return;
     const p = ease.out(enter(ctx.t, 0, .4));
     ctx.L.bg.style.opacity = p;
     this.paper.style.transform = `translate(${-ctx.t * 14}px, ${-ctx.t * 22}px) rotate(-4deg)`;

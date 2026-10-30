@@ -1,9 +1,11 @@
 // 红线线索墙 · 素材：几张截图散在软木板上，红线把它们连起来，中间清楚、四周虚化，偏暖色
 TEMPLATES.c28 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const imgs = P.images || ['assets/docs/gmail.jpg', 'assets/docs/chat.jpg', 'assets/docs/notify.jpg', 'assets/broll_inbox/000090.jpg', 'assets/docs/chat.jpg'];
-    const notes = P.notes || ['12 unread', 'left on read', '"quick question"', 'still no reply'];
+    const imgs = P.images || [];
+    if (!imgs.length) { this.off = true; return; }   // needs_assets: no screenshots → render nothing
+    const notes = P.notes || [];
     this.bgc = el('div', `position:absolute;inset:0;background:radial-gradient(circle, rgba(0,0,0,.18) 1.5px, transparent 2px) 0 0/14px 14px,
       radial-gradient(circle, rgba(255,230,190,.12) 1px, transparent 2px) 7px 7px/11px 11px, linear-gradient(135deg,#b07a45,#8d5a2e)`);
     ctx.L.back.appendChild(this.bgc);
@@ -42,6 +44,7 @@ TEMPLATES.c28 = {
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3), pin = enter(t, 0, .3);
     for (const e of [this.bgc, this.wall, this.warm]) e.style.opacity = Math.min(pin, out);
     this.wall.style.transform = `scale(${lerp(1.08, 1.2, ease.inOut(clamp(t / ctx.d)))}) rotate(${lerp(-1.5, .5, clamp(t / ctx.d))}deg)`;

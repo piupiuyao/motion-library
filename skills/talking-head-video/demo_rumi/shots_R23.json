@@ -17,7 +17,15 @@
    "params": {
     "headline": "Why every app wants an answer right now",
     "highlight": "Email, WhatsApp, Slack and Telegram: every single one wants an answer right now.",
-    "at": 0.3
+    "at": 0.3,
+    "kicker": "WORK & LIFE",
+    "before": [
+     "Researchers surveyed 2,000 office workers about how they spend their day. The average person checks email or chat more than 70 times between nine and five.",
+     "Most of those messages are short. But each one asks for a decision: what to say, how to say it, and when."
+    ],
+    "after": [
+     "Experts say the cost is not the typing. It is the constant switching between tasks and tones, which leaves people drained before lunch."
+    ]
    }
   },
   {
@@ -54,7 +62,8 @@
    "params": {
     "text": "SYSTEM",
     "x": 660,
-    "y": 900
+    "y": 900,
+    "art": "envelope"
    }
   }
  ]

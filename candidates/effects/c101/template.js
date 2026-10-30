@@ -1,16 +1,21 @@
 // 评论关键词引导 · 片头片尾：仿社交评论的白色气泡从下方弹到胸前，「Comment 'XX'」关键词高亮，旁边箭头上下跳着指向评论区
 TEMPLATES.c101 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.keyword) { this.off = true; return; } // required: not shown without the keyword
     this.y = P.y || 1080;
     this.t0 = P.start ?? .25;
     this.wrap = el('div', `position:absolute;left:90px;right:90px;top:${this.y}px;display:flex;justify-content:center`);
     this.bub = el('div', `position:relative;display:flex;align-items:center;gap:26px;padding:26px 44px 28px 26px;background:#fff;border-radius:46px;
       box-shadow:0 22px 50px rgba(0,0,0,.35);white-space:nowrap;transform-origin:20% 100%`);
-    this.bub.appendChild(el('div', `width:104px;height:104px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),#3d7bff);
-      display:flex;align-items:center;justify-content:center;font:900 52px var(--font-body);color:#111`, (P.avatar || 'M')));
-    this.bub.appendChild(el('div', '', `<div style="font:600 32px var(--font-body);color:#8a8a8a;margin-bottom:6px">${P.handle || '@monica'} · ${P.sub || 'reply below'}</div>
-      <div style="font:800 62px/1.05 var(--font-body);color:#111">${P.lead || 'Comment'} <span style="background:var(--accent);border-radius:12px;padding:0 14px 4px">“${P.keyword || 'AI'}”</span></div>`));
+    // avatar letter: params.avatar, else first letter of the handle; no handle and no avatar -> no avatar circle
+    const av = P.avatar || (P.handle ? String(P.handle).replace(/^@/, '')[0].toUpperCase() : '');
+    if (av) this.bub.appendChild(el('div', `width:104px;height:104px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font:900 52px var(--font-body);color:var(--ink)`, av));
+    const top = [P.handle, P.sub || 'reply below'].filter(Boolean).join(' · ');
+    this.bub.appendChild(el('div', '', `<div style="font:600 32px var(--font-body);color:#8a8a8a;margin-bottom:6px">${top}</div>
+      <div style="font:800 62px/1.05 var(--font-body);color:#111">${P.lead || 'Comment'} <span style="background:var(--accent);color:var(--ink);border-radius:12px;padding:0 14px 4px">“${P.keyword}”</span></div>`));
     // speech-bubble tail
     this.bub.appendChild(el('div', 'position:absolute;left:70px;bottom:-26px;width:0;height:0;border-left:0 solid transparent;border-right:40px solid transparent;border-top:34px solid #fff'));
     this.wrap.appendChild(this.bub);
@@ -20,6 +25,7 @@ TEMPLATES.c101 = {
     ctx.L.front.append(this.wrap, this.arrow);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, p = enter(t, this.t0, .5), out = leave(ctx, .3);
     this.bub.style.opacity = Math.min(clamp(p * 4), out);
     this.bub.style.transform = `translateY(${lerp(520, 0, ease.out(p))}px) scale(${lerp(.6, 1, ease.pop(p))})`;

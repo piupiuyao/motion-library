@@ -11,7 +11,7 @@
     "https://www.choppity.com/tools/recreate-video-editing-style/tom-noske/"
   ],
   "params": {
-    "title": "可选。上黑边里的标题",
+    "title": "可选（建议填）。上黑边里的标题，从原话里取；不写就只有黑边拉开",
     "sub": "可选。标题下的小字",
     "band": "可选。拉开后露出的画面高度（px），默认 780",
     "center": "可选。露出画面的中心位置，默认 770",

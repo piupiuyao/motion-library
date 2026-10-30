@@ -12,9 +12,9 @@
     "https://www.youtube.com/watch?v=axE3Z_dYWfc"
   ],
   "params": {
-    "top": "线稿上方（水面上）的说明文字",
-    "bottom": "线稿下方（水面下）的说明文字",
+    "top": "必填。线稿上方（水面上）的说明文字（上下都不填就不显示）",
+    "bottom": "必填。线稿下方（水面下）的说明文字",
     "color": "线条颜色，默认米白",
-    "accent": "下方文字颜色，默认 var(--accent)"
+    "accent": "可选。下方文字颜色，默认主题色 --accent"
   }
 }

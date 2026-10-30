@@ -13,9 +13,12 @@
     "https://motionarray.com/davinci-resolve-macros/pop-up-effect-macro-978376/"
   ],
   "params": {
-    "media": "可选。卡片里的图片路径或 B-roll 帧，默认 chat.jpg",
+    "media": "必填素材。卡片里的图片路径或 B-roll 帧；不填不显示",
     "label": "可选。卡片左下角的小标签",
     "corner": "可选。位置：tr 右上（默认）/ tl 左上 / top 正上",
     "at": "可选。第几秒弹出，默认 0.3"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

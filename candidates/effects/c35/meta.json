@@ -12,12 +12,15 @@
     "https://www.youtube.com/watch?v=Qbntd8yud0o&t=535s"
   ],
   "params": {
-    "image": "手机屏幕上的截图路径，默认 assets/docs/chat.jpg",
+    "image": "必填素材。手机屏幕上的截图路径；不填不显示",
     "pos": "截图 object-position，默认 60% 0%",
     "at": "可选。原话里的词，说到时屏幕开裂（0.35 秒后碎掉）",
-    "label": "可选。碎掉时弹出的大字，如 DON'T",
+    "label": "可选。碎掉时弹出的大字（主题色），如 DON'T",
     "y": "手机中心 y，默认 1000",
     "x": "手机中心 x，默认 700（在脸旁边）",
     "w": "手机宽度像素，默认 360"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

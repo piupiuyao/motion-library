@@ -15,10 +15,12 @@ TEMPLATES.c102 = {
       <path d="M20 49 L78 26 L68 76 L50 63 L41 72 L42 58 L68 36 L36 54Z" fill="#fff"/></svg>`,
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     const n = s => s.toLowerCase().replace(/[^\w]/g, '');
     // steps: [{icon, at}] — the first appears at its word, each next one flips in at its word
-    const steps = P.steps || [{ icon: 'mail', at: 'emails' }, { icon: 'chat', at: 'whatsapp' }, { icon: 'plane', at: 'telegram' }];
+    const steps = P.steps || [];
+    if (!steps.length) { this.off = true; return; } // required: not shown without steps
     this.steps = steps.map((s, k) => ({ html: s.img ? `<img src="${url(s.img)}" style="width:100%;height:100%;object-fit:cover;border-radius:22%">` : this.icons[s.icon] || this.icons.mail,
       t: k === 0 ? (s.at ? ((ctx.words.find(w => n(w.w) === n(s.at)) || { s: 0 }).s) : 0)
         : ((ctx.words.find(w => n(w.w) === n(s.at || '')) || { s: ctx.d * k / steps.length }).s) }));
@@ -41,6 +43,7 @@ TEMPLATES.c102 = {
     this.cur = [-1, -1];
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, st = this.steps;
     let j = 0;
     st.forEach((s, k) => { if (k && t >= s.t) j = k; });

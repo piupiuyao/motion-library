@@ -1,8 +1,10 @@
 // 圆形人头角落 · 版式：截图/录屏铺满全屏，说话的人从全屏缩进左下角一个带描边的圆里，讲完再放大回来
 TEMPLATES.c91 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 1 };  // the clip's first frames are a transition with the speaker in it
+    this.media = P.media;
+    if (!this.media) { this.off = true; return; } // material missing: render nothing
     this.img = el('img', 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover');
     ctx.L.bg.style.background = '#111';
     ctx.L.bg.appendChild(this.img);
@@ -16,6 +18,7 @@ TEMPLATES.c91 = {
     this.t0 = P.t0 != null ? P.t0 : .25;
   },
   frame(ctx) {
+    if (this.off) return;
     const z = ctx.seg.zoom || 1;
     const pin = ease.inOut(enter(ctx.t, this.t0, .6)), pout = ease.inOut(enter(ctx.t, ctx.d - .65, .55));
     const p = pin * (1 - pout);

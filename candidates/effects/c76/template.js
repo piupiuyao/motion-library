@@ -1,7 +1,9 @@
 // 定格人物介绍 · 片头片尾：画面定格，背景虚化压暗，抠出的人加描边放大挪到一边，笔刷贴纸滑进来写上名字/身份
 TEMPLATES.c76 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.name) { this.off = true; return; } // name is required: without it the effect is not shown
     const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
     const hit = P.at && ctx.words.find(w => norm(w.w) === norm(P.at));
     this.tf = hit ? hit.s : (P.freeze || .6);
@@ -53,15 +55,16 @@ TEMPLATES.c76 = {
     const bm = `url("data:image/svg+xml;utf8,${brush.replace(/</g, '%3C').replace(/>/g, '%3E').replace(/'/g, '%27')}")`;
     this.tag = el('div', `position:absolute;${this.side < 0 ? 'right:30px' : 'left:30px'};top:${P.y || 760}px;width:520px;padding:40px 40px 46px 56px;
       background:var(--accent);-webkit-mask-image:${bm};-webkit-mask-size:100% 100%;color:var(--ink)`);
-    const name = el('div', `font-size:${P.size || 120}px;text-transform:uppercase;line-height:.95`, P.name || 'MONICA');
+    const name = el('div', `font-size:${P.size || 120}px;text-transform:uppercase;line-height:.95`, P.name);
     name.className = 'display';
     this.tag.appendChild(name);
-    this.tag.appendChild(el('div', 'margin-top:10px;font:800 40px var(--font-body);letter-spacing:.05em', P.title || 'your host'));
+    if (P.title) this.tag.appendChild(el('div', 'margin-top:10px;font:800 40px var(--font-body);letter-spacing:.05em', P.title));
     this.tagWrap = el('div', 'position:absolute;inset:0');
     this.tagWrap.appendChild(this.tag);
     ctx.L.front.append(this.tagWrap, this.flash);
   },
   frame(ctx) {
+    if (this.off) return;
     const dt = ctx.t - this.tf;
     ctx.person.style.opacity = 0;  // the live cut-out is not used; we show our own frozen one
     const frozen = dt >= 0;

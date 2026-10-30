@@ -1,8 +1,10 @@
 // 标题扫光 · 字体：渐变填充、带阴影柔光的大标题落下，一道斜光从字上扫过一次；背后画面虚化压暗
 TEMPLATES.c05 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const lines = (P.title || 'AI HASN\'T SOLVED THIS').split('\n');
+    if (!P.title) { this.off = true; return; }   // 必填: no title → render nothing
+    const lines = P.title.split('\n');
     const longest = Math.max(...lines.map(l => l.length));
     const size = P.size || Math.min(210, Math.floor(1560 / (longest * .6 + 1)));
     this.t0 = P.at || .25;
@@ -14,8 +16,8 @@ TEMPLATES.c05 = {
     const stack = el('div', 'position:relative');
     const html = lines.join('<br>');
     const common = `font-size:${size}px;text-transform:uppercase;line-height:1;text-align:center;`;
-    const glow = el('div', common + `position:absolute;left:0;right:0;top:0;color:#000;opacity:.85;text-shadow:0 18px 26px rgba(0,0,0,.75), 0 0 60px rgba(255,170,70,.75), 0 0 120px rgba(255,120,40,.5)`, html);
-    const fill = el('div', common + `position:relative;background:linear-gradient(180deg,#fff3cf 0%,#ffc35a 45%,#ff7a2a 100%);-webkit-background-clip:text;background-clip:text;color:transparent`, html);
+    const glow = el('div', common + `position:absolute;left:0;right:0;top:0;color:#000;opacity:.85;text-shadow:0 18px 26px rgba(0,0,0,.75), 0 0 60px color-mix(in srgb, var(--accent) 75%, transparent), 0 0 120px color-mix(in srgb, var(--accent) 50%, transparent)`, html);
+    const fill = el('div', common + `position:relative;background:linear-gradient(180deg,color-mix(in srgb, var(--accent) 25%, #fff) 0%,var(--accent) 45%,color-mix(in srgb, var(--accent) 70%, #000) 100%);-webkit-background-clip:text;background-clip:text;color:transparent`, html);
     this.shine = el('div', common + `position:absolute;left:0;right:0;top:0;background:linear-gradient(115deg, transparent 0 42%, rgba(255,255,255,.0) 44%, #fff 49%, #fff 51%, rgba(255,255,255,0) 56%, transparent 58% 100%) no-repeat;
       background-size:320% 100%;-webkit-background-clip:text;background-clip:text;color:transparent`, html);
     for (const e of [glow, fill, this.shine]) e.className = 'display';
@@ -28,6 +30,7 @@ TEMPLATES.c05 = {
     ctx.L.front.appendChild(this.wrap);
   },
   frame(ctx) {
+    if (this.off) return;
     const b = ease.out(enter(ctx.t, 0, .4));
     ctx.baseImg.style.filter = `blur(${(b * 14).toFixed(1)}px) brightness(${1 - b * .35})`;
     ctx.base.style.transform = `scale(${(ctx.seg.zoom || 1) * (1 + b * .06)})`;

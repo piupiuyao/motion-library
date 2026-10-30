@@ -10,7 +10,7 @@
     "https://elements.envato.com/confirmed-stamp-AYVSGTC"
   ],
   "params": {
-    "text": "必填。印章上的字，如 APPROVED / FAKE",
+    "text": "必填。印章上的字，如 APPROVED / FAKE；不填不显示",
     "at": "可选。说到哪个词时盖下去，默认 0.4 秒",
     "color": "可选。印泥颜色，默认红色",
     "rotate": "可选。倾斜角度，默认 -14",

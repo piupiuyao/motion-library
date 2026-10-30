@@ -12,7 +12,7 @@
     "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
   ],
   "params": {
-    "emoji": "道具 emoji，默认 📱（和 image 二选一）",
+    "emoji": "必填（和 image 二选一）。道具 emoji；两个都不填就不显示",
     "image": "可选。抠好图的道具图片（透明 png）",
     "at": "可选。原话里的词，说到时开始飞过",
     "from": "right / left，从哪边进，默认 right",

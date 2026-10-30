@@ -1,7 +1,9 @@
 // 液态玻璃卡 · 版式：苹果 iOS 新设计风格的大圆角玻璃框，框内画面被模糊、边缘有折射高光，框里放图标和白字；从小到大弹出并轻轻漂浮
 TEMPLATES.c94 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.text) { this.off = true; return; } // required: not shown without text
     const W = P.width || 760, Hh = P.height || 230;
     this.W = W; this.H = Hh;
     const x = (1080 - W) / 2, y = P.y || 250;
@@ -21,14 +23,15 @@ TEMPLATES.c94 = {
     this.card.appendChild(el('div', `position:absolute;inset:0;border-radius:${r}px;background:linear-gradient(160deg, rgba(255,255,255,.42), rgba(255,255,255,.16) 55%, rgba(255,255,255,.28));
       box-shadow:inset 0 0 0 2px rgba(255,255,255,.75), inset 0 10px 22px rgba(255,255,255,.55), inset 0 -14px 26px rgba(255,255,255,.25), inset 0 -2px 0 rgba(0,0,0,.08)`));
     const inner = el('div', `position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:30px;padding:0 40px`);
-    if (P.icon !== '') inner.appendChild(el('div', `flex:none;width:${Hh * .56}px;height:${Hh * .56}px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
-      font-size:${Hh * .32}px;box-shadow:0 6px 16px rgba(0,0,0,.18)`, P.icon || '😔'));
-    inner.appendChild(el('div', `font:800 ${P.size || 66}px/1.05 var(--font-body);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)`, P.text || 'So guilty…'));
+    if (P.icon) inner.appendChild(el('div', `flex:none;width:${Hh * .56}px;height:${Hh * .56}px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
+      font-size:${Hh * .32}px;box-shadow:0 6px 16px rgba(0,0,0,.18)`, P.icon));
+    inner.appendChild(el('div', `font:800 ${P.size || 66}px/1.05 var(--font-body);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)`, P.text));
     this.card.appendChild(inner);
     ctx.L.front.appendChild(this.card);
     this.t0 = P.t0 != null ? P.t0 : .2;
   },
   frame(ctx) {
+    if (this.off) return;
     const q = enter(ctx.t, this.t0, .7), pout = ease.inOut(enter(ctx.t, ctx.d - .4, .32));
     const s = q <= 0 ? .001 : lerp(.3, 1, ease.pop(q)) * (1 - pout * .7);
     const bob = Math.sin(ctx.t * 2.2) * 8;

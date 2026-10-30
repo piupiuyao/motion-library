@@ -6,9 +6,11 @@ TEMPLATES.c26 = {
     return w ? w.s : def;
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920;
-    const items = P.items || [{ emoji: '😱', at: null }, { emoji: '🔥', at: null }];
+    const items = (P.items || []).filter(it => it && it.emoji);
+    if (!items.length) { this.off = true; return; }   // 必填: no emoji items → render nothing
     const spots = [[fx - 310, fy + 150, -14], [fx + 300, fy - 40, 12], [fx - 300, fy + 420, 10], [fx + 300, fy + 330, -10]];
     this.pops = items.map((it, k) => {
       const [x0, y, r] = spots[k % 4], x = clamp(x0, 170, 910);
@@ -25,6 +27,7 @@ TEMPLATES.c26 = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3);
     for (const p of this.pops) {
       const q = enter(t, p.t0, .4);

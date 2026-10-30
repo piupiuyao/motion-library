@@ -6,11 +6,15 @@ TEMPLATES.c25 = {
     return w ? w.s : def;
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920;
-    const items = P.items || [{ kind: 'thought', text: 'Just say no...?', at: null }, { kind: 'burst', text: 'NO!', at: 'no' }];
+    const items = (P.items || []).filter(it => it && it.text);
+    if (!items.length) { this.off = true; return; }   // 必填: no bubbles → render nothing
+    const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
+    const acc = cssv('--accent') || '#ffe14d', acc2 = cssv('--accent-2') || '#e8261c';
     const font = "'Bangers','Impact','Arial Black',sans-serif";
-    const dots = (id, c) => `<pattern id="${id}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="11" cy="11" r="5" fill="${c}"/></pattern>`;
+    const dots = (id, c) => `<pattern id="${id}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="11" cy="11" r="5" style="fill:${c}"/></pattern>`;
     this.items = items.map((it, k) => {
       const kind = it.kind || 'speech';
       const box = el('div', 'position:absolute;left:0;top:0');
@@ -19,9 +23,9 @@ TEMPLATES.c25 = {
         w = 620; h = 500; x = fx - 560; y = fy - 470; origin = '70% 80%';
         let d = '';
         for (let i = 0; i < 26; i++) { const a = i / 26 * Math.PI * 2, r = i % 2 ? 150 : 250 + Math.sin(i * 7.1) * 40; d += (i ? 'L' : 'M') + (310 + Math.cos(a) * r * 1.15).toFixed(0) + ' ' + (250 + Math.sin(a) * r * .9).toFixed(0); }
-        svg = `<svg width="${w}" height="${h}"><defs>${dots('bd' + k, '#ff9d00')}</defs><path d="${d}Z" fill="#ffe14d" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+        svg = `<svg width="${w}" height="${h}"><defs>${dots('bd' + k, `color-mix(in srgb, ${acc} 70%, #000)`)}</defs><path d="${d}Z" style="fill:${acc}" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
           <path d="${d}Z" fill="url(#bd${k})" opacity=".55" transform="translate(310 250) scale(.8) translate(-310 -250)"/></svg>`;
-        box.innerHTML = svg + `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 150px/1 ${font};color:#e8261c;
+        box.innerHTML = svg + `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 150px/1 ${font};color:${acc2};
           -webkit-text-stroke:7px #111;paint-order:stroke fill;transform:rotate(-8deg);letter-spacing:.02em">${it.text}</div>`;
       } else {
         w = 640; h = 420; x = Math.min(1080 - w - 20, fx + 70); y = fy - 640; origin = '20% 100%';
@@ -40,6 +44,7 @@ TEMPLATES.c25 = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     const out = leave(ctx, .25);
     this.items.forEach((it, k) => {
       const q = enter(ctx.t, it.t0, .35);

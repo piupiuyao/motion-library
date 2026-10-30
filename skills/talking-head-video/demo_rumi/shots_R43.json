@@ -14,7 +14,8 @@
       0.86,
       0.205
      ]
-    ]
+    ],
+    "image": "assets/docs/gmail.jpg"
    }
   },
   {
@@ -23,7 +24,83 @@
    "params": {
     "word": "Replying",
     "at": "Replying",
-    "step": 0.3
+    "step": 0.3,
+    "articles": [
+     {
+      "bg": "#f6f1e7",
+      "ink": "#1a1a1a",
+      "font": "Georgia, serif",
+      "mast": "THE DAILY LEDGER",
+      "tex": 1,
+      "l": "Why",
+      "r": "is the new email",
+      "img": "assets/docs/gmail.jpg"
+     },
+     {
+      "bg": "#ffffff",
+      "ink": "#111",
+      "font": "'Helvetica Neue', Arial, sans-serif",
+      "mast": "tech/weekly",
+      "l": "The hidden cost of",
+      "r": "late at night",
+      "img": null
+     },
+     {
+      "bg": "#fff4f0",
+      "ink": "#3a0d00",
+      "font": "'Times New Roman', serif",
+      "mast": "Morning Herald",
+      "l": "Stop",
+      "r": "to everything",
+      "img": "assets/docs/chat.jpg"
+     },
+     {
+      "bg": "#eef3ff",
+      "ink": "#0b1d4a",
+      "font": "'Avenir Next', sans-serif",
+      "mast": "WORK LIFE",
+      "l": "Inbox zero:",
+      "r": "burnout",
+      "img": null
+     },
+     {
+      "bg": "#1d1d22",
+      "ink": "#f2f2f2",
+      "font": "Georgia, serif",
+      "mast": "THE EVENING POST",
+      "l": "Is",
+      "r": "killing your focus?",
+      "img": "assets/docs/notify.jpg"
+     },
+     {
+      "bg": "#fffbe6",
+      "ink": "#222",
+      "font": "'Courier New', monospace",
+      "mast": "inbox digest",
+      "tex": 1,
+      "l": "Why we hate",
+      "r": "so much",
+      "img": null
+     },
+     {
+      "bg": "#f0f7ee",
+      "ink": "#0f2a12",
+      "font": "'Helvetica Neue', sans-serif",
+      "mast": "Modern Office",
+      "l": "The art of",
+      "r": "well and fast",
+      "img": "assets/docs/gmail.jpg"
+     },
+     {
+      "bg": "#ffffff",
+      "ink": "#111",
+      "font": "Didot, Georgia, serif",
+      "mast": "QUARTERLY",
+      "l": "AI and the",
+      "r": "fatigue",
+      "img": null
+     }
+    ]
    }
   },
   {

@@ -1,7 +1,9 @@
 // 极简线稿隐喻 · 素材：纯深色背景上，单色线稿把正在说的比喻画出来（默认：冰山在水里晃），插在口播中间
 TEMPLATES.c32 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.top && !P.bottom) { this.off = true; return; }   // 必填: no captions → render nothing
     const col = P.color || '#ffffff';
     this.bgc = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, #121214, #000 75%)');
     ctx.L.back.appendChild(this.bgc);
@@ -33,11 +35,12 @@ TEMPLATES.c32 = {
       const e = el('div', `position:absolute;left:0;right:0;top:${y}px;text-align:center;font:500 46px var(--font-body);letter-spacing:.04em;color:${col};opacity:${op};text-shadow:0 0 18px rgba(255,255,255,.55)`, txt);
       ctx.L.back.appendChild(e); return e;
     };
-    this.l1 = lab(P.top || 'what people see: typing', 400, 1);
-    this.l2 = lab(P.bottom || 'what it costs: emotional energy', 1350, 1);
-    if (P.accent) this.l2.style.color = P.accent;
+    this.l1 = lab(P.top || '', 400, 1);
+    this.l2 = lab(P.bottom || '', 1350, 1);
+    this.l2.style.color = P.accent || 'var(--accent)';
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3), pin = enter(t, 0, .25);
     this.bgc.style.opacity = Math.min(pin, out);
     this.g.style.opacity = out;

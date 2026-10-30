@@ -10,7 +10,7 @@
     "https://www.youtube.com/watch?v=HQvV75kjblY&t=350s"
   ],
   "params": {
-    "text": "必填。反色大字，如名字",
+    "text": "必填。反色大字，如名字；不填不显示",
     "sub": "可选。下面一行小字（身份、地点等）",
     "y": "可选。竖直位置，默认 980",
     "size": "可选。字号"

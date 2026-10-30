@@ -10,7 +10,7 @@
     "https://elements.envato.com/subscribe-elements-YZPLXTK"
   ],
   "params": {
-    "handle": "可选。账号名，默认 @monica",
+    "handle": "可选（建议填）。账号名，如 @xxx；不写就只有关注按钮、没有头像和账号名",
     "label": "可选。按钮文字，默认 + Follow",
     "done": "可选。点完后的文字，默认 ✓ Following",
     "burst_at": "可选。炸开消失的时间（秒），默认 2.25",

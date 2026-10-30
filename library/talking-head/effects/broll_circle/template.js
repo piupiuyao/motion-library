@@ -1,6 +1,8 @@
 // 圆窗 B-roll · 素材：B-roll 占满画面，说话的人缩进底部圆窗，人一直在场
 TEMPLATES.broll_circle = {
   setup(ctx) {
+    this.off = !ctx.params.broll; // material missing: render nothing
+    if (this.off) return;
     ctx.L.bg.style.background = 'var(--bg-a)';
     this.blur = el('img', 'position:absolute;inset:-60px;width:1200px;height:2040px;object-fit:cover;filter:blur(40px) brightness(.6)');
     this.main = el('img', 'position:absolute;left:0;top:200px;width:1080px;height:auto;border-radius:0 0 36px 36px;box-shadow:0 30px 80px rgba(0,0,0,.4)');
@@ -15,6 +17,7 @@ TEMPLATES.broll_circle = {
     ctx.L.front.appendChild(this.ring);
   },
   frame(ctx) {
+    if (this.off) return;
     const src = mediaSrc(ctx.params.broll, ctx.t);
     setImg(this.blur, src); setImg(this.main, src);
     const p = ease.inOut(enter(ctx.t, 0, .5));

@@ -17,7 +17,7 @@ TEMPLATES.c04 = {
     const endW = wordAt(P.end);
     cards.forEach((c, j) => { c.e = j + 1 < cards.length ? cards[j + 1].s : (endW ? endW.s - .04 : c.s + Math.max(step, P.last || .5)); });
     // palette pairs; each card flips to its inverse on the off-beat
-    const looks = P.colors || [['#ff2d3a', '#ffffff'], ['#111111', 'var(--accent)'], ['#ffd400', '#111111'], ['#3d5bff', '#ffffff'], ['#ffffff', '#111111']];
+    const looks = P.colors || [['var(--accent)', 'var(--ink)'], ['#111111', 'var(--accent)'], ['var(--accent-2)', '#111111'], ['#111111', '#ffffff'], ['#ffffff', '#111111']];
     const font = `"Avenir Next Condensed", "Impact", "PingFang SC", sans-serif`;
     const mc = document.createElement('canvas').getContext('2d');
     this.cards = cards.map((k, j) => {

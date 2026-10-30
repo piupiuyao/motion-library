@@ -10,7 +10,7 @@
     "https://videohive.net/item/vertical-lower-thirds/60452077"
   ],
   "params": {
-    "name": "可选。名字，默认 Monica",
+    "name": "必填。名字（名字和 @账号至少填一个，否则不显示）",
     "handle": "可选。@账号",
     "follow": "可选。按钮字，默认 Follow；false = 不要按钮",
     "icon": "可选。图标（HTML/emoji），默认画一个相机图标",

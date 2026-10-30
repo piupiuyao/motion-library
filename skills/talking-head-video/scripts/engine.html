@@ -111,6 +111,8 @@ const lineCv = document.createElement('canvas'); lineCv.width = W; lineCv.height
 const lctx = lineCv.getContext('2d');
 const maskImg = new Image(), srcImg = new Image();
 document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
+// theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
+for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
 
 function segAt(t) {
   let s = TL.segments[0];

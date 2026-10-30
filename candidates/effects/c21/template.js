@@ -2,29 +2,38 @@
 // 从侧面进来，经过头后面时被人挡住，再从胸前绕回来，停在头旁边。Kallaway 风格。
 TEMPLATES.c21 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.num = P.number ?? 12453;
-    const col = P.color || '#8b5cff';
+    // number: given, or the first number she says in this shot; none → render nothing
+    let num = P.number;
+    if (num == null) { const nw = ctx.words.find(w => /\d/.test(w.w)); if (nw) num = parseFloat(nw.w.replace(/[^\d.]/g, '')); }
+    if (num == null || isNaN(num)) { this.off = true; return; }
+    this.num = num;
+    const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
+    const col = P.color || cssv('--accent') || '#8b5cff';
+    // text colour by the card colour's brightness: light accent → dark text, dark accent → white
+    const lum = (c => { const m = document.createElement('canvas').getContext('2d'); m.fillStyle = c; m.fillRect(0, 0, 1, 1); const [r, g, b] = m.getImageData(0, 0, 1, 1).data; return (r * .299 + g * .587 + b * .114) / 255; })(col);
+    const fg = lum > .62 ? (cssv('--ink') || '#111') : '#fff';
     const icon = P.icon && !/^(eye|mail|people)$/.test(P.icon)
       ? `<div style="font-size:150px;line-height:1;opacity:.45">${P.icon}</div>`
       : ({
         eye: '<path d="M8 60 Q60 8 112 60 Q60 112 8 60Z"/><circle cx="60" cy="60" r="20"/>',
         people: '<circle cx="42" cy="42" r="18"/><path d="M12 100 Q12 66 42 66 Q72 66 72 100Z"/><circle cx="84" cy="36" r="15"/><path d="M78 60 Q108 58 110 92 L80 92"/>',
         mail: '<rect x="10" y="24" width="100" height="72" rx="12"/><path d="M14 30 L60 66 L106 30" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="8"/>',
-      }[P.icon || 'mail'] || '').replace(/^(.+)$/, '<svg width="140" height="140" viewBox="0 0 120 120" fill="rgba(215,195,255,.42)">$1</svg>');
+      }[P.icon] || '').replace(/^(.+)$/, `<svg width="140" height="140" viewBox="0 0 120 120" style="fill:color-mix(in srgb, ${fg} 42%, transparent)">$1</svg>`);
     this.card = el('div', `position:absolute;left:0;top:0;width:440px;height:250px;padding:30px 36px;border-radius:30px;box-sizing:border-box;overflow:hidden;
-      background:linear-gradient(135deg, color-mix(in srgb, ${col} 72%, transparent), color-mix(in srgb, ${col} 38%, rgba(30,10,80,.3)));
+      background:linear-gradient(135deg, color-mix(in srgb, ${col} 72%, transparent), color-mix(in srgb, ${col} 38%, rgba(0,0,0,.3)));
       border:3px solid color-mix(in srgb, ${col} 45%, #fff);
       box-shadow:0 0 50px color-mix(in srgb, ${col} 75%, transparent), inset 0 0 40px rgba(255,255,255,.14), 0 30px 60px rgba(0,0,0,.35);
-      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-family:var(--font-body)`);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:${fg};font-family:var(--font-body)`);
     this.card.innerHTML = `
       <div style="position:absolute;right:22px;top:50%;margin-top:-70px">${icon}</div>
       <div style="position:absolute;inset:0;background:linear-gradient(115deg, rgba(255,255,255,.28), transparent 38%)"></div>
-      <div style="position:relative;font:600 40px var(--font-body);opacity:.95">${P.label || 'Unread messages'}</div>
+      <div style="position:relative;font:600 40px var(--font-body);opacity:.95">${P.label || ''}</div>
       <div style="position:relative;display:flex;align-items:baseline;gap:14px;margin-top:22px">
-        <span class="n" style="font:800 76px/1 var(--font-body);letter-spacing:-.02em;text-shadow:0 0 26px color-mix(in srgb, ${col} 90%, #fff)">0</span>
+        <span class="n" style="font:800 76px/1 var(--font-body);letter-spacing:-.02em;text-shadow:0 0 26px color-mix(in srgb, ${col} 90%, ${fg})">0</span>
         <span style="font:600 30px var(--font-body);opacity:.85">${P.unit || ''}</span></div>
-      <div style="position:relative;margin-top:18px;font:700 32px var(--font-body);color:#d9ccff">${P.delta || ''}</div>`;
+      <div style="position:relative;margin-top:18px;font:700 32px var(--font-body);opacity:.8">${P.delta || ''}</div>`;
     this.n = this.card.querySelector('.n');
     this.R = P.radius || 360;
     this.fallback = [ctx.focus[0] * 1080, ctx.focus[1] * 1920 - 300];
@@ -45,6 +54,7 @@ TEMPLATES.c21 = {
     return [540 + ((n ? sx / n : 540) - 540) * z, 960 + (top - 960) * z];
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, P = ctx.params;
     const [hx, hy] = this.head(ctx);
     // one turn: enter at the right side, pass behind the head, around the left, across the chest, settle front-right

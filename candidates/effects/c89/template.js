@@ -3,8 +3,10 @@
 // 有横向移动的素材可用 mode:"wipe"：擦除边缘跟随人的右侧轮廓从左往右走。
 TEMPLATES.c89 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const txt = String(P.text || 'HARDER').toUpperCase();
+    if (!P.text) { this.off = true; return; } // required: not shown without text
+    const txt = String(P.text).toUpperCase();
     this.size = P.size || Math.min(330, Math.floor(980 / (txt.length * .78)));
     this.y = P.y || Math.round(ctx.focus[1] * 1920 - this.size * .45);
     this.word = el('div', `position:absolute;left:0;right:0;top:${this.y}px;text-align:center;font-size:${this.size}px;line-height:1;white-space:nowrap;
@@ -27,6 +29,7 @@ TEMPLATES.c89 = {
     return [540 + (l - 540) * z, 540 + (r - 540) * z];
   },
   frame(ctx) {
+    if (this.off) return;
     const [l, r] = this.edges(ctx);
     const p = ease.inOut(enter(ctx.t, this.t0, this.dur));
     const out = leave(ctx, .3);

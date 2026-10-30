@@ -7,7 +7,7 @@ TEMPLATES.c78 = {
     this.top = el('div', 'position:absolute;left:0;right:0;top:0;background:#000');
     this.bot = el('div', 'position:absolute;left:0;right:0;bottom:0;background:#000');
     this.title = el('div', `position:absolute;left:0;right:0;text-align:center;color:#f3efe6;font:500 ${P.size || 64}px/1.15 "Didot","Bodoni 72","Georgia",serif;
-      letter-spacing:.32em;text-transform:uppercase;opacity:0`, P.title || 'A STORY');
+      letter-spacing:.32em;text-transform:uppercase;opacity:0`, P.title || '');
     this.sub = el('div', `position:absolute;left:0;right:0;text-align:center;color:rgba(243,239,230,.6);font:600 34px var(--font-body);letter-spacing:.5em;
       text-transform:uppercase;opacity:0`, P.sub || '');
     ctx.L.front.append(this.top, this.bot, this.title, this.sub);

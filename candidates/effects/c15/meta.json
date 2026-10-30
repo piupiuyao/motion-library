@@ -12,9 +12,9 @@
     "https://elements.envato.com/tweets-pack-6XV2RV6"
   ],
   "params": {
-    "text": "帖子正文",
-    "name": "显示名，默认 Monica",
-    "handle": "账号，默认 @monica",
+    "text": "必填。帖子正文；不填不显示",
+    "name": "显示名（一般是讲者名字），不填留空",
+    "handle": "账号，如 @xxx，不填留空",
     "avatar": "可选。头像图片路径，不填用首字母圆头像",
     "likes": "点赞数（会往上跳），默认 18400",
     "replies": "评论数文字，默认 1.2K",

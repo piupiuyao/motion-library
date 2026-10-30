@@ -13,8 +13,11 @@
     "https://www.capcut.com/explore/green-screen-in-capcut"
   ],
   "params": {
-    "images": "可选。拼成网页背景的截图列表（从上往下排），默认 gmail.jpg、chat.jpg",
-    "address": "可选。浏览器地址栏里的字",
+    "images": "必填素材。拼成网页背景的截图列表（从上往下排）；不填不显示",
+    "address": "可选。浏览器地址栏里的字，不填留空",
     "scroll": "可选。整段往上滚多少像素，默认 500"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

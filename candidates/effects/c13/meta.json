@@ -10,8 +10,8 @@
     "https://elements.envato.com/reels-mobile-notification-HRYPGJN"
   ],
   "params": {
-    "text": "通知正文一行（默认 Hey, did you see my message?）",
-    "sender": "发件人名字，默认 Sarah",
+    "text": "必填。通知正文一行；不填不显示",
+    "sender": "发件人名字，不填留空",
     "app": "图标样式：message / whatsapp / mail，默认 message",
     "time": "右上角时间，默认 now",
     "at": "可选。原话里的一个词，说到它时通知滑下；不填则开头 0.25 秒",

@@ -13,9 +13,9 @@
     "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=307s"
   ],
   "params": {
-    "emoji": "升起的图标 emoji，默认 ⏰（和 image 二选一）",
+    "emoji": "必填（和 image 二选一）。升起的图标 emoji；两个都不填就不显示",
     "image": "可选。升起的图片路径",
-    "label": "旁边弹出的发光标签文字",
+    "label": "可选。旁边弹出的发光标签文字（主题色）",
     "at": "可选。原话里的词，说到时开始升起",
     "side": "right / left，从哪边肩膀后升起，默认 right",
     "size": "物体尺寸像素，默认 440",

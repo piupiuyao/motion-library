@@ -20,7 +20,7 @@
     "需要观众看别的东西但人还在讲"
   ],
   "needs_assets": [
-    "B-roll：一段视频（拆成帧的文件夹）或一张图"
+    "B-roll视频"
   ],
   "layers": [
     "背景：B-roll（模糊铺底 + 清晰主体）",
@@ -28,7 +28,7 @@
   ],
   "duration": "3–6 秒",
   "params": {
-    "broll": "必填。图片路径，或 {\"frames\": \"assets/xxx\", \"fps\": 30, \"count\": 帧数}",
+    "broll": "必填。B-roll 帧 {\"frames\": \"assets/xxx\", \"fps\": 30, \"count\": 帧数} 或图片路径（用户上传）；没有就不显示",
     "label": "可选。B-roll 上方一行说明字"
   },
   "source": {

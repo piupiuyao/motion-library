@@ -10,7 +10,7 @@
     "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
   ],
   "params": {
-    "title": "必填。标题，可用 \\n 换行",
+    "title": "必填。标题，可用 \\n 换行；不填不显示",
     "wobble": "可选。扭动幅度，默认 14",
     "y": "可选。竖直位置，默认 230",
     "size": "可选。字号"

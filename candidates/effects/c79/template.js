@@ -7,10 +7,13 @@ TEMPLATES.c79 = {
     this.wrap = el('div', `position:absolute;left:50%;top:${this.y}px;transform-origin:50% 50%`);
     this.card = el('div', `display:flex;align-items:center;gap:26px;padding:22px 26px 22px 22px;background:rgba(255,255,255,.96);border-radius:999px;
       box-shadow:0 20px 50px rgba(0,0,0,.35);white-space:nowrap`);
-    this.card.appendChild(el('div', `width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3d7bff);
-      display:flex;align-items:center;justify-content:center;font:900 54px var(--font-body);color:#111`, (P.handle || 'M')[0].toUpperCase()));
-    this.card.appendChild(el('div', 'font:800 50px var(--font-body);color:#111', P.handle || '@monica'));
-    this.btn = el('div', `padding:20px 40px 24px;border-radius:999px;background:#ff2d55;color:#fff;font:800 52px var(--font-body);min-width:250px;text-align:center`);
+    // avatar + handle only when the account name is given; otherwise just the button
+    if (P.handle) {
+      this.card.appendChild(el('div', `width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+        display:flex;align-items:center;justify-content:center;font:900 54px var(--font-body);color:var(--ink)`, String(P.handle).replace(/^@/, '')[0].toUpperCase()));
+      this.card.appendChild(el('div', 'font:800 50px var(--font-body);color:#111', P.handle));
+    } else this.card.style.padding = '22px';
+    this.btn = el('div', `padding:20px 40px 24px;border-radius:999px;background:var(--accent);color:var(--ink);font:800 52px var(--font-body);min-width:250px;text-align:center`);
     this.btnA = P.label || '+ Follow'; this.btnB = P.done || '✓ Following';
     this.card.appendChild(this.btn);
     this.wrap.appendChild(this.card);
@@ -18,7 +21,7 @@ TEMPLATES.c79 = {
     this.burst = el('div', `position:absolute;left:540px;top:${this.y + 74}px;width:0;height:0`);
     this.parts = Array.from({ length: 14 }, (_, j) => {
       const e = el('div', `position:absolute;left:50%;top:50%;width:${26 + (j % 3) * 12}px;height:${26 + (j % 3) * 12}px;margin:-20px;border-radius:50%;
-        background:${['#ff2d55', 'var(--accent)', '#3d7bff', '#ffd400'][j % 4]};opacity:0`);
+        background:${['var(--accent)', 'var(--accent-2)', '#ffffff', 'color-mix(in srgb, var(--accent) 50%, var(--accent-2))'][j % 4]};opacity:0`);
       this.burst.appendChild(e);
       return { e, a: j / 14 * Math.PI * 2 + (j % 2) * .2, r: 260 + (j * 53) % 160 };
     });
@@ -32,8 +35,8 @@ TEMPLATES.c79 = {
     const pop = enter(t, T.pop, .45);
     const done = t >= T.click;
     this.btn.textContent = done ? this.btnB : this.btnA;
-    this.btn.style.background = done ? '#d9d9de' : '#ff2d55';
-    this.btn.style.color = done ? '#333' : '#fff';
+    this.btn.style.background = done ? '#d9d9de' : 'var(--accent)';
+    this.btn.style.color = done ? '#333' : 'var(--ink)';
     const press = t >= T.click - .08 && t < T.click + .25 ? Math.sin(clamp((t - T.click + .08) / .33) * Math.PI) : 0;
     const bq = clamp((t - T.burst) / .3);
     const sc = lerp(.3, 1, ease.pop(pop)) * (1 - .06 * press) * (t >= T.burst ? lerp(1.1, 0, ease.out(bq)) : 1);

@@ -1,21 +1,24 @@
 // 文章荧光高亮 · 素材：一张文章/文件截图铺满屏幕慢慢推近，荧光笔扫过其中一句，其余部分变暗
 TEMPLATES.c17 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const before = P.before || [
-      'Researchers surveyed 2,000 office workers about how they spend their day. The average person checks email or chat more than 70 times between nine and five.',
-      'Most of those messages are short. But each one asks for a decision: what to say, how to say it, and when.',
-    ];
-    const after = P.after || ['Experts say the cost is not the typing. It is the constant switching between tasks and tones, which leaves people drained before lunch.'];
+    // highlighted sentence: given, or what she says in this shot; nothing at all → render nothing
+    const hlText = P.highlight || ctx.words.map(w => w.w).filter(Boolean).join(' ');
+    if (!hlText) { this.off = true; return; }
+    // body paragraphs not given → neutral grey placeholder lines (no made-up article text)
+    const bars = (n, seed) => Array.from({ length: n }, (_, i) => `<span style="display:block;height:22px;margin:0 0 30px;border-radius:11px;background:#d9d6cc;width:${i === n - 1 ? 40 + (seed * 37 + i * 13) % 35 : 92 + (seed * 7 + i * 5) % 8}%"></span>`).join('');
+    const before = P.before || [bars(4, 1), bars(3, 2)];
+    const after = P.after || [bars(3, 3)];
     this.page = el('div', `position:absolute;left:50%;top:50%;width:980px;margin-left:-490px;height:1700px;margin-top:-850px;background:#fbfaf6;
       box-shadow:0 30px 80px rgba(0,0,0,.5);padding:90px 74px;box-sizing:border-box;color:#1b1b1b;font-family:Georgia,'Times New Roman',serif;transform-origin:50% 55%`);
     const p = s => `<p class="dimme" style="font-size:40px;line-height:1.55;margin:0 0 34px">${s}</p>`;
-    this.page.innerHTML = `<div class="dimme" style="font:700 30px var(--font-body);letter-spacing:.18em;color:#b3261e;margin-bottom:26px">${P.kicker || 'WORK & LIFE'}</div>
-      <div class="dimme" style="font-size:84px;line-height:1.05;font-weight:700;margin-bottom:30px">${P.headline || 'The hidden cost of answering every message'}</div>
+    this.page.innerHTML = `<div class="dimme" style="font:700 30px var(--font-body);letter-spacing:.18em;color:#b3261e;margin-bottom:26px">${P.kicker || ''}</div>
+      <div class="dimme" style="font-size:84px;line-height:1.05;font-weight:700;margin-bottom:30px">${P.headline || '<span style="display:block;height:64px;width:86%;border-radius:12px;background:#cfcabd"></span>'}</div>
       <div class="dimme" style="font:400 30px var(--font-body);color:#777;border-bottom:2px solid #ddd;padding-bottom:26px;margin-bottom:40px">By Staff Writer · 6 min read</div>
       ${before.map(p).join('')}
-      <p style="font-size:40px;line-height:1.55;margin:0 0 34px"><span class="hl" style="background-image:linear-gradient(transparent 12%, ${P.color || '#f7e84a'} 12%, ${P.color || '#f7e84a'} 88%, transparent 88%);
-        background-repeat:no-repeat;background-size:0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px">${P.highlight || 'Put together, they take up a ridiculous amount of the day, and a lot of emotional energy.'}</span></p>
+      <p style="font-size:40px;line-height:1.55;margin:0 0 34px"><span class="hl" style="background-image:linear-gradient(transparent 12%, ${P.color || 'var(--accent)'} 12%, ${P.color || 'var(--accent)'} 88%, transparent 88%);
+        background-repeat:no-repeat;background-size:0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px">${hlText}</span></p>
       ${after.map(p).join('')}`;
     ctx.L.front.appendChild(this.page);
     this.bgc = el('div', 'position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#3a3a40,#121214)');
@@ -26,6 +29,7 @@ TEMPLATES.c17 = {
     this.t0 = P.at != null ? P.at : Math.min(1.1, ctx.d * .3);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3);
     const pin = ease.out(enter(t, 0, .4));
     this.bgc.style.opacity = Math.min(pin, out);

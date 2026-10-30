@@ -1,11 +1,13 @@
 // 鱼眼拉远 · 转场：新画面一出来像鱼眼一样鼓起、推得很近，然后快速变平并拉远，先快后慢；结尾同样方式回到人
 TEMPLATES.c68 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     this.t1 = P.at != null ? P.at : .8;
     this.back = P.back !== false;
     this.t2 = ctx.d - (P.backAt != null ? P.backAt : 1.1);
-    this.media = P.to || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
+    this.media = P.to;
+    if (!this.media) { this.off = true; return; } // material missing: render nothing
     this.fx = P.fx != null ? P.fx : 1;
     this.cv = el('canvas', 'position:absolute;inset:0;width:1080px;height:1920px;background:#000');
     this.cv.width = 540; this.cv.height = 960; // half-res drawing keeps it fast
@@ -35,6 +37,7 @@ TEMPLATES.c68 = {
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const inB = ctx.t >= this.t1 && (!this.back || ctx.t < this.t2);
     const inP = this.back && ctx.t >= this.t2;
     this.cv.style.display = inB || inP ? '' : 'none';

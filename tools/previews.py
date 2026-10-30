@@ -32,7 +32,10 @@ for i in a.ids or sorted(tmpl):
     if not s:
         print(f'skip {i}: no shot uses it in {a.shots}')
         continue
-    t0, t1 = max(0, s['start'] - .2), min(tl['duration'], s['end'] + .2)
+    # a little plain talking head before/after, but never a sliver of the neighbouring effect
+    prev_end = max([o['end'] for o in tl['shots'] if o.get('template') and o['end'] <= s['start']], default=0)
+    next_start = min([o['start'] for o in tl['shots'] if o.get('template') and o['start'] >= s['end']], default=tl['duration'])
+    t0, t1 = max(0, prev_end, s['start'] - .2), min(tl['duration'], next_start, s['end'] + .2)
     with tempfile.TemporaryDirectory() as td:
         raw = os.path.join(td, 'p.mp4')
         subprocess.run([sys.executable, os.path.join(SKILL, 'scripts', 'render.py'), a.proj, '--shots', a.shots, '--preview',

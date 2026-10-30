@@ -1,8 +1,10 @@
 // 上下分屏 · 版式：竖屏上下一分为二，上半是人、下半是 B-roll/对比图，两块从两边滑进来，中缝压一行字
 TEMPLATES.c36 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
+    if (!P.media) { this.off = true; return; }   // needs_assets: no B-roll / picture → render nothing
+    this.media = P.media;
     this.flip = !!P.flip; // true: person at the bottom
     ctx.L.bg.style.background = 'var(--bg-a)';
     // the untouched full frame stays underneath while the two halves slide in over it from opposite sides
@@ -32,6 +34,7 @@ TEMPLATES.c36 = {
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = ease.out(enter(ctx.t, 0, .5)), pout = ease.inOut(enter(ctx.t, ctx.d - .45, .45));
     const k = pin * (1 - pout);
     const z = ctx.seg.zoom || 1, f = this.flip ? -1 : 1;

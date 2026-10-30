@@ -1,8 +1,10 @@
-// 霓虹涂鸦描边 · 镜头特效：发光的粉/蓝/绿手绘线沿人的轮廓逐帧抖动（沸腾线），头旁冒出小星星和爱心
+// 霓虹涂鸦描边 · 镜头特效：发光的彩色（主题色）手绘线沿人的轮廓逐帧抖动（沸腾线），头旁冒出小星星和爱心
 TEMPLATES.c58 = {
   setup(ctx) {
     const P = ctx.params;
-    this.colors = P.colors || ['#ff3fd2', '#33e6ff', '#9dff3a'];
+    // default: theme accent + accent-2 + a fixed neon cyan as the third line
+    const css = getComputedStyle(document.getElementById('stage')), v = k => css.getPropertyValue(k).trim();
+    this.colors = P.colors || [v('--accent') || '#ff3fd2', v('--accent-2') || '#33e6ff', '#33e6ff'];
     // tiny copy of the cutout, used to find the silhouette edge by casting rays from the chest
     this.small = document.createElement('canvas'); this.small.width = 135; this.small.height = 240;
     this.sg = this.small.getContext('2d', { willReadFrequently: true });

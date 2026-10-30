@@ -10,7 +10,7 @@
     "https://elements.envato.com/massive-camera-transitions-GZ6LFV9"
   ],
   "params": {
-    "to": "可选。下一个画面：图片路径（如 assets/docs/gmail.jpg）、B-roll 帧 {\"frames\":\"assets/broll_inbox\",\"fps\":30,\"count\":165,\"offset\":2.5}，或标题卡 {\"title\":\"PART 2\",\"sub\":\"副标题\"}；默认标题卡",
+    "to": "可选。下一个画面：图片路径（如 assets/docs/gmail.jpg）、B-roll 帧 {\"frames\":\"assets/broll_inbox\",\"fps\":30,\"count\":165,\"offset\":2.5}，或标题卡 {\"title\":\"PART 2\",\"sub\":\"副标题\"}；不写就是一张空白的主题色卡",
     "at": "可选。切换点在第几秒，默认 0.9"
   }
 }

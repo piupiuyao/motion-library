@@ -2,8 +2,8 @@
 TEMPLATES.c90 = {
   setup(ctx) {
     const P = ctx.params;
-    const lines = (P.lines || ['OUTLINE', 'REVEAL']).map(s => String(s).toUpperCase());
-    const color = P.color || '#e3101a';
+    const lines = (P.lines || []).map(s => String(s).toUpperCase()); // required: nothing shown without lines
+    const color = P.color || 'var(--accent)';
     this.groups = [];
     for (const [layer, solid] of [[ctx.L.back, true], [ctx.L.front, false]]) {
       const box = el('div', `position:absolute;left:0;right:0;top:${P.y || 380}px;text-align:center;transform-origin:50% 40%`);

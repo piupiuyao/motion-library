@@ -25,21 +25,24 @@ TEMPLATES.c96 = {
     return { x: 540 + (hx - 540) * z, top: 960 + (ht - 960) * z, z };
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.text) { this.off = true; return; } // required: not shown without text
     this.hc = document.createElement('canvas'); this.hc.width = 54; this.hc.height = 96;
     this.side = P.side || (ctx.focus[0] > .5 ? 'left' : 'right');
     this.svg = el('div', 'position:absolute;inset:0');
     this.svg.innerHTML = `<svg width="1080" height="1920" style="position:absolute;inset:0;overflow:visible;filter:drop-shadow(0 2px 4px rgba(0,0,0,.55))">
       <polyline fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle r="13" fill="#fff"/><circle r="26" fill="none" stroke="#fff" stroke-width="4"/></svg>`;
+      <circle r="13" style="fill:var(--accent)"/><circle r="26" fill="none" style="stroke:var(--accent)" stroke-width="4"/></svg>`;
     [this.line, this.dot, this.ring] = this.svg.querySelectorAll('polyline,circle');
     this.title = el('div', `position:absolute;left:0;top:0;white-space:nowrap;color:#fff;font:800 58px/1 var(--font-display);letter-spacing:.02em;
-      text-shadow:0 2px 6px rgba(0,0,0,.6)`, P.text || 'MONICA');
+      text-shadow:0 2px 6px rgba(0,0,0,.6)`, P.text);
     this.sub = el('div', `position:absolute;left:0;top:0;white-space:nowrap;color:#fff;font:600 32px/1 var(--font-body);letter-spacing:.06em;
-      text-shadow:0 2px 6px rgba(0,0,0,.6)`, P.sub || 'host · creator');
+      text-shadow:0 2px 6px rgba(0,0,0,.6)`, P.sub || '');
     ctx.L.front.append(this.svg, this.title, this.sub);
   },
   frame(ctx) {
+    if (this.off) return;
     const h = this.head(ctx);
     const L = this.side === 'left' ? -1 : 1;
     const ax = h.x + L * (ctx.params.ax ?? 130) * h.z, ay = h.top + (ctx.params.ay ?? 120) * h.z;     // the dot

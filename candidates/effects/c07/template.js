@@ -1,8 +1,10 @@
 // 镂空透视字 · 字体：满屏纯色上一个巨大的词，只有字的形状里透出视频，然后字迅速放大直到视频铺满全屏
 TEMPLATES.c07 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const txt = (P.text || 'REPLY').toUpperCase();
+    if (!P.text) { this.off = true; return; }   // 必填: no word → render nothing
+    const txt = P.text.toUpperCase();
     const font = `"Avenir Next Condensed", "Avenir Next", "PingFang SC", sans-serif`;
     // fit the word to ~980px wide using a scratch canvas, then find a point well inside a stroke to zoom into
     const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
@@ -31,7 +33,7 @@ TEMPLATES.c07 = {
       if (dist < bd) { bd = dist; best = [x, y]; }
     }
     this.pt = best;
-    const fill = P.color || '#0b0b0d';
+    const fill = P.color || 'var(--bg-a)';
     this.svg = el('div', 'position:absolute;inset:0');
     this.svg.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="position:absolute;inset:0"><defs><mask id="c07m" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}">
       <rect width="${W}" height="${H}" fill="#fff"/><g id="c07g"><text transform="matrix(1 0 0 ${sy} 0 ${cy * (1 - sy)})" x="${W / 2}" y="${cy}" text-anchor="middle" dominant-baseline="middle"
@@ -42,6 +44,7 @@ TEMPLATES.c07 = {
     this.zoomAt = P.zoom_at || 1.1;
   },
   frame(ctx) {
+    if (this.off) return;
     const [px, py] = this.pt;
     const z = enter(ctx.t, this.zoomAt, .75);
     const hold = 1 + .14 * ease.inOut(clamp(ctx.t / this.zoomAt));

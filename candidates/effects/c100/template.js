@@ -1,8 +1,10 @@
 // 竖屏片尾推荐卡 · 片头片尾：结尾背景虚化压暗，「Watch next」标题 + 大圆角视频卡 + 圆头像和订阅按钮依次滑入弹出
 TEMPLATES.c100 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
+    this.media = P.media;
+    if (!this.media) { this.off = true; return; } // material missing: render nothing
     // blurred background: draw the frame tiny + soft, scale up (cheap compared with CSS blur on a full frame)
     this.bl = el('canvas', 'position:absolute;left:0;top:0;width:1080px;height:1920px');
     this.bl.width = 108; this.bl.height = 192;
@@ -31,16 +33,16 @@ TEMPLATES.c100 = {
     this.card.appendChild(el('div', 'position:absolute;inset:0;background:linear-gradient(180deg, transparent 45%, rgba(0,0,0,.82))'));
     this.card.appendChild(el('div', `position:absolute;left:50%;top:42%;width:140px;height:140px;margin:-70px;border-radius:50%;background:rgba(255,255,255,.92);
       display:flex;align-items:center;justify-content:center`, '<div style="margin-left:14px;border-left:50px solid #111;border-top:30px solid transparent;border-bottom:30px solid transparent"></div>'));
-    this.card.appendChild(el('div', 'position:absolute;left:40px;right:40px;bottom:34px;color:#fff;font:800 54px/1.1 var(--font-body)', P.next || 'How I reply 10× faster'));
+    this.card.appendChild(el('div', 'position:absolute;left:40px;right:40px;bottom:34px;color:#fff;font:800 54px/1.1 var(--font-body)', P.next || ''));
     // avatar + subscribe
     this.av = el('canvas', 'position:absolute;left:430px;top:1010px;width:220px;height:220px;border-radius:50%;border:6px solid #fff');
     this.av.width = 220; this.av.height = 220;
     this.ring = el('div', `position:absolute;left:400px;top:980px;width:280px;height:280px;border-radius:50%;
       border:4px solid color-mix(in srgb, var(--accent) 80%, transparent);box-shadow:0 0 30px color-mix(in srgb, var(--accent) 50%, transparent)`);
     this.ring2 = el('div', 'position:absolute;left:400px;top:980px;width:280px;height:280px;border-radius:50%;border:3px solid rgba(255,255,255,.5)');
-    this.name = el('div', 'position:absolute;left:0;right:0;top:1265px;text-align:center;color:#fff;font:700 44px var(--font-body)', P.handle || '@monica');
-    this.sub = el('div', `position:absolute;left:340px;top:1335px;width:400px;height:96px;border-radius:999px;background:#ff1f3d;color:#fff;
-      font:800 46px/96px var(--font-body);text-align:center;letter-spacing:.04em;box-shadow:0 12px 30px rgba(255,31,61,.45)`, P.button || 'SUBSCRIBE');
+    this.name = el('div', 'position:absolute;left:0;right:0;top:1265px;text-align:center;color:#fff;font:700 44px var(--font-body)', P.handle || '');
+    this.sub = el('div', `position:absolute;left:340px;top:1335px;width:400px;height:96px;border-radius:999px;background:var(--accent);color:var(--ink);
+      font:800 46px/96px var(--font-body);text-align:center;letter-spacing:.04em;box-shadow:0 12px 30px color-mix(in srgb, var(--accent) 45%, transparent)`, P.button || 'SUBSCRIBE');
     ctx.L.front.append(this.deco, this.title, this.bar, this.card, this.ring2, this.ring, this.av, this.name, this.sub);
     this.fx = ctx.focus[0] * W; this.fy = ctx.focus[1] * H;
   },
@@ -79,6 +81,7 @@ TEMPLATES.c100 = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     // the base frame may still be decoding when frame() runs (stills jump around): draw once it is ready
     const img = ctx.baseImg, go = () => this.draw(ctx);
     if (img.complete && img.naturalWidth) go(); else pending.push(img.decode().then(go, go));

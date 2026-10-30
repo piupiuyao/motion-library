@@ -10,6 +10,6 @@
     "https://elements.envato.com/comic-elements-VRHJEWX"
   ],
   "params": {
-    "items": "气泡数组 [{kind: 'speech'|'thought'|'burst', text, at}]；speech/thought 出现在头右上方，burst（爆炸字）在头左上方；at 是原话里的词"
+    "items": "必填。气泡数组 [{kind: 'speech'|'thought'|'burst', text, at}]；speech/thought 出现在头右上方，burst（爆炸字，底色主题色）在头左上方；at 是原话里的词；不填不显示"
   }
 }

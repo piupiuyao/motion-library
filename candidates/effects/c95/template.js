@@ -25,14 +25,16 @@ TEMPLATES.c95 = {
     return { x: 540 + (hx - 540) * z, top: 960 + (ht - 960) * z, z };
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.text) { this.off = true; return; } // required: not shown without text
     this.hc = document.createElement('canvas'); this.hc.width = 54; this.hc.height = 96;
     this.dx = P.dx ?? 200; this.dy = P.dy ?? 30;      // sticker offset from the top of the head
     this.wrap = el('div', 'position:absolute;left:0;top:0;width:0;height:0');
     this.tag = el('div', `position:absolute;left:0;top:0;transform:translate(-50%,-100%);white-space:nowrap;display:flex;align-items:center;gap:16px;
       padding:18px 34px 22px;background:var(--paper);color:var(--ink);border-radius:999px;font:800 62px var(--font-body);
       box-shadow:0 14px 34px rgba(0,0,0,.3);border:5px solid var(--ink)`,
-      `<span>${P.emoji ?? '😮‍💨'}</span><span>${P.text || 'so drained'}</span>`);
+      `${P.emoji ? `<span>${P.emoji}</span>` : ''}<span>${P.text}</span>`);
     // little pointer from the sticker down toward the head
     this.tip = el('div', `position:absolute;left:-22px;top:-8px;width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;
       border-top:30px solid var(--ink)`);
@@ -40,6 +42,7 @@ TEMPLATES.c95 = {
     ctx.L.front.appendChild(this.wrap);
   },
   frame(ctx) {
+    if (this.off) return;
     const h = this.head(ctx);
     const x = clamp(h.x + this.dx, 230, 850), y = clamp(h.top + this.dy, 200, 1300);
     const p = enter(ctx.t, .1, .45), out = leave(ctx);

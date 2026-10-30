@@ -10,11 +10,13 @@ TEMPLATES.c65 = {
     this.cv.width = 540; this.cv.height = 960;
     this.g = this.cv.getContext('2d');
     this.box.appendChild(this.cv);
-    const to = P.to || 'assets/docs/chat.jpg';
-    this.pic = el('div', 'position:absolute;left:90px;top:400px;width:900px;mix-blend-mode:multiply;transform:rotate(-2deg)');
-    const img = el('img', 'display:block;width:100%');
-    img.src = url(to); pending.push(img.decode().catch(() => {}));
-    this.pic.appendChild(img);
+    // no image: the unfolded paper only carries the handwritten title (or stays blank)
+    this.pic = el('div', `position:absolute;left:90px;top:${P.to ? 400 : 760}px;width:900px;mix-blend-mode:multiply;transform:rotate(-2deg)`);
+    if (P.to) {
+      const img = el('img', 'display:block;width:100%');
+      img.src = url(P.to); pending.push(img.decode().catch(() => {}));
+      this.pic.appendChild(img);
+    }
     if (P.title) this.pic.appendChild(el('div', 'margin-top:40px;text-align:center;font:700 80px "Marker Felt","Chalkboard SE",cursive;color:#222', P.title));
     this.box.appendChild(this.pic);
     ctx.L.front.appendChild(this.box);

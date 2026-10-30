@@ -1,9 +1,11 @@
 // 搜索框打字 · 素材：画面虚化，一个 Google 样式的搜索框出现，光标一个字一个字打出问题，接着出联想词
 TEMPLATES.c16 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.q = P.query || 'why is replying to messages so';
-    this.sugs = P.suggestions || ['why is replying to messages so exhausting', 'why is replying to messages so hard', 'why is replying to messages so draining'];
+    if (!P.query) { this.off = true; return; }   // 必填: no query → render nothing
+    this.q = P.query;
+    this.sugs = P.suggestions || [];
     this.dim = el('div', 'position:absolute;inset:0;background:rgba(255,255,255,.18)');
     ctx.L.back.appendChild(this.dim);
     this.wrap = el('div', `position:absolute;left:60px;right:60px;top:560px;font-family:Arial,'Helvetica Neue',sans-serif`);
@@ -28,6 +30,7 @@ TEMPLATES.c16 = {
     this.typeEnd = Math.min(ctx.d * .6, .5 + this.q.length * .055);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3);
     const b = ease.out(enter(t, 0, .4));
     ctx.base.style.filter = `blur(${b * 22}px)`;

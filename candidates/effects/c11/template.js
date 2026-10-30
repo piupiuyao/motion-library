@@ -5,7 +5,7 @@ TEMPLATES.c11 = {
     this.side = P.side === 'left' ? -1 : 1;   // text side; the person moves the other way
     this.shift = P.shift || 200;
     const keyIdx = new Set(ctx.groups.flatMap(g => g.idx));
-    ctx.L.bg.style.background = 'linear-gradient(90deg, #15151a, #24242a)';
+    ctx.L.bg.style.background = 'linear-gradient(90deg, var(--bg-a), var(--bg-b))';
     const g = this.side > 0 ? '90deg' : '270deg';
     this.shade = el('div', `position:absolute;inset:0;background:linear-gradient(${g}, transparent 38%, rgba(12,12,16,.6) 58%, rgba(12,12,16,.93) 76%)`);
     ctx.L.back.appendChild(this.shade);
@@ -24,7 +24,7 @@ TEMPLATES.c11 = {
     this.items = lines.map(ln => {
       const e = el('div', `height:${this.lh}px;font:${P.size || 66}px/1.2 "Bradley Hand","Noteworthy","Marker Felt",cursive;font-weight:700;color:#fff;
         white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5);text-align:${this.side > 0 ? 'left' : 'right'}`,
-        ln.map(w => keyIdx.has(w.i) ? `<span style="color:#ffd84a">${w.w}</span>` : w.w).join(' '));
+        ln.map(w => keyIdx.has(w.i) ? `<span style="color:var(--accent)">${w.w}</span>` : w.w).join(' '));
       this.col.appendChild(e);
       return { e, s: ln[0].s - .05 };
     });

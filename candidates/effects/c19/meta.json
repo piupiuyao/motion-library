@@ -11,6 +11,6 @@
     "https://www.youtube.com/watch?v=HQvV75kjblY&t=759s"
   ],
   "params": {
-    "groups": "标注组数组 [{title, labels:[两个标签]}]，每组一个手写编号圈，最多建议 3 组，镜头依次平移"
+    "groups": "必填。标注组数组 [{title, labels:[两个标签]}]，每组一个手写编号圈，最多建议 3 组，镜头依次平移；不填不显示"
   }
 }

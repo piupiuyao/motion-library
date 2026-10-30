@@ -10,10 +10,13 @@
     "https://www.youtube.com/watch?v=HQvV75kjblY&t=492s"
   ],
   "params": {
-    "to": "可选。新画面：B-roll 帧或图片路径，默认 broll_inbox",
+    "to": "必填。新画面：B-roll 帧 {\"frames\":…,\"fps\":…,\"count\":…} 或图片路径（用户上传）；没有就不显示",
     "at": "可选。第几秒切到新画面，默认 0.8",
     "back": "可选。false = 不切回人；默认结尾同样方式切回",
     "backAt": "可选。距结尾多少秒切回，默认 1.1",
     "fx": "可选。新画面横向裁切位置 0–1（0 左 1 右），默认 1"
-  }
+  },
+  "needs_assets": [
+    "B-roll视频"
+  ]
 }

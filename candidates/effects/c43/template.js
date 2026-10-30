@@ -1,13 +1,15 @@
 // 左右轮换图文 · 版式：抠出的人站在左或右三分之一，另外三分之二放图；每隔几秒换图，人换边站
 TEMPLATES.c43 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!(P.images || []).length) { this.off = true; return; }   // needs_assets 截图: no pictures → render nothing
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.base.style.opacity = 0;
     ctx.L.bg.style.background = pattern(P.pattern || 'grid');
     ctx.personCv.style.filter = outline(6, '#fff');
-    const imgs = P.images || ['assets/docs/gmail.jpg', 'assets/docs/chat.jpg'];
+    const imgs = P.images;
     const ts = (P.at || []).map(at);
     this.times = imgs.map((_, j) => j === 0 ? 0 : ts[j - 1] != null ? ts[j - 1] : j * ctx.d / imgs.length);
     this.panels = imgs.map((src, j) => {
@@ -21,6 +23,7 @@ TEMPLATES.c43 = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     let k = 0;
     this.times.forEach((t, j) => { if (ctx.t >= t) k = j; });
     const side = j => (j % 2 ? 1 : -1); // person side for segment j: -1 left, 1 right

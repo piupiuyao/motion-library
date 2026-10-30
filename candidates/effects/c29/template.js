@@ -1,12 +1,10 @@
 // 素材环形阵列 · 素材：很多小圆角卡片（截图/B-roll）一张张弹出，围着中间的标题排成一圈，然后镜头拉远露出更多
 TEMPLATES.c29 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const pool = P.images || [
-      'assets/docs/gmail.jpg', 'assets/docs/chat.jpg', 'assets/docs/notify.jpg',
-      ...[40, 70, 100, 130, 160].map(n => `assets/broll_inbox/${String(n).padStart(6, '0')}.jpg`),
-      ...[60, 300, 520, 800, 1000, 1200, 1400].map(n => `work/frames_src/${String(n).padStart(6, '0')}.jpg`),
-    ];
+    const pool = P.images || [];
+    if (!pool.length) { this.off = true; return; }   // needs_assets: no pictures → render nothing
     this.bgc = el('div', 'position:absolute;inset:0;background:radial-gradient(circle at 50% 43%, var(--bg-b), var(--bg-a) 70%)');
     ctx.L.back.appendChild(this.bgc);
     this.cam = el('div', 'position:absolute;inset:0;transform-origin:540px 820px');
@@ -29,11 +27,12 @@ TEMPLATES.c29 = {
       }
     });
     this.title = el('div', `position:absolute;left:240px;width:600px;top:700px;text-align:center;font-size:${P.size || 120}px;color:var(--paper);line-height:.95`,
-      P.text || 'EVERY<br><span style="color:var(--accent)">DAY</span>');
+      P.text || '');
     this.title.className = 'display';
     this.cam.appendChild(this.title);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, d = ctx.d, out = leave(ctx, .3), pin = enter(t, 0, .3);
     this.bgc.style.opacity = Math.min(pin, out);
     this.cam.style.opacity = out;

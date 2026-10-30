@@ -1,11 +1,13 @@
 // 翻牌数字 · 字体：一块机场翻牌板，每格字符快速上下翻片，从左到右逐格停到目标字符/数字，约 1–2 秒
 TEMPLATES.c83 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const w = P.at != null ? ctx.words.find(w => norm(w.w) === norm(P.at)) : null;
     this.t0 = w ? w.s - .15 : (P.t0 != null ? P.t0 : .15);
-    const rows = String(P.text || '2024').toUpperCase().split('|');
+    if (!P.text) { this.off = true; return; } // required: without text the board is not shown
+    const rows = String(P.text).toUpperCase().split('|');
     const cols = Math.max(...rows.map(r => r.length));
     const padded = rows.map(r => { const l = Math.floor((cols - r.length) / 2); return (' '.repeat(l) + r).padEnd(cols, ' '); });
     const cw = Math.min(150, Math.floor(880 / cols)), ch = Math.round(cw * 1.32), gap = Math.round(cw * .09);
@@ -47,6 +49,7 @@ TEMPLATES.c83 = {
     return c.SET[Math.floor(r * c.SET.length)];
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = enter(ctx.t, this.t0 - .3, .3), out = ease.inOut(enter(ctx.t, ctx.d - .35, .3));
     this.board.style.opacity = Math.min(clamp(pin * 2), 1 - out);
     this.board.style.transform = `translateY(${lerp(-40, 0, ease.out(pin)) - out * 30}px)`;

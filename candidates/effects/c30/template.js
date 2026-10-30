@@ -49,7 +49,7 @@ TEMPLATES.c30 = {
       });
     }
     this.title = el('div', `position:absolute;left:30px;right:30px;top:1120px;text-align:center;font-size:${P.size || 150}px;color:var(--accent);
-      -webkit-text-stroke:8px var(--ink);paint-order:stroke fill;line-height:.9`, P.text || 'HEY GUYS!');
+      -webkit-text-stroke:8px var(--ink);paint-order:stroke fill;line-height:.9`, P.text || '');
     this.title.className = 'display';
     ctx.L.front.appendChild(this.title);
     this.fpi = P.framesEach || 3;

@@ -10,7 +10,7 @@
     "https://motionarray.com/stock-motion-graphics/facebook-emoji-reactions-vertical-pack-842485/"
   ],
   "params": {
-    "items": "脸旁弹出的大表情 [{emoji, at}]，at 是原话里的词（最多 4 个位置轮流）",
+    "items": "必填。脸旁弹出的大表情 [{emoji, at}]，at 是原话里的词（最多 4 个位置轮流）；不填不显示",
     "float": "往上飘的表情列表；false 表示不要飘的"
   }
 }

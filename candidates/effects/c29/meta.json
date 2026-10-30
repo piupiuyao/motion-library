@@ -13,8 +13,11 @@
     "https://www.youtube.com/watch?v=MNG51L8ikQw&t=601s"
   ],
   "params": {
-    "images": "卡片用的图片路径数组（会循环使用），默认用素材截图、B-roll 帧和口播帧",
-    "text": "中间标题（可含 HTML，如 <br>）",
+    "images": "必填素材。卡片用的图片路径数组（会循环使用）；不填不显示",
+    "text": "可选。中间标题（可含 HTML，如 <br>）",
     "size": "标题字号，默认 120"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

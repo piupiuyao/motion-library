@@ -12,6 +12,6 @@
     "https://www.freevisuals.net/post/neon-scribble-templates-illuminating-videos-with-glowing-creativity"
   ],
   "params": {
-    "colors": "可选。三条描边的颜色，默认 [\"#ff3fd2\",\"#33e6ff\",\"#9dff3a\"]（粉/蓝/绿）"
+    "colors": "可选。三条描边的颜色，默认 [主题 --accent, --accent-2, 霓虹青 #33e6ff]"
   }
 }

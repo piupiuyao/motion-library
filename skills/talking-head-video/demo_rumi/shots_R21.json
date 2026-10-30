@@ -50,7 +50,24 @@
    "words": "34-42",
    "template": "c29",
    "params": {
-    "text": "RIGHT<br><span style=\"color:var(--accent)\">NOW</span>"
+    "text": "RIGHT<br><span style=\"color:var(--accent)\">NOW</span>",
+    "images": [
+     "assets/docs/gmail.jpg",
+     "assets/docs/chat.jpg",
+     "assets/docs/notify.jpg",
+     "assets/broll_inbox/000040.jpg",
+     "assets/broll_inbox/000070.jpg",
+     "assets/broll_inbox/000100.jpg",
+     "assets/broll_inbox/000130.jpg",
+     "assets/broll_inbox/000160.jpg",
+     "work/frames_src/000060.jpg",
+     "work/frames_src/000300.jpg",
+     "work/frames_src/000520.jpg",
+     "work/frames_src/000800.jpg",
+     "work/frames_src/001000.jpg",
+     "work/frames_src/001200.jpg",
+     "work/frames_src/001400.jpg"
+    ]
    }
   },
   {

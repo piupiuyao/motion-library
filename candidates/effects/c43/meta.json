@@ -13,11 +13,14 @@
     "https://www.opus.pro/blog/editing-aesthetics-dominating-short-form-2026"
   ],
   "params": {
-    "images": "可选。轮换的图片列表，默认 gmail.jpg、chat.jpg",
+    "images": "必填素材。轮换的图片列表；不填不显示",
     "at": "可选。从第二张起每张在哪个词换（人同时换边）（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）；不写就平均分",
     "labels": "可选。每张图下面的说明字",
     "pattern": "可选。背景图案 dots/grid/neon/paper/plain，默认 grid",
     "top": "可选。图卡顶部 y，默认 280",
     "shift": "可选。人往左/右让开多少像素，默认 300"
-  }
+  },
+  "needs_assets": [
+    "截图"
+  ]
 }

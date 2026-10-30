@@ -6,14 +6,16 @@ TEMPLATES.c23 = {
     return w ? w.s : def;
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.image && !P.emoji) { this.off = true; return; }   // 必填: emoji or image; none → render nothing
     const size = P.size || 460;
     this.prop = el('div', `position:absolute;left:0;top:0;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center`);
     if (P.image) {
       const img = el('img', 'max-width:100%;max-height:100%');
       img.src = url(P.image); pending.push(img.decode().catch(() => {}));
       this.prop.appendChild(img);
-    } else this.prop.innerHTML = `<div style="font-size:${size * .82}px;line-height:1;filter:drop-shadow(0 30px 30px rgba(0,0,0,.4))">${P.emoji || '📱'}</div>`;
+    } else this.prop.innerHTML = `<div style="font-size:${size * .82}px;line-height:1;filter:drop-shadow(0 30px 30px rgba(0,0,0,.4))">${P.emoji}</div>`;
     this.puffs = [];
     for (let i = 0; i < 9; i++) {
       const p = el('div', `position:absolute;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;
@@ -35,6 +37,7 @@ TEMPLATES.c23 = {
     return [lerp(x0, x1, v), this.y + Math.sin(u * Math.PI) * -80];
   },
   frame(ctx) {
+    if (this.off) return;
     const u = (ctx.t - this.t0) / this.dur;
     const vis = u > 0 && u < 1;
     this.prop.style.display = vis ? 'flex' : 'none';

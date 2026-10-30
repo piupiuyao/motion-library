@@ -1,10 +1,18 @@
 // 数字滚动计数 · 字体：一个大数字在脸下方飞快往上跳（如 $0 → $42,000,000），滚动时带竖向拖影，停下时弹一下
 TEMPLATES.c02 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.from = P.from || 0; this.to = P.to != null ? P.to : 42000000;
+    // no number given → take the first number she says in this shot; none → render nothing
+    let to = P.to, atW = P.at;
+    if (to == null) {
+      const nw = ctx.words.find(w => /\d/.test(w.w));
+      if (nw) { to = parseFloat(nw.w.replace(/[^\d.]/g, '')); atW = nw.w; }
+    }
+    if (to == null || isNaN(to)) { this.off = true; return; }
+    this.from = P.from || 0; this.to = to;
     const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
-    const hit = P.at && ctx.words.find(w => norm(w.w) === norm(P.at));
+    const hit = atW && ctx.words.find(w => norm(w.w) === norm(atW));
     this.t0 = hit ? hit.s : .25;
     this.dur = P.dur || 1.3;
     const str = Math.round(this.to).toLocaleString('en-US');
@@ -32,6 +40,7 @@ TEMPLATES.c02 = {
     ctx.L.front.appendChild(this.box);
   },
   frame(ctx) {
+    if (this.off) return;
     const p = enter(ctx.t, this.t0, this.dur);
     const k = 1 - Math.pow(1 - p, 3);
     // quantise to frames so it reads as a fast counter, digits changing every frame

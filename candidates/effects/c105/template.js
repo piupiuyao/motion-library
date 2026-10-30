@@ -8,11 +8,13 @@ TEMPLATES.c105 = {
     this.card = el('div', `position:absolute;left:70px;right:70px;top:${P.y || 110}px;padding:34px 40px 40px;border-radius:38px;
       background:${P.light ? '#fff' : '#0b0b0d'};color:${P.light ? '#111' : '#fff'};box-shadow:0 24px 60px rgba(0,0,0,.45);transform-origin:50% 0`);
     const head = el('div', 'display:flex;align-items:center;gap:22px;margin-bottom:22px');
-    head.appendChild(el('div', `width:92px;height:92px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),#3d7bff);
-      display:flex;align-items:center;justify-content:center;font:900 46px var(--font-body);color:#111`, (P.name || 'Monica')[0]));
-    head.appendChild(el('div', 'flex:1', `<div style="font:800 44px var(--font-body)">${P.name || 'Monica'}
+    // avatar + name + handle only when given (no made-up account); avatar letter from the name or handle
+    const who = P.name || (P.handle ? String(P.handle).replace(/^@/, '') : '');
+    if (who) head.appendChild(el('div', `width:92px;height:92px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font:900 46px var(--font-body);color:var(--ink)`, who[0].toUpperCase()));
+    head.appendChild(el('div', 'flex:1', !who ? '' : `<div style="font:800 44px var(--font-body)">${who}
       <span style="display:inline-block;width:34px;height:34px;border-radius:50%;background:#1d9bf0;color:#fff;font:900 24px/34px var(--font-body);text-align:center;vertical-align:4px">✓</span></div>
-      <div style="font:500 34px var(--font-body);color:#8b8b93">${P.handle || '@monica'}</div>`));
+      ${P.handle ? `<div style="font:500 34px var(--font-body);color:#8b8b93">${P.handle}</div>` : ''}`));
     head.appendChild(el('div', 'width:56px;height:56px;flex:none', `<svg viewBox="0 0 24 24" width="56" height="56"><path d="M2.5 3 H8.5 L21.5 21 H15.5 Z" fill="none" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.6" stroke-linejoin="round"/><path d="M20.5 3 L13.6 10.8 M3.6 21 L10.4 13.3" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.8" stroke-linecap="round"/></svg>`));
     this.body = el('div', `font:600 60px/1.22 ${P.mono ? '"SF Mono", Menlo, monospace' : 'var(--font-body)'};min-height:74px;word-break:break-word`);
     this.txt = document.createTextNode('');

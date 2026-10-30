@@ -1,21 +1,25 @@
 // 标题匹配切 · 转场：一串不同的「文章截图」快速切换，同一个关键词一直固定在屏幕同一位置，周围的文章每次都变
 TEMPLATES.c74 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params, n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
-    const word = P.word || 'Replying';
+    // word: required; if missing, take the longest word the speaker says in this shot
+    const word = P.word || (ctx.words.map(w => String(w.w).replace(/[^\p{L}\p{N}']/gu, '')).sort((x, y) => y.length - x.length)[0] || '');
+    if (!word) { this.off = true; return; }
     const w = P.at && ctx.words.find(w => n(w.w) === n(P.at));
     this.T = w ? w.s : (P.start != null ? P.start : .3);
     this.step = P.step || .2;
     const fs = 104, Y = P.y || 700;
+    // neutral fake articles: headline templates that work around any word, no pictures
     const A = P.articles || [
-      { bg: '#f6f1e7', ink: '#1a1a1a', font: 'Georgia, serif', mast: 'THE DAILY LEDGER', tex: 1, l: 'Why', r: 'is the new email', img: 'assets/docs/gmail.jpg' },
-      { bg: '#ffffff', ink: '#111', font: "'Helvetica Neue', Arial, sans-serif", mast: 'tech/weekly', l: 'The hidden cost of', r: 'late at night', img: null },
-      { bg: '#fff4f0', ink: '#3a0d00', font: "'Times New Roman', serif", mast: 'Morning Herald', l: 'Stop', r: 'to everything', img: 'assets/docs/chat.jpg' },
-      { bg: '#eef3ff', ink: '#0b1d4a', font: "'Avenir Next', sans-serif", mast: 'WORK LIFE', l: 'Inbox zero:', r: 'burnout', img: null },
-      { bg: '#1d1d22', ink: '#f2f2f2', font: 'Georgia, serif', mast: 'THE EVENING POST', l: 'Is', r: 'killing your focus?', img: 'assets/docs/notify.jpg' },
-      { bg: '#fffbe6', ink: '#222', font: "'Courier New', monospace", mast: 'inbox digest', tex: 1, l: 'Why we hate', r: 'so much', img: null },
-      { bg: '#f0f7ee', ink: '#0f2a12', font: "'Helvetica Neue', sans-serif", mast: 'Modern Office', l: 'The art of', r: 'well and fast', img: 'assets/docs/gmail.jpg' },
-      { bg: '#ffffff', ink: '#111', font: 'Didot, Georgia, serif', mast: 'QUARTERLY', l: 'AI and the', r: 'fatigue', img: null },
+      { bg: '#f6f1e7', ink: '#1a1a1a', font: 'Georgia, serif', mast: 'THE DAILY LEDGER', tex: 1, l: 'Why', r: 'is the new normal', img: null },
+      { bg: '#ffffff', ink: '#111', font: "'Helvetica Neue', Arial, sans-serif", mast: 'the/weekly', l: 'The hidden cost of', r: '', img: null },
+      { bg: '#fff4f0', ink: '#3a0d00', font: "'Times New Roman', serif", mast: 'Morning Herald', l: 'Stop', r: 'right now', img: null },
+      { bg: '#eef3ff', ink: '#0b1d4a', font: "'Avenir Next', sans-serif", mast: 'MODERN LIFE', l: 'The truth about', r: '', img: null },
+      { bg: '#1d1d22', ink: '#f2f2f2', font: 'Georgia, serif', mast: 'THE EVENING POST', l: 'Is', r: 'holding you back?', img: null },
+      { bg: '#fffbe6', ink: '#222', font: "'Courier New', monospace", mast: 'the digest', tex: 1, l: 'Why we love', r: 'so much', img: null },
+      { bg: '#f0f7ee', ink: '#0f2a12', font: "'Helvetica Neue', sans-serif", mast: 'Modern Times', l: 'The art of', r: 'done right', img: null },
+      { bg: '#ffffff', ink: '#111', font: 'Didot, Georgia, serif', mast: 'QUARTERLY', l: 'The future of', r: '', img: null },
     ];
     this.n = P.count || A.length;
     const lines = (top, k, ink) => `<div style="position:absolute;left:80px;right:80px;top:${top}px;height:${k * 46}px;
@@ -41,6 +45,7 @@ TEMPLATES.c74 = {
     ctx.L.front.appendChild(this.key);
   },
   frame(ctx) {
+    if (this.off) return;
     const dt = ctx.t - this.T, k = Math.floor(dt / this.step), on = dt >= 0 && k < this.n;
     this.arts.forEach((a, j) => {
       a.style.display = on && j === k ? '' : 'none';

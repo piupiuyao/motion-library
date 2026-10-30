@@ -1,9 +1,11 @@
 // 撕纸边画面 · 转场：一段 B-roll 装在一张撕边纸片里（白纸边 + 投影），连同彩色纸面背景一起滑进来，最后滑走回到人
 TEMPLATES.c64 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     this.t0 = P.at != null ? P.at : .6;
-    this.media = P.media || { frames: 'assets/broll_inbox', fps: 30, count: 165, offset: 2.5 };
+    this.media = P.media;
+    if (!this.media) { this.off = true; return; } // material missing: render nothing
     this.bgEl = el('div', `position:absolute;inset:0;background:${P.bg ? pattern(P.bg) : pattern('paper')}`);
     // tint the crumpled paper with the accent colour (multiply keeps the creases visible)
     if (!P.bg) this.bgEl.appendChild(el('div', `position:absolute;inset:0;background:${P.tint || 'var(--accent)'};mix-blend-mode:multiply`));
@@ -34,6 +36,7 @@ TEMPLATES.c64 = {
     ctx.L.front.appendChild(this.piece);
   },
   frame(ctx) {
+    if (this.off) return;
     const t0 = this.t0, outT = ctx.d - .9;
     const bgIn = ease.inOut(enter(ctx.t, t0, .4)), bgOut = ease.inOut(enter(ctx.t, outT + .3, .4));
     this.bgEl.style.clipPath = `inset(0 0 0 ${(1 - bgIn) * 100 + 0}% )`;

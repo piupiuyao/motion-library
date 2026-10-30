@@ -4,10 +4,10 @@ TEMPLATES.c92 = {
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? null : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
-    const wins = P.windows || [{ image: 'assets/docs/gmail.jpg', title: 'Mail' }, { image: 'assets/docs/chat.jpg', title: 'Messages' }, { image: 'assets/docs/notify.jpg', title: 'Notifications' }];
+    const wins = (P.windows || []).filter(w => w && w.image); // material: windows without a screenshot are skipped
     const spots = P.spots || [[60, 110, 600, 430], [420, 210, 600, 430], [200, 330, 640, 450]];
     this.wins = wins.slice(0, 3).map((w, j) => {
-      const [x, y, W, Hh] = spots[j];
+      const [x, y, W, Hh] = spots[j] || [[60, 110, 600, 430], [420, 210, 600, 430], [200, 330, 640, 450]][j];
       const win = el('div', `position:absolute;left:${x}px;top:${y}px;width:${W}px;height:${Hh}px;border-radius:18px;overflow:hidden;background:#fff;
         box-shadow:0 30px 70px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.12);transform-origin:50% 60%`);
       const bar = el('div', `position:absolute;left:0;right:0;top:0;height:50px;background:linear-gradient(#ececec,#dcdcdc);border-bottom:1px solid #c4c4c4;

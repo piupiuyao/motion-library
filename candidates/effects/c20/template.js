@@ -2,9 +2,11 @@
 // 顶上是发光白色大标题，整组慢慢往下移。Kallaway 风格。
 TEMPLATES.c20 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const steps = P.steps || ['New message', 'AI reads it', 'Drafts a reply', 'You hit send'];
-    const col = P.color || '#8b5cff';
+    const steps = P.steps || [];
+    if (!steps.length) { this.off = true; return; }   // 必填: no steps → render nothing
+    const col = P.color || getComputedStyle(document.getElementById('stage')).getPropertyValue('--accent').trim() || '#8b5cff';
     this.bgc = el('div', `position:absolute;inset:0;background:radial-gradient(ellipse 90% 30% at 50% 108%, color-mix(in srgb, ${col} 85%, transparent), transparent 75%),
       radial-gradient(ellipse at 50% 30%, #1c1a24, #09090c 75%)`);
     ctx.L.back.appendChild(this.bgc);
@@ -42,6 +44,7 @@ TEMPLATES.c20 = {
     ctx.L.back.appendChild(this.title);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3), pin = enter(t, 0, .3);
     this.bgc.style.opacity = Math.min(pin, out);
     this.grp.style.opacity = Math.min(pin, out);

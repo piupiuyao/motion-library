@@ -6,7 +6,9 @@ TEMPLATES.c22 = {
     return w ? w.s : def;
   },
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!P.image && !P.emoji) { this.off = true; return; }   // 必填: emoji or image; none → render nothing
     const fx = ctx.focus[0] * 1080, fy = ctx.focus[1] * 1920;
     const side = P.side === 'left' ? -1 : 1;
     this.x = fx + side * (P.dx || 300); this.y = fy + (P.dy || 140);
@@ -18,17 +20,18 @@ TEMPLATES.c22 = {
       this.obj.appendChild(img);
     } else {
       this.obj.innerHTML = `<div style="position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent), transparent 70%)"></div>
-        <div style="position:relative;font-size:${size * .72}px;line-height:1">${P.emoji || '⏰'}</div>`;
+        <div style="position:relative;font-size:${size * .72}px;line-height:1">${P.emoji}</div>`;
     }
     ctx.L.back.appendChild(this.obj);
-    this.label = el('div', `position:absolute;top:${this.y - size / 2 - 140}px;${side > 0 ? 'right:50px' : 'left:50px'};color:#ffe23d;font:900 92px/1 var(--font-body);
+    this.label = el('div', `position:absolute;top:${this.y - size / 2 - 140}px;${side > 0 ? 'right:50px' : 'left:50px'};color:var(--accent);font:900 92px/1 var(--font-body);
       white-space:nowrap;letter-spacing:.01em;text-transform:uppercase;
-      text-shadow:0 0 6px #fff3a0, 0 0 22px #ffcc00, 0 0 48px rgba(255,190,0,.85), 0 6px 0 rgba(60,40,0,.35)`, P.label || 'Hours a day');
+      text-shadow:0 0 6px color-mix(in srgb, var(--accent) 40%, #fff), 0 0 22px var(--accent), 0 0 48px color-mix(in srgb, var(--accent) 85%, transparent), 0 6px 0 rgba(0,0,0,.3)`, P.label || '');
     ctx.L.front.appendChild(this.label);
     this.t0 = this.at(ctx, P.at, .2);
     this.size = size;
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3);
     const q = enter(t, this.t0, .6);
     // rise from below the shoulder line (hidden by the body) up into view

@@ -13,15 +13,15 @@
     "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=1152s"
   ],
   "params": {
-    "number": "卡上往上跳的数字，默认 12453",
-    "label": "卡片标题，默认 Unread messages",
-    "icon": "卡右侧淡淡的大图标：mail / eye / people，或任意 emoji",
+    "number": "必填。卡上往上跳的数字；不填时取这句原话里的第一个数字，都没有就不显示",
+    "label": "可选。卡片标题，不填留空",
+    "icon": "可选。卡右侧淡淡的大图标：mail / eye / people，或任意 emoji；不填没有图标",
     "iconBg": "图标底色 CSS",
     "delta": "数字下方小字，可空",
     "prefix": "数字前缀，如 $",
     "suffix": "数字后缀，如 K",
     "radius": "绕人的半径像素，默认 360",
     "unit": "数字后面的小字单位，如 Views / unread",
-    "color": "玻璃卡主色，默认紫色 #8b5cff"
+    "color": "可选。玻璃卡主色，默认主题色 --accent（字色按卡片亮度自动选黑或白）"
   }
 }

@@ -7,7 +7,9 @@ TEMPLATES.c24 = {
   },
   setup(ctx) {
     const P = ctx.params;
-    const col = P.color || '#ffd84a';
+    const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
+    const col = P.color || cssv('--accent') || '#ffd84a';
+    const core = `color-mix(in srgb, ${col} 15%, #fff)`;
     // hand-drawn ellipse: two slightly different loops
     const loop = (k, ry) => {
       let d = '';
@@ -25,18 +27,18 @@ TEMPLATES.c24 = {
           <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-opacity=".16" stroke-width="64" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
           <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-opacity=".32" stroke-width="34" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
           <path class="ln" d="${loop(0, 46)}" fill="none" stroke="${col}" stroke-width="15" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
-          <path class="ln" d="${loop(0, 46)}" fill="none" stroke="#fff8d8" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+          <path class="ln" d="${loop(0, 46)}" fill="none" style="stroke:${core}" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
         </g></svg>`;
       return w;
     };
     this.back = mk('b'); this.front = mk('f');
     ctx.L.back.appendChild(this.back); ctx.L.front.appendChild(this.front);
     this.glow = el('div', `position:absolute;left:0;top:0;width:700px;height:700px;margin:-350px 0 0 -350px;border-radius:50%;
-      background:radial-gradient(circle, rgba(255,230,140,.38), transparent 62%)`);
+      background:radial-gradient(circle, color-mix(in srgb, ${col} 38%, transparent), transparent 62%)`);
     ctx.L.back.insertBefore(this.glow, this.back);
     this.lines = [...this.back.querySelectorAll('.ln'), ...this.front.querySelectorAll('.ln')];
     this.sparks = [0, 1, 2, 3, 4].map(k => {
-      const s = el('div', `position:absolute;left:0;top:0;font-size:${36 + k * 6}px;color:#fff6c8;text-shadow:0 0 12px ${col}`, '✦');
+      const s = el('div', `position:absolute;left:0;top:0;font-size:${36 + k * 6}px;color:${core};text-shadow:0 0 12px ${col}`, '✦');
       ctx.L.front.appendChild(s); return s;
     });
     this.t0 = this.at(ctx, P.at, .2);

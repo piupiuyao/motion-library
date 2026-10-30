@@ -1,7 +1,9 @@
 // 虚化压暗发光卡 · 版式：口播画面虚化变暗，四周弹出深色圆角发光卡（渐变、发光边、发光字），讲完画面变回清楚
 TEMPLATES.c46 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
+    if (!(P.cards || []).length) { this.off = true; return; }   // 必填: no cards → render nothing
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     // cheap blur: the frame drawn into a tiny canvas and scaled back up
@@ -26,6 +28,7 @@ TEMPLATES.c46 = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = ease.out(enter(ctx.t, .1, .4)), pout = ease.inOut(enter(ctx.t, ctx.d - .5, .45));
     const k = pin * (1 - pout);
     const img = ctx.baseImg, cx = this.cx, cv = this.cv;

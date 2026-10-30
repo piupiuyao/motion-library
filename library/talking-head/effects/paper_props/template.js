@@ -1,6 +1,8 @@
 // 背景纸 + 分层道具 · 版式：背景换成皱纸，人抠出加白描边，图片卡片从两边插进来，一半在人后、一半在人前
 TEMPLATES.paper_props = {
   setup(ctx) {
+    this.off = !(ctx.params.images || []).length; // material missing: render nothing
+    if (this.off) return;
     const P = ctx.params;
     ctx.L.bg.style.background = pattern('paper');
     ctx.base.style.opacity = 0;
@@ -30,6 +32,7 @@ TEMPLATES.paper_props = {
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const p = ease.out(enter(ctx.t, 0, .35));
     ctx.L.bg.style.opacity = clamp(p * 2);
     ctx.person.style.transformOrigin = '50% 100%';

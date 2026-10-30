@@ -1,6 +1,8 @@
 // 资料飞入 · 素材：原画面虚化做底，截图卡片一张张从下方飞入叠放，人缩在左上小圆窗
 TEMPLATES.doc_fly = {
   setup(ctx) {
+    this.off = !(ctx.params.images || []).length; // material missing: render nothing
+    if (this.off) return;
     ctx.base.style.filter = 'blur(22px) brightness(.45)';
     const imgs = ctx.params.images || [];
     const at = (ctx.params.at || []).map(a => (ctx.words.find(w => w.w.toLowerCase().replace(/[^\w]/g, '') === a.toLowerCase()) || {}).s);
@@ -20,6 +22,7 @@ TEMPLATES.doc_fly = {
     ctx.L.front.appendChild(this.pip);
   },
   frame(ctx) {
+    if (this.off) return;
     const out = leave(ctx);
     for (const it of this.cards) {
       const p = enter(ctx.t, it.s, .45);

@@ -1,7 +1,7 @@
 // 变焦模糊转场 · 转场：画面猛地往中间冲、带强烈的放射模糊，下一个画面从模糊里冲出来对上焦
 // next-scene builder shared by batch-C transitions: params.to = image path | {frames, fps, count} | {title, sub}
 function candC_scene(to) {
-  to = to || { title: 'PART 2', sub: 'Why replying is hard' };
+  to = to || {}; // missing: a plain accent-coloured card, no text
   const box = el('div', 'position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden');
   let tick = () => {};
   if (typeof to === 'string') {

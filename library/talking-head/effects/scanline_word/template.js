@@ -1,6 +1,8 @@
 // 扫描线质感 + 大字 · 镜头特效：画面压暗加扫描线和噪点闪烁，大字按她说的词一个个跳出来，带红蓝错位
 TEMPLATES.scanline_word = {
   setup(ctx) {
+    this.off = !(ctx.params.words || ctx.params.keywords || []).length; // no words given: render nothing
+    if (this.off) return;
     const P = ctx.params;
     this.lines = el('div', `position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(0,0,0,.32) 0 3px, transparent 3px 7px);mix-blend-mode:multiply`);
     this.band = el('div', 'position:absolute;left:0;right:0;height:180px;background:linear-gradient(180deg, transparent, rgba(255,255,255,.10), transparent)');
@@ -20,6 +22,7 @@ TEMPLATES.scanline_word = {
     });
   },
   frame(ctx) {
+    if (this.off) return;
     const f = Math.floor(ctx.t * 30);
     const flick = .9 + ((f * 7919) % 13) / 100;
     ctx.baseImg.style.filter = `brightness(${.62 * flick}) contrast(1.25) saturate(.55)`;

@@ -10,7 +10,7 @@
     "https://elements.envato.com/how-to-make-a-google-search-KT8DKRJ"
   ],
   "params": {
-    "query": "搜索框里打出的问题",
-    "suggestions": "打完后弹出的联想词列表（3 条左右，最好以 query 开头，后半段会加粗）"
+    "query": "必填。搜索框里打出的问题；不填不显示",
+    "suggestions": "可选。打完后弹出的联想词列表（3 条左右，最好以 query 开头，后半段会加粗）"
   }
 }

@@ -1,4 +1,4 @@
-// 圆环倒计时 · 字体：细环倒计时，灰色底环上一圈亮蓝环随时间被吃掉，中间数字递减，走完正好到 0
+// 圆环倒计时 · 字体：细环倒计时，灰色底环上一圈主题色亮环随时间被吃掉，中间数字递减，走完正好到 0
 TEMPLATES.c84 = {
   setup(ctx) {
     const P = ctx.params;
@@ -10,11 +10,11 @@ TEMPLATES.c84 = {
     const [x, y] = P.pos || [770, 330];
     this.box = el('div', `position:absolute;left:${x - D / 2}px;top:${y - D / 2}px;width:${D}px;height:${D}px;transform-origin:50% 50%`);
     this.box.innerHTML = `<svg width="${D}" height="${D}" viewBox="0 0 ${D} ${D}" style="position:absolute;inset:0;overflow:visible">
-      <defs><linearGradient id="c84g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d2ff"/><stop offset="1" stop-color="#1667ff"/></linearGradient></defs>
+      <defs><linearGradient id="c84g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--accent) 75%, #fff)"/><stop offset="1" style="stop-color:var(--accent)"/></linearGradient></defs>
       <circle cx="${D / 2}" cy="${D / 2}" r="${R + 20}" fill="rgba(8,10,16,.55)"/>
       <circle cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="rgba(120,124,135,.55)" stroke-width="34"/>
       <circle class="arc" cx="${D / 2}" cy="${D / 2}" r="${R}" fill="none" stroke="url(#c84g)" stroke-width="34" stroke-linecap="butt"
-        transform="rotate(-90 ${D / 2} ${D / 2})" stroke-dasharray="${C} ${C}" style="filter:drop-shadow(0 0 10px rgba(20,140,255,.9))"/>
+        transform="rotate(-90 ${D / 2} ${D / 2})" stroke-dasharray="${C} ${C}" style="filter:drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 90%, transparent))"/>
       <g class="num"></g></svg>`;
     ctx.L.front.appendChild(this.box);
     this.arc = this.box.querySelector('.arc');

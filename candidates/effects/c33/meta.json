@@ -12,8 +12,8 @@
     "https://aescripts.com/learn/how-johnny-harris-makes-maps/"
   ],
   "params": {
-    "from": "起点地名标签",
-    "to": "终点地名标签（路线画完时弹出）",
+    "from": "可选。起点地名标签，不填不显示标签",
+    "to": "可选。终点地名标签（路线画完时弹出），不填不显示标签",
     "seed": "地图随机形状种子，默认 7"
   }
 }

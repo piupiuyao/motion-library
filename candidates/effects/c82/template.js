@@ -48,7 +48,10 @@ TEMPLATES.c82 = {
       if (cur.length >= per || /[.!?,]$/.test(w.w) || j === ws.length - 1) { this.groups.push(cur); cur = []; }
     });
     const size = P.size || 104;
-    this.hot = P.colors || ['#ffe600', '#3dff5a'];
+    // default: theme accent, alternating with accent-2 unless accent-2 is (near) white like the normal words
+    const css = getComputedStyle(document.getElementById('stage')), a2 = css.getPropertyValue('--accent-2').trim().toLowerCase();
+    const whiteish = /^#(f{3}|f{6}|fff{5}f?)$/.test(a2) || /^(white|rgb\(255, 255, 255\))$/.test(a2) || /^#f[0-9a-f]f[0-9a-f]f[0-9a-f]$/.test(a2);
+    this.hot = P.colors || (whiteish ? ['var(--accent)'] : ['var(--accent)', 'var(--accent-2)']);
     this.box = el('div', `position:absolute;left:40px;right:40px;top:${P.y || 1080}px;height:300px`);
     ctx.L.front.appendChild(this.box);
     this.groups = this.groups.map((g, k) => {

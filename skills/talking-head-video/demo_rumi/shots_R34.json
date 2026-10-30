@@ -1,5 +1,5 @@
 {"skin": "clean", "shots": [
   {"words": "28-33", "template": "c92", "params": {"windows": [{"image": "assets/docs/gmail.jpg", "title": "Mail", "at": "email"}, {"image": "assets/docs/chat.jpg", "title": "WhatsApp", "at": "WhatsApp"}, {"image": "assets/docs/notify.jpg", "title": "Slack", "at": "Slack"}], "spots": [[40, 90, 600, 410], [440, 170, 600, 410], [220, 250, 640, 420]]}},
-  {"words": "43-48", "template": "c68", "params": {"at": 0.4, "backAt": 0.9}},
+  {"words": "43-48", "template": "c68", "params": {"at": 0.4, "backAt": 0.9, "to": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}},
   {"words": "49-68", "template": "c49", "params": {"steps": 3, "from": 0.02, "to": 0.98, "labels": ["Batch", "Short", "Mute"]}}
 ]}

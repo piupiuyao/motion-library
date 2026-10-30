@@ -1,6 +1,8 @@
 // 文字夹层 · 字体：超大字放在人身后、头的高度，人像压在字上，画面出纵深
 TEMPLATES.text_sandwich = {
   setup(ctx) {
+    this.off = !ctx.params.text; // required text missing: render nothing
+    if (this.off) return;
     const txt = (ctx.params.text || '').toUpperCase();
     const size = Math.min(330, Math.floor(980 / (Math.max(txt.length, 3) * .78)));
     const y = ctx.params.y ?? Math.round(ctx.focus[1] * 1920 - size * .95);
@@ -15,6 +17,7 @@ TEMPLATES.text_sandwich = {
     }
   },
   frame(ctx) {
+    if (this.off) return;
     const p = enter(ctx.t, 0, .55), out = leave(ctx);
     this.big.style.opacity = Math.min(clamp(p * 3), out);
     this.big.style.transform = `translateX(${lerp(420, 0, ease.out(p))}px) scale(${lerp(1.25, 1, ease.out(p))})`;

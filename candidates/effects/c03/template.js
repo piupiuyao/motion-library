@@ -1,6 +1,7 @@
 // 盖章印戳 · 字体：一个木头印章从上方斜着砸下来再抬走，留下红色做旧印文（上下粗细双横线），画面震一下
 TEMPLATES.c03 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
     const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
     const hit = P.at && ctx.words.find(w => norm(w.w) === norm(P.at));
@@ -9,7 +10,8 @@ TEMPLATES.c03 = {
     const noise = `<svg xmlns='http://www.w3.org/2000/svg' width='700' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.5' numOctaves='3' seed='4'/>`
       + `<feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.2 2.45'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>`;
     const m = `url("data:image/svg+xml;utf8,${noise.replace(/</g, '%3C').replace(/>/g, '%3E').replace(/'/g, '%27')}")`;
-    const txt = P.text || 'APPROVED';
+    const txt = P.text;
+    if (!txt) { this.off = true; return; }   // 必填: no stamp text → render nothing
     const size = Math.min(180, Math.floor(1250 / (txt.length * .62 + 1)));
     this.rot = P.rotate != null ? P.rotate : -12;
     this.y = P.y || 1190;
@@ -36,6 +38,7 @@ TEMPLATES.c03 = {
     ctx.L.front.appendChild(this.stamp);
   },
   frame(ctx) {
+    if (this.off) return;
     const dt = ctx.t - this.t0;
     // stamp (top view): drops in big = close to the lens (-.25..0), presses (0..0.12), lifts off towards the lens and away (0.12..0.5)
     const fall = ease.inOut(clamp((dt + .25) / .25));

@@ -1,8 +1,10 @@
 // 文字绕人旋转 · 字体：一圈文字像腰带一样水平绕着人转，前半圈在人前面、后半圈被人身体挡住，带透视（前大后小、后面稍暗、背面镜像）
 TEMPLATES.c88 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    let txt = String(P.text || 'REPETITIVE • TIME-CONSUMING • ').toUpperCase();
+    if (!P.text) { this.off = true; return; } // required: not shown without text
+    let txt = String(P.text).toUpperCase();
     this.size = P.size || 74;
     this.cx = P.cx || 540; this.cy = P.y || 985;
     this.rx = P.rx || 450; this.ry = P.ry || 110;
@@ -27,6 +29,7 @@ TEMPLATES.c88 = {
     this.color = P.color || '#ffffff';
   },
   frame(ctx) {
+    if (this.off) return;
     const pin = ease.out(enter(ctx.t, 0, .4)), out = leave(ctx, .3);
     const k = Math.min(pin, out);
     const rot = -ctx.t / this.period * Math.PI * 2;

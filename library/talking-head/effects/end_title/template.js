@@ -1,6 +1,8 @@
 // 结尾标题卡 · 片头片尾：画面缩进下方的圆角框，上方大标题 + 一行小字，复述主题
 TEMPLATES.end_title = {
   setup(ctx) {
+    this.off = !ctx.params.title; // required title missing: render nothing
+    if (this.off) return;
     const P = ctx.params;
     ctx.L.bg.style.background = 'linear-gradient(180deg, var(--bg-b), var(--bg-a))';
     this.title = el('div', `position:absolute;left:80px;right:80px;top:260px;text-align:center;color:var(--paper);font-size:${P.size || 120}px`, P.title || '');
@@ -13,6 +15,7 @@ TEMPLATES.end_title = {
     this.captions = TL.captions;
   },
   frame(ctx) {
+    if (this.off) return;
     const p = ease.inOut(enter(ctx.t, 0, .5));
     ctx.base.style.transformOrigin = '50% 100%';
     ctx.base.style.transform = `translateY(${lerp(0, -170, p)}px) scale(${lerp(ctx.seg.zoom || 1, .56, p)})`;

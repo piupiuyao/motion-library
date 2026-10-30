@@ -17,7 +17,7 @@ TEMPLATES.c69 = {
         l.className = 'display'; root.appendChild(l);
       }
     } else {
-      root.style.background = 'radial-gradient(ellipse at 50% 35%, #3a2a22, #121014 75%)';
+      root.style.background = 'radial-gradient(ellipse at 50% 35%, var(--bg-b), var(--bg-a) 75%)';
       const l = el('div', 'position:absolute;left:70px;right:70px;top:560px;text-align:center;font-size:150px;color:var(--paper);text-transform:uppercase', P.title || 'Next up');
       l.className = 'display'; root.appendChild(l);
       if (P.subtitle) {

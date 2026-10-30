@@ -1,22 +1,22 @@
 {
- "id": "c95",
- "name": "文字跟着脸走",
- "video_type": "talking-head",
- "category": "镜头特效",
- "needs": [
-  "抠像"
- ],
- "what": "一行文字/贴纸（如「100K subscribers」）钉在人脸旁边，人左右上下晃动时文字跟着同样移动，像粘在头上；不跟着缩放旋转，只跟位置。",
- "use": "给人加标签、身份、情绪标注；人动得多的口播",
- "sources": [
-  "https://www.youtube.com/watch?v=KVws1GVHoA0&t=576s",
-  "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=591s"
- ],
- "ref_moment": "Matt Loui 9:36–10:20（Tracking）；Patrik Key 9:51–10:50（Tracking Subject）",
- "params": {
-  "text": "贴纸文字，默认 so drained",
-  "emoji": "贴纸前的 emoji，默认 😮‍💨，空字符串=不要",
-  "dx": "贴纸相对头顶的横向偏移（像素），默认 200",
-  "dy": "贴纸相对头顶的纵向偏移（像素），默认 30"
- }
+  "id": "c95",
+  "name": "文字跟着脸走",
+  "video_type": "talking-head",
+  "category": "镜头特效",
+  "needs": [
+    "抠像"
+  ],
+  "what": "一行文字/贴纸（如「100K subscribers」）钉在人脸旁边，人左右上下晃动时文字跟着同样移动，像粘在头上；不跟着缩放旋转，只跟位置。",
+  "use": "给人加标签、身份、情绪标注；人动得多的口播",
+  "sources": [
+    "https://www.youtube.com/watch?v=KVws1GVHoA0&t=576s",
+    "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=591s"
+  ],
+  "ref_moment": "Matt Loui 9:36–10:20（Tracking）；Patrik Key 9:51–10:50（Tracking Subject）",
+  "params": {
+    "text": "必填。贴纸文字（原话里的词）；不写就不显示",
+    "emoji": "可选。贴纸前的 emoji；不写就不要",
+    "dx": "贴纸相对头顶的横向偏移（像素），默认 200",
+    "dy": "贴纸相对头顶的纵向偏移（像素），默认 30"
+  }
 }

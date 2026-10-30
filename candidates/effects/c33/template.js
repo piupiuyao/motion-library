@@ -41,25 +41,28 @@ TEMPLATES.c33 = {
     // small place names
     [['Northport', 400, 520], ['Ellis Bay', 1080, 1240], ['Cardin', 300, 1800], ['Vale', 1150, 480]].forEach(([n, x, y]) =>
       this.map.appendChild(el('div', `position:absolute;left:${x}px;top:${y}px;font:italic 34px Georgia,serif;color:rgba(70,50,30,.75);letter-spacing:.08em`, n)));
+    const cssv = n => getComputedStyle(document.getElementById('stage')).getPropertyValue(n).trim();
+    const route = `color-mix(in srgb, ${cssv('--accent') || '#c0281e'} 85%, #000)`;
     const A = [560, 760], B = [1040, 1500];
     const d = `M${A[0]} ${A[1]} C ${A[0] + 380} ${A[1] + 120}, ${B[0] - 420} ${B[1] - 380}, ${B[0]} ${B[1]}`;
     const sv = el('div', 'position:absolute;inset:0');
     sv.innerHTML = `<svg width="${Wd}" height="${Ht}" style="position:absolute;inset:0">
       <path d="${d}" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="14" stroke-linecap="round" transform="translate(4 6)" pathLength="1" stroke-dasharray="1 1"/>
-      <path d="${d}" fill="none" stroke="#c0281e" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
-      <circle cx="${A[0]}" cy="${A[1]}" r="20" fill="#fff" stroke="#c0281e" stroke-width="8"/></svg>`;
+      <path d="${d}" fill="none" style="stroke:${route}" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
+      <circle cx="${A[0]}" cy="${A[1]}" r="20" fill="#fff" style="stroke:${route}" stroke-width="8"/></svg>`;
     this.map.appendChild(sv);
     this.route = [...sv.querySelectorAll('path')];
     const tag = (txt, [x, y], big) => {
+      if (!txt) return null;   // no place label given → no tag
       const e = el('div', `position:absolute;left:${x}px;top:${y}px;transform-origin:0 100%`,
         `<div style="position:absolute;left:-26px;top:-70px;width:52px;height:70px">
-           <svg width="52" height="70" viewBox="0 0 52 70"><path d="M26 68 C26 68 2 40 2 25 A24 24 0 0 1 50 25 C50 40 26 68 26 68Z" fill="#c0281e" stroke="#fff" stroke-width="4"/><circle cx="26" cy="25" r="9" fill="#fff"/></svg></div>
+           <svg width="52" height="70" viewBox="0 0 52 70"><path d="M26 68 C26 68 2 40 2 25 A24 24 0 0 1 50 25 C50 40 26 68 26 68Z" style="fill:${route}" stroke="#fff" stroke-width="4"/><circle cx="26" cy="25" r="9" fill="#fff"/></svg></div>
          <div style="position:absolute;${big ? 'right:20px' : 'left:40px'};top:${big ? -150 : -120}px;white-space:nowrap;padding:14px 30px;background:#fffaf0;border:4px solid #2b2016;border-radius:12px;
            font:800 ${big ? 66 : 48}px var(--font-body);color:#2b2016;box-shadow:6px 6px 0 #2b2016">${txt}</div>`);
       this.map.appendChild(e); return e;
     };
-    this.ta = tag(P.from || 'A few hours', A, false);
-    this.tb = tag(P.to || 'A few days', B, true);
+    this.ta = tag(P.from, A, false);
+    this.tb = tag(P.to, B, true);
     ctx.L.back.appendChild(this.map);
     this.A = A; this.B = B;
   },
@@ -75,7 +78,7 @@ TEMPLATES.c33 = {
     this.map.style.transformOrigin = '0 0';
     this.map.style.transform = `translate(${540 - cx * z}px,${820 - cy * z}px) scale(${z})`;
     const qa = enter(t, .2, .35), qb = enter(t, .5 + Math.max(1, ctx.d - 1.6) - .1, .4);
-    this.ta.style.transform = `scale(${ease.pop(qa)})`; this.ta.style.opacity = qa > 0 ? 1 : 0;
-    this.tb.style.transform = `scale(${ease.pop(qb)})`; this.tb.style.opacity = qb > 0 ? 1 : 0;
+    if (this.ta) { this.ta.style.transform = `scale(${ease.pop(qa)})`; this.ta.style.opacity = qa > 0 ? 1 : 0; }
+    if (this.tb) { this.tb.style.transform = `scale(${ease.pop(qb)})`; this.tb.style.opacity = qb > 0 ? 1 : 0; }
   },
 };

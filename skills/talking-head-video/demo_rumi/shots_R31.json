@@ -4,7 +4,7 @@
   {"words": "28-42", "template": "c41", "params": {"items": [{"icon": "📧", "text": "Email", "at": "email", "color": "#ffe1e1"}, {"icon": "💬", "text": "WhatsApp", "at": "WhatsApp", "color": "#d9f7d9"}, {"icon": "#️⃣", "text": "Slack", "at": "Slack", "color": "#efe0ff"}, {"icon": "✈️", "text": "Telegram", "at": "Telegram", "color": "#dbeeff"}]}},
   {"words": "43-48", "template": "c63", "params": {"at": 0.7, "to": {"title": "3 THINGS", "sub": "that actually work"}}},
   {"words": "49-68", "template": "c39", "params": {"title": "3 things", "items": [{"text": "Reply in batches", "at": 50}, {"text": "Keep answers short", "at": 57}, {"text": "Mute notifications", "at": 62}], "shift": 340, "width": 500}},
-  {"words": "69-81", "template": "c36", "params": {"label": "4 HOURS → 40 MIN"}},
+  {"words": "69-81", "template": "c36", "params": {"label": "4 HOURS → 40 MIN", "media": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}},
   {"words": "82-94", "template": "c37", "params": {"media": "assets/docs/chat.jpg", "title": "Sarah texted me…"}},
   {"words": "95-101", "template": "c47", "params": {"start": 2532}},
   {"words": "105-117", "template": "c101", "params": {"keyword": "system", "lead": "Comment", "handle": "@rumi", "avatar": "R", "sub": "I'll send my template", "y": 1150}}

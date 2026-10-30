@@ -1,12 +1,10 @@
 // 引线标注图解 · 素材：手写数字套在画好的圆圈里，会动的虚线连到几个标签，镜头从一组标注平移到下一组
 TEMPLATES.c19 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    const groups = P.groups || [
-      { title: 'Emotionally draining', labels: ['tone', 'guilt'] },
-      { title: 'Every day', labels: ['email', 'WhatsApp'] },
-      { title: 'Replying', labels: ['typing', 'deciding'] },
-    ];
+    const groups = (P.groups || []).map(g => ({ title: g.title || '', labels: g.labels || [] }));
+    if (!groups.length) { this.off = true; return; }   // 必填: no groups → render nothing
     this.n = groups.length;
     const hand = "'Marker Felt','Chalkboard SE','Bradley Hand',cursive";
     this.bgc = el('div', `position:absolute;inset:0;background:repeating-linear-gradient(0deg, transparent 0 68px, rgba(60,110,200,.16) 68px 71px), #f6f2e7`);
@@ -49,6 +47,7 @@ TEMPLATES.c19 = {
     this.seg = (ctx.d - .2) / this.n;
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, out = leave(ctx, .3), pin = enter(t, 0, .3);
     this.bgc.style.opacity = Math.min(pin, out);
     this.strip.style.opacity = Math.min(pin, out);

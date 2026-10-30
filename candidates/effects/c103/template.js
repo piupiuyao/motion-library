@@ -1,8 +1,10 @@
 // 透视斜放屏幕 · 素材：一块视频/截图像立着的平板斜放在人旁边（绕竖轴转约 30°，有透视、圆角、投影），从扁平转到斜角入场，缓慢上下漂浮
 TEMPLATES.c103 = {
   setup(ctx) {
+    this.off = false;
     const P = ctx.params;
-    this.media = P.media || 'assets/docs/gmail.jpg';
+    this.media = P.media;
+    if (!this.media) { this.off = true; return; } // material missing: render nothing
     this.angle = P.angle ?? 36;
     this.side = P.side || 'left';
     const w = P.w || 570, h = P.h || 550;
@@ -19,6 +21,7 @@ TEMPLATES.c103 = {
     ctx.L.front.appendChild(this.scene);
   },
   frame(ctx) {
+    if (this.off) return;
     const t = ctx.t, p = enter(t, .1, .7), out = leave(ctx, .3);
     const s = this.side === 'left' ? 1 : -1;
     const ang = lerp(0, this.angle, ease.inOut(enter(t, .35, .7))) * s;
