@@ -6,7 +6,7 @@ Prints every broken rule and exits 1 if any; the planner fixes the shot list and
 Effect facts (weight / group / covers_face / zone / needs_assets) come from each effect's meta.json.
 Uploaded material lives in PROJECT/uploads/<截图|照片|B-roll视频|logo>/.
 """
-import argparse, json, os, sys
+import argparse, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -59,6 +59,9 @@ def check(proj, shots_file, level):
         if g and g in seen_g and seen_g[g] != t:
             errs.append(f'同一组「{g}」用了两个：{seen_g[g]} 和 {t}')
         seen_g.setdefault(g, t)
+        mins = re.findall(r'[\d.]+', m.get('duration', ''))
+        if mins and s['end'] - s['start'] < float(mins[0]) - .05:
+            errs.append(f"{t} 只有 {s['end'] - s['start']:.1f}s，它至少要 {mins[0]}s 才演得完 → words 往后多包一句")
         for a in m.get('needs_assets', []):
             if a not in have:
                 errs.append(f'{t} 需要素材「{a}」，但 uploads/{a}/ 里没有 → 换一个不要素材的')
