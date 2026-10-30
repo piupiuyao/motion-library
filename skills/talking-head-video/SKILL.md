@@ -15,20 +15,27 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
 
 ## 一键成片（默认）
 
-用户给一条口播原片（可选：品牌链接、上传素材、档位），不用再逐步确认，直接出片：
+用户给一条口播原片（可选：品牌链接、上传素材、档位），不用逐步确认，像剪辑师一样**先看懂、再导演**，直接出片。
+**所有动效只从库里来**（`../../library/talking-head/effects/`），不现写新动效；创意体现在挑哪几个、怎么组合、参数怎么填、放在哪一刻。
 
-```
-python3 scripts/prep.py PROJECT [--lang en] [--brand https://品牌官网] [--level 极简|适中|丰富]
-# → 读它打印的台词、数量上限、颜色、能用的动效，写 PROJECT/shots.json（按下面「怎么挑」）
-python3 scripts/check_plan.py PROJECT --level 适中      # 有 ✗ 就改 shots.json 再跑，直到「通过」
-python3 scripts/render.py PROJECT                         # → out.mp4 + out_镜头清单.md
-```
+1. **准备**：`python3 scripts/prep.py PROJECT [--lang en] [--brand https://品牌官网] [--level 极简|适中|丰富]`
+   → 打印台词（词编号 + 秒数）、数量上限、颜色、能用的动效。
+2. **看片**：抽 6–8 帧看画面（`ffmpeg -ss 秒 -i PROJECT/raw.mp4 -frames:v 1 -vf scale=270:-2 x.jpg`，拼成一张看）。记下：
+   这个人是什么气质（平静 / 高能 / 搞笑 / 专业）、在什么环境、画面哪里有空位（图形放哪不挡脸、不撞麦克风或手）、身上和背景的颜色。
+3. **写创意简报** `PROJECT/brief.md`：一句话核心（全片要让人记住什么）、情绪走向、整体气质（决定用哪一类动效：平静的人不用震屏和漫画，高能的人可以）、
+   颜色（theme.json 取到的，或按题材定）、然后逐个时刻写「用库里哪个 + 为什么」。同一条视频的动效要像一家人：气质一致，不东拼西凑。
+4. **导演**：按简报写 `PROJECT/shots.json`，每个镜头加 `"why": "为什么这么放"`。参数按这条视频调：位置避开空位以外的地方、字号、文字用原话。
+   故意打破间隔规则时写 `"why_break": "原因"`。
+5. **检查**：`python3 scripts/check_plan.py PROJECT --level 适中`，有 ✗ 就改，直到「通过」。
+6. **自己回看挑刺**：`python3 scripts/render.py PROJECT --stills 秒,秒,…`（每个动效的开始、中间各一张），拼起来看。像观众一样挑：
+   挡脸了吗？字看得清吗？和这个人的气质搭吗？是不是在套路（和上一条视频一模一样）？哪里太挤？改了再看，直到满意。把改了什么记在 brief.md 末尾。
+7. **出片**：`python3 scripts/render.py PROJECT` → `out.mp4` + `out_镜头清单.md`。
 
-- 原片放 `PROJECT/raw.mp4`。素材放 `PROJECT/uploads/截图|照片|B-roll视频|logo/`（prep 会建好这几个文件夹）。**没传素材，需要素材的动效就不用**，prep 已经把它们去掉了。
-- 颜色：`--brand` 给了就从官网取；没给就从视频里取（衣服/背景）；都取不到用黄色。写在 `PROJECT/theme.json`，出片自动用。
-- 用户说「先给我看看」时，出片前先跑 `render.py PROJECT --stills 秒,秒` 给几张定格图。
+- 原片放 `PROJECT/raw.mp4`。素材放 `PROJECT/uploads/截图|照片|B-roll视频|logo/`。**没传素材，需要素材的动效就不用**。
+- 颜色：`--brand` 给了就从官网取；没给就从视频里取；都取不到，在简报里按题材定，写进 shots.json 的 `"theme": {"accent": "#…"}`。
+- 用户说「先给我看看」时，第 6 步的定格图和简报先给用户看，确认了再出片。
 
-## 怎么挑（依据：research/auto-edit-rules-draft.md，实测 21 条爆款 + 约 40 篇教程/工具做法）
+## 怎么挑：护栏（依据：research/auto-edit-rules-draft.md，实测 21 条爆款 + 约 40 篇教程/工具做法）
 
 1. **开头 3 秒**放一个钩子：钩子句里最关键的短语做大标题（用途「开场钩子」），停 3–5 秒。
 2. **只给这几类句子配动效**，按优先级：数字 → 清单步骤 → 对比前后 → 定义概念 → 金句观点 → 引用证据 → 提到具体东西 → 结尾号召。普通叙述句不配；10–20 秒没有动效是正常的。

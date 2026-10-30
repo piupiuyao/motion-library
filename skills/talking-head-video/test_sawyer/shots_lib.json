@@ -1,0 +1,101 @@
+{
+ "skin": "clean",
+ "theme": {
+  "accent": "#3ddc84"
+ },
+ "shots": [
+  {
+   "words": "0-9",
+   "purpose": "开场钩子",
+   "template": "native_textbox",
+   "why": "他是平静聊天的播客感，用 Instagram 原生白框字开场，像朋友随手发的提醒，而不是黑白大字喊口号",
+   "params": {
+    "text": "You're paying for 4 subscriptions you forgot about",
+    "y": 170,
+    "size": 58
+   }
+  },
+  {
+   "words": "23-35",
+   "purpose": "提到具体东西",
+   "template": "icon_cards",
+   "why": "说到哪个订阅，哪张卡就弹到他身边；卡片围在四周不挡脸。Disney+ 库里没有 logo，就不出这张卡",
+   "params": {
+    "items": [
+     {
+      "text": "Netflix",
+      "at": "Netflix"
+     },
+     {
+      "text": "Spotify",
+      "at": "Spotify"
+     },
+     {
+      "text": "Disney+",
+      "at": "Disney",
+      "icon": "Disney"
+     },
+     {
+      "text": "Gym",
+      "at": "gym"
+     }
+    ]
+   }
+  },
+  {
+   "words": "40-72",
+   "purpose": "清单步骤",
+   "template": "checklist",
+   "why": "三个动作是全片的干货，用清单把人推到右边、逐条打勾，观众可以截图",
+   "params": {
+    "title": "Do this today",
+    "items": [
+     {
+      "text": "Search \"subscription\" in your bank app",
+      "at": "search"
+     },
+     {
+      "text": "Cancel anything unused for 30 days",
+      "at": "cancel"
+     },
+     {
+      "text": "Auto-move the savings on payday",
+      "at": "move"
+     }
+    ]
+   }
+  },
+  {
+   "words": "73-79",
+   "purpose": "金句观点",
+   "template": "push_in",
+   "why": "全片核心一句，什么都不加，只慢慢推近他的脸，让话本身落地",
+   "params": {
+    "to": 1.22
+   }
+  },
+  {
+   "words": "86-96",
+   "purpose": "数字",
+   "template": "number_roll",
+   "why": "朋友说「只是咖啡钱」，紧接着数字滚到一年 $2,500，把轻描淡写变成倒吸一口气",
+   "params": {
+    "to": 2500,
+    "prefix": "$",
+    "label": "coffee money / year",
+    "at": "$2,500",
+    "y": 1120
+   }
+  },
+  {
+   "words": "97-108",
+   "purpose": "结尾号召",
+   "template": "comment_cta",
+   "why": "要观众评论 money 领清单",
+   "params": {
+    "keyword": "money",
+    "start": 1.0
+   }
+  }
+ ]
+}
