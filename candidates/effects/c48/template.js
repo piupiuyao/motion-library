@@ -7,9 +7,12 @@ TEMPLATES.c48 = {
     this.wrap = el('div', `position:absolute;left:0;right:0;top:${P.y || 1240}px;display:flex;justify-content:center`);
     this.pill = el('div', `display:flex;align-items:center;gap:22px;padding:16px 16px 16px 16px;border-radius:999px;background:rgba(255,255,255,.96);
       box-shadow:0 18px 40px rgba(0,0,0,.3)`);
-    this.pill.appendChild(el('div', `width:104px;height:104px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
-      background:${P.iconBg || 'linear-gradient(45deg,#f9a825,#e91e63 55%,#7b1fa2)'};color:#fff;font-size:54px`,
-      P.icon || '<svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="#fff"/></svg>'));
+    // platform icon from the icon library: platform = a name ('Instagram', 'TikTok', 'YouTube', 'X'); one-colour mark on its brand colour
+    // when the library has one, else the full-colour logo on white. icon (HTML/emoji) still overrides. No match → no icon.
+    const pf = P.icon ? null : (iconFind('brand:' + (P.platform || 'Instagram')) || iconFind(P.platform || 'Instagram'));
+    const tile = pf ? iconTile(pf, 104, P.iconBg ? { bg: P.iconBg } : {}) : P.icon ? el('div', `width:104px;height:104px;display:flex;align-items:center;justify-content:center;
+      background:${P.iconBg || 'var(--accent)'};color:#fff;font-size:54px`, P.icon) : null;
+    if (tile) { tile.style.cssText += ';flex:none;border-radius:50%;box-shadow:none'; if (pf) tile.style.padding = '26px'; this.pill.appendChild(tile); }
     this.pill.appendChild(el('div', 'display:flex;flex-direction:column;padding-right:10px',
       `<span style="font:800 50px/1.05 var(--font-body);color:var(--ink)">${P.name || P.handle} <span style="color:#3d9bff;font-size:40px">✔</span></span>
        <span style="font:500 36px/1.2 var(--font-body);color:#777">${P.name ? P.handle || '' : ''}</span>`));

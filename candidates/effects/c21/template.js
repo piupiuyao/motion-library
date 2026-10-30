@@ -14,13 +14,11 @@ TEMPLATES.c21 = {
     // text colour by the card colour's brightness: light accent → dark text, dark accent → white
     const lum = (c => { const m = document.createElement('canvas').getContext('2d'); m.fillStyle = c; m.fillRect(0, 0, 1, 1); const [r, g, b] = m.getImageData(0, 0, 1, 1).data; return (r * .299 + g * .587 + b * .114) / 255; })(col);
     const fg = lum > .62 ? (cssv('--ink') || '#111') : '#fff';
-    const icon = P.icon && !/^(eye|mail|people)$/.test(P.icon)
-      ? `<div style="font-size:150px;line-height:1;opacity:.45">${P.icon}</div>`
-      : ({
-        eye: '<path d="M8 60 Q60 8 112 60 Q60 112 8 60Z"/><circle cx="60" cy="60" r="20"/>',
-        people: '<circle cx="42" cy="42" r="18"/><path d="M12 100 Q12 66 42 66 Q72 66 72 100Z"/><circle cx="84" cy="36" r="15"/><path d="M78 60 Q108 58 110 92 L80 92"/>',
-        mail: '<rect x="10" y="24" width="100" height="72" rx="12"/><path d="M14 30 L60 66 L106 30" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="8"/>',
-      }[P.icon] || '').replace(/^(.+)$/, `<svg width="140" height="140" viewBox="0 0 120 120" style="fill:color-mix(in srgb, ${fg} 42%, transparent)">$1</svg>`);
+    // faint big icon on the right: a name or word from the icon library ('mail', 'eye', 'people', 'Slack'…), in the card's text colour
+    // (full-colour logos just faded); an emoji is shown as is; nothing found → no icon
+    const ic = P.icon && /[a-z0-9]/i.test(P.icon) ? iconFind(P.icon) : null;   // emoji → not looked up
+    const icon = ic ? `<div style="width:140px;height:140px;color:color-mix(in srgb, ${fg} 32%, transparent);opacity:${ic.kind === 'logo' ? .5 : 1}">${iconSvg(ic, ic.kind === 'brand' ? 'currentColor' : null)}</div>`
+      : P.icon && /[^\x00-\x7f]/.test(P.icon) ? `<div style="font-size:150px;line-height:1;opacity:.45">${P.icon}</div>` : '';
     this.card = el('div', `position:absolute;left:0;top:0;width:440px;height:250px;padding:30px 36px;border-radius:30px;box-sizing:border-box;overflow:hidden;
       background:linear-gradient(135deg, color-mix(in srgb, ${col} 72%, transparent), color-mix(in srgb, ${col} 38%, rgba(0,0,0,.3)));
       border:3px solid color-mix(in srgb, ${col} 45%, #fff);

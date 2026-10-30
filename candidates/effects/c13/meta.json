@@ -12,11 +12,11 @@
   "params": {
     "text": "必填。通知正文一行；不填不显示",
     "sender": "发件人名字，不填留空",
-    "app": "图标样式：message / whatsapp / mail，默认 message",
+    "app": "左边的 App 图标：填 App 名或一个词（如 WhatsApp / Slack / Gmail / iMessage / email），从图标库取（品牌出官方 logo，普通词出线条图标）；不填或找不到就不显示图标",
     "time": "右上角时间，默认 now",
     "at": "可选。原话里的一个词，说到它时通知滑下；不填则开头 0.25 秒",
     "hold": "可选。停留秒数，默认停到镜头快结束",
-    "more": "可选。后续再进来的通知列表 [{app,sender,text,time}]，新的压在上面、旧的往下推",
+    "more": "可选。后续再进来的通知列表 [{app,sender,text,time}]（app 同上），新的压在上面、旧的往下推",
     "every": "多条通知之间的间隔秒数，默认 0.6"
   }
 }

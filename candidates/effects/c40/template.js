@@ -42,8 +42,14 @@ TEMPLATES.c40 = {
     this.items = items.map((it, j) => {
       // Ali Abdaal look: no card, just a small picture tile + white text straight on the dark newspaper
       const row = el('div', `display:flex;align-items:center;gap:24px;transform-origin:0 50%;width:max-content`);
-      row.appendChild(el('div', `flex:none;width:104px;height:104px;border-radius:16px;background:${it.color || 'var(--accent)'};display:flex;align-items:center;justify-content:center;font-size:62px;
-        box-shadow:0 0 0 5px #fff, 0 12px 26px rgba(0,0,0,.6);transform:rotate(${j % 2 ? 3 : -3}deg)`, it.icon || '•'));
+      // picture tile: it.icon (a name or word: 'Slack', 'scissors', 'ui:bell-off') or else the spoken word it.at, from the icon library;
+      // an emoji in icon is shown as is; nothing found → a plain bullet tile
+      const q = it.icon || (typeof it.at === 'string' ? it.at : '');
+      const ic = /[a-z0-9]/i.test(q) ? iconFind(q) : null;   // emoji → not looked up
+      const tile = ic ? iconTile(ic, 104, ic.kind === 'ui' && it.color ? { bg: it.color } : {})
+        : el('div', `width:104px;height:104px;background:${it.color || 'var(--accent)'};display:flex;align-items:center;justify-content:center;font-size:62px;color:var(--ink)`, it.icon || '•');
+      tile.style.cssText += `;flex:none;border-radius:16px;box-shadow:0 0 0 5px #fff, 0 12px 26px rgba(0,0,0,.6);transform:rotate(${j % 2 ? 3 : -3}deg)`;
+      row.appendChild(tile);
       row.appendChild(el('div', 'font:800 60px var(--font-body);color:#fff;white-space:nowrap;text-shadow:0 3px 14px rgba(0,0,0,.85)', it.text));
       this.list.appendChild(row);
       const t = it.at != null ? at(it.at) : null;

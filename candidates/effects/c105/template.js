@@ -15,7 +15,9 @@ TEMPLATES.c105 = {
     head.appendChild(el('div', 'flex:1', !who ? '' : `<div style="font:800 44px var(--font-body)">${who}
       <span style="display:inline-block;width:34px;height:34px;border-radius:50%;background:#1d9bf0;color:#fff;font:900 24px/34px var(--font-body);text-align:center;vertical-align:4px">✓</span></div>
       ${P.handle ? `<div style="font:500 34px var(--font-body);color:#8b8b93">${P.handle}</div>` : ''}`));
-    head.appendChild(el('div', 'width:56px;height:56px;flex:none', `<svg viewBox="0 0 24 24" width="56" height="56"><path d="M2.5 3 H8.5 L21.5 21 H15.5 Z" fill="none" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.6" stroke-linejoin="round"/><path d="M20.5 3 L13.6 10.8 M3.6 21 L10.4 13.3" stroke="${P.light ? '#111' : '#fff'}" stroke-width="1.8" stroke-linecap="round"/></svg>`));
+    // platform mark top-right from the icon library (one-colour mark in the card's text colour); platform: false hides it
+    const pf = P.platform === false ? null : (iconFind('brand:' + (P.platform || 'X')) || iconFind(P.platform || 'X'));
+    if (pf) head.appendChild(el('div', 'width:56px;height:56px;flex:none', iconSvg(pf, P.light ? '#111111' : '#ffffff')));
     this.body = el('div', `font:600 60px/1.22 ${P.mono ? '"SF Mono", Menlo, monospace' : 'var(--font-body)'};min-height:74px;word-break:break-word`);
     this.txt = document.createTextNode('');
     this.cur = el('span', `display:inline-block;width:6px;height:64px;margin-left:6px;vertical-align:-10px;background:var(--accent)`);

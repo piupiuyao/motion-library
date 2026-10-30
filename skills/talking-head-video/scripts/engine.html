@@ -83,7 +83,8 @@ function iconSvg(ic, color) {  // the bare icon as an <svg> string sized to its 
   return s;
 }
 function iconTile(q, size = 200, opt = {}) {
-  const ic = typeof q === 'string' ? iconFind(q) : q;
+  // opt.app: look like a phone app icon → prefer the one-colour brand mark on its brand colour over the full logo
+  const ic = typeof q !== 'string' ? q : (opt.app && !q.includes(':') && iconFind('brand:' + q)) || iconFind(q);
   if (!ic) return null;
   // logo: full-colour mark on white · brand: white mark on its brand colour · ui: line icon on the theme accent
   const bg = opt.bg || (ic.kind === 'logo' ? '#ffffff' : ic.kind === 'brand' ? ic.hex : 'var(--accent)');

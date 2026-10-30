@@ -5,18 +5,18 @@
    "words": "2-13",
    "template": "c13",
    "params": {
-    "app": "whatsapp",
+    "app": "brand:WhatsApp",
     "sender": "Sarah",
     "text": "Hey, did you see my message? 👀",
     "more": [
      {
-      "app": "mail",
+      "app": "logo:google-gmail",
       "sender": "Inbox",
       "text": "3,000 unread messages",
       "time": "now"
      },
      {
-      "app": "message",
+      "app": "iMessage",
       "sender": "Alex",
       "text": "can you answer this right now?",
       "time": "now"

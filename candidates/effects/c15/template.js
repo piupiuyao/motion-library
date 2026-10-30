@@ -6,6 +6,10 @@ TEMPLATES.c15 = {
     if (!P.text) { this.off = true; return; }   // 必填: no post text → render nothing
     const av = P.avatar ? `<img src="${url(P.avatar)}" style="width:100%;height:100%;object-fit:cover">`
       : `<div style="width:100%;height:100%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#111;font:800 46px var(--font-body)">${(P.name || P.handle || ' ').replace('@', '')[0].toUpperCase()}</div>`;
+    // platform mark + action-row icons from the icon library (one-colour marks), not emoji / font glyphs
+    const pf = P.platform === false ? null : (iconFind('brand:' + (P.platform || 'X')) || iconFind(P.platform || 'X'));
+    const ui = (n, c) => `<span style="display:inline-block;width:38px;height:38px;vertical-align:-7px;margin-right:10px">${iconSvg(iconFind('ui:' + n), c || '#536471')}</span>`;
+    const heart = ui('heart', '#f91880').replace('fill="none"', 'fill="#f91880"');
     this.card = el('div', `position:absolute;left:90px;width:900px;top:${P.top || 930}px;padding:40px 44px 34px;border-radius:34px;background:#fff;color:#0f1419;
       box-shadow:0 30px 70px rgba(0,0,0,.38);font-family:-apple-system,'Helvetica Neue',sans-serif`);
     this.card.innerHTML = `<div style="display:flex;gap:22px;align-items:center">
@@ -13,10 +17,10 @@ TEMPLATES.c15 = {
         <div style="flex:1"><div style="font-size:40px;font-weight:800;display:flex;gap:10px;align-items:center">${P.name || ''}
           <svg width="38" height="38" viewBox="0 0 24 24"><path fill="#1d9bf0" d="M22.3 12 20 9.4l.3-3.4-3.3-.8-1.8-3-3.2 1.4L8.8 2.2 7 5.1l-3.3.8.3 3.5L1.7 12 4 14.6l-.3 3.5 3.3.7 1.8 3 3.2-1.4 3.2 1.4 1.8-3 3.3-.8-.3-3.4z"/><path d="m10 16.2-3.4-3.4 1.4-1.4 2 2 5-5 1.4 1.4z" fill="#fff"/></svg></div>
           <div style="font-size:34px;color:#536471">${P.handle ? P.handle + ' · ' : ''}2h</div></div>
-        <div style="font:900 52px var(--font-body);color:#0f1419">𝕏</div></div>
+        ${pf ? `<div style="width:42px;height:42px;flex:none;align-self:flex-start">${iconSvg(pf, '#0f1419')}</div>` : ''}</div>
       <div style="font-size:${(P.text || '').length > 90 ? 44 : 52}px;line-height:1.28;margin:28px 0 26px;font-weight:500">${P.text}</div>
       <div style="display:flex;justify-content:space-between;color:#536471;font-size:34px;border-top:1px solid #eff3f4;padding-top:22px">
-        <span>💬 ${P.replies || '1.2K'}</span><span>🔁 ${P.reposts || '3.4K'}</span><span style="color:#f91880">♥ <b class="lk">0</b></span><span>📊 ${P.views || '2.1M'}</span></div>`;
+        <span>${ui('message-circle')}${P.replies || '1.2K'}</span><span>${ui('repeat-2')}${P.reposts || '3.4K'}</span><span style="color:#f91880">${heart}<b class="lk">0</b></span><span>${ui('chart-no-axes-column')}${P.views || '2.1M'}</span></div>`;
     this.lk = this.card.querySelector('.lk');
     this.likes = P.likes || 18400;
     ctx.L.front.appendChild(this.card);

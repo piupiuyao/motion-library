@@ -58,8 +58,10 @@ CONCEPTS = {
 def find(q):
     """q: a word/phrase ('Slack', 'gym', 'money'), or 'ui:wallet' / 'brand:telegram' / 'logo:slack' to force one."""
     db, by, tag = _db()
-    if not q:
+    if not q or not re.search(r'[A-Za-z0-9]', q):  # emoji / punctuation only → no icon
         return None
+    # whisper capitalises brand names: a lowercase common word ("batch", "box") prefers a plain icon over a brand of that name
+    kinds = ('ui', 'logo', 'brand') if q == q.lower() and ':' not in q else ('logo', 'brand', 'ui')
     if ':' in q and q.split(':')[0] in ('ui', 'brand', 'logo'):
         kind, w = q.split(':', 1)
         k = q if q in db else by.get((kind, _forms(w)[0]))
@@ -67,14 +69,22 @@ def find(q):
     for f in _forms(q):
         if f in CONCEPTS and CONCEPTS[f] in db:
             return dict(db[CONCEPTS[f]], id=CONCEPTS[f])
+    def by_tag():
+        for f in _forms(q):
+            hits = tag.get(f)
+            if hits:
+                k = min(hits, key=lambda k: (f not in db[k]['name'], len(db[k]['name'])))
+                return dict(db[k], id=k)
+    if kinds[0] == 'ui':
+        for f in _forms(q):
+            if by.get(('ui', f)):
+                return dict(db[by[('ui', f)]], id=by[('ui', f)])
+        hit = by_tag()
+        if hit:
+            return hit
     for f in _forms(q):
-        for kind in ('logo', 'brand', 'ui'):
+        for kind in kinds:
             k = by.get((kind, f))
             if k:
                 return dict(db[k], id=k)
-    for f in _forms(q):
-        hits = tag.get(f)
-        if hits:
-            k = min(hits, key=lambda k: (f not in db[k]['name'], len(db[k]['name'])))
-            return dict(db[k], id=k)
-    return None
+    return by_tag()
