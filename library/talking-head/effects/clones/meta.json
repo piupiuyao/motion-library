@@ -1,0 +1,36 @@
+{
+  "id": "clones",
+  "was": "c59",
+  "name": "人物分身",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "对比前后",
+    "情绪吐槽"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "多个我",
+  "duration": "3–6 秒",
+  "use_for": "自己跟自己吵、两种观点：画面里同时出现几个自己",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "labels": "可选：分身头上的字，用原话里的词",
+    "at": "可选：气泡弹出的词"
+  },
+  "what": "画面里同时出现两三个抠出来的人（错开、变小、镜像或稍微延迟）",
+  "params": {
+    "labels": "可选。两个分身头上的气泡字，如 [\"typing?\",\"saying?\"]",
+    "at": "可选。两个气泡各在哪个词弹出（列表）",
+    "offset": "可选。两个分身离中间多远（像素），默认 390",
+    "fade": "可选。分身下半身淡出范围 [起, 止]（画面高度比例），默认 [0.62, 0.74]；false=不淡出（没有电脑挡的素材）"
+  },
+  "sources": [
+    "https://pippit.capcut.com/templates/clone-effect-2-persons-video"
+  ]
+}

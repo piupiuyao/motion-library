@@ -1,0 +1,38 @@
+{
+  "id": "face_tag",
+  "was": "c95",
+  "name": "文字跟着脸走",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "介绍身份",
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "跟踪标签",
+  "duration": "2–5 秒",
+  "use_for": "给人加标签、身份、情绪标注：一行字粘在头旁跟着走",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "text": "必填：原话里的词",
+    "emoji": "可选：一个表情"
+  },
+  "what": "一行文字/贴纸（如「100K subscribers」）钉在人脸旁边，人左右上下晃动时文字跟着同样移动，像粘在头上；不跟着缩放旋转，只跟位置。",
+  "params": {
+    "text": "必填。贴纸文字（原话里的词）；不写就不显示",
+    "emoji": "可选。贴纸前的 emoji；不写就不要",
+    "dx": "贴纸相对头顶的横向偏移（像素），默认 200",
+    "dy": "贴纸相对头顶的纵向偏移（像素），默认 30"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=KVws1GVHoA0&t=576s",
+    "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=591s"
+  ],
+  "ref_moment": "Matt Loui 9:36–10:20（Tracking）；Patrik Key 9:51–10:50（Tracking Subject）"
+}

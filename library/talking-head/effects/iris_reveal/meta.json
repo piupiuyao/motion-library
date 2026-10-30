@@ -1,0 +1,38 @@
+{
+  "id": "iris_reveal",
+  "was": "c72",
+  "name": "圆形扩散揭示",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "转场",
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "形状揭示",
+  "duration": "2–4 秒",
+  "use_for": "揭示一个例子、给出答案、引用一句话：圆形从脸上扩开露出新画面",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "to": "可选：用户上传的图或 B-roll",
+    "title": "可选：不写 to 时标题卡上的字，用原话",
+    "at": "可选：开始转场的词"
+  },
+  "what": "新画面透过一个从 0 慢慢长到全屏的圆形出现，像光圈打开",
+  "params": {
+    "to": "可选。转过去的新画面：图片路径（如 \"assets/docs/chat.jpg\"）或 B-roll 帧 {\"frames\": \"assets/broll_inbox\", \"fps\": 30, \"count\": 165}；不写就是一张标题卡",
+    "title": "可选。不写 to 时标题卡上的大字",
+    "subtitle": "可选。标题卡上的小字",
+    "label": "可选。新画面是图片时，图片上方的一行字",
+    "at": "可选。在哪个词开始转场（写原话里的词）；不写就在镜头约 1/3 处",
+    "dur": "可选。圆从 0 长到全屏用多久（秒），默认 0.8",
+    "center": "可选。圆心位置 [x, y]（像素），默认在脸上"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=VQsna0Y4EPc&t=111s"
+  ]
+}

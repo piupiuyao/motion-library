@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "2-13",
-   "template": "c56",
+   "template": "magnifier",
    "params": {
     "path": [
      [
@@ -20,7 +20,7 @@
   },
   {
    "words": "17-23",
-   "template": "c74",
+   "template": "headline_match",
    "params": {
     "word": "Replying",
     "at": "Replying",
@@ -105,7 +105,7 @@
   },
   {
    "words": "34-42",
-   "template": "c95",
+   "template": "face_tag",
    "params": {
     "text": "answer NOW",
     "emoji": "😵‍💫"
@@ -113,7 +113,7 @@
   },
   {
    "words": "69-78",
-   "template": "c104",
+   "template": "stretch_word",
    "params": {
     "at": "4",
     "text": "4 HOURS"
@@ -121,7 +121,7 @@
   },
   {
    "words": "82-94",
-   "template": "c72",
+   "template": "iris_reveal",
    "params": {
     "at": "friend",
     "title": "“How do you reply so fast?”",
@@ -130,7 +130,7 @@
   },
   {
    "words": "95-101",
-   "template": "c54",
+   "template": "selective_color",
    "params": {
     "keywords": [
      "system"

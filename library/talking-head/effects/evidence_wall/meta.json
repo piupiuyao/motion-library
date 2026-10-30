@@ -1,0 +1,36 @@
+{
+  "id": "evidence_wall",
+  "was": "c28",
+  "name": "红线线索墙",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "引用证据",
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "多图铺满",
+  "duration": "3–5 秒",
+  "use_for": "串证据、「大家都在做 X」：几张截图钉在墙上用红线连起来",
+  "needs": [],
+  "needs_assets": [
+    "截图"
+  ],
+  "fills": {
+    "images": "必填：用户上传的截图，最多 5 张",
+    "notes": "可选：原话里的短词",
+    "label": "可选：原话里的短语"
+  },
+  "what": "几张截图散在屏幕上，红线把它们连起来，中间清楚、四周虚化，偏暖色",
+  "params": {
+    "images": "必填素材。钉在墙上的截图路径数组（最多 5 张，第一张在中间清楚，其余在四周虚化）；不填不显示",
+    "notes": "可选。四周卡片下的手写小字数组",
+    "label": "可选。顶部一行大字"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=q-qbKk8Qams&t=1330s"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "halo",
+  "was": "c24",
+  "name": "头顶光环",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "情绪吐槽",
+    "定义概念"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "搞笑贴纸",
+  "duration": "2–4 秒",
+  "use_for": "「光环效应」这类概念、反讽「圣人」时刻：头顶漂一个光环",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：说到时出现的词"
+  },
+  "what": "一个手绘光环出现并漂在人头顶上，跟着人动",
+  "params": {
+    "at": "可选。原话里的词，说到时光环出现",
+    "color": "可选。光环颜色，默认主题色 --accent"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=BLVXMAdHZ8k"
+  ]
+}

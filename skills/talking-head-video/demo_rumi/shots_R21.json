@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "0-6",
-   "template": "c30",
+   "template": "flash_frames",
    "params": {
     "text": "STOP<br>SCROLLING",
     "size": 140,
@@ -17,7 +17,7 @@
   },
   {
    "words": "14-23",
-   "template": "c15",
+   "template": "post_card",
    "params": {
     "text": "Here's the truth: replying isn't the hard part. Deciding is.",
     "name": "Rumi",
@@ -28,7 +28,7 @@
   },
   {
    "words": "24-33",
-   "template": "c28",
+   "template": "evidence_wall",
    "params": {
     "label": "EVERY SINGLE DAY",
     "images": [
@@ -48,7 +48,7 @@
   },
   {
    "words": "34-42",
-   "template": "c29",
+   "template": "card_ring",
    "params": {
     "text": "RIGHT<br><span style=\"color:var(--accent)\">NOW</span>",
     "images": [
@@ -72,7 +72,7 @@
   },
   {
    "words": "43-48",
-   "template": "c16",
+   "template": "search_bar",
    "params": {
     "query": "what actually works for",
     "suggestions": [
@@ -84,7 +84,7 @@
   },
   {
    "words": "49-68",
-   "template": "c19",
+   "template": "callout_steps",
    "params": {
     "groups": [
      {
@@ -113,7 +113,7 @@
   },
   {
    "words": "69-78",
-   "template": "c22",
+   "template": "rise_behind",
    "params": {
     "emoji": "⏰",
     "label": "4 hours a day"
@@ -121,7 +121,7 @@
   },
   {
    "words": "82-94",
-   "template": "c14",
+   "template": "chat_bubbles",
    "params": {
     "them": "Sarah",
     "messages": [
@@ -142,7 +142,7 @@
   },
   {
    "words": "95-101",
-   "template": "c18",
+   "template": "chalk_doodles",
    "params": {
     "label": "it's a system"
    }

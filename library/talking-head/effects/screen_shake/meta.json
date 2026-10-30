@@ -1,0 +1,33 @@
+{
+  "id": "screen_shake",
+  "was": "c50",
+  "name": "震屏冲击",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽",
+    "数字"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "重音冲击",
+  "duration": "0.5–2 秒",
+  "use_for": "重音词、吐槽、爆出惊人数字：整个画面猛抖几下",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：原话里的重音词"
+  },
+  "what": "整个画面猛地抖几下再迅速停住（0.3–0.6 秒），踩在重音或音效上",
+  "params": {
+    "at": "可选。在哪个词上抖（原话里的词）；不写就用 keywords 的第一个短语，再不行在镜头中间偏前",
+    "dur": "可选。抖多久（秒），默认 0.5",
+    "strength": "可选。抖动幅度倍数，默认 1"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=VQsna0Y4EPc&t=535s",
+    "https://elements.envato.com/camera-shake-presets-for-premiere-pro-8E7CHZR"
+  ]
+}

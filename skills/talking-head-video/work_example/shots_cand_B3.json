@@ -3,21 +3,21 @@
  "shots": [
   {
    "words": "0-8",
-   "template": "c30",
+   "template": "flash_frames",
    "params": {
     "text": "HEY GUYS!"
    }
   },
   {
    "words": "22-34",
-   "template": "c29",
+   "template": "card_ring",
    "params": {
     "text": "EVERY<br><span style=\"color:var(--accent)\">DAY</span>"
    }
   },
   {
    "words": "35-45",
-   "template": "c27",
+   "template": "retro_tv",
    "params": {
     "text": "MY INBOX",
     "media": {
@@ -29,14 +29,14 @@
   },
   {
    "words": "46-57",
-   "template": "c28",
+   "template": "evidence_wall",
    "params": {
     "label": "IT ADDS UP"
    }
   },
   {
    "words": "58-66",
-   "template": "c32",
+   "template": "line_metaphor",
    "params": {
     "top": "what people see: typing",
     "bottom": "what it costs: emotional energy"
@@ -44,14 +44,14 @@
   },
   {
    "words": "67-73",
-   "template": "c31",
+   "template": "paper_letters",
    "params": {
     "text": "REPLY"
    }
   },
   {
    "words": "80-89",
-   "template": "c34",
+   "template": "knob_dial",
    "params": {
     "title": "TONE",
     "min": "WARM",

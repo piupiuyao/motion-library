@@ -1,0 +1,40 @@
+{
+  "id": "progress_percent",
+  "was": "c85",
+  "name": "加载条百分比",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "数字"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "进度图表",
+  "duration": "2–4 秒",
+  "use_for": "「X% 的人」、完成度、还差一点：加载条填到某个百分比",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "value": "必填：原话里的百分比",
+    "label": "可选：原话里这个比例是什么",
+    "at": "可选：开始填充的词"
+  },
+  "what": "一条横向圆角长条：白色底条，上面一条绿色条从左往右填充，旁边/上方的百分比数字同步从 0% 跳到目标值（如 87%），填满时轻微弹一下。长条放在人胸前或脸下方，宽约屏幕 60%，在人前面。",
+  "params": {
+    "value": "必填。目标百分比（原话里的数）；不写就不显示",
+    "label": "可选。条左上方的小标题",
+    "at": "可选。从哪个词开始填充",
+    "t0": "可选。不用 at 时第几秒开始，默认 0.35",
+    "dur": "可选。填充用时，默认 1.6 秒",
+    "width": "可选。条宽，默认 720",
+    "y": "可选。顶部 y，默认 1130"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=Ri9gUz9iNto&t=140s"
+  ],
+  "ref_moment": "2:20–4:37（Loading Bar 段）"
+}

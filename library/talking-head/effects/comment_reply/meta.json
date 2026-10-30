@@ -1,0 +1,36 @@
+{
+  "id": "comment_reply",
+  "was": "c106",
+  "name": "评论回复贴纸",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "开场钩子",
+    "引用证据"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "原生文字框",
+  "duration": "3–10 秒",
+  "use_for": "回答粉丝问题的开头「有人问我……」：上方挂一张回复评论贴纸",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "必填：评论内容，用原话里复述的问题",
+    "user": "可选：提问的人"
+  },
+  "what": "TikTok「回复评论」样式：画面上方一块白色圆角贴纸，左边小圆头像，第一行灰色小字「Reply to 用户名's comment」，下面黑色正文是评论内容，贴纸略倾斜或水平，整段视频一直挂着或开头弹出 3 秒。",
+  "params": {
+    "user": "可选。被回复的用户名；不写就显示 Reply to comment、没有头像",
+    "text": "必填。评论内容；不写就不显示",
+    "rotate": "倾斜角度，默认 -2",
+    "y": "竖直位置，默认 200",
+    "width": "最大宽度，默认 780"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=bKEPRjz6c-Q&t=66s"
+  ],
+  "ref_moment": "1:06–1:25（发布前评论以贴纸形式叠在视频上）"
+}

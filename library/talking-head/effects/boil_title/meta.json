@@ -1,0 +1,33 @@
+{
+  "id": "boil_title",
+  "was": "c08",
+  "name": "扭曲抖动标题",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "开场钩子",
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "大字特效",
+  "duration": "2–4 秒",
+  "use_for": "开场钩子或戏剧性、不安的一句：头顶标题边缘一直扭动",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "title": "必填：原话里的短语，可用 \\n 换行"
+  },
+  "what": "标题的字边缘一直在轻微扭动、沸腾，像手绘动画，压在带颗粒的画面上",
+  "params": {
+    "title": "必填。标题，可用 \\n 换行；不填不显示",
+    "wobble": "可选。扭动幅度，默认 14",
+    "y": "可选。竖直位置，默认 230",
+    "size": "可选。字号"
+  },
+  "sources": [
+    "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
+  ]
+}

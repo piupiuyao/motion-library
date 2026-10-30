@@ -5,25 +5,24 @@
   "status": "ready",
   "category": "版式",
   "purpose": [
-    "换话题"
+    "换话题",
+    "介绍身份"
   ],
-  "style": [
-    "网感",
-    "拼贴"
-  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "抠像换背景",
+  "duration": "2–4 秒",
+  "use_for": "段落开头或亮相：人像加白描边贴在新背景上",
   "needs": [
     "抠像"
   ],
-  "use_for": [
-    "段落开头",
-    "想让人「跳出来」的时候"
-  ],
   "needs_assets": [],
+  "fills": {},
   "layers": [
     "虚化压暗的原画面（或图案背景）",
     "抠出的人像（粗白边）"
   ],
-  "duration": "2–4 秒",
   "params": {
     "background": "可选。dots / grid / neon / paper，不写就用虚化的原画面",
     "width": "可选。描边粗细，默认 12",

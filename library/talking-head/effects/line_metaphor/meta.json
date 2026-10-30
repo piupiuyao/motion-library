@@ -1,0 +1,33 @@
+{
+  "id": "line_metaphor",
+  "was": "c32",
+  "name": "极简线稿隐喻",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "定义概念"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "全屏图解",
+  "duration": "3–5 秒",
+  "use_for": "抽象概念、比喻（冰山：看得到的 / 看不到的）：深色底上线稿画出来",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "top": "必填：水面上那部分，用原话",
+    "bottom": "必填：水面下那部分，用原话"
+  },
+  "what": "纯深色背景上，简单的单色线稿把正在说的比喻画出来（比如冰山在水里晃），插在口播中间",
+  "params": {
+    "top": "必填。线稿上方（水面上）的说明文字（上下都不填就不显示）",
+    "bottom": "必填。线稿下方（水面下）的说明文字",
+    "color": "线条颜色，默认米白",
+    "accent": "可选。下方文字颜色，默认主题色 --accent"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=axE3Z_dYWfc"
+  ]
+}

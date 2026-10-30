@@ -1,14 +1,14 @@
 {"skin": "clean", "shots": [
-  {"words": "0-4", "template": "c86", "params": {"text": "MONICA", "t0": 0.3}},
-  {"words": "15-20", "template": "c88", "params": {"text": "REPETITIVE • TIME-CONSUMING • "}},
-  {"words": "22-29", "template": "c92", "params": {"windows": [{"image": "assets/docs/gmail.jpg", "title": "Mail", "at": "emotionally"}, {"image": "assets/docs/chat.jpg", "title": "WhatsApp", "at": "things"}, {"image": "assets/docs/notify.jpg", "title": "Notifications", "at": "every"}]}},
-  {"words": "35-45", "template": "c91", "params": {"t0": 0.5, "diameter": 380}},
-  {"words": "59-66", "template": "c85", "params": {"label": "EMOTIONAL ENERGY", "value": 87, "at": "my"}},
-  {"words": "67-73", "template": "c90", "params": {"lines": ["NOT JUST", "TYPING"]}},
-  {"words": "90-97", "template": "c93", "params": {}},
-  {"words": "98-104", "template": "c83", "params": {"text": "ENERGY|0%"}},
-  {"words": "109-114", "template": "c84", "params": {"from": 3, "pos": [760, 300]}},
-  {"words": "123-128", "template": "c89", "params": {"text": "HARDER"}},
-  {"words": "129-137", "template": "c94", "params": {"icon": "😔", "text": "Guilty for<br>taking so long"}},
-  {"words": "138-148", "template": "c87", "params": {"words": [{"text": "EXACTLY", "at": "exactly"}, {"text": "THIS", "at": "kind"}, {"text": "PROBLEM", "at": "problem"}]}}
+  {"words": "0-4", "template": "font_shuffle", "params": {"text": "MONICA", "t0": 0.3}},
+  {"words": "15-20", "template": "text_ring", "params": {"text": "REPETITIVE • TIME-CONSUMING • "}},
+  {"words": "22-29", "template": "mac_windows", "params": {"windows": [{"image": "assets/docs/gmail.jpg", "title": "Mail", "at": "emotionally"}, {"image": "assets/docs/chat.jpg", "title": "WhatsApp", "at": "things"}, {"image": "assets/docs/notify.jpg", "title": "Notifications", "at": "every"}]}},
+  {"words": "35-45", "template": "corner_circle", "params": {"t0": 0.5, "diameter": 380}},
+  {"words": "59-66", "template": "progress_percent", "params": {"label": "EMOTIONAL ENERGY", "value": 87, "at": "my"}},
+  {"words": "67-73", "template": "outline_through", "params": {"lines": ["NOT JUST", "TYPING"]}},
+  {"words": "90-97", "template": "dim_backdrop_words", "params": {}},
+  {"words": "98-104", "template": "split_flap", "params": {"text": "ENERGY|0%"}},
+  {"words": "109-114", "template": "ring_countdown", "params": {"from": 3, "pos": [760, 300]}},
+  {"words": "123-128", "template": "reveal_behind", "params": {"text": "HARDER"}},
+  {"words": "129-137", "template": "glass_card", "params": {"icon": "😔", "text": "Guilty for<br>taking so long"}},
+  {"words": "138-148", "template": "flicker_text", "params": {"words": [{"text": "EXACTLY", "at": "exactly"}, {"text": "THIS", "at": "kind"}, {"text": "PROBLEM", "at": "problem"}]}}
 ]}

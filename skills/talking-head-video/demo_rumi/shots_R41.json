@@ -1,11 +1,11 @@
 {"skin": "clean", "shots": [
-  {"words": "0-6", "template": "c61", "params": {"dur": 1.4}},
-  {"words": "14-23", "template": "c99", "params": {"at": ["truth", "Deciding"]}},
-  {"words": "28-33", "template": "c53", "params": {"at": ["email", "WhatsApp", "Slack", "Telegram"]}},
-  {"words": "43-48", "template": "c71", "params": {"at": "what", "title": "3 things that work"}},
-  {"words": "49-55", "template": "c73", "params": {"at": "1", "title": "1 · Reply in batches"}},
-  {"words": "69-81", "template": "c59", "params": {"labels": ["4 hours", "40 min"], "at": ["Before", "After"], "fade": false}},
-  {"words": "86-94", "template": "c105", "params": {"text": "How do you reply so fast?", "name": "Sarah", "handle": "@sarah"}},
-  {"words": "95-101", "template": "c75", "params": {"text": "A system", "at": "Honestly", "fade": false}},
-  {"words": "102-117", "template": "c58", "params": {}}
+  {"words": "0-6", "template": "defocus_in", "params": {"dur": 1.4}},
+  {"words": "14-23", "template": "rgb_glitch", "params": {"at": ["truth", "Deciding"]}},
+  {"words": "28-33", "template": "zoom_jumpcut", "params": {"at": ["email", "WhatsApp", "Slack", "Telegram"]}},
+  {"words": "43-48", "template": "light_sweep", "params": {"at": "what", "title": "3 things that work"}},
+  {"words": "49-55", "template": "curtain_split", "params": {"at": "1", "title": "1 · Reply in batches"}},
+  {"words": "69-81", "template": "clones", "params": {"labels": ["4 hours", "40 min"], "at": ["Before", "After"], "fade": false}},
+  {"words": "86-94", "template": "typewriter_card", "params": {"text": "How do you reply so fast?", "name": "Sarah", "handle": "@sarah"}},
+  {"words": "95-101", "template": "victory_burst", "params": {"text": "A system", "at": "Honestly", "fade": false}},
+  {"words": "102-117", "template": "neon_outline", "params": {}}
 ]}

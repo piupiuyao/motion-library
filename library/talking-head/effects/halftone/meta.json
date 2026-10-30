@@ -1,0 +1,41 @@
+{
+  "id": "halftone",
+  "was": "c97",
+  "name": "半调网点",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽",
+    "金句观点"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "漫画感",
+  "duration": "2–5 秒",
+  "use_for": "复古漫画感、标题出现时的重音：背景变印刷网点",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "word": "可选：人后面的大字，原话里的词",
+    "at": "可选：重音词"
+  },
+  "what": "画面变成报纸/漫画印刷的网点效果：亮的地方点小、暗的地方点大，通常单色（黑点 + 米白/彩色底），可以只给背景做网点、人保持原样，或者在重音时整屏网点闪一下并轻微抖动。",
+  "params": {
+    "at": "重音词（一个或数组），说到时整屏网点闪一下并抖动；不填用高亮词组",
+    "word": "可选。人后面的大字（像水印标题）",
+    "word_y": "大字的竖直位置，默认 250",
+    "word_size": "大字字号，默认 230",
+    "cell": "网点间距（像素），默认 18",
+    "paper": "底色，默认米白 #f2e8d2",
+    "ink": "网点颜色，默认近黑"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=1qx118g3psM&t=0s",
+    "https://www.youtube.com/watch?v=lURCwwwy4MM&t=0s"
+  ],
+  "ref_moment": "两条都是开头展示成品（nishi 0:00–0:20；TR EDITZ 0:00–0:15 是网点背景 + 人后水印大字）"
+}

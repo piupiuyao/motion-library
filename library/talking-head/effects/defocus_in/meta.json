@@ -1,0 +1,28 @@
+{
+  "id": "defocus_in",
+  "was": "c61",
+  "name": "失焦入场",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "开场钩子",
+    "转场"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "失焦对焦",
+  "duration": "1.5–3 秒",
+  "use_for": "开场第一个镜头、从 B-roll 切回来：画面从糊到清楚",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "画面一开始雾蒙蒙、很糊、稍微放大，然后慢慢变清楚，人「对上焦」",
+  "params": {
+    "dur": "可选。从糊到清楚用多久（秒），默认 1.6"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=q-qbKk8Qams&t=584s"
+  ]
+}

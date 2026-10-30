@@ -1,0 +1,31 @@
+{
+  "id": "speed_lines",
+  "was": "c57",
+  "name": "漫画集中线",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "漫画感",
+  "duration": "0.5–1.5 秒",
+  "use_for": "震惊、包袱、「等等什么？」：漫画集中线冲向脸",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：原话里的词"
+  },
+  "what": "黑白放射状的速度线从画面四周冲向脸，闪 0.5–1 秒后消失，通常配一下放大",
+  "params": {
+    "at": "可选。在哪个词上爆（原话里的词）；不写用 keywords 第一个短语，再不行在 35% 处",
+    "dur": "可选。集中线持续多久（秒），默认 0.9",
+    "color": "可选。线的颜色：white（默认，像参考素材那样白线叠在画面上）或 black（经典漫画黑线）"
+  },
+  "sources": [
+    "https://elements.envato.com/intense-motion-line-design-animation-EC85BWM"
+  ]
+}

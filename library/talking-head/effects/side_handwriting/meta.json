@@ -1,0 +1,36 @@
+{
+  "id": "side_handwriting",
+  "was": "c11",
+  "name": "侧边手写短句",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "字幕样式",
+  "duration": "5–20 秒",
+  "use_for": "平静讲解、反思的一段：人挪到一边，另一侧手写字幕一句句叠下来",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "keywords": "可选：原话里要变色的短语"
+  },
+  "what": "人站偏一边，空出来的一侧用白色手写体一句一句往下叠，关键词变黄，不压脸",
+  "params": {
+    "keywords": "可选。原话里要变成主题色的短语",
+    "side": "可选。字放哪一侧 right / left，默认 right（人往另一侧挪）",
+    "shift": "可选。人挪动的距离（px），默认 200",
+    "y": "可选。第一行位置，默认 300",
+    "width": "可选。文字栏宽度，默认 470",
+    "size": "可选。字号，默认 60",
+    "max_lines": "可选。最多显示几行，超出往上滚，默认 9",
+    "keep_caption": "可选。true 时保留底部字幕条，默认隐藏（侧边字就是字幕）"
+  },
+  "sources": [
+    "https://www.choppity.com/tools/recreate-video-editing-style/ali-abdaal/"
+  ]
+}

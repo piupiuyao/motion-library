@@ -1,0 +1,36 @@
+{
+  "id": "side_split",
+  "was": "c37",
+  "name": "侧屏滑入",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "对比前后",
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "分屏",
+  "duration": "3–6 秒",
+  "use_for": "对比、边讲边补一个画面：另一块画面从侧边滑进来各占半边",
+  "needs": [],
+  "needs_assets": [
+    "截图",
+    "B-roll视频"
+  ],
+  "fills": {
+    "media": "必填：用户上传的截图或 B-roll",
+    "title": "可选：原话里的短语"
+  },
+  "what": "另一块画面（B-roll、截图或文字卡）从一侧滑进来，人同时往另一侧滑，最后各占半边，人不缩小",
+  "params": {
+    "media": "必填素材。滑进来的图片路径或 B-roll 帧；不填不显示",
+    "title": "可选。面板上方的标题字",
+    "side": "可选。面板从哪边进：right（默认）/ left"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=426s"
+  ]
+}

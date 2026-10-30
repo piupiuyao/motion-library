@@ -1,0 +1,35 @@
+{
+  "id": "mixed_title",
+  "was": "c10",
+  "name": "渐变混排标题",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "换话题",
+    "金句观点"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "上方大字",
+  "duration": "2–5 秒",
+  "use_for": "段落开头点出这段讲什么：两行标题，关键词换斜体变色",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "line1": "必填：原话前半句",
+    "line2": "必填：原话后半句，关键词用 *星号* 包住"
+  },
+  "what": "两行段落标题：前半句白灰渐变无衬线，关键词换成斜体衬线、红橙渐变",
+  "params": {
+    "line1": "必填。第一行（两行都不填就不显示）",
+    "line2": "必填。第二行；用 *星号* 包住的词变成斜体衬线主题色渐变（第一行也可以用）",
+    "y": "可选。竖直位置，默认 210",
+    "size": "可选。字号，默认 142",
+    "align": "可选。对齐 center / left，默认 center"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=Qbntd8yud0o"
+  ]
+}

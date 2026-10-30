@@ -5,24 +5,24 @@
   "status": "ready",
   "category": "镜头特效",
   "purpose": [
-    "核心观点",
-    "结尾"
+    "金句观点"
   ],
-  "style": [
-    "复古"
-  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "压暗突出人",
+  "duration": "2–5 秒",
+  "use_for": "点题的一句：画面压暗加扫描线，大字逐词跳出",
   "needs": [],
-  "use_for": [
-    "总结一句",
-    "情绪重的一句"
-  ],
   "needs_assets": [],
+  "fills": {
+    "keywords": "必填：原话里的短语（或用 words 直接给词）"
+  },
   "layers": [
     "原画面（压暗、闪烁）",
     "扫描线 + 光带",
     "人前：大字（红蓝错位）"
   ],
-  "duration": "2–5 秒",
   "params": {
     "keywords": "二选一。原话里的短语，按词逐个跳出",
     "words": "二选一。直接给要跳出的词",

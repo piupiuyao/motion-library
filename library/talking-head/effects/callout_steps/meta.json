@@ -1,0 +1,30 @@
+{
+  "id": "callout_steps",
+  "was": "c19",
+  "name": "引线标注图解",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "全屏图解",
+  "duration": "4–8 秒",
+  "use_for": "讲几个步骤、一个框架：编号圈 + 虚线标注，镜头一组组平移",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "groups": "必填：每组 {title, labels: [两个]}，用原话里的词，最多 3 组"
+  },
+  "what": "手写数字套在画好的圆圈里，用会动的虚线连到几个标签，镜头从一组标注平移到下一组",
+  "params": {
+    "groups": "必填。标注组数组 [{title, labels:[两个标签]}]，每组一个手写编号圈，最多建议 3 组，镜头依次平移；不填不显示"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=y60ohM4nr4Y",
+    "https://www.youtube.com/watch?v=HQvV75kjblY&t=759s"
+  ]
+}

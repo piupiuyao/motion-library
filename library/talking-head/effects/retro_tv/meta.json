@@ -1,0 +1,37 @@
+{
+  "id": "retro_tv",
+  "was": "c27",
+  "name": "复古电视框",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "引用证据",
+    "讲故事"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "设备框",
+  "duration": "3–5 秒",
+  "use_for": "提到网上看到的内容、怀旧：素材装进老电视里播放，压大字",
+  "needs": [],
+  "needs_assets": [
+    "B-roll视频",
+    "截图"
+  ],
+  "fills": {
+    "media": "必填：用户上传的截图或 B-roll",
+    "text": "可选：原话里的短语"
+  },
+  "what": "一段截图/视频装进老式显像管电视里播放，背景做旧，电视上压大字，慢慢推近",
+  "params": {
+    "media": "必填素材。电视里播放的内容：图片路径或帧序列 {frames, fps, count}；不填不显示",
+    "text": "可选。压在电视下方的大字",
+    "size": "大字字号，默认 170",
+    "top": "大字的顶部位置像素，默认 1130"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=q-qbKk8Qams&t=1118s"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "before_after_slider",
+  "was": "c108",
+  "name": "前后对比滑杆",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "对比前后"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "分屏",
+  "duration": "2–4 秒",
+  "use_for": "效果对比、改造前后：一条分割线扫过，左边之后右边之前",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "after": "可选：用户上传的「之后」的图（不填用同一画面调色）"
+  },
+  "what": "两段画面（之前/之后）重叠，一条白色竖分割线从左往右扫过整屏（约 1–2 秒），线左边是「之后」，右边是「之前」；线上可带圆形拖拽手柄，两边上角标「BEFORE / AFTER」。",
+  "params": {
+    "after": "可选。「之后」用的另一张图/帧序列；不填=同一段画面调色后",
+    "before_filter": "「之前」的 CSS 滤镜，默认去色压灰",
+    "after_filter": "「之后」的 CSS 滤镜，默认提饱和提对比",
+    "before_label": "右上角标，默认 BEFORE",
+    "after_label": "左上角标，默认 AFTER",
+    "knob_y": "圆形手柄的竖直位置，默认 1180"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=eV7QmDITJYM&t=63s"
+  ],
+  "ref_moment": "1:03–1:12（成品播放）"
+}

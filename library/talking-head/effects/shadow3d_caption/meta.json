@@ -1,0 +1,33 @@
+{
+  "id": "shadow3d_caption",
+  "was": "c09",
+  "name": "3D投影大字",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "字幕常驻",
+    "金句观点"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "字幕样式",
+  "duration": "整段都可以",
+  "use_for": "高能的一段：字幕换成两词一组的粗窄 3D 投影大字",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "粗窄全大写字幕，黄/橙色，带一层厚厚的粉红色斜向 3D 投影，放大砸进画面下方",
+  "params": {
+    "per": "可选。每次显示几个词，默认 2",
+    "color": "可选。字色，默认主题色 --accent",
+    "shadow": "可选。投影颜色，默认主题色加深",
+    "depth": "可选。投影厚度（px），默认 16",
+    "y": "可选。竖直位置，默认 1150",
+    "size": "可选。最大字号，默认 210（会自动缩到一行放得下）"
+  },
+  "sources": [
+    "https://www.choppity.com/tools/recreate-video-editing-style/tom-noske/"
+  ]
+}

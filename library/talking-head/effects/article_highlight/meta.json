@@ -1,0 +1,36 @@
+{
+  "id": "article_highlight",
+  "was": "c17",
+  "name": "文章荧光高亮",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "截图细看",
+  "duration": "3–5 秒",
+  "use_for": "引用文章、新闻标题、原文：整页文章推近，荧光笔划一句",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "highlight": "必填：被划的那一句，用原话",
+    "headline": "可选：文章标题"
+  },
+  "what": "一张文章/文件截图铺满屏幕慢慢推近，荧光笔扫过其中一句，其余部分变暗",
+  "params": {
+    "highlight": "必填。被荧光笔扫过的那一句；不填时用这句原话",
+    "headline": "可选。文章标题，不填画灰色占位条",
+    "kicker": "可选。标题上方小栏目名，不填留空",
+    "before": "可选。高亮句之前的段落数组，不填画灰色占位行",
+    "after": "可选。高亮句之后的段落数组，不填画灰色占位行",
+    "color": "可选。荧光笔颜色，默认主题色 --accent",
+    "at": "可选。开始划线的秒数（相对镜头开头），默认约 1 秒"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=QLM2upiiyGc"
+  ]
+}

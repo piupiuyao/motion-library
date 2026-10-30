@@ -97,12 +97,13 @@
 <script src="data.js"></script>
 <script>
 const { tags: TAGS, types: TYPES, entries: ALL } = window.LIB;
-const FACETS = [['category', '类别'], ['purpose', '句子用途'], ['style', '风格'], ['needs', '需要']];
+const FACETS = [['purpose', '句子用途'], ['weight', '分量'], ['face', '挡脸'], ['zone', '位置'], ['group', '组'], ['needs', '前提'], ['needs_assets', '素材'], ['category', '类别']];
+const FACE = { '不挡脸': '脸一直露着', '挡脸': '脸被盖住、虚化或缩进小窗' };
 const STATUS = { ready: '能出片', reference: '参考' };
 const state = { type: 'talking-head', q: '', sel: {} };
 const byId = Object.fromEntries(ALL.map(e => [e.id, e]));
 const $ = s => document.querySelector(s);
-const vals = (e, k) => k === 'status' ? [e.status] : [].concat(e[k] || []);
+const vals = (e, k) => k === 'status' ? [e.status] : k === 'face' ? [e.covers_face ? '挡脸' : '不挡脸'] : [].concat(e[k] || []);
 const label = (k, v) => k === 'status' ? STATUS[v] : v;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const src = p => '../' + p;
@@ -115,7 +116,7 @@ function match(e, skip) {
     if (s && s.size && !vals(e, k).some(v => s.has(v))) return false;
   }
   if (state.q) {
-    const hay = [e.name, e.id, e.what, e.why, e.steal, ...(e.use_for || [])].join(' ').toLowerCase();
+    const hay = [e.name, e.id, e.was, e.what, e.why, e.steal, e.group, ...[].concat(e.use_for || [])].join(' ').toLowerCase();
     if (!hay.includes(state.q.toLowerCase())) return false;
   }
   return true;
@@ -137,12 +138,13 @@ function drawTabs() {
 function drawFilters() {
   const pool = inType();
   $('#filters').innerHTML = FACETS.map(([k, name]) => {
-    const order = k === 'status' ? Object.keys(STATUS) : Object.keys(TAGS[k]);
+    const dict = k === 'face' ? FACE : TAGS[k];
+    const order = k === 'status' ? Object.keys(STATUS) : Object.keys(dict);
     const chips = order.map(v => {
       const n = pool.filter(e => match(e, k) && vals(e, k).includes(v)).length;
       const on = state.sel[k]?.has(v);
       if (!n && !on) return '';
-      return `<button class="chip ${on ? 'on' : ''}" data-k="${k}" data-v="${esc(v)}" title="${esc(k === 'status' ? '' : TAGS[k][v])}">${esc(label(k, v))}<span class="n">${n}</span></button>`;
+      return `<button class="chip ${on ? 'on' : ''}" data-k="${k}" data-v="${esc(v)}" title="${esc(k === 'status' ? '' : dict[v])}">${esc(label(k, v))}<span class="n">${n}</span></button>`;
     }).join('');
     return chips ? `<div class="frow"><span class="flabel">${name}</span>${chips}</div>` : '';
   }).join('');
@@ -155,7 +157,7 @@ $('#filters').onclick = ev => {
 };
 
 function card(e) {
-  const tags = [e.category, ...(e.purpose || []).slice(0, 2), ...(e.style || []).filter(s => s !== '未分')].slice(0, 4);
+  const tags = [e.weight, e.group, ...(e.purpose || []).slice(0, 2)].filter(Boolean);
   return `<div class="card" data-id="${e.id}">
     <div class="thumb">
       ${e._poster ? `<img src="${src(e._poster)}" loading="lazy" alt="">` : ''}
@@ -192,32 +194,38 @@ function openEntry(id) {
   const e = byId[id], d = $('#dlg'), s = e.source || {};
   const media = e._preview ? `<video src="${src(e._preview)}" ${e._poster ? `poster="${src(e._poster)}"` : ''} controls autoplay loop playsinline muted></video>`
               : e._poster ? `<img src="${src(e._poster)}" alt="">` : '';
+  const fills = e.fills ? Object.entries(e.fills).map(([k, v]) => `<li><code>${esc(k)}</code> ${esc(v)}</li>`).join('') : '';
   const params = e.params ? Object.entries(e.params).map(([k, v]) => `<li><code>${esc(k)}</code> ${esc(v)}</li>`).join('') : '';
   const alts = (e._alt || []).map(a => {
     const x = byId[a.id];
     return `<div class="alt" data-id="${a.id}">${x._poster ? `<img src="${src(x._poster)}" alt="">` : ''}<div>${esc(x.name)}</div>
-      <div class="why">${a.shared.length ? '同为' + esc(a.shared.join('、')) : '同类别'}</div></div>`;
+      <div class="why">${a.same_group ? '同组' : '同为' + esc(a.shared.join('、'))}</div></div>`;
   }).join('');
   d.innerHTML = `<button class="x" aria-label="关闭">×</button><div class="dlg">
     <div class="media">${media}</div>
     <div class="body">
-      <h2>${esc(e.name)}</h2><div class="id">${esc(e.id)} · ${esc(TYPES[e.video_type])}</div>
+      <h2>${esc(e.name)}</h2><div class="id">${esc(e.id)}${e.was ? ` · 原 ${esc(e.was)}` : ''} · ${esc(TYPES[e.video_type])}</div>
       <div class="kv">
-        <span>类别</span><span>${esc(e.category)}</span>
         ${e.purpose?.length ? `<span>句子用途</span><span>${esc(e.purpose.join('、'))}</span>` : ''}
-        <span>风格</span><span>${esc((e.style || []).join('、'))}</span>
-        <span>需要</span><span>${esc((e.needs || []).join('、') || '不用准备')}</span>
+        <span>分量</span><span>${esc(e.weight)}${e.covers_face ? '（挡脸）' : ''}</span>
+        <span>位置</span><span>${esc(e.zone)}</span>
+        <span>组</span><span>${esc(e.group)}</span>
+        <span>前提</span><span>${esc((e.needs || []).join('、') || '—')}</span>
+        <span>素材</span><span>${esc((e.needs_assets || []).join(' / ') || '不用准备')}</span>
         ${e.duration ? `<span>时长</span><span>${esc(e.duration)}</span>` : ''}
+        <span>类别</span><span>${esc(e.category)}</span>
       </div>
       ${e.what ? `<h3>画面</h3><div>${esc(e.what)}</div>` : ''}
       ${e.why ? `<h3>好在哪</h3><div>${esc(e.why)}</div>` : ''}
       ${e.steal ? `<h3>可以借的</h3><div>${esc(e.steal)}</div>` : ''}
-      ${e.use_for ? `<h3>用在什么句子</h3>${list(e.use_for)}` : ''}
+      ${e.use_for ? `<h3>用在什么句子</h3>${Array.isArray(e.use_for) ? list(e.use_for) : `<div>${esc(e.use_for)}</div>`}` : ''}
+      ${fills ? `<h3>要从原话里填的参数</h3><ul>${fills}</ul>` : ''}
       ${e.layers ? `<h3>画面分层（从下到上）</h3>${list(e.layers)}` : ''}
       ${params ? `<h3>参数（写在 shots.json 里）</h3><ul>${params}</ul>` : ''}
       ${e.rule ? `<h3>注意</h3><div>${esc(e.rule)}</div>` : ''}
       ${alts ? `<h3>可以换成</h3><div class="alts">${alts}</div>` : ''}
-      <h3>灵感来源</h3><div>${esc(s.credit || s.from || '')}${s.note ? '：' + esc(s.note) : ''}${s.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">原片</a>` : ''}</div>
+      ${s.credit || s.from || s.note || s.url ? `<h3>灵感来源</h3><div>${esc(s.credit || s.from || '')}${s.note ? '：' + esc(s.note) : ''}${s.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">原片</a>` : ''}</div>` : ''}
+      ${e.sources?.length ? `<h3>参考来源</h3><ul>${e.sources.map(u => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join('')}</ul>` : ''}
       <h3>文件</h3><div><code>${esc(e._dir)}</code></div>
     </div></div>`;
   d.querySelector('.x').onclick = () => d.close();

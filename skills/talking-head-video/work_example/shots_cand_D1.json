@@ -1,14 +1,14 @@
 {"skin": "clean", "shots": [
-  {"words": "0-5", "template": "c61", "params": {"dur": 1.4}},
-  {"words": "15-20", "template": "c57", "params": {"at": "repetitive"}},
-  {"words": "22-29", "template": "c55", "params": {}},
-  {"words": "30-39", "template": "c74", "params": {"word": "Replying", "at": "replying"}},
-  {"words": "40-45", "template": "c56", "params": {"image": "assets/docs/gmail.jpg"}},
-  {"words": "62-66", "template": "c62", "params": {}},
-  {"words": "67-73", "template": "c59", "params": {"labels": ["typing?", "saying?"], "at": ["typing", "saying"]}},
-  {"words": "74-79", "template": "c58", "params": {}},
-  {"words": "90-97", "template": "c54", "params": {"keywords": ["emotional"]}},
-  {"words": "111-122", "template": "c60", "params": {"steps": [{"at": "leave", "scale": 0.72, "hand": [820, 1120]}, {"at": "hours", "scale": 1.25, "hand": [830, 950]}]}},
-  {"words": "123-137", "template": "c69", "params": {"at": "because", "title": "Then comes the guilt"}},
-  {"words": "138-148", "template": "c75", "params": {"text": "Solve this", "at": "This"}}
+  {"words": "0-5", "template": "defocus_in", "params": {"dur": 1.4}},
+  {"words": "15-20", "template": "speed_lines", "params": {"at": "repetitive"}},
+  {"words": "22-29", "template": "spotlight", "params": {}},
+  {"words": "30-39", "template": "headline_match", "params": {"word": "Replying", "at": "replying"}},
+  {"words": "40-45", "template": "magnifier", "params": {"image": "assets/docs/gmail.jpg"}},
+  {"words": "62-66", "template": "film_stutter", "params": {}},
+  {"words": "67-73", "template": "clones", "params": {"labels": ["typing?", "saying?"], "at": ["typing", "saying"]}},
+  {"words": "74-79", "template": "neon_outline", "params": {}},
+  {"words": "90-97", "template": "selective_color", "params": {"keywords": ["emotional"]}},
+  {"words": "111-122", "template": "pinch_zoom", "params": {"steps": [{"at": "leave", "scale": 0.72, "hand": [820, 1120]}, {"at": "hours", "scale": 1.25, "hand": [830, 950]}]}},
+  {"words": "123-137", "template": "light_leak_flash", "params": {"at": "because", "title": "Then comes the guilt"}},
+  {"words": "138-148", "template": "victory_burst", "params": {"text": "Solve this", "at": "This"}}
 ]}

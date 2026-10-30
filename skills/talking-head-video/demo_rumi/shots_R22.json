@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "2-13",
-   "template": "c13",
+   "template": "phone_notification",
    "params": {
     "app": "brand:WhatsApp",
     "sender": "Sarah",
@@ -26,7 +26,7 @@
   },
   {
    "words": "14-23",
-   "template": "c32",
+   "template": "line_metaphor",
    "params": {
     "top": "what people see: replying",
     "bottom": "the hard part: deciding"
@@ -34,7 +34,7 @@
   },
   {
    "words": "26-33",
-   "template": "c102",
+   "template": "icon_flip",
    "params": {
     "steps": [
      {
@@ -54,7 +54,7 @@
   },
   {
    "words": "49-68",
-   "template": "c20",
+   "template": "glow_flow",
    "params": {
     "title": "THREE THINGS",
     "numbers": true,
@@ -67,7 +67,7 @@
   },
   {
    "words": "69-78",
-   "template": "c27",
+   "template": "retro_tv",
    "params": {
     "text": "4 HOURS A DAY",
     "media": "assets/docs/gmail.jpg"
@@ -75,7 +75,7 @@
   },
   {
    "words": "82-88",
-   "template": "c23",
+   "template": "prop_fly",
    "params": {
     "emoji": "📱",
     "y": 1280
@@ -83,7 +83,7 @@
   },
   {
    "words": "95-101",
-   "template": "c24",
+   "template": "halo",
    "params": {}
   }
  ]

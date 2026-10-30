@@ -1,0 +1,32 @@
+{
+  "id": "chalk_doodles",
+  "was": "c18",
+  "name": "手绘涂鸦",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "金句观点",
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "圈画标注",
+  "duration": "2–4 秒",
+  "use_for": "轻松的强调、「看这里」：粉笔箭头、圈圈围着人画出来",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "label": "可选：原话里的短语，手写"
+  },
+  "what": "粉笔/马克笔样式的箭头、波浪线、星星、圈圈一笔一笔自己画出来，围着人或指向某处",
+  "params": {
+    "label": "可选。左上角手写一行字",
+    "color": "线条颜色，默认白色（粉笔感）"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=753s",
+    "https://elements.envato.com/hand-drawn-elements-arrows-pack-NR9FBGS"
+  ]
+}

@@ -1,10 +1,10 @@
 {"skin": "clean", "shots": [
-  {"words": "22-29", "template": "c73", "params": {"at": "things", "title": "Every single day"}},
-  {"words": "30-39", "template": "c72", "params": {"at": "which", "to": "assets/docs/chat.jpg"}},
-  {"words": "40-48", "template": "c70", "params": {"at": "small", "to": "assets/docs/notify.jpg"}},
-  {"words": "67-79", "template": "c71", "params": {"at": "sometimes", "title": "Not just typing"}},
-  {"words": "90-97", "template": "c51", "params": {"at": "long"}},
-  {"words": "123-130", "template": "c50", "params": {"at": "harder"}},
-  {"words": "131-137", "template": "c52", "params": {}},
-  {"words": "138-148", "template": "c53", "params": {}}
+  {"words": "22-29", "template": "curtain_split", "params": {"at": "things", "title": "Every single day"}},
+  {"words": "30-39", "template": "iris_reveal", "params": {"at": "which", "to": "assets/docs/chat.jpg"}},
+  {"words": "40-48", "template": "shutter_flash", "params": {"at": "small", "to": "assets/docs/notify.jpg"}},
+  {"words": "67-79", "template": "light_sweep", "params": {"at": "sometimes", "title": "Not just typing"}},
+  {"words": "90-97", "template": "punch_zoom", "params": {"at": "long"}},
+  {"words": "123-130", "template": "screen_shake", "params": {"at": "harder"}},
+  {"words": "131-137", "template": "handheld", "params": {}},
+  {"words": "138-148", "template": "zoom_jumpcut", "params": {}}
 ]}

@@ -1,0 +1,36 @@
+{
+  "id": "flicker_text",
+  "was": "c87",
+  "name": "闪烁出字",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "金句观点",
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "大字特效",
+  "duration": "2–4 秒",
+  "use_for": "悬念句、反转句：字像接触不良的灯管闪着出来",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "words": "必填：[{text, at}]，原话里的词"
+  },
+  "what": "一行字出现时不是渐显，而是像接触不良的灯管一样闪：透明度在 0 和 100% 之间逐帧来回跳 6 次左右（约 0.2–0.3 秒），然后稳定亮着。常配渐变色字或发光。可以连续几个词各自闪着出。",
+  "params": {
+    "words": "必填。要闪出来的词列表（原话里的词）：[{\"text\":\"EXACTLY\",\"at\":\"exactly\"}, …]，每个词在说到 at 时闪着出；不写就不显示",
+    "size": "可选。字号，默认 120",
+    "y": "可选。顶部 y，默认 1110",
+    "gradient": "可选。字的渐变色 CSS，默认白色渐到浅主题色（光晕也是主题色）",
+    "pattern": "可选。闪烁时每帧的透明度序列"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=330s",
+    "https://www.youtube.com/watch?v=Q04FF5KZyt4&t=823s"
+  ],
+  "ref_moment": "Matt Loui 5:30–6:52（Flicker Text Effect）；Patrik Key 13:43–14:13（Flicker Effect）"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "handheld",
+  "was": "c52",
+  "name": "手持晃动",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "手持晃动",
+  "duration": "整段都可以",
+  "use_for": "太静的段落加点生气：画面轻微手持晃动；不算动效",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "整个画面加一点点随机晃动和旋转，三脚架拍的画面看起来像手持，更有生气",
+  "params": {
+    "amount": "可选。晃动幅度倍数，默认 1（0.5 更轻，2 更猛）"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=550s"
+  ]
+}

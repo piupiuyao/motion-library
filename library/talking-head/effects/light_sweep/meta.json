@@ -1,0 +1,37 @@
+{
+  "id": "light_sweep",
+  "was": "c71",
+  "name": "光扫转场",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "转场",
+    "换话题"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "闪光转场",
+  "duration": "1.5–3 秒",
+  "use_for": "换话题、从开场进入正文：一道亮光斜扫过画面换掉",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "to": "可选：用户上传的图或 B-roll",
+    "title": "可选：不写 to 时标题卡上的字，用原话",
+    "at": "可选：开始转场的词"
+  },
+  "what": "一道很亮的斜向光从整个画面扫过（连字幕一起扫），画面在光下面换掉",
+  "params": {
+    "to": "可选。转过去的新画面：图片路径（如 \"assets/docs/chat.jpg\"）或 B-roll 帧 {\"frames\": \"assets/broll_inbox\", \"fps\": 30, \"count\": 165}；不写就是一张标题卡",
+    "title": "可选。不写 to 时标题卡上的大字",
+    "subtitle": "可选。标题卡上的小字",
+    "label": "可选。新画面是图片时，图片上方的一行字",
+    "at": "可选。在哪个词开始转场（写原话里的词）；不写就在镜头约 1/3 处",
+    "dur": "可选。光扫过画面用多久（秒），默认 0.9"
+  },
+  "sources": [
+    "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
+  ]
+}

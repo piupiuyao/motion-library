@@ -1,0 +1,39 @@
+{
+  "id": "name_pill",
+  "was": "c48",
+  "name": "账号名牌条",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "介绍身份"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "账号胶囊",
+  "duration": "2–4 秒",
+  "use_for": "开头自我介绍、亮身份：胸前滑进一条账号名牌",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "name": "必填：讲者名字",
+    "handle": "可选：@账号",
+    "platform": "可选：平台名"
+  },
+  "what": "一个胶囊形标签（平台图标 + 名字 + @账号，可带「关注」按钮）从下方滑进来，2–3 秒后收回",
+  "params": {
+    "name": "必填。名字（名字和 @账号至少填一个，否则不显示）",
+    "handle": "可选。@账号",
+    "follow": "可选。按钮字，默认 Follow；false = 不要按钮",
+    "iconBg": "可选。图标底色，默认用该平台的品牌色",
+    "at": "可选。第几秒滑入，默认 0.3",
+    "hold": "可选。停留秒数，默认 2.6",
+    "y": "可选。纵向位置，默认 1240",
+    "platform": "可选。左边圆形里的平台图标，填平台名（如 Instagram / TikTok / YouTube / X / LinkedIn），从图标库取官方标志，默认 Instagram；找不到就不显示图标",
+    "icon": "可选。自定义图标（HTML/emoji），写了就不用 platform"
+  },
+  "sources": [
+    "https://videohive.net/item/vertical-lower-thirds/60452077"
+  ]
+}

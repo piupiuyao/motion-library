@@ -1,11 +1,11 @@
 {"skin": "clean", "shots": [
-  {"words": "0-6", "template": "c45", "params": {"text": "STOP SCROLLING", "handle": "@rumi", "desc": "3,000 unread messages 😩"}},
-  {"words": "14-23", "template": "c94", "params": {"icon": "🤔", "text": "Replying isn't hard.<br>Deciding is.", "width": 940, "height": 260, "size": 56, "y": 150}},
-  {"words": "28-42", "template": "c41", "params": {"items": [{"text": "Email", "at": "email", "color": "#ffe1e1"}, {"text": "WhatsApp", "at": "WhatsApp", "color": "#d9f7d9"}, {"text": "Slack", "at": "Slack", "color": "#efe0ff"}, {"text": "Telegram", "at": "Telegram", "color": "#dbeeff"}]}},
-  {"words": "43-48", "template": "c63", "params": {"at": 0.7, "to": {"title": "3 THINGS", "sub": "that actually work"}}},
-  {"words": "49-68", "template": "c39", "params": {"title": "3 things", "items": [{"text": "Reply in batches", "at": 50}, {"text": "Keep answers short", "at": 57}, {"text": "Mute notifications", "at": 62}], "shift": 340, "width": 500}},
-  {"words": "69-81", "template": "c36", "params": {"label": "4 HOURS → 40 MIN", "media": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}},
-  {"words": "82-94", "template": "c37", "params": {"media": "assets/docs/chat.jpg", "title": "Sarah texted me…"}},
-  {"words": "95-101", "template": "c47", "params": {"start": 2532}},
-  {"words": "105-117", "template": "c101", "params": {"keyword": "system", "lead": "Comment", "handle": "@rumi", "avatar": "R", "sub": "I'll send my template", "y": 1150}}
+  {"words": "0-6", "template": "phone_frame", "params": {"text": "STOP SCROLLING", "handle": "@rumi", "desc": "3,000 unread messages 😩"}},
+  {"words": "14-23", "template": "glass_card", "params": {"icon": "🤔", "text": "Replying isn't hard.<br>Deciding is.", "width": 940, "height": 260, "size": 56, "y": 150}},
+  {"words": "28-42", "template": "icon_cards", "params": {"items": [{"text": "Email", "at": "email", "color": "#ffe1e1"}, {"text": "WhatsApp", "at": "WhatsApp", "color": "#d9f7d9"}, {"text": "Slack", "at": "Slack", "color": "#efe0ff"}, {"text": "Telegram", "at": "Telegram", "color": "#dbeeff"}]}},
+  {"words": "43-48", "template": "paper_tear", "params": {"at": 0.7, "to": {"title": "3 THINGS", "sub": "that actually work"}}},
+  {"words": "49-68", "template": "checklist", "params": {"title": "3 things", "items": [{"text": "Reply in batches", "at": 50}, {"text": "Keep answers short", "at": 57}, {"text": "Mute notifications", "at": 62}], "shift": 340, "width": 500}},
+  {"words": "69-81", "template": "split_vertical", "params": {"label": "4 HOURS → 40 MIN", "media": {"frames": "assets/broll_inbox", "fps": 30, "count": 165, "offset": 2.5}}},
+  {"words": "82-94", "template": "side_split", "params": {"media": "assets/docs/chat.jpg", "title": "Sarah texted me…"}},
+  {"words": "95-101", "template": "rec_frame", "params": {"start": 2532}},
+  {"words": "105-117", "template": "comment_cta", "params": {"keyword": "system", "lead": "Comment", "handle": "@rumi", "avatar": "R", "sub": "I'll send my template", "y": 1150}}
 ]}

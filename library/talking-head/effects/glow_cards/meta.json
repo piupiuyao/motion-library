@@ -1,0 +1,34 @@
+{
+  "id": "glow_cards",
+  "was": "c46",
+  "name": "虚化压暗发光卡",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "数字",
+    "金句观点"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "虚化背景出卡",
+  "duration": "3–6 秒",
+  "use_for": "要全神贯注的要点或数字：画面虚化压暗，四周弹出发光卡",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "cards": "必填：最多 4 张 {top, big, at}，数字和词都用原话里的"
+  },
+  "what": "口播画面虚化变暗，四周弹出深色圆角卡片（渐变、发光边、发光字），讲完画面变回清楚",
+  "params": {
+    "cards": "必填。最多 4 张发光卡 [{\"top\":\"小字\",\"big\":\"大字/数字\",\"at\":\"说到哪个词弹出\",\"size\":字号}]（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）",
+    "glow": "可选。发光颜色，默认主题色",
+    "spots": "可选。每张卡的位置 CSS 列表，如 [\"left:60px;top:200px\", \"right:60px;top:1180px\"]"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=O6HOYu_ZEnw"
+  ]
+}

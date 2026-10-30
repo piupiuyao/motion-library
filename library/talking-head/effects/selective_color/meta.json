@@ -1,0 +1,31 @@
+{
+  "id": "selective_color",
+  "was": "c54",
+  "name": "局部留色",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "金句观点",
+    "讲故事"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "调色质感",
+  "duration": "3–10 秒",
+  "use_for": "只想让人或关键词抢眼：画面变黑白，只留一样东西有颜色",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {},
+  "what": "画面变黑白，只留一样东西有颜色：人、手里的道具，或字幕里的关键词",
+  "params": {
+    "start": "可选。第几秒开始褪色，默认 0.25"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=431s",
+    "https://www.choppity.com/tools/recreate-video-editing-style/ali-abdaal/"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "flash_cards",
+  "was": "c04",
+  "name": "文字快闪",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "开场钩子",
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "快速闪切",
+  "duration": "1.5–3 秒",
+  "use_for": "开场或一口气列举 3–5 个词：全屏色卡踩点快闪",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "cards": "必填：每张 1–2 个词，取原话里的词，可写 {text, at}"
+  },
+  "what": "口播画面突然切成一串纯色卡，每张砸一两个大字，踩着节拍快速闪过，再切回人",
+  "params": {
+    "cards": "必填。每张色卡上的字（1–2 个词一张），按顺序闪；可写成 {\"text\":\"EMAILS\",\"at\":\"Emails\"} 让这张卡在她说到这个词时出现",
+    "start": "可选。没写 at 时，从她说到哪个词开始闪，默认 0.3 秒",
+    "step": "可选。没写 at 时每张卡停留秒数，默认 0.3",
+    "end": "可选。说到哪个词时切回人，默认最后一张卡停 0.5 秒",
+    "last": "可选。没写 end 时最后一张卡停留秒数，默认 0.5",
+    "colors": "可选。底色/字色对的列表，如 [[\"#ff2d3a\",\"#fff\"],[\"#111\",\"#c6f432\"]]；默认用主题色（--accent / --accent-2 / 黑 / 白 轮换）；每张卡后半拍会反色"
+  },
+  "sources": [
+    "https://elements.envato.com/stomp-intro-slides-pr-TQ9EC79"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "neon_outline",
+  "was": "c58",
+  "name": "霓虹涂鸦描边",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽",
+    "介绍身份"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "圈画标注",
+  "duration": "2–5 秒",
+  "use_for": "兴奋时刻、俏皮插话、自我介绍：霓虹线沿人轮廓抖动",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {},
+  "what": "一圈发光的粉/蓝/绿手绘线沿着人的轮廓一直抖动（逐帧沸腾），头旁边冒出小星星、爱心",
+  "params": {
+    "colors": "可选。三条描边的颜色，默认 [主题 --accent, --accent-2, 霓虹青 #33e6ff]"
+  },
+  "sources": [
+    "https://www.freevisuals.net/post/neon-scribble-templates-illuminating-videos-with-glowing-creativity"
+  ]
+}

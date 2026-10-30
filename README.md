@@ -19,7 +19,7 @@ inspiration/
 skills/
   talking-head-video/             口播一键成片 skill（转写 → 粗剪 → 抠像 → 镜头表 → 出片），模板从 library 取
 tools/
-  catalog.py                      检查标签 + 生成总表和库页面数据；--alt ID 查替代
+  catalog.py                      检查标签 + 生成总表和库页面数据；--json 给 AI 挑动效的精简表；--alt ID 查替代
   previews.py                     给能出片的动效渲染预览
 gallery/index.html                库页面
 ```
@@ -34,15 +34,21 @@ gallery/index.html                库页面
 
 | 标签 | 说明 |
 |---|---|
-| `category` 类别 | 字体 / 素材 / 版式 / 镜头特效 / 片头片尾 / 整片参考 |
-| `purpose` 句子用途 | 开场钩子、核心观点、吐槽痛点、数据对比、引用资料……（AI 选动效和推荐替代都靠它） |
-| `style` 风格 | 通用（跟皮肤变）、克制、网感、拼贴、复古、光感、纸艺、排版、电影感 |
-| `needs` 需要 | 抠像 / 图片 / 视频 / 数字 |
-| `source` 出处 | 从哪条片子拆的 |
+| `purpose` 句子用途 | 这句话在做什么（开场钩子、数字、清单步骤、对比前后、引用证据……），1–3 个。AI 挑动效先看它 |
+| `weight` 分量 | 底层（字幕、推近，不算数量）/ 小（脸完整露出）/ 大（全屏、盖脸、转场、版式大变） |
+| `covers_face` 挡脸 | 会不会盖住、虚化脸或把人缩进小窗 |
+| `zone` 位置 | 上方 / 中部 / 胸口 / 下方 / 全屏 / 环绕 / 整体（只动镜头或调色） |
+| `group` 组 | 长得像的归一组，一条视频每组最多用一个；替代也先在同组里找 |
+| `fills` 要填的参数 | 哪些参数要从原话里填、怎么填，标了必填/可选 |
+| `needs` 前提 | 抠像 / 数字（要有真实数字） |
+| `needs_assets` 素材 | 截图 / 照片 / B-roll视频 / logo，没有就不能用 |
+| `duration`、`use_for` | 合适的镜头长度、一句话说什么时候用 |
+| `category` 类别 | 只是浏览用：字体 / 素材 / 版式 / 镜头特效 / 转场 / 片头片尾 |
+| `was` | 从候选区搬进来的，原来的编号（对照表 `candidates/id_map.json`） |
 
 ## 加一条
 
-- 建 `library/<类型>/effects/<id>/`，写 `meta.json` + `template.js`（写法见 `skills/talking-head-video/SKILL.md`「加新模板」），在示例镜头表 `shots_showcase.json` 里用一次，跑 `python3 tools/previews.py <id>`。
+- 建 `library/<类型>/effects/<id>/`，写 `meta.json` + `template.js`（写法见 `skills/talking-head-video/SKILL.md`「加新模板」），在 `skills/talking-head-video/demo_rumi/shots_*.json` 里用一次，跑 `python3 tools/previews.py <id>`。
 - 最后都跑 `python3 tools/catalog.py`。
 
 `inspiration/` 里的缩略图和介绍来自别人的片子，只做内部学习用，这个库不要公开。

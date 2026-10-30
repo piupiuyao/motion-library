@@ -1,0 +1,40 @@
+{
+  "id": "post_card",
+  "was": "c15",
+  "name": "推文卡片弹出",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "引用证据"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "社交帖卡片",
+  "duration": "2–4 秒",
+  "use_for": "引用别人说的话、爆帖或新闻：胸前弹出一张帖子卡片",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "必填：帖子正文，用原话里引用的话",
+    "name": "可选：讲者或原话里的人名",
+    "handle": "可选：@账号"
+  },
+  "what": "一张社交帖子卡片（头像、账号、正文、点赞数）在胸前弹出、微微倾斜，然后飞走",
+  "params": {
+    "text": "必填。帖子正文；不填不显示",
+    "name": "显示名（一般是讲者名字），不填留空",
+    "handle": "账号，如 @xxx，不填留空",
+    "avatar": "可选。头像图片路径，不填用首字母圆头像",
+    "likes": "点赞数（会往上跳），默认 18400",
+    "replies": "评论数文字，默认 1.2K",
+    "reposts": "转发数文字，默认 3.4K",
+    "views": "浏览数文字，默认 2.1M",
+    "top": "可选。卡片顶部 y 像素，默认 930（胸前）",
+    "platform": "右上角平台标志，填平台名（如 X / Threads / Bluesky），从图标库取单色官方标志，默认 X；false=不显示"
+  },
+  "sources": [
+    "https://elements.envato.com/tweets-pack-6XV2RV6"
+  ]
+}

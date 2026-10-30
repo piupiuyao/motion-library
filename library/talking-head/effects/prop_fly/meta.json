@@ -1,0 +1,38 @@
+{
+  "id": "prop_fly",
+  "was": "c23",
+  "name": "道具旋转飞入",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "提到具体东西",
+    "定义概念"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "3D道具",
+  "duration": "2–3 秒",
+  "use_for": "把比喻或具体名词画出来：道具转着圈从人前面飞过",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "emoji": "必填：道具 emoji（或用 image）",
+    "image": "可选：用户上传的抠好的道具 png",
+    "at": "可选：说到时飞过的词"
+  },
+  "what": "一个跟这句话有关的抠图道具（轮胎、硬币、手机）转着圈滑过人前面，带雾气和对应音效",
+  "params": {
+    "emoji": "必填（和 image 二选一）。道具 emoji；两个都不填就不显示",
+    "image": "可选。抠好图的道具图片（透明 png）",
+    "at": "可选。原话里的词，说到时开始飞过",
+    "from": "right / left，从哪边进，默认 right",
+    "duration": "飞过用时秒数，默认约 1.8",
+    "size": "道具尺寸像素，默认 460",
+    "y": "可选。飞行高度 y 像素，默认胸前"
+  },
+  "sources": [
+    "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
+  ]
+}

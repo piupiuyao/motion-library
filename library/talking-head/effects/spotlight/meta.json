@@ -1,0 +1,29 @@
+{
+  "id": "spotlight",
+  "was": "c55",
+  "name": "聚光灯",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "金句观点",
+    "讲故事"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "压暗突出人",
+  "duration": "2–5 秒",
+  "use_for": "坦白、揭晓「真正的原因是……」、情绪高点：四周压黑，一束光打在人身上",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "画面压到接近全黑，一束柔和的圆形光打在人（或指着的东西）上，像舞台",
+  "params": {
+    "radius": "可选。光圈大小（像素），默认 430"
+  },
+  "sources": [
+    "https://www.douyin.com/video/7597349220573003365",
+    "https://www.capcut.com/explore/spotlight-green-screen"
+  ]
+}

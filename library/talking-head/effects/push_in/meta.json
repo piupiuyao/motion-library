@@ -5,26 +5,22 @@
   "status": "ready",
   "category": "镜头特效",
   "purpose": [
-    "情绪高点",
-    "结尾",
-    "核心观点",
-    "吐槽痛点"
+    "金句观点",
+    "情绪吐槽"
   ],
-  "style": [
-    "通用"
-  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "推近",
+  "duration": "2–6 秒",
+  "use_for": "重要或走心的一句慢慢推近；不算动效，单机位每 5–8 秒可推一次",
   "needs": [],
-  "use_for": [
-    "情绪拉升",
-    "说到最真心、最重的一句",
-    "结尾前的转折"
-  ],
   "needs_assets": [],
+  "fills": {},
   "layers": [
     "原画面（以脸为中心慢慢放大）",
     "四周压暗"
   ],
-  "duration": "2–6 秒",
   "params": {
     "to": "可选。推到多大，默认 1.3",
     "vignette": "可选，默认 true。四周压暗"

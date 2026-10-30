@@ -11,7 +11,7 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
 - **规则层**：这句话在说什么（观点 / 吐槽 / 数据 / 资料 / 细节 / 情绪高点 / 列举）→ 该用哪类画面。
 - **模板层**：每个模板是一套分好层的画面（背景 / 原画面 / 人后文字 / 抠出的人像 / 人前元素），把人像放进去就出画面。换颜色和字体（皮肤）就是另一种风格。
 
-模板放在共用的动效库里：**`../../library/talking-head/effects/`**。总表和速查见 `../../library/README.md`，可视化的库页面是 `../../gallery/index.html`。标签取值见 `../../tags.json`。现在有 17 个，分字体 / 素材 / 版式 / 镜头特效 / 片头片尾五类。
+模板放在共用的动效库里：**`../../library/talking-head/effects/`**。总表和速查见 `../../library/README.md`，可视化的库页面是 `../../gallery/index.html`。标签取值见 `../../tags.json`。现在有 124 个，每个都标了句子用途、分量（底层/小/大）、挡不挡脸、位置、组（长得像的一组，一条视频每组最多用一个）和要从原话里填的参数；挑动效时跑 `python3 ../../tools/catalog.py --json` 看精简表。
 
 ## 硬规则
 
@@ -68,14 +68,14 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
   "skin": "clean",
   "shots": [
     {"words": "0-9",   "purpose": "开场钩子", "template": "keyword_pop",   "params": {"keywords": ["AI is powerful"]}},
-    {"words": "16-24", "purpose": "强调词",   "template": "text_sandwich", "params": {"text": "DRAINING"}},
-    {"words": "31-41", "purpose": "引用资料", "template": "doc_fly",       "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"]}}
+    {"words": "16-24", "purpose": "金句观点",   "template": "text_sandwich", "params": {"text": "DRAINING"}},
+    {"words": "31-41", "purpose": "引用证据", "template": "doc_fly",       "params": {"images": ["assets/docs/gmail.jpg", "assets/docs/chat.jpg"]}}
   ]
 }
 ```
 
 - `words`：`work/transcript.txt` 里的词编号范围，模板从第一个词开始、到最后一个词结束。没写到的词就是普通露脸段落，只有字幕。
-- `purpose`：这句话在做什么，取值见 `tags.json` 的 `purpose`（开场钩子 / 吐槽痛点 / 引用资料……）。先判断用途，再从库里挑这个用途下的动效；镜头清单里的「可以换成」也按它推荐。
+- `purpose`：这句话在做什么，取值见 `tags.json` 的 `purpose`（开场钩子 / 数字 / 清单步骤 / 引用证据 / 金句观点……）。先判断用途，再从库里挑这个用途下的动效；镜头清单里的「可以换成」也按它推荐。
 - `params`：每个模板要什么写在库里它的 `meta.json` 里。
 - `keywords` 里的词在底部字幕里也会高亮。
 - `focus`（可选）：`[x, y]`，脸在画面里的位置（0–1）。不写就从抠像里自动算。
@@ -84,8 +84,8 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。去停�
 
 ## 加新模板
 
-1. 新建 `library/talking-head/effects/<id>/`，写 `meta.json`（标签按 `tags.json`：类别、句子用途、风格、需要什么；再加分层、参数、出处）和 `template.js`（`setup` 搭画面，`frame` 每帧按时间改样式）。照现有 8 个的写法，只用 `engine.html` 里的皮肤变量（`--accent` 等），换皮肤才会跟着变。
-2. 在 `work_example/shots_showcase.json` 里用一次，跑 `python3 tools/previews.py <id>` 出预览，再跑 `python3 tools/catalog.py` 更新总表和库页面（标签写错会报错）。
+1. 新建 `library/talking-head/effects/<id>/`，写 `meta.json`（标签按 `tags.json`：句子用途、分量、挡脸、位置、组、前提、素材、类别；再加 `use_for`、`duration`、`fills`、参数、出处）和 `template.js`（`setup` 搭画面，`frame` 每帧按时间改样式）。照现有模板的写法，只用 `engine.html` 里的皮肤变量（`--accent` 等），换皮肤才会跟着变。
+2. 在 `demo_rumi/shots_*.json` 里用一次，跑 `python3 tools/previews.py <id>` 出预览，再跑 `python3 tools/catalog.py` 更新总表和库页面（标签写错会报错）。
 
 ## 环境
 

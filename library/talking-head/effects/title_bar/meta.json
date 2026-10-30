@@ -5,23 +5,25 @@
   "status": "ready",
   "category": "字体",
   "purpose": [
-    "全片常驻"
+    "字幕常驻"
   ],
-  "style": [
-    "克制"
-  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "顶部常驻条",
+  "duration": "整段都可以",
+  "use_for": "整条片子顶部挂节目名，人缩进下面的框",
   "needs": [],
-  "use_for": [
-    "整条片子的节目名、系列名",
-    "开头先亮明是谁、讲什么"
-  ],
   "needs_assets": [],
+  "fills": {
+    "title": "必填：节目名或主题，用原话",
+    "sub": "可选：副标题"
+  },
   "layers": [
     "深色背景",
     "原画面缩进下方圆角框",
     "顶部：大标题 + 小字"
   ],
-  "duration": "整段都可以",
   "params": {
     "title": "必填。节目名；不写就不显示",
     "sub": "可选。一行小字副标题",

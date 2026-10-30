@@ -1,0 +1,37 @@
+{
+  "id": "headline_match",
+  "was": "c74",
+  "name": "标题匹配切",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "引用证据",
+    "开场钩子"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "快速闪切",
+  "duration": "2–3 秒",
+  "use_for": "「所有人都在讲 X」：一串文章快切，同一个词钉在原位",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "word": "必填：原话里的那个词",
+    "at": "可选：开始快切的词"
+  },
+  "what": "一串不同的文章截图快速切换，同一个词（如「通胀」）一直固定在屏幕同一个位置，周围的文章每次都变",
+  "params": {
+    "word": "必填。固定不动的那个词（原话里的词）；不写就取这句里最长的词",
+    "at": "可选。在哪个词开始快切（原话里的词）；不写从 0.3 秒开始",
+    "start": "可选。不写 at 时第几秒开始",
+    "step": "可选。每篇文章停多久（秒），默认 0.2",
+    "count": "可选。切几篇文章，默认 8",
+    "articles": "可选。自定义文章列表，每篇 {bg, ink, font, mast(报头), l(词左边的字), r(词右边的字), img(配图路径或 null)}；默认是 8 张通用排版的假文章（无配图）",
+    "y": "可选。关键词所在高度（像素），默认 700"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=fQX20G0gxMs"
+  ]
+}

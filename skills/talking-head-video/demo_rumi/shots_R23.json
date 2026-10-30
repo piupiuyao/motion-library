@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "2-13",
-   "template": "c21",
+   "template": "glass_card_orbit",
    "params": {
     "number": 3000,
     "label": "Inbox",
@@ -13,7 +13,7 @@
   },
   {
    "words": "31-42",
-   "template": "c17",
+   "template": "article_highlight",
    "params": {
     "headline": "Why every app wants an answer right now",
     "highlight": "Email, WhatsApp, Slack and Telegram: every single one wants an answer right now.",
@@ -30,7 +30,7 @@
   },
   {
    "words": "61-68",
-   "template": "c34",
+   "template": "knob_dial",
    "params": {
     "title": "NOTIFICATIONS",
     "min": "OFF",
@@ -42,7 +42,7 @@
   },
   {
    "words": "69-81",
-   "template": "c33",
+   "template": "map_route",
    "params": {
     "from": "Before: 4 hours",
     "to": "After: 40 min"
@@ -50,7 +50,7 @@
   },
   {
    "words": "82-94",
-   "template": "c106",
+   "template": "comment_reply",
    "params": {
     "user": "sarah",
     "text": "how do you reply so fast?? 😭"
@@ -58,7 +58,7 @@
   },
   {
    "words": "96-101",
-   "template": "c31",
+   "template": "paper_letters",
    "params": {
     "text": "SYSTEM",
     "x": 660,

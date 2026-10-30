@@ -1,0 +1,30 @@
+{
+  "id": "icon_cards",
+  "was": "c41",
+  "name": "白卡图标环绕",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "图标",
+  "duration": "3–6 秒",
+  "use_for": "列举几样东西或工具：白色图标小卡弹到人四周",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：最多 6 张 {text, at, icon}，用原话里的词"
+  },
+  "what": "几张白色圆角小卡（图标 + 一行字）一张张弹到人四周的角落，不挡脸",
+  "params": {
+    "items": "必填。最多 6 张卡 [{\"text\":\"一行字\",\"at\":\"说到哪个词弹出\",\"icon\":\"可选，图标名或别的词\",\"color\":\"可选，线条图标的底色\"}]，按 左上/右上/左下/右下/左中/右中 依次摆放（at 可以写原文单词，如 \"Slack\"，也可以写词序号数字，如 80）。图标从图标库取：不写 icon 就按 at 那个词找（品牌词出官方 logo，普通词出线条图标）；icon 也可直接填 emoji；找不到图标的那张卡自动跳过"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YWoWti-hSo0"
+  ]
+}

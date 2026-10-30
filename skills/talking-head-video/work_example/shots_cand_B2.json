@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "22-34",
-   "template": "c19",
+   "template": "callout_steps",
    "params": {
     "groups": [
      {
@@ -32,7 +32,7 @@
   },
   {
    "words": "61-66",
-   "template": "c22",
+   "template": "rise_behind",
    "params": {
     "emoji": "🔋",
     "label": "Low battery",
@@ -43,14 +43,14 @@
   },
   {
    "words": "67-79",
-   "template": "c24",
+   "template": "halo",
    "params": {
     "at": "sometimes"
    }
   },
   {
    "words": "90-97",
-   "template": "c23",
+   "template": "prop_fly",
    "params": {
     "emoji": "📱",
     "at": "sends"
@@ -58,7 +58,7 @@
   },
   {
    "words": "111-122",
-   "template": "c33",
+   "template": "map_route",
    "params": {
     "from": "A few hours",
     "to": "A few days"
@@ -66,7 +66,7 @@
   },
   {
    "words": "123-137",
-   "template": "c21",
+   "template": "glass_card_orbit",
    "params": {
     "number": 12453,
     "label": "Inbox",
@@ -76,7 +76,7 @@
   },
   {
    "words": "138-148",
-   "template": "c20",
+   "template": "glow_flow",
    "params": {
     "steps": [
      "New message",

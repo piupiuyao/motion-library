@@ -1,0 +1,40 @@
+{
+  "id": "phone_shatter",
+  "was": "c35",
+  "name": "物体碎裂",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "情绪吐槽",
+    "金句观点"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "3D道具",
+  "duration": "2–3 秒",
+  "use_for": "「千万别这样做」、辟谣、强烈否定：手机转进来碎成渣",
+  "needs": [],
+  "needs_assets": [
+    "截图"
+  ],
+  "fills": {
+    "image": "必填：用户上传的截图（手机屏幕上的）",
+    "at": "可选：说到时碎的词",
+    "label": "可选：原话里的一个词"
+  },
+  "what": "一个 3D 物体（手机）从旁边转进来，接着碎成玻璃渣飞散",
+  "params": {
+    "image": "必填素材。手机屏幕上的截图路径；不填不显示",
+    "pos": "截图 object-position，默认 60% 0%",
+    "at": "可选。原话里的词，说到时屏幕开裂（0.35 秒后碎掉）",
+    "label": "可选。碎掉时弹出的大字（主题色），如 DON'T",
+    "y": "手机中心 y，默认 1000",
+    "x": "手机中心 x，默认 700（在脸旁边）",
+    "w": "手机宽度像素，默认 360"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=Qbntd8yud0o&t=535s"
+  ]
+}

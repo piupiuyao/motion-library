@@ -1,0 +1,32 @@
+{
+  "id": "punch_zoom",
+  "was": "c51",
+  "name": "急推回弹",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "金句观点",
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "重音冲击",
+  "duration": "1–2 秒",
+  "use_for": "强调一个词、抖包袱、惊讶：快速推到脸上再退回",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：原话里的词"
+  },
+  "what": "镜头快速推到脸上，停一拍，再缓缓退回原来的景别（一次进出，不是慢推）",
+  "params": {
+    "at": "可选。在哪个词上推（原话里的词）；不写用 keywords 第一个短语，再不行在 40% 处",
+    "to": "可选。推到多大，默认 1.55",
+    "hold": "可选。推到后停多久（秒），默认 0.5"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=571s"
+  ]
+}

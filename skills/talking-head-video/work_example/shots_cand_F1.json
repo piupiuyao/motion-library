@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "18-29",
-   "template": "c95",
+   "template": "face_tag",
    "params": {
     "text": "so drained",
     "emoji": "😮‍💨"
@@ -11,7 +11,7 @@
   },
   {
    "words": "62-66",
-   "template": "c99",
+   "template": "rgb_glitch",
    "params": {
     "at": [
      "emotional",
@@ -21,14 +21,14 @@
   },
   {
    "words": "67-73",
-   "template": "c105",
+   "template": "typewriter_card",
    "params": {
     "text": "Replying isn't just typing or saying."
    }
   },
   {
    "words": "90-97",
-   "template": "c106",
+   "template": "comment_reply",
    "params": {
     "user": "jess.k",
     "text": "how do you answer the long emotional texts?? 😭"
@@ -36,14 +36,14 @@
   },
   {
    "words": "123-137",
-   "template": "c109",
+   "template": "meme_pop",
    "params": {
     "at": "guilty"
    }
   },
   {
    "words": "138-148",
-   "template": "c101",
+   "template": "comment_cta",
    "params": {
     "keyword": "AI",
     "sub": "I'll send you my setup"

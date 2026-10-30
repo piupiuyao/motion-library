@@ -1,0 +1,33 @@
+{
+  "id": "rgb_glitch",
+  "was": "c99",
+  "name": "RGB 色散抖动",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "重音冲击",
+  "duration": "1–3 秒",
+  "use_for": "重音、震惊、反转，科技/故障感话题：RGB 三色错开乱抖",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：原话里的重音词"
+  },
+  "what": "画面复制成红、绿、蓝三层，彼此横向错开几个像素，在重音时错开幅度突然加大（10–30px）并随机抖动 0.2–0.5 秒，再收回；边缘出现彩色重影。",
+  "params": {
+    "at": "重音词（一个或数组），说到时错位拉大并乱抖；不填用高亮词组",
+    "base": "平时三色错开的像素，默认 4",
+    "amp": "重音时额外错开的像素，默认 28",
+    "hold": "每次抖动持续秒数，默认 0.4"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=N7caOY-JCsY&t=0s"
+  ],
+  "ref_moment": "0:00–0:15 开头成品"
+}

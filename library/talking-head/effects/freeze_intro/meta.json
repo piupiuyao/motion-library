@@ -1,0 +1,39 @@
+{
+  "id": "freeze_intro",
+  "was": "c76",
+  "name": "定格人物介绍",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "片头片尾",
+  "purpose": [
+    "介绍身份"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "定格高光",
+  "duration": "2–4 秒",
+  "use_for": "自我介绍、介绍嘉宾：画面定格，人描边挪到一边，贴纸写名字",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "name": "必填：讲者或嘉宾名字",
+    "title": "可选：身份，用原话",
+    "at": "可选：定格的词"
+  },
+  "what": "画面定格，背景虚化压暗，抠出的人加描边放大挪到一边，笔刷贴纸滑进来写上名字/身份，配打字声或嗖声",
+  "params": {
+    "name": "必填。名字；不写就不显示",
+    "title": "可选。身份那行小字；不写就只有名字",
+    "at": "可选。说到哪个词时定格，默认 0.6 秒",
+    "side": "可选。人挪到哪边 left / right，默认 left（贴纸在另一边）",
+    "y": "可选。贴纸竖直位置，默认 760",
+    "size": "可选。名字字号，默认 120"
+  },
+  "sources": [
+    "https://www.douyin.com/video/7620297661396176137",
+    "https://www.youtube.com/watch?v=W79u8d2VpVA&t=38s"
+  ]
+}

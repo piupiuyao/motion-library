@@ -1,0 +1,30 @@
+{
+  "id": "comic_bubble",
+  "was": "c25",
+  "name": "漫画对白气泡",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "情绪吐槽",
+    "引用证据"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "漫画感",
+  "duration": "2–4 秒",
+  "use_for": "内心独白、反讽、复述别人的话、「WHAT?!」：头旁弹漫画气泡",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：[{kind: speech/thought/burst, text, at}]，text 用原话或反应词，at 是原话里的词"
+  },
+  "what": "漫画样式的对话框/思考泡或爆炸字（「WHAT?!」）带网点，从人头旁边弹出",
+  "params": {
+    "items": "必填。气泡数组 [{kind: 'speech'|'thought'|'burst', text, at}]；speech/thought 出现在头右上方，burst（爆炸字，底色主题色）在头左上方；at 是原话里的词；不填不显示"
+  },
+  "sources": [
+    "https://elements.envato.com/comic-elements-VRHJEWX"
+  ]
+}

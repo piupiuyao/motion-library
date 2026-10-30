@@ -1,0 +1,34 @@
+{
+  "id": "paper_unfold",
+  "was": "c65",
+  "name": "纸团展开",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "转场",
+    "换话题"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "纸感转场",
+  "duration": "2–4 秒",
+  "use_for": "换话题、揭晓答案：纸团展开铺满屏幕",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "title": "可选：（建议填）纸上的手写字，用原话",
+    "to": "可选：用户上传的图"
+  },
+  "what": "一个揉皱的纸团展开铺满屏幕，下一张图/画面出现在展平的纸上，配纸张声",
+  "params": {
+    "to": "可选。展开后纸上印的图片路径（用户上传的截图/照片）；不写就只有手写字（或空白纸）",
+    "title": "可选（建议填）。纸上的手写字，从原话里取",
+    "at": "可选。第几秒纸团出现，默认 1.0"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=5FtsVft5Vn8",
+    "https://www.youtube.com/watch?v=wxlDksHicW8"
+  ]
+}

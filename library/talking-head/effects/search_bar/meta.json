@@ -1,0 +1,34 @@
+{
+  "id": "search_bar",
+  "was": "c16",
+  "name": "搜索框打字",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "开场钩子",
+    "定义概念"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "中部",
+  "group": "虚化背景出卡",
+  "duration": "2–4 秒",
+  "use_for": "用问题开场「怎么……」、「大家都在搜这个」",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "query": "必填：原话里的问题",
+    "suggestions": "可选：3 条联想词，以 query 开头",
+    "engine": "可选：原话里提到的平台"
+  },
+  "what": "画面虚化，一个 Google 样式的搜索框出现，光标一个字一个字打出问题，可以接着出联想词",
+  "params": {
+    "query": "必填。搜索框里打出的问题；不填不显示",
+    "suggestions": "可选。打完后弹出的联想词列表（3 条左右，最好以 query 开头，后半段会加粗）",
+    "engine": "搜索框上方的 logo，填品牌名（如 Google / YouTube / Amazon / Bing），从图标库取官方 logo，默认 Google；false=不显示"
+  },
+  "sources": [
+    "https://elements.envato.com/how-to-make-a-google-search-KT8DKRJ"
+  ]
+}

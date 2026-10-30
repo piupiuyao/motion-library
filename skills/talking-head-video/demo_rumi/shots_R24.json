@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "2-13",
-   "template": "c109",
+   "template": "meme_pop",
    "params": {
     "start": 0.2,
     "dur": 3.85,
@@ -17,7 +17,7 @@
   },
   {
    "words": "24-33",
-   "template": "c103",
+   "template": "tilted_screen",
    "params": {
     "side": "left",
     "y": 950,
@@ -29,7 +29,7 @@
   },
   {
    "words": "61-68",
-   "template": "c35",
+   "template": "phone_shatter",
    "params": {
     "image": "assets/docs/notify.jpg",
     "label": "OFF!",
@@ -40,7 +40,7 @@
   },
   {
    "words": "69-81",
-   "template": "c26",
+   "template": "emoji_pop",
    "params": {
     "items": [
      {
@@ -60,7 +60,7 @@
   },
   {
    "words": "82-94",
-   "template": "c25",
+   "template": "comic_bubble",
    "params": {
     "items": [
      {

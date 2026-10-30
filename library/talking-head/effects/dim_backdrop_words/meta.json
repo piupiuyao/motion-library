@@ -1,0 +1,34 @@
+{
+  "id": "dim_backdrop_words",
+  "was": "c93",
+  "name": "背景压暗人保持亮",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "金句观点"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "压暗突出人",
+  "duration": "2–5 秒",
+  "use_for": "关键结论：背景压暗、人保持亮，人身后出大字",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "lines": "必填：[{text, at}]，原话里的词"
+  },
+  "what": "背景变暗（叠一层约 60–80% 不透明的黑），但抠出来的人保持原亮度，看起来人从暗背景里浮出来；同时在人身后（压暗层之上、人之下）放大字或图形。进入和退出都是 0.3 秒淡入淡出。",
+  "params": {
+    "lines": "必填（建议）。人身后的大字行（原话里的词）：[{\"text\":\"LONG\",\"at\":\"long\",\"accent\":false}, …]；不写就只有压暗、没有字",
+    "dark": "可选。压暗不透明度，默认 0.72",
+    "y": "可选。大字顶部 y，默认 170"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=pkyDzEHpZao&t=35s"
+  ],
+  "ref_moment": "0:35–2:08（Darken Background 段）"
+}

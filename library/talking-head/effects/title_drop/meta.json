@@ -1,0 +1,35 @@
+{
+  "id": "title_drop",
+  "was": "c66",
+  "name": "标题幕下滑",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "换话题"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "章节标题卡",
+  "duration": "2–3 秒",
+  "use_for": "章节/话题切换「第二点」：全屏标题卡滑下盖住人再滑走",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "title": "必填：段落标题，用原话",
+    "num": "可选：序号，如 02"
+  },
+  "what": "一张全屏背景卡从上往下滑下来盖住人，卡上写段落标题，过一会儿滑走露出人",
+  "params": {
+    "title": "必填。段落标题（从原话里取）；不写就不显示",
+    "num": "可选。标题上方的大号序号，如 02；不写就不显示",
+    "bg": "可选。卡片背景色，默认主题色",
+    "size": "可选。标题字号，默认 150",
+    "at": "可选。第几秒滑下，默认 0.4",
+    "hold": "可选。盖住的秒数，默认 1.3"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=YUvG0hzwTsg&t=664s"
+  ]
+}

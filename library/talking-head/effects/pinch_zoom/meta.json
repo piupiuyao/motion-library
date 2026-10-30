@@ -1,0 +1,34 @@
+{
+  "id": "pinch_zoom",
+  "was": "c60",
+  "name": "手势控制缩放",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "开场钩子",
+    "对比前后"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "抠像换背景",
+  "duration": "3–6 秒",
+  "use_for": "俏皮开场、「放大看」、大小对比：手势一捏，人跟着缩放",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "steps": "可选：[{at, scale, hand}]，at 用原话里的词"
+  },
+  "what": "人张开或捏合手指时，抠出来的身体跟着变大或缩小，像在屏幕上缩放自己",
+  "params": {
+    "steps": "可选。缩放步骤列表，每步 {\"at\": 原话里的词, \"scale\": 缩放倍数, \"hand\": [x, y] 手在原画面里的像素位置（触摸点画在这里）}，如 [{\"at\":\"leave\",\"scale\":0.72},{\"at\":\"hours\",\"scale\":1.25,\"hand\":[830,950]}]；不写就先缩小再放大、平均分",
+    "background": "可选。背景图案 dots / grid / neon / paper，默认 dots",
+    "fade": "可选。抠像下半身淡出的范围（画面高度比例），默认 [0.64, 0.73]，用来藏住电脑挡住的那块；false=不淡出（没有电脑挡的素材，如 Rumi）"
+  },
+  "sources": [
+    "https://www.douyin.com/video/7597003199622674425"
+  ]
+}

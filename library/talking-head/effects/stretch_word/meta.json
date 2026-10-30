@@ -1,0 +1,36 @@
+{
+  "id": "stretch_word",
+  "was": "c104",
+  "name": "关键词纵向拉伸",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "金句观点",
+    "数字"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "大字特效",
+  "duration": "1.5–3 秒",
+  "use_for": "「巨大」「突然」这类词：一个词被竖着拉长",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "必填：原话里的词（或用 text 直接给字）"
+  },
+  "what": "字幕里一个词在 0.3–0.5 秒内只在竖直方向拉高（高度到 200–300%，宽度不变），像被拉长的橡皮筋，然后停住或回弹；也可以做横向拉宽版本。",
+  "params": {
+    "at": "必填（或写 text）。要拉伸的词（字幕里的原词）；都不写就用高亮词组，再没有就不显示",
+    "text": "可选。直接指定显示的字",
+    "dir": "y=纵向拉高（默认），x=横向拉宽",
+    "scale": "拉伸倍数，默认 2.4",
+    "size": "字号（可选，默认按字数）",
+    "y": "字底部的竖直位置，默认 440"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=WNS-n_O21TQ&t=282s"
+  ],
+  "ref_moment": "4:42–5:30（Vertical Scale Effect）"
+}

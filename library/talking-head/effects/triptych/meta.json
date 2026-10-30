@@ -1,0 +1,32 @@
+{
+  "id": "triptych",
+  "was": "c42",
+  "name": "三联屏",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "多个我",
+  "duration": "4–8 秒",
+  "use_for": "讲三个点、三个版本：三格画面谁在说谁亮",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "labels": "可选：三格的标签，用原话里的词",
+    "at": "可选：第 2、3 格从哪个词亮"
+  },
+  "what": "屏幕分成三格，每格是人的不同画面；谁在说话谁亮，说完的那格定住变暗",
+  "params": {
+    "at": "可选。第 2、3 格从哪个词开始亮，如 [80, 90]（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）；不写就三等分",
+    "labels": "可选。三格各自的小标签",
+    "crops": "可选。三格各自的取景 [{\"z\":缩放,\"x\":横移,\"fy\":原画面 y=760 落在格内的高度}]，默认按旧素材（脸在 y≈760）"
+  },
+  "sources": [
+    "https://www.douyin.com/video/7602177171734344522"
+  ]
+}

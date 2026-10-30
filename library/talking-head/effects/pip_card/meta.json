@@ -1,0 +1,37 @@
+{
+  "id": "pip_card",
+  "was": "c38",
+  "name": "画中画弹窗",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "引用证据",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "截图小窗",
+  "duration": "2–4 秒",
+  "use_for": "边讲边给一个例子、证据或产品画面：角落弹出圆角小窗",
+  "needs": [],
+  "needs_assets": [
+    "截图",
+    "B-roll视频"
+  ],
+  "fills": {
+    "media": "必填：用户上传的截图或 B-roll",
+    "label": "可选：原话里的词"
+  },
+  "what": "人保持全屏，角落或上方弹开一个带阴影的圆角卡片放 B-roll/图片，过一会儿收起",
+  "params": {
+    "media": "必填素材。卡片里的图片路径或 B-roll 帧；不填不显示",
+    "label": "可选。卡片左下角的小标签",
+    "corner": "可选。位置：tr 右上（默认）/ tl 左上 / top 正上",
+    "at": "可选。第几秒弹出，默认 0.3"
+  },
+  "sources": [
+    "https://motionarray.com/davinci-resolve-macros/pop-up-effect-macro-978376/"
+  ]
+}

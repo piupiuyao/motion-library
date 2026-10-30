@@ -1,0 +1,36 @@
+{
+  "id": "webpage_backdrop",
+  "was": "c44",
+  "name": "绿幕讲解",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "抠像配大图",
+  "duration": "4–10 秒",
+  "use_for": "对新闻、网页做反应「你看这个」：网页铺满做背景，人站在前面讲",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [
+    "截图"
+  ],
+  "fills": {
+    "images": "必填：用户上传的网页截图，从上往下排",
+    "address": "可选：网址"
+  },
+  "what": "一个网页/文章/截图铺满做背景，抠出的人站在下方大大地讲，背景可以滚动、推近",
+  "params": {
+    "images": "必填素材。拼成网页背景的截图列表（从上往下排）；不填不显示",
+    "address": "可选。浏览器地址栏里的字，不填留空",
+    "scroll": "可选。整段往上滚多少像素，默认 500"
+  },
+  "sources": [
+    "https://www.capcut.com/explore/green-screen-in-capcut"
+  ]
+}

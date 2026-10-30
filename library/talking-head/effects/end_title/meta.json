@@ -5,23 +5,25 @@
   "status": "ready",
   "category": "片头片尾",
   "purpose": [
-    "结尾"
+    "结尾号召"
   ],
-  "style": [
-    "克制"
-  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "结尾卡",
+  "duration": "2–4 秒",
+  "use_for": "最后一句收尾：人缩进小框，上方出标题",
   "needs": [],
-  "use_for": [
-    "收尾",
-    "复述主题"
-  ],
   "needs_assets": [],
+  "fills": {
+    "title": "必填：复述主题，用原话",
+    "sub": "可选：账号名或系列名"
+  },
   "layers": [
     "深色背景",
     "原画面缩进下方圆角框",
     "上方：大标题 + 小字"
   ],
-  "duration": "2–4 秒",
   "params": {
     "title": "必填。标题（复述主题，用原话）；不写就不显示",
     "sub": "可选。一行小字（账号名、系列名）",

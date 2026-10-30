@@ -1,5 +1,5 @@
 {"skin": "clean", "shots": [
-  {"words": "2-13", "template": "c02", "params": {"to": 3000, "label": "unread messages", "at": "3000", "dur": 1.2, "y": 1130}},
-  {"words": "43-48", "template": "c86", "params": {"text": "3 THINGS", "t0": 0.1}},
-  {"words": "95-101", "template": "c90", "params": {"lines": ["IT'S A", "SYSTEM"]}}
+  {"words": "2-13", "template": "number_roll", "params": {"to": 3000, "label": "unread messages", "at": "3000", "dur": 1.2, "y": 1130}},
+  {"words": "43-48", "template": "font_shuffle", "params": {"text": "3 THINGS", "t0": 0.1}},
+  {"words": "95-101", "template": "outline_through", "params": {"lines": ["IT'S A", "SYSTEM"]}}
 ]}

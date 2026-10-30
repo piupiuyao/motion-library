@@ -1,0 +1,32 @@
+{
+  "id": "hormozi_caption",
+  "was": "c82",
+  "name": "当前词变色大字幕",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "字幕样式",
+  "duration": "整段都可以",
+  "use_for": "干货/观点类口播：全大写粗字幕，正在说的词变色放大",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "Hormozi 式字幕：画面中下部每次只显示 2–4 个词，全大写、超粗无衬线（类似 Montserrat Black/Komika），白字加黑色粗描边和投影；正在说的那个词变成亮黄或亮绿，并瞬间放大约 110–120% 再回落，其余词保持白色。词组按说话节奏整组切换，没有过渡。字在人前面。",
+  "params": {
+    "per": "可选。每组几个词，默认 3（遇逗号句号提前换组）",
+    "size": "可选。字号，默认 104",
+    "y": "可选。顶部 y，默认 1080",
+    "colors": "可选。当前词高亮色列表，按组轮换；默认主题 --accent 和 --accent-2 轮换（--accent-2 是白色时只用 --accent）",
+    "hideOld": "可选。true 时遮住旧演示素材（Monica）里烧进去的旧字幕底条（只在关掉胶囊字幕时生效）；默认不遮，干净素材不需要"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=HdbPgh_OEmE&t=37s"
+  ],
+  "ref_moment": "0:37–1:20（用 Submagic 生成的 Hormozi 字幕成品演示）"
+}

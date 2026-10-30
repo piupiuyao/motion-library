@@ -1,0 +1,35 @@
+{
+  "id": "knockout_zoom",
+  "was": "c07",
+  "name": "镂空透视字",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "开场钩子",
+    "换话题"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "镂空字",
+  "duration": "2–3 秒",
+  "use_for": "开场或章节名：满屏色块上一个词透出画面，再放大铺满",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "必填：一个短词，原话里的"
+  },
+  "what": "满屏纯色上一个巨大的词，只有字的形状里透出视频，然后字迅速放大直到视频铺满全屏",
+  "params": {
+    "text": "必填。镂空的那个词（短词效果最好）；不填不显示",
+    "color": "可选。满屏底色，默认主题背景色 --bg-a",
+    "zoom_at": "可选。开始放大的时间（秒），默认 1.1",
+    "y": "可选。字的竖直中心，默认 900",
+    "stretch": "可选。字的竖向拉高倍数，默认 1.6"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=cocCWbVJeqo&t=48s",
+    "https://www.douyin.com/video/7586591437300878592"
+  ]
+}

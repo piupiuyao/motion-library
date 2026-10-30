@@ -1,0 +1,33 @@
+{
+  "id": "follow_click",
+  "was": "c79",
+  "name": "光标点关注",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "片头片尾",
+  "purpose": [
+    "结尾号召"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "账号胶囊",
+  "duration": "2–3 秒",
+  "use_for": "「关注看下集」：关注按钮被点一下变成已关注",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "handle": "可选：（建议填）@账号"
+  },
+  "what": "一个「关注/点赞」按钮弹出，鼠标或手指滑过来点一下，按钮变成「已关注」或变红，炸一下消失",
+  "params": {
+    "handle": "可选（建议填）。账号名，如 @xxx；不写就只有关注按钮、没有头像和账号名",
+    "label": "可选。按钮文字，默认 + Follow",
+    "done": "可选。点完后的文字，默认 ✓ Following",
+    "burst_at": "可选。炸开消失的时间（秒），默认 2.25",
+    "y": "可选。竖直位置，默认 1180"
+  },
+  "sources": [
+    "https://elements.envato.com/subscribe-elements-YZPLXTK"
+  ]
+}

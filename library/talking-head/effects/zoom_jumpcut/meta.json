@@ -1,0 +1,31 @@
+{
+  "id": "zoom_jumpcut",
+  "was": "c53",
+  "name": "景别跳切",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "推近",
+  "duration": "整段都可以",
+  "use_for": "剪切点在全景和特写之间来回切，假装两台机位；不算动效",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "at": "可选：在哪些词上切（原话里的词）"
+  },
+  "what": "每次剪切在原景别和放大 120–150% 的脸部特写之间来回切，假装有第二台机位",
+  "params": {
+    "at": "可选。在哪些词上切景别（列表，原话里的词）；不写就大约每 1 秒在一个词的开头切一次",
+    "every": "可选。不写 at 时多久切一次（秒），默认 1.0",
+    "to": "可选。特写放大倍数，默认 1.4"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=xCl_zqJdjAc&t=437s"
+  ]
+}

@@ -5,28 +5,28 @@
   "status": "ready",
   "category": "素材",
   "purpose": [
-    "展示细节",
-    "引用资料"
+    "引用证据",
+    "提到具体东西"
   ],
-  "style": [
-    "通用"
-  ],
-  "needs": [
-    "视频"
-  ],
-  "use_for": [
-    "展示细节",
-    "说到一个具体场景、产品画面",
-    "需要观众看别的东西但人还在讲"
-  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "素材铺满人进小窗",
+  "duration": "3–6 秒",
+  "use_for": "说到具体场景、产品或屏幕：B-roll 铺满，人缩进圆窗",
+  "needs": [],
   "needs_assets": [
-    "B-roll视频"
+    "B-roll视频",
+    "截图"
   ],
+  "fills": {
+    "broll": "必填：用户上传的B-roll 或截图",
+    "label": "可选：原话里的短语，一行说明"
+  },
   "layers": [
     "背景：B-roll（模糊铺底 + 清晰主体）",
     "原画面缩进圆窗"
   ],
-  "duration": "3–6 秒",
   "params": {
     "broll": "必填。B-roll 帧 {\"frames\": \"assets/xxx\", \"fps\": 30, \"count\": 帧数} 或图片路径（用户上传）；没有就不显示",
     "label": "可选。B-roll 上方一行说明字"

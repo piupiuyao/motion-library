@@ -1,0 +1,39 @@
+{
+  "id": "glass_card",
+  "was": "c94",
+  "name": "液态玻璃卡",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "金句观点",
+    "定义概念"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "上方要点卡",
+  "duration": "2–5 秒",
+  "use_for": "放定义、要点、一句金句：上方弹出 iOS 液态玻璃卡",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "必填：原话里的话",
+    "icon": "可选：原话里的 app 或东西"
+  },
+  "what": "苹果 iOS 新设计风格的玻璃框：一个大圆角矩形（圆角约 25%）白色 75% 半透明，框内的画面被模糊扭曲（毛玻璃 + 边缘有折射弯曲），框里放白字或图标；框从小到大弹出并略有漂浮，人和背景透过玻璃可见。",
+  "params": {
+    "text": "必填。玻璃框里的文字（原话里的话，可用 <br> 换行）；不写就不显示",
+    "icon": "可选。文字左边白色圆里的图标：填图标名或一个词（如 Slack / idea / ui:wallet），从图标库取（品牌出官方 logo，普通词出线条图标）；也可直接填 emoji；不填没有",
+    "width": "可选。宽，默认 760",
+    "height": "可选。高，默认 230",
+    "round": "可选。圆角程度 0–1，默认 0.62",
+    "size": "可选。字号，默认 66",
+    "y": "可选。顶部 y，默认 250",
+    "t0": "可选。弹出秒数，默认 0.2"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=oXV3eZMq3n8&t=0s"
+  ],
+  "ref_moment": "0:00–0:10 开头成品，做法 0:10–2:12"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "newspaper_list",
+  "was": "c40",
+  "name": "报纸底清单",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "清单",
+  "duration": "4–8 秒",
+  "use_for": "列举 3 个理由 / 5 个技巧：旧报纸背景上清单一条条弹出",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：每条 {text, at, icon}，用原话里的词",
+    "title": "可选：原话里的标题"
+  },
+  "what": "背景是反色（变暗）的旧报纸慢慢漂移，清单条目带小图一条条弹出",
+  "params": {
+    "items": "必填。条目列表 [{\"text\":\"文字\",\"at\":\"说到哪个词弹出\",\"icon\":\"可选，图标名或一个词，如 scissors / ui:bell-off / Slack\",\"color\":\"可选，线条图标的底色\"}]（at 可以写原文单词，也可以写词序号数字，如 80）。图标从图标库取：不写 icon 就按 at 那个词找（品牌词出官方 logo，普通词出线条图标）；icon 也可直接填 emoji；找不到就只显示一个圆点小方块",
+    "title": "可选。清单标题",
+    "masthead": "可选。背景报纸的报头，默认 The Daily News",
+    "heads": "可选。背景报纸的标题列表（只是背景纹理），默认中性的通用标题"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=5FtsVft5Vn8"
+  ]
+}

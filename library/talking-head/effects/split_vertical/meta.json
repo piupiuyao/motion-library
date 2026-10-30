@@ -1,0 +1,40 @@
+{
+  "id": "split_vertical",
+  "was": "c36",
+  "name": "上下分屏",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "对比前后",
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "分屏",
+  "duration": "3–6 秒",
+  "use_for": "之前/之后、对/错，或边讲边给例子：上下分屏",
+  "needs": [],
+  "needs_assets": [
+    "B-roll视频",
+    "截图"
+  ],
+  "fills": {
+    "media": "必填：用户上传的B-roll 或图",
+    "label": "可选：原话里的短语",
+    "tags": "可选：两半的小标签，如 BEFORE / AFTER"
+  },
+  "what": "竖屏上下一分为二：一半是人，另一半放 B-roll/对比图，从两边滑进来，中间可以压字幕",
+  "params": {
+    "media": "必填素材。另一半放的 B-roll 帧 {frames, fps, count} 或图片路径；不填不显示",
+    "label": "可选。压在中缝的一行字",
+    "tags": "可选。两半各自的小标签，如 [\"BEFORE\",\"AFTER\"]",
+    "flip": "可选。true = 人在下半、B-roll 在上半"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=205s",
+    "https://www.youtube.com/watch?v=wkWkHwFKcNE",
+    "https://elements.envato.com/vertical-multiscreen-before-after-KCT47XG"
+  ]
+}

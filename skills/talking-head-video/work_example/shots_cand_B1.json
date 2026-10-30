@@ -3,7 +3,7 @@
  "shots": [
   {
    "words": "0-15",
-   "template": "c16",
+   "template": "search_bar",
    "params": {
     "query": "why hasn't AI solved",
     "suggestions": [
@@ -15,14 +15,14 @@
   },
   {
    "words": "16-29",
-   "template": "c15",
+   "template": "post_card",
    "params": {
     "text": "Replying to messages is the most draining thing I do every day. Why hasn't AI fixed this yet?"
    }
   },
   {
    "words": "30-39",
-   "template": "c17",
+   "template": "article_highlight",
    "params": {
     "highlight": "Emails, WhatsApp, Telegram: replying to messages is the task people say drains them most.",
     "at": 1.8
@@ -30,7 +30,7 @@
   },
   {
    "words": "40-47",
-   "template": "c13",
+   "template": "phone_notification",
    "params": {
     "app": "whatsapp",
     "sender": "Sarah",
@@ -54,7 +54,7 @@
   },
   {
    "words": "61-66",
-   "template": "c26",
+   "template": "emoji_pop",
    "params": {
     "items": [
      {
@@ -70,7 +70,7 @@
   },
   {
    "words": "67-79",
-   "template": "c14",
+   "template": "chat_bubbles",
    "params": {
     "messages": [
      {
@@ -91,7 +91,7 @@
   },
   {
    "words": "90-97",
-   "template": "c25",
+   "template": "comic_bubble",
    "params": {
     "items": [
      {
@@ -109,14 +109,14 @@
   },
   {
    "words": "108-114",
-   "template": "c18",
+   "template": "chalk_doodles",
    "params": {
     "label": "just leave it..."
    }
   },
   {
    "words": "123-137",
-   "template": "c35",
+   "template": "phone_shatter",
    "params": {
     "at": "harder",
     "label": "DON'T"

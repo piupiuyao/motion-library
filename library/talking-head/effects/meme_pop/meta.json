@@ -1,0 +1,40 @@
+{
+  "id": "meme_pop",
+  "was": "c109",
+  "name": "梗图插入",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "搞笑贴纸",
+  "duration": "1–2 秒",
+  "use_for": "自嘲、反转、吐槽：头旁突然弹出一张梗图",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "top": "必填：梗字幕（和 bottom 至少一个），用原话改短",
+    "bottom": "可选：下方梗字幕",
+    "at": "可选：弹出的词"
+  },
+  "what": "说到好笑或反差处，一张梗图/抠好的梗角色（绿幕抠掉背景）突然出现在人旁边或盖住半屏，常伴随快速放大 + 轻微抖动，0.5–1.5 秒后直接消失。",
+  "params": {
+    "at": "说到哪个词时弹出",
+    "start": "不填 at 时的弹出时间（秒）",
+    "dur": "停留秒数，默认 1.3",
+    "size": "梗图宽度，默认 450",
+    "x": "左上角横坐标，默认 600",
+    "y": "左上角纵坐标，默认 70",
+    "top": "必填（top/bottom 至少一个）。上方梗字幕；都不写就不显示",
+    "bottom": "必填（top/bottom 至少一个）。下方梗字幕",
+    "phone": "可选。true = 角色手里拿一部带 99 红点的手机（默认不拿）"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=ZsesUw8K-84&t=95s"
+  ],
+  "ref_moment": "1:35–1:45（抠掉绿幕后的梗叠在视频上）"
+}

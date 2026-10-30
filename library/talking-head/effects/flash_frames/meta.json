@@ -1,0 +1,34 @@
+{
+  "id": "flash_frames",
+  "was": "c30",
+  "name": "快闪连拍",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "开场钩子"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "多个我",
+  "duration": "2–3 秒",
+  "use_for": "开场点名「做剪辑的你……」、表示例子很多：同构图几个画面快闪",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "可选：原话里的短语",
+    "images": "可选：4 张同构图的照片"
+  },
+  "what": "同一个构图的四个不同画面（不同衣服/场景），每个只有几帧，在标题后面的圆角框里快速循环闪",
+  "params": {
+    "images": "可选。循环闪的 4 张同构图图片；不填时用口播里 4 个时刻的画面加不同调色",
+    "text": "可选。压在框上的标题",
+    "framesEach": "每张停几帧，默认 3",
+    "size": "标题字号，默认 150",
+    "frames": "不填 images 时用的口播源帧号（4 个），第 1 张原样，其余 3 张抠人换背景"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=MNG51L8ikQw&t=292s"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zoom_blur",
+  "was": "c67",
+  "name": "变焦模糊转场",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "转场",
+  "purpose": [
+    "转场",
+    "换话题"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "冲击转场",
+  "duration": "1.5–3 秒",
+  "use_for": "有劲地跳到下一个点、切 B-roll：放射模糊冲进下一个画面",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "to": "可选：下一个画面：用户上传的图 / B-roll，或标题卡 {title, sub}（标题用原话）"
+  },
+  "what": "画面猛地往中间冲、带强烈的放射模糊，下一个画面从模糊里冲出来对上焦",
+  "params": {
+    "to": "可选。下一个画面：图片路径（如 assets/docs/gmail.jpg）、B-roll 帧 {\"frames\":\"assets/broll_inbox\",\"fps\":30,\"count\":165,\"offset\":2.5}，或标题卡 {\"title\":\"PART 2\",\"sub\":\"副标题\"}；不写就是一张空白的主题色卡",
+    "at": "可选。切换点在第几秒，默认 0.9"
+  },
+  "sources": [
+    "https://elements.envato.com/massive-camera-transitions-GZ6LFV9"
+  ]
+}

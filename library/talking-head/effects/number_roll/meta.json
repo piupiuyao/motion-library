@@ -1,0 +1,45 @@
+{
+  "id": "number_roll",
+  "was": "c02",
+  "name": "数字滚动计数",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "数字"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "数字跳动",
+  "duration": "2–4 秒",
+  "use_for": "报收入、结果、价格等一个真实数字，大数字往上滚",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "to": "必填：原话里的数字",
+    "prefix": "可选：$ 等符号",
+    "suffix": "可选：原话里的单位",
+    "label": "可选：原话里这个数是什么",
+    "at": "可选：说到数字的那个词"
+  },
+  "what": "一个大数字在脸下方飞快往上滚（如 $0 → $42,000,000），停下时弹一下，配计数音效",
+  "params": {
+    "to": "必填。最终数字，如 42000000；不填时取这句原话里的第一个数字，都没有就不显示",
+    "from": "可选。起始数字，默认 0",
+    "prefix": "可选。数字前的符号，如 $",
+    "suffix": "可选。数字后的小字单位，如 MIN",
+    "label": "可选。数字下方的标签条",
+    "at": "可选。从她说到哪个词时开始滚，默认镜头开头",
+    "dur": "可选。滚动时长（秒），默认 1.3",
+    "y": "可选。竖直位置，默认 1080",
+    "size": "可选。字号",
+    "title": "可选。数字上方的一行小字"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=jLR0G0WmPss",
+    "https://elements.envato.com/number-counters-3QVA42Q"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "phone_frame",
+  "was": "c45",
+  "name": "画面缩进手机",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "提到具体东西",
+    "引用证据"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "设备框",
+  "duration": "3–5 秒",
+  "use_for": "「我在抖音刷到……」、讲 app 怎么用：整个画面缩进手机框",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "text": "可选：原话里的短语",
+    "handle": "可选：屏幕里的账号名",
+    "desc": "可选：屏幕里的文案，用原话"
+  },
+  "what": "全屏的口播缩进一个手机外框里，浮在彩色背景上，像「手机上的一条视频」，周围可以放字",
+  "params": {
+    "text": "可选。手机上方的大字，默认 SAW THIS ON MY FEED",
+    "handle": "可选。屏幕里的账号名，不填留空",
+    "desc": "可选。屏幕里的视频文案，不填留空",
+    "bg": "可选。背景 CSS，默认彩色渐变 + 波点"
+  },
+  "sources": [
+    "https://elements.envato.com/vertical-reels-CRSX9AW"
+  ]
+}

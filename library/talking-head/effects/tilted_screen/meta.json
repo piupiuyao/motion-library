@@ -1,0 +1,40 @@
+{
+  "id": "tilted_screen",
+  "was": "c103",
+  "name": "透视斜放屏幕",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "提到具体东西",
+    "引用证据"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "截图小窗",
+  "duration": "3–5 秒",
+  "use_for": "展示作品、产品界面、案例：一块屏幕斜放在人旁边漂着",
+  "needs": [],
+  "needs_assets": [
+    "截图",
+    "B-roll视频"
+  ],
+  "fills": {
+    "media": "必填：用户上传的截图或 B-roll"
+  },
+  "what": "一块视频/截图画面像一张立着的平板斜放在人旁边：绕竖轴转 20–35° 有透视，带圆角和投影，缓慢上下漂浮；可从扁平转到斜角入场。人在旁边讲，屏幕在人一侧，不挡脸。",
+  "params": {
+    "media": "必填。屏幕里放的截图路径或 B-roll 帧序列（用户上传）；没有就不显示",
+    "angle": "斜放角度（度），默认 36",
+    "side": "放在人哪一边：left / right，默认 left",
+    "w": "屏幕宽，默认 570",
+    "h": "屏幕高，默认 550",
+    "x": "左上角横坐标（可选）",
+    "y": "左上角纵坐标，默认 880"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=tvhMBCQLZLs&t=0s"
+  ],
+  "ref_moment": "0:00–0:15 开头成品（3D 旋转视频）"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "film_stutter",
+  "was": "c62",
+  "name": "胶片卡顿颗粒",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "讲故事"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "整体",
+  "group": "调色质感",
+  "duration": "2–6 秒",
+  "use_for": "复古、怀旧的故事段：低帧率卡顿加胶片颗粒",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "what": "画面掉到很低的帧率（一卡一卡像定格动画），再叠一层跳动的胶片颗粒",
+  "params": {
+    "fps": "可选。卡顿的帧率，默认 7（越小越卡）"
+  },
+  "sources": [
+    "https://gotranscript.com/public/mastering-youtube-shorts-capcut-tutorial-for-ali-abdaal-alex-hormozi-and-cody-sanchez-styles"
+  ]
+}

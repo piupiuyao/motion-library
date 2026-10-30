@@ -1,0 +1,30 @@
+{
+  "id": "emoji_pop",
+  "was": "c26",
+  "name": "表情包弹出",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "情绪吐槽"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "搞笑贴纸",
+  "duration": "2–4 秒",
+  "use_for": "玩笑、情绪词：大表情弹到脸旁（默认不加，用户打开才用）",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：[{emoji, at}]，at 是原话里的情绪词"
+  },
+  "what": "大号表情（😂😱🔥）在说到对应的词时弹到脸旁，或者像直播一样往上飘",
+  "params": {
+    "items": "必填。脸旁弹出的大表情 [{emoji, at}]，at 是原话里的词（最多 4 个位置轮流）；不填不显示",
+    "float": "往上飘的表情列表；false 表示不要飘的"
+  },
+  "sources": [
+    "https://motionarray.com/stock-motion-graphics/facebook-emoji-reactions-vertical-pack-842485/"
+  ]
+}

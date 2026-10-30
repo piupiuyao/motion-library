@@ -1,0 +1,38 @@
+{
+  "id": "end_card_next",
+  "was": "c100",
+  "name": "竖屏片尾推荐卡",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "片头片尾",
+  "purpose": [
+    "结尾号召"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "结尾卡",
+  "duration": "3–5 秒",
+  "use_for": "结尾引导看下一条、订阅：虚化背景上出下一条视频卡",
+  "needs": [],
+  "needs_assets": [
+    "截图"
+  ],
+  "fills": {
+    "media": "必填：下一条视频的封面（用户上传的图）",
+    "next": "可选：（建议填）下一条的标题",
+    "handle": "可选：@账号"
+  },
+  "what": "视频最后 3–5 秒，背景虚化压暗，上面一个大圆角卡片位（放下一条视频的封面）+ 一个圆形头像位（带「订阅」按钮），配「下一条看这个 / Watch next」标题；元素依次滑入弹出，线条和发光点缀。",
+  "params": {
+    "media": "必填。下一条视频的封面（用户上传）：图片路径或帧序列 {frames,fps,count}；没有就不显示",
+    "title": "可选。标题，默认 Watch next",
+    "next": "可选（建议填）。卡片上的视频标题；不写就没有",
+    "handle": "可选。头像下的账号名，如 @xxx；不写就没有",
+    "button": "可选。按钮文字，默认 SUBSCRIBE"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=eR3HQanWgPo&t=5s"
+  ],
+  "ref_moment": "0:05–0:55 依次展示多个版式"
+}

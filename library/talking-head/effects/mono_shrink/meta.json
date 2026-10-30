@@ -5,24 +5,24 @@
   "status": "ready",
   "category": "版式",
   "purpose": [
-    "吐槽痛点"
+    "情绪吐槽"
   ],
-  "style": [
-    "克制"
-  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "人缩进框",
+  "duration": "2–5 秒",
+  "use_for": "吐槽、无奈、「以前多糟」：画面变黑白缩小",
   "needs": [],
-  "use_for": [
-    "吐槽、痛点",
-    "负面情绪、无奈",
-    "讲「以前多糟」"
-  ],
   "needs_assets": [],
+  "fills": {
+    "label": "可选：原话里的一个词"
+  },
   "layers": [
     "深色背景",
     "原画面去色、缩进圆角小框",
     "可选：上方一行字"
   ],
-  "duration": "2–5 秒",
   "params": {
     "label": "可选。小框上方的一行字（如 DRAINED）"
   },

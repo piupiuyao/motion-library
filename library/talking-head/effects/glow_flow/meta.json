@@ -1,0 +1,34 @@
+{
+  "id": "glow_flow",
+  "was": "c20",
+  "name": "发光流程线",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "全屏图解",
+  "duration": "3–6 秒",
+  "use_for": "讲流程、步骤、因果链：发光线画过，标签沿线弹出",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "steps": "必填：3–5 条，用原话里的词",
+    "title": "可选：原话里的标题"
+  },
+  "what": "深色渐变背景上一条发光的线画过屏幕，圆角标签沿线一个个弹出，整组跟着往下移",
+  "params": {
+    "steps": "必填。流程步骤文字数组（建议 3–5 条），沿发光线依次弹出；不填不显示",
+    "color": "可选。线和标签的主色，默认主题色 --accent",
+    "title": "顶部发光白色大标题，可空",
+    "numbers": "true 时标签前加 01/02 编号",
+    "gap": "标签之间的竖向间距像素，默认 210"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=164s"
+  ]
+}

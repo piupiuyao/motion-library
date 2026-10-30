@@ -4,21 +4,21 @@
  "shots": [
   {
    "words": "22-29",
-   "template": "c80",
+   "template": "rise_caption",
    "params": {
     "hideOld": true
    }
   },
   {
    "words": "90-97",
-   "template": "c82",
+   "template": "hormozi_caption",
    "params": {
     "hideOld": true
    }
   },
   {
    "words": "129-137",
-   "template": "c81",
+   "template": "bounce_caption",
    "params": {
     "hideOld": true
    }

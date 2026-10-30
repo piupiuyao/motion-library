@@ -1,0 +1,34 @@
+{
+  "id": "checklist",
+  "was": "c39",
+  "name": "清单打勾",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "清单",
+  "duration": "4–8 秒",
+  "use_for": "列步骤/技巧、误区 vs 事实：人让开，清单卡说到哪条勾哪条",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：每条 {text, at, mark}，text 和 at 用原话里的词",
+    "title": "可选：原话里的标题"
+  },
+  "what": "人往一边让开，一张清单卡滑进来，说到哪条，哪条就打个勾（或红叉），字变亮",
+  "params": {
+    "items": "必填。清单条目列表 [{\"text\":\"条目\",\"at\":\"说到哪个词打勾\",\"mark\":\"x 表示红叉，不写是绿勾\"}]（词可以写原文单词，如 \"Emails\"，也可以写词序号数字，如 80）",
+    "title": "可选。清单卡标题",
+    "shift": "可选。人往右让开多少像素，默认 310",
+    "width": "可选。清单卡内容宽度（不含内边距），默认 620"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=498s",
+    "https://elements.envato.com/checkbox-list-constructor-ABASNAE"
+  ]
+}

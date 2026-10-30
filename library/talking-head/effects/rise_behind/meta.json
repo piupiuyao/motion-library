@@ -1,0 +1,42 @@
+{
+  "id": "rise_behind",
+  "was": "c22",
+  "name": "背后冒出物",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "定义概念",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "中部",
+  "group": "图标",
+  "duration": "2–4 秒",
+  "use_for": "引出一个概念或东西：从肩膀后面升起来，旁边弹标签",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "emoji": "必填：代表这个东西的 emoji（或用 image）",
+    "image": "可选：用户上传的图",
+    "label": "可选：原话里的词",
+    "at": "可选：说到时升起的词"
+  },
+  "what": "一张图或图标从人肩膀后面升起来（被人挡住一部分），旁边弹出发光标签",
+  "params": {
+    "emoji": "必填（和 image 二选一）。升起的图标 emoji；两个都不填就不显示",
+    "image": "可选。升起的图片路径",
+    "label": "可选。旁边弹出的发光标签文字（主题色）",
+    "at": "可选。原话里的词，说到时开始升起",
+    "side": "right / left，从哪边肩膀后升起，默认 right",
+    "size": "物体尺寸像素，默认 440",
+    "dx": "物体离脸中心的水平距离像素，默认 300",
+    "dy": "物体相对脸的下移像素，默认 140"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=A0vzIQlaPX0&t=307s"
+  ]
+}

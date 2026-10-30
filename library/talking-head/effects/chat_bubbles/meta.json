@@ -1,0 +1,33 @@
+{
+  "id": "chat_bubbles",
+  "was": "c14",
+  "name": "聊天气泡对话",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "引用证据",
+    "讲故事"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "聊天气泡",
+  "duration": "3–6 秒",
+  "use_for": "复述一段对话「然后他回我……」",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "messages": "必填：每句 {from: them/me, text}，用原话",
+    "them": "可选：原话里对方的名字"
+  },
+  "what": "iMessage/WhatsApp 样式的气泡一条条弹出（左灰右蓝），每条前面先出「正在输入」三个点",
+  "params": {
+    "messages": "必填。气泡列表 [{from: 'them'|'me', text}]，them 在左（灰），me 在右（蓝），按镜头时长平均依次出现，每条前先出「正在输入」；不填不显示",
+    "them": "对方名字（气泡上方小字和头像字母），不填留空",
+    "me": "自己名字，默认 You"
+  },
+  "sources": [
+    "https://elements.envato.com/reels-message-bubble-chat-7CV9QP3"
+  ]
+}

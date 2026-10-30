@@ -1,0 +1,45 @@
+{
+  "id": "glass_card_orbit",
+  "was": "c21",
+  "name": "玻璃卡绕身",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "数字",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "绕人旋转",
+  "duration": "3–5 秒",
+  "use_for": "讲战绩、粉丝数等社会证明，或介绍一个工具：玻璃卡绕身转一圈",
+  "needs": [
+    "抠像",
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "number": "必填：原话里的数字",
+    "label": "可选：原话里这个数是什么",
+    "icon": "可选：原话里的 app 或东西",
+    "unit": "可选：原话里的单位"
+  },
+  "what": "一张半透明发光玻璃卡（图标 + 往上跳的数字，如粉丝数）在 3D 空间里转一圈，从人背后穿过",
+  "params": {
+    "number": "必填。卡上往上跳的数字；不填时取这句原话里的第一个数字，都没有就不显示",
+    "label": "可选。卡片标题，不填留空",
+    "icon": "可选。卡右侧淡淡的大图标：填图标名或一个词（如 mail / eye / people / Slack / money），从图标库取，随卡片字色；也可直接填 emoji；不填或找不到就没有图标",
+    "iconBg": "图标底色 CSS",
+    "delta": "数字下方小字，可空",
+    "prefix": "数字前缀，如 $",
+    "suffix": "数字后缀，如 K",
+    "radius": "绕人的半径像素，默认 360",
+    "unit": "数字后面的小字单位，如 Views / unread",
+    "color": "可选。玻璃卡主色，默认主题色 --accent（字色按卡片亮度自动选黑或白）"
+  },
+  "sources": [
+    "https://www.youtube.com/watch?v=aNwKDaTag2Q&t=1152s"
+  ]
+}

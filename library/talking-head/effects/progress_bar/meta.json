@@ -1,0 +1,36 @@
+{
+  "id": "progress_bar",
+  "was": "c49",
+  "name": "进度条",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "字幕常驻",
+    "清单步骤"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "顶部常驻条",
+  "duration": "整段都可以",
+  "use_for": "长一点的视频、多步骤教程：顶部进度条讲到第几步亮第几段",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "steps": "可选：分几步",
+    "labels": "可选：每步的名字，用原话里的词"
+  },
+  "what": "底部或顶部一条进度条：整条视频从左到右慢慢填满，或者分成几段、讲到第几步亮到第几段",
+  "params": {
+    "steps": "可选。分几段，默认 4",
+    "from": "可选。镜头开始时进度（0–1），默认 0.15",
+    "to": "可选。镜头结束时进度（0–1），默认 0.62",
+    "labels": "可选。每段的名字，显示在「STEP x/n」后",
+    "y": "可选。进度条纵向位置，默认 70（顶部）"
+  },
+  "sources": [
+    "https://www.kapwing.com/resources/how-to-make-videos-like-garyvee/",
+    "https://elements.envato.com/multi-step-progress-bars-GTG4ATT"
+  ]
+}
