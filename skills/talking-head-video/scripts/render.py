@@ -345,7 +345,13 @@ def write_report(proj, tl, tmpl, out):
     by_id = {e['id']: e for e in es}
     rows = ['| # | 时间 | 说的话 | 这句在 | 用了 | 可以换成 |', '|---|---|---|---|---|---|']
     for k, s in enumerate(tl['shots']):
-        e = by_id[s['template']]
+        e = by_id.get(s['template'])
+        if not e:  # one-off effect written for this video (PROJECT/effects): no library alternatives
+            said = ' '.join(w['w'] for w in s['words'] if w['w'])
+            name = tmpl.get(s['template'], {}).get('name', s['template'])
+            rows.append(f"| {k + 1} | {s['start']:.1f}–{s['end']:.1f}s | {said[:60]}{'…' if len(said) > 60 else ''} | "
+                        f"{s.get('purpose') or '—'} | {name} `{s['template']}`（本片专用） | — |")
+            continue
         said = ' '.join(w['w'] for w in s['words'] if w['w'])
         def tag(x):
             needs = by_id[x['id']]['needs']
