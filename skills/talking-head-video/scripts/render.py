@@ -55,6 +55,14 @@ def head_focus(matte_dir, frame):
     return [round(float(xs.mean()) / w, 3), round(min(.6, (top + h * .1) / h), 3)]
 
 
+def theme_file(proj):
+    """PROJECT/theme.json from scripts/theme.py (accent picked from the footage or the brand link)."""
+    f = os.path.join(proj, 'theme.json')
+    if not os.path.exists(f):
+        return {}
+    return {k: v for k, v in json.load(open(f)).items() if k != 'source'}
+
+
 def build_timeline(proj, tmpl, shots_file='shots.json'):
     words = json.load(open(os.path.join(proj, 'work', 'words.json')))['words']
     edit = json.load(open(os.path.join(proj, 'work', 'edit.json')))
@@ -129,7 +137,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     need = sorted({s['template'] for s in shots})
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
-    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme', {}),
+    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj),
             'captions': plan.get('captions', True), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
 
