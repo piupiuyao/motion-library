@@ -1,0 +1,19 @@
+{
+ "name": "收据结尾",
+ "purpose": [
+  "结尾号召"
+ ],
+ "weight": "小",
+ "covers_face": false,
+ "zone": "上方",
+ "group": "收据（本片）3",
+ "needs": [],
+ "needs_assets": [],
+ "duration": "2–5 秒",
+ "use_for": "本片专用：结尾小票",
+ "id": "receipt_cta",
+ "video_type": "talking-head",
+ "status": "ready",
+ "category": "素材",
+ "one_off": true
+}

@@ -1,0 +1,22 @@
+{
+ "name": "咖啡钱算账",
+ "purpose": [
+  "数字",
+  "引用证据"
+ ],
+ "weight": "小",
+ "covers_face": false,
+ "zone": "上方",
+ "group": "收据（本片）2",
+ "needs": [
+  "抠像"
+ ],
+ "needs_assets": [],
+ "duration": "3–6 秒",
+ "use_for": "本片专用：咖啡杯铺满小票，滚出年总额",
+ "id": "coffee_money",
+ "video_type": "talking-head",
+ "status": "ready",
+ "category": "素材",
+ "one_off": true
+}

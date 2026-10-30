@@ -23,12 +23,28 @@ def norm(w):
     return re.sub(r'[^\w]', '', w.lower())
 
 
+EXTRA = []  # PROJECT/effects: one-off effects written for this video (same format as the library); win over the library
+
+
+def use_project_effects(proj):
+    d = os.path.join(os.path.abspath(proj), 'effects')
+    EXTRA[:] = [d] if os.path.isdir(d) else []
+
+
+def effect_dir(tid):
+    for root in EXTRA + [EFFECTS]:
+        if os.path.exists(os.path.join(root, tid, 'meta.json')):
+            return os.path.join(root, tid)
+    return os.path.join(EFFECTS, tid)
+
+
 def load_templates():
     out = {}
-    for d in sorted(os.listdir(EFFECTS)):
-        meta = os.path.join(EFFECTS, d, 'meta.json')
-        if os.path.exists(meta):
-            out[d] = json.load(open(meta))
+    for root in [EFFECTS] + EXTRA:
+        for d in sorted(os.listdir(root)):
+            meta = os.path.join(root, d, 'meta.json')
+            if os.path.exists(meta):
+                out[d] = json.load(open(meta))
     return out
 
 
@@ -158,9 +174,11 @@ def serve(proj):
     class H(http.server.SimpleHTTPRequestHandler):
         def translate_path(self, path):
             path = path.split('?')[0]
-            for pre, root in (('/proj/', proj), ('/lib/', EFFECTS)):
-                if path.startswith(pre):
-                    return os.path.join(root, *path[len(pre):].split('/'))
+            if path.startswith('/lib/'):
+                tid, _, rest = path[len('/lib/'):].partition('/')
+                return os.path.join(effect_dir(tid), *rest.split('/'))
+            if path.startswith('/proj/'):
+                return os.path.join(proj, *path[len('/proj/'):].split('/'))
             return os.path.join(HERE, path.lstrip('/'))
 
         def do_GET(self):
@@ -231,6 +249,7 @@ def main():
         EFFECTS = os.path.abspath(a.effects)
     stem = '' if a.shots == 'shots.json' else os.path.splitext(os.path.basename(a.shots))[0]
     proj = os.path.abspath(a.project)
+    use_project_effects(proj)
     tmpl = load_templates()
 
     frames = os.path.join(proj, 'work', 'frames_src')

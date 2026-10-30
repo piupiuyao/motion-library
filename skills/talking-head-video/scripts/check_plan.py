@@ -22,14 +22,12 @@ HOOK_WINDOW = 3.0
 
 
 def meta_of(tid):
-    for root in (render.EFFECTS,):
-        f = os.path.join(root, tid, 'meta.json')
-        if os.path.exists(f):
-            return json.load(open(f))
-    return {}
+    f = os.path.join(render.effect_dir(tid), 'meta.json')
+    return json.load(open(f)) if os.path.exists(f) else {}
 
 
 def check(proj, shots_file, level):
+    render.use_project_effects(proj)
     tmpl = render.load_templates()
     tl, _ = render.build_timeline(proj, tmpl, shots_file)
     lim, dur = LEVELS[level], tl['duration']
@@ -73,9 +71,14 @@ def check(proj, shots_file, level):
             errs.append(f"{a['template']} 和 {b['template']} 重叠")
         elif gap < GAP_ANY and a['start'] >= HOOK_WINDOW:
             warns.append(f"{a['template']} → {b['template']} 只隔 {gap:.1f}s（建议 ≥ {GAP_ANY:.0f}s）")
+    # a shot may break a spacing rule on purpose: "why_break": "reason" in the shots file turns that error into a note
+    plan = json.load(open(os.path.join(proj, shots_file)))
+    why = {s['template']: s['why_break'] for s in plan['shots'] if s.get('why_break')}
     bigs = [(s, m) for s, m in ordered if m.get('weight') == '大']
     for (a, _), (b, _) in zip(bigs, bigs[1:]):
-        if b['start'] - a['end'] < GAP_BIG:
+        if b['start'] - a['end'] < GAP_BIG and (a['template'] in why or b['template'] in why):
+            warns.append(f"{a['template']} → {b['template']} 故意挨着：{why.get(b['template']) or why.get(a['template'])}")
+        elif b['start'] - a['end'] < GAP_BIG:
             errs.append(f"两个大动效太近：{a['template']} → {b['template']} 隔 {b['start'] - a['end']:.1f}s（要 ≥ {GAP_BIG:.0f}s，中间切回人脸）")
 
     # counts: the opening title is free; caption styles (底层) never count
