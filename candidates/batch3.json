@@ -1,0 +1,502 @@
+[
+  {
+    "name": "标签升成问题卡",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "版式",
+    "what": "先在人胸前（画面下方居中）弹出一个白底圆角小胶囊标签，黑色粗体短词（如「Weekly Reset」），停 1–2 秒；随后切成全屏纯白卡：同一个胶囊标签移到卡片上方居中，下面是 2–3 行居中的大号黑色无衬线问题句，逐词从浅灰变成黑色（还没念到的词保持浅灰）；卡片四角各露出一小块彩色圆角色块（左上青、右上黄、左下绿、右下粉），像便利贴边角。整段 3–5 秒，盖住人。",
+    "use": "讲一个习惯/方法的名字，然后念出这个方法要问自己的问题，如「每周复盘时我问自己：我的季度目标进展如何？」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=WONRS7BLh4g&t=322s"
+    ],
+    "ref_moment": "05:22–05:43",
+    "ref_frames": "candidates/refs3/ali-goals/g_010.jpg, g_011.jpg, g_012.jpg, g_015.jpg, g_016.jpg, g_017.jpg, g_018.jpg",
+    "closest_existing": "title_drop：那是滑下来的章节标题卡；这里是胶囊标签先出现在人身上再成为全屏问题卡的标题，问题句逐词由灰变黑，四角彩色便利贴色块"
+  },
+  {
+    "name": "编号卡逐条展开",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "版式",
+    "what": "画面换成浅灰底，人缩成右侧一张竖向圆角小视频卡（约画面宽 1/5，继续说话）；左侧一列白色圆角长卡片自上而下堆叠，每张左边一个蓝色实心圆里写编号 1/2/3。新的一张先只出现粗体小标题（「Mistake 2」）单行，念到内容时卡片变高，标题下方补出第二行正文（「Not writing the goals」）。已出现的卡保留，3 条全部出完后停 1 秒再切回人。每条约 2–3 秒。",
+    "use": "列举几个错误/步骤/原因：「第一个错误……第二个错误……」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=WONRS7BLh4g&t=300s"
+    ],
+    "ref_moment": "05:00–05:12",
+    "ref_frames": "candidates/refs3/ali-goals/g_001.jpg, g_002.jpg, g_003.jpg, g_004.jpg, g_005.jpg",
+    "closest_existing": "checklist：清单打勾是一张整卡、人让开、靠打勾推进；这里人留在右侧小竖卡里，每条是独立白卡，先出标题再展开正文（两段式），不打勾"
+  },
+  {
+    "name": "引用人物大名条",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "字体",
+    "what": "切到被引用人物的视频/老素材（画面略压暗），左下角出现无底板的大号白色无衬线名字（约画面高 1/10，如「Jim Rohn」），下面一行小一号的身份（「Entrepreneur, Author」）；名字从半透明加模糊状态淡入变清楚（约 0.5 秒），停 2–3 秒后淡出。没有胶囊、没有色块。",
+    "use": "引用某位名人、作者、专家的话之前：「Jim Rohn 说过……」",
+    "needs": [
+      "B-roll"
+    ],
+    "needs_assets": [
+      "B-roll视频"
+    ],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=WONRS7BLh4g&t=77s"
+    ],
+    "ref_moment": "01:17–01:20",
+    "ref_frames": "candidates/refs3/ali-goals/f_008.jpg, f_009.jpg",
+    "closest_existing": "name_pill：那是讲者自己的账号胶囊，在胸口滑入；这里是给被引用的第三方人物，大字无底板压在其素材左下角，模糊淡入"
+  },
+  {
+    "name": "图标坞章节卡",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "版式",
+    "what": "全屏柔和渐变底（左下淡黄到右上淡青），上方居中黑色粗体总标题（「Money Milestones to Accomplish in Your 30s」），标题逐词由灰变黑；底部一排 9 个小图标（emoji 风格：钱包、信用卡、书、急救包、数字 3、钱脸、笔记本……）像 macOS Dock 横排，当前讲到的那一个图标放大约 1.5 倍并上浮；总标题下方再出蓝色渐变字的本章标题（「Have an Excellent Credit Score」）逐词出现，以及一个大号浅绿色数字（「805」）淡入。每章回到这张卡，只换放大的图标和本章标题。2–4 秒。",
+    "use": "一条视频讲很多条（「30 岁要完成的 9 个财务目标」），每条开头回到总览、告诉观众现在讲到第几个",
+    "needs": [
+      "数字"
+    ],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=YjkoS1mi4PY&t=145s"
+    ],
+    "ref_moment": "02:25–02:30",
+    "ref_frames": "candidates/refs3/humphrey-milestones/f_023.jpg, f_024.jpg, g_002.jpg, g_003.jpg",
+    "closest_existing": "progress_bar：那是顶部细进度条亮段；这里是全屏章节卡，底部一排代表各章的图标、当前章图标放大上浮，同时给出本章标题和关键数字"
+  },
+  {
+    "name": "双截图红弧对比",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "素材",
+    "what": "浅色渐变底上放一张计算器截图（居中偏上），先在关键数值下手绘红色下划线；然后同款截图从小到大弹到它正下方（只改了一个输入值），两张上下排；新截图的不同数字也被红线划出；最后在右侧画出一条红色手绘弧线箭头把上下两个结果数字连起来，弧线旁手写体红色斜体字逐字写出「$48,000 difference」。全程人不出现，约 6–10 秒。",
+    "use": "讲「只差一点点，结果差很多」：利率 6.5% 和 7% 差了 4.8 万、两种方案对比",
+    "needs": [
+      "截图",
+      "数字"
+    ],
+    "needs_assets": [
+      "截图"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=YjkoS1mi4PY&t=170s"
+    ],
+    "ref_moment": "02:50–03:22",
+    "ref_frames": "candidates/refs3/humphrey-milestones/g_011.jpg, g_012.jpg, g_013.jpg, g_016.jpg, g_017.jpg, g_019.jpg, g_020.jpg, g_021.jpg, g_022.jpg",
+    "closest_existing": "before_after_slider / article_highlight：前者是分割线扫过同一画面，后者是荧光笔划文章；这里是两张截图上下叠放，用红色手绘下划线 + 连接弧线 + 手写差值把两个数字连起来"
+  },
+  {
+    "name": "通知角标轰炸",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "素材",
+    "what": "人（或 B-roll 里疲惫的人）画面下半部叠一个 2 行 × 6 列的彩色 App 图标网格（Gmail、表格、Notion、Slack、邮件、LinkedIn、Drive、Instagram 等，每个约画面宽 1/12，有轻投影），每 2 个一组用竖虚线隔开；每个图标右上角有红色圆形角标，数字在 1–2 秒内各自不停往上跳（73→96、19→99），制造被消息淹没的感觉。约 2–3 秒后整体淡出。",
+    "use": "「每天被各种消息、通知、工具淹没」「注意力被切碎」",
+    "needs": [],
+    "needs_assets": [
+      "logo"
+    ],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=lriCkWIHEHs&t=30s"
+    ],
+    "ref_moment": "00:30–00:33",
+    "ref_frames": "candidates/refs3/jeffsu-time/f_005.jpg, f_006.jpg",
+    "closest_existing": "icon_cards：那是白色图标小卡弹到人四周列举工具；这里是密集的真 App 图标网格，重点是红色角标数字一起往上涨"
+  },
+  {
+    "name": "红色靶环加问题标签",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "素材",
+    "what": "在截图/图表上的 1–2 个关键点各出现一个红色分段圆环（像 4 段虚线组成的瞄准圈，约 40px），一边旋转一边从大缩小锁定到点上；旁边弹出黑底长条标签，里面红色等宽/窄体大写字逐字打出「ISSUE: OVER-SPENDING」，打字时末尾的字略暗。持续 2–3 秒。",
+    "use": "指出数据里的问题点：「你看这两个月，问题就是超支」",
+    "needs": [
+      "截图"
+    ],
+    "needs_assets": [
+      "截图"
+    ],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=lriCkWIHEHs&t=67s"
+    ],
+    "ref_moment": "01:07–01:10",
+    "ref_frames": "candidates/refs3/jeffsu-time/f_019.jpg, f_020.jpg, f_021.jpg",
+    "closest_existing": "dashed_focus：那是虚线框住一个细节；这里是红色分段圆环旋转缩小锁定数据点，并配一条黑底红字打字标签写出诊断结论"
+  },
+  {
+    "name": "趋势线峰值推近",
+    "style": [
+      "电影感"
+    ],
+    "category": "素材",
+    "what": "白底折线图（类似 Google Trends，带小标题和年份坐标）：蓝色折线从左往右画出来；画完后最高峰上出现一个半透明浅绿圆点（像荧光标记），镜头随即慢慢推近到峰值，坐标轴和标题被推出画面，只剩峰和圆点。约 3–4 秒，全屏不见人。",
+    "use": "「这个东西在 2016 年突然火了，然后就……」讲某个现象的兴起与衰落",
+    "needs": [
+      "数字"
+    ],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=gvgZfrIBT4s&t=3s"
+    ],
+    "ref_moment": "00:03–00:07",
+    "ref_frames": "candidates/refs3/davella-minimalists/h_004.jpg, h_005.jpg, h_006.jpg, h_007.jpg, h_008.jpg, h_009.jpg",
+    "closest_existing": "data_chart：那是几个数字的前后对比图；这里是一条时间折线画出后用光点标出峰值，再用镜头推近强调转折"
+  },
+  {
+    "name": "暗角老片黑条注",
+    "style": [
+      "电影感"
+    ],
+    "category": "字体",
+    "what": "素材（地图、老视频）缩成带黑色粗暗角、圆角、边缘发糊的画面，像老投影/显像管；画面中部出现一个黑色小方块，向右展开成黑色长条，白色衬线字从条的下边缘往上滚出（「+100m streams」），停 1 秒后字往上滚走、黑条收回成小方块消失。约 2–3 秒。",
+    "use": "补一个数据/事实的旁注：「全球播放量过亿」「那一年……」，纪录片式讲述",
+    "needs": [
+      "B-roll"
+    ],
+    "needs_assets": [
+      "B-roll视频"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=gvgZfrIBT4s&t=13s"
+    ],
+    "ref_moment": "00:13–00:16",
+    "ref_frames": "candidates/refs3/davella-minimalists/h_024.jpg, h_025.jpg, h_026.jpg, h_027.jpg, h_028.jpg, h_029.jpg",
+    "closest_existing": "leader_label / film_stutter：前者是圆点引线标签，后者是低帧胶片；这里是暗角老投影画框 + 黑条展开、衬线字上滚出现的纪录片注释"
+  },
+  {
+    "name": "梯队排行榜",
+    "style": [
+      "网感活泼"
+    ],
+    "category": "版式",
+    "what": "画面上方保持人（顶部一行白底黑字常驻标题），下半部（约 45% 高）是一块黑色面板，左侧一列 S/A/B/C/D/F 彩色色块（红、橙、浅黄、黄、浅绿、粉紫），右侧是对应的空白格。每说到一个东西，它就以「名称 + 小 emoji/图片」的白字小条放进某一行；同一行越放越多时这一行向下撑高，下面的行被推下去。整条视频一直挂着，边讲边填。",
+    "use": "排名/打分类视频：「给 X 种信用卡排个名」「这些习惯哪个是 S 级」",
+    "needs": [],
+    "needs_assets": [
+      "logo"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/K7UvJQsjMOM"
+    ],
+    "ref_moment": "00:01–01:00（整条）",
+    "ref_frames": "candidates/refs3/graham-ranking/f_002.jpg, f_013.jpg, f_024.jpg, g_003.jpg",
+    "closest_existing": "checklist：清单打勾是一列待勾的条目；这里是带 S–F 彩色等级的梯队表，条目按等级归档、行高随条目数变化，整段常驻"
+  },
+  {
+    "name": "词条飞入榜位",
+    "style": [
+      "网感活泼"
+    ],
+    "category": "字体",
+    "what": "念到某个东西时，它的名字以较大的白色粗体字 + 小 emoji 出现在人胸口（略带模糊/像素化后变清楚），停 1–2 秒；定级那一刻，字条在约 0.4 秒内带着运动模糊缩小并飞向下方面板里对应的行，落位后变成小字，同行其他条目让位。",
+    "use": "排名、分类、归档：「这个我放 A 级」「这个归到『别买』」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/K7UvJQsjMOM"
+    ],
+    "ref_moment": "00:52–00:54",
+    "ref_frames": "candidates/refs3/graham-ranking/h_014.jpg, h_018.jpg, h_020.jpg, h_021.jpg, h_022.jpg, h_023.jpg",
+    "closest_existing": "keyword_pop：那是头顶弹出大字条后消失；这里大字条会缩小飞进画面里的某个格子/列表落位（可配合梯队排行榜或任何清单）"
+  },
+  {
+    "name": "芯片线框示意图",
+    "style": [
+      "科技感"
+    ],
+    "category": "素材",
+    "what": "全屏纯黑底（不见人），画面中上部用 2px 白色单线画出一个示意图（例：一颗芯片——圆角方框 + 四周一圈短引脚）。线条先沿轮廓「画」出来（约 0.5 秒，引脚一根根长出），然后内部元素依次出现：左侧一个白色实心小方块写「CORE」，右侧一个 8×8 的深灰小方格阵列，方格随机一格格亮起/变暗像在读写数据。所有标签都是小号全大写等宽字（PROCESSOR / CACHE / TINY MEMORY），用细线和括号指向对应部件；画面四角和交点处有极淡的十字准星和贯穿全屏的细网格线。顶部可加一条「LOAD TIME ··· 0.9 ns · FAST」细进度条。字幕在下方中间。整段 3–6 秒，跟着口播逐步加部件。",
+    "use": "解释一个看不见的技术原理：「CPU 里有一块很小的内存叫缓存……」「这个模型其实是这样工作的」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/Jmy2f5HQRgU&t=19s"
+    ],
+    "ref_moment": "00:19–00:26",
+    "ref_frames": "candidates/refs3/varun-mayya-cpu-cache/f_040.jpg, f_045.jpg, f_050.jpg, f_052.jpg",
+    "closest_existing": "line_metaphor：那是手绘感线稿画比喻（冰山）；这里是工程图式的单线示意图，等宽全大写标签 + 网格十字准星 + 方格阵列闪烁读写，偏 HUD 技术图解"
+  },
+  {
+    "name": "乱码解码标签",
+    "style": [
+      "科技感"
+    ],
+    "category": "字体",
+    "what": "一个短标签（小号全大写等宽白字，如「PROCESSOR」「TINY MEMORY」）出现时不是直接显示，而是先显示同样长度的随机乱码字符（如「PR¥⌧RK」「T¥F &¥TT」），每 1–2 帧换一批随机字符，从左到右逐个字符「锁定」成正确的字母，约 0.4–0.6 秒完成。常配合示意图里的部件标签一起出现，多个标签错开出现。",
+    "use": "给技术名词、系统部件、代号打标签；「这个东西叫 XX」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/shorts/Jmy2f5HQRgU&t=19s"
+    ],
+    "ref_moment": "00:19–00:25",
+    "ref_frames": "candidates/refs3/varun-mayya-cpu-cache/f_040.jpg, f_045.jpg, f_050.jpg",
+    "closest_existing": "flicker_text：那是整行透明度闪烁；typewriter_card：逐字打出带光标。这里是每个字符位置先跳随机乱码再锁定成正确字母（解码感），没有光标、不闪透明度"
+  },
+  {
+    "name": "秒表计时读数",
+    "style": [
+      "科技感"
+    ],
+    "category": "素材",
+    "what": "黑底上画面分上下两栏（中间一条细横线）。上栏：左边一个白色发光圆点 + 等宽小字标签「AGENT A · SENDER」，右边一个 4×8 的方格阵列，部分格子被一根细线「推」出变白。下栏：左边灰色圆点 + 「AGENT B · RECEIVER」，下面一列横条读数（每行：一条白色/灰色长短不一的条 + 「212 ns」+ 结果「1」或「0」，逐行出现）；右边一个白色细线秒表表盘（一圈刻度，顶上小按钮），指针从 12 点顺时针扫过，扫过的扇形区域变暗灰。另一屏是两条对比条：「SLOW LOAD」长白条 → 旁边弹出超大细体数字「1」；「FAST LOAD」短灰条 → 数字「0」。每次计时 1–2 秒。",
+    "use": "讲测量、计时、快慢对比、「它是通过时间差来判断的」；任何「快 = 0，慢 = 1」式的二选一判定",
+    "needs": [
+      "数字"
+    ],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/Jmy2f5HQRgU&t=29s"
+    ],
+    "ref_moment": "00:29–00:38",
+    "ref_frames": "candidates/refs3/varun-mayya-cpu-cache/f_060.jpg, f_069.jpg, f_072.jpg, f_075.jpg",
+    "closest_existing": "ring_countdown：那是圆环被吃掉表示倒数；progress_percent：单条填百分比。这里是秒表扫针计时 + 多行毫秒读数条逐行出现并输出 1/0 结论，像实验测量面板"
+  },
+  {
+    "name": "扫描线透出代码",
+    "style": [
+      "科技感"
+    ],
+    "category": "镜头特效",
+    "what": "黑底中央一个手机轮廓（圆角竖矩形，白色细边，约屏宽 50%），里面是灰色的 App 界面骨架（头像圆点 + 几行灰条）。一条带青白色辉光的水平扫描线从手机顶部往下移动（约 1–1.5 秒），扫描线经过的上方区域，App 界面变成彩色语法高亮的代码（深色底，多栏代码），像 X 光把界面「看穿」成底层代码；扫完后整台手机都是代码，中间一块代码被半透明玻璃框高亮放大。",
+    "use": "「这个 App 背后其实是这样的」「把它拆开看看」「AI 能直接读出它的源码」——揭示表象下面的东西",
+    "needs": [
+      "截图"
+    ],
+    "needs_assets": [
+      "截图"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/gYCZWa1EDFc&t=14s"
+    ],
+    "ref_moment": "00:14–00:17",
+    "ref_frames": "candidates/refs3/varun-mayya-reverse-engineer/f_030.jpg, f_032.jpg, f_035.jpg",
+    "closest_existing": "scanline_word：那是画面压暗叠电视扫描线再跳大字；before_after_slider：竖线左右对比。这里是一条发光横线自上而下扫过设备，扫过处界面被替换成代码（透视揭底）"
+  },
+  {
+    "name": "AI光核连线",
+    "style": [
+      "科技感"
+    ],
+    "category": "素材",
+    "what": "全屏黑底，中央一个青色发光圆点（实心亮核 + 外层柔光），外面套两三圈断开的细弧环，弧环缓慢反向旋转并随口播轻微脉动。说到某个工具时，左上方弹出一个深灰圆角方块 App 图标（如 Claude 的星形图标），一条白色细曲线从图标画向光核并接上，图标随后让位给下一个。约 2–4 秒。",
+    "use": "「它能连接 Claude、Codex 或任何 AI 工具」「这是一个 AI 助手 / 中枢」，引出一个 AI 产品或能力",
+    "needs": [],
+    "needs_assets": [
+      "logo"
+    ],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/shorts/gYCZWa1EDFc&t=19s"
+    ],
+    "ref_moment": "00:19–00:21",
+    "ref_frames": "candidates/refs3/varun-mayya-reverse-engineer/f_040.jpg, f_042.jpg",
+    "closest_existing": "ring_countdown：圆环倒数，不发光不连线；glow_flow：线串起步骤标签。这里是一个持续脉动旋转的 AI 光核作为中心，外部 App 图标用曲线一个个接入"
+  },
+  {
+    "name": "功能块搬运",
+    "style": [
+      "科技感"
+    ],
+    "category": "版式",
+    "what": "黑底上下各一个深灰圆角 App 界面骨架（灰色头像圆点 + 灰条，像骨架屏，约屏宽 70%）。上面那个界面里的一块区域被选中：变成发青绿色辉光的半透明卡片，向外凸起浮出，然后沿斜线飞到下面界面里一个白色虚线占位框处落下嵌入（约 1 秒）。被嵌入后卡片辉光减弱、融入下方界面。",
+    "use": "「把别人的这个功能直接搬到你自己的项目里」「复制这个模块」「迁移 / 抄作业」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/gYCZWa1EDFc&t=32s"
+    ],
+    "ref_moment": "00:32–00:34",
+    "ref_frames": "candidates/refs3/varun-mayya-reverse-engineer/f_065.jpg, f_067.jpg",
+    "closest_existing": "doc_fly：截图整张飞入；mac_windows：弹出窗口。这里是从一个界面骨架里抠出一块发光功能卡、飞进另一个界面的虚线槽位，表达「搬运某个部件」"
+  },
+  {
+    "name": "缩略图墙挑选",
+    "style": [
+      "科技感"
+    ],
+    "category": "版式",
+    "what": "全屏铺满一面密集的网页/作品缩略图墙（4–5 列竖排，几十张小卡，彼此留细缝）。先整面亮着停半秒，随后整面压暗到约 20% 亮度，其中 2–3 张（分散在不同位置）保持原亮度并略放大浮起；接着墙退掉，这几张被选中的卡移动到画面中央竖排叠成一列（约屏宽 55%），代表「选出来的那几个」。全程约 2–3 秒。",
+    "use": "「它从 50 个模板里挑出最合适的 3 个」「海量里筛出几个」",
+    "needs": [
+      "截图"
+    ],
+    "needs_assets": [
+      "截图"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/uIiUlZZdinM&t=14s"
+    ],
+    "ref_moment": "00:14–00:18",
+    "ref_frames": "candidates/refs3/varun-mayya-github-repos/f_030.jpg, f_032.jpg, f_036.jpg",
+    "closest_existing": "doc_fly：一堆资料飞过；evidence_wall：截图钉墙连红线。这里是满屏缩略图墙整体压暗、只留几张亮着浮起，再收拢成一列，表达「筛选」"
+  },
+  {
+    "name": "扫描报告逐条确认",
+    "style": [
+      "科技感"
+    ],
+    "category": "素材",
+    "what": "黑底中央一张深色圆角面板（约屏宽 90%），顶部一行等宽小字「REPORT.md」+ 右侧「5 findings」。下面一行行条目逐条滑入：每行左边一个灰色小虫子图标 + 白色条目名（如「SQL injection」）+ 灰色小路径，右边灰色小字「checking」带闪烁。随后条目逐个「确认」：行底变深红、图标变红、右侧变成红色描边胶囊「CONFIRMED」，并跳到上方「CONFIRMED (2)」分组下。面板底部一条红色进度条随确认数增长，下面小字「2 confirmed」。约 3–5 秒。",
+    "use": "「它跑完会给你一份报告」「一条条检查，确认了 X 个问题」；审查、体检、排查类内容",
+    "needs": [
+      "数字"
+    ],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/shorts/uIiUlZZdinM&t=42s"
+    ],
+    "ref_moment": "00:42–00:47",
+    "ref_frames": "candidates/refs3/varun-mayya-github-repos/f_085.jpg, f_090.jpg, f_093.jpg",
+    "closest_existing": "checklist：白卡清单说到哪条勾哪条；progress_percent：单条进度。这里是深色控制台报告，条目先处于「checking」，再一个个翻成红色 CONFIRMED 并归组，底部红条累计"
+  },
+  {
+    "name": "节点攻击路径图",
+    "style": [
+      "科技感"
+    ],
+    "category": "素材",
+    "what": "黑底上方居中一个圆角胶囊标题（盾牌图标 + 「security-audit」），下面一行等宽小字阶段说明逐字出现。左列 5 个深色圆角节点（红色细描边 + 红色图标 + 名字：Login form / File upload / Public API…）逐个出现；右列 4 个深灰节点（Web app / API server / Auth / Database）由一条竖线串起。左边节点一个接一个向右画出红色细曲线连到右侧对应节点；随后一个个绿色描边小胶囊「hunter 1/2/3」出现在左侧节点上方，并在节点之间跳动换位置。约 3–5 秒。",
+    "use": "讲多个入口/多个 agent 同时去攻、去查、去处理多个目标；「它派出几个独立的 agent 分别负责……」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "hard",
+    "sources": [
+      "https://www.youtube.com/shorts/uIiUlZZdinM&t=35s"
+    ],
+    "ref_moment": "00:35–00:39",
+    "ref_frames": "candidates/refs3/varun-mayya-github-repos/f_072.jpg, f_075.jpg, f_078.jpg",
+    "closest_existing": "glow_flow：发光线把步骤串成一条链；这里是左右两列节点多对多连红线（攻击面 → 系统），外加会在节点间跳动的 agent 小标签"
+  },
+  {
+    "name": "2.5D视差拼贴",
+    "style": [
+      "电影感"
+    ],
+    "category": "镜头特效",
+    "what": "把一张照片/插画拆成 3–4 层抠好的平面（远景天空云层、中景飞机和舷梯、前景地面/人物），层与层之间有深度，镜头缓慢推进或横移时前景移动比背景快，产生立体视差；整体统一冷蓝夜色调色、略带颗粒，人物是写实抠像贴在场景里。开场时画面先在竖屏中部一个 16:9 宽画幅里（上下黑），几秒后扩展到满屏竖幅。每个镜头 3–5 秒，用于故事旁白段，不出现讲者本人。",
+    "use": "讲一个过去发生的故事、案件、历史场景：「1973 年的迈阿密，一个银行高管飞来约会……」",
+    "needs": [
+      "B-roll"
+    ],
+    "needs_assets": [
+      "照片"
+    ],
+    "difficulty": "hard",
+    "sources": [
+      "https://www.youtube.com/shorts/J7D3yQB0XBo&t=1s"
+    ],
+    "ref_moment": "00:01–00:09",
+    "ref_frames": "candidates/refs3/johnny-harris-heist/f_004.jpg, f_008.jpg, f_012.jpg, f_018.jpg, f_060.jpg",
+    "closest_existing": "push_in：只是整幅画面推近，没有分层；paper_props：纸面上前后叠图。这里是把一张图拆成多层做视差运镜，真实场景的立体感重建"
+  },
+  {
+    "name": "霓虹招牌时间地点",
+    "style": [
+      "电影感"
+    ],
+    "category": "字体",
+    "what": "故事段开场，画面中景位置（场景里，像建筑上的招牌）出现一行粉红色霓虹灯字「Miami 1973」：手写感圆角衬线字体，字芯亮粉白、外圈一大圈粉色柔光，像真实霓虹管；字固定在场景空间里，镜头/视差移动时它跟着场景一起漂移，跨过下一个镜头仍停留在同一位置约 2 秒后淡出。下方仍有正常字幕。",
+    "use": "点出故事发生的时间和地点：「迈阿密，1973 年」「东京，凌晨三点」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/shorts/J7D3yQB0XBo&t=3s"
+    ],
+    "ref_moment": "00:03–00:06",
+    "ref_frames": "candidates/refs3/johnny-harris-heist/f_008.jpg, f_010.jpg, f_012.jpg",
+    "closest_existing": "flicker_text：灯管接触不良式闪烁出字（网感）；neon_outline：霓虹线描人轮廓。这里是稳定发光的霓虹招牌字作为时间地点卡，放在场景里随镜头漂移"
+  },
+  {
+    "name": "地图势力徽章",
+    "style": [
+      "电影感"
+    ],
+    "category": "素材",
+    "what": "暗色做旧地图（羊皮纸/深褐色调，带纸纹和暗角）上，各方势力用徽章表示：八角形旗帜徽章（国旗/标志填满，白边）、圆形人像徽章、圆形国旗徽章，下面各有一行白色小号全大写标签（「RUSSIAN EMPIRE」「BRITISH EMPIRE」）。某一方的势力范围用半透明暗红色块从边缘铺进地图；徽章之间用细红虚线（折线）连起来表示关系，如一方连到一家公司徽章。镜头缓慢平移/推近，徽章依次弹出。每个画面 3–5 秒。",
+    "use": "讲大国博弈、多方关系、历史背景：「当时北边是俄国，南边是英国，夹在中间的是……」",
+    "needs": [],
+    "needs_assets": [
+      "logo",
+      "照片"
+    ],
+    "difficulty": "hard",
+    "sources": [
+      "https://www.youtube.com/watch?v=-DDbYSg0Alw&t=33s"
+    ],
+    "ref_moment": "00:33–00:37",
+    "ref_frames": "candidates/refs3/johnny-harris-iran/f_068.jpg, f_072.jpg, f_074.jpg",
+    "closest_existing": "map_route：地图上画一条路线、终点弹地名；evidence_wall：截图钉墙红线。这里是地图上多方势力用旗帜/人像徽章摆位 + 红色势力范围铺色 + 虚线关系连线"
+  },
+  {
+    "name": "新闻标题字幕条",
+    "style": [
+      "电影感"
+    ],
+    "category": "字体",
+    "what": "播放新闻/现场 B-roll 时，画面底部约 20% 高度压一条从下往上的黑色渐变，渐变上靠下居中一行白色衬线字的新闻标题（如「Iran's Army Threatens to Join Crackdowns on Demonstrators」，字号约画面高 1/18，单行）；标题淡入后保持 2–3 秒，随 B-roll 切走。和口播字幕不同：它是衬线、整句标题、不逐词。",
+    "use": "引用真实新闻、事件：「当时的新闻标题是这样的」，用现场画面 + 标题交代背景",
+    "needs": [
+      "B-roll"
+    ],
+    "needs_assets": [
+      "B-roll视频"
+    ],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=-DDbYSg0Alw&t=7s"
+    ],
+    "ref_moment": "00:07–00:10",
+    "ref_frames": "candidates/refs3/johnny-harris-iran/f_015.jpg, f_018.jpg",
+    "closest_existing": "headline_match：一串文章快切同一个词钉住；article_highlight：整页文章推近划线。这里是在现场视频底部压一行衬线新闻标题，像纪录片引用报道"
+  },
+  {
+    "name": "地图国境发光",
+    "style": [
+      "电影感"
+    ],
+    "category": "素材",
+    "what": "全屏暗褐色做旧地图（大陆浅褐、海洋近黑，带纸纹暗角），镜头从大范围慢慢推近；目标国家的国境线亮起一圈暖白色发光描边（外发光柔和），国境内中间出现白色小号衬线大写国名「IRAN」，其余地区保持暗。推近约 2–3 秒。",
+    "use": "故事/分析的开场，点出要讲的国家或地区：「我们今天要讲的是伊朗」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=-DDbYSg0Alw&t=0s"
+    ],
+    "ref_moment": "00:00–00:03",
+    "ref_frames": "candidates/refs3/johnny-harris-iran/f_002.jpg, f_005.jpg",
+    "closest_existing": "map_route：地图上画出路线、终点弹地名（讲移动）；这里是做旧暗地图慢推近，只让一个国家的边界发光、写上国名（讲「是哪里」）"
+  }
+]
