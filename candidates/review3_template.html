@@ -81,7 +81,7 @@
 <body>
 <header>
   <h1>第三批动效审核</h1>
-  <div class="sub">按四种风格找了 7 条竖屏口播短视频（每条人出镜 ≥6 成），拆出 19 个库里没有的动效。<b>还没做演示</b>，图是原视频截帧（点开看大图），下面一行是库里最像的那个和区别。你先勾「要 / 不要」，只把要的做成演示，省时间。选完点「复制结果」发给我；选择存在这个浏览器里。</div>
+  <div class="sub">按四种风格找了 7 条竖屏口播短视频（每条人出镜 ≥6 成），又按 Monica 那两条的路子找了 3 条口播剪辑教学，一共拆出 27 个库里没有的动效。<b>还没做演示</b>，图是原视频截帧（点开看大图），下面一行是库里最像的那个和区别。你先勾「要 / 不要」，只把要的做成演示，省时间。选完点「复制结果」发给我；选择存在这个浏览器里。</div>
   <div class="bar" id="bar"></div>
 </header>
 <main id="main"></main>
@@ -94,7 +94,7 @@ try { pick = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(pick)); } catch (e) {} };
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const $ = s => document.querySelector(s);
-const STYLES = ['全部', '简洁商务', '科技感', '电影感', '网感活泼'];
+const STYLES = ['全部', '简洁商务', '科技感', '电影感', '网感活泼', '通用'];
 let view = '全部';
 
 function bar() {

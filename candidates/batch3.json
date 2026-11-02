@@ -371,5 +371,163 @@
     "ref_moment": "00:44–00:48",
     "ref_frames": "candidates/refs3/tiff-voice/k_002.jpg, k_003.jpg, k_004.jpg, k_006.jpg, k_007.jpg, k_010.jpg, k_011.jpg, k_013.jpg",
     "closest_existing": "checklist：人让开、清单卡逐条打勾；这里没有卡片，直接在人胸前逐行叠字并用红线划掉，表达「去掉/否定」"
+  },
+  {
+    "name": "勾叉对错标签",
+    "style": [
+      "简洁商务",
+      "通用"
+    ],
+    "category": "字体",
+    "what": "画面先整体缩小到约 85%（四周露黑边、略虚），人继续讲。字幕上方、人胸口高度出现一行横排标签：左边一个绿色小勾方块 +「发私密照」（金黄色粗宋体字，带黑描边），约 1 秒后右边再弹出一个红底白叉方块 +「传播淫秽信息」。两条标签并排停在人胸前约 2 秒，下面仍是正常白字字幕，人不让开、不切画面。",
+    "use": "「A 没问题，但 B 就不行」「可以做 X，别做 Y」——一句话里同时给出对和错两样东西",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=OwF73OtjZkg&t=40s"
+    ],
+    "ref_moment": "00:40–00:42",
+    "ref_frames": "candidates/refs3/xiedashi-lawyer/f_080.jpg, f_081.jpg, f_082.jpg, f_083.jpg, f_084.jpg",
+    "closest_existing": "checklist：人让开、整张清单卡逐条打勾；这里没有卡片、人不动，只在胸前一行里并排弹一个绿勾标签和一个红叉标签做对比"
+  },
+  {
+    "name": "摘录条甩入堆叠",
+    "style": [
+      "简洁商务"
+    ],
+    "category": "素材",
+    "what": "画面变黑底，人缩成中间偏下的一个小矩形窗（约画面宽 45%），下面白字字幕。上半部一条条白底细长的文字摘录条（法条/新闻搜索结果的截屏，每条约画面宽 80%、高约 6%）从左侧甩进来：刚进来时像纸被甩动一样梯形变形（右端变尖、往上翘），约 0.3 秒压平落位；随着念到下一点，第二条、第三条依次甩进来，从上往下排成列表，人一直在小窗里讲。",
+    "use": "「法律规定……最高拘留 15 天……罚 5000 元」——逐条念出处或条款，每念一条加一条",
+    "needs": [
+      "截图"
+    ],
+    "needs_assets": [
+      "截图"
+    ],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=OwF73OtjZkg&t=0s"
+    ],
+    "ref_moment": "00:00–00:03",
+    "ref_frames": "candidates/refs3/xiedashi-lawyer/f_001.jpg, f_002.jpg, f_003.jpg, f_004.jpg, f_005.jpg, f_006.jpg",
+    "closest_existing": "doc_fly：整张新闻截图飞入叠放、人在左上圆窗；这里是只截一行字的细长摘录条，带甩纸变形入场，从上往下排成列表，人在中间小矩形窗"
+  },
+  {
+    "name": "羽化圆窗黑场",
+    "style": [
+      "电影感",
+      "通用"
+    ],
+    "category": "版式",
+    "what": "一刀切到纯黑画面：人的头肩被裁进画面上方居中的一个圆窗里（直径约画面宽 65%，圆边外缘羽化约 8% 渐隐进黑色），圆窗里的画面同时推近成脸部特写。圆窗下方黑底上出两行字幕：第一行白字，第二行念到时浅色淡入、关键词（「显眼」）换成金黄色并放大。持续约 3–4 秒再切回正常画面。另一条视频（十一的剪辑日记）里也用了同样的版式，只是圆边是硬边带细白描边。",
+    "use": "需要观众只盯着人和这句话的重点句：「我真正想说的是……」「重点来了」",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=Ki2ewWnwmgw&t=64s",
+      "https://www.youtube.com/watch?v=3T1jAHgYEfY&t=75s"
+    ],
+    "ref_moment": "01:04–01:09",
+    "ref_frames": "candidates/refs3/jiujiu-5tips/f_128.jpg（切之前）, f_130.jpg, f_132.jpg, f_134.jpg; candidates/refs3/shiyi-subtitle/f_150.jpg（硬边版）",
+    "closest_existing": "spotlight：人还在原画面里，四周压暗打一束光；这里是直接切到纯黑底，人被裁进一个羽化圆窗放在上方，下方留大块黑底专门放字"
+  },
+  {
+    "name": "上升光丝",
+    "style": [
+      "电影感",
+      "网感活泼"
+    ],
+    "category": "镜头特效",
+    "what": "人正常讲话，念到情绪词时，几根很细的白色发光线（像光丝/流星尾）从画面底边沿人身体两侧往上快速划上去，最高到胸口和肩膀高度，线有长有短、略带弧度，叠在人前面；约 0.5–1 秒内划完并淡出，同时这句字幕换成金黄色。",
+    "use": "「更强烈的情绪」「这一刻我真的燃起来了」——情绪往上拱的一句，给一点能量感但不夸张",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=Ki2ewWnwmgw&t=88s"
+    ],
+    "ref_moment": "01:28–01:29",
+    "ref_frames": "candidates/refs3/jiujiu-5tips/f_176.jpg, f_177.jpg",
+    "closest_existing": "speed_lines：漫画集中线从四周冲向脸，是震惊感；这里是几根细光丝从下往上划过人身两侧，是情绪上扬的轻微能量感"
+  },
+  {
+    "name": "褪色心电线",
+    "style": [
+      "电影感",
+      "科技感"
+    ],
+    "category": "镜头特效",
+    "what": "念到关键句时，人身后的背景一下子变灰、压暗（去饱和约 80%），人保持彩色并带一圈很淡的白色边缘光；同时一条白色发光的心电图线（平线中间一个尖峰）在人头部高度从左往右横穿画面，线在人身后（被头挡住）。约 1 秒后线消失，背景颜色慢慢回来。",
+    "use": "「心跳漏了一拍」「这个瞬间特别关键」，或讲健康/紧张/情绪波动的一句",
+    "needs": [
+      "抠像"
+    ],
+    "needs_assets": [],
+    "difficulty": "medium",
+    "sources": [
+      "https://www.youtube.com/watch?v=Ki2ewWnwmgw&t=91s"
+    ],
+    "ref_moment": "01:31–01:32",
+    "ref_frames": "candidates/refs3/jiujiu-5tips/f_182.jpg, f_183.jpg",
+    "closest_existing": "selective_color：只留人有颜色、背景黑白；batch3「声波光带」是胸前一条一直跟着说话起伏的蓝色声波。这里是背景瞬间褪色加一条从左到右划过头后面的心电图尖峰线，一次性的重音"
+  },
+  {
+    "name": "四角分字框人",
+    "style": [
+      "网感活泼",
+      "简洁商务"
+    ],
+    "category": "版式",
+    "what": "画面变黑底，人缩进中间一个竖长矩形窗（约画面宽 60%、高 70%，硬边无圆角），一个四字词拆成四个超大白色粗黑体字，分别贴在画面四个角上（「字」左上、「体」右上、「构」左下、「图」右下），字的一部分压在人窗边缘上；字一起弹出，停 1–2 秒，人在窗里继续讲、窗里有正常字幕。",
+    "use": "段落标题或核心四字词：「底层逻辑」「四个要点」——把一个四字词当成框住人的边框",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=3T1jAHgYEfY&t=70s"
+    ],
+    "ref_moment": "01:10–01:12",
+    "ref_frames": "candidates/refs3/shiyi-subtitle/f_141.jpg（字出现前）, f_142.jpg, f_143.jpg",
+    "closest_existing": "title_bar/end_title：标题挂在人窗上方一行；这里是一个四字词拆到画面四个角，像四个角钉住人窗"
+  },
+  {
+    "name": "弧形字托头像",
+    "style": [
+      "网感活泼",
+      "通用"
+    ],
+    "category": "字体",
+    "what": "纯黑底中间一个硬边圆形头像窗（直径约画面宽 35%，人在里面讲话），上方一行黄色粗体标题（「五个」）。接着一行黄色粗体小字（「重点字幕构图方法」）沿着圆窗下半圈外侧弯成弧形，从左往右逐字出现，像一个笑脸弧托住头像；停约 1 秒。",
+    "use": "开场点题：「今天讲五个……方法」，或给自己贴一句口号/账号名",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=3T1jAHgYEfY&t=47s"
+    ],
+    "ref_moment": "00:47–00:50",
+    "ref_frames": "candidates/refs3/shiyi-subtitle/f_095.jpg, f_097.jpg, f_099.jpg",
+    "closest_existing": "text_ring：一圈字像腰带绕着全身人像不停旋转；这里是静止的半圈弧形字，贴在一个小圆头像窗下沿逐字出现"
+  },
+  {
+    "name": "两字分立头侧",
+    "style": [
+      "网感活泼",
+      "简洁商务"
+    ],
+    "category": "字体",
+    "what": "人正常讲话，头顶留空。一个两字词拆开：第一个字放在人头部左侧、第二个字放在右侧（齐眼睛到下巴高度，各约画面宽 15%，金黄色细宋体/衬线字），两字中间隔着人的脸；两个字同时淡入放大出现，停约 1 秒。",
+    "use": "两个字的关键词：「两边」「平衡」「取舍」，尤其是本身有左右、对立意思的词",
+    "needs": [],
+    "needs_assets": [],
+    "difficulty": "easy",
+    "sources": [
+      "https://www.youtube.com/watch?v=3T1jAHgYEfY&t=57s"
+    ],
+    "ref_moment": "00:57–00:59",
+    "ref_frames": "candidates/refs3/shiyi-subtitle/f_115.jpg（字出现前）, f_116.jpg, f_117.jpg",
+    "closest_existing": "keyword_pop：关键词作为一整条大字弹在头顶；这里一个词被拆成两半分放在脸两侧，脸夹在中间"
   }
 ]

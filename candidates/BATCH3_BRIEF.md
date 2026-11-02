@@ -85,3 +85,26 @@ The machine has ~13 GB disk free and little RAM; a crash loses everything.
 
 ## Final report (short, English is fine)
 Videos used (link + style + why), effects added (name + closest existing), videos tried and dropped.
+
+## Round 3 addendum — 3 more videos, "like Monica's two examples"
+The user wants the last 3 slots filled with videos **similar to the two examples Monica gave**. Read
+`skills/talking-head-video/refs/teardown-report.md` (and look at a few frames in `skills/talking-head-video/refs/*/frames/`):
+both are short Chinese 视频号 videos where an editor **demonstrates 口播 (talking-head) editing techniques on a talking
+person** — "告别廉价口播" (one rule per sentence: 内容类型 → 画面处理) and "4 套剪辑手法打破扁平画面" (space/layers:
+dashed focus ring, photo-frame layers, big text in front of/behind the person, cutout + paper background + layered props).
+Many of those techniques are already in the library (mono_shrink, broll_circle, doc_fly, cutout_card, dashed_focus,
+frame_layer, text_sandwich, paper_props, scanline_word, bg_switch, sticker_outline…). Look for **more videos of that
+kind** and take only techniques the library doesn't have.
+
+Changes to the rules for this round:
+- Rule 4 is relaxed: **short editing-tip videos that demonstrate techniques on a talking-head shot are exactly what we
+  want** (口播剪辑技巧 / 口播包装 / 剪映口播 / 让口播不无聊 / 口播画面层次 / talking head editing tips / CapCut talking
+  head effects). Product launch films and pure motion design are still out.
+- Rule 1 stays: vertical, ≤ 90 s (a slightly longer tip video, ≤ 3 min, is OK if it's vertical and every technique is
+  shown on a talking-head shot).
+- Rule 2 becomes: every technique you take must be **shown on a talking-head shot** (the person on screen). You don't
+  need the 60 % count for tip videos; instead write which frames show each technique.
+- Sources that download without login: Bilibili (`yt-dlp` works on bilibili.com/video/BV…), YouTube Shorts (Chinese and
+  English editors), Xiaohongshu/Douyin usually fail — skip quickly.
+- Style: whatever the video is; tag each effect with the right `style` value from tags.json.
+- 3 videos, each ≥ 2 new effects, from 3 different creators. Append to `candidates/batch3.json` (keep the 19 entries).

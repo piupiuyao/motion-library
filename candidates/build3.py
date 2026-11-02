@@ -8,14 +8,14 @@ import base64, json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.path.expanduser('~/Desktop/第三批动效审核.html')
-ORDER = ['简洁商务', '科技感', '电影感', '网感活泼']
+ORDER = ['简洁商务', '科技感', '电影感', '网感活泼', '通用']
 # lead's call after reading both agents' reports
-NOTE = {'地图国境发光': '建议不做：和库里「地图描线」太像',
+NOTE = {'褪色心电线': '和本批「声波光带」有点像，看图再定',
         '词条飞入榜位': '建议并进「梯队排行榜」：是它里面的一个动作'}
 
 
 def frames(c):
-    paths = [p.strip() for p in c['ref_frames'].split(',')]
+    paths = re.findall(r'[\w./-]+\.jpg', c['ref_frames'])
     base = os.path.dirname(paths[0])
     out = []
     for p in paths:
