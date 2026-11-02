@@ -69,6 +69,8 @@
   .frames.wide { grid-template-columns:1fr 1fr; }
   .frames.wide img { aspect-ratio:16/9; }
   .grid { grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .demo { width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; display:block; }
+  .reflabel { font-size:11.5px; color:var(--mute); padding:4px 10px; background:var(--chip); }
   .cmp { display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--mute); background:var(--chip); border-radius:6px; padding:6px 8px; }
   .cmp img { width:44px; aspect-ratio:9/16; object-fit:cover; border-radius:4px; flex:none; }
   .sug { font-size:12.5px; color:var(--warn); font-weight:600; }
@@ -81,7 +83,7 @@
 <body>
 <header>
   <h1>第三批动效审核</h1>
-  <div class="sub">按四种风格找了 7 条竖屏口播短视频（每条人出镜 ≥6 成），又按 Monica 那两条的路子找了 3 条口播剪辑教学，一共拆出 27 个库里没有的动效。<b>还没做演示</b>，图是原视频截帧（点开看大图），下面一行是库里最像的那个和区别。你先勾「要 / 不要」，只把要的做成演示，省时间。选完点「复制结果」发给我；选择存在这个浏览器里。</div>
+  <div class="sub">按四种风格找了 7 条竖屏口播短视频（每条人出镜 ≥6 成），又按 Monica 那两条的路子找了 3 条口播剪辑教学，一共拆出 27 个库里没有的动效。已全部入库。上面是在 Rumi 上做的演示（鼠标放上去播放），下面是原视频截帧（点开看大图）和库里最像的那个。觉得哪个演示不像原版，点「不要」或者直接告诉我改哪里。选完点「复制结果」发给我；选择存在这个浏览器里。</div>
   <div class="bar" id="bar"></div>
 </header>
 <main id="main"></main>
@@ -108,6 +110,7 @@ function bar() {
 function card(c) {
   const st = pick[c.n] === 'y' ? 'yes' : pick[c.n] === 'n' ? 'no' : '';
   return `<div class="card ${st}" data-n="${c.n}">
+    ${c.preview ? `<video class="demo" src="${c.preview}" poster="${c.poster}" muted loop playsinline preload="metadata"></video><div class="reflabel">原视频截帧</div>` : ''}
     <div class="frames">${c.frames.map(f => `<img src="${f}" alt="">`).join('')}</div>
     <div class="body">
       <div class="top"><span class="num">#${c.n}</span><span class="name">${esc(c.name)}</span><span class="diff">${esc(c.diff)}</span></div>
@@ -138,6 +141,8 @@ function draw() {
       im.onload = () => { if (im.naturalWidth > im.naturalHeight) im.parentElement.classList.add('wide'); };
       im.onclick = () => { $('#big').src = im.src; $('#dlg').showModal(); };
     });
+    const v = el.querySelector('video.demo');
+    if (v) { el.onmouseenter = () => v.play().catch(() => {}); el.onmouseleave = () => v.pause(); }
   });
 }
 $('#dlg').onclick = () => $('#dlg').close();

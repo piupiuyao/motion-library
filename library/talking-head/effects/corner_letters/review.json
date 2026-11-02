@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames: 黑底竖长人窗+四角大字压边，与参考一致",
+  "checked": "STOP 四个字母钉四角；无 text 不显示",
+  "fixed": "下面两个字母挪到字幕条以下，不被字幕挡",
+  "left": "英文单词超过 4 个字母只取前 4 个；有空格按词拆"
+}

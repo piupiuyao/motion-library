@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames: 纯黑+上方羽化圆窗+下方逐词字幕、关键词变色放大，与参考一致",
+  "checked": "Deciding is 关键词高亮；edge:\"hard\" 硬边版写了但没出 demo",
+  "fixed": "字幕自带，镜头放在 captions:false 的 S33",
+  "left": "要求整条片子此镜头关底部字幕（否则会重复）"
+}

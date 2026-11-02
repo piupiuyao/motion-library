@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S23 (captions off) · words 0-13: 'stop scrolling.' / 'you have 3,000' / 'unread messages', hard cut at 'and' into a teal-graded talking head; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "—",
+  "left": "Needs a captions:false shot because the caption pill would show on black; when lines are missing it auto-splits the shot's words (not rendered in tests)"
+}

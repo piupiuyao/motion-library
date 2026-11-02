@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S11 words 69-88：Before 4 hours 卡 → Notifications off 药丸箭头 → After 40 min 卡，整排左移，最后一张转圈后变绿色对勾「3h 20m back every day」",
+  "fixed": "药丸太宽溢出，连接宽改 230 可换行；镜头延长到 88 让对勾卡停够",
+  "left": "「3h 20m」是 4 小时减 40 分钟算出来的，不是原话；对勾绿色固定（语义色）"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "compared with refs3 frames",
+  "checked": "S21 · words 69-79, gmail.jpg as the printed sheet, pill 'After: __ min a day' → '?'; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Top window crop moved down to the face; scrambled digits blur; sheet prints for 1.5 s, then falls with blur; final '?' pops",
+  "left": "Rollers are flat CSS with no real 3D metal; single photo on the sheet by default (grid param makes a note sheet); the teal bg in the ref is now --bg-a/--bg-b"
+}

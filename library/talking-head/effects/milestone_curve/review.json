@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S12 words 69-83：Before 曲线慢慢画到 4 hours，After 清掉重画、更陡、0.67 处到顶标 40 minutes，旧终点留圆点；主题色测试变粉",
+  "fixed": "图表下移，终点标签不再压住阶段小字",
+  "left": "曲线颜色是主题色加 18% 黑，浅色主题色在浅灰底上也能看清"
+}

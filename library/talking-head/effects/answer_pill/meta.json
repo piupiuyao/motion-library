@@ -1,0 +1,42 @@
+{
+  "id": "answer_pill",
+  "name": "结论药丸反色放大",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "数字",
+    "对比前后"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "对比结论框",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "3–5 秒",
+  "use_for": "对比之后报最终结论数字：前一行普通白药丸，结论弹出大一倍的黑底药丸",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "answer": "必填：结论那一行 {title, sub, value, unit, at}，value 是原话里的结论数字",
+    "rows": "可选：前面用来对比的行 [{title, sub, value, unit}]，数字用原话里的",
+    "label": "可选：框的标签（对比的前提）",
+    "label2": "可选：说出结论时标签换成的字"
+  },
+  "params": {
+    "answer": "必填。结论行 {title 标题, sub 小字, value 结论数字, unit 小字单位, show 这行标题出现的秒数或词(默认 0.25), at 大药丸弹出的秒数或词}；没有 value 不显示",
+    "rows": "可选。对比行，最多 3 行，每行 {title, sub, value, unit}，value 显示成普通白色小药丸",
+    "label": "可选。框左上角的标签",
+    "label2": "可选。大药丸弹出时标签换成这句",
+    "y": "可选。对比框的竖直位置，默认 800"
+  },
+  "what": "在数据表下方的对比框里（人仍在顶部窗口），前一行结果是普通白底小药丸「₹96」；念到关键结论时，右侧虚线空槽里弹出一个明显更大的黑底白字药丸「₹4.60」，尺寸约是普通药丸的 2 倍，轻微放大落定，框的标签同时从「For ₹1,000」改成「Same ₹1,000」。",
+  "sources": [
+    "https://www.youtube.com/shorts/TOns_a-kicQ?t=24"
+  ],
+  "ref_moment": "00:24–00:28"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames: 逐行出现+红线划掉，蓝色发光衬线字、推近胸口和参考一致",
+  "checked": "4 行 Email/WhatsApp/Slack/Telegram 逐条出现并划掉；主题色（发光变蓝）；无 items 不显示也不推近",
+  "fixed": "字号/起始高度自动，保证最后一行不压底部字幕；缺参时不再推近",
+  "left": "划线固定红色（否定语义）；推近只放大原画面"
+}

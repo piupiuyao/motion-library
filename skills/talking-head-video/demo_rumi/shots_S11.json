@@ -1,0 +1,14 @@
+{"skin": "clean", "shots": [
+ {"words": "2-13", "template": "threshold_bar", "params": {"title": "3,000 unread messages", "label": "Unread", "mark": "3,000", "at": "messages,", "tag": "Not even the worst part", "tagAt": "worst"}},
+ {"words": "24-42", "template": "equation_build", "params": {"title": "Every day", "terms": [
+   {"icon": "email", "note": "Email", "at": "email,"},
+   {"op": "+", "icon": "WhatsApp", "note": "WhatsApp", "at": "WhatsApp,"},
+   {"op": "+", "icon": "Slack", "note": "Slack", "at": "Slack,"},
+   {"op": "+", "icon": "Telegram", "note": "Telegram", "at": "Telegram,"},
+   {"op": "=", "text": "Right now", "note": "every single one wants an answer", "at": "right"}]}},
+ {"words": "69-88", "template": "flow_chain", "params": {"title": "Turn off every notification", "steps": [
+   {"head": "Before", "big": "4 hours", "sub": "a day in my inbox", "at": "Before,"},
+   {"kind": "link", "text": "Notifications off", "note": "the ones you don't need", "at": "hours"},
+   {"head": "After", "big": "40 min", "sub": "a day", "at": "After,"},
+   {"kind": "done", "text": "40 minutes a day", "at": "minutes."}]}}
+]}

@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "compared with refs3 frames",
+  "checked": "S11 words 24-42：白框里 Email + WhatsApp + Slack + Telegram = Right now 逐项出现，结果项垫主题色；缺 terms 不显示",
+  "fixed": "按实际宽度二次排版撑满框；框去掉多余高度",
+  "left": "演示用的是图标项不是数字（Rumi 台词里没有能拼成算式的数字）；结果用主题色底+深色字而不是参考的橙字，保证任何主题色都看得清"
+}

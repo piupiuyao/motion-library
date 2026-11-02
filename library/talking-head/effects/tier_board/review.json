@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S13 words 24-42：标题条+S–F 彩色梯队，4 个 app logo 按说到的词放进行，S 行放两条时撑高；主题色测试/缺 items 不显示",
+  "fixed": "图标 tile 基线偏移（加 line-height:0）；面板下移到 y=1040 不挡嘴",
+  "left": "面板盖住胸口和字幕带，演示放在关字幕的文件里；整段常驻需要把镜头拉长（引擎按镜头 setup，跨镜头不会保留已放的条目）"
+}

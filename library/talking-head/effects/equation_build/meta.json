@@ -1,0 +1,40 @@
+{
+  "id": "equation_build",
+  "name": "算式逐项拼出",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "数字",
+    "定义概念"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "全屏图解",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "3–7 秒",
+  "use_for": "把结论拆成算式：人下移，上方面板里「A + B = C」逐项出现，每项带小注释，结果用强调色",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "terms": "必填：2–5 项 {text, op, note, at}，text/note/at 用原话里的数字和词，最后一项是结果",
+    "title": "可选：原话里的标题"
+  },
+  "params": {
+    "terms": "必填。算式各项 [{\"text\":\"40%\",\"op\":\"项前面的符号，如 + − × =（第一项不写）\",\"note\":\"可选，下面的灰色小注释\",\"at\":\"说到哪个词出现（原文单词或词序号）\",\"icon\":\"可选，用图标代替文字（图标名/品牌名）\"}]；最后一项当作结果，垫强调色",
+    "title": "可选。面板标题",
+    "size": "可选。算式字号，默认按长度自动",
+    "panel": "可选。面板高度，默认 720",
+    "shift": "可选。人往下移多少像素，默认 320"
+  },
+  "what": "在上方浅灰面板里（人在下半部继续讲），先出现一个白底细灰边的空长条框；随口播一项项填进去：先「40%」（下面灰色小字注释 normal tax），再出「+」和「20%」（注释 losing your allowance），最后「=」和橙色加粗的「60%」（注释 your actual tax rate）。每一项淡入+轻微上移约 0.3 秒，结果项用强调色。前面还有一个小变体：「£2 Earned → £1 Allowance lost」两个橙色描边小圆币中间画箭头。",
+  "sources": [
+    "https://www.youtube.com/shorts/kldKPSBuqH0?t=13"
+  ],
+  "ref_moment": "00:13–00:20"
+}

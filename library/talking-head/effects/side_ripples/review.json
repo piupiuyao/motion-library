@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "compared with refs3 frames",
+  "checked": "S21 · words 34-42, bursts from 'every', repeating every 0.9 s; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Smaller radius and gap so the arcs stay in frame; thicker lines",
+  "left": "Rumi's hands are out of frame, so the arcs sit at fixed points either side of her lower body (y 1720) rather than around her hands; the clean skin's lime accent is low-contrast on her green shirt (fine with a theme)"
+}

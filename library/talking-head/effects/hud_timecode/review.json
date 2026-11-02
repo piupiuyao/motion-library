@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S21 · words 14-21, title 'INBOX SYSTEM 01', time = video playback time; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Removed fade so it reads as permanent",
+  "left": "Small mono text on Rumi's bright ceiling depends on the top dark gradient"
+}

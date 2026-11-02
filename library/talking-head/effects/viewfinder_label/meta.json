@@ -1,0 +1,40 @@
+{
+  "id": "viewfinder_label",
+  "name": "取景角标标签",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "素材",
+  "purpose": [
+    "提到具体东西",
+    "定义概念"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "画框叠加",
+  "style": [
+    "科技感"
+  ],
+  "duration": "3–6 秒",
+  "use_for": "讲「摄像头/AI 看到的是…」：上方素材罩上机器视觉取景角标和等宽标签，人移到下方",
+  "needs": [],
+  "needs_assets": [
+    "B-roll视频"
+  ],
+  "fills": {
+    "media": "必填：用户上传的 B-roll",
+    "labels": "必填：原话里的词，说到时切换标签 [{text, at}]"
+  },
+  "params": {
+    "media": "必填素材。上方的 B-roll 帧或图片；不填不显示",
+    "labels": "可选。左上角标签 [{text, at 秒数或词}]，依次直接切换；不填不显示标签",
+    "label": "可选。只有一个标签时用",
+    "crosses": "可选。十字准星个数，默认 4",
+    "height": "可选。上方素材区高度，默认 700"
+  },
+  "what": "人缩在下半屏讲话时，上半屏的素材画面四角出现四个白色细线直角括号（像相机取景框/识别框），框内散着几个小「+」十字准星；左上角一个带小点的等宽小标签写「CAMERA VIEW」。讲到下一层意思时标签文字直接切成「FEATURES」「3D MODEL」，角标保持不动。角标约 0.3 秒从外向内收进来定住。",
+  "sources": [
+    "https://www.youtube.com/shorts/ItfyKH3uuPo"
+  ],
+  "ref_moment": "00:18–00:21"
+}

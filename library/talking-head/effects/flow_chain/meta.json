@@ -1,0 +1,40 @@
+{
+  "id": "flow_chain",
+  "name": "流程卡链推演",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤",
+    "对比前后",
+    "数字"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "全屏图解",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "4–9 秒",
+  "use_for": "讲一个操作带来的连锁结果：人下移，上方一排金额卡 → 药丸箭头 → 新卡，最后一张转圈后变绿色对勾",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "steps": "必填：按顺序的卡片 {head, big, sub, at} / 连接 {kind:\"link\", text, note, at} / 结果 {kind:\"done\", text, at}，全部用原话里的数字和词",
+    "title": "可选：原话里的标题"
+  },
+  "params": {
+    "steps": "必填。从左到右的节点列表：卡片 {\"head\":\"表头\",\"big\":\"大号数字\",\"sub\":\"小字说明\",\"at\":\"说到哪个词出现\"}；连接 {\"kind\":\"link\",\"text\":\"药丸里的字，如 −£10,000\",\"note\":\"箭头下小字\",\"at\":\"…\"}；结果 {\"kind\":\"done\",\"text\":\"绿色对勾卡的字\",\"at\":\"…\"}（先转圈 0.7 秒再出对勾）。放不下时整排向左推。at 写原文单词或词序号",
+    "title": "可选。面板标题",
+    "panel": "可选。面板高度，默认 720",
+    "shift": "可选。人往下移多少像素，默认 320"
+  },
+  "what": "上方浅灰面板标题「The Pension Fix」，下面一排小卡片从左往右推：第一张白卡橙色表头（You earn）+ 大号橙字「£110k」+ 小字说明；接着出现一个灰描边小药丸「−£10,000」和一根往右的箭头，箭头下小字「into your pension (not lost)」；然后右边出一张新卡，先是空白，再填成「Adjusted net income £100k」。说到下一步时整排卡片向左平移，把最左一张推出画面，右边空出位置——新卡先显示一个转圈加载图标，再变成绿色描边卡 +绿色对勾「Full Personal Allowance Restored」。人一直在下半部讲话。",
+  "sources": [
+    "https://www.youtube.com/shorts/kldKPSBuqH0?t=29"
+  ],
+  "ref_moment": "00:29–00:38"
+}

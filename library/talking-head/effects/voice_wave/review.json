@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S21 · words 82-94, amplitude follows word timings; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "—",
+  "left": "No audio analysis in the renderer, so the wave follows word timing; it is drawn over the person (no in-front/behind hands)"
+}

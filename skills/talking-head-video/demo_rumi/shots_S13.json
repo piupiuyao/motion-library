@@ -1,0 +1,12 @@
+{"skin": "clean", "captions": false, "shots": [
+ {"words": "14-23", "template": "karaoke_pill", "params": {}},
+ {"words": "24-42", "template": "tier_board", "params": {"title": "Every app wants an answer", "items": [
+   {"text": "Email", "tier": "B", "at": "email,", "icon": "email"},
+   {"text": "WhatsApp", "tier": "S", "at": "WhatsApp,", "icon": "WhatsApp"},
+   {"text": "Slack", "tier": "A", "at": "Slack,", "icon": "Slack"},
+   {"text": "Telegram", "tier": "S", "at": "Telegram,", "icon": "Telegram"}]}},
+ {"words": "47-68", "template": "dashed_fill_table", "params": {"title": "What actually works?", "subtitle": "Three things", "rows": [
+   {"name": "Reply in batches", "sub": "One", "icon": "clock", "value": "Twice a day", "at": "twice"},
+   {"name": "Your answers", "sub": "Two", "icon": "message", "value": "Short", "at": "short."},
+   {"name": "Notifications", "sub": "Three", "icon": "bell-off", "value": "Off", "note": "if you don't need them", "at": "off"}]}}
+]}

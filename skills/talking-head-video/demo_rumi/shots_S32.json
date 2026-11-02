@@ -1,0 +1,7 @@
+{"skin": "clean", "shots": [
+  {"words": "2-7", "template": "heartbeat_line", "params": {"at": "3000"}},
+  {"words": "82-94", "template": "snippet_stack", "params": {"items": [
+    {"image": "assets/docs/notify.jpg", "crop": [20, 20, 660, 98], "at": "Sarah"},
+    {"image": "assets/docs/chat.jpg", "crop": [30, 226, 620, 104], "at": "texted"},
+    {"image": "assets/docs/chat.jpg", "crop": [30, 330, 620, 104], "at": "How"}]}}
+]}

@@ -1,0 +1,47 @@
+{
+  "id": "milestone_curve",
+  "name": "里程碑曲线分段画",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "数字",
+    "对比前后"
+  ],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "进度图表",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "4–10 秒",
+  "use_for": "讲每一阶段比上一阶段快：人下移，上方折线图里每阶段画一条曲线到顶，末端标时长，旧终点留圆点",
+  "needs": [
+    "数字"
+  ],
+  "needs_assets": [],
+  "fills": {
+    "stages": "必填：每阶段 {label, range, end, endLabel, at}，end/endLabel 用原话里的数字",
+    "title": "可选：原话里的标题",
+    "sub": "可选：副标题",
+    "xLabel": "可选：横轴说明",
+    "xMax": "可选：横轴最大值"
+  },
+  "params": {
+    "stages": "必填。阶段列表 [{\"label\":\"左上阶段名\",\"range\":\"可选，阶段名下小字\",\"end\":\"到顶时的横轴数值（数字）\",\"endLabel\":\"终点上方的字，如 7 years\",\"at\":\"说到哪个词开始画（原文单词或词序号）\",\"dur\":\"可选，画线秒数\"}]；新阶段开始时清掉上一条曲线，只留它的终点圆点",
+    "title": "可选。面板标题",
+    "sub": "可选。标题下一行小字",
+    "xLabel": "可选。横轴说明",
+    "yLabel": "可选。纵轴说明",
+    "xMax": "可选。横轴最大值，默认最大的 end",
+    "ticks": "可选。横轴刻度数",
+    "panel": "可选。面板高度，默认 720",
+    "shift": "可选。人往下移多少像素，默认 320"
+  },
+  "what": "上方约 40% 的浅灰面板里是一个干净的折线图框（细灰网格竖线，x 轴「Years to add the next $100K」，左上标题「The First $100K Is the Hardest」）。左上小标签写当前阶段（First Milestone $0–$100,000），一条橙色曲线从左下角缓慢画出，末端标「7 years」。讲下一阶段时曲线清空、标签换成 Second / Third Milestone，x 轴上之前的终点留一个黄色小圆点做记号，新曲线更陡、更早到顶（4 years、3 years……）。每段画线约 1.5–2 秒。人在下半部一直讲。",
+  "sources": [
+    "https://www.youtube.com/shorts/-m-GrB9f1aQ?t=7"
+  ],
+  "ref_moment": "00:07–00:15, 00:37–00:43"
+}

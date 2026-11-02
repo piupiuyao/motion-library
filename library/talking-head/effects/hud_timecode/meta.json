@@ -1,0 +1,36 @@
+{
+  "id": "hud_timecode",
+  "name": "HUD顶栏时间码",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "顶部常驻条",
+  "style": [
+    "科技感"
+  ],
+  "duration": "整段",
+  "use_for": "科技/AI/数据类口播的整段包装：顶部细 HUD 栏，节目名 + 实时跳的时间码",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "title": "可选：栏目名 + 期数，如「XX MAP 01」"
+  },
+  "params": {
+    "title": "可选。左边的节目名，末尾数字会用主题色；不填只显示圆点和时间码",
+    "prefix": "可选。时间码前缀，默认 \"T+\"",
+    "offset": "可选。时间码加的秒数，默认 0",
+    "clock": "可选。\"video\"（默认，整条视频的播放时间）或 \"shot\"（从这段开始计时）",
+    "y": "可选。HUD 栏竖直位置，默认 112"
+  },
+  "what": "整条视频顶部常驻一条很细的 HUD 栏（高约 3% 屏、离顶约 6%）：左边一个小红/橙圆点 + 白色等宽小字节目名（如「FRONTIER MAP 01」），右边等宽小字时间码「TIME 00:12.3」随播放实时往上跳；字号很小、半透明白，背景是深色渐变压暗。不管下面是人还是素材都一直挂着，像监控/卫星画面的界面框，不挡脸。",
+  "sources": [
+    "https://www.youtube.com/shorts/ItfyKH3uuPo"
+  ],
+  "ref_moment": "00:00–00:30（整条）"
+}

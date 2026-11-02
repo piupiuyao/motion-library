@@ -1,0 +1,37 @@
+{
+  "id": "light_streaks",
+  "name": "上升光丝",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "镜头特效",
+  "purpose": [
+    "情绪吐槽",
+    "金句观点"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "光效点缀",
+  "style": [
+    "电影感",
+    "网感活泼"
+  ],
+  "duration": "2–4 秒",
+  "use_for": "情绪往上拱的一句：几根细光丝从底边沿人身两侧往上划，给一点能量感",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "keywords": "必填：原话里情绪最重的词（1–2 个），说到时光丝划上去、字幕高亮"
+  },
+  "params": {
+    "keywords": "必填。原话里的情绪词（照她说的词写），每个词触发一次光丝并在字幕里高亮",
+    "at": "可选。不用 keywords 时，说到哪个词（或词列表）触发",
+    "count": "可选。光丝根数，默认 8",
+    "color": "可选。光丝颜色，默认主题 --paper（白）"
+  },
+  "what": "人正常讲话，念到情绪词时，几根很细的白色发光线（像光丝/流星尾）从画面底边沿人身体两侧往上快速划上去，最高到胸口和肩膀高度，线有长有短、略带弧度，叠在人前面；约 0.5–1 秒内划完并淡出，同时这句字幕换成金黄色。",
+  "sources": [
+    "https://www.youtube.com/watch?v=Ki2ewWnwmgw&t=88s"
+  ],
+  "ref_moment": "01:28–01:29"
+}

@@ -48,6 +48,11 @@ def lib_poster(text):
 
 
 cands = json.load(open(os.path.join(HERE, 'batch3.json')))
+LIBD = os.path.join(ROOT, 'library/talking-head/effects')
+BY_NAME = {}
+for i in os.listdir(LIBD):
+    mf = os.path.join(LIBD, i, 'meta.json')
+    if os.path.exists(mf): BY_NAME[json.load(open(mf))['name']] = i
 cands.sort(key=lambda c: ORDER.index(c['style'][0]) if c['style'][0] in ORDER else 9)
 data = []
 for n, c in enumerate(cands, 1):
@@ -57,7 +62,9 @@ for n, c in enumerate(cands, 1):
                  'diff': {'easy': '好做', 'medium': '中等', 'hard': '难做'}.get(c['difficulty'], c['difficulty']),
                  'needs': c.get('needs_assets') or [], 'src': c['sources'][0], 'video': title, 'slug': slug,
                  'closest': c.get('closest_existing', ''), 'lib_name': ln, 'lib_img': li,
-                 'frames': frames(c), 'note': NOTE.get(c['name'], '')})
+                 'frames': frames(c), 'note': NOTE.get(c['name'], ''), 'id': BY_NAME.get(c['name'], ''),
+                 'preview': 'file://' + os.path.join(LIBD, BY_NAME[c['name']], 'preview.mp4') if c['name'] in BY_NAME else '',
+                 'poster': 'file://' + os.path.join(LIBD, BY_NAME[c['name']], 'poster.jpg') if c['name'] in BY_NAME else ''})
 
 html = open(os.path.join(HERE, 'review3_template.html')).read().replace('/*DATA*/[]', json.dumps(data, ensure_ascii=False))
 open(OUT, 'w').write(html)

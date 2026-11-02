@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames: 缩小露黑边、胸前并排红叉/绿勾标签与参考一致",
+  "checked": "Talent ✗ / System ✓ 依次弹出；主题色（字变粉）；无 items 不显示也不缩小",
+  "fixed": "缺参时不再缩小画面",
+  "left": "勾叉底色固定绿/红；英文用宋体/Georgia 粗字加黑描边，没有中文金黄宋体那么像"
+}

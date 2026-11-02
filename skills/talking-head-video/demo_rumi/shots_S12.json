@@ -1,0 +1,6 @@
+{"skin": "clean", "shots": [
+ {"words": "2-8", "template": "number_land_block", "params": {"to": 3000, "at": "3000", "label": "unread messages"}},
+ {"words": "69-83", "template": "milestone_curve", "params": {"title": "Time in my inbox", "sub": "every day", "xLabel": "Hours a day", "xMax": 4, "ticks": 4, "stages": [
+   {"label": "Before", "range": "reading every message", "end": 4, "endLabel": "4 hours", "at": "Before,"},
+   {"label": "After", "range": "batches, short answers", "end": 0.67, "endLabel": "40 minutes", "at": "After,"}]}}
+]}

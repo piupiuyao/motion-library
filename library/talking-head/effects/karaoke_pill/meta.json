@@ -1,0 +1,32 @@
+{
+  "id": "karaoke_pill",
+  "name": "灰字转黑药丸字幕",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "字幕常驻"
+  ],
+  "weight": "底层",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "字幕样式",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "整段",
+  "use_for": "冷静讲解类的默认字幕：胸口白色小药丸，一句 3–5 词，念到的词由浅灰变黑",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {},
+  "params": {
+    "y": "可选。药丸顶部 y，默认 1230（胸口）",
+    "size": "可选。字号，默认 46",
+    "maxWords": "可选。每句最多几个词，默认 5（遇到标点提前换句）"
+  },
+  "what": "字幕放在人胸口（全屏时）或上下分屏的交界线上，是一个紧贴文字的白色圆角小药丸，字号小、粗体无衬线。一整句 3–5 个词一次性出现，还没念到的词是浅灰色，念到一个词就变成黑色（像卡拉 OK 逐词变黑），整句念完换下一句。没有弹跳、没有放大，很安静。",
+  "sources": [
+    "https://www.youtube.com/shorts/-m-GrB9f1aQ?t=25"
+  ],
+  "ref_moment": "00:25–00:28（全片都在用）"
+}

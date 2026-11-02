@@ -1,0 +1,7 @@
+{"skin": "clean", "shots": [
+  {"words": "14-21", "template": "hud_timecode", "params": {"title": "INBOX SYSTEM 01"}},
+  {"words": "26-33", "template": "viewfinder_label", "params": {"media": {"frames": "assets/broll_inbox", "fps": 30, "count": 165}, "labels": [{"text": "EMAIL", "at": "email,"}, {"text": "WHATSAPP", "at": "WhatsApp,"}, {"text": "SLACK", "at": "Slack,"}, {"text": "TELEGRAM", "at": "Telegram,"}]}},
+  {"words": "34-42", "template": "side_ripples", "params": {"at": ["every"], "every": 0.9}},
+  {"words": "69-79", "template": "printer_reveal", "params": {"media": "assets/docs/gmail.jpg", "prefix": "After:", "mask": "__", "suffix": "min a day", "final": "?"}},
+  {"words": "82-94", "template": "voice_wave", "params": {}}
+]}

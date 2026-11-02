@@ -1,0 +1,8 @@
+{"skin": "clean", "shots": [
+  {"words": "0-6", "template": "corner_letters", "params": {"text": "STOP"}},
+  {"words": "7-16", "template": "light_streaks", "params": {"keywords": ["worst part", "the truth"]}},
+  {"words": "17-23", "template": "split_word_head", "params": {"left": "Hard", "right": "Part"}},
+  {"words": "28-35", "template": "strike_list", "params": {"items": [{"text": "Email", "at": "email"}, {"text": "WhatsApp", "at": "WhatsApp"}, {"text": "Slack", "at": "Slack"}, {"text": "Telegram", "at": "Telegram"}]}},
+  {"words": "43-48", "template": "arc_caption", "params": {"title": "Three things", "text": "What actually works"}},
+  {"words": "95-101", "template": "tick_cross_tags", "params": {"items": [{"text": "Talent", "mark": "x", "at": "talent"}, {"text": "System", "mark": "v", "at": "system"}]}}
+]}

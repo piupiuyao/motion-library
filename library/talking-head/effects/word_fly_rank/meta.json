@@ -1,0 +1,39 @@
+{
+  "id": "word_fly_rank",
+  "name": "词条飞入榜位",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "清单步骤",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "梯队榜单",
+  "style": [
+    "网感活泼"
+  ],
+  "duration": "3–8 秒",
+  "use_for": "排名/归档：说到的东西先在胸口出大字，再缩小飞进下方榜单对应的行",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：每条 {text, to, at, land, icon}，text/at 用原话里的词，to 是放进哪一行",
+    "rows": "可选：榜单各行名称（等级或分类，用原话）"
+  },
+  "params": {
+    "items": "必填。[{\"text\":\"名称\",\"to\":\"飞进哪一行（行名）\",\"at\":\"说到哪个词出现（原文单词或词序号；不写找 text）\",\"land\":\"可选，说到哪个词飞进去，默认下一条出现前\",\"icon\":\"可选，图标名/品牌名或 emoji\"}]",
+    "rows": "可选。下方榜单的行名列表；行名是 S/A/B/C/D/F 时用梯队配色，否则交替用主题色；不写就按 items 的 to 依次建行",
+    "y": "可选。榜单顶部 y，默认 1290",
+    "wordY": "可选。大字中心 y，默认 1150",
+    "size": "可选。大字字号，默认 92",
+    "rowHeight": "可选。每行高度"
+  },
+  "what": "念到某个东西时，它的名字以较大的白色粗体字 + 小 emoji 出现在人胸口（略带模糊/像素化后变清楚），停 1–2 秒；定级那一刻，字条在约 0.4 秒内带着运动模糊缩小并飞向下方面板里对应的行，落位后变成小字，同行其他条目让位。",
+  "sources": [
+    "https://www.youtube.com/shorts/K7UvJQsjMOM"
+  ],
+  "ref_moment": "00:52–00:54"
+}

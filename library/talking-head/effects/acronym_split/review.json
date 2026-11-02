@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "compared with refs3 frames",
+  "checked": "S22 · words 49-68: Batches / Short / Off → 'BSO' with the speaker shrinking into a window; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Bigger serif lines",
+  "left": "No real acronym exists in Rumi's script, so 'BSO' is made up from the three tips and reads as forced; the swap (VPS→GPS) feature is built but not shown in the demo"
+}

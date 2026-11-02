@@ -1,0 +1,7 @@
+{"skin": "clean", "captions": false, "shots": [
+ {"words": "24-42", "template": "word_fly_rank", "params": {"rows": ["S", "A", "B", "C"], "items": [
+   {"text": "Email", "to": "B", "at": "email,", "icon": "email"},
+   {"text": "WhatsApp", "to": "S", "at": "WhatsApp,", "icon": "WhatsApp"},
+   {"text": "Slack", "to": "A", "at": "Slack,", "icon": "Slack"},
+   {"text": "Telegram", "to": "S", "at": "Telegram,", "icon": "Telegram"}]}}
+]}

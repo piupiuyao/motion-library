@@ -1,0 +1,39 @@
+{
+  "id": "black_cold_open",
+  "name": "黑场细衬线冷开场",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "开场钩子"
+  ],
+  "weight": "大",
+  "covers_face": true,
+  "zone": "全屏",
+  "group": "开场大标题",
+  "style": [
+    "电影感"
+  ],
+  "duration": "2–4 秒",
+  "use_for": "开场第一句：纯黑底一行很小的细衬线字随口播逐句换，再硬切进暗青调色的口播",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "lines": "可选：原话按句切开的几行 [{text, at}]；不填就用这段原话自动切",
+    "cut": "可选：从哪个词开始出脸（硬切）"
+  },
+  "params": {
+    "lines": "可选。黑场上逐句出现的字 [{text, at 秒数或词}] 或字符串数组；不填就把这段原话按停顿/标点切成几行",
+    "cut": "可选。硬切进口播画面的秒数或词，默认 3 秒",
+    "lower": "可选。是否全转小写，默认 true",
+    "size": "可选。字号，默认 46",
+    "y": "可选。字的竖直位置，默认 935",
+    "grade": "可选。切进口播后是否调成暗青色，默认 true",
+    "tint": "可选。调色叠加的颜色，默认暗青 rgba(4,42,50,.42)"
+  },
+  "what": "视频最开头 3 秒是纯黑画面，正中间一行很小的白色细衬线小写字（字高约画面宽的 3%），随口播一句一句替换（if you don't know → what skill to learn → start writing），淡入淡出，没有任何其他元素；第 3 秒硬切进调成暗青色的口播画面。",
+  "sources": [
+    "https://www.youtube.com/shorts/cS9g8Z7Z5oY"
+  ],
+  "ref_moment": "00:00–00:03（≤3 秒插入）"
+}

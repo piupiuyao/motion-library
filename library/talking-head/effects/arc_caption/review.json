@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames: 黑底圆头像+上方标题+下方弧形字逐字出现，与参考一致",
+  "checked": "THREE THINGS / WHAT ACTUALLY WORKS；主题色；无 text 不显示",
+  "fixed": "标题改单行自动字号",
+  "left": "弧太长会自动缩小字号"
+}

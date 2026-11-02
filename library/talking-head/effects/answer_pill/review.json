@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S22 · words 72-81: Before 4 hours (small white pill) → After 40 min (big black pill), label 'A day in my inbox' → 'Same inbox'; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Window crop; removed show param in demo so the dashed slot is visible before the pill",
+  "left": "The big pill is ink on dark bg, so it got a paper border to stay readable; no data table above (only the comparison box)"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S12 words 2-8：3,000 从 0 往上跳，停住时主题色块从左扫到数字后面，色块上字变深色，下面小字 unread messages；缺数字且原话无数字时不显示",
+  "fixed": "—",
+  "left": "参考是橙底白字；这里色块用主题色、色块上的字用 --ink，保证浅色主题色也看得清"
+}

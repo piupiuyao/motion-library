@@ -1,0 +1,7 @@
+{
+  "status": "good",
+  "ref": "compared with refs3 frames",
+  "checked": "S14 words 24-42：大字+logo 从糊变清出现在胸口，0.25–0.4 秒带模糊缩小飞进下方 S/A/B/C 行；缺 items 不显示",
+  "fixed": "图标 tile 基线偏移",
+  "left": "自带一个简版榜单面板（不能飞进另一个效果的面板）；每行最多放 2 条不撑高"
+}

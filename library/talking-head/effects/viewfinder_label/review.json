@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "ref": "compared with refs3 frames",
+  "checked": "S21 · words 26-33, broll_inbox top area, labels EMAIL/WHATSAPP/SLACK/TELEGRAM switching on the words; theme #ff4d6d/#3d7bff test OK; required param removed → renders nothing, no crash",
+  "fixed": "Face shift corrected so the caption sits under the chin",
+  "left": "Our only B-roll is a mostly-empty purple desktop, so the machine-vision feel is weaker than the ref; the person keeps full width and slides down under a 700px media band"
+}

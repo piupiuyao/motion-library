@@ -1,0 +1,5 @@
+{"skin": "clean", "shots": [
+  {"words": "26-42", "template": "feather_strip", "params": {"images": [{"src": "assets/docs/gmail.jpg", "at": "email,"}, {"src": "assets/docs/chat.jpg", "at": "WhatsApp,"}, {"src": {"frames": "assets/broll_inbox", "fps": 30, "count": 165}, "at": "Slack,"}, {"src": "assets/docs/notify.jpg", "at": "every"}]}},
+  {"words": "49-68", "template": "acronym_split", "params": {"words": [{"text": "Batches", "at": "batches,"}, {"text": "Short", "at": "short."}, {"text": "Off", "at": "off"}], "full": "batches · short · off", "collapse": "notification"}},
+  {"words": "72-81", "template": "answer_pill", "params": {"label": "A day in my inbox", "label2": "Same inbox", "rows": [{"title": "Before", "sub": "every day", "value": "4 hours", "unit": "a day"}], "answer": {"title": "After", "sub": "now", "value": "40 min", "unit": "a day", "at": "40"}}}
+]}
