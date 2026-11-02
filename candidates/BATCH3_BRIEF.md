@@ -10,10 +10,20 @@ effects in them that the library does **not** have yet. Nothing gets built in th
 ## Your share
 Given in the task message (which styles, how many videos each).
 
-## What counts as a good reference video
-- A person talking to camera (vertical short: TikTok / Reels / YouTube Shorts; a horizontal YouTube talking-head is OK
-  if it's clearly that style). Not product launch films, not pure motion design, not tutorials-about-editing unless
-  the tutorial shows a finished talking-head result.
+## What counts as a good reference video — HARD RULES (round 2; round 1 broke these and was thrown away)
+Round 1 picked horizontal long YouTube videos and vertical shorts that were mostly full-screen animation with no
+person. The user rejected them: "很多与口播没关系，很多都是横屏的长视频". So now every video MUST pass all of these:
+1. **Vertical** (taller than wide) short: TikTok / Reels / YouTube Shorts, **≤ 90 s**. No horizontal videos at all,
+   no clips cut out of long videos. Check the frame size of your pulled jpgs (height > width) before using it.
+2. **The person talks to camera for most of the video.** Sample the whole short at fps=1 and count: the speaker's face
+   must be on screen in **≥ 60 %** of frames. Write the count in video.md ("person in 24/31 frames").
+3. **Every effect you take must appear while the person is on screen** (overlaid on / around / behind the person, or
+   the person shrunk into a window), OR be a short full-screen insert of ≤ 3 s between talking shots. Full-screen
+   animations that run for long stretches with no person don't count.
+4. Not product launch films, not pure motion design, not editing tutorials.
+- Already used, don't pick again: Graham Stephan "Ranking The BEST Credit Cards". Rejected in round 1 (don't reuse):
+  Ali Abdaal, Humphrey Yang, Jeff Su, Matt D'Avella, Johnny Harris, Varun Mayya — their long videos / full-screen
+  animation shorts. (A different Varun Mayya short is OK only if it passes rule 2 and 3.)
 - Clearly in the requested style, and edited with care (popular creator / high views, or a well-known editing style).
   Examples of what each style means:
   - 简洁商务: knowledge / career / finance creators — clean cards, thin type, screenshots, lists, calm motion.
@@ -34,9 +44,9 @@ Given in the task message (which styles, how many videos each).
    yt-dlp -q -f "bv*[height<=480][ext=mp4]/b[height<=480]" --download-sections "*START-END" -o ref.mp4 "<url>"
    ffmpeg -v error -i ref.mp4 -vf "fps=2,scale=360:-2" f_%03d.jpg && rm ref.mp4
    ```
-   Sections of ≤60 s. Look at the jpgs with the Read tool. Keep at most ~25 jpgs per video; delete the video file.
+   Sections of ≤60 s (a whole short is fine since it's ≤90 s; first pass fps=1 for the person count, then fps=2–4 around effects). Look at the jpgs with the Read tool. Keep at most ~25 jpgs per video; delete the video file.
    `candidates/refs3/` is git-ignored (other people's content).
-4. Only describe what you actually saw in frames. If you couldn't fetch frames for a video, don't use that video.
+4. Only describe what you actually saw in frames. In `ref_frames`, list frames where the person AND the effect are both visible (or the ≤3 s insert). If you couldn't fetch frames for a video, don't use that video.
 
 ## Output
 Append to `candidates/batch3.json` (a JSON list; create it if missing; another agent writes to the same file, so
