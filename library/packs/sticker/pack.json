@@ -1,0 +1,48 @@
+{
+  "id": "sticker",
+  "name": "Sticker Explainer",
+  "vibe": "Cut-out presenter with a white sticker outline on warm grid paper; blue rounded words on pearl die-cut stickers, handwritten asides, one iridescent glitter title — friendly, calm, the picture may stay quiet.",
+  "reference": [
+    {"creator": "Zara Zhang", "url": "https://x.com/zarazhangrui/status/2116281211962454056",
+     "what": "the whole look: white-outline cutout, #F2EFE6 grid paper, blue rounded type on pearl die-cut stickers, hand notes, semantic emoji, holo glitter hero/number, progressive list with person aside, 01-badge top-left, quiet face time"},
+    {"creator": "sticker-talk-edit skill (MIT)", "url": "https://github.com/ryanchenxr/sticker-talk-edit",
+     "what": "written rules: shot grammar A–I, sizes, colours #3D49DA / #F66D63, sway ±0.6–1.3° over 3–6 s, glitter fixed to the surface"}
+  ],
+  "fonts": [
+    {"family": "PkRound", "file": "fonts/nunito-800.woff2", "weight": "800"},
+    {"family": "PkRound", "file": "fonts/nunito-900.woff2", "weight": "900"},
+    {"family": "PkHand", "file": "fonts/kalam-700.woff2", "weight": "700"}
+  ],
+  "tokens": {
+    "font-display": "\"PkRound\", sans-serif",
+    "font-body": "\"PkRound\", sans-serif",
+    "font-hand": "\"PkHand\", cursive",
+    "display-weight": "900",
+    "accent": "#3340d4",
+    "accent-2": "#f2625a",
+    "ink": "#262ec2",
+    "paper": "#fdfcff",
+    "bg-a": "#f2efe6",
+    "bg-b": "#e8e6f4",
+    "dim": "rgba(242,239,230,.88)",
+    "cap-bg": "#fdfcff",
+    "cap-ink": "#a9aeea",
+    "cap-on": "#3340d4",
+    "on-accent": "#ffffff",
+    "on-bg": "#262ec2",
+    "accent-text": "#3340d4"
+  },
+  "caption_style": "pack",
+  "brand_font": "none",
+  "effects": {
+    "signature": ["sticker_stage", "sticker_list", "sticker_chapter"],
+    "allowed": ["pip_card", "phone_frame", "bg_switch", "equation_build"]
+  },
+  "density": "Every shot of the video sits on the cutout stage (cover the whole timeline with sticker_* shots). New sticker only when a new idea is said; 1–3 stickers per screen, 0 is fine. Clear back to the bare cutout between ideas — about 40% of the time shows only the person (+ badge). Hero title at most once per 10–15 s.",
+  "not": [
+    "not a caption-heavy short: no word-by-word karaoke blocks, no thick black outlines, no all-caps bars",
+    "not loud: no shake, no zoom punches, no flashing colours, no floating emoji streams",
+    "not dark/glassy (that is the cutout_card / neon look): always light paper, blue ink, one coral for negation",
+    "not every word in a different style: one rounded face, one hand face, one blue"
+  ]
+}

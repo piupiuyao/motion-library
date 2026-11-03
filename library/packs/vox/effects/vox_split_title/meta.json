@@ -1,0 +1,43 @@
+{
+  "id": "vox_split_title",
+  "name": "纸面分屏标题（Editorial Paper）",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": ["开场钩子", "金句观点", "提到具体东西", "引用证据", "结尾号召", "换话题"],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "纸面分屏",
+  "style": ["复古手作", "简洁商务"],
+  "duration": "3–7 秒",
+  "use_for": "人滑到下半屏，上半屏一张暖纸：细衬线一行 + 粗衬线关键词（荧光笔扫过），下面可放一张纸卡 / app 图标 / 手写批注",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "title": "可选：原话里的前半句（细体）",
+    "key": "必填：原话里最该记住的短语（粗体 + 荧光笔）",
+    "kicker": "可选：原话里的小标签，全大写",
+    "apps": "可选：她说到的 app 名",
+    "card": "可选：{label, text|icon, note, at}，用原话",
+    "note": "可选：手写批注，2–4 个词，原话"
+  },
+  "layers": ["背景：纸", "原画面下移到下半屏", "人后：纸面上半屏 + 分割线 + 标题/展品", "字幕"],
+  "params": {
+    "key": "必填。粗衬线关键短语（Fraunces 900 + 主色荧光笔），原话",
+    "title": "可选。key 上面的细衬线一行（Fraunces 300），原话",
+    "kicker": "可选。最上面的小标签（Archivo 700 全大写，灰）",
+    "key_at": "可选。荧光笔扫过的时刻：词或词序号，默认 1 秒",
+    "apps": "可选。app 名列表（最多 4 个），说到哪个哪个落下，官方 logo 放纸白卡里",
+    "card": "可选。{\"label\":\"卡片抬头\",\"text\":\"卡里一句衬线字\"|\"icon\":\"图标词\",\"note\":\"主色小字\",\"at\":\"出现的词\"}",
+    "note": "可选。手写批注（Caveat）+ 手绘箭头，主色；note_at 出现的词，note_y 顶边",
+    "color": "可选。\"accent-2\" = 用第二色（绿，收尾/好结果）做荧光笔和分割线",
+    "size": "可选。title 字号，默认 104（key 自动 ×1.12）",
+    "top": "可选。标题块顶边，默认 190",
+    "exhibit_top": "可选。展品区顶边，默认 560"
+  },
+  "source": {
+    "from": "herk-edit-kit (Nate Herk, MIT) — docs/images/curiosity-reel-1/2.jpg 的上纸下人版式 + style-library/01-vox-explainer 的字体/纸纹/荧光笔",
+    "note": "Vox 卡是 1920×1080，这里改成竖屏上下分屏"
+  }
+}

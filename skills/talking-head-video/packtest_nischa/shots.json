@@ -1,0 +1,106 @@
+{
+ "pack": "nischa",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "nischa_panel_title",
+   "params": {
+    "title": "Ever had this happen?",
+    "sub": "You just don't know how to start.",
+    "subAt": "just"
+   },
+   "why": "hook: her videos open on the grey panel with a bold title while she talks underneath"
+  },
+  {
+   "words": "60-77",
+   "template": "nischa_number_land",
+   "params": {
+    "to": 50,
+    "suffix": "%",
+    "at": "half",
+    "dur": 0.8,
+    "hold": 1.0
+   },
+   "why": "number moment: 'one message eats up half your afternoon' lands as a white 50% on the orange block; caption steps aside"
+  },
+  {
+   "words": "83-100",
+   "template": "equation_build",
+   "params": {
+    "title": "The tools you already use",
+    "panel": 900,
+    "shift": 480,
+    "terms": [
+     {
+      "text": "Gmail",
+      "icon": "gmail",
+      "note": "Gmail",
+      "at": "Gmail"
+     },
+     {
+      "op": "+",
+      "text": "Slack",
+      "icon": "slack",
+      "note": "Slack",
+      "at": "Slack"
+     },
+     {
+      "op": "+",
+      "text": "WhatsApp",
+      "icon": "whatsapp",
+      "note": "WhatsApp",
+      "at": "WhatsApp"
+     }
+    ]
+   },
+   "why": "proof: the three apps she names, built term by term in the panel"
+  },
+  {
+   "words": "114-133",
+   "template": "flow_chain",
+   "params": {
+    "title": "Tell it what you want",
+    "panel": 900,
+    "shift": 480,
+    "steps": [
+     {
+      "head": "Say no",
+      "big": "politely",
+      "at": "say"
+     },
+     {
+      "kind": "link",
+      "text": "or",
+      "at": "move"
+     },
+     {
+      "head": "Move a deal",
+      "big": "forward",
+      "at": "deal"
+     },
+     {
+      "kind": "link",
+      "text": "or",
+      "at": "follow"
+     },
+     {
+      "head": "Follow up",
+      "big": "not pushy",
+      "at": "without"
+     }
+    ]
+   },
+   "why": "list: three things she says you can ask for, as her card chain"
+  },
+  {
+   "words": "164-171",
+   "template": "nischa_panel_title",
+   "params": {
+    "title": "That's ToneBird.",
+    "sub": "Every reply, easier, and more you.",
+    "subAt": "Every"
+   },
+   "why": "ending: same panel as the open, closes the loop with her last line"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "pack": "shipinhao",
+ "shots": [
+  {
+   "words": "20-37",
+   "template": "shipinhao_sticker",
+   "params": {
+    "background": "magenta",
+    "outline": "blue",
+    "lines": [
+     {
+      "text": "A client",
+      "color": "white",
+      "y": 230,
+      "rot": -3,
+      "w": 700
+     },
+     {
+      "text": "is chasing you",
+      "color": "yellow",
+      "y": 370,
+      "rot": -3,
+      "w": 980,
+      "at": "chasing"
+     }
+    ]
+   }
+  },
+  {
+   "words": "38-52",
+   "template": "text_sandwich",
+   "params": {
+    "text": "BRIDGE",
+    "sub": "don't want to burn the bridge"
+   }
+  }
+ ]
+}

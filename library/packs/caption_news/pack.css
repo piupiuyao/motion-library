@@ -1,0 +1,25 @@
+/* Caption News — caption skin + news grade (1080×1920). Reference: lemo-opuscar styles/caption-news §4, §6. */
+
+/* one grade for all footage: contrast(1.07) saturate(0.92) brightness(0.98) + 6 % warm soft light */
+.pack-caption_news #base, .pack-caption_news #person { filter: contrast(1.07) saturate(.92) brightness(.98); }
+.pack-caption_news #base::after { content: ''; position: absolute; inset: 0; background: #ff9a3c; opacity: .06;
+  mix-blend-mode: soft-light; pointer-events: none; }
+/* the veil under the caption: bottom gradient 0 → 78 % from y 1060, soft dark radial from the bottom-left corner.
+   Lives on #back (under the cutout and the cards), so cards above it are not dimmed. */
+.pack-caption_news #back::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 900px 700px at 0% 100%, rgba(14,14,12,.38), rgba(14,14,12,0) 70%),
+              linear-gradient(180deg, rgba(14,14,12,0) 55%, rgba(14,14,12,.5) 75%, rgba(14,14,12,.78) 100%); }
+
+/* the caption card: heavy ivory sans, left aligned in the lower band, soft dark shadow, NO stroke, no pill */
+#caption.pack { left: 72px; right: 72px; top: auto; bottom: 250px; justify-content: flex-start; align-items: flex-end; }
+#caption.pack .pill { background: none; box-shadow: none; border-radius: 0; padding: 0; max-width: 936px; text-align: left;
+  font: 800 88px/1.06 var(--font-body); letter-spacing: -.02em; color: var(--cap-ink);
+  text-shadow: 0 4px 20px rgba(0,0,0,.6), 0 1px 3px rgba(0,0,0,.3); -webkit-text-stroke: 0; }
+/* chunks arrive as they are spoken: unspoken words keep their place but are not drawn yet */
+#caption.pack .pill > span:not(.on):not(.key) { opacity: 0; }
+#caption.pack .on { color: var(--cap-on); }
+/* one keyword per caption on a square honey block, ink text */
+#caption.pack .key { background: var(--accent); color: var(--on-accent); border-radius: 0; padding: 0 .14em; margin: 0 -.02em;
+  text-shadow: none; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* a slam card is the caption while it is up */
+.pack-caption_news:has(.cn-slam) #caption { visibility: hidden; }

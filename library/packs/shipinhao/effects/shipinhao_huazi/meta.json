@@ -1,0 +1,32 @@
+{
+  "id": "shipinhao_huazi",
+  "name": "视频号花字",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": ["开场钩子", "金句观点", "清单步骤", "情绪吐槽"],
+  "weight": "中",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "上方大字",
+  "style": ["网感活泼"],
+  "duration": "2–6 秒",
+  "use_for": "视频号剪辑风的大花字：几行粗字白黄混排、大小不一、略倾斜，按说到的词一行行砸出来；可围着头摆、可一个超大字顶出画面边",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "lines": "必填：1–4 行，每行是原话里的几个词（英文自动大写）"
+  },
+  "layers": ["原画面（可去色 / 压暗）", "人前：花字"],
+  "params": {
+    "lines": "必填。[{text, color, at, x, y, align, rot, size, font, out, bg}]。text=原话里的词；color=white|yellow|orange|blue|ink|#hex（一行黄、其余白是标准配法）；at=说到哪个词出现（原词或词序号），不写就依次出现；x,y=锚点像素（align=left/right/center，默认 center x=540）；rot=倾斜度（±2–8）；size 不写就按宽度 w(默认 960) 自动；font=display(默认, 粗圆头花字) | poster(超高窄体, 用于顶出画面边的超大字) | hand(笔刷体, 一行点缀)；out=说到哪个词消失；bg=色块底(如 \"rgba(40,40,20,.7)\")",
+    "text": "可选。只要一行时用，代替 lines",
+    "mono": "可选。true = 画面去色（钩子、吐槽时）",
+    "dim": "可选。0–0.5，压暗画面让字更跳",
+    "caption": "可选。true = 保留底部字幕；默认花字出现时字幕隐藏（参考视频花字就是字幕）"
+  },
+  "source": {
+    "from": "我李哥豆儿「4 套剪辑手法打破扁平画面」（视频号，refs/95_1793056112）",
+    "note": "全片的花字：用空间感/营造/网感、背景层/人像层、形变/位置 —— 白黄混排粗字，硬投影，绕头摆，超大字顶出画面"
+  }
+}

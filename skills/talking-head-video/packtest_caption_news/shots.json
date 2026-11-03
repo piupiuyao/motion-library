@@ -1,0 +1,21 @@
+{
+  "pack": "caption_news",
+  "shots": [
+    {"words": "0-19", "purpose": "开场钩子", "template": "caption_news_slam",
+     "params": {"bug": {"name": "TONEBIRD", "topic": "The reply problem"},
+                "lines": ["Ever had|{this happen?}", "You've seen|the message.", "You know|you should reply.", "You just don't know|{how to start.}"]},
+     "why": "hook = the caption card itself: chunks slam on the spoken words, one yellow keyword per line, channel bug opens the film"},
+    {"words": "66-72", "purpose": "情绪吐槽", "template": "push_in",
+     "params": {"to": 1.12, "vignette": false, "keywords": ["half your afternoon"]},
+     "why": "plain talk with the running caption; slow push + the keyword on the honey block is the only accent"},
+    {"words": "83-96", "purpose": "提到具体东西", "template": "caption_news_grid",
+     "params": {"title": "Works right inside", "items": [{"text": "Gmail", "at": "Gmail"}, {"text": "Slack", "at": "Slack"}, {"text": "WhatsApp", "at": "WhatsApp"}]},
+     "why": "proof moment: lit grid, each app panel lights on its name"},
+    {"words": "114-133", "purpose": "清单步骤", "template": "caption_news_lower",
+     "params": {"label": "Tell it what you want", "items": [{"text": "Say no politely", "at": "say"}, {"text": "Move a deal forward", "at": "move"}, {"text": "Follow up without being pushy", "at": "follow", "size": 46}]},
+     "why": "list of three as stacked lower thirds, wiped in on each phrase"},
+    {"words": "156-171", "purpose": "金句观点", "template": "caption_news_slam",
+     "params": {"lines": ["Replying shouldn't|take {courage,}|or a free hour.", "That's|ToneBird.", "Every reply,", "!easier,|and {more you.}"]},
+     "why": "ending: verdict caption card, last line set big with the keyword on the block"}
+  ]
+}

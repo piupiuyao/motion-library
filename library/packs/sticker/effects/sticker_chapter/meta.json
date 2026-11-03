@@ -1,0 +1,49 @@
+{
+  "id": "sticker_chapter",
+  "name": "贴纸章节引入",
+  "category": "版式",
+  "purpose": [
+    "章节转场",
+    "数字"
+  ],
+  "weight": "中",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "贴纸讲解",
+  "duration": "2–6 秒",
+  "use_for": "开始讲一个新要点：背景换章节色，大号虹彩编号 + 短标题出现，随后缩成左上角角标",
+  "what": "大号虹彩闪卡编号在头顶左侧亮出，短标题在右侧贴上；讲到 badge_at 时两者收走，左上角出现「编号 + 短名」小角标",
+  "layers": [
+    "背景：章节色网格纸",
+    "白边抠像",
+    "人前：编号、标题、角标"
+  ],
+  "fills": {
+    "num": "必填：编号如 02",
+    "title": "必填：原话里的短标题"
+  },
+  "video_type": "talking-head",
+  "status": "ready",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "style": [
+    "贴纸讲解",
+    "清新可爱"
+  ],
+  "pack": "sticker",
+  "source": {
+    "from": "Zara Zhang 口播（https://x.com/zarazhangrui/status/2116281211962454056），规则来自开源 skill sticker-talk-edit (MIT)"
+  },
+  "params": {
+    "num": "必填。编号，如 \"02\"",
+    "title": "必填。短标题（原话，1–4 个词）",
+    "emoji": "可选。标题前 emoji",
+    "at": "可选。编号出现的词",
+    "title_at": "可选。标题出现的词",
+    "badge_at": "可选。收成角标的词，默认约 60% 处",
+    "badge_text": "可选。角标短名，默认同 title",
+    "bg": "可选。默认 lilac；章节轮换 lilac / blush / cream"
+  }
+}

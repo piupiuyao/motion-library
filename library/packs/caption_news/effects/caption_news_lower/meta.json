@@ -1,0 +1,42 @@
+{
+  "id": "caption_news_lower",
+  "name": "新闻下三分之一条叠列",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "清单步骤",
+    "提到具体东西",
+    "介绍身份"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "上方要点卡",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "3–8 秒",
+  "use_for": "列举几种做法 / 标地点、人物：黄色标签 + 一条条下三分之一新闻条从左擦入叠起来",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：最多 4 条 {text, at}，用原话"
+  },
+  "layers": [
+    "原画面",
+    "人前：下三分之一条"
+  ],
+  "what": "黄标签名牌，下面每条 = 8px 黄竖条 + 编号块 + 78% 深底一行粗字，在说到的那个词 0.22 s 从左往右擦入，最新一条编号块是黄的。",
+  "params": {
+    "label": "可选。黄标签文字（全大写显示）",
+    "items": "必填。最多 4 条 [{\"text\":\"一行字\",\"at\":\"开始的原词或词序号\"}]",
+    "y": "可选。顶边 y，默认 900",
+    "x": "可选。左边距，默认 72",
+    "rowH": "可选。行高，默认 104"
+  },
+  "source": {
+    "from": "lemo-opuscar styles/caption-news (MIT code/docs, CC BY 4.0 demo)",
+    "note": "STYLE.md §4 caption card, §2 bug/source tag/lower third, §5 grid"
+  }
+}

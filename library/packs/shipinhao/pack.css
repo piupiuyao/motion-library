@@ -1,0 +1,25 @@
+/* shipinhao — 视频号花字 pack. Scoped to .pack-shipinhao (on #stage) and #caption.pack. */
+
+/* Subtitles: small, clean, white, soft shadow only (ref 94 · 情绪拉伸就做关键帧). No box, no stroke, no karaoke dimming. */
+.pack-shipinhao #caption.pack { top: 1250px; left: 70px; right: 70px; }
+.pack-shipinhao #caption.pack .pill {
+  background: none; box-shadow: none; padding: 0; border-radius: 0; max-width: 900px;
+  font: 600 52px/1.22 var(--font-body); letter-spacing: .005em; color: #fff;
+  -webkit-text-stroke: 0; text-shadow: 0 2px 3px rgba(0, 0, 0, .7), 0 0 16px rgba(0, 0, 0, .45), 0 0 34px rgba(0, 0, 0, .25);
+}
+.pack-shipinhao #caption.pack .on { color: #fff; }
+.pack-shipinhao #caption.pack .key { color: var(--accent); background: none; padding: 0; font-weight: 800; }
+
+/* Re-skin library display text: the 视频号 花字 never uses a fat black stroke — it uses a hard offset shadow. */
+.pack-shipinhao .display {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: .035em .05em 0 #141414, .02em .03em .18em rgba(0, 0, 0, .4) !important;
+  letter-spacing: .01em; line-height: .95;
+}
+/* …except dark text sitting on a colour block (keyword_pop label, hook box): no shadow there */
+.pack-shipinhao [style*="background"] > .display,
+.pack-shipinhao .display[style*="background"] { text-shadow: none !important; }
+
+/* helper classes for pack effects / directors */
+.pack-shipinhao .pk-display { font-family: var(--font-display); font-weight: 400; }
+.pack-shipinhao .pk-hand { font-family: var(--font-hand); font-weight: 400; }

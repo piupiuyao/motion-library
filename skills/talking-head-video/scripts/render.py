@@ -10,12 +10,13 @@ PROJECT needs: raw.mp4, work/words.json (transcribe.py), work/edit.json (plan_cu
 and work/matte_src/ (scripts/matte) when any shot uses a template that needs the cutout.
 Needs: python3, playwright (Chromium), ffmpeg, pillow, numpy.
 """
-import argparse, functools, http.server, json, os, re, shutil, subprocess, sys, threading, time
+import argparse, functools, glob, http.server, json, os, re, shutil, subprocess, sys, threading, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)
 ROOT = os.path.dirname(os.path.dirname(SKILL))
 EFFECTS = os.path.join(ROOT, 'library', 'talking-head', 'effects')  # templates live in the shared motion library
+PACKS = os.path.join(ROOT, 'library', 'packs')  # style packs: one locked look (fonts, colours, captions, allowed effects)
 FPS = 30
 
 
@@ -51,7 +52,9 @@ EXTRA = []  # PROJECT/effects: one-off effects written for this video (same form
 
 def use_project_effects(proj):
     d = os.path.join(os.path.abspath(proj), 'effects')
-    EXTRA[:] = [d] if os.path.isdir(d) else []
+    # a pack's own signature effects (library/packs/<id>/effects) are usable like library ones
+    packs = sorted(glob.glob(os.path.join(PACKS, '*', 'effects')))
+    EXTRA[:] = ([d] if os.path.isdir(d) else []) + packs
 
 
 def effect_dir(tid):
@@ -100,6 +103,19 @@ def theme_file(proj):
     if not os.path.exists(f):
         return {}
     return {k: v for k, v in json.load(open(f)).items() if k not in ('source', 'brand')}
+
+
+def load_pack(pid):
+    """library/packs/<id>/pack.json + pack.css → what the engine needs to wear that look (fonts are served from /pack/)."""
+    if not pid:
+        return None
+    d = os.path.join(PACKS, pid)
+    if not os.path.exists(os.path.join(d, 'pack.json')):
+        sys.exit(f"pack '{pid}' not found in {PACKS} (have: {', '.join(sorted(os.listdir(PACKS))) if os.path.isdir(PACKS) else 'none'})")
+    pk = json.load(open(os.path.join(d, 'pack.json')))
+    css = os.path.join(d, 'pack.css')
+    return {'id': pid, 'tokens': pk.get('tokens', {}), 'fonts': pk.get('fonts', []), 'caption_style': pk.get('caption_style'),
+            'brand_font': pk.get('brand_font', 'display'), 'caption_words': pk.get('caption_words', 4), 'css': open(css).read() if os.path.exists(css) else ''}
 
 
 def brand_kit(proj):
@@ -153,7 +169,8 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
             sp = find_phrase(words, phrase, cjk)
             if sp:
                 glue |= {words[x]['i'] for x in range(sp[0] + 1, sp[1])}
-    full = lambda ln: sum(len(norm(x['w'])) for x in ln) >= 11 if cjk else len(ln) >= 4
+    per_line = (load_pack(plan.get('pack')) or {}).get('caption_words', 4)  # a pack may want longer 2-row lines
+    full = lambda ln: sum(len(norm(x['w'])) for x in ln) >= 11 if cjk else len(ln) >= per_line
     lines, cur = [], []
     kept = [wout[i] for i in sorted(wout) if wout[i]['w']]
     for w in kept:
@@ -193,6 +210,8 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
         shots.append({'template': s['template'], 'params': params, 'purpose': s.get('purpose'), 'start': round(start, 3),
                       'end': round(ws[-1]['e'] + .12, 3), 'words': ws, 'keys': keys, 'groups': groups,
                       'matte': '抠像' in tmpl[s['template']].get('needs', []),
+                      # the effect replaces the running captions (meta "hide_captions"), or the shot asks for it
+                      'hideCaptions': bool(s.get('hide_captions', tmpl[s['template']].get('hide_captions', False))),
                       'focus': s.get('focus') or head_focus(matte_dir, src_frame) or [.5, .33]})
     # close small gaps so templates hand over cleanly; never overlap
     for a, b in zip(shots, shots[1:]):
@@ -203,8 +222,9 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     need = sorted({s['template'] for s in shots})
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
-    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
-            'captions': plan.get('captions', True), 'captionStyle': plan.get('caption_style'), 'segments': segs, 'lines': lines, 'shots': shots,
+    pack = load_pack(plan.get('pack'))
+    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'pack': pack, 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
+            'captions': plan.get('captions', True), 'captionStyle': plan.get('caption_style') or (pack or {}).get('caption_style'), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
 
 
@@ -229,6 +249,8 @@ def serve(proj):
                 return os.path.join(effect_dir(tid), *rest.split('/'))
             if path.startswith('/proj/'):
                 return os.path.join(proj, *path[len('/proj/'):].split('/'))
+            if path.startswith('/pack/'):
+                return os.path.join(PACKS, *path[len('/pack/'):].split('/'))
             return os.path.join(HERE, path.lstrip('/'))
 
         def do_GET(self):

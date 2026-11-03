@@ -1,0 +1,54 @@
+{
+  "id": "sticker_list",
+  "name": "贴纸渐进列表",
+  "category": "版式",
+  "purpose": [
+    "清单步骤",
+    "对比反差"
+  ],
+  "weight": "中",
+  "covers_face": false,
+  "zone": "上方",
+  "group": "贴纸讲解",
+  "duration": "4–12 秒",
+  "use_for": "明确列举几点/几个问题：人缩到左下，上方先出手写标题，说到哪条贴哪条，每行独立轻摆",
+  "what": "人从中间平滑缩小移到左下；右上方一列珠光贴纸行，编号蓝胶囊或蓝勾或问号 + 圆体蓝字（可带一个 emoji），按原话逐条出现，已出现的行不动位置",
+  "layers": [
+    "背景：米白网格纸",
+    "白边抠像（左下）",
+    "人前：列表贴纸"
+  ],
+  "fills": {
+    "items": "必填：[{text, at, emoji}]，用原话",
+    "title": "可选：手写标题"
+  },
+  "video_type": "talking-head",
+  "status": "ready",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "style": [
+    "贴纸讲解",
+    "清新可爱"
+  ],
+  "pack": "sticker",
+  "source": {
+    "from": "Zara Zhang 口播（https://x.com/zarazhangrui/status/2116281211962454056），规则来自开源 skill sticker-talk-edit (MIT)"
+  },
+  "params": {
+    "items": "必填。[{\"text\":\"短名（原话）\",\"at\":\"说到哪个词出现\",\"emoji\":\"可选\",\"mark\":\"可选，覆盖整列的 mark\"}]，数量跟原话走",
+    "mark": "可选。num（默认 01 02 蓝胶囊）/ check（蓝勾）/ q（问号，用于一串问题）/ none",
+    "title": "可选。列表标题，默认手写体",
+    "title_kind": "可选。hand（默认）/ plain",
+    "title_emoji": "可选。标题前的 emoji",
+    "title_at": "可选。标题出现的词",
+    "bg": "可选。同 sticker_stage",
+    "badge": "可选。章节角标",
+    "from": "可选。人从哪种构图进来，默认 center（上个镜头已是 left 就写 left）",
+    "size": "可选。行字号，默认 56",
+    "x": "可选。列中心 x，默认 650",
+    "y": "可选。标题行 y，默认 360",
+    "gap": "可选。行距，默认 1.92×字号"
+  }
+}

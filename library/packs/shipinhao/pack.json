@@ -1,0 +1,52 @@
+{
+  "id": "shipinhao",
+  "name": "视频号花字 / Channels Sticker-Pop",
+  "vibe": "Loud, hand-edited Chinese creator short: chunky white+yellow 花字 slammed around the head with hard drop shadows, sticker-cut presenter with a fat white outline on candy backgrounds; quiet clean subtitles in between.",
+  "reference": [
+    {"creator": "我李哥豆儿 (视频号)", "url": "file://~/Desktop/95_1793056112.mp4", "what": "the whole type system: mixed white/yellow heavy display words, hard offset shadow, words placed around the head, giant word cropped at frame edge, cutout with white/light-blue outline, polka-dot / gingham / crumpled paper / magenta backgrounds, dashed circles"},
+    {"creator": "剪辑师白菜 (视频号)", "url": "file://~/Desktop/94_1793056051.mp4", "what": "the quiet layer: small clean white subtitle with soft shadow at chest height, no box, no outline; mono shrink, doc fly, end title"}
+  ],
+  "fonts": [
+    {"family": "PkDisplay", "file": "fonts/lilita-one-400.woff2", "weight": "400"},
+    {"family": "PkPoster", "file": "fonts/anton-400.woff2", "weight": "400"},
+    {"family": "PkHand", "file": "fonts/knewave-400.woff2", "weight": "400"},
+    {"family": "PkBody", "file": "fonts/figtree-500.woff2", "weight": "500"},
+    {"family": "PkBody", "file": "fonts/figtree-600.woff2", "weight": "600"},
+    {"family": "PkBody", "file": "fonts/figtree-800.woff2", "weight": "800"}
+  ],
+  "tokens": {
+    "font-display": "\"PkDisplay\", \"PkBody\", sans-serif",
+    "font-poster": "\"PkPoster\", \"PkDisplay\", sans-serif",
+    "font-hand": "\"PkHand\", \"PkDisplay\", sans-serif",
+    "font-body": "\"PkBody\", sans-serif",
+    "display-weight": "400",
+    "accent": "#f5e10a",
+    "accent-2": "#2f63ff",
+    "accent-text": "#f5e10a",
+    "ink": "#141414",
+    "paper": "#ffffff",
+    "bg-a": "#d6e4d8",
+    "bg-b": "#f2a7c3",
+    "dim": "rgba(14, 14, 14, .62)",
+    "on-accent": "#141414",
+    "on-bg": "#141414",
+    "cap-bg": "transparent",
+    "cap-ink": "#ffffff",
+    "cap-on": "#ffffff"
+  },
+  "caption_style": "pack",
+  "brand_font": "none",
+  "effects": {
+    "signature": ["shipinhao_huazi", "shipinhao_sticker", "dashed_focus", "scanline_word"],
+    "allowed": ["text_sandwich", "split_word_head", "keyword_pop", "hook_bigword", "mono_shrink", "frame_layer", "doc_fly",
+                "broll_circle", "paper_props", "push_in", "end_title", "tick_cross_tags", "bg_switch", "sticker_outline",
+                "cutout_card", "data_chart", "punch_zoom", "icon_cards", "phone_notification"]
+  },
+  "density": "Something on screen in ~60% of the time, but in bursts: a 花字 or sticker beat every 3–6 s on the key phrase, 1.5–4 s each; between them 2–5 s of plain face with only the small subtitle. Never two 花字 shots back to back without a sticker / face beat between.",
+  "not": [
+    "thick black text outlines (tb2_zh) — the outline here is a hard offset shadow, not a stroke",
+    "stroked/boxed karaoke captions — subtitles are small, white, soft shadow only",
+    "clean corporate minimal (nischa) — this is loud, many colours in the backgrounds, but text uses only white + yellow (+ one orange/blue accent line)",
+    "default system fonts"
+  ]
+}

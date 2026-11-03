@@ -1,0 +1,37 @@
+{
+  "id": "vox_split_list",
+  "name": "纸面分屏虚线清单（Editorial Paper）",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": ["清单步骤", "对比前后"],
+  "weight": "大",
+  "covers_face": false,
+  "zone": "全屏",
+  "group": "纸面分屏",
+  "style": ["复古手作", "简洁商务"],
+  "duration": "4–8 秒",
+  "use_for": "列 2–4 条：人滑到下半屏，上半屏纸上 01/02/03 虚线空格带问号，说到哪条哪条填上衬线字",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：每条 {text, at}，原话",
+    "title": "可选：原话",
+    "key": "可选：原话"
+  },
+  "layers": ["背景：纸", "原画面下移到下半屏", "人后：纸面上半屏 + 星芒箭头 + 虚线格", "字幕"],
+  "params": {
+    "items": "必填。2–4 条：[\"文字\"] 或 [{\"text\":\"文字\",\"at\":\"说到哪个词填上（词或词序号）\"}]",
+    "title": "可选。细衬线标题",
+    "key": "可选。粗衬线 + 荧光笔标题",
+    "kicker": "可选。小标签",
+    "no_burst": "可选。true = 不要左边的星芒和箭头，格子占满宽",
+    "color": "可选。\"accent-2\" = 用第二色",
+    "list_top": "可选。第一格顶边，默认有 key 时 540",
+    "size_item": "可选。条目字号，默认 50（太长自动缩）"
+  },
+  "source": {
+    "from": "herk-edit-kit (Nate Herk, MIT) — docs/images/curiosity-reel-1.jpg（BUILD A BETTER AI SYSTEM：星芒 → 01/02/03 虚线格 ?）",
+    "note": "格子说到时填字是我们加的，问号→答案"
+  }
+}

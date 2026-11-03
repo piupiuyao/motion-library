@@ -1,0 +1,241 @@
+{
+ "pack": "shipinhao",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "shipinhao_huazi",
+   "purpose": "开场钩子",
+   "why": "ref 95 opens desaturated with the pain point slammed on screen; white + yellow lines above the head, then the second beat under the chin",
+   "params": {
+    "mono": true,
+    "lines": [
+     {
+      "text": "Ever had",
+      "color": "white",
+      "y": 165,
+      "rot": -4,
+      "at": "Ever",
+      "out": 13,
+      "w": 760
+     },
+     {
+      "text": "this happen?",
+      "color": "yellow",
+      "y": 300,
+      "rot": -4,
+      "at": "this",
+      "out": 13,
+      "w": 1000
+     },
+     {
+      "text": "Don't know",
+      "color": "white",
+      "y": 950,
+      "rot": -3,
+      "at": 15,
+      "w": 760
+     },
+     {
+      "text": "how to start",
+      "color": "yellow",
+      "y": 1085,
+      "rot": -3,
+      "at": "how",
+      "w": 1000
+     }
+    ]
+   }
+  },
+  {
+   "words": "66-72",
+   "template": "shipinhao_huazi",
+   "purpose": "金句观点",
+   "why": "ref 95 位置/形变: one giant condensed word pushed off the frame edge beside the head, small white line on top",
+   "params": {
+    "dim": 0.12,
+    "lines": [
+     {
+      "text": "One message",
+      "color": "white",
+      "y": 170,
+      "rot": -3,
+      "at": "One",
+      "w": 900
+     },
+     {
+      "text": "eats up",
+      "color": "white",
+      "align": "left",
+      "x": 640,
+      "y": 400,
+      "at": "eats",
+      "size": 104
+     },
+     {
+      "text": "half",
+      "color": "yellow",
+      "font": "poster",
+      "align": "right",
+      "x": 1120,
+      "y": 500,
+      "size": 360,
+      "at": "half"
+     },
+     {
+      "text": "your afternoon",
+      "color": "white",
+      "y": 1000,
+      "rot": -3,
+      "at": "your",
+      "w": 1000
+     }
+    ]
+   }
+  },
+  {
+   "words": "83-96",
+   "template": "shipinhao_sticker",
+   "purpose": "引用证据",
+   "why": "ref 95 错落/分层: presenter as a white-outlined sticker on candy polka dots; the three apps pop in as she names them",
+   "params": {
+    "background": "dots",
+    "lines": [
+     {
+      "text": "Right inside the tools",
+      "color": "white",
+      "y": 230,
+      "rot": -3,
+      "at": "right",
+      "w": 980
+     },
+     {
+      "text": "you already use",
+      "color": "yellow",
+      "y": 370,
+      "rot": -3,
+      "at": "already",
+      "w": 900
+     }
+    ],
+    "icons": [
+     "Gmail",
+     "Slack",
+     "WhatsApp"
+    ]
+   }
+  },
+  {
+   "words": "97-106",
+   "template": "dashed_focus",
+   "purpose": "提到具体东西",
+   "why": "ref 95 要看哪里: white dashed circle on the face, re-skinned library effect",
+   "params": {
+    "label": "READS IT"
+   }
+  },
+  {
+   "words": "114-133",
+   "template": "shipinhao_sticker",
+   "purpose": "清单步骤",
+   "why": "ref 95 第二种: gingham sticker; three asks placed around the head as she says them",
+   "params": {
+    "background": "gingham",
+    "outline": "white",
+    "lines": [
+     {
+      "text": "Say no politely",
+      "color": "yellow",
+      "y": 230,
+      "rot": -3,
+      "at": "say",
+      "w": 1000
+     },
+     {
+      "text": "Move a deal",
+      "color": "white",
+      "align": "right",
+      "x": 1060,
+      "y": 510,
+      "rot": 4,
+      "at": "move",
+      "w": 480
+     },
+     {
+      "text": "forward",
+      "color": "white",
+      "align": "right",
+      "x": 1060,
+      "y": 625,
+      "rot": 4,
+      "at": "move",
+      "w": 440
+     },
+     {
+      "text": "Follow up",
+      "color": "orange",
+      "y": 1010,
+      "rot": -4,
+      "at": "follow",
+      "w": 820
+     },
+     {
+      "text": "without being pushy",
+      "font": "hand",
+      "color": "white",
+      "y": 1180,
+      "rot": -4,
+      "at": "without",
+      "w": 860,
+      "upper": false
+     }
+    ]
+   }
+  },
+  {
+   "words": "164-171",
+   "template": "shipinhao_sticker",
+   "purpose": "结尾号召",
+   "why": "ref 95 插入背景纸: crumpled paper sticker end; brand word behind the head like 背景层",
+   "params": {
+    "background": "paper",
+    "lines": [
+     {
+      "text": "That's ToneBird",
+      "color": "yellow",
+      "y": 430,
+      "rot": -3,
+      "at": "That's",
+      "w": 1000,
+      "behind": true
+     },
+     {
+      "text": "Every reply",
+      "color": "white",
+      "y": 1010,
+      "rot": -3,
+      "at": "Every",
+      "w": 860
+     },
+     {
+      "text": "easier",
+      "color": "yellow",
+      "y": 1140,
+      "rot": -3,
+      "at": "easier",
+      "w": 640
+     },
+     {
+      "text": "and more you",
+      "font": "hand",
+      "color": "white",
+      "y": 1320,
+      "rot": -5,
+      "at": "more",
+      "w": 700,
+      "upper": false
+     }
+    ]
+   }
+  }
+ ]
+}

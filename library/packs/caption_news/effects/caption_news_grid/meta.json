@@ -1,0 +1,40 @@
+{
+  "id": "caption_news_grid",
+  "name": "三格点亮面板",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "版式",
+  "purpose": [
+    "清单步骤",
+    "提到具体东西"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "胸口",
+  "group": "图标",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "3–6 秒",
+  "use_for": "三样东西 / 三种方式：三块深色面板错开升起，说到哪个哪块亮黄边",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "items": "必填：3 项 {text, at, icon}，用原话里的词"
+  },
+  "layers": [
+    "原画面",
+    "人前：三格面板"
+  ],
+  "what": "胸口高度三块 #151512 深色方面板（12px 间距，编号 1–2–3），每块相隔 0.1 s 升起；说到它的词时黄边、编号块变黄、标签变黄。app 名自动出官方 logo。",
+  "params": {
+    "items": "必填。最多 3 项 [{\"text\":\"标签\",\"at\":\"说到哪个词点亮（原词或词序号）\",\"icon\":\"可选，图标名；false 不要图标\"}]",
+    "title": "可选。左上小标题条",
+    "y": "可选。顶边 y，默认 1010",
+    "h": "可选。面板高，默认 300"
+  },
+  "source": {
+    "from": "lemo-opuscar styles/caption-news (MIT code/docs, CC BY 4.0 demo)",
+    "note": "STYLE.md §4 caption card, §2 bug/source tag/lower third, §5 grid"
+  }
+}

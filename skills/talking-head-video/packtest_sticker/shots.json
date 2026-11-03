@@ -1,0 +1,234 @@
+{
+ "pack": "sticker",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "sticker_stage",
+   "purpose": "开场钩子",
+   "why": "C hero title rises from behind the head, then the two beats she names",
+   "params": {
+    "hero": "Ever had this happen?",
+    "hero_at": "Ever",
+    "stickers": [
+     {
+      "text": "seen the message",
+      "emoji": "👀",
+      "at": "seen",
+      "pos": "right",
+      "y": 1040
+     },
+     {
+      "text": "don't know how to start",
+      "kind": "hand",
+      "at": "don't",
+      "pos": "right",
+      "y": 1250
+     }
+    ]
+   }
+  },
+  {
+   "words": "20-72",
+   "template": "sticker_stage",
+   "purpose": "普通讲话",
+   "why": "A/F plain talk with captions: one sticker per pain point, cleared before the next",
+   "params": {
+    "badge": "01 the problem",
+    "stickers": [
+     {
+      "text": "client chasing you",
+      "emoji": "⏰",
+      "at": "chasing",
+      "until": "but",
+      "pos": "upper-right"
+     },
+     {
+      "text": "sounds like an excuse",
+      "kind": "hand",
+      "at": "sounds",
+      "until": "turn",
+      "pos": "upper-right"
+     },
+     {
+      "text": "burn the bridge",
+      "emoji": "🔥",
+      "at": "burn",
+      "until": "And",
+      "pos": "upper-right"
+     },
+     {
+      "text": "second language",
+      "emoji": "🌍",
+      "at": "second",
+      "until": "One",
+      "pos": "upper-right"
+     },
+     {
+      "text": "half your afternoon",
+      "emoji": "⏳",
+      "at": "half",
+      "pos": "upper-right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "73-91",
+   "template": "sticker_chapter",
+   "purpose": "章节转场",
+   "why": "E chapter intro: the fix starts here",
+   "params": {
+    "num": "02",
+    "title": "ToneBird",
+    "title_at": "ToneBird",
+    "badge_at": "works",
+    "badge_text": "ToneBird",
+    "bg": "lilac"
+   }
+  },
+  {
+   "words": "92-113",
+   "template": "sticker_stage",
+   "purpose": "提到具体东西",
+   "why": "G person aside, the three official app marks land on their names",
+   "params": {
+    "bg": "lilac",
+    "layout": "left",
+    "badge": "02 ToneBird",
+    "stickers": [
+     {
+      "icon": "Gmail",
+      "text": "Gmail",
+      "at": "Gmail",
+      "until": "reads",
+      "x": 790,
+      "y": 330
+     },
+     {
+      "icon": "Slack",
+      "text": "Slack",
+      "at": "Slack",
+      "until": "reads",
+      "x": 640,
+      "y": 610
+     },
+     {
+      "icon": "WhatsApp",
+      "text": "WhatsApp",
+      "at": "WhatsApp",
+      "until": "reads",
+      "x": 870,
+      "y": 830
+     },
+     {
+      "text": "drafts a reply",
+      "emoji": "💡",
+      "at": "drafts",
+      "x": 700,
+      "y": 420
+     },
+     {
+      "text": "copying and pasting",
+      "kind": "neg",
+      "at": "copying",
+      "x": 700,
+      "y": 640
+     }
+    ]
+   }
+  },
+  {
+   "words": "114-133",
+   "template": "sticker_list",
+   "purpose": "清单步骤",
+   "why": "D progressive list: she names three things to ask for",
+   "params": {
+    "from": "left",
+    "bg": "lilac",
+    "badge": "02 ToneBird",
+    "title": "tell it what you want",
+    "title_at": "Tell",
+    "mark": "check",
+    "items": [
+     {
+      "text": "say no politely",
+      "emoji": "🙅",
+      "at": "say"
+     },
+     {
+      "text": "move a deal forward",
+      "emoji": "🤝",
+      "at": "move"
+     },
+     {
+      "text": "follow up, not pushy",
+      "emoji": "📨",
+      "at": "follow"
+     }
+    ]
+   }
+  },
+  {
+   "words": "134-155",
+   "template": "sticker_stage",
+   "purpose": "普通讲话",
+   "why": "A/F back to centre; one sticker, one hand note",
+   "params": {
+    "from": "left",
+    "badge": "02 ToneBird",
+    "stickers": [
+     {
+      "text": "sounds like you",
+      "emoji": "😍",
+      "at": "sounds",
+      "until": "Then",
+      "pos": "upper-right"
+     },
+     {
+      "text": "send when you're happy",
+      "kind": "hand",
+      "at": "send",
+      "pos": "upper-right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "156-171",
+   "template": "sticker_stage",
+   "purpose": "结尾",
+   "why": "B/H ending on the holo background: what it shouldn't cost (struck), then the name",
+   "params": {
+    "bg": "holo",
+    "stickers": [
+     {
+      "text": "courage",
+      "kind": "neg",
+      "at": "courage",
+      "until": "That's",
+      "pos": "upper-left",
+      "x": 250
+     },
+     {
+      "text": "a free hour",
+      "kind": "neg",
+      "at": "free",
+      "until": "That's",
+      "pos": "upper-right"
+     },
+     {
+      "text": "every reply, easier, and more you",
+      "kind": "hand",
+      "at": "Every",
+      "pos": "right",
+      "x": 600,
+      "size": 54,
+      "y": 1230
+     }
+    ],
+    "hero": "ToneBird",
+    "hero_at": "ToneBird"
+   }
+  }
+ ]
+}

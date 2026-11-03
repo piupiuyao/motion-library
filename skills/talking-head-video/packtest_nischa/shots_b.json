@@ -1,0 +1,107 @@
+{
+ "pack": "nischa",
+ "shots": [
+  {
+   "words": "53-65",
+   "template": "milestone_curve",
+   "params": {
+    "title": "One message",
+    "sub": "type, delete, and type again",
+    "panel": 900,
+    "shift": 480,
+    "xLabel": "Minutes",
+    "xMax": 10,
+    "stages": [
+     {
+      "label": "Type",
+      "end": 8,
+      "endLabel": "type",
+      "at": "type"
+     },
+     {
+      "label": "Type again",
+      "end": 5,
+      "endLabel": "again",
+      "at": "again"
+     }
+    ]
+   },
+   "why": "style check only"
+  },
+  {
+   "words": "66-82",
+   "template": "threshold_bar",
+   "params": {
+    "title": "Half your afternoon",
+    "label": "Your afternoon",
+    "mark": "half",
+    "split": 0.5,
+    "tag": "One message eats up half",
+    "at": "half",
+    "tagAt": "afternoon",
+    "panel": 900,
+    "shift": 480
+   },
+   "why": "style check only"
+  },
+  {
+   "words": "97-113",
+   "template": "flow_chain",
+   "params": {
+    "title": "It drafts a reply for you",
+    "panel": 900,
+    "shift": 480,
+    "steps": [
+     {
+      "head": "You earn",
+      "big": "\u00a3110k",
+      "sub": "style check",
+      "at": "reads"
+     },
+     {
+      "kind": "link",
+      "text": "\u2212\u00a310,000",
+      "note": "into pension",
+      "at": "drafts"
+     },
+     {
+      "head": "Adjusted",
+      "big": "\u00a3100k",
+      "sub": "style check",
+      "at": "No"
+     }
+    ]
+   },
+   "why": "style check only"
+  },
+  {
+   "words": "114-133",
+   "template": "equation_build",
+   "params": {
+    "title": "Tell it what you want",
+    "panel": 900,
+    "shift": 480,
+    "terms": [
+     {
+      "text": "40%",
+      "note": "normal tax",
+      "at": "say"
+     },
+     {
+      "op": "+",
+      "text": "20%",
+      "note": "allowance",
+      "at": "move"
+     },
+     {
+      "op": "=",
+      "text": "60%",
+      "note": "style check",
+      "at": "follow"
+     }
+    ]
+   },
+   "why": "style check only"
+  }
+ ]
+}

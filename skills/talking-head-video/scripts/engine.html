@@ -39,6 +39,8 @@
                          -webkit-text-stroke: 7px #111; paint-order: stroke fill; text-shadow: 0 4px 0 #111; }
   #caption.plain .on { color: #fff; }
   #caption.plain .key { background: none; color: var(--accent); padding: 0; }
+  /* words inside a keyword take the keyword's colour (packs may still style .key .w) */
+  #caption .key .w, #caption .key .w.on { color: inherit; }
   .display { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: -.01em; line-height: .92; }
 </style>
 </head>
@@ -118,7 +120,7 @@ function crumpled(seed = 3) {
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1080' height='1920'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='${seed}'/>`
     + `<feDiffuseLighting lighting-color='#f1ede4' surfaceScale='3.2'><feDistantLight azimuth='45' elevation='58'/></feDiffuseLighting></filter>`
     + `<rect width='100%' height='100%' filter='url(%23f)'/></svg>`;
-  return `url("data:image/svg+xml;utf8,${svg.replace(/</g, '%3C').replace(/>/g, '%3E').replace(/'/g, '%27')}") center/cover, #ece7dc`;
+  return `url("data:image/svg+xml;utf8,${svg.replace(/%/g, '%25').replace(/</g, '%3C').replace(/>/g, '%3E').replace(/'/g, '%27')}") center/cover, #ece7dc`;
 }
 function pattern(name) {
   return {
@@ -156,12 +158,36 @@ document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
 document.getElementById('stage').lang = TL.lang || 'en';
 const SEP = ['zh', 'ja', 'ko'].includes(TL.lang) ? '' : ' ';  // CJK captions have no spaces between words
 if (TL.captionStyle) byId('caption').classList.add(TL.captionStyle);
+// style pack (library/packs/<id>): locked fonts + colour tokens + its own css (caption skin, .pk-* classes)
+const PACK = TL.pack;
+const fontLoads = [];
+if (PACK) {
+  const st = document.getElementById('stage');
+  st.classList.add('pack-' + PACK.id);
+  for (const [k, v] of Object.entries(PACK.tokens)) st.style.setProperty('--' + k, v);
+  for (const f of PACK.fonts) {
+    const ff = new FontFace(f.family, `url(/pack/${PACK.id}/${f.file})`, { weight: String(f.weight || '100 1000'), style: f.style || 'normal' });
+    document.fonts.add(ff); fontLoads.push(ff.load().catch(() => console.log('pack font failed: ' + f.family)));
+  }
+  const css = document.createElement('style');
+  // every text uses the pack's body font unless a template marks it as a display / hand / mono role
+  css.textContent = '#stage :is(#bg, #back, #front, #caption) *:not(.display):not(.pk-display):not(.pk-hand):not(.pk-mono) '
+    + '{ font-family: var(--font-body) !important; }\n' + PACK.css;
+  document.head.appendChild(css);
+}
 // theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
 for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
 // brand kit (theme.py --brand): the site's own font for all text (CJK falls back per language), logo for templates
 window.BRAND = TL.brand || {};
 let brandFont = Promise.resolve();
-if (BRAND.font) {
+if (BRAND.font && PACK && PACK.brand_font !== 'all') {
+  // with a pack the brand font only takes the display role (or none), so the pack's type system stays intact
+  if (PACK.brand_font === 'display') {
+    const ff = new FontFace('BrandFont', `url(${url(BRAND.font.file)})`, { weight: '100 1000' });
+    document.fonts.add(ff); brandFont = ff.load().catch(() => {});
+    document.getElementById('stage').style.setProperty('--font-display', '"BrandFont", var(--font-body)');
+  }
+} else if (BRAND.font) {
   const ff = new FontFace('BrandFont', `url(${url(BRAND.font.file)})`, { weight: '100 1000' });
   document.fonts.add(ff);
   brandFont = ff.load().catch(() => {});
@@ -226,24 +252,26 @@ async function cutout(srcUrl, maskUrl) {
 
 function captionAt(t) {
   const cap = byId('caption');
-  if (TL.captions === false) { cap.innerHTML = ''; return; }
+  if (TL.captions === false || (current && current.hideCaptions)) { cap.innerHTML = ''; return; }
   const line = TL.lines.find(l => t >= l.start && t < l.end);
   if (!line) { cap.innerHTML = ''; return; }
   const keys = new Set((current && current.keys) || []);
   let html = '', inKey = false;
   line.words.forEach((w, j) => {
     const k = keys.has(w.i);
-    if (k && !inKey) html += (j ? SEP : '') + '<span class="key">';
+    if (k && !inKey) html += (j ? SEP : '') + `<span class="key${t >= w.s ? ' on' : ''}">`;
     else if (!k && inKey) html += '</span>' + SEP;
     else if (j) html += SEP;
-    html += k ? w.w : `<span class="${t >= w.s ? 'on' : ''}">${w.w}</span>`;
+    // every word carries its state: .on once spoken, --age = seconds since it started (packs animate with it)
+    const age = Math.min(5, Math.max(-1, t - w.s)).toFixed(3);
+    html += `<span class="w${t >= w.s ? ' on' : ''}" style="--age:${age}">${w.w}</span>`;
     inKey = k;
   });
   cap.innerHTML = '<div class="pill">' + html + (inKey ? '</span>' : '') + '</div>';
 }
 
 window.renderFrame = async function (k) {
-  await brandFont;
+  await brandFont; await Promise.all(fontLoads);
   const t = k / TL.fps;
   const seg = segAt(t);
   const srcFrame = Math.max(1, Math.round((seg.src + (t - seg.out)) * TL.srcFps) + 1);

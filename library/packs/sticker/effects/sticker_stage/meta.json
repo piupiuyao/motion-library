@@ -1,0 +1,55 @@
+{
+  "id": "sticker_stage",
+  "name": "贴纸舞台",
+  "category": "版式",
+  "purpose": [
+    "开场钩子",
+    "金句观点",
+    "提到具体东西",
+    "对比反差",
+    "普通讲话"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "环绕",
+  "group": "贴纸讲解",
+  "duration": "2–12 秒",
+  "use_for": "贴纸讲解风的底：白边抠像站在米白网格纸上；可只留人（画面安静），也可头顶升起虹彩主标题、四周按原话贴珠光贴纸/手写注释/划掉的词/app 图标",
+  "what": "人抠出来加白边，背景换成暖米白细网格；说到对应的词，贴纸一张张贴上，入场后整张慢慢轻摆；左上角可挂章节角标",
+  "layers": [
+    "背景：米白网格纸",
+    "人后：虹彩主标题",
+    "白边抠像",
+    "人前：贴纸、角标"
+  ],
+  "fills": {
+    "stickers": "可选：[{text, at, kind, emoji, pos}]，text 用原话的短语",
+    "hero": "可选：头顶主标题（原话短语）",
+    "badge": "可选：章节角标"
+  },
+  "video_type": "talking-head",
+  "status": "ready",
+  "needs": [
+    "抠像"
+  ],
+  "needs_assets": [],
+  "style": [
+    "贴纸讲解",
+    "清新可爱"
+  ],
+  "pack": "sticker",
+  "source": {
+    "from": "Zara Zhang 口播（https://x.com/zarazhangrui/status/2116281211962454056），规则来自开源 skill sticker-talk-edit (MIT)"
+  },
+  "params": {
+    "bg": "可选。cream（默认，暖米白）/ lilac / blush / blue（重点结论才用）/ holo（结尾概念）",
+    "layout": "可选。center（默认，人居中偏大）/ left（人缩小靠左下，给素材/贴纸腾位置）/ big（人原大）",
+    "from": "可选。从哪种构图过渡进来（上一个镜头是 left 就写 left），默认同 layout",
+    "badge": "可选。左上角章节角标，如 \"01 the problem\"（编号 + 短名）；章节内每个镜头都写同一个",
+    "hero": "可选。头顶虹彩闪卡主标题，2–4 个词，从头后升起；一屏最多一个",
+    "hero_at": "可选。主标题出现的词（原话单词或词序号），默认镜头开头",
+    "hero_until": "可选。主标题退场的词",
+    "hero_size": "可选。主标题字号，默认按长度 104–140",
+    "stickers": "可选。贴纸列表 [{\"text\":\"原话短语\",\"at\":\"出现的词\",\"until\":\"可选，退场的词\",\"kind\":\"plain（默认圆体蓝字）| hand（手写注释）| neg（红字划掉，用于被否定的词）\",\"emoji\":\"可选，语义 emoji 一个\",\"icon\":\"可选，app 名如 Gmail，出官方图标贴纸（text 作下方标签）\",\"pos\":\"right | upper-right | lower-right | left | upper-left | lower-left | top | above-left | above-right | chest\",\"x\":\"可选，中心 x\",\"y\":\"可选，中心 y\",\"size\":\"可选字号，plain 默认 66、hand 58\",\"behind\":\"true 放到人后面\"}]；一屏 1–3 张"
+  }
+}

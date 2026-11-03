@@ -29,3 +29,9 @@ skills/talking-head-video/*/brand/
 skills/talking-head-video/tb2_*/heygen_raw.mp4
 skills/talking-head-video/tb2_*/raw.mp4
 skills/talking-head-video/tb2_*/work/
+skills/talking-head-video/packtest_*/raw.mp4
+skills/talking-head-video/packtest_*/work/
+skills/talking-head-video/packtest_*/stills/
+library/packs/*/ref/
+library/packs/*/frames/compare.jpg
+library/packs/**/*.mp4

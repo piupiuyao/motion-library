@@ -1,0 +1,17 @@
+/* Editorial Paper (vox) — caption skin + .pk-* roles. Fonts: Fraunces (display), Archivo (body/labels), Caveat (hand). */
+.pack-vox .pk-display, .pack-vox .display { font-family: var(--font-display) !important; letter-spacing: -.03em; }
+.pack-vox .display { font-weight: 900; line-height: .98; }
+.pack-vox .pk-hand { font-family: var(--font-hand) !important; font-weight: 700; }
+.pack-vox .pk-mono { font-family: var(--font-body) !important; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
+/* Captions: Archivo 800 caps in one warm-ink box with a thin paper edge (reads on bright and dark footage alike).
+   Words not yet spoken sit at ~58% so the line reads as it is said; keywords are the light accent, whole phrase only. */
+#caption.pack { top: 1470px; left: 70px; right: 70px; }
+#caption.pack .pill {
+  background: var(--cap-bg); border-radius: 6px; padding: 14px 28px 16px; max-width: 900px;
+  font: 800 54px/1.14 var(--font-body); text-transform: uppercase; letter-spacing: .015em;
+  color: var(--cap-ink); box-shadow: 0 0 0 2px rgba(239, 233, 220, .28); text-align: center;
+}
+#caption.pack .on { color: var(--cap-on); }
+/* same specificity as the engine default (wins: loaded later) but lower than effects that restyle .key (caption_highlighter) */
+#caption .key { background: none; color: var(--cap-key); padding: 0; border-radius: 0; }

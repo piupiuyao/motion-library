@@ -1,0 +1,42 @@
+{
+  "id": "caption_news_slam",
+  "name": "分块砸入大字幕卡",
+  "video_type": "talking-head",
+  "status": "ready",
+  "category": "字体",
+  "purpose": [
+    "开场钩子",
+    "金句观点"
+  ],
+  "weight": "小",
+  "covers_face": false,
+  "zone": "下方",
+  "group": "字幕样式",
+  "style": [
+    "简洁商务"
+  ],
+  "duration": "2–8 秒",
+  "use_for": "Caption News 的主角：一句话拆 2–3 块逐块砸进来，一个关键词压黄块；开场可带频道角标和来源条",
+  "needs": [],
+  "needs_assets": [],
+  "fills": {
+    "lines": "必填：原话，按说话拆块，用 | 分块，{} 标一个关键词"
+  },
+  "layers": [
+    "原画面",
+    "人前：底部压暗 + 大字幕卡 + 左上角标"
+  ],
+  "what": "象牙白粗黑体（Inter Tight 800）大字幕，左对齐落在下方字幕带，柔和深色投影无描边；每块在它的第一个词说出时从 1.3 倍砸到 1（0.13 s 回弹），关键词背后黄块 #FFC21A 从左往右扫开，字变墨色。期间隐藏常驻字幕。",
+  "params": {
+    "lines": "必填。字幕列表，每条一句：用 | 分 2–3 块，块的第一个词必须是她说的原词（用来对时间），{关键词} 每条最多一个。例 \"You know|you should reply.\"、\"You just don't know|{how to start.}\"；以 ! 开头的一条是结论句，字号放大 1.23 倍",
+    "big": "可选。true = 结论句大号（118px），默认 96px",
+    "size": "可选。字号",
+    "y": "可选。最后一行基线 y，默认 1660",
+    "bug": "可选。频道角标 {\"name\":\"黄块里的字\",\"topic\":\"深色条里的话题\"}，左上角",
+    "tag": "可选。来源条文字（出现数字时用），在角标下面"
+  },
+  "source": {
+    "from": "lemo-opuscar styles/caption-news (MIT code/docs, CC BY 4.0 demo)",
+    "note": "STYLE.md §4 caption card, §2 bug/source tag/lower third, §5 grid"
+  }
+}

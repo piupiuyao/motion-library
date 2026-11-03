@@ -1,0 +1,86 @@
+{
+ "pack": "vox",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "Ever had this happen?",
+    "title": "You know you should",
+    "key": "reply.",
+    "key_at": "reply.",
+    "card": {
+     "label": "You've seen the message",
+     "icon": "message",
+     "note": "Don't know how to start",
+     "at": "seen"
+    },
+    "size": 92
+   },
+   "why": "hook: the paper sheet is the look; the card is the seen-but-unanswered message she describes"
+  },
+  {
+   "words": "66-72",
+   "template": "caption_highlighter",
+   "params": {
+    "keywords": [
+     "half your afternoon"
+    ]
+   },
+   "why": "the cost line; small library move on the caption, face stays clean"
+  },
+  {
+   "words": "83-96",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "Right inside the tools",
+    "title": "you already",
+    "key": "use.",
+    "key_at": "use,",
+    "apps": [
+     "Gmail",
+     "Slack",
+     "WhatsApp"
+    ]
+   },
+   "why": "proof: each official logo lands on the sheet as she names it"
+  },
+  {
+   "words": "121-133",
+   "template": "vox_split_list",
+   "params": {
+    "kicker": "Tell it what you want",
+    "title": "This time:",
+    "items": [
+     {
+      "text": "Say no politely",
+      "at": "say"
+     },
+     {
+      "text": "Move a deal forward",
+      "at": "move"
+     },
+     {
+      "text": "Follow up, not pushy",
+      "at": "follow"
+     }
+    ]
+   },
+   "why": "list: three dashed slots fill as she says each one",
+   "why_break": "7 s after the apps beat; the list is the strongest moment, worth the closer spacing"
+  },
+  {
+   "words": "164-171",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "That's ToneBird",
+    "title": "Every reply, easier,",
+    "key": "and more you.",
+    "key_at": "more",
+    "color": "accent-2",
+    "size": 104
+   },
+   "why": "ending: the tagline as the last paper sheet, payoff green"
+  }
+ ]
+}

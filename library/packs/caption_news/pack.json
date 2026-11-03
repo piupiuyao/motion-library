@@ -1,0 +1,51 @@
+{
+  "id": "caption_news",
+  "name": "Caption News",
+  "vibe": "Sound-off social news: huge ivory captions slammed in chunk by chunk over graded real footage, one keyword per line on a honey-yellow block, a small news package (bug, source tag, lower third) and nothing else.",
+  "reference": [
+    {
+      "creator": "lemo-opuscar · styles/caption-news (\"The Bee Ledger\" demo; code/docs MIT, demo CC BY 4.0)",
+      "url": "https://github.com/lemo-opuscar (styles/caption-news/STYLE.md, poster.jpg)",
+      "what": "caption card (heavy sans, ivory #F7F5EF, soft dark shadow, no stroke, 2–3 chunks slammed 1.3→1 in 0.13 s, one keyword on #FFC21A with ink #0E0E0C text), bottom gradient under the caption, channel bug + source tag top left, lower third = yellow bar + dark panel, lit 3-panel grid, transition whitelist, the news grade contrast(1.07) saturate(0.92) brightness(0.98) + 6 % warm soft light; vertical rule: caption stacked on two lines in the lower band, bug in the top safe area"
+    }
+  ],
+  "fonts": [
+    {"family": "PkInterTight", "file": "fonts/inter-tight-500.woff2", "weight": "500"},
+    {"family": "PkInterTight", "file": "fonts/inter-tight-700.woff2", "weight": "700"},
+    {"family": "PkInterTight", "file": "fonts/inter-tight-800.woff2", "weight": "800"},
+    {"family": "PkInterTight", "file": "fonts/inter-tight-900.woff2", "weight": "900"}
+  ],
+  "tokens": {
+    "font-display": "\"PkInterTight\", \"Helvetica Neue\", Arial, sans-serif",
+    "font-body": "\"PkInterTight\", \"Helvetica Neue\", Arial, sans-serif",
+    "font-hand": "\"PkInterTight\", sans-serif",
+    "display-weight": "800",
+    "accent": "#FFC21A",
+    "accent-2": "#FF4A3D",
+    "ink": "#0E0E0C",
+    "paper": "#F7F5EF",
+    "bg-a": "#0E0E0C",
+    "bg-b": "#151512",
+    "dim": "rgba(14, 14, 12, .78)",
+    "cap-bg": "transparent",
+    "cap-ink": "#F7F5EF",
+    "cap-on": "#F7F5EF",
+    "on-accent": "#0E0E0C",
+    "on-bg": "#F7F5EF",
+    "accent-text": "#FFC21A",
+    "grey": "#8D8B83"
+  },
+  "caption_style": "pack",
+  "brand_font": "none",
+  "effects": {
+    "signature": ["caption_news_slam", "caption_news_grid", "caption_news_lower", "push_in"],
+    "allowed": ["punch_zoom", "freeze_photo", "shutter_flash", "split_vertical", "side_split", "number_roll", "number_land_block", "article_highlight", "snippet_stack", "zoom_jumpcut"]
+  },
+  "density": "The caption is always the lead (every spoken word is captioned). One package graphic (grid / lower third / slam card) per 8–12 s at most; a push-in or punch is the only thing between them. 40–60 % of the runtime is face + caption only.",
+  "not": [
+    "not a TV news package (no anchor desk, no ticker, no crawl, no studio)",
+    "not Hormozi/CapCut captions: no thick black stroke, no all-caps word-by-word colour swaps, no bounce",
+    "not a keynote: no centred title-and-bullets, no page turns, no dissolves, no 3D flips",
+    "no second accent hue for decoration: red only for the bad number / loss"
+  ]
+}

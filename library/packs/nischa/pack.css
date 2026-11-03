@@ -1,0 +1,43 @@
+/* Clean Finance (nischa) — caption skin + panel helpers. Measured on 1080x1920 from Nischa's shorts. */
+
+/* caption: tight white pill on the chest, Poppins Bold 42px, unspoken words light grey, spoken words near-black */
+#caption.pack { top: 1098px; left: 70px; right: 70px; }
+#caption.pack .pill {
+  background: var(--cap-bg); color: var(--cap-ink);
+  font: 700 42px/1.28 var(--font-body); letter-spacing: -.005em;
+  padding: 7px 20px 8px; border-radius: 12px; max-width: 860px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .04);
+  -webkit-text-stroke: 0; text-shadow: none;
+}
+#caption.pack .on { color: var(--cap-on); }
+/* keywords: no box, just the darker orange text (she never boxes caption words) */
+#caption.pack .key { background: none; padding: 0; border-radius: 0; color: var(--accent-text); }
+
+/* while a top diagram panel is up (panel templates paint #bg black), the pill sits on the seam like hers.
+   Seam = the panel height used in this pack (900). */
+#stage.pack-nischa:has(#bg[style*="rgb(0, 0, 0)"]) #caption.pack { top: 868px; }
+
+/* helpers for pack effects */
+.pack-nischa .pk-panel {
+  position: absolute; left: 0; top: 0; width: 1080px; background:
+    repeating-linear-gradient(0deg, transparent 0 67px, rgba(0, 0, 0, .028) 67px 68px),
+    repeating-linear-gradient(90deg, transparent 0 67px, rgba(0, 0, 0, .028) 67px 68px), var(--bg-a);
+}
+.pack-nischa .pk-title { font: 700 50px/1.15 var(--font-body); color: var(--ink); letter-spacing: -.01em; text-align: center; }
+.pack-nischa .pk-sub { font: 600 30px/1.3 var(--font-body); color: #333; text-align: center; }
+
+/* library panel templates (threshold_bar, equation_build, flow_chain, milestone_curve) lay out for a 720px panel with
+   800-weight 56–72px titles. Her panel is ~half the frame with ~50px Bold titles, so with the pack's panel (900) we
+   drop the panel contents 90px (`translate` composes with the templates' own transforms) and scale the title
+   (always the panel's first child — give every panel shot a title) to ~50px. */
+#stage.pack-nischa:has(#bg[style*="rgb(0, 0, 0)"]) #front > div:first-child:not(.pk-panel) > * { translate: 0 90px; }
+#stage.pack-nischa:has(#bg[style*="rgb(0, 0, 0)"]) #front > div:first-child:not(.pk-panel) > div:first-child {
+  scale: .74; transform-origin: 50% 0;
+}
+
+/* her text on orange is always white: anything painted on the accent with ink text flips to white */
+.pack-nischa #front [style*="background: var(--accent)"]:is([style*="color: var(--ink)"], [style*="color: rgb(17, 17, 17)"]) { color: var(--on-accent) !important; }
+/* the big money figure inside a panel card is orange text, like her "£110k" */
+#stage.pack-nischa:has(#bg[style*="rgb(0, 0, 0)"]) #front > div:first-child:not(.pk-panel) div[style*="color: var(--ink)"][style*="nowrap"]:not([style*="background"]) { color: var(--accent) !important; }
+/* a chest number replaces the caption while it is on screen (she never shows both) */
+#stage.pack-nischa:has(#front .pk-number.on) #caption.pack { opacity: 0; }

@@ -1,0 +1,15 @@
+/* Sticker Explainer — caption skin + helpers. Scoped to the pack. */
+.pack-sticker { --grid: rgba(70, 70, 110, .075); }
+.pack-sticker .pk-hand { font-family: var(--font-hand); font-weight: 700; }
+.pack-sticker .pk-display, .pack-sticker .display { font-family: var(--font-display); font-weight: 900; letter-spacing: -.005em; }
+
+/* captions: a small pearl die-cut strip low on the chest; unspoken words pale periwinkle, spoken words blue */
+#caption.pack { top: 1500px; left: 70px; right: 70px; }
+#caption.pack .pill {
+  font: 800 50px/1.2 var(--font-body); letter-spacing: -.005em; color: var(--cap-ink);
+  background: linear-gradient(115deg, #ffffff 0%, #fdf8ff 38%, #f2fbff 68%, #fff6fb 100%);
+  border-radius: 28px; padding: 12px 30px 16px; max-width: 860px;
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px rgba(214, 206, 250, .85), 0 10px 22px rgba(40, 40, 100, .16);
+}
+#caption.pack .on { color: var(--cap-on); }
+#caption.pack .key { color: #ffffff; background: var(--accent); border-radius: 14px; padding: 0 12px 2px; }
