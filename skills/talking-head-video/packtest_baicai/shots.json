@@ -1,0 +1,32 @@
+{
+ "pack": "baicai",
+ "shots": [
+  {"words": "0-7", "template": "baicai_side_title",
+   "params": {"title": "SEEN", "sub": "you've seen the message.", "subAt": "seen"},
+   "why": "hook: like his SEVEN open — close push on the face, one tall condensed word beside it, green line under"},
+  {"words": "13-19", "template": "push_in",
+   "params": {"to": 1.12, "vignette": false, "keywords": ["how to start"]},
+   "why": "plain talk: thin white subtitle, the phrase that matters goes green and bigger (his 放大字幕)"},
+  {"words": "28-37", "template": "baicai_mono_note",
+   "params": {"text": "sounds like an excuse", "at": "sounds"},
+   "why": "pain point: goes black-and-white and shrinks into black, green hand words arc over the head (his 吐槽行业痛点)"},
+  {"words": "66-72", "template": "baicai_ring_stats",
+   "params": {"title": "ONE MESSAGE", "rings": [{"value": 50, "label": "OF YOUR AFTERNOON", "at": "half"}]},
+   "why": "number: 'eats up half your afternoon' as his frosted donut panel, ring fills on 'half'"},
+  {"words": "73-82", "template": "baicai_point_card",
+   "params": {"title": "ToneBird", "sub": "AI REPLY ASSISTANT", "tag": "POINT 1", "note": "THAT'S WHAT TONEBIRD IS FOR.", "at": "ToneBird"},
+   "why": "product reveal: his 观点.1 chip + framed box with the speaker cut out and popping over the edge"},
+  {"words": "83-100", "template": "baicai_doc_cards",
+   "params": {"cards": [
+     {"app": "Gmail", "from": "Gmail", "title": "Client: any update?", "text": "Chasing you for an update", "time": "now", "at": "Gmail"},
+     {"app": "Slack", "from": "Slack", "title": "About the partnership", "text": "Turn it down, keep the bridge", "time": "2m", "at": "Slack"},
+     {"app": "WhatsApp", "from": "WhatsApp", "title": "Reply drafted for you", "text": "Right inside the tools you already use", "time": "5m", "at": "WhatsApp"}]},
+   "why": "proof: the three apps she names fly in on black like his news screenshots, face in the round window"},
+  {"words": "121-133", "template": "push_in",
+   "params": {"to": 1.1, "vignette": false, "keywords": ["say no politely", "move a deal forward", "follow up"]},
+   "why": "list: each option she names turns green and bigger in the subtitle as she says it"},
+  {"words": "164-171", "template": "baicai_end_frame",
+   "params": {"title": "ToneBird.", "sub": "every reply, easier", "subAt": "Every"},
+   "why": "ending: his 口播视频 end card — heavy serif title on warm black, green line, speaker in a white frame with the head out"}
+ ]
+}

@@ -1,0 +1,50 @@
+/* Bai Cai Dark (baicai) — grade + caption skin + helpers. Measured at 1080x1920 from 剪辑师白菜「告别廉价口播」. */
+
+/* ---- grade: the reference is a dim bookshelf room. Pull any footage toward it: darker, a touch warmer,
+   less saturated, crushed sky, plus a vignette that sits between the footage and the cutout/cards. ---- */
+#stage.pack-baicai { background: #000; }
+#stage.pack-baicai #baseImg { filter: brightness(.74) contrast(1.14) saturate(.72) sepia(.10); }
+#stage.pack-baicai #back::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .42) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, .38) 100%),
+    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, .55) 100%);
+}
+/* (::before comes first in #back, so the templates' own #back children paint above it; #person stays above #back) */
+
+/* ---- caption: thin white sans on the chest, whole line at once, soft dark halo (no stroke, no pill).
+   Keywords = green, Medium, ~1.3x, a tiny settle-in on the word's start. ---- */
+#caption.pack { top: 1130px; left: 60px; right: 60px; z-index: 5; }
+#caption.pack .pill {
+  background: none; box-shadow: none; padding: 0; border-radius: 0; max-width: 960px;
+  font: 400 50px/1.3 var(--font-body); letter-spacing: .035em; color: #fff;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .55), 0 0 16px rgba(0, 0, 0, .55), 0 0 36px rgba(0, 0, 0, .35);
+}
+#caption.pack .w { display: inline-block; }
+#caption.pack .on { color: #fff; }
+#caption.pack .key { background: none; padding: 0; border-radius: 0; color: var(--accent); font-weight: 500; font-size: 1.32em; }
+#caption.pack .key .w.on { transform: translateY(calc(clamp(0, .12 - var(--age), .12) * 60px)); }
+/* soft dark band behind the line so thin white type survives a bright shirt / sky */
+#caption.pack::before {
+  content: ""; position: absolute; left: -60px; right: -60px; top: -40px; bottom: -40px; z-index: -1;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0, 0, 0, .34), rgba(0, 0, 0, 0) 100%);
+}
+#caption.pack:empty::before { display: none; }
+
+/* ---- helpers for pack effects ---- */
+.pack-baicai .pk-display { font-family: var(--font-display); font-weight: 400; line-height: .9; letter-spacing: .035em; color: #fff; }
+.pack-baicai .pk-display.pk-serif, .pack-baicai .pk-serif { font-family: var(--font-serif); font-weight: 900; line-height: 1; letter-spacing: .01em; color: #fff; }
+.pack-baicai .pk-hand { font-family: var(--font-hand); }
+.pack-baicai .pk-green { color: var(--accent); font: 400 34px/1.4 var(--font-body); letter-spacing: .14em; }
+.pack-baicai .pk-chip {
+  display: inline-block; background: #fff; color: var(--accent); border-radius: 60px; padding: 8px 34px 6px;
+  font-family: var(--font-display); font-size: 60px; line-height: 1; letter-spacing: .06em;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/* library effects allowed in this pack: thin the white rings and soften cards so they sit in the dark look */
+#stage.pack-baicai #front > div[style*="border-radius: 50%"][style*="solid var(--paper)"] { border-width: 5px !important; border-color: rgba(255, 255, 255, .85) !important; }
+
+/* while article cards fill the middle (baicai_doc_cards) the subtitle drops onto the black below them */
+#stage.pack-baicai:has(#front .bc-doc) #caption.pack { top: 1690px; }
