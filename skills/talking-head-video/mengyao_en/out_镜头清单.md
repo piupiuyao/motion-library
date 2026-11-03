@@ -6,10 +6,10 @@
 
 | # | 时间 | 说的话 | 这句在 | 用了 | 可以换成 |
 |---|---|---|---|---|---|
-| 1 | 0.0–3.9s | Ever had this happen? You've seen the message. You know you … | 开场钩子 | 原生文字框钩子 `native_textbox` | 评论回复贴纸 `comment_reply`、扭曲抖动标题 `boil_title`、失焦入场 `defocus_in` |
-| 2 | 15.0–19.5s | you type, delete, and type again. One message eats up half y… | 情绪吐槽 | 逐条划掉清单 `strike_list` | 跟踪模糊打码 `blur_redact`、扭曲抖动标题 `boil_title`、手绘涂鸦 `chalk_doodles` |
-| 3 | 22.8–30.8s | It works right inside the tools you already use, like Gmail,… | 提到具体东西 | 白卡图标环绕 `icon_cards` | 3D翻转图标 `icon_flip`、背后冒出物 `rise_behind`（要准备抠像）、虚线圈聚焦 `dashed_focus` |
-| 4 | 32.9–38.3s | Tell it what you want this time: say no politely, move a dea… | 清单步骤 | 清单打勾 `checklist` | 报纸底清单 `newspaper_list`（要准备抠像）、引线标注图解 `callout_steps`、素材环形阵列 `card_ring` |
-| 5 | 38.3–41.0s | It learns how you write, so the reply sounds like you. | 金句观点 | 推近 `push_in` | 3D投影大字 `shadow3d_caption`、荧光笔划重点 `caption_highlighter`、手绘涂鸦 `chalk_doodles` |
-| 6 | 43.4–46.1s | Replying shouldn't take courage, or a free hour. | 金句观点 | 两字分立头侧 `split_word_head` | 荧光笔划重点 `caption_highlighter`、手绘涂鸦 `chalk_doodles`、虚线圈聚焦 `dashed_focus` |
+| 1 | 0.0–5.5s | Ever had this happen? You've seen the message. You know you … | 开场钩子 | 关键词放大 `keyword_pop` | 扭曲抖动标题 `boil_title`、评论回复贴纸 `comment_reply`、失焦入场 `defocus_in` |
+| 2 | 5.5–13.5s | A client is chasing you for an update. You want to explain, … | 引用证据 | 手机通知弹窗 `phone_notification` | 跟踪模糊打码 `blur_redact`、聊天气泡对话 `chat_bubbles`、漫画对白气泡 `comic_bubble` |
+| 3 | 19.5–22.8s | That's what ToneBird is for. It's an AI reply assistant. | 定义概念 | 液态玻璃卡 `glass_card` | 抠像出镜 + 重点卡 `cutout_card`（要准备抠像）、荧光笔划重点 `caption_highlighter`、胸前羽化图条 `feather_strip` |
+| 4 | 22.8–30.8s | It works right inside the tools you already use, like Gmail,… | 提到具体东西 | 白卡图标环绕 `icon_cards` | 3D翻转图标 `icon_flip`、背后冒出物 `rise_behind`（要准备抠像）、虚线圈聚焦 `dashed_focus` |
+| 5 | 32.9–38.3s | Tell it what you want this time: say no politely, move a dea… | 清单步骤 | 清单打勾 `checklist` | 报纸底清单 `newspaper_list`（要准备抠像）、引线标注图解 `callout_steps`、素材环形阵列 `card_ring` |
+| 6 | 43.4–46.1s | Replying shouldn't take courage, or a free hour. | 金句观点 | 文字夹层 `text_sandwich` | 描边字透过人 `outline_through`（要准备抠像）、荧光笔划重点 `caption_highlighter`、手绘涂鸦 `chalk_doodles` |
 | 7 | 46.1–49.4s | That's ToneBird. Every reply, easier, and more you. | 结尾号召 | 结尾标题卡 `end_title` | 竖屏片尾推荐卡 `end_card_next`、评论关键词引导 `comment_cta`、光标点关注 `follow_click` |

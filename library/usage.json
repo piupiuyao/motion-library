@@ -27,13 +27,14 @@
   "project": "mengyao_zh",
   "date": "2026-11-02",
   "templates": [
+   "caption_highlighter",
    "checklist",
    "end_title",
+   "glass_card",
    "icon_cards",
-   "native_textbox",
-   "push_in",
-   "split_word_head",
-   "strike_list"
+   "keyword_pop",
+   "phone_notification",
+   "text_sandwich"
   ]
  },
  {
@@ -42,11 +43,11 @@
   "templates": [
    "checklist",
    "end_title",
+   "glass_card",
    "icon_cards",
-   "native_textbox",
-   "push_in",
-   "split_word_head",
-   "strike_list"
+   "keyword_pop",
+   "phone_notification",
+   "text_sandwich"
   ]
  }
 ]
