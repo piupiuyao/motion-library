@@ -49,7 +49,7 @@ TEMPLATES.baicai_end_frame = {
     const lft = loc(lerp(0, F.l + 4, k), tx), rgt = 1080 - loc(lerp(1080, F.r - 4, k), tx);
     ctx.base.style.clipPath = `inset(${Math.max(0, top)}px ${Math.max(0, rgt)}px ${Math.max(0, bot)}px ${Math.max(0, lft)}px round ${14 / s}px)`;
     ctx.person.style.clipPath = `inset(0 ${Math.max(0, rgt)}px ${Math.max(0, bot)}px ${Math.max(0, lft)}px)`;
-    ctx.personCv.style.filter = 'brightness(.8) contrast(1.12) saturate(.75) sepia(.1)';
+    ctx.personCv.style.filter = 'brightness(.98) contrast(1.06) saturate(.86) sepia(.06)';
     ctx.person.style.opacity = p > .4 ? 1 : 0;
     this.frame_.style.opacity = clamp((p - .5) * 3);
     const q = ease.out(enter(t, this.tTitle, .5));

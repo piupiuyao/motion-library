@@ -1,14 +1,14 @@
 /* Bai Cai Dark (baicai) — grade + caption skin + helpers. Measured at 1080x1920 from 剪辑师白菜「告别廉价口播」. */
 
-/* ---- grade: the reference is a dim bookshelf room. Pull any footage toward it: darker, a touch warmer,
-   less saturated, crushed sky, plus a vignette that sits between the footage and the cutout/cards. ---- */
+/* ---- grade: premium, not gloomy. Keep the footage's own brightness; only a touch warmer, calmer colour and a
+   light edge vignette. Darkness belongs to the black-backdrop moves (doc cards, point card, end card), never the face shots. ---- */
 #stage.pack-baicai { background: #000; }
-#stage.pack-baicai #baseImg { filter: brightness(.74) contrast(1.14) saturate(.72) sepia(.10); }
+#stage.pack-baicai #baseImg { filter: brightness(.98) contrast(1.06) saturate(.86) sepia(.06); }
 #stage.pack-baicai #back::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, .42) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, .38) 100%),
-    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, .55) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, .16) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .18) 100%),
+    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .22) 100%);
 }
 /* (::before comes first in #back, so the templates' own #back children paint above it; #person stays above #back) */
 

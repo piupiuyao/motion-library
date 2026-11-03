@@ -33,7 +33,7 @@ TEMPLATES.baicai_doc_cards = {
     // round face window, thin white rim (in front of the cards like the reference)
     if (P.pip !== false) {
       this.pip = el('div', 'position:absolute;left:70px;top:210px;width:320px;height:320px;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,.9);box-shadow:0 14px 40px rgba(0,0,0,.6)');
-      this.pipImg = el('img', 'position:absolute;width:1080px;height:1920px;transform-origin:0 0;filter:brightness(.8) contrast(1.12) saturate(.75) sepia(.1)');
+      this.pipImg = el('img', 'position:absolute;width:1080px;height:1920px;transform-origin:0 0;filter:brightness(.98) contrast(1.06) saturate(.86) sepia(.06)');
       this.pip.appendChild(this.pipImg);
       ctx.L.front.appendChild(this.pip);
     }

@@ -64,7 +64,7 @@ TEMPLATES.baicai_point_card = {
     // body cut off at the box bottom (local coords of the scaled layer)
     const cut = Math.max(0, 1920 - (this.B.b - 4 - ty) / s);
     ctx.person.style.clipPath = `inset(0 0 ${p > .5 ? cut : 0}px 0)`;
-    ctx.personCv.style.filter = 'brightness(.86) contrast(1.1) saturate(.78) sepia(.08)';
+    ctx.personCv.style.filter = 'brightness(.98) contrast(1.06) saturate(.86) sepia(.06)';
     ctx.L.bg.style.opacity = clamp(p * 1.8);
     const b = ease.out(enter(t, .3, .45));
     this.box.style.opacity = Math.min(b, out);

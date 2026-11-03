@@ -1,7 +1,7 @@
 # Bai Cai Dark (`baicai`) — style bible
 
 ## 1. Essence
-A moody, premium editor's cut. The footage is graded dark and slightly warm; subtitles are thin white type on the
+A calm, premium editor's cut. The footage keeps its own brightness, only a touch warmer and calmer (premium, never gloomy — the boss rejected a dark grade as 阴森); subtitles are thin white type on the
 chest with the key phrase bigger and green; the "moves" take the speaker out of the frame onto black: shrunk into a
 B&W box, cut out into a framed card, parked in a round window while white documents fly in, framed under a heavy serif
 title at the end. One accent: a soft neon green (#4cd964). Type: tall condensed titles (Anton), clean thin sans for
@@ -13,8 +13,9 @@ caption, no pills); not `nischa` (light, flat, orange diagram panels) — this p
 makes its point with framing moves, not diagrams.
 
 ## 2. Layers & framing
-- Footage: always graded (pack.css): `brightness .74 contrast 1.14 saturate .72 sepia .10` on `#baseImg`, plus a
-  vignette (top 42 % / bottom 38 % black fade + radial edge 55 %) painted in `#back::before`, i.e. under any cutout.
+- Footage: lightly graded (pack.css): `brightness .98 contrast 1.06 saturate .86 sepia .06` on `#baseImg`, plus a
+  light vignette (top 16 % / bottom 18 % fade + radial edge 22 %) in `#back::before`. Never darken face shots to fake
+  the reference's dim room; the black only appears in the backdrop moves.
 - Face shots: full frame. Hook: push to 1.55× and park the face in the left third (`baicai_side_title`).
 - Black backdrops: pure black (`baicai_mono_note`, `baicai_doc_cards` — footage blurred to 22 % as texture),
   black + low-poly white line net 16 % (`baicai_point_card`), warm black #3a332e→#161412 (`baicai_end_frame`).
