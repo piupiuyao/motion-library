@@ -2,6 +2,7 @@
 """One-click edit, part 1: get a raw talking-head clip ready and print what the planner needs to pick effects.
 
   python3 scripts/prep.py PROJECT [--lang en] [--prompt "names"] [--brand https://…] [--level 适中]
+If PROJECT/script.txt exists (the exact text that was read, e.g. an AI presenter's script), captions use its wording.
 Runs (skipping what's already done): transcribe → rough cut → frames → cutout → accent colour.
 Then prints: the cut script sentence by sentence (word numbers + seconds), the uploaded material, the limits for the
 level, and the effects that can be used (effects whose material wasn't uploaded are left out).
@@ -39,7 +40,8 @@ def main():
 
     if not os.path.exists(os.path.join(work, 'words.json')):
         run(sys.executable, os.path.join(HERE, 'transcribe.py'), raw, *(['--lang', a.lang] if a.lang else []),
-            *(['--prompt', a.prompt] if a.prompt else []))
+            *(['--prompt', a.prompt] if a.prompt else []),
+            *(['--script', os.path.join(p, 'script.txt')] if os.path.exists(os.path.join(p, 'script.txt')) else []))
     if not os.path.exists(os.path.join(work, 'edit.json')):
         run(sys.executable, os.path.join(HERE, 'plan_cut.py'), p)
     frames = os.path.join(work, 'frames_src')
@@ -64,11 +66,19 @@ def main():
 
     # ---- what the planner reads ----
     edit = json.load(open(os.path.join(work, 'edit.json')))
-    words = json.load(open(os.path.join(work, 'words.json')))['words']
+    W = json.load(open(os.path.join(work, 'words.json')))
+    words = W['words']
+    sep = '' if W.get('lang') in ('zh', 'ja', 'ko') else ' '
     out_t, lines = 0.0, []
     for seg in edit['segments']:
-        ws = seg['words']
-        lines.append(f"[{ws[0]}-{ws[-1]}] {out_t:5.1f}s  " + ' '.join(words[i]['w'] for i in ws))
+        # one line per sentence, so a segment with no pauses (an AI presenter) still reads sentence by sentence
+        sent = []
+        for i in seg['words']:
+            sent.append(i)
+            if words[i]['w'][-1:] in '.?!。？！' or i == seg['words'][-1]:
+                t = out_t + words[sent[0]]['s'] - seg['s']
+                lines.append(f"[{sent[0]}-{sent[-1]}] {t:5.1f}s  " + sep.join(words[k]['w'] for k in sent))
+                sent = []
         out_t += seg['e'] - seg['s']
     have = [s for s in SLOTS if os.listdir(os.path.join(p, 'uploads', s))]
     lim = check_plan.LEVELS[a.level]

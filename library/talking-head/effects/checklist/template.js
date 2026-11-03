@@ -8,7 +8,7 @@ TEMPLATES.checklist = {
     const at = a => { const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.L.bg.style.background = 'radial-gradient(ellipse at 30% 30%, var(--bg-b), var(--bg-a) 70%)';
     this.shift = P.shift != null ? P.shift : 310;
-    this.card = el('div', `position:absolute;left:34px;top:400px;width:${P.width || 620}px;padding:44px 38px 34px;border-radius:30px;background:var(--paper);
+    this.card = el('div', `position:absolute;left:34px;top:${P.top != null ? P.top : 400}px;width:${P.width || 620}px;padding:44px 38px 34px;border-radius:30px;background:var(--paper);
       box-shadow:0 30px 60px rgba(0,0,0,.35)`);
     if (P.title) {
       const h = el('div', 'font-size:66px;color:var(--ink);margin-bottom:28px', P.title);

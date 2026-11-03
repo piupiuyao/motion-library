@@ -41,7 +41,7 @@ def main():
     cfg_path = os.path.join(proj, 'cut.json')
     cfg = json.load(open(cfg_path)) if os.path.exists(cfg_path) else {}
     drop = parse_ranges(a.drop + cfg.get('drop', []))
-    if not a.keep_fillers:
+    if not a.keep_fillers and not W.get('script'):  # a read script has no fillers; '啊' there is meant
         drop |= {w['i'] for w in words if re.sub(r'[^\w]', '', w['w'].lower()) in FILLERS}
     gap, pad = cfg.get('gap', a.gap), cfg.get('pad', a.pad)
     zooms = [float(z) for z in str(cfg.get('zooms', a.zooms)).split(',')]

@@ -23,6 +23,29 @@ def norm(w):
     return re.sub(r'[^\w]', '', w.lower())
 
 
+CJK = ('zh', 'ja', 'ko')
+
+
+def find_phrase(ws, phrase, cjk):
+    """Index span [j, k) of ws whose words spell phrase. Latin: word by word. CJK has no spaces, so compare the
+    joined characters; the span may start or end inside a whisper word — it is then widened to whole words."""
+    if not cjk:
+        toks = [norm(x) for x in phrase.split()]
+        for j in range(len(ws) - len(toks) + 1):
+            if [norm(w['w']) for w in ws[j:j + len(toks)]] == toks:
+                return j, j + len(toks)
+        return None
+    target, joined, owner = norm(phrase), '', []
+    for j, w in enumerate(ws):
+        n = norm(w['w'])
+        joined += n
+        owner += [j] * len(n)
+    at = joined.find(target) if target else -1
+    if at < 0:
+        return None
+    return owner[at], owner[at + len(target) - 1] + 1
+
+
 EXTRA = []  # PROJECT/effects: one-off effects written for this video (same format as the library); win over the library
 
 
@@ -80,7 +103,9 @@ def theme_file(proj):
 
 
 def build_timeline(proj, tmpl, shots_file='shots.json'):
-    words = json.load(open(os.path.join(proj, 'work', 'words.json')))['words']
+    W = json.load(open(os.path.join(proj, 'work', 'words.json')))
+    words, lang = W['words'], W.get('lang') or 'en'
+    cjk = lang in CJK
     edit = json.load(open(os.path.join(proj, 'work', 'edit.json')))
     plan = json.load(open(os.path.join(proj, shots_file)))
     by_i = {w['i']: w for w in words}
@@ -93,18 +118,19 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
         out_t += g['e'] - g['s']
     dur = round(out_t, 3)
 
-    # caption lines: break on pauses, sentence ends, or every 4 words, but never inside a highlighted phrase
+    # caption lines: break on pauses, sentence ends, or every 4 words (CJK: ~11 characters),
+    # but never inside a highlighted phrase
     glue = set()
     for s in plan['shots']:
         for phrase in s.get('params', {}).get('keywords', []):
-            toks = [norm(x) for x in phrase.split()]
-            for j in range(len(words) - len(toks) + 1):
-                if [norm(w['w']) for w in words[j:j + len(toks)]] == toks:
-                    glue |= {words[x]['i'] for x in range(j + 1, j + len(toks))}
+            sp = find_phrase(words, phrase, cjk)
+            if sp:
+                glue |= {words[x]['i'] for x in range(sp[0] + 1, sp[1])}
+    full = lambda ln: sum(len(norm(x['w'])) for x in ln) >= 11 if cjk else len(ln) >= 4
     lines, cur = [], []
     kept = [wout[i] for i in sorted(wout) if wout[i]['w']]
     for w in kept:
-        if cur and w['i'] not in glue and (len(cur) >= 4 or w['s'] - cur[-1]['e'] > .35 or cur[-1]['w'][-1] in '.?!,;'):
+        if cur and w['i'] not in glue and (full(cur) or w['s'] - cur[-1]['e'] > .35 or cur[-1]['w'][-1] in '.?!,;，。？！；：、'):
             lines.append(cur)
             cur = []
         cur.append(w)
@@ -128,15 +154,12 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
         # keywords are phrases from the transcript ("say no"); each becomes one highlight group
         groups, keys = [], []
         for phrase in params.get('keywords', []):
-            toks = [norm(x) for x in phrase.split()]
-            for j in range(len(ws) - len(toks) + 1):
-                if [norm(w['w']) for w in ws[j:j + len(toks)]] == toks:
-                    g = ws[j:j + len(toks)]
-                    groups.append({'text': phrase, 's': g[0]['s'], 'e': g[-1]['e'], 'idx': [w['i'] for w in g]})
-                    keys += [w['i'] for w in g]
-                    break
-            else:
+            sp = find_phrase(ws, phrase, cjk)
+            if not sp:
                 sys.exit(f"shot {k}: keyword '{phrase}' is not in words {s['words']} (use the exact words she says)")
+            g = ws[sp[0]:sp[1]]
+            groups.append({'text': phrase, 's': g[0]['s'], 'e': g[-1]['e'], 'idx': [w['i'] for w in g]})
+            keys += [w['i'] for w in g]
         start = max(0, ws[0]['s'] - .12)
         seg = max((g for g in segs if g['out'] <= start), key=lambda g: g['out'])
         src_frame = int((seg['src'] + start - seg['out']) * FPS) + 1
@@ -153,7 +176,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     need = sorted({s['template'] for s in shots})
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
-    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj),
+    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj),
             'captions': plan.get('captions', True), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
 

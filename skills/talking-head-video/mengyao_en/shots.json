@@ -1,0 +1,119 @@
+{
+ "skin": "clean",
+ "shots": [
+  {
+   "words": "0-12",
+   "purpose": "开场钩子",
+   "template": "native_textbox",
+   "why": "和中文版同一套导演：原生白框字开场，放在头顶天空",
+   "params": {
+    "text": "Seen it. No idea how to reply.",
+    "y": 210,
+    "size": 58
+   }
+  },
+  {
+   "words": "60-72",
+   "purpose": "情绪吐槽",
+   "template": "strike_list",
+   "why": "type / delete / type again，一出现就划掉",
+   "params": {
+    "items": [
+     {
+      "text": "Type",
+      "at": 61
+     },
+     {
+      "text": "Delete",
+      "at": 62
+     },
+     {
+      "text": "Type again",
+      "at": 64
+     }
+    ]
+   }
+  },
+  {
+   "words": "83-106",
+   "purpose": "提到具体东西",
+   "template": "icon_cards",
+   "why": "说到哪个工具弹哪个真 logo",
+   "params": {
+    "items": [
+     {
+      "text": "Gmail",
+      "at": 93
+     },
+     {
+      "text": "Slack",
+      "at": 94
+     },
+     {
+      "text": "WhatsApp",
+      "at": 96
+     }
+    ]
+   }
+  },
+  {
+   "words": "114-133",
+   "purpose": "清单步骤",
+   "template": "checklist",
+   "why": "三种用法，说一个勾一个；卡放在胸口不挡脸",
+   "params": {
+    "title": "Tell it what you want",
+    "top": 800,
+    "shift": 0,
+    "width": 700,
+    "items": [
+     {
+      "text": "Say no politely",
+      "at": 122
+     },
+     {
+      "text": "Move a deal forward",
+      "at": 124
+     },
+     {
+      "text": "Follow up",
+      "at": 129
+     }
+    ]
+   }
+  },
+  {
+   "words": "134-144",
+   "purpose": "金句观点",
+   "template": "push_in",
+   "why": "「sounds like you」走心的一句，只推近",
+   "params": {
+    "to": 1.2
+   }
+  },
+  {
+   "words": "156-163",
+   "purpose": "金句观点",
+   "template": "split_word_head",
+   "why": "courage 和 free hour 一左一右夹着脸",
+   "params": {
+    "left": "Courage",
+    "right": "Free hour",
+    "at": 159,
+    "color": "#ffffff",
+    "upper": false,
+    "gap": 160
+   }
+  },
+  {
+   "words": "164-171",
+   "purpose": "结尾号召",
+   "template": "end_title",
+   "why": "品牌收尾",
+   "params": {
+    "title": "ToneBird",
+    "sub": "Every reply, easier, and more you."
+   }
+  }
+ ]
+}

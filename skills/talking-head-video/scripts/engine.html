@@ -16,6 +16,14 @@
     --font-display: "Avenir Next Condensed", "PingFang SC", sans-serif; --display-weight: 900;
     --font-body: "Avenir Next", "PingFang SC", sans-serif;
   }
+  /* Language: CJK text gets a proper font for that language (the skin's Latin font stays first for mixed text). */
+  #stage[lang="zh"] { --font-display: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+                      --font-body: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif; }
+  #stage[lang="ja"] { --font-display: "Avenir Next", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+                      --font-body: "Avenir Next", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif; }
+  #stage[lang="ko"] { --font-display: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+                      --font-body: "Avenir Next", "Apple SD Gothic Neo", sans-serif; }
+  #stage:is([lang="zh"], [lang="ja"], [lang="ko"]) #caption .pill { font-size: 56px; letter-spacing: .02em; }
   html, body { margin: 0; background: #000; }
   #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg-a); font-family: var(--font-body); }
   .layer { position: absolute; inset: 0; }
@@ -140,6 +148,8 @@ const lineCv = document.createElement('canvas'); lineCv.width = W; lineCv.height
 const lctx = lineCv.getContext('2d');
 const maskImg = new Image(), srcImg = new Image();
 document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
+document.getElementById('stage').lang = TL.lang || 'en';
+const SEP = ['zh', 'ja', 'ko'].includes(TL.lang) ? '' : ' ';  // CJK captions have no spaces between words
 // theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
 for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
 
@@ -200,9 +210,9 @@ function captionAt(t) {
   let html = '', inKey = false;
   line.words.forEach((w, j) => {
     const k = keys.has(w.i);
-    if (k && !inKey) html += (j ? ' ' : '') + '<span class="key">';
-    else if (!k && inKey) html += '</span> ';
-    else if (j) html += ' ';
+    if (k && !inKey) html += (j ? SEP : '') + '<span class="key">';
+    else if (!k && inKey) html += '</span>' + SEP;
+    else if (j) html += SEP;
     html += k ? w.w : `<span class="${t >= w.s ? 'on' : ''}">${w.w}</span>`;
     inKey = k;
   });

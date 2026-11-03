@@ -16,7 +16,7 @@ TEMPLATES.icon_cards = {
     // brand → its official logo/colours, other words → line icon on the card colour. An emoji in icon is shown as is.
     // No icon found → that card is left out (say it → show it).
     const pick = it => {
-      const q = it.icon || (typeof it.at === 'string' ? it.at : null);
+      const q = it.icon || (typeof it.at === 'string' ? it.at : it.text);  // at given as a word number → look up the card text
       const ic = q && /[a-z0-9]/i.test(q) ? iconFind(q) : null;   // emoji → not looked up
       if (ic) {
         const tile = iconTile(ic, 104, ic.kind === 'ui' && it.color ? { bg: it.color } : {});
