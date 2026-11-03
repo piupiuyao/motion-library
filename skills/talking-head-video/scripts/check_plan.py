@@ -18,6 +18,7 @@ LEVELS = {  # small effects per 10 s · big effects per minute · share of time 
     '丰富': {'small_10s': 1.5, 'big_min': 5, 'face': .25},
 }
 GAP_ANY, GAP_BIG = 3.0, 8.0  # seconds between two effects / between two big ones
+USAGE = os.path.join(render.ROOT, 'library', 'usage.json')  # render.py logs which effects each finished video used
 HOOK_WINDOW = 3.0
 
 
@@ -91,6 +92,34 @@ def check(proj, shots_file, level):
         errs.append(f'大动效 {n_big} 个，{level}档 {dur:.0f} 秒最多 {max_big:.1f} 个')
     if n_small > max_small + 1e-6:
         errs.append(f'小动效 {n_small} 个，{level}档 {dur:.0f} 秒最多 {max_small:.1f} 个')
+    # logic: the script was read sentence by sentence before anything was picked (brief.md「## 审稿」, one row each)
+    words = json.load(open(os.path.join(proj, 'work', 'words.json')))['words']
+    n_sent = max(1, sum(1 for w in words if w['w'][-1:] in '.?!。？！'))
+    bf = os.path.join(proj, 'brief.md')
+    rows = 0
+    if os.path.exists(bf):
+        sec = re.split(r'^## ', open(bf).read(), flags=re.M)
+        sec = next((x for x in sec if x.startswith('审稿')), '')
+        rows = sum(1 for ln in sec.splitlines() if ln.startswith('|') and not re.match(r'^\|[\s|:-]*$', ln)) - 1
+    if rows < n_sent:
+        errs.append(f'brief.md「## 审稿」只有 {max(rows, 0)} 行，稿子有 {n_sent} 句：每句先写清它在说什么、要不要配画面、为什么，再挑动效')
+    # variety: don't re-run the last two videos' picks (caption styles / push-ins excepted)
+    if os.path.exists(USAGE):
+        base = lambda n: re.sub(r'_(zh|en|ja|ko)$', '', n)  # language versions of one video are the same video
+        me = base(os.path.basename(os.path.abspath(proj)))
+        recent, seen = [], set()
+        for r in reversed(json.load(open(USAGE))):
+            if base(r['project']) != me and base(r['project']) not in seen:
+                seen.add(base(r['project']))
+                recent.append(r)
+        recent = recent[:2]
+        before = {t for r in recent for t in r['templates']}
+        mine = [s['template'] for s, m in body]
+        rep = [t for t in mine if t in before]
+        if mine and len(rep) * 2 > len(mine):
+            errs.append(f'和最近两条片子（{", ".join(r["project"] for r in recent)}）重复了 {len(rep)}/{len(mine)} 个：{", ".join(rep)} → 至少换掉一半，每个时刻看 tools/shortlist.py 的候选再挑')
+        elif rep:
+            warns.append(f'和最近两条片子重复：{", ".join(rep)}（确定是最合适的就留着，写进 why）')
     covered = sum(s['end'] - s['start'] for s, m in ordered if m.get('covers_face'))
     if covered > lim['face'] * dur:
         errs.append(f'挡脸 {covered:.1f}s = {covered / dur:.0%}，{level}档最多 {lim["face"]:.0%}')

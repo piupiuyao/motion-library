@@ -22,7 +22,7 @@ TEMPLATES.answer_pill = {
       border:3px solid color-mix(in srgb, var(--paper) 55%, transparent);border-radius:32px;box-shadow:0 24px 60px rgba(0,0,0,.45)`));
     // comparison box
     const box = el('div', `position:absolute;left:60px;top:${P.y || 800}px;width:960px;box-sizing:border-box;padding:56px 40px 36px;
-      border:3px solid color-mix(in srgb, var(--paper) 55%, transparent);border-radius:36px;color:var(--paper)`);
+      border:3px solid color-mix(in srgb, var(--on-bg, var(--paper)) 55%, transparent);border-radius:36px;color:var(--on-bg, var(--paper))`);
     this.box = box;
     this.tag = el('div', `position:absolute;left:32px;top:-34px;padding:8px 26px 12px;border-radius:16px;background:var(--paper);color:var(--ink);
       font:800 44px var(--font-body);white-space:nowrap`, P.label || '');

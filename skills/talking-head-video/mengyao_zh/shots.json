@@ -2,43 +2,51 @@
  "skin": "clean",
  "shots": [
   {
-   "words": "0-12",
+   "words": "0-18",
    "purpose": "开场钩子",
-   "template": "native_textbox",
-   "why": "户外自然光、语气亲切，用原生白框字开场，像朋友随手发的快拍；放在头顶天空的位置",
+   "template": "keyword_pop",
+   "why": "绿底深字标签就是官网按钮的样子，把「不知道怎么开口」打成标题",
    "params": {
-    "text": "消息看到了，就是不知道怎么回",
-    "y": 210,
-    "size": 58
+    "text": "不知道怎么开口？"
    }
   },
   {
-   "words": "51-73",
-   "purpose": "情绪吐槽",
-   "template": "strike_list",
-   "why": "字一出现就被划掉，就是「写了删、删了写」本身",
+   "words": "19-50",
+   "purpose": "引用证据",
+   "template": "phone_notification",
+   "why": "把「客户催进度」「谈合作」变成两条真实的消息，观众马上代入",
    "params": {
-    "items": [
+    "app": "Slack",
+    "sender": "客户",
+    "text": "进度怎么样了？",
+    "at": 22,
+    "more": [
      {
-      "text": "写了删",
-      "at": 58
-     },
-     {
-      "text": "删了写",
-      "at": 61
-     },
-     {
-      "text": "纠结半天",
-      "at": 70
+      "app": "Gmail",
+      "sender": "合作方",
+      "text": "关于我们的合作……",
+      "time": "now"
      }
-    ]
+    ],
+    "every": 3.5
    }
   },
   {
-   "words": "89-104",
+   "words": "74-88",
+   "purpose": "定义概念",
+   "template": "glass_card",
+   "why": "产品第一次出现；官网导航就是玻璃质感",
+   "params": {
+    "text": "ToneBird<br>AI 回复助手",
+    "y": 230,
+    "size": 64
+   }
+  },
+  {
+   "words": "89-108",
    "purpose": "提到具体东西",
    "template": "icon_cards",
-   "why": "说到哪个工具弹哪个真 logo，围在四周不挡脸",
+   "why": "说三个 app 要三个官方 logo，图标卡最合适（上条用过，但没有更对的）",
    "params": {
     "items": [
      {
@@ -60,9 +68,12 @@
    "words": "127-152",
    "purpose": "清单步骤",
    "template": "checklist",
-   "why": "三种用法，说一个勾一个，是全片唯一需要记住的干货",
+   "why": "三种用法是全片唯一的清单干货；白卡清单最贴官网风格（上条用过）",
    "params": {
     "title": "告诉它你想要",
+    "top": 860,
+    "shift": 0,
+    "width": 560,
     "items": [
      {
       "text": "礼貌拒绝",
@@ -76,41 +87,40 @@
       "text": "自然地跟进",
       "at": 148
      }
-    ],
-    "top": 860,
-    "shift": 0,
-    "width": 560
+    ]
    }
   },
   {
    "words": "153-169",
    "purpose": "金句观点",
-   "template": "push_in",
-   "why": "「更像你自己」是走心的一句，什么都不加，只慢慢推近",
+   "template": "caption_highlighter",
+   "why": "只用品牌绿在字幕里划「更像你自己」，不加卡片",
    "params": {
-    "to": 1.2
+    "keywords": [
+     "更像你自己"
+    ]
    }
   },
   {
    "words": "184-207",
    "purpose": "金句观点",
-   "template": "split_word_head",
-   "why": "勇气、时间两个词一左一右夹着脸，是点题前的停顿",
+   "template": "text_sandwich",
+   "why": "「勇气」做成头后面的大字，是点题前的重音",
    "params": {
-    "left": "勇气",
-    "right": "时间",
-    "at": 198
+    "text": "勇气",
+    "y": 250
    }
   },
   {
    "words": "208-223",
    "purpose": "结尾号召",
    "template": "end_title",
-   "why": "品牌收尾",
+   "why": "品牌结尾卡，白底 + logo，和官网首页一样",
    "params": {
     "title": "ToneBird",
     "sub": "让每一次回复，都更轻松，也更像你",
-    "logo": true
+    "logo": true,
+    "lines": 1
    }
   }
  ]

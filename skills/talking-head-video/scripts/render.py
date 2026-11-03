@@ -386,6 +386,17 @@ def main():
     os.remove(silent)
     if not a.effects:
         write_report(proj, tl, tmpl, out)
+        log_usage(proj, tl)
+
+
+def log_usage(proj, tl):
+    """library/usage.json: which effects each finished video used, so the next video can avoid repeating them."""
+    f = os.path.join(ROOT, 'library', 'usage.json')
+    log = json.load(open(f)) if os.path.exists(f) else []
+    name = os.path.basename(os.path.abspath(proj))
+    log = [r for r in log if r['project'] != name]
+    log.append({'project': name, 'date': time.strftime('%Y-%m-%d'), 'templates': sorted({s['template'] for s in tl['shots']})})
+    json.dump(log, open(f, 'w'), ensure_ascii=False, indent=1)
 
 
 def write_report(proj, tl, tmpl, out):

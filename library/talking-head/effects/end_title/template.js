@@ -15,10 +15,10 @@ TEMPLATES.end_title = {
       pending.push(this.logo.decode().catch(() => {}));
       ctx.L.front.appendChild(this.logo);
     }
-    this.title = el('div', `position:absolute;left:80px;right:80px;top:${top}px;text-align:center;color:var(--paper);font-size:${P.size || 120}px`, P.title || '');
+    this.title = el('div', `position:absolute;left:80px;right:80px;top:${top}px;text-align:center;color:var(--on-bg, var(--paper));font-size:${P.size || 120}px`, P.title || '');
     this.title.className = 'display';
     this.sub = el('div', `position:absolute;left:0;right:0;top:${top + (P.size || 120) * (P.lines || 2) * .95 + 30}px;text-align:center;
-      color:var(--accent);font:700 50px var(--font-body);letter-spacing:.12em`, P.sub || '');
+      color:var(--accent-text, var(--accent));font:700 50px var(--font-body);letter-spacing:.12em`, P.sub || '');
     ctx.L.front.append(this.title, this.sub);
     ctx.base.style.borderRadius = '40px';
     ctx.base.style.boxShadow = '0 30px 70px rgba(0,0,0,.45)';

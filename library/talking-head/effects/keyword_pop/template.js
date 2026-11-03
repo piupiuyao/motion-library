@@ -5,7 +5,7 @@ TEMPLATES.keyword_pop = {
     ctx.L.front.appendChild(this.box);
     this.items = (ctx.params.text ? [{ text: ctx.params.text, s: 0 }] : ctx.groups)
       .slice(0, 2).map((w, k) => {
-        const e = el('div', `font-size:${w.text.length > 14 ? 104 : w.text.length > 9 ? 124 : 150}px;padding:10px 34px 18px;background:var(--accent);color:var(--ink);
+        const e = el('div', `font-size:${((n) => n > 14 ? 104 : n > 9 ? 124 : 150)([...w.text].reduce((a, c) => a + (/[\u3000-\u9fff\uac00-\ud7af]/.test(c) ? 2 : 1), 0))}px;padding:10px 34px 18px;background:var(--accent);color:var(--on-accent, var(--ink));
           border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.25);text-transform:uppercase;max-width:960px;text-align:center`, w.text);
         e.className = 'display';
         this.box.appendChild(e);

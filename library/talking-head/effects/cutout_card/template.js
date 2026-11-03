@@ -13,7 +13,7 @@ TEMPLATES.cutout_card = {
       background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);box-shadow:0 30px 60px rgba(0,0,0,.35)`);
     this.card.appendChild(el('div', `display:inline-block;padding:6px 18px;border-radius:12px;background:var(--accent);color:var(--ink);
       font:800 38px var(--font-body);letter-spacing:.06em`, P.tag || 'KEY POINT'));
-    const t = el('div', `margin-top:22px;color:var(--paper);font-size:${P.size || 74}px;line-height:1.05`, P.text || '');
+    const t = el('div', `margin-top:22px;color:var(--on-bg, var(--paper));font-size:${P.size || 74}px;line-height:1.05`, P.text || '');
     t.className = 'display';
     this.card.appendChild(t);
     ctx.L.front.appendChild(this.card);

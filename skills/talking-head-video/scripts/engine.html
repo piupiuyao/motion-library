@@ -162,6 +162,10 @@ if (BRAND.font) {
   const cjk = { zh: '"PingFang SC", "Hiragino Sans GB"', ja: '"Hiragino Sans", "Hiragino Kaku Gothic ProN"', ko: '"Apple SD Gothic Neo"' }[TL.lang] || '"PingFang SC"';
   for (const v of ['--font-display', '--font-body']) document.getElementById('stage').style.setProperty(v, `"BrandFont", ${cjk}, sans-serif`);
   window.BRAND_STACK = `"BrandFont", ${cjk}, sans-serif`;
+  // one font family per video: every text in the effects uses the brand font (emoji / icons are images, unaffected)
+  const lock = document.createElement('style');
+  lock.textContent = '#stage :is(#bg, #back, #front, #caption) * { font-family: var(--font-body) !important; }';
+  document.head.appendChild(lock);
 }
 // templates with a signature font of their own (serif, Instagram…) use the brand font instead when a brand kit is set
 function brandFontOr(fallback) { return window.BRAND_STACK || fallback; }

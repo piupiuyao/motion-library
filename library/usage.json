@@ -1,0 +1,52 @@
+[
+ {
+  "project": "demo_rumi",
+  "date": "2026-10-29",
+  "templates": [
+   "chat_bubbles",
+   "checklist",
+   "comment_cta",
+   "hook_bigword",
+   "icon_flip",
+   "number_roll"
+  ]
+ },
+ {
+  "project": "test_sawyer",
+  "date": "2026-10-30",
+  "templates": [
+   "checklist",
+   "comment_cta",
+   "icon_cards",
+   "native_textbox",
+   "number_roll",
+   "push_in"
+  ]
+ },
+ {
+  "project": "mengyao_zh",
+  "date": "2026-11-02",
+  "templates": [
+   "checklist",
+   "end_title",
+   "icon_cards",
+   "native_textbox",
+   "push_in",
+   "split_word_head",
+   "strike_list"
+  ]
+ },
+ {
+  "project": "mengyao_en",
+  "date": "2026-11-02",
+  "templates": [
+   "checklist",
+   "end_title",
+   "icon_cards",
+   "native_textbox",
+   "push_in",
+   "split_word_head",
+   "strike_list"
+  ]
+ }
+]

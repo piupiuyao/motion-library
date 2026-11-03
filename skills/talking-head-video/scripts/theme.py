@@ -120,31 +120,43 @@ def from_brand(link, proj):
                 if re.fullmatch(pat, n) and not any(x in n for x in skip) and test(rgb(v)):
                     return v
     out = {}
-    accent = pick(r'accent', r'primary', r'brand', r'[\w-]*(primary|brand|accent)[\w-]*', test=lambda c: colourful(c, .2))
+    # what the eye sees first on the site: the call-to-action button, then the logo, then a --accent/--primary variable
+    # (a variable named "accent" can be a link colour that barely shows on the page)
+    cta = pick(r'[\w-]*(button|btn|cta)[\w-]*(fill|bg|background)?', test=lambda c: colourful(c, .2), skip=('hover', 'pressed', 'focus', 'edge', 'border', 'ink', 'text'))
+    named = pick(r'accent', r'primary', r'brand', r'[\w-]*(primary|brand|accent)[\w-]*', test=lambda c: colourful(c, .2))
     m = re.search(r'<meta[^>]+name=["\']theme-color["\'][^>]+content=["\'](#[0-9a-fA-F]{3,6})', html)
-    accent = accent or (m.group(1) if m and colourful(rgb(m.group(1)), .2) else None)
-    if not accent:
-        used = Counter(h.lower() for h in re.findall(r'#[0-9a-fA-F]{6}\b', css) if colourful(rgb(h), .3))
-        accent = used.most_common(1)[0][0] if used else None
-    if not accent:
+    meta = m.group(1) if m and colourful(rgb(m.group(1)), .2) else None
+    used = Counter(h.lower() for h in re.findall(r'#[0-9a-fA-F]{6}\b', css) if colourful(rgb(h), .3))
+    order = [c for c in (cta, named, meta, *(h for h, _ in used.most_common(3))) if c]
+    if not order:
         return None
+    accent = order[0]
     out['accent'] = accent
-    out['on-accent'] = on(rgb(accent))
-    # second colour: the call-to-action button, a secondary, or any clearly different brand hue
+    # accent used as TEXT on white / bright footage: a very light accent (lime, yellow) can't be read → its dark ink
+    out['accent-text'] = accent if contrast(rgb(accent), (255, 255, 255)) >= 3 else None
+    out['on-accent'] = pick(r'[\w-]*(button|btn|cta)[\w-]*ink', test=lambda c: contrast(c, rgb(accent)) >= 4.5) or on(rgb(accent))
+    out['accent-text'] = out['accent-text'] or out['on-accent']
     hue = lambda h: colorsys.rgb_to_hls(*[v / 255 for v in rgb(h)])[0]
     far = lambda h: min(abs(hue(h) - hue(accent)), 1 - abs(hue(h) - hue(accent))) > .12
-    a2 = pick(r'[\w-]*button[\w-]*fill', r'[\w-]*(cta|secondary)[\w-]*', test=lambda c: colourful(c, .2) and far(hx(c)), skip=('hover', 'pressed', 'focus'))
+    a2 = next((c for c in order[1:] if far(c)), None)
     if a2:
         out['accent-2'] = a2
         out['on-accent-2'] = on(rgb(a2))
     ink = pick(r'ink', r'text', r'foreground', r'fg', r'[\w-]*(ink|text|foreground)', test=lambda c: lum(c) < .2)
-    paper = pick(r'paper', r'surface', r'card', r'background', r'bg', test=lambda c: lum(c) > .8)
+    paper = pick(r'paper', r'surface', r'card', test=lambda c: lum(c) > .8)
+    page = pick(r'canvas', r'background', r'bg', r'page[\w-]*', r'body[\w-]*', test=lambda c: True)
     if ink:
         out['ink'] = ink
-        out['bg-a'] = ink  # full-screen cards: the brand's dark text colour as background
-        out['bg-b'] = hx([v + (255 - v) * .12 for v in rgb(ink)])
     if paper:
         out['paper'] = paper
+    if page and lum(rgb(page)) > .6:
+        # a light site: full-screen cards are light like its pages, text on them is the site's ink
+        out['look'] = 'light'
+        out['bg-a'], out['bg-b'] = page, paper or '#ffffff'
+        out['on-bg'] = ink or '#111111'
+    elif ink:
+        out['bg-a'] = ink
+        out['bg-b'] = hx([v + (255 - v) * .12 for v in rgb(ink)])
     out['source'] = f'brand {link}'
 
     bdir = os.path.join(proj, 'brand')

@@ -5,7 +5,7 @@ TEMPLATES.title_bar = {
     if (this.off) return;
     const P = ctx.params;
     ctx.L.bg.style.background = 'linear-gradient(180deg, var(--bg-b), var(--bg-a))';
-    this.title = el('div', `position:absolute;left:0;right:0;top:110px;text-align:center;color:var(--paper);font-size:${P.size || 112}px;letter-spacing:.06em`, P.title || '');
+    this.title = el('div', `position:absolute;left:0;right:0;top:110px;text-align:center;color:var(--on-bg, var(--paper));font-size:${P.size || 112}px;letter-spacing:.06em`, P.title || '');
     this.title.className = 'display';
     this.sub = el('div', `position:absolute;left:0;right:110px;top:${110 + (P.size || 112) + 18}px;text-align:right;color:var(--accent);
       font:700 44px var(--font-body);letter-spacing:.2em`, P.sub || '');

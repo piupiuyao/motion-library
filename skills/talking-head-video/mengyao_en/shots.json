@@ -2,43 +2,51 @@
  "skin": "clean",
  "shots": [
   {
-   "words": "0-12",
+   "words": "0-19",
    "purpose": "开场钩子",
-   "template": "native_textbox",
-   "why": "和中文版同一套导演：原生白框字开场，放在头顶天空",
+   "template": "keyword_pop",
+   "why": "和中文版同一套导演：绿底深字标签（官网按钮的样子）开场",
    "params": {
-    "text": "Seen it. No idea how to reply.",
-    "y": 210,
-    "size": 58
+    "text": "No idea how to start?"
    }
   },
   {
-   "words": "60-72",
-   "purpose": "情绪吐槽",
-   "template": "strike_list",
-   "why": "type / delete / type again，一出现就划掉",
+   "words": "20-52",
+   "purpose": "引用证据",
+   "template": "phone_notification",
+   "why": "客户催进度、谈合作 → 两条真实的消息滑下来",
    "params": {
-    "items": [
+    "app": "Slack",
+    "sender": "Client",
+    "text": "Any update on the project?",
+    "at": 23,
+    "more": [
      {
-      "text": "Type",
-      "at": 61
-     },
-     {
-      "text": "Delete",
-      "at": 62
-     },
-     {
-      "text": "Type again",
-      "at": 64
+      "app": "Gmail",
+      "sender": "Partner",
+      "text": "About our partnership…",
+      "time": "now"
      }
-    ]
+    ],
+    "every": 3.5
+   }
+  },
+  {
+   "words": "73-82",
+   "purpose": "定义概念",
+   "template": "glass_card",
+   "why": "产品出场；官网导航就是玻璃质感",
+   "params": {
+    "text": "ToneBird<br>AI reply assistant",
+    "y": 230,
+    "size": 60
    }
   },
   {
    "words": "83-106",
    "purpose": "提到具体东西",
    "template": "icon_cards",
-   "why": "说到哪个工具弹哪个真 logo",
+   "why": "说到哪个 app 出哪个官方 logo",
    "params": {
     "items": [
      {
@@ -60,7 +68,7 @@
    "words": "114-133",
    "purpose": "清单步骤",
    "template": "checklist",
-   "why": "三种用法，说一个勾一个；卡放在胸口不挡脸",
+   "why": "三种用法，白卡清单贴官网风格",
    "params": {
     "title": "Tell it what you want",
     "top": 800,
@@ -83,38 +91,27 @@
    }
   },
   {
-   "words": "134-144",
-   "purpose": "金句观点",
-   "template": "push_in",
-   "why": "「sounds like you」走心的一句，只推近",
-   "params": {
-    "to": 1.2
-   }
-  },
-  {
    "words": "156-163",
    "purpose": "金句观点",
-   "template": "split_word_head",
-   "why": "courage 和 free hour 一左一右夹着脸",
+   "template": "text_sandwich",
+   "why": "「Courage」做成头后面的大字",
    "params": {
-    "left": "Courage",
-    "right": "Free hour",
-    "at": 159,
-    "upper": false,
-    "gap": 160
+    "text": "COURAGE",
+    "y": 250
    }
   },
   {
    "words": "164-171",
    "purpose": "结尾号召",
    "template": "end_title",
-   "why": "品牌收尾",
+   "why": "品牌结尾卡，白底 + logo",
+   "why_break": "结尾卡是收尾，和清单之间有两段露脸",
    "params": {
     "title": "ToneBird",
     "sub": "Every reply, easier, and more you.",
-    "logo": true
-   },
-   "why_break": "结尾卡是片子收尾，和清单只差 0.2 秒到 8 秒线，中间有推近和分字两段露脸"
+    "logo": true,
+    "lines": 1
+   }
   }
  ]
 }

@@ -26,7 +26,7 @@ TEMPLATES.card_ring = {
         k++;
       }
     });
-    this.title = el('div', `position:absolute;left:240px;width:600px;top:700px;text-align:center;font-size:${P.size || 120}px;color:var(--paper);line-height:.95`,
+    this.title = el('div', `position:absolute;left:240px;width:600px;top:700px;text-align:center;font-size:${P.size || 120}px;color:var(--on-bg, var(--paper));line-height:.95`,
       P.text || '');
     this.title.className = 'display';
     this.cam.appendChild(this.title);
