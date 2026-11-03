@@ -33,6 +33,9 @@ description: 把一段口播原片剪成约 1 分钟的竖屏短视频。逐句�
 用户给一条口播原片（可选：品牌链接、上传素材），不用逐步确认，像剪辑师一样**先看懂、再选包、再导演**，直接出片。
 **包是菜单，不是清单**：包里有很多动作，一条片子只挑最需要的几个，同一种作用用同一个画面，其余时间留干净的人脸 + 字幕。太满、换太多、没有逻辑，比少一个效果更难看。
 
+0. **只有照片 + 文稿时，先出数字人原片**：文稿放 `PROJECT/script.txt`，然后 `python3 scripts/avatar.py PROJECT --photo 照片.jpg [--voice Olivia] [--lang en]`。
+   用的是**用户自己的 HeyGen**：有 API 密钥（用户自己存在 `~/.secrets/heygen.env` 或环境变量 `HEYGEN_API_KEY`，不在聊天里要）就自动生成 Avatar IV 视频并下载；
+   没有密钥就打印网页上用套餐积分做的步骤，做好后 `--from-file 下载的.mp4` 接回来。照片用胸口以上的近景（脸大、口型更准）。出来先逐秒查假手和嘴型，有问题重生成。
 1. **准备**：`python3 scripts/prep.py PROJECT [--lang en] [--brand https://品牌官网]`
    → 打印台词（一句一行：词编号 + 秒数）、品牌资料。有稿子先放 `PROJECT/script.txt`。
    然后 `python3 scripts/logos.py PROJECT`：找出稿子里提到的每个品牌，拿官方 logo（OFFICIAL 表 → 已核对的缓存 → 品牌自己的官网），
