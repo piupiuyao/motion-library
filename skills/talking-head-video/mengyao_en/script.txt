@@ -4,7 +4,7 @@ A client is chasing you for an update. You want to explain, but it sounds like a
 
 That's what ToneBird is for. It's an AI reply assistant.
 
-It works right inside the tools you already use, like Gmail, Slack and WhatsApp. It reads the conversation and drafts a reply for you. No copying and pasting back and forth.
+It works right inside the tools you already use, like Gmail, Slack, and WhatsApp. It reads the conversation and drafts a reply for you. No copying and pasting back and forth.
 
 Tell it what you want this time: say no politely, move a deal forward, or follow up without being pushy. It learns how you write, so the reply sounds like you.
 

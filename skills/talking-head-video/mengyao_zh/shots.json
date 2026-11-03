@@ -99,8 +99,7 @@
    "params": {
     "left": "勇气",
     "right": "时间",
-    "at": 198,
-    "color": "#ffffff"
+    "at": 198
    }
   },
   {
@@ -110,7 +109,8 @@
    "why": "品牌收尾",
    "params": {
     "title": "ToneBird",
-    "sub": "让每一次回复，都更轻松，也更像你"
+    "sub": "让每一次回复，都更轻松，也更像你",
+    "logo": true
    }
   }
  ]

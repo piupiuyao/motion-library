@@ -5,6 +5,8 @@
   python3 scripts/theme.py PROJECT --brand https://…   -> from the brand's website; falls back to the footage
 Writes PROJECT/theme.json {"accent": "#…", "accent-2": "#…", "source": "…"}; render.py uses it when the shots file
 has no "theme" of its own. Research: one highlight colour per video, bright enough to read (≥ 4.5:1 against --ink).
+With --brand the colours are the brand's own (exact, plus "on-accent" = the text colour that reads on them), and
+"brand" holds the kit saved to PROJECT/brand/: name, logo, font, and the app icons the site itself uses.
 """
 import argparse, colorsys, glob, json, os, re, sys, urllib.parse, urllib.request
 from collections import Counter
@@ -89,35 +91,106 @@ def from_footage(proj):
     return {'accent': as_accent(best), 'source': 'footage ' + hx(best)}
 
 
-def from_brand(link):
-    req = urllib.request.Request(link, headers={'User-Agent': 'Mozilla/5.0'})
-    html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8', 'ignore')
+def fetch(u, binary=False):
+    data = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=15).read()
+    return data if binary else data.decode('utf-8', 'ignore')
+
+
+def on(c):
+    """Text colour that reads on top of colour c: white or near-black."""
+    return '#ffffff' if contrast(c, (255, 255, 255)) >= contrast(c, (17, 17, 17)) else '#111111'
+
+
+def from_brand(link, proj):
+    """Brand kit from the brand's own website: its exact colours (CSS variables), font, logo, and the app icons
+    the site itself shows. Files go to PROJECT/brand/; colours are used as they are (not brightened)."""
+    html = fetch(link)
     css = html
-    for href in re.findall(r'<link[^>]+rel=["\']?stylesheet["\']?[^>]*href=["\']([^"\']+)', html)[:4]:
+    for href in re.findall(r'<link[^>]+href=["\']([^"\']+\.css[^"\']*)', html)[:12]:
         try:
-            u = urllib.parse.urljoin(link, href)
-            css += urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=15).read().decode('utf-8', 'ignore')
+            css += fetch(urllib.parse.urljoin(link, href))
         except Exception:
             pass
+    var = {}
+    for name, val in re.findall(r'--([\w-]+)\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b', css):
+        var.setdefault(name.lower(), val.lower())
+    def pick(*pats, test=lambda c: True, skip=('soft', 'light', 'muted', 'hover', 'pressed', 'focus', 'edge', 'border')):
+        for pat in pats:
+            for n, v in var.items():
+                if re.fullmatch(pat, n) and not any(x in n for x in skip) and test(rgb(v)):
+                    return v
+    out = {}
+    accent = pick(r'accent', r'primary', r'brand', r'[\w-]*(primary|brand|accent)[\w-]*', test=lambda c: colourful(c, .2))
     m = re.search(r'<meta[^>]+name=["\']theme-color["\'][^>]+content=["\'](#[0-9a-fA-F]{3,6})', html)
-    cands = []
-    if m and colourful(rgb(m.group(1)), .2):
-        cands.append((m.group(1), 'theme-color'))
-    # brand-ish CSS variables first (--primary, --brand, --accent), then the most used colourful hex
-    for name, val in re.findall(r'--([\w-]*(?:primary|brand|accent)[\w-]*)\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b', css):
-        if colourful(rgb(val), .2):
-            cands.append((val, '--' + name))
-    used = Counter(h.lower() for h in re.findall(r'#[0-9a-fA-F]{6}\b', css) if colourful(rgb(h), .3))
-    cands += [(h, 'most used') for h, _ in used.most_common(3)]
-    if not cands:
+    accent = accent or (m.group(1) if m and colourful(rgb(m.group(1)), .2) else None)
+    if not accent:
+        used = Counter(h.lower() for h in re.findall(r'#[0-9a-fA-F]{6}\b', css) if colourful(rgb(h), .3))
+        accent = used.most_common(1)[0][0] if used else None
+    if not accent:
         return None
-    first = rgb(cands[0][0])
-    out = {'accent': as_accent(first), 'source': f'brand {link} {cands[0][1]} {cands[0][0]}'}
-    for h, _ in cands[1:]:  # a second, clearly different hue for --accent-2
-        a, b = colorsys.rgb_to_hls(*[v / 255 for v in first])[0], colorsys.rgb_to_hls(*[v / 255 for v in rgb(h)])[0]
-        if min(abs(a - b), 1 - abs(a - b)) > .12:
-            out['accent-2'] = as_accent(rgb(h))
-            break
+    out['accent'] = accent
+    out['on-accent'] = on(rgb(accent))
+    # second colour: the call-to-action button, a secondary, or any clearly different brand hue
+    hue = lambda h: colorsys.rgb_to_hls(*[v / 255 for v in rgb(h)])[0]
+    far = lambda h: min(abs(hue(h) - hue(accent)), 1 - abs(hue(h) - hue(accent))) > .12
+    a2 = pick(r'[\w-]*button[\w-]*fill', r'[\w-]*(cta|secondary)[\w-]*', test=lambda c: colourful(c, .2) and far(hx(c)), skip=('hover', 'pressed', 'focus'))
+    if a2:
+        out['accent-2'] = a2
+        out['on-accent-2'] = on(rgb(a2))
+    ink = pick(r'ink', r'text', r'foreground', r'fg', r'[\w-]*(ink|text|foreground)', test=lambda c: lum(c) < .2)
+    paper = pick(r'paper', r'surface', r'card', r'background', r'bg', test=lambda c: lum(c) > .8)
+    if ink:
+        out['ink'] = ink
+        out['bg-a'] = ink  # full-screen cards: the brand's dark text colour as background
+        out['bg-b'] = hx([v + (255 - v) * .12 for v in rgb(ink)])
+    if paper:
+        out['paper'] = paper
+    out['source'] = f'brand {link}'
+
+    bdir = os.path.join(proj, 'brand')
+    os.makedirs(bdir, exist_ok=True)
+    kit = {'site': link}
+    def save(u, name):
+        data = fetch(urllib.parse.urljoin(link, u), binary=True)
+        open(os.path.join(bdir, name), 'wb').write(data)
+        return 'brand/' + name
+    # name: the text next to the header logo, else og:site_name, else the <title> before a separator
+    m = re.search(r'<img[^>]*class=["\'][^"\']*logo[^"\']*["\'][^>]*>\s*([^<]{2,30})<', html) \
+        or re.search(r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\']+)', html) \
+        or re.search(r'<title>\s*([^<|\-–—:]+)', html)
+    if m:
+        kit['name'] = m.group(1).strip()
+    # logo: an <img> whose class or file name says logo
+    m = re.search(r'<img[^>]+class=["\'][^"\']*logo[^"\']*["\'][^>]*src=["\']([^"\']+)', html) \
+        or re.search(r'<img[^>]+src=["\']([^"\']*logo[^"\']*)["\']', html)
+    if m:
+        try:
+            kit['logo'] = save(m.group(1), 'logo' + os.path.splitext(urllib.parse.urlparse(m.group(1)).path)[1])
+        except Exception:
+            pass
+    # font: the @font-face the body text uses
+    faces = dict(re.findall(r"@font-face\s*\{[^}]*font-family:\s*['\"]?([^;'\"]+)['\"]?;[^}]*src:\s*url\(['\"]?([^)'\"]+)", css))
+    body = re.findall(r'font-family:\s*([^;}]+)', css)
+    fam = next((f for b in body for f in faces if f.lower() in b.lower()), None)
+    if fam:
+        try:
+            kit['font'] = {'family': fam, 'file': save(faces[fam], 'font' + os.path.splitext(urllib.parse.urlparse(faces[fam]).path)[1])}
+        except Exception:
+            pass
+    # the app icons the site shows (Gmail, Slack…): the brand's own versions win over the icon library
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import icons
+    kit['icons'] = {}
+    for src in re.findall(r'<img[^>]+src=["\']([^"\']+\.(?:svg|png|webp))', html):
+        stem = re.sub(r'[-_](native|color|icon|logo|tasks)$', '', os.path.splitext(os.path.basename(urllib.parse.urlparse(src).path))[0].lower())
+        stem = stem.replace('-', ' ')
+        if stem in kit['icons'] or not icons.find(stem) or icons.find(stem)['kind'] == 'ui':
+            continue
+        try:
+            kit['icons'][stem.replace(' ', '')] = save(src, 'icon-' + stem.replace(' ', '-') + os.path.splitext(urllib.parse.urlparse(src).path)[1])
+        except Exception:
+            pass
+    out['brand'] = kit
     return out
 
 
@@ -129,7 +202,7 @@ if __name__ == '__main__':
     theme = None
     if a.brand:
         try:
-            theme = from_brand(a.brand)
+            theme = from_brand(a.brand, a.proj)
         except Exception as e:
             print('brand link failed, using the footage:', e, file=sys.stderr)
     theme = theme or from_footage(a.proj) or {'accent': YELLOW, 'source': 'default yellow'}

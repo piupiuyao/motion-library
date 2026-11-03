@@ -12,6 +12,11 @@ def _db():
     for k, v in db.items():
         for w in v['keys']:
             by.setdefault((v['kind'], w), k)
+    # official full-colour logos are often filed under the company ("google gmail", "microsoft teams"):
+    # also find them by the product name alone, so "Gmail" gets the real logo, not the one-colour mark
+    for k, v in db.items():
+        if v['kind'] == 'logo' and len(v['name'].split()) == 2:
+            by.setdefault(('logo', v['name'].split()[1]), k)
     tag = {}
     for k, v in db.items():
         if v['kind'] == 'ui':
@@ -55,6 +60,17 @@ CONCEPTS = {
 }
 
 
+# Apps people name all the time → their official full-colour logo, checked by eye (current versions). Always wins.
+OFFICIAL = {
+    'gmail': 'logo:google-gmail', 'google': 'logo:google', 'slack': 'logo:slack', 'whatsapp': 'logo:whatsapp',
+    'telegram': 'logo:telegram', 'linkedin': 'logo:linkedin', 'youtube': 'logo:youtube',
+    'tiktok': 'logo:tiktok', 'facebook': 'logo:facebook', 'discord': 'logo:discord', 'notion': 'logo:notion',
+    'zoom': 'logo:zoom', 'chrome': 'logo:chrome', 'figma': 'logo:figma', 'spotify': 'logo:spotify', 'netflix': 'logo:netflix',
+    'reddit': 'logo:reddit', 'x': 'logo:x', 'teams': 'logo:microsoft-teams', 'messenger': 'logo:messenger',
+    'openai': 'logo:openai', 'chatgpt': 'logo:openai', 'claude': 'logo:claude',
+}
+
+
 def find(q):
     """q: a word/phrase ('Slack', 'gym', 'money'), or 'ui:wallet' / 'brand:telegram' / 'logo:slack' to force one."""
     db, by, tag = _db()
@@ -66,6 +82,9 @@ def find(q):
         kind, w = q.split(':', 1)
         k = q if q in db else by.get((kind, _forms(w)[0]))
         return dict(db[k], id=k) if k in db else None
+    for f in _forms(q):
+        if f in OFFICIAL and OFFICIAL[f] in db:
+            return dict(db[OFFICIAL[f]], id=OFFICIAL[f])
     for f in _forms(q):
         if f in CONCEPTS and CONCEPTS[f] in db:
             return dict(db[CONCEPTS[f]], id=CONCEPTS[f])

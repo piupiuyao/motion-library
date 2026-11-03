@@ -5,9 +5,19 @@ TEMPLATES.end_title = {
     if (this.off) return;
     const P = ctx.params;
     ctx.L.bg.style.background = 'linear-gradient(180deg, var(--bg-b), var(--bg-a))';
-    this.title = el('div', `position:absolute;left:80px;right:80px;top:260px;text-align:center;color:var(--paper);font-size:${P.size || 120}px`, P.title || '');
+    // logo: true → the brand kit's logo (theme.py --brand), or a path; sits above the title like the site's header
+    const logo = P.logo === true ? (window.BRAND || {}).logo : P.logo;
+    const top = logo ? 330 : 260;
+    if (logo) {
+      this.logo = new Image();
+      this.logo.src = url(logo);
+      this.logo.style.cssText = 'position:absolute;left:50%;top:110px;height:190px;transform:translateX(-50%)';
+      pending.push(this.logo.decode().catch(() => {}));
+      ctx.L.front.appendChild(this.logo);
+    }
+    this.title = el('div', `position:absolute;left:80px;right:80px;top:${top}px;text-align:center;color:var(--paper);font-size:${P.size || 120}px`, P.title || '');
     this.title.className = 'display';
-    this.sub = el('div', `position:absolute;left:0;right:0;top:${260 + (P.size || 120) * (P.lines || 2) * .95 + 30}px;text-align:center;
+    this.sub = el('div', `position:absolute;left:0;right:0;top:${top + (P.size || 120) * (P.lines || 2) * .95 + 30}px;text-align:center;
       color:var(--accent);font:700 50px var(--font-body);letter-spacing:.12em`, P.sub || '');
     ctx.L.front.append(this.title, this.sub);
     ctx.base.style.borderRadius = '40px';
@@ -24,5 +34,9 @@ TEMPLATES.end_title = {
     this.title.style.transform = `translateY(${lerp(50, 0, ease.out(q))}px)`;
     this.title.style.letterSpacing = `${lerp(.12, -.01, ease.out(q))}em`;
     this.sub.style.opacity = r;
+    if (this.logo) {
+      this.logo.style.opacity = enter(ctx.t, .25, .4);
+      this.logo.style.transform = `translateX(-50%) scale(${lerp(.8, 1, ease.back(enter(ctx.t, .25, .5)))})`;
+    }
   },
 };

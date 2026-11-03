@@ -33,7 +33,7 @@
   #caption .pill { background: var(--cap-bg); border-radius: 22px; padding: 14px 30px 18px; font: 800 60px/1.15 var(--font-body);
                    color: var(--cap-ink); text-align: center; box-shadow: 0 8px 30px rgba(0, 0, 0, .18); max-width: 900px; }
   #caption .on { color: var(--cap-on); }
-  #caption .key { color: var(--cap-on); background: var(--accent); border-radius: 10px; padding: 0 8px; }
+  #caption .key { color: var(--on-accent, var(--cap-on)); background: var(--accent); border-radius: 10px; padding: 0 8px; }
   .display { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: -.01em; line-height: .92; }
 </style>
 </head>
@@ -152,6 +152,19 @@ document.getElementById('stage').lang = TL.lang || 'en';
 const SEP = ['zh', 'ja', 'ko'].includes(TL.lang) ? '' : ' ';  // CJK captions have no spaces between words
 // theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
 for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
+// brand kit (theme.py --brand): the site's own font for all text (CJK falls back per language), logo for templates
+window.BRAND = TL.brand || {};
+let brandFont = Promise.resolve();
+if (BRAND.font) {
+  const ff = new FontFace('BrandFont', `url(${url(BRAND.font.file)})`, { weight: '100 1000' });
+  document.fonts.add(ff);
+  brandFont = ff.load().catch(() => {});
+  const cjk = { zh: '"PingFang SC", "Hiragino Sans GB"', ja: '"Hiragino Sans", "Hiragino Kaku Gothic ProN"', ko: '"Apple SD Gothic Neo"' }[TL.lang] || '"PingFang SC"';
+  for (const v of ['--font-display', '--font-body']) document.getElementById('stage').style.setProperty(v, `"BrandFont", ${cjk}, sans-serif`);
+  window.BRAND_STACK = `"BrandFont", ${cjk}, sans-serif`;
+}
+// templates with a signature font of their own (serif, Instagram…) use the brand font instead when a brand kit is set
+function brandFontOr(fallback) { return window.BRAND_STACK || fallback; }
 
 function segAt(t) {
   let s = TL.segments[0];
@@ -220,6 +233,7 @@ function captionAt(t) {
 }
 
 window.renderFrame = async function (k) {
+  await brandFont;
   const t = k / TL.fps;
   const seg = segAt(t);
   const srcFrame = Math.max(1, Math.round((seg.src + (t - seg.out)) * TL.srcFps) + 1);

@@ -5,7 +5,7 @@ TEMPLATES.native_textbox = {
     const P = ctx.params;
     if (!P.text) { this.off = true; return; }   // 必填: no hook text → render nothing
     this.box = el('div', `position:absolute;left:90px;right:90px;top:${P.y || 330}px;text-align:center;
-      font:700 ${P.size || 64}px/1.32 "Helvetica Neue","SF Pro Display",Arial,sans-serif;letter-spacing:-.01em`);
+      font:700 ${P.size || 64}px/1.32 ${brandFontOr('"Helvetica Neue","SF Pro Display",Arial,sans-serif')};letter-spacing:-.01em`);
     const t = el('span', `background:${P.bg || '#fff'};color:${P.color || '#000'};padding:6px 22px 10px;border-radius:16px;
       -webkit-box-decoration-break:clone;box-decoration-break:clone`, P.text + (P.emoji ? ' ' + P.emoji : ''));
     this.box.appendChild(t);

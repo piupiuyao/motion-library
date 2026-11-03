@@ -16,7 +16,7 @@ TEMPLATES.strike_list = {
     this.box = el('div', `position:absolute;left:0;right:0;top:${P.y || Math.min(1040, 1430 - n * Math.round(size * 1.35))}px;display:flex;flex-direction:column;align-items:center;gap:${Math.round(size * .2)}px`);
     ctx.L.front.appendChild(this.box);
     this.items = items.map((it, j) => {
-      const row = el('div', `position:relative;display:inline-block;padding:0 14px;font:700 ${size}px/1.15 Georgia,"Times New Roman","Songti SC",serif;color:#fff;white-space:nowrap;
+      const row = el('div', `position:relative;display:inline-block;padding:0 14px;font:700 ${size}px/1.15 ${brandFontOr('Georgia,"Times New Roman","Songti SC",serif')};color:#fff;white-space:nowrap;
         text-shadow:0 0 6px ${glow},0 0 18px color-mix(in srgb, ${glow} 70%, transparent),0 3px 10px rgba(0,0,0,.45)`, it.text);
       const line = el('div', `position:absolute;left:0;right:0;top:54%;height:${Math.max(6, Math.round(size * .085))}px;margin-top:-3px;border-radius:4px;background:${strike};
         box-shadow:0 0 8px color-mix(in srgb, ${strike} 60%, transparent);transform-origin:0 50%;transform:scaleX(0)`);

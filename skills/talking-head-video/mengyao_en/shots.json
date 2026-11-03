@@ -100,7 +100,6 @@
     "left": "Courage",
     "right": "Free hour",
     "at": 159,
-    "color": "#ffffff",
     "upper": false,
     "gap": 160
    }
@@ -112,8 +111,10 @@
    "why": "品牌收尾",
    "params": {
     "title": "ToneBird",
-    "sub": "Every reply, easier, and more you."
-   }
+    "sub": "Every reply, easier, and more you.",
+    "logo": true
+   },
+   "why_break": "结尾卡是片子收尾，和清单只差 0.2 秒到 8 秒线，中间有推近和分字两段露脸"
   }
  ]
 }

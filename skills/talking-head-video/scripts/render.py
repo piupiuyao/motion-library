@@ -99,7 +99,34 @@ def theme_file(proj):
     f = os.path.join(proj, 'theme.json')
     if not os.path.exists(f):
         return {}
-    return {k: v for k, v in json.load(open(f)).items() if k != 'source'}
+    return {k: v for k, v in json.load(open(f)).items() if k not in ('source', 'brand')}
+
+
+def brand_kit(proj):
+    """PROJECT/theme.json "brand": name, logo, font, app icons saved from the brand's site by theme.py --brand."""
+    f = os.path.join(proj, 'theme.json')
+    return json.load(open(f)).get('brand', {}) if os.path.exists(f) else {}
+
+
+def brand_icon(proj, q):
+    """The brand site's own version of an app icon (Gmail, Slack…), as an icon record, or None."""
+    import icons
+    key = re.sub(r'[^a-z0-9]', '', (q or '').lower())
+    if key in icons.OFFICIAL:  # checked official full-colour logo wins (a site may show a one-colour version)
+        return None
+    path = brand_kit(proj).get('icons', {}).get(key)
+    if not path or not os.path.exists(os.path.join(proj, path)):
+        return None
+    hit = icons.find(q) or {}
+    data = open(os.path.join(proj, path), 'rb').read()
+    if path.endswith('.svg'):
+        svg = data.decode('utf-8', 'ignore')
+    else:
+        import base64
+        mime = 'image/webp' if path.endswith('.webp') else 'image/png'
+        svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><image width="100" height="100" '
+               f'href="data:{mime};base64,{base64.b64encode(data).decode()}"/></svg>')
+    return {'kind': 'logo', 'name': hit.get('name', q), 'svg': svg, 'id': 'brand-site:' + path}
 
 
 def build_timeline(proj, tmpl, shots_file='shots.json'):
@@ -176,7 +203,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     need = sorted({s['template'] for s in shots})
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
-    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj),
+    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
             'captions': plan.get('captions', True), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
 
@@ -208,7 +235,8 @@ def serve(proj):
             if self.path.startswith('/icon?'):  # /icon?q=Slack → {kind, name, svg, hex} or null (see icons.py)
                 import icons
                 from urllib.parse import parse_qs, urlparse
-                body = json.dumps(icons.find(parse_qs(urlparse(self.path).query).get('q', [''])[0])).encode()
+                q = parse_qs(urlparse(self.path).query).get('q', [''])[0]
+                body = json.dumps(brand_icon(proj, q) or icons.find(q)).encode()  # the brand's own icon first
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()
