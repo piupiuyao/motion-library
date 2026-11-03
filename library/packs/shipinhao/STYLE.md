@@ -95,10 +95,11 @@ Endings: (a) paper sticker, brand line + slogan + brush line; (b) gingham sticke
 ## 11. Common failures to check
 - Font fallback: Lilita's soft rounded corners and Anton's tall condensed shapes must be visible; if text looks like Helvetica
   the font failed.
-- Any black stroke around letters = wrong (only the offset shadow).
+- Any black stroke around letters on footage or dark patterns = wrong (only the offset shadow); on light patterns the dark outline is automatic.
 - 花字 over the mouth/chin, or a sticker title colliding with the hair — move `y`.
 - Subtitle showing at the same time as 花字 (should be hidden unless `caption: true`).
 - Yellow everywhere; more than one extra colour line; more than 4 lines.
 - Words not from the script; long sentences as 花字 (≤4 words per line).
 - Busy pattern behind white text without the shadow, or a pattern behind a face beat.
 - Lines all appearing together instead of on their words.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. 花字 lines are fitted/clamped automatically (x 60–960, y 150–1640): a line that needs the edge will come out smaller, so keep lines short instead of fighting it. On light patterns (paper, gingham, dots, pink) white/yellow lines get a dark outline automatically — don't add a dark `bg` block.

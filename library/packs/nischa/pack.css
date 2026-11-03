@@ -16,6 +16,12 @@
 /* while a top diagram panel is up (panel templates paint #bg black), the pill sits on the seam like hers.
    Seam = the panel height used in this pack (900). */
 #stage.pack-nischa:has(#bg[style*="rgb(0, 0, 0)"]) #caption.pack { top: 868px; }
+/* panel templates publish their in/out progress (--panel-k 0…1) and height (--panel-h) on #stage (+ a marker on #bg).
+   While the panel slides: first half the pill rides the panel's bottom edge (always above her head, the edge moves
+   faster than she does) and fades; second half it fades back in on the chest (1098). Never over her face. */
+#stage.pack-nischa:has(#bg[style*="--panel-k"]) #caption.pack {
+  top: calc(1098px + (var(--panel-h) * var(--panel-k) * 1px - 1130px) * clamp(0, (var(--panel-k) - .5) * 1000, 1));
+  opacity: max(calc(var(--panel-k) * 2 - 1), calc(1 - var(--panel-k) * 2)); }
 
 /* helpers for pack effects */
 .pack-nischa .pk-panel {

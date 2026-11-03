@@ -13,7 +13,7 @@ TEMPLATES.caption_news_slam = {
   },
   setup(ctx) {
     const P = ctx.params, big = P.big === true, size = P.size || (big ? 118 : 96);
-    const y = P.y || 1660;  // baseline of the last row (caption sits in the lower band, under the face)
+    const y = P.y || 1670;  // bottom of the last row: same band as the running caption (pack.css bottom:250px)
     this.root = el('div', 'position:absolute;inset:0');
     this.root.className = 'cn-slam';
     ctx.L.front.appendChild(this.root);
@@ -43,14 +43,20 @@ TEMPLATES.caption_news_slam = {
       });
       // chunks whose word was not found follow the previous chunk by 0.12 s
       chunks.forEach((c, n) => { if (c.s == null) c.s = n ? chunks[n - 1].s + .12 : 0; });
-      return { box, chunks, s: chunks.length ? chunks[0].s : 0 };
+      // chunks not yet slammed take no space (display:none); the box is bottom-anchored, so it grows upward.
+      // Measure its height with k chunks shown → frame() slides the rows up smoothly when a chunk opens a new row.
+      const hs = chunks.map((c, n) => {
+        chunks.forEach((d, m) => { d.e.style.display = m <= n ? 'inline-block' : 'none'; });
+        return box.offsetHeight;
+      });
+      return { box, chunks, hs, s: chunks.length ? chunks[0].s : 0 };
     });
     this.caps.forEach((c, n) => { c.end = n + 1 < this.caps.length ? this.caps[n + 1].s : 1e9; });
     // channel bug + source tag (top safe area)
     if (P.bug || P.tag) {
       this.top = el('div', 'position:absolute;left:0;right:0;top:0;height:360px;background:linear-gradient(180deg, rgba(14,14,12,.55), rgba(14,14,12,0))');
       this.root.appendChild(this.top);
-      this.pkg = el('div', 'position:absolute;left:64px;top:132px;display:flex;flex-direction:column;align-items:flex-start;gap:10px');
+      this.pkg = el('div', 'position:absolute;left:64px;top:160px;display:flex;flex-direction:column;align-items:flex-start;gap:10px');
       this.root.appendChild(this.pkg);
       if (P.bug) {
         const b = el('div', 'display:flex;height:74px;align-items:stretch');
@@ -72,9 +78,15 @@ TEMPLATES.caption_news_slam = {
       const on = t >= c.s - .001 && t < c.end;
       c.box.style.display = on ? 'flex' : 'none';
       if (!on) continue;
+      let lift = 0;
       for (const ch of c.chunks) {
-        const k = clamp((t - ch.s) / .13);
-        ch.e.style.opacity = t < ch.s ? 0 : Math.min(clamp((t - ch.s) / .04), out);
+        const k = clamp((t - ch.s) / .13), shown = t >= ch.s - .001;
+        ch.e.style.display = shown ? 'inline-block' : 'none';
+        if (!shown) continue;
+        // a new row pushes the shown rows up: ease that over the slam (0.13 s) instead of jumping
+        if (ch.n) lift = (c.hs[ch.n] - c.hs[ch.n - 1]) * (1 - ease.out(k));
+        // full opacity within one frame of its start, so a caption hand-over never shows an empty frame
+        ch.e.style.opacity = Math.min(clamp((t - ch.s + .034) / .04), out);
         ch.e.style.transform = `scale(${lerp(1.3, 1, this.backOut(k))})`;
         if (ch.kw) {
           const wk = ease.out(clamp((t - ch.s - .05) / .12));
@@ -82,6 +94,7 @@ TEMPLATES.caption_news_slam = {
           ch.kw.style.color = wk > .45 ? 'var(--ink)' : 'var(--paper)';
         }
       }
+      c.box.style.transform = `translateY(${lift}px)`;
     }
     if (this.pkg) {
       // bug slides in from the left (0.2 s); source tag follows 0.15 s later

@@ -26,7 +26,7 @@ TEMPLATES.sticker_chapter = {
     const out = leave(ctx, .18);
     const sh = ease.inOut(enter(ctx.t, this.tShrink, .38));   // big intro -> small corner tag
     STK.animate(this.num, ctx.t, this.tNum, Math.min(out, 1 - sh), 1);
-    this.num.el.style.transform += ` translate(${(-160 * sh).toFixed(1)}px, ${(-180 * sh).toFixed(1)}px) scale(${lerp(1, .35, sh).toFixed(3)})`;
+    this.num.el.style.transform += ` translate(${(-160 * sh).toFixed(1)}px, ${(-118 * sh).toFixed(1)}px) scale(${lerp(1, .35, sh).toFixed(3)})`;
     if (this.title) STK.animate(this.title, ctx.t, this.tTitle, Math.min(out, 1 - sh), 1);
     STK.animate(this.badge, ctx.t, this.tShrink + .12, 1, .2);   // stays at full strength into the next shot (same badge there)
   },

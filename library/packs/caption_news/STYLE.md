@@ -22,7 +22,7 @@ no page turns). Not the glossy creator look (no glass cards, no gradients on typ
 | Veil | bottom gradient `#0E0E0C` 0 → 50 % at y 1440 → 78 % at y 1920 + soft dark radial from the bottom-left corner (on `#back`, under cards) | always on |
 | Package | bug (x 64, y 132, 74 h) + source tag under it (46 h); a 55 % → 0 top gradient over 360 px under them | top safe area, only in the hook / data moments |
 | Cards | grid / lower thirds | chest band y 900–1340, x 72–1008, left-aligned |
-| Caption | left aligned at x 72, max width 936, bottom edge y 1670 (slam card: last baseline y 1660) | lower band, always under the chin |
+| Caption | left aligned at x 72, max width 936, bottom edge y 1670 (slam card: same bottom edge, grows upward chunk by chunk) | lower band, always under the chin |
 
 Vertical is a different layout, not a crop: the caption stacks on up to two lines in the lower band, the bug moves
 into the top safe area, cards sit at chest height and bleed toward the left margin, never centred.
@@ -93,3 +93,4 @@ Allowed: `punch_zoom`, `shutter_flash`, `freeze_photo`, `split_vertical`, `side_
 - Lower-third text wider than 936 px (shorten or `size: 46`).
 - Fallback font (Helvetica/Arial look, wider spacing) = pack fonts did not load.
 - Dissolves, page turns, 3D flips, spinning icons.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. The channel bug sits at y 160; the slam card and running caption share the caption band (bottom edge y 1670, excepted as caption); the grid ends at x 960.

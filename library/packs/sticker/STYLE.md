@@ -86,10 +86,11 @@ Endings: (a) holo background + name hero + hand line. (b) a recap list re-using 
 ## 11. Common failures to check
 - A text font fell back (Times/Helvetica): the rounded "a" must be two-storey with round ends, and the hand must look like Kalam.
 - A sticker over the eyes or mouth. Wide side stickers are lifted above the head automatically. Check the face in each still.
-- Hero cut off at the frame edge. Keep it to ≤4 words; it auto-shrinks to 1000 px.
+- Hero cut off at the frame edge. Keep it to ≤4 words; it auto-shrinks to 900 px.
 - A gap between shots shows the original street background.
 - Emoji drawn as empty boxes (the colour emoji font is missing on that machine).
 - Too many stickers at once, or stickers left over from the last sentence. Use `until`.
 - Coral used for something that isn't a negation; `neg` on "not only A".
 - The left frame-edge cut of the body visible as a floating straight line (layout must keep that edge glued).
 - Captions grown big/bold or moved over the face. They must stay a small strip at y 1500.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. STK keeps every sticker inside x 60–960 / y 150–1640 (explicit `x`/`y` too) and sheets ≤ 900 px wide; the chapter badge sits at y 190.

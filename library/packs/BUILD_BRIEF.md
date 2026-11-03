@@ -1,4 +1,6 @@
-# Brief: build one style pack (vertical English talking-head shorts)
+# Brief: build one style pack from a reference video (vertical talking-head shorts)
+
+Used whenever someone hands over a video they love: it becomes a pack, then their video is cut with it.
 
 Read first: `library/packs/README.md` (the pack contract — folder, pack.json, tokens, captions, STYLE.md sections).
 Then 3–4 library effects to see the template contract: `library/talking-head/effects/{keyword_pop,checklist,number_roll,icon_cards}/{template.js,meta.json}`
@@ -35,6 +37,12 @@ not from invention. "Premium" usually = fewer colours, stronger light/dark contr
    `python3 scripts/render.py packtest_<id> --stills t1,t2,t3,t4` (outputs in packtest_<id>/stills/).
    Look, compare with ref frames, fix, repeat. Check: fonts actually loaded (not fallback), nothing cheap-looking
    (no thick black outline unless the reference truly has it), text not over mouth/chin, readable on bright footage.
+4b. Also fill these in pack.json (see README): `fit` (good_for / avoid / content scores 0–2 for data, list, emotion,
+   opinion, promo, tutorial, news, story / tone / footage needs / brand_look) so tools/pick_pack.py can recommend it;
+   `budget` (moves, backgrounds, peaks, cover, gap — how much one video may use: a menu, not a checklist; most packs
+   3–4 moves, 1–2 backgrounds, 1–2 peaks, ≤40 % covered); `brand` (which tokens a brand link may replace,
+   accent_role, text_on, font). Keep text out of the right 120 px, bottom ~280 px (captions excepted) and top ~150 px.
+   Brand / app logos only via iconTile / iconFind (official logos), never drawn.
 5. Copy the final 4 stills to `library/packs/<id>/frames/` and build `frames/compare.jpg`: top row 4 reference frames,
    bottom row our 4 frames, each 360×640, labelled (PIL; any font).
 

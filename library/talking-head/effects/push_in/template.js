@@ -8,7 +8,9 @@ TEMPLATES.push_in = {
     }
   },
   frame(ctx) {
-    const s = lerp(ctx.seg.zoom || 1, ctx.params.to || 1.3, ease.inOut(ctx.p));
+    const z0 = ctx.seg.zoom || 1, back = Math.min(.35, ctx.d / 4);
+    // push in over the shot, then ease back out over its last ~0.35 s so the next shot doesn't start on a jump
+    const s = lerp(lerp(z0, ctx.params.to || 1.3, ease.inOut(ctx.p)), z0, ease.inOut(enter(ctx.t, ctx.d - back, back)));
     ctx.base.style.transform = `scale(${s})`;
     if (this.v) this.v.style.opacity = ease.out(enter(ctx.t, 0, .8));
   },

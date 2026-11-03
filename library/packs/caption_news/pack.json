@@ -10,10 +10,26 @@
     }
   ],
   "fonts": [
-    {"family": "PkInterTight", "file": "fonts/inter-tight-500.woff2", "weight": "500"},
-    {"family": "PkInterTight", "file": "fonts/inter-tight-700.woff2", "weight": "700"},
-    {"family": "PkInterTight", "file": "fonts/inter-tight-800.woff2", "weight": "800"},
-    {"family": "PkInterTight", "file": "fonts/inter-tight-900.woff2", "weight": "900"}
+    {
+      "family": "PkInterTight",
+      "file": "fonts/inter-tight-500.woff2",
+      "weight": "500"
+    },
+    {
+      "family": "PkInterTight",
+      "file": "fonts/inter-tight-700.woff2",
+      "weight": "700"
+    },
+    {
+      "family": "PkInterTight",
+      "file": "fonts/inter-tight-800.woff2",
+      "weight": "800"
+    },
+    {
+      "family": "PkInterTight",
+      "file": "fonts/inter-tight-900.woff2",
+      "weight": "900"
+    }
   ],
   "tokens": {
     "font-display": "\"PkInterTight\", \"Helvetica Neue\", Arial, sans-serif",
@@ -37,10 +53,25 @@
   },
   "caption_style": "pack",
   "caption_words": 8,
-  "brand_font": "none",
   "effects": {
-    "signature": ["caption_news_slam", "caption_news_grid", "caption_news_lower", "push_in"],
-    "allowed": ["punch_zoom", "freeze_photo", "shutter_flash", "split_vertical", "side_split", "number_roll", "number_land_block", "article_highlight", "snippet_stack", "zoom_jumpcut"]
+    "signature": [
+      "caption_news_slam",
+      "caption_news_grid",
+      "caption_news_lower",
+      "push_in"
+    ],
+    "allowed": [
+      "punch_zoom",
+      "freeze_photo",
+      "shutter_flash",
+      "split_vertical",
+      "side_split",
+      "number_roll",
+      "number_land_block",
+      "article_highlight",
+      "snippet_stack",
+      "zoom_jumpcut"
+    ]
   },
   "density": "The caption is always the lead (every spoken word is captioned). One package graphic (grid / lower third / slam card) per 8–12 s at most; a push-in or punch is the only thing between them. 40–60 % of the runtime is face + caption only.",
   "not": [
@@ -48,5 +79,51 @@
     "not Hormozi/CapCut captions: no thick black stroke, no all-caps word-by-word colour swaps, no bounce",
     "not a keynote: no centred title-and-bullets, no page turns, no dissolves, no 3D flips",
     "no second accent hue for decoration: red only for the bad number / loss"
-  ]
+  ],
+  "brand": {
+    "tokens": [
+      "accent",
+      "on-accent",
+      "accent-text"
+    ],
+    "accent_role": "fill",
+    "text_on": "#0E0E0C",
+    "font": "display",
+    "note": "brand colour becomes the keyword block; captions stay Inter Tight"
+  },
+  "fit": {
+    "good_for": "资讯、数据新闻、静音刷的场景、观点快评",
+    "avoid": "需要大量图解或贴纸氛围的内容",
+    "content": {
+      "data": 2,
+      "list": 1,
+      "emotion": 1,
+      "opinion": 1,
+      "promo": 1,
+      "tutorial": 0,
+      "news": 2,
+      "story": 1
+    },
+    "tone": [
+      "punchy",
+      "clean"
+    ],
+    "footage": {
+      "needs_cutout": false,
+      "needs_headroom": false,
+      "bright_ok": true,
+      "dark_ok": true
+    },
+    "brand_look": [
+      "dark",
+      "light"
+    ]
+  },
+  "budget": {
+    "moves": 4,
+    "backgrounds": 1,
+    "peaks": 2,
+    "cover": 0.35,
+    "gap": 4
+  }
 }

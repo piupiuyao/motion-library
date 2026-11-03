@@ -1,0 +1,77 @@
+{
+ "tonebird": {
+  "name": "ToneBird",
+  "file": "tonebird.png",
+  "url": "https://tonebird.ai/apple-touch-icon.png",
+  "page": "https://tonebird.ai",
+  "how": "apple-touch-icon",
+  "date": "2026-11-03",
+  "problems": [],
+  "verified": "auto: brand domain, full-colour, square ≥120px"
+ },
+ "notion": {
+  "name": "Notion",
+  "file": "notion.png",
+  "url": "https://www.notion.com/front-static/logo-ios.png",
+  "page": "https://www.notion.com/",
+  "how": "apple-touch-icon",
+  "date": "2026-11-03",
+  "problems": [],
+  "verified": "auto: brand domain, full-colour, square ≥120px"
+ },
+ "linear": {
+  "name": "Linear",
+  "file": "linear.png",
+  "url": "https://linear.app/static/apple-touch-icon.png?v=2",
+  "page": "https://linear.app",
+  "how": "apple-touch-icon",
+  "date": "2026-11-03",
+  "problems": [],
+  "verified": "auto: brand domain, full-colour, square ≥120px"
+ },
+ "figma": {
+  "name": "Figma",
+  "file": "figma.png",
+  "url": "https://static.figma.com/app/icon/2/touch-180.png",
+  "page": "https://www.figma.com/",
+  "how": "apple-touch-icon",
+  "date": "2026-11-03",
+  "problems": [],
+  "verified": "auto: brand domain, full-colour, square ≥120px"
+ },
+ "zoom": {
+  "name": "Zoom",
+  "file": "zoom.png",
+  "url": "https://www.zoom.com/apple-touch-icon.png",
+  "page": "https://www.zoom.com/",
+  "how": "apple-touch-icon (standard path)",
+  "date": "2026-11-03",
+  "problems": [
+   "small (72×72px)"
+  ],
+  "verified": null
+ },
+ "hubspot": {
+  "name": "HubSpot",
+  "file": "hubspot.png",
+  "url": "https://www.hubspot.com/hubfs/assets/hubspot.com/homepage/hero-backgrounds-2025/HS_Full_Bleed_1.jpg",
+  "page": "https://www.hubspot.com/",
+  "how": "og:image",
+  "date": "2026-11-03",
+  "problems": [
+   "not square (2160×1440) — banner or wordmark?",
+   "og:image (often a banner, not the logo)"
+  ],
+  "verified": null
+ },
+ "gmail": {
+  "name": "Gmail",
+  "file": "gmail.svg",
+  "url": "https://www.gstatic.com/images/branding/productlogos/gmail_2026/v2/web/192px.svg",
+  "page": "https://workspace.google.com/products/gmail/",
+  "how": "official product page logo",
+  "date": "2026-11-03",
+  "problems": [],
+  "verified": "by eye 2026-11-03: Google's current (2026) gradient M, same as the OFFICIAL map logo:google-gmail"
+ }
+}

@@ -94,3 +94,4 @@ as text; (c) plain face, last line highlighted with `caption_highlighter`, no sp
 - Caption over the mouth: caption top is 1470, OK for faces framed like the test; very low-framed faces need a check.
 - Exhibit text invented beyond what she says; UI illustrations must be marked as illustration in the brief.
 - Paper beats back to back with no face time in between.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. Headline/exhibit/list columns end at right:120; the corner note at right:130.

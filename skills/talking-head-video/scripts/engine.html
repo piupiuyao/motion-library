@@ -98,7 +98,8 @@ function iconSvg(ic, color) {  // the bare icon as an <svg> string sized to its 
   return s;
 }
 function iconTile(q, size = 200, opt = {}) {
-  // opt.app: look like a phone app icon → prefer the one-colour brand mark on its brand colour over the full logo
+  // opt.app: asks for 'brand:<name>' first; the server answers with the official full-colour logo (or the one-colour
+  // mark only for brands whose real logo is one colour, like X) — never a simplified stand-in (render.py /icon)
   const ic = typeof q !== 'string' ? q : (opt.app && !q.includes(':') && iconFind('brand:' + q)) || iconFind(q);
   if (!ic) return null;
   // logo: full-colour mark on white · brand: white mark on its brand colour · ui: line icon on the theme accent
@@ -176,7 +177,37 @@ if (PACK) {
   document.head.appendChild(css);
 }
 // theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
-for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
+// With a pack, a brand only takes the accent (pack.json "brand"): the pack's grounds, inks and fonts stay. The brand
+// colour is used as-is where it's a fill; text in it is shifted (same hue) until it reads on the pack's text surface.
+function hexRgb(h) { h = h.replace('#', ''); if (h.length === 3) h = [...h].map(c => c + c).join(''); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); }
+function lum(h) { return hexRgb(h).map(c => { c /= 255; return c <= .03928 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4; }).reduce((a, c, i) => a + c * [.2126, .7152, .0722][i], 0); }
+function contrast(a, b) { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + .05) / (y + .05); }
+function mixHex(a, b, t) { const p = hexRgb(a), q = hexRgb(b); return '#' + p.map((c, i) => Math.round(c + (q[i] - c) * t).toString(16).padStart(2, '0')).join(''); }
+function readableOn(color, ground, min = 4.5) {
+  const toward = lum(ground) > .4 ? '#000000' : '#ffffff';
+  for (let t = 0; t <= 1.001; t += .05) { const c = mixHex(color, toward, t); if (contrast(c, ground) >= min) return c; }
+  return toward;
+}
+function brandTheme(theme) {
+  const b = PACK.brand || {};
+  const keep = b.tokens || ['accent', 'on-accent', 'accent-text'];
+  const accent = theme.accent;
+  const out = {};
+  if (accent && /^#[0-9a-f]{3,6}$/i.test(accent)) {
+    const ground = b.text_on || (PACK.tokens['bg-a'] || '#ffffff');
+    out['accent-raw'] = accent;
+    out['accent-text'] = readableOn(accent, ground);
+    out.accent = b.accent_role === 'text' ? out['accent-text'] : accent;
+    out['on-accent'] = contrast(out.accent, '#ffffff') >= contrast(out.accent, '#111111') ? '#ffffff' : '#111111';
+    if (theme['accent-2'] && keep.includes('accent-2')) out['accent-2'] = theme['accent-2'];
+    // "map": other pack tokens that should follow the brand, e.g. {"ink": "accent-text"} (sticker ink in brand hue)
+    for (const [tok, src] of Object.entries(b.map || {})) out[tok] = out[src];
+  }
+  const allowed = new Set([...keep, ...Object.keys(b.map || {}), 'accent-raw']);
+  return Object.fromEntries(Object.entries(out).filter(([k]) => allowed.has(k)));
+}
+const THEME = PACK ? brandTheme(TL.theme || {}) : (TL.theme || {});
+for (const [k, v] of Object.entries(THEME)) document.getElementById('stage').style.setProperty('--' + k, v);
 // brand kit (theme.py --brand): the site's own font for all text (CJK falls back per language), logo for templates
 window.BRAND = TL.brand || {};
 let brandFont = Promise.resolve();

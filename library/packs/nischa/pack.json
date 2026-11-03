@@ -3,16 +3,38 @@
   "name": "Clean Finance",
   "vibe": "Calm UK personal-finance explainer: light-grey diagram panel on top, small white karaoke pill on the chest, one orange, Poppins everywhere.",
   "reference": [
-    {"creator": "Nischa (UK finance, 1M+ subs)", "url": "https://www.youtube.com/shorts/kldKPSBuqH0",
-     "what": "top light-grey grid panel (~half the frame) that builds a diagram step by step: threshold bar, A + B = C equation, card chain; Poppins Bold titles; orange #FC8F00 as the only colour"},
-    {"creator": "Nischa (UK finance, 1M+ subs)", "url": "https://www.youtube.com/shorts/-m-GrB9f1aQ",
-     "what": "white tight karaoke pill caption (grey words turn black), milestone line chart in the panel, white money number that lands on an orange block"}
+    {
+      "creator": "Nischa (UK finance, 1M+ subs)",
+      "url": "https://www.youtube.com/shorts/kldKPSBuqH0",
+      "what": "top light-grey grid panel (~half the frame) that builds a diagram step by step: threshold bar, A + B = C equation, card chain; Poppins Bold titles; orange #FC8F00 as the only colour"
+    },
+    {
+      "creator": "Nischa (UK finance, 1M+ subs)",
+      "url": "https://www.youtube.com/shorts/-m-GrB9f1aQ",
+      "what": "white tight karaoke pill caption (grey words turn black), milestone line chart in the panel, white money number that lands on an orange block"
+    }
   ],
   "fonts": [
-    {"family": "PkPoppins", "file": "fonts/poppins-400.woff2", "weight": "400"},
-    {"family": "PkPoppins", "file": "fonts/poppins-500.woff2", "weight": "500"},
-    {"family": "PkPoppins", "file": "fonts/poppins-600.woff2", "weight": "600"},
-    {"family": "PkPoppins", "file": "fonts/poppins-700.woff2", "weight": "700"}
+    {
+      "family": "PkPoppins",
+      "file": "fonts/poppins-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkPoppins",
+      "file": "fonts/poppins-500.woff2",
+      "weight": "500"
+    },
+    {
+      "family": "PkPoppins",
+      "file": "fonts/poppins-600.woff2",
+      "weight": "600"
+    },
+    {
+      "family": "PkPoppins",
+      "file": "fonts/poppins-700.woff2",
+      "weight": "700"
+    }
   ],
   "tokens": {
     "font-display": "\"PkPoppins\", \"Helvetica Neue\", sans-serif",
@@ -34,10 +56,22 @@
     "cap-on": "#111111"
   },
   "caption_style": "pack",
-  "brand_font": "none",
   "effects": {
-    "signature": ["nischa_panel_title", "threshold_bar", "equation_build", "flow_chain", "milestone_curve", "nischa_number_land"],
-    "allowed": ["number_land_block", "data_chart", "checklist", "end_card_next", "comment_cta"]
+    "signature": [
+      "nischa_panel_title",
+      "threshold_bar",
+      "equation_build",
+      "flow_chain",
+      "milestone_curve",
+      "nischa_number_land"
+    ],
+    "allowed": [
+      "number_land_block",
+      "data_chart",
+      "checklist",
+      "end_card_next",
+      "comment_cta"
+    ]
   },
   "density": "One diagram panel every 8-15 s, held while she talks (3-9 s each, built step by step on the words); between panels a clean face with only the pill caption. At most one chest number per video section. No zooms, no flashes.",
   "not": [
@@ -45,5 +79,50 @@
     "no second accent colour (green only for a 'done/restored' check)",
     "no dark or glass cards, no gradients, no stickers/emoji, no camera shake",
     "not Hormozi: captions are small (42 px) and quiet, not huge and bouncing"
-  ]
+  ],
+  "brand": {
+    "tokens": [
+      "accent",
+      "on-accent",
+      "accent-text"
+    ],
+    "accent_role": "text",
+    "text_on": "#ffffff",
+    "font": "display",
+    "note": "accent is both blocks and text on white here, so the brand colour is shifted to a readable shade of the same hue"
+  },
+  "fit": {
+    "good_for": "讲数据、算账、产品原理、理财和效率类讲解",
+    "avoid": "纯情绪、没有可视化内容的稿子（只有观点没有数/步骤）",
+    "content": {
+      "data": 2,
+      "list": 2,
+      "emotion": 0,
+      "opinion": 1,
+      "promo": 1,
+      "tutorial": 2,
+      "news": 1,
+      "story": 0
+    },
+    "tone": [
+      "calm",
+      "clean"
+    ],
+    "footage": {
+      "needs_cutout": false,
+      "needs_headroom": true,
+      "bright_ok": true,
+      "dark_ok": true
+    },
+    "brand_look": [
+      "light"
+    ]
+  },
+  "budget": {
+    "moves": 4,
+    "backgrounds": 1,
+    "peaks": 1,
+    "cover": 0.45,
+    "gap": 5
+  }
 }

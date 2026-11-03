@@ -67,5 +67,35 @@
    "tick_cross_tags",
    "typewriter_card"
   ]
+ },
+ {
+  "project": "packtest_vox",
+  "date": "2026-11-02",
+  "templates": [
+   "caption_highlighter",
+   "vox_split_list",
+   "vox_split_title"
+  ]
+ },
+ {
+  "project": "packtest_caption_news",
+  "date": "2026-11-02",
+  "templates": [
+   "caption_news_grid",
+   "caption_news_lower",
+   "caption_news_slam",
+   "punch_zoom",
+   "push_in"
+  ]
+ },
+ {
+  "project": "packtest_nischa",
+  "date": "2026-11-02",
+  "templates": [
+   "equation_build",
+   "flow_chain",
+   "nischa_panel_title",
+   "threshold_bar"
+  ]
  }
 ]

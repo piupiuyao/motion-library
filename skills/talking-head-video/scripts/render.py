@@ -115,13 +115,37 @@ def load_pack(pid):
     pk = json.load(open(os.path.join(d, 'pack.json')))
     css = os.path.join(d, 'pack.css')
     return {'id': pid, 'tokens': pk.get('tokens', {}), 'fonts': pk.get('fonts', []), 'caption_style': pk.get('caption_style'),
-            'brand_font': pk.get('brand_font', 'display'), 'caption_words': pk.get('caption_words', 4), 'css': open(css).read() if os.path.exists(css) else ''}
+            'brand_font': pk.get('brand', {}).get('font', pk.get('brand_font', 'display')), 'brand': pk.get('brand', {}), 'caption_words': pk.get('caption_words', 4), 'css': open(css).read() if os.path.exists(css) else ''}
+
+
+def pack_theme(proj, pack):
+    """Colours for this video. A pack has its own palette, so a theme picked from the footage is ignored;
+    only a brand link's colours (theme.py --brand) apply, and the engine lets them take the accent only."""
+    if not pack:
+        return theme_file(proj)
+    f = os.path.join(proj, 'theme.json')
+    if os.path.exists(f) and str(json.load(open(f)).get('source', '')).startswith('brand'):
+        return theme_file(proj)
+    return {}
 
 
 def brand_kit(proj):
     """PROJECT/theme.json "brand": name, logo, font, app icons saved from the brand's site by theme.py --brand."""
     f = os.path.join(proj, 'theme.json')
     return json.load(open(f)).get('brand', {}) if os.path.exists(f) else {}
+
+
+def file_icon(proj, path, name, id):
+    """A logo file in the project (svg / png / webp) as an icon record."""
+    data = open(os.path.join(proj, path), 'rb').read()
+    if path.endswith('.svg'):
+        svg = data.decode('utf-8', 'ignore')
+    else:
+        import base64
+        mime = 'image/webp' if path.endswith('.webp') else 'image/png'
+        svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><image width="100" height="100" '
+               f'href="data:{mime};base64,{base64.b64encode(data).decode()}"/></svg>')
+    return {'kind': 'logo', 'name': name, 'svg': svg, 'id': id}
 
 
 def brand_icon(proj, q):
@@ -134,15 +158,24 @@ def brand_icon(proj, q):
     if not path or not os.path.exists(os.path.join(proj, path)):
         return None
     hit = icons.find(q) or {}
-    data = open(os.path.join(proj, path), 'rb').read()
-    if path.endswith('.svg'):
-        svg = data.decode('utf-8', 'ignore')
-    else:
-        import base64
-        mime = 'image/webp' if path.endswith('.webp') else 'image/png'
-        svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><image width="100" height="100" '
-               f'href="data:{mime};base64,{base64.b64encode(data).decode()}"/></svg>')
-    return {'kind': 'logo', 'name': hit.get('name', q), 'svg': svg, 'id': 'brand-site:' + path}
+    return file_icon(proj, path, hit.get('name', q), 'brand-site:' + path)
+
+
+def project_logo(proj, q):
+    """PROJECT/brand/logos.json (scripts/logos.py): an "ok" logo → icon record; "not_found" → False (show text only);
+    needs_check / not listed → None (look further)."""
+    f = os.path.join(proj, 'brand', 'logos.json')
+    if not os.path.exists(f):
+        return None
+    key = re.sub(r'[^a-z0-9]', '', (q or '').lower())
+    for name, r in json.load(open(f)).get('logos', {}).items():
+        if re.sub(r'[^a-z0-9]', '', name.lower()) == key:
+            if r['status'] == 'not_found':
+                return False
+            if r['status'] == 'ok' and r.get('file') and os.path.exists(os.path.join(proj, r['file'])):
+                return file_icon(proj, r['file'], name, 'logos.json:' + r['file'])
+            return None
+    return None
 
 
 def build_timeline(proj, tmpl, shots_file='shots.json'):
@@ -223,7 +256,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
     pack = load_pack(plan.get('pack'))
-    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'pack': pack, 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
+    return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'pack': pack, 'theme': plan.get('theme') or pack_theme(proj, pack), 'brand': brand_kit(proj),
             'captions': plan.get('captions', True), 'captionStyle': plan.get('caption_style') or (pack or {}).get('caption_style'), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src',
             # last extracted frame: edit.json may end a few frames after it, and asking for a missing frame crashes the page
@@ -260,7 +293,8 @@ def serve(proj):
                 import icons
                 from urllib.parse import parse_qs, urlparse
                 q = parse_qs(urlparse(self.path).query).get('q', [''])[0]
-                body = json.dumps(brand_icon(proj, q) or icons.find(q)).encode()  # the brand's own icon first
+                # OFFICIAL → logos.json → brand-site icon → library; a brand never gets a one-colour stand-in (null instead)
+                body = json.dumps(icons.official(q, lambda n: project_logo(proj, n), lambda n: brand_icon(proj, n))).encode()
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()

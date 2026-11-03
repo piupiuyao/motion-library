@@ -32,7 +32,7 @@ if (!window.voxSplit) {
       const seam = el('div', `position:absolute;left:0;top:${this.SEAM - 6}px;width:1080px;height:6px;background:${tone};transform-origin:0 50%`);
       ctx.L.back.appendChild(panel); ctx.L.back.appendChild(seam);
       // headline block: kicker (Archivo caps), light serif line, black serif key phrase with a highlighter swipe
-      const head = el('div', `position:absolute;left:96px;right:96px;top:${P.top || 190}px`);
+      const head = el('div', `position:absolute;left:96px;right:120px;top:${P.top || 190}px`);
       let kick = null, title = null, key = null, sweep = null, span = null;
       if (P.kicker) { kick = el('div', 'font:700 30px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:30px', P.kicker); head.appendChild(kick); }
       const size = P.size || 104;
@@ -100,7 +100,7 @@ TEMPLATES.vox_split_list = {
       this.S.content.appendChild(this.burst); this.S.content.appendChild(this.arrow);
     }
     this.rows = items.map((it, j) => {
-      const row = el('div', `position:absolute;left:${left}px;right:84px;top:${top + j * (rowH + gap)}px;height:${rowH}px;box-sizing:border-box;
+      const row = el('div', `position:absolute;left:${left}px;right:120px;top:${top + j * (rowH + gap)}px;height:${rowH}px;box-sizing:border-box;
         border:3px dashed rgba(23,19,14,.30);display:flex;align-items:center;padding:0 30px;gap:26px`);
       const num = el('div', 'font:700 30px/1 var(--font-body);letter-spacing:.12em;color:var(--muted);flex:none', String(j + 1).padStart(2, '0'));
       const q = el('div', `margin-left:auto;font-weight:900;font-size:50px;line-height:1;color:var(--muted)`, '?'); q.className = 'pk-display';

@@ -27,6 +27,71 @@ def meta_of(tid):
     return json.load(open(f)) if os.path.exists(f) else {}
 
 
+BG_KEYS = ('background', 'bg')  # params that swap the backdrop; mono/dim are looks of the footage
+
+
+def review_rows(proj):
+    bf = os.path.join(proj, 'brief.md')
+    if not os.path.exists(bf):
+        return 0
+    sec = next((x for x in re.split(r'^## ', open(bf).read(), flags=re.M) if x.startswith('审稿')), '')
+    return sum(1 for ln in sec.splitlines() if ln.startswith('|') and not re.match(r'^\|[\s|:-]*$', ln)) - 1
+
+
+def check_pack(proj, plan, tl, info, errs, warns):
+    """With a style pack the pack is the menu and its "budget" is the rule: a few moves, chosen for the few sentences
+    that need them, used consistently — not every move the pack has."""
+    pk = json.load(open(os.path.join(render.PACKS, plan['pack'], 'pack.json')))
+    b = {'moves': 4, 'backgrounds': 2, 'peaks': 2, 'cover': .45, 'gap': 3.0, 'base': [], **pk.get('budget', {})}
+    menu = set(pk.get('effects', {}).get('signature', []) + pk.get('effects', {}).get('allowed', []))
+    dur = tl['duration']
+    why = {i: s.get('why_break') for i, s in enumerate(plan['shots'])}
+    ordered = sorted(info, key=lambda x: x[0]['start'])
+    moves = [(s, m) for s, m in ordered if m.get('weight') != '底层']
+    for s, m in moves:
+        if s['template'] not in menu:
+            errs.append(f"{s['template']} 不在风格包「{plan['pack']}」的菜单里 → 换包里的动作，或先把它加进 pack.json")
+    kinds = sorted({s['template'] for s, _ in moves if s['template'] not in b['base']})
+    if len(kinds) > b['moves']:
+        errs.append(f"用了 {len(kinds)} 种动作（{', '.join(kinds)}），这个包一条片子最多 {b['moves']} 种 → 只留最需要的，同一种作用用同一个画面")
+    bgs = sorted({str(s['params'].get(k)) for s, _ in moves for k in BG_KEYS if s['params'].get(k)})
+    if len(bgs) > b['backgrounds']:
+        errs.append(f"换了 {len(bgs)} 种背景（{', '.join(bgs)}），这个包最多 {b['backgrounds']} 种 → 背景只在段落变化时换")
+    peaks = [s for s, _ in moves if s['params'].get('peak')]
+    if len(peaks) > b['peaks']:
+        errs.append(f"大高光 {len(peaks)} 个（params 里 peak:true），最多 {b['peaks']} 个 → 只留全片最重要的那一两句")
+    covered = sum(s['end'] - s['start'] for s, m in moves if s['template'] not in b['base'])
+    if covered > b['cover'] * dur + 1e-6:
+        errs.append(f"动作占了 {covered:.1f}s = {covered / dur:.0%}，这个包最多 {b['cover']:.0%} → 其余时间留给干净的人脸 + 字幕")
+    for (a, _), (c, _) in zip(moves, moves[1:]):
+        if a['template'] in b['base'] or c['template'] in b['base']:
+            continue
+        gap = c['start'] - a['end']
+        if gap < -0.01:
+            errs.append(f"{a['template']} 和 {c['template']} 重叠")
+        elif gap < b['gap']:
+            msg = f"{a['template']} → {c['template']} 只隔 {gap:.1f}s（这个包要 ≥ {b['gap']:.0f}s 人脸）"
+            reason = next((why[i] for i, x in enumerate(plan['shots']) if why[i] and x.get('template') == c['template']), None)
+            (warns if reason else errs).append(msg + (f'：{reason}' if reason else ''))
+    # logic: one role, one look — the same purpose shouldn't get a different treatment each time
+    role = {}
+    for s, _ in moves:
+        if s.get('purpose') and s['template'] not in b['base']:
+            role.setdefault(s['purpose'], set()).add(s['template'])
+    for r, ts in role.items():
+        if len(ts) > 1:
+            warns.append(f"同一种作用「{r}」用了 {len(ts)} 种画面（{', '.join(sorted(ts))}）→ 没有理由就统一成一种")
+    if not any(s['start'] < HOOK_WINDOW for s, _ in moves):
+        errs.append('开头 3 秒没有钩子（开场标题）')
+    words = json.load(open(os.path.join(proj, 'work', 'words.json')))['words']
+    n_sent = max(1, sum(1 for w in words if w['w'][-1:] in '.?!。？！'))
+    if review_rows(proj) < n_sent:
+        errs.append(f'brief.md「## 审稿」只有 {max(review_rows(proj), 0)} 行，稿子有 {n_sent} 句：每句先写清它在说什么、要不要配画面、为什么')
+    return errs, warns, {'duration': dur, 'big': sum(1 for _, m in moves if m.get('weight') == '大'),
+                         'small': sum(1 for _, m in moves if m.get('weight') == '小'), 'covered': covered,
+                         'pack': plan['pack'], 'kinds': len(kinds)}
+
+
 def check(proj, shots_file, level):
     render.use_project_effects(proj)
     tmpl = render.load_templates()
@@ -44,6 +109,10 @@ def check(proj, shots_file, level):
             errs.append(f"{s['template']}: not in the library")
             continue
         info.append((s, m))
+
+    plan = json.load(open(os.path.join(proj, shots_file)))
+    if plan.get('pack'):
+        return check_pack(proj, plan, tl, info, errs, warns)
 
     # hook: something in the first 3 s (except 极简, where the opening title is the only effect allowed)
     if not any(s['start'] < HOOK_WINDOW for s, _ in info):
@@ -73,7 +142,6 @@ def check(proj, shots_file, level):
         elif gap < GAP_ANY and a['start'] >= HOOK_WINDOW:
             warns.append(f"{a['template']} → {b['template']} 只隔 {gap:.1f}s（建议 ≥ {GAP_ANY:.0f}s）")
     # a shot may break a spacing rule on purpose: "why_break": "reason" in the shots file turns that error into a note
-    plan = json.load(open(os.path.join(proj, shots_file)))
     why = {s['template']: s['why_break'] for s in plan['shots'] if s.get('why_break')}
     bigs = [(s, m) for s, m in ordered if m.get('weight') == '大']
     for (a, _), (b, _) in zip(bigs, bigs[1:]):
@@ -136,7 +204,10 @@ if __name__ == '__main__':
     if a.effects:
         render.EFFECTS = os.path.abspath(a.effects)
     errs, warns, st = check(a.proj, a.shots, a.level)
-    print(f"{st['duration']:.0f}s · 大 {st['big']} · 小 {st['small']} · 挡脸 {st['covered']:.1f}s")
+    if st.get('pack'):
+        print(f"{st['duration']:.0f}s · 风格包 {st['pack']} · {st['kinds']} 种动作 · 动作占 {st['covered']:.1f}s")
+    else:
+        print(f"{st['duration']:.0f}s · 大 {st['big']} · 小 {st['small']} · 挡脸 {st['covered']:.1f}s")
     for w in warns:
         print('  提醒', w)
     for e in errs:

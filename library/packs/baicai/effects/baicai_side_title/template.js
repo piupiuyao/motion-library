@@ -13,7 +13,7 @@ TEMPLATES.baicai_side_title = {
     this.tx = this.side === 'right' ? 300 : 780;
     ctx.base.style.transformOrigin = '0 0';
     const top = P.y || Math.round(this.fy - 40);
-    this.box = el('div', `position:absolute;${this.side}:56px;top:${top}px;width:max-content;text-align:${this.side}`);
+    this.box = el('div', `position:absolute;${this.side === 'right' ? 'right:120px' : 'left:60px'};top:${top}px;width:max-content;text-align:${this.side}`);
     this.title = el('div', `font-size:${P.size || 230}px;text-shadow:0 8px 30px rgba(0,0,0,.45)`, P.title);
     this.title.className = 'pk-display';
     this.box.appendChild(this.title);

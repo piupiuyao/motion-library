@@ -3,18 +3,53 @@
   "name": "Bai Cai Dark",
   "vibe": "Calm premium editor's cut: footage kept at natural brightness (light warm grade), thin white subtitles with green keywords, tall condensed titles, black backdrops with framed / round insets of the speaker, one neon-ish green.",
   "reference": [
-    {"creator": "剪辑师白菜 (WeChat Channels)", "url": "local: ~/Desktop/94_1793056051.mp4 (BAI CAI EDITING · 告别廉价口播, 20 s screen recording; edited video = the portrait panel)",
-     "what": "condensed white hook title beside the face + small green sub; thin white subtitle at chest with bigger green keywords; B&W shrink into black with green hand-written arched words; articles flying in on black with a round face inset; low-poly black backdrop + white chip '观点.1' + framed box with the speaker popping out; frosted panel with percent donuts; end card = heavy serif title on warm black, speaker in a thin white frame with head breaking out"}
+    {
+      "creator": "剪辑师白菜 (WeChat Channels)",
+      "url": "local: ~/Desktop/94_1793056051.mp4 (BAI CAI EDITING · 告别廉价口播, 20 s screen recording; edited video = the portrait panel)",
+      "what": "condensed white hook title beside the face + small green sub; thin white subtitle at chest with bigger green keywords; B&W shrink into black with green hand-written arched words; articles flying in on black with a round face inset; low-poly black backdrop + white chip '观点.1' + framed box with the speaker popping out; frosted panel with percent donuts; end card = heavy serif title on warm black, speaker in a thin white frame with head breaking out"
+    }
   ],
   "fonts": [
-    {"family": "PkAnton", "file": "fonts/anton-400.woff2", "weight": "400"},
-    {"family": "PkInter", "file": "fonts/inter-300.woff2", "weight": "300"},
-    {"family": "PkInter", "file": "fonts/inter-400.woff2", "weight": "400"},
-    {"family": "PkInter", "file": "fonts/inter-500.woff2", "weight": "500"},
-    {"family": "PkInter", "file": "fonts/inter-600.woff2", "weight": "600"},
-    {"family": "PkPlayfair", "file": "fonts/playfair-display-800.woff2", "weight": "800"},
-    {"family": "PkPlayfair", "file": "fonts/playfair-display-900.woff2", "weight": "900"},
-    {"family": "PkCaveatBrush", "file": "fonts/caveat-brush-400.woff2", "weight": "400"}
+    {
+      "family": "PkAnton",
+      "file": "fonts/anton-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkInter",
+      "file": "fonts/inter-300.woff2",
+      "weight": "300"
+    },
+    {
+      "family": "PkInter",
+      "file": "fonts/inter-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkInter",
+      "file": "fonts/inter-500.woff2",
+      "weight": "500"
+    },
+    {
+      "family": "PkInter",
+      "file": "fonts/inter-600.woff2",
+      "weight": "600"
+    },
+    {
+      "family": "PkPlayfair",
+      "file": "fonts/playfair-display-800.woff2",
+      "weight": "800"
+    },
+    {
+      "family": "PkPlayfair",
+      "file": "fonts/playfair-display-900.woff2",
+      "weight": "900"
+    },
+    {
+      "family": "PkCaveatBrush",
+      "file": "fonts/caveat-brush-400.woff2",
+      "weight": "400"
+    }
   ],
   "tokens": {
     "font-display": "\"PkAnton\", \"Oswald\", sans-serif",
@@ -38,10 +73,23 @@
   },
   "caption_style": "pack",
   "caption_words": 5,
-  "brand_font": "none",
   "effects": {
-    "signature": ["baicai_side_title", "baicai_mono_note", "baicai_doc_cards", "baicai_point_card", "baicai_ring_stats", "baicai_end_frame", "push_in"],
-    "allowed": ["broll_circle", "feather_circle", "spotlight", "letterbox", "text_sandwich"]
+    "signature": [
+      "baicai_side_title",
+      "baicai_mono_note",
+      "baicai_doc_cards",
+      "baicai_point_card",
+      "baicai_ring_stats",
+      "baicai_end_frame",
+      "push_in"
+    ],
+    "allowed": [
+      "broll_circle",
+      "feather_circle",
+      "spotlight",
+      "letterbox",
+      "text_sandwich"
+    ]
   },
   "density": "A treatment every 3-5 s like the reference (it is a showreel of moves), but a real 60 s video should hold 4-6 s of plain graded face + caption between moves. Each move 2-4 s. Never two black-backdrop moves back to back.",
   "not": [
@@ -49,5 +97,51 @@
     "no bright or pastel backgrounds, no gradients in colour, no stickers/emoji",
     "only one accent (green); the ring chart is the single place extra hues (violet, red) may appear",
     "no bouncy pops or shakes; moves are smooth ease-in-out shrinks, slides and fly-ins"
-  ]
+  ],
+  "brand": {
+    "tokens": [
+      "accent",
+      "on-accent",
+      "accent-text"
+    ],
+    "accent_role": "text",
+    "text_on": "#0b0b0c",
+    "font": "none",
+    "note": "brand colour replaces the green keyword/notes; titles stay Anton, end serif stays"
+  },
+  "fit": {
+    "good_for": "观点、个人 IP、想显得高级的产品介绍、知识口播",
+    "avoid": "活泼搞笑、儿童类、需要大量图表的稿子",
+    "content": {
+      "data": 1,
+      "list": 1,
+      "emotion": 1,
+      "opinion": 2,
+      "promo": 1,
+      "tutorial": 1,
+      "news": 1,
+      "story": 2
+    },
+    "tone": [
+      "premium",
+      "calm"
+    ],
+    "footage": {
+      "needs_cutout": true,
+      "needs_headroom": false,
+      "bright_ok": true,
+      "dark_ok": true
+    },
+    "brand_look": [
+      "dark",
+      "light"
+    ]
+  },
+  "budget": {
+    "moves": 4,
+    "backgrounds": 1,
+    "peaks": 1,
+    "cover": 0.4,
+    "gap": 4
+  }
 }

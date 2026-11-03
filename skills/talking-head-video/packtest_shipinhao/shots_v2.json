@@ -1,0 +1,247 @@
+{
+ "pack": "shipinhao",
+ "shots": [
+  {
+   "words": "0-7",
+   "template": "shipinhao_huazi",
+   "purpose": "开场钩子",
+   "why": "钩子：痛点问题砸在头顶，彩色原片（不黑白）",
+   "params": {
+    "lines": [
+     {
+      "text": "Ever had",
+      "color": "white",
+      "y": 140,
+      "rot": -4,
+      "at": 0,
+      "w": 760
+     },
+     {
+      "text": "this happen?",
+      "color": "yellow",
+      "y": 270,
+      "rot": -4,
+      "at": 2,
+      "w": 1000
+     }
+    ]
+   }
+  },
+  {
+   "words": "44-52",
+   "template": "shipinhao_huazi",
+   "purpose": "金句观点",
+   "why": "痛点段的情绪句，和钩子同一种花字（同作用同画面）",
+   "params": {
+    "lines": [
+     {
+      "text": "Don't burn",
+      "color": "white",
+      "y": 150,
+      "rot": -3,
+      "at": 46,
+      "w": 820
+     },
+     {
+      "text": "the bridge",
+      "color": "yellow",
+      "y": 280,
+      "rot": -3,
+      "at": 50,
+      "w": 960
+     }
+    ]
+   }
+  },
+  {
+   "words": "66-72",
+   "template": "shipinhao_huazi",
+   "purpose": "金句观点",
+   "why": "痛点段收尾的金句，全片唯一大高光：超大 HALF 出画",
+   "params": {
+    "peak": true,
+    "dim": 0.12,
+    "lines": [
+     {
+      "text": "One message",
+      "color": "white",
+      "y": 170,
+      "rot": -3,
+      "at": 66,
+      "w": 900
+     },
+     {
+      "text": "eats up",
+      "color": "white",
+      "align": "left",
+      "x": 640,
+      "y": 400,
+      "at": 68,
+      "size": 104
+     },
+     {
+      "text": "half",
+      "color": "yellow",
+      "font": "poster",
+      "align": "right",
+      "x": 1120,
+      "y": 500,
+      "size": 360,
+      "at": 70
+     },
+     {
+      "text": "your afternoon",
+      "color": "white",
+      "y": 1000,
+      "rot": -3,
+      "at": 71,
+      "w": 1000
+     }
+    ]
+   }
+  },
+  {
+   "words": "88-99",
+   "template": "shipinhao_sticker",
+   "purpose": "引用证据",
+   "why": "进入产品段：人变贴纸、换波点背景（段落变化才换），三个官方 logo 念到才出",
+   "params": {
+    "background": "dots",
+    "lines": [
+     {
+      "text": "The tools",
+      "color": "white",
+      "y": 220,
+      "rot": -3,
+      "at": 88,
+      "w": 700
+     },
+     {
+      "text": "you already use",
+      "color": "yellow",
+      "y": 360,
+      "rot": -3,
+      "at": 90,
+      "w": 900
+     }
+    ],
+    "icons": [
+     {
+      "q": "Gmail",
+      "at": 93
+     },
+     {
+      "q": "Slack",
+      "at": 94
+     },
+     {
+      "q": "WhatsApp",
+      "at": 95
+     }
+    ]
+   }
+  },
+  {
+   "words": "120-133",
+   "template": "shipinhao_sticker",
+   "purpose": "清单步骤",
+   "why": "仍在产品段，沿用同一个波点背景；三个选项念到哪个出哪个",
+   "params": {
+    "background": "dots",
+    "lines": [
+     {
+      "text": "Say no politely",
+      "color": "yellow",
+      "y": 220,
+      "rot": -3,
+      "at": 121,
+      "w": 1000
+     },
+     {
+      "text": "Move a deal",
+      "color": "white",
+      "align": "right",
+      "x": 1000,
+      "y": 500,
+      "rot": 4,
+      "at": 124,
+      "w": 470
+     },
+     {
+      "text": "forward",
+      "color": "white",
+      "align": "right",
+      "x": 1000,
+      "y": 615,
+      "rot": 4,
+      "at": 126,
+      "w": 430
+     },
+     {
+      "text": "Follow up",
+      "color": "yellow",
+      "y": 1070,
+      "rot": -4,
+      "at": 129,
+      "w": 820
+     },
+     {
+      "text": "without being pushy",
+      "font": "hand",
+      "color": "white",
+      "y": 1235,
+      "rot": -4,
+      "at": 131,
+      "w": 860,
+      "upper": false
+     }
+    ]
+   }
+  },
+  {
+   "words": "164-171",
+   "template": "shipinhao_sticker",
+   "purpose": "结尾号召",
+   "why": "结尾换纸张背景（结尾段），品牌名 + 口号",
+   "params": {
+    "background": "paper",
+    "lines": [
+     {
+      "text": "That's ToneBird",
+      "color": "yellow",
+      "y": 190,
+      "rot": -3,
+      "at": 164,
+      "w": 860
+     },
+     {
+      "text": "Every reply",
+      "color": "white",
+      "y": 1010,
+      "rot": -3,
+      "at": 166,
+      "w": 860
+     },
+     {
+      "text": "easier",
+      "color": "yellow",
+      "y": 1140,
+      "rot": -3,
+      "at": 168,
+      "w": 640
+     },
+     {
+      "text": "and more you",
+      "font": "hand",
+      "color": "white",
+      "y": 1320,
+      "rot": -5,
+      "at": 170,
+      "w": 700,
+      "upper": false
+     }
+    ]
+   }
+  }
+ ]
+}

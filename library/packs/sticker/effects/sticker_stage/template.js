@@ -35,7 +35,7 @@ TEMPLATES.sticker_stage = {
         'upper-left': [head.x - side, head.top + 40], left: [head.x - side, head.top + 230], 'lower-left': [head.x - side, head.top + 430],
         chest: [head.x + 60, head.top + 700],
       }[it.pos] || [head.x + side, head.top + 230];
-      const x = it.x != null ? it.x : STK.clampX(it.s, slot[0]);
+      const x = STK.clampX(it.s, it.x != null ? it.x : slot[0]);   // explicit x too: never into the platform buttons
       let y = it.y != null ? it.y : slot[1];
       // a side sticker too wide to sit beside the head would cover the face: lift it above the head instead
       const hw = 175 * s, faceBot = head.top + 470 * s, vis = it.s.h / 2 - it.s.S * .35;
@@ -43,6 +43,7 @@ TEMPLATES.sticker_stage = {
           && y + vis > head.top - 30 && y - vis < faceBot) y = head.top - 40 - vis;
       if (!this.used || this.used.owner !== this.items) { this.used = []; this.used.owner = this.items; }
       while (it.y == null && this.used.some(u => u.t0 <= it.t0 && (u.t1 == null || u.t1 > it.t0) && Math.abs(u.y - y) < (u.h + vis * 2) * .5)) y -= it.s.S * 1.5;
+      y = STK.clampY(it.s, y);
       this.used.push({ y, h: vis * 2, t0: it.t0, t1: it.t1 });
       STK.place(it.s, x, y);
     }

@@ -98,3 +98,4 @@ Endings: (a) `baicai_end_frame` with the brand; (b) `baicai_point_card` with the
 - Cutout with the source frame's hard edge showing (point card feathers the left edge; keep `personX` ≥ 790).
 - End frame not filled edge to edge (the template forces scale ≥ frame width).
 - Invented numbers in rings or invented text on cards — everything must be her words or the things she names.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. Pack effects keep to it: side title right:120 / left:60, doc cards 760 wide, point-card box x 56–960 and bottom ≤ 1630, end-frame title fit to 900 px, mono-note arc narrowed/shrunk to x 60–960.

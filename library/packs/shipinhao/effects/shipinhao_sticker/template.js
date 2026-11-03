@@ -13,30 +13,35 @@ window.SHZ = window.SHZ || {
     return w ? w.s : dflt;
   },
   // lines: [{text, color, size, x, y, rot, font, align, at, out, behind, bg}]
-  build(ctx, lines, layerFor) {
+  // opt.light: the background is light (paper / gingham / dots / pink) → light text gets a dark outline + hard shadow
+  build(ctx, lines, layerFor, opt = {}) {
     const cv = document.createElement('canvas').getContext('2d');
     const out = [];
     lines.forEach((ln, k) => {
       if (!ln || !ln.text) return;
       const font = ln.font || 'display';
       const txt = ln.upper === false ? String(ln.text) : String(ln.text).toUpperCase();
-      const maxW = ln.w || 960;
-      let size = ln.size;
-      if (!size) {  // fit to the width box, capped so short words don't become absurd
-        size = font === 'poster' ? 420 : 210;
-        for (; size > 50; size -= 4) {
-          cv.font = `400 ${size}px ${window.SHZ.FACES[font]}`;
-          if (cv.measureText(txt).width <= maxW) break;
-        }
-      }
+      // platform safe zone: text inside x 60…960 (right 120 px = like/comment/share buttons) and y 150…1640
       const align = ln.align || 'center';
-      const x = ln.x != null ? ln.x : 540, y = ln.y != null ? ln.y : 260 + k * size * 1.05;
+      const x = align === 'left' ? clamp(ln.x != null ? ln.x : 60, 60, 760) : align === 'right' ? clamp(ln.x != null ? ln.x : 960, 260, 960)
+        : clamp(ln.x != null ? ln.x : 540, 260, 760);
+      const room = align === 'left' ? 960 - x : align === 'right' ? x - 60 : 2 * Math.min(x - 60, 960 - x);
+      const maxW = Math.min(ln.w || 960, room);
+      // fit to the width box (a given size only shrinks if it would leave the safe zone), capped so short words don't become absurd
+      let size = ln.size || (font === 'poster' ? 420 : 210);
+      for (; size > 50; size -= 4) {
+        cv.font = `400 ${size}px ${window.SHZ.FACES[font]}`;
+        if (cv.measureText(txt).width <= maxW) break;
+      }
+      const y = clamp(ln.y != null ? ln.y : 260 + k * size * 1.05, 150, 1640 - size);
       const pos = align === 'left' ? `left:${x}px;` : align === 'right' ? `right:${1080 - x}px;` : `left:${x}px;`;
       const color = window.SHZ.COLORS[ln.color] || ln.color || '#fff';
       const dark = color === 'var(--ink)' || /^#(0|1|2|3)/.test(color);
       // hard offset shadow (the 视频号 look) + a soft one for bright footage; dark text gets a light hard shadow
+      const ol = [[1, 0], [.7, .7], [0, 1], [-.7, .7], [-1, 0], [-.7, -.7], [0, -1], [.7, -.7]].map(([a, b]) => `${(a * .045).toFixed(3)}em ${(b * .045).toFixed(3)}em 0 #141414`).join(', ');
       const sh = ln.shadow === false ? 'none' : dark
         ? '.035em .045em 0 rgba(255,255,255,.95)'
+        : opt.light && !ln.bg ? `${ol}, .07em .09em 0 #141414`   // light text on a light pattern: dark outline + deeper hard shadow
         : '.035em .05em 0 #141414, .02em .03em .18em rgba(0,0,0,.45)';
       const e = el('div', `position:absolute;${pos}top:${y}px;font-family:${window.SHZ.FONTS[font]};font-weight:400;font-size:${size}px;
         line-height:1;color:${color};white-space:nowrap;letter-spacing:${font === 'poster' ? '-.01em' : '.01em'};text-shadow:${sh};
@@ -102,7 +107,8 @@ TEMPLATES.shipinhao_sticker = {
     ctx.personCv.style.filter = outline(P.width || 18, ring);
     this.scale = P.scale || .9;
     this.dy = P.dy ?? 60;   // push the person down so the title has room above the head
-    this.items = SHZ.build(ctx, P.lines || [], ln => ln.behind ? ctx.L.back : ctx.L.front);
+    const light = ['paper', 'gingham', 'dots', 'pink'].includes(P.background || 'dots') || P.light === true;
+    this.items = SHZ.build(ctx, P.lines || [], ln => ln.behind ? ctx.L.back : ctx.L.front, { light });
     // app icons that pop in when their name is said
     this.icons = (P.icons || []).map((q, k, all) => {
       const name = typeof q === 'string' ? q : q.q;

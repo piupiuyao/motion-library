@@ -65,6 +65,7 @@ TEMPLATES.milestone_curve = {
     const k = ease.inOut(enter(t, 0, .45)) * (1 - ease.inOut(enter(t, ctx.d - .35, .35)));
     ctx.base.style.transform = `translateY(${this.shift * k}px) scale(${ctx.seg.zoom || 1})`;
     this.panel.style.transform = `translateY(${(k - 1) * this.ph}px)`;
+    for (const n of [ctx.L.bg, ctx.L.bg.parentNode]) { n.style.setProperty('--panel-k', k); n.style.setProperty('--panel-h', this.ph); }  // panel in/out: a pack can move its caption with the seam
     this.stages.forEach((s, j) => {
       const next = this.stages[j + 1];
       const gone = next ? enter(t, next.t - .1, .2) : 0;        // the next stage clears this curve

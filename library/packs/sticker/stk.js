@@ -101,8 +101,10 @@ window.STK = (() => {
   function make(spec) {
     const kind = spec.kind || 'plain';
     let S = spec.size || { hero: 128, hand: 62, badge: 44, plain: 70, neg: 66 }[kind] || 70;
-    // fit the frame: shrink until the sheet is at most maxw wide (default 1000 px)
-    const maxw = spec.maxw || 1000;
+    // a lone short word ("courage") at the default size reads as a label, not a sticker: set it bigger
+    if (!spec.size && (kind === 'plain' || kind === 'neg') && !spec.emoji && String(spec.text || '').length <= 12) S = Math.round(S * 1.35);
+    // fit the platform safe zone: shrink until the sheet is at most maxw wide (default 900 px = x 60…960)
+    const maxw = spec.maxw || 900;
     for (let k = 0; k < 8; k++) {
       const P0 = parts(spec, S), w0 = P0.reduce((a, p) => a + p.w, 0) + S * .26 * (P0.length - 1) + S * (kind === 'hero' ? .52 : .42);
       if (w0 <= maxw) break;
@@ -235,7 +237,11 @@ window.STK = (() => {
   }
 
   function place(s, x, y) { s.cx = x; s.cy = y; s.el.style.left = (x - s.w / 2) + 'px'; s.el.style.top = (y - s.h / 2) + 'px'; }
-  function clampX(s, x, m = 34) { return Math.min(W - m - s.w / 2 + s.S * .45, Math.max(m + s.w / 2 - s.S * .45, x)); }
+  // platform safe zone (TikTok / Reels / Shorts): visible sheet inside x 60…960 (right 120 px = the like/comment buttons)
+  // and y 150…1640 (top = status bar / search, bottom 280 px = caption + description; only the running caption goes there)
+  const SAFE = { l: 60, r: W - 120, t: 150, b: H - 280 };
+  function clampX(s, x) { return Math.min(SAFE.r - s.w / 2 + s.S * .45, Math.max(SAFE.l + s.w / 2 - s.S * .45, x)); }
+  function clampY(s, y) { const v = s.h / 2 - s.S * .35; return Math.min(SAFE.b - v, Math.max(SAFE.t + v, y)); }
 
   // entrance (t0 = first visible frame) + continuous gentle sway; out = 0..1 visibility from the caller
   // amp: 1 normal sticker, .55 list row, .2 badge
@@ -289,10 +295,10 @@ window.STK = (() => {
     let num = spec.num, text = spec.text;
     if (typeof spec === 'string') { const m = spec.match(/^\s*(\d+)\s+(.*)$/); num = m ? m[1] : null; text = m ? m[2] : spec; }
     const b = make({ id: 'badge:' + text, kind: 'badge', num, text, size: 44, rot: 0 });
-    place(b, 46 + b.w / 2 - b.S * .45, 128);
+    place(b, SAFE.l + b.w / 2 - b.S * .45, 190);   // below the top UI band
     return b;
   }
 
   const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
-  return { make, icon, place, clampX, animate, stage, personAt, badge, bg, at, hash, C, W, H, resetEdge() { edgeMemo = null; } };
+  return { make, icon, place, clampX, clampY, SAFE, animate, stage, personAt, badge, bg, at, hash, C, W, H, resetEdge() { edgeMemo = null; } };
 })();

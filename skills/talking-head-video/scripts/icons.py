@@ -107,3 +107,48 @@ def find(q):
             if k:
                 return dict(db[k], id=k)
     return by_tag()
+
+
+# Brands whose real, official mark IS one colour (black or white by their own guidelines). Only these may be shown
+# as the one-colour glyph (kind 'brand', recoloured to fit the card); every other brand gets its full-colour logo or nothing.
+MONO = {'x', 'threads', 'apple', 'github', 'vercel', 'medium', 'uber'}
+
+
+def _key(q):
+    return re.sub(r'[^a-z0-9]', '', (q or '').lower())
+
+
+def official(q, project_logo=None, site_icon=None):
+    """The /icon lookup for templates. A brand gets its official full-colour logo or None — never a one-colour
+    simplified glyph (except MONO brands, whose real mark is one colour). Generic words ('calendar', 'gym') work as find().
+    Order: OFFICIAL map → PROJECT/brand/logos.json (project_logo(name)) → brand-site icon (site_icon(name)) → library logo.
+    project_logo / site_icon: callables name → icon record, or False for "known brand, no official logo" (→ None)."""
+    db, by, _ = _db()
+    if not q or not re.search(r'[A-Za-z0-9]', q):
+        return None
+    kind, _, name = q.partition(':') if ':' in q else ('', '', q)
+    if kind in ('ui', 'logo'):
+        return find(q)
+    forms = _forms(name)
+    if kind == 'brand' and any(_key(f) in MONO for f in forms):  # explicit one-colour mark of a one-colour brand (X…)
+        return find(q)
+    for f in forms:
+        if f in OFFICIAL and OFFICIAL[f] in db:
+            return dict(db[OFFICIAL[f]], id=OFFICIAL[f])
+    for look in (project_logo, site_icon):
+        hit = look(name) if look else None
+        if hit is False:
+            return None
+        if hit:
+            return hit
+    def logo_of():
+        for f in forms:
+            k = by.get(('logo', f)) or by.get(('logo', f.replace(' ', '')))
+            if k:
+                return dict(db[k], id=k)
+    if kind == 'brand':
+        return logo_of()
+    hit = find(q)
+    if hit and hit['kind'] == 'brand':  # a known brand: full-colour logo, the real one-colour mark, or nothing
+        return logo_of() or (hit if any(_key(f) in MONO for f in forms) else None)
+    return hit

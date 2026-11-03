@@ -61,6 +61,7 @@ TEMPLATES.equation_build = {
     const k = ease.inOut(enter(t, 0, .45)) * (1 - ease.inOut(enter(t, ctx.d - .35, .35)));
     ctx.base.style.transform = `translateY(${this.shift * k}px) scale(${ctx.seg.zoom || 1})`;
     this.panel.style.transform = `translateY(${(k - 1) * this.ph}px)`;
+    for (const n of [ctx.L.bg, ctx.L.bg.parentNode]) { n.style.setProperty('--panel-k', k); n.style.setProperty('--panel-h', this.ph); }  // panel in/out: a pack can move its caption with the seam
     const b = ease.out(enter(t, .25, .35));
     this.box.style.opacity = b;
     this.box.style.transform = `translateY(${lerp(16, 0, b)}px)`;

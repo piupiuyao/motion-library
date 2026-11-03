@@ -13,7 +13,9 @@ TEMPLATES.baicai_mono_note = {
       const fy = 960 + (ctx.focus[1] * 1920 - 960) * this.s;
       const R = P.radius || 700, apex = fy - (P.lift || 300);
       const cy = apex + R;
-      const a0 = -Math.PI / 2 - .8, a1 = -Math.PI / 2 + .8;
+      // the arc stays inside the safe zone (x 60…960): narrow it when the face is off-centre
+      const half = Math.asin(Math.min(Math.sin(.8), Math.max(.2, Math.min(fx - 60, 960 - fx)) / R));
+      const a0 = -Math.PI / 2 - half, a1 = -Math.PI / 2 + half;
       const p = (a) => `${(fx + R * Math.cos(a)).toFixed(1)} ${(cy + R * Math.sin(a)).toFixed(1)}`;
       const d = `M ${p(a0)} A ${R} ${R} 0 0 1 ${p(a1)}`;
       this.svg = el('div', 'position:absolute;inset:0');
@@ -25,6 +27,9 @@ TEMPLATES.baicai_mono_note = {
       ctx.L.front.appendChild(this.svg);
       this.tp = this.svg.querySelector('textPath');
       this.txt = this.svg.querySelector('text');
+      // text longer than the arc would be cut off at the path end: shrink it to fit (measured)
+      const fit = R * 2 * half * .94, len = this.txt.getComputedTextLength();
+      if (len > fit) this.txt.setAttribute('font-size', Math.floor((P.size || 92) * fit / len));
       this.tIn = at(P.at); if (this.tIn == null) this.tIn = .25;
     }
   },

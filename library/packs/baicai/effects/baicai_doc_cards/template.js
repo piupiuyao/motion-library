@@ -12,7 +12,7 @@ TEMPLATES.baicai_doc_cards = {
     const rots = [-7, 6, -4, 8], lefts = [150, 50, 160, 70];
     const top0 = P.top || 560, gap = P.gap || 300;
     this.cards = cards.map((c, k) => {
-      const card = el('div', `position:absolute;left:${lefts[k % 4]}px;top:${top0 + k * gap}px;width:${P.width || 800}px;box-sizing:border-box;
+      const card = el('div', `position:absolute;left:${lefts[k % 4]}px;top:${top0 + k * gap}px;width:${P.width || 760}px;box-sizing:border-box;
         padding:30px 36px 34px;background:#fff;border-radius:8px;box-shadow:0 30px 70px rgba(0,0,0,.6);color:#111`);
       const head = el('div', 'display:flex;align-items:center;gap:18px;margin-bottom:18px');
       const tile = c.app ? iconTile(c.app, 64, { app: true }) : null;

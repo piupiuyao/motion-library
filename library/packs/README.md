@@ -61,3 +61,17 @@ A brand (theme.json) still overrides colour tokens; `brand_font: "display"` lets
   `calc(var(--age))`, e.g. a slam: `transform: scale(clamp(1, calc(1.3 - var(--age) * 2.3), 1.3))`. Keywords: `.key[.on]`.
 - `"caption_words": N` in pack.json = words per caption line (default 4).
 - `"hide_captions": true` in an effect's meta.json (or on a shot) hides the running captions during that shot.
+
+## Brand (one link: `prep.py PROJECT --brand https://site`)
+theme.py saves the site's colours, font, logo and app icons (PROJECT/theme.json + brand/). With a pack, the brand only
+takes what `pack.json "brand"` allows — the pack's grounds, inks and type system never change:
+```json
+"brand": {"tokens": ["accent", "on-accent", "accent-text"], "accent_role": "fill | text", "text_on": "#hex", "font": "display | none"}
+```
+- `fill`: the brand colour is used as-is for blocks/bars; `--accent-text` is the same hue shifted until it reads
+  (≥4.5:1) on `text_on`, and `--on-accent` is black or white, whichever reads on the block.
+- `text`: the pack uses the accent as text, so `--accent` itself becomes the readable shifted colour.
+- `"map": {"ink": "accent-text"}` makes other pack tokens follow the brand (e.g. sticker ink).
+- `--accent-raw` always holds the exact brand colour. `font: "display"` lets the brand font take titles only.
+- Logo: only on the end card / opening (`"logo": true` where the effect supports it).
+- A footage-picked theme (no brand link) is ignored with a pack. Pack CSS must use `--accent-text` for any text in the accent colour.

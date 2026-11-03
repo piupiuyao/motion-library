@@ -11,7 +11,8 @@ TEMPLATES.caption_news_grid = {
   },
   setup(ctx) {
     const P = ctx.params, items = (P.items || []).slice(0, 3), n = items.length || 1;
-    const gap = 12, x0 = 72, wAll = 1080 - 2 * x0, pw = (wAll - gap * (n - 1)) / n, ph = P.h || 300, y = P.y || 1010;
+    const gap = 12, x0 = 72, wAll = 960 - x0,   // right edge 960: platform buttons own the right 120 px
+      pw = (wAll - gap * (n - 1)) / n, ph = P.h || 300, y = P.y || 1010;
     this.root = el('div', `position:absolute;left:${x0}px;top:${y}px;width:${wAll}px;height:${ph + 70}px`);
     ctx.L.front.appendChild(this.root);
     if (P.title) {

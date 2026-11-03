@@ -7,14 +7,14 @@ TEMPLATES.baicai_end_frame = {
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { if (a == null) return null; const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
     ctx.L.bg.style.background = 'radial-gradient(ellipse at 50% 30%, #3a332e, #221e1b 60%, #161412)';
-    this.title = el('div', `position:absolute;left:60px;right:60px;top:${P.y || 230}px;text-align:center;font-size:${P.size || 170}px;
+    this.title = el('div', `position:absolute;left:60px;right:120px;top:${P.y || 230}px;text-align:center;font-size:${P.size || 170}px;
       text-shadow:0 10px 30px rgba(0,0,0,.55)`, P.title);
     this.title.className = 'pk-serif pk-display';
     ctx.L.front.appendChild(this.title);
     const tw = this.title.scrollWidth;
-    if (tw > 960) this.title.style.fontSize = Math.floor((P.size || 170) * 960 / tw) + 'px';
+    if (tw > 900) this.title.style.fontSize = Math.floor((P.size || 170) * 900 / tw) + 'px';   // safe zone x 60…960
     if (P.sub) {
-      this.sub = el('div', `position:absolute;right:110px;top:${(P.y || 230) + parseFloat(this.title.style.fontSize) * 1.15 + 40}px;font-size:46px;letter-spacing:.1em;
+      this.sub = el('div', `position:absolute;right:130px;top:${(P.y || 230) + parseFloat(this.title.style.fontSize) * 1.15 + 40}px;font-size:46px;letter-spacing:.1em;
         text-shadow:0 2px 10px rgba(0,0,0,.6)`, P.sub);
       this.sub.className = 'pk-green';
       ctx.L.front.appendChild(this.sub);

@@ -33,7 +33,7 @@ if (!window.voxSplit) {
       const seam = el('div', `position:absolute;left:0;top:${this.SEAM - 6}px;width:1080px;height:6px;background:${tone};transform-origin:0 50%`);
       ctx.L.back.appendChild(panel); ctx.L.back.appendChild(seam);
       // headline block: kicker (Archivo caps), light serif line, black serif key phrase with a highlighter swipe
-      const head = el('div', `position:absolute;left:96px;right:96px;top:${P.top || 190}px`);
+      const head = el('div', `position:absolute;left:96px;right:120px;top:${P.top || 190}px`);
       let kick = null, title = null, key = null, sweep = null, span = null;
       if (P.kicker) { kick = el('div', 'font:700 30px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:30px', P.kicker); head.appendChild(kick); }
       const size = P.size || 104;
@@ -86,7 +86,7 @@ TEMPLATES.vox_split_title = {
     this.S = voxSplit.build(ctx, P);
     this.sweepAt = Math.max(1.0, voxSplit.at(ctx, P.key_at, 1.0));
     this.items = [];
-    const area = el('div', `position:absolute;left:96px;right:96px;top:${P.exhibit_top || 560}px;bottom:70px;display:flex;align-items:center;justify-content:center;gap:56px`);
+    const area = el('div', `position:absolute;left:96px;right:120px;top:${P.exhibit_top || 560}px;bottom:70px;display:flex;align-items:center;justify-content:center;gap:56px`);
     this.S.content.appendChild(area);
     if (P.apps) {
       // app tiles pasted on the sheet, each lands when its name is said
@@ -117,7 +117,7 @@ TEMPLATES.vox_split_title = {
     }
     if (P.note) {
       // the editor's pen: Caveat note + hand-drawn arrow, in the accent colour
-      const n = el('div', `position:absolute;right:110px;top:${P.note_y || 470}px;display:flex;align-items:flex-start;gap:10px;color:${this.S.tone};transform:rotate(-4deg)`);
+      const n = el('div', `position:absolute;right:130px;top:${P.note_y || 470}px;display:flex;align-items:flex-start;gap:10px;color:${this.S.tone};transform:rotate(-4deg)`);
       n.innerHTML = `<svg width="110" height="80" viewBox="0 0 110 80" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M100 10 C 70 8, 30 20, 14 62"/><path d="M8 40 L14 64 L36 52"/></svg>`;
       const t = el('div', 'font-size:64px;line-height:1', P.note); t.className = 'pk-hand';
       n.appendChild(t); this.S.content.appendChild(n);

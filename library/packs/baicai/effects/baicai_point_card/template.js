@@ -33,7 +33,8 @@ TEMPLATES.baicai_point_card = {
     }
     ctx.L.front.appendChild(this.head);
     // framed box (behind the person so the head overlaps its top edge)
-    const B = this.B = { l: 56, r: 1024, t: P.boxTop || 1330, b: (P.boxTop || 1330) + 420 };
+    // safe zone: box inside x 56…960 and above the bottom 280 px (platform caption/description band)
+    const B = this.B = { l: 56, r: 960, t: P.boxTop || 1210, b: (P.boxTop || 1210) + 420 };
     this.box = el('div', `position:absolute;left:${B.l}px;top:${B.t}px;width:${B.r - B.l}px;height:${B.b - B.t}px;box-sizing:border-box;
       border:4px solid rgba(255,255,255,.88);border-radius:14px;background:rgba(38,38,40,.62);box-shadow:0 30px 80px rgba(0,0,0,.6)`);
     // title + sub in one vertically centred column, so a title that wraps to 2 lines pushes the sub down instead of overlapping it
@@ -51,7 +52,6 @@ TEMPLATES.baicai_point_card = {
     ctx.person.style.transformOrigin = '0 0';
     // soften the footage's own left edge where her arm is cut by the source frame
     ctx.person.style.webkitMaskImage = ctx.person.style.maskImage = 'linear-gradient(90deg, transparent 0, #000 220px)';
-    ctx.base.style.transformOrigin = '0 0';
     this.tTitle = at(P.at); if (this.tTitle == null) this.tTitle = .45;
   },
   frame(ctx) {
@@ -61,8 +61,9 @@ TEMPLATES.baicai_point_card = {
     const s = lerp(ctx.seg.zoom || 1, this.s, p);
     const tx = lerp(0, this.dst[0] - this.s * this.fx, p), ty = lerp(0, this.dst[1] - this.s * this.fy, p);
     const tr = `translate(${tx}px, ${ty}px) scale(${s})`;
-    ctx.base.style.transform = tr;
-    ctx.base.style.opacity = 1 - clamp(p * 1.6);
+    // the full frame stays full-size and just dissolves under the shrinking cutout: a shrinking frame shows its square edge
+    ctx.base.style.transform = `scale(${ctx.seg.zoom || 1})`;
+    ctx.base.style.opacity = 1 - clamp(p * 3);
     ctx.person.style.transform = tr;
     // body cut off at the box bottom (local coords of the scaled layer)
     const cut = Math.max(0, 1920 - (this.B.b - 4 - ty) / s);

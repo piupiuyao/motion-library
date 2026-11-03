@@ -3,16 +3,48 @@
   "name": "视频号花字 / Channels Sticker-Pop",
   "vibe": "Loud, hand-edited Chinese creator short: chunky white+yellow 花字 slammed around the head with hard drop shadows, sticker-cut presenter with a fat white outline on candy backgrounds; quiet clean subtitles in between.",
   "reference": [
-    {"creator": "我李哥豆儿 (视频号)", "url": "file://~/Desktop/95_1793056112.mp4", "what": "the whole type system: mixed white/yellow heavy display words, hard offset shadow, words placed around the head, giant word cropped at frame edge, cutout with white/light-blue outline, polka-dot / gingham / crumpled paper / magenta backgrounds, dashed circles"},
-    {"creator": "剪辑师白菜 (视频号)", "url": "file://~/Desktop/94_1793056051.mp4", "what": "the quiet layer: small clean white subtitle with soft shadow at chest height, no box, no outline; mono shrink, doc fly, end title"}
+    {
+      "creator": "我李哥豆儿 (视频号)",
+      "url": "file://~/Desktop/95_1793056112.mp4",
+      "what": "the whole type system: mixed white/yellow heavy display words, hard offset shadow, words placed around the head, giant word cropped at frame edge, cutout with white/light-blue outline, polka-dot / gingham / crumpled paper / magenta backgrounds, dashed circles"
+    },
+    {
+      "creator": "剪辑师白菜 (视频号)",
+      "url": "file://~/Desktop/94_1793056051.mp4",
+      "what": "the quiet layer: small clean white subtitle with soft shadow at chest height, no box, no outline; mono shrink, doc fly, end title"
+    }
   ],
   "fonts": [
-    {"family": "PkDisplay", "file": "fonts/lilita-one-400.woff2", "weight": "400"},
-    {"family": "PkPoster", "file": "fonts/anton-400.woff2", "weight": "400"},
-    {"family": "PkHand", "file": "fonts/knewave-400.woff2", "weight": "400"},
-    {"family": "PkBody", "file": "fonts/figtree-500.woff2", "weight": "500"},
-    {"family": "PkBody", "file": "fonts/figtree-600.woff2", "weight": "600"},
-    {"family": "PkBody", "file": "fonts/figtree-800.woff2", "weight": "800"}
+    {
+      "family": "PkDisplay",
+      "file": "fonts/lilita-one-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkPoster",
+      "file": "fonts/anton-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkHand",
+      "file": "fonts/knewave-400.woff2",
+      "weight": "400"
+    },
+    {
+      "family": "PkBody",
+      "file": "fonts/figtree-500.woff2",
+      "weight": "500"
+    },
+    {
+      "family": "PkBody",
+      "file": "fonts/figtree-600.woff2",
+      "weight": "600"
+    },
+    {
+      "family": "PkBody",
+      "file": "fonts/figtree-800.woff2",
+      "weight": "800"
+    }
   ],
   "tokens": {
     "font-display": "\"PkDisplay\", \"PkBody\", sans-serif",
@@ -35,12 +67,34 @@
     "cap-on": "#ffffff"
   },
   "caption_style": "pack",
-  "brand_font": "none",
   "effects": {
-    "signature": ["shipinhao_huazi", "shipinhao_sticker", "dashed_focus", "scanline_word"],
-    "allowed": ["text_sandwich", "split_word_head", "keyword_pop", "hook_bigword", "mono_shrink", "frame_layer", "doc_fly",
-                "broll_circle", "paper_props", "push_in", "end_title", "tick_cross_tags", "bg_switch", "sticker_outline",
-                "cutout_card", "data_chart", "punch_zoom", "icon_cards", "phone_notification"]
+    "signature": [
+      "shipinhao_huazi",
+      "shipinhao_sticker",
+      "dashed_focus",
+      "scanline_word"
+    ],
+    "allowed": [
+      "text_sandwich",
+      "split_word_head",
+      "keyword_pop",
+      "hook_bigword",
+      "mono_shrink",
+      "frame_layer",
+      "doc_fly",
+      "broll_circle",
+      "paper_props",
+      "push_in",
+      "end_title",
+      "tick_cross_tags",
+      "bg_switch",
+      "sticker_outline",
+      "cutout_card",
+      "data_chart",
+      "punch_zoom",
+      "icon_cards",
+      "phone_notification"
+    ]
   },
   "density": "Something on screen in ~60% of the time, but in bursts: a 花字 or sticker beat every 3–6 s on the key phrase, 1.5–4 s each; between them 2–5 s of plain face with only the small subtitle. Never two 花字 shots back to back without a sticker / face beat between.",
   "not": [
@@ -48,5 +102,51 @@
     "stroked/boxed karaoke captions — subtitles are small, white, soft shadow only",
     "clean corporate minimal (nischa) — this is loud, many colours in the backgrounds, but text uses only white + yellow (+ one orange/blue accent line)",
     "default system fonts"
-  ]
+  ],
+  "brand": {
+    "tokens": [
+      "accent",
+      "on-accent",
+      "accent-text"
+    ],
+    "accent_role": "text",
+    "text_on": "#141414",
+    "font": "none",
+    "note": "brand colour replaces the yellow 花字 lines (they sit on footage with a dark shadow); fonts are the look"
+  },
+  "fit": {
+    "good_for": "种草、强情绪开头、轻松话题、短平快的口播",
+    "avoid": "严肃 B2B、数据很多的稿子、要显得稳重高级的品牌",
+    "content": {
+      "data": 0,
+      "list": 1,
+      "emotion": 2,
+      "opinion": 1,
+      "promo": 2,
+      "tutorial": 1,
+      "news": 0,
+      "story": 1
+    },
+    "tone": [
+      "lively",
+      "fun"
+    ],
+    "footage": {
+      "needs_cutout": true,
+      "needs_headroom": false,
+      "bright_ok": true,
+      "dark_ok": true
+    },
+    "brand_look": [
+      "light",
+      "dark"
+    ]
+  },
+  "budget": {
+    "moves": 4,
+    "backgrounds": 2,
+    "peaks": 2,
+    "cover": 0.4,
+    "gap": 3
+  }
 }

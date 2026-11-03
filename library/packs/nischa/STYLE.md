@@ -30,7 +30,8 @@ white-pill caption pack — the difference here is the half-screen grey diagram 
 ## 4. Type & captions (1080×1920)
 - Poppins (OFL) 400/500/600/700 only. No 800/900 is loaded, so every template asking for 800 renders Poppins Bold.
 - Panel title: Poppins Bold ~46–54 px, sentence/title case, centred, tracking −0.01 em (library panel titles are
-  scaled to 0.74 by pack.css; `nischa_panel_title` default 54 px). Sub line: SemiBold 30 px `#333`.
+  scaled to 0.74 by pack.css). `nischa_panel_title` is the exception — a title-only board (780 high, person shift 413): headline
+  Bold up to 104 px, auto-fit to ≤ 2 lines, short orange underline, sub SemiBold 40 px `#333`, optional orange tag 40 px.
 - Diagram figures: Bold 60–110 px (auto in templates); notes SemiBold 22–26 px grey.
 - Caption: Poppins Bold 42 px / 1.28, white pill `#fff`, padding 7×20 px, radius 12 px, soft shadow
   `0 3px 12px rgba(0,0,0,.16)`. Unspoken words `#b9b9b9`, spoken `#111` (karaoke). 1–4 words per line, lower case as
@@ -62,7 +63,7 @@ white-pill caption pack — the difference here is the half-screen grey diagram 
 - `flow_chain` — "you earn → put £10k in pension → adjusted income". Head = 1–3 words, big = ≤ 9 characters.
 - `milestone_curve` — compounding/time stages.
 - `nischa_number_land` — one landing money figure, no label line.
-Every panel shot gets `"panel": 900, "shift": 480` and a `title` (pack.css relies on the title being the panel's first child).
+Every diagram panel shot gets `"panel": 900, "shift": 480` and a `title` (pack.css relies on the title being the panel's first child). `nischa_panel_title` uses its own 780 default — leave `panel` out.
 `karaoke_pill` is the same caption as the pack caption — do not add it as a shot (it would double the caption).
 
 ## 8. Density & pacing
@@ -82,9 +83,10 @@ Endings: (a) panel title with her last line + orange tag; (b) `nischa_number_lan
 
 ## 11. Common failures to check
 - Fallback font (look at "a", "t", "%": Poppins is geometric, round dots). Any 800-weight text looking extra-black = font not loaded.
-- Caption pill doubled (karaoke_pill used as a shot) or caption under the panel (panel ≠ 900 → seam rule misses).
+- Caption pill doubled (karaoke_pill used as a shot) or caption under the panel (a panel template that doesn't publish `--panel-k/--panel-h` falls back to the fixed 868 seam → panel must be 900).
 - Panel shot without `title` → its first element gets scaled.
 - Orange text on white for long text, black text on orange, more than one accent.
 - Number label in white over a light outfit — keep chest numbers label-free.
-- flow_chain with 3 cards before the push → first card half off-screen; keep ≤ 2 visible.
+- flow_chain: the row is centred; when it overflows, the window jumps to start on a card (connectors leave with their card).
 - Panel content too long: card heads > 3 words, titles > 6 words wrap.
+- **Platform safe zone** (TikTok / Reels / Shorts UI covers it): no text, sticker or card text in the right 120 px (x > 960 — like/comment/share buttons), the bottom ~280 px (y > 1640 — description; only the running caption may sit low) or the top ~150 px (status bar / search). Check every still against those three bands. Panel titles start at y ≥ 150; the caption pill rides the panel seam in and out (`--panel-k`). Known gap: library diagram rows (flow_chain 3 cards, equation_build) are near full width and can reach x ≈ 1000 — keep card text short so the words stay left of 960.
