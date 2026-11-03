@@ -45,6 +45,12 @@ def main():
         drop |= {w['i'] for w in words if re.sub(r'[^\w]', '', w['w'].lower()) in FILLERS}
     gap, pad = cfg.get('gap', a.gap), cfg.get('pad', a.pad)
     zooms = [float(z) for z in str(cfg.get('zooms', a.zooms)).split(',')]
+    if W.get('script') and 'gap' not in cfg and a.gap == 0.30:
+        # read from a script (AI presenter, teleprompter): no fluffs to cut, and its breaths fall mid-gesture —
+        # cutting them makes hands jump in and out of frame. Only real pauses go, and no zoom flip-flop.
+        gap = 0.9
+        if 'zooms' not in cfg and a.zooms == '1.0,1.08':
+            zooms = [1.0]
 
     # group kept words into phrases; a dropped word or a long pause starts a new phrase
     phrases, cur, prev = [], [], None
