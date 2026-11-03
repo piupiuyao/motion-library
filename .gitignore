@@ -36,3 +36,4 @@ library/packs/*/ref/
 library/packs/*/frames/compare.jpg
 library/packs/**/*.mp4
 skills/talking-head-video/packtest_brand/
+skills/talking-head-video/packtest_*/*.mp4
