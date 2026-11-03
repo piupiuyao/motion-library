@@ -1,0 +1,105 @@
+{
+ "pack": "nischa",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "nischa_panel_title",
+   "params": {
+    "title": "Ever had this happen?",
+    "sub": "You just don't know how to start.",
+    "subAt": 13
+   },
+   "why": "hook (STYLE opening a): her opening question as the panel title, the line that completes it as sub, on the word she starts it",
+   "why_break": "STYLE.md: nischa_panel_title opens AND closes the video (signature move), so it is used twice; it shares the group 全屏图解 with equation_build/flow_chain by design"
+  },
+  {
+   "words": "60-72",
+   "template": "threshold_bar",
+   "params": {
+    "title": "Half your afternoon",
+    "label": "Your afternoon",
+    "mark": "Half",
+    "split": 0.5,
+    "at": 68,
+    "tag": "One message eats up half",
+    "tagAt": 70,
+    "panel": 900,
+    "shift": 480
+   },
+   "why": "the one quantity in the script: 'half your afternoon' — the bar crosses the Half line as she says 'eats up' and the eaten part turns orange, tag lands on 'half' (STYLE: threshold → threshold_bar)"
+  },
+  {
+   "words": "92-98",
+   "template": "equation_build",
+   "params": {
+    "title": "The tools you already use",
+    "panel": 900,
+    "shift": 480,
+    "terms": [
+     {
+      "text": "Gmail",
+      "icon": "gmail",
+      "note": "Gmail",
+      "at": 93
+     },
+     {
+      "op": "+",
+      "text": "Slack",
+      "icon": "slack",
+      "note": "Slack",
+      "at": 94
+     },
+     {
+      "op": "+",
+      "text": "WhatsApp",
+      "icon": "whatsapp",
+      "note": "WhatsApp",
+      "at": 96
+     }
+    ]
+   },
+   "why": "proof: the three apps she names, built term by term on each name (STYLE: named items → equation_build with icons); starts on 'like' so there are 6 s of clean face after the bar",
+   "why_break": "STYLE.md §8 wants ≥6 s of face between panels (this gap is 6.2 s); check_plan's 8 s big-effect gap would leave room for only 3 panels in 53 s"
+  },
+  {
+   "words": "121-137",
+   "template": "flow_chain",
+   "params": {
+    "title": "Tell it what you want",
+    "panel": 900,
+    "shift": 480,
+    "steps": [
+     {
+      "head": "Say no",
+      "big": "politely",
+      "at": 121
+     },
+     {
+      "head": "Move a deal",
+      "big": "forward",
+      "at": 126
+     },
+     {
+      "head": "Follow up",
+      "big": "not pushy",
+      "at": 129
+     }
+    ]
+   },
+   "why": "list of the three things you can ask for, one card on each option as she says it; no 'or →' links: they're options, not a sequence, and without links all 3 cards fit (no push, so nothing dangles off the left edge)",
+   "why_break": "STYLE.md §8: 6.4 s of face before this panel satisfies the pack's ≥6 s; check_plan wants 8 s"
+  },
+  {
+   "words": "164-171",
+   "template": "nischa_panel_title",
+   "params": {
+    "title": "That's ToneBird.",
+    "sub": "Every reply, easier, and more you.",
+    "subAt": 166,
+    "tag": "AI reply assistant",
+    "tagAt": 168
+   },
+   "why": "ending (STYLE ending a): same panel as the open closes the loop with her last line + orange tag in her words ('an AI reply assistant')"
+  }
+ ]
+}

@@ -61,9 +61,6 @@ window.SHZ = window.SHZ || {
       it.e.style.transform = `translateX(${it.cx}) ${tr} rotate(${it.rot}deg)`;
     }
   },
-  hideCaption(ctx) {  // removed automatically with the layer when the next shot starts
-    ctx.L.front.appendChild(el('style', '', '#caption{opacity:0 !important}'));
-  },
 };
 
 TEMPLATES.shipinhao_huazi = {
@@ -71,7 +68,6 @@ TEMPLATES.shipinhao_huazi = {
     const P = ctx.params;
     const lines = P.lines || (P.text ? [{ text: P.text, y: P.y || 250, color: P.color || 'yellow', rot: P.rot ?? -3 }] : []);
     this.items = SHZ.build(ctx, lines);
-    if (P.caption !== true) SHZ.hideCaption(ctx);
     this.mono = !!P.mono;
     this.dim = P.dim || 0;
   },

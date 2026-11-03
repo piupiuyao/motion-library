@@ -1,0 +1,371 @@
+{
+ "pack": "shipinhao",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "shipinhao_huazi",
+   "purpose": "开场钩子",
+   "why": "Opening (a) mono hook: the pain question slammed over the head on her words, then the second beat under the chin — the 花字 is the subtitle here",
+   "params": {
+    "mono": true,
+    "lines": [
+     {
+      "text": "Ever had",
+      "color": "white",
+      "y": 140,
+      "rot": -4,
+      "at": 0,
+      "out": 13,
+      "w": 760
+     },
+     {
+      "text": "this happen?",
+      "color": "yellow",
+      "y": 270,
+      "rot": -4,
+      "at": 2,
+      "out": 13,
+      "w": 1000
+     },
+     {
+      "text": "Don't know",
+      "color": "white",
+      "y": 950,
+      "rot": -3,
+      "at": 15,
+      "w": 760
+     },
+     {
+      "text": "how to start",
+      "color": "yellow",
+      "y": 1085,
+      "rot": -3,
+      "at": 17,
+      "w": 1000
+     }
+    ]
+   }
+  },
+  {
+   "words": "41-52",
+   "template": "text_sandwich",
+   "purpose": "对比前后",
+   "why": "Emotional contrast (turn it down vs. keep the relationship): one word, BRIDGE, sitting behind her head; captions stay on to carry the full line",
+   "params": {
+    "text": "bridge",
+    "y": 235
+   }
+  },
+  {
+   "words": "66-72",
+   "template": "shipinhao_huazi",
+   "purpose": "金句观点",
+   "why": "Punchline that closes the pain section: small white line on top + giant Anton HALF beside the head, cropped by the frame edge (ref 位置)",
+   "params": {
+    "dim": 0.12,
+    "lines": [
+     {
+      "text": "One message",
+      "color": "white",
+      "y": 170,
+      "rot": -3,
+      "at": 66,
+      "w": 900
+     },
+     {
+      "text": "eats up",
+      "color": "white",
+      "align": "left",
+      "x": 640,
+      "y": 400,
+      "at": 68,
+      "size": 104
+     },
+     {
+      "text": "half",
+      "color": "yellow",
+      "font": "poster",
+      "align": "right",
+      "x": 1120,
+      "y": 500,
+      "size": 360,
+      "at": 70
+     },
+     {
+      "text": "your afternoon",
+      "color": "white",
+      "y": 1000,
+      "rot": -3,
+      "at": 71,
+      "w": 1000
+     }
+    ]
+   },
+   "why_break": "STYLE.md §7: shipinhao_huazi is the pack's signature, used every 3–6 s on the phrase worth remembering — repeats are the look"
+  },
+  {
+   "words": "73-82",
+   "template": "shipinhao_sticker",
+   "purpose": "换话题",
+   "why": "Topic change pain → product: presenter becomes a blue-outlined sticker on hot magenta, the brand word behind her head, the definition under the chin",
+   "params": {
+    "background": "magenta",
+    "outline": "blue",
+    "lines": [
+     {
+      "text": "That's what",
+      "color": "white",
+      "y": 150,
+      "rot": -3,
+      "at": 73,
+      "w": 640
+     },
+     {
+      "text": "ToneBird",
+      "color": "yellow",
+      "y": 250,
+      "rot": -3,
+      "at": 75,
+      "w": 1000,
+      "behind": true
+     },
+     {
+      "text": "AI reply",
+      "color": "white",
+      "y": 1080,
+      "rot": -3,
+      "at": 80,
+      "w": 700
+     },
+     {
+      "text": "assistant",
+      "color": "yellow",
+      "y": 1215,
+      "rot": -3,
+      "at": 81,
+      "w": 820
+     }
+    ]
+   },
+   "why_break": "STYLE.md §7/§8: shipinhao_sticker is a signature (2–4 per minute) for topic change, list, ending; patterns never repeat; big-effect cap is not pack-aware"
+  },
+  {
+   "words": "88-96",
+   "template": "shipinhao_sticker",
+   "purpose": "引用证据",
+   "why": "Proof with named apps: polka-dot sticker, the three official logos pop exactly as she names them",
+   "why_break": "Second sticker 1.9 s after the magenta one (face beat between, different pattern) — reveal and proof are both sticker beats in STYLE.md's grammar",
+   "params": {
+    "background": "dots",
+    "lines": [
+     {
+      "text": "The tools",
+      "color": "white",
+      "y": 220,
+      "rot": -3,
+      "at": 88,
+      "w": 700
+     },
+     {
+      "text": "you already use",
+      "color": "yellow",
+      "y": 360,
+      "rot": -3,
+      "at": 90,
+      "w": 900
+     }
+    ],
+    "icons": [
+     {
+      "q": "Gmail",
+      "at": 93
+     },
+     {
+      "q": "Slack",
+      "at": 94
+     },
+     {
+      "q": "WhatsApp",
+      "at": 96
+     }
+    ]
+   }
+  },
+  {
+   "words": "98-106",
+   "template": "dashed_focus",
+   "purpose": "提到具体东西",
+   "why": "She says 'reads the conversation': white dashed circle on the face + vertical label, the pack's once-per-video pointer",
+   "params": {
+    "label": "READS IT"
+   }
+  },
+  {
+   "words": "114-133",
+   "template": "shipinhao_sticker",
+   "purpose": "清单步骤",
+   "why": "The three asks as a list around the head on gingham, each landing on its word, last one in brush",
+   "params": {
+    "background": "gingham",
+    "lines": [
+     {
+      "text": "What you want",
+      "color": "white",
+      "y": 220,
+      "rot": -3,
+      "at": 116,
+      "out": 121,
+      "w": 820
+     },
+     {
+      "text": "Say no politely",
+      "color": "yellow",
+      "y": 220,
+      "rot": -3,
+      "at": 121,
+      "out": 129,
+      "w": 1000
+     },
+     {
+      "text": "Move a deal",
+      "color": "white",
+      "align": "right",
+      "x": 1060,
+      "y": 500,
+      "rot": 4,
+      "at": 124,
+      "w": 470
+     },
+     {
+      "text": "forward",
+      "color": "white",
+      "align": "right",
+      "x": 1060,
+      "y": 615,
+      "rot": 4,
+      "at": 126,
+      "w": 430
+     },
+     {
+      "text": "Follow up",
+      "color": "orange",
+      "y": 1070,
+      "rot": -4,
+      "at": 129,
+      "w": 820
+     },
+     {
+      "text": "without being pushy",
+      "font": "hand",
+      "color": "white",
+      "y": 1235,
+      "rot": -4,
+      "at": 131,
+      "w": 860,
+      "upper": false
+     }
+    ]
+   },
+   "why_break": "STYLE.md §7/§8: shipinhao_sticker is a signature (2–4 per minute) for topic change, list, ending; patterns never repeat; big-effect cap is not pack-aware"
+  },
+  {
+   "words": "139-146",
+   "template": "shipinhao_huazi",
+   "purpose": "金句观点",
+   "why": "Selling point to remember: 'the reply sounds like' on top, then a giant Anton YOU under the chin; starts at 'so' to leave a 2 s face beat after the list sticker",
+   "params": {
+    "dim": 0.1,
+    "lines": [
+     {
+      "text": "The reply",
+      "color": "white",
+      "y": 165,
+      "rot": -3,
+      "at": 140,
+      "w": 640
+     },
+     {
+      "text": "sounds like",
+      "color": "white",
+      "y": 290,
+      "rot": -3,
+      "at": 142,
+      "w": 900
+     },
+     {
+      "text": "you",
+      "color": "yellow",
+      "font": "poster",
+      "y": 900,
+      "rot": -3,
+      "at": 143,
+      "size": 400
+     }
+    ]
+   },
+   "why_break": "STYLE.md §7: shipinhao_huazi is the pack's signature, used every 3–6 s on the phrase worth remembering — repeats are the look"
+  },
+  {
+   "words": "156-163",
+   "template": "scanline_word",
+   "purpose": "金句观点",
+   "why": "The line that closes the argument (pack: scanline_word once): dark scanlines, three words jump in on her voice, in the chest band below the face",
+   "hide_captions": true,
+   "params": {
+    "words": [
+     "shouldn't",
+     "take",
+     "courage"
+    ],
+    "y": 960
+   }
+  },
+  {
+   "words": "164-171",
+   "template": "shipinhao_sticker",
+   "purpose": "结尾号召",
+   "why": "Ending (a): crumpled paper sticker, brand line on top, slogan under the chin, brush last line",
+   "params": {
+    "background": "paper",
+    "lines": [
+     {
+      "text": "That's ToneBird",
+      "color": "yellow",
+      "y": 190,
+      "rot": -3,
+      "at": 164,
+      "w": 860,
+      "bg": "#141414"
+     },
+     {
+      "text": "Every reply",
+      "color": "white",
+      "y": 1010,
+      "rot": -3,
+      "at": 166,
+      "w": 860
+     },
+     {
+      "text": "easier",
+      "color": "yellow",
+      "y": 1140,
+      "rot": -3,
+      "at": 168,
+      "w": 640
+     },
+     {
+      "text": "and more you",
+      "font": "hand",
+      "color": "white",
+      "y": 1320,
+      "rot": -5,
+      "at": 170,
+      "w": 700,
+      "upper": false
+     }
+    ]
+   },
+   "why_break": "STYLE.md §7/§8: shipinhao_sticker is a signature (2–4 per minute) for topic change, list, ending; patterns never repeat; big-effect cap is not pack-aware"
+  }
+ ]
+}

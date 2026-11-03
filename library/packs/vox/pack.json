@@ -44,6 +44,7 @@
     "cap-key": "#f2925e"
   },
   "caption_style": "pack",
+  "caption_words": 3,
   "brand_font": "none",
   "effects": {
     "signature": ["vox_split_title", "vox_split_list"],

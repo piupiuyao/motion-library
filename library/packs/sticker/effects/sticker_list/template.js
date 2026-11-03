@@ -33,7 +33,7 @@ TEMPLATES.sticker_list = {
     const k = ease.inOut(enter(ctx.t, 0, .42));
     STK.personAt(ctx, this.from, 'left', k);
     const out = leave(ctx, .18);
-    if (this.badge) STK.animate(this.badge, ctx.t, -1, out, .2);
+    if (this.badge) STK.animate(this.badge, ctx.t, -1, 1, .2);   // no fade at the shot end: the next shot repeats the same badge, a fade made it blink at every cut
     if (this.off) return;
     if (!this.laid) {
       // column in the free upper-right area; rows keep fixed reading positions (no reflow when a row appears)

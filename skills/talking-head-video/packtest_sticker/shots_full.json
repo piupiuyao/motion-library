@@ -1,0 +1,267 @@
+{
+ "pack": "sticker",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "sticker_stage",
+   "purpose": "开场钩子",
+   "why": "opening (a): hook hero rises from behind the head, then one 👀 sticker on 'seen' and a hand aside on the real pain 'don't know how to start'",
+   "params": {
+    "bg": "cream",
+    "hero": "Ever had this happen?",
+    "hero_at": 0,
+    "hero_until": 8,
+    "stickers": [
+     {
+      "text": "seen the message",
+      "emoji": "👀",
+      "at": 5,
+      "until": 13,
+      "pos": "right"
+     },
+     {
+      "text": "don't know how to start",
+      "kind": "hand",
+      "at": 15,
+      "pos": "right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "20-52",
+   "template": "sticker_stage",
+   "purpose": "普通讲话",
+   "why": "three pain examples, one sticker each, cleared before the next; 'don't want to burn the bridge' is a real negation → coral strike",
+   "why_break": "STYLE.md: every second sits on sticker_stage, so the same template repeats back-to-back",
+   "params": {
+    "bg": "cream",
+    "stickers": [
+     {
+      "text": "a client is chasing you",
+      "emoji": "⏰",
+      "at": 21,
+      "until": 28,
+      "pos": "upper-right"
+     },
+     {
+      "text": "sounds like an excuse",
+      "kind": "hand",
+      "at": 34,
+      "until": 38,
+      "pos": "upper-right"
+     },
+     {
+      "text": "burn the bridge",
+      "kind": "neg",
+      "at": 50,
+      "pos": "upper-right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "53-72",
+   "template": "sticker_stage",
+   "purpose": "数字",
+   "why": "bare cutout on 'second language'; the type/delete/type loop as three tiny word stickers (delete struck); the cost lands as the 2nd hero",
+   "why_break": "STYLE.md shot grammar: number/cost → hero sticker; stage is the base of every shot",
+   "params": {
+    "bg": "cream",
+    "hero": "half your afternoon",
+    "hero_at": 68,
+    "stickers": [
+     {
+      "text": "type",
+      "at": 61,
+      "until": 66,
+      "pos": "upper-right"
+     },
+     {
+      "text": "delete",
+      "kind": "neg",
+      "at": 62,
+      "until": 66,
+      "pos": "right"
+     },
+     {
+      "text": "type again",
+      "at": 64,
+      "until": 66,
+      "pos": "lower-right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "73-82",
+   "template": "sticker_chapter",
+   "purpose": "章节转场",
+   "why": "the talk's one real section break: the product. Big holo 01 + 'ToneBird' (intro ≈1.7 s), shrinks into the badge as she defines it",
+   "params": {
+    "num": "01",
+    "title": "ToneBird",
+    "at": 73,
+    "title_at": 75,
+    "badge_at": 78,
+    "badge_text": "ToneBird",
+    "bg": "lilac"
+   }
+  },
+  {
+   "words": "83-113",
+   "template": "sticker_stage",
+   "purpose": "提到具体东西",
+   "why": "proof: on 'works right inside the tools' the person moves aside; official Gmail/Slack/WhatsApp marks land on their names; then 'drafts a reply' and the struck 'copying and pasting'",
+   "params": {
+    "bg": "lilac",
+    "layout": "left",
+    "from": "center",
+    "badge": "01 ToneBird",
+    "stickers": [
+     {
+      "icon": "Gmail",
+      "text": "Gmail",
+      "at": 93,
+      "until": 97,
+      "x": 790,
+      "y": 330
+     },
+     {
+      "icon": "Slack",
+      "text": "Slack",
+      "at": 94,
+      "until": 97,
+      "x": 640,
+      "y": 610
+     },
+     {
+      "icon": "WhatsApp",
+      "text": "WhatsApp",
+      "at": 96,
+      "until": 97,
+      "x": 870,
+      "y": 830
+     },
+     {
+      "text": "drafts a reply",
+      "emoji": "💡",
+      "at": 102,
+      "until": 107,
+      "x": 720,
+      "y": 460
+     },
+     {
+      "text": "copying and pasting",
+      "kind": "neg",
+      "at": 108,
+      "x": 720,
+      "y": 640
+     }
+    ]
+   }
+  },
+  {
+   "words": "114-133",
+   "template": "sticker_list",
+   "purpose": "清单步骤",
+   "why": "she names three things to ask for → progressive check list, one row per spoken item",
+   "params": {
+    "from": "left",
+    "bg": "lilac",
+    "badge": "01 ToneBird",
+    "title": "tell it what you want",
+    "title_at": 114,
+    "mark": "check",
+    "items": [
+     {
+      "text": "say no politely",
+      "emoji": "🙅",
+      "at": 121
+     },
+     {
+      "text": "move a deal forward",
+      "emoji": "🤝",
+      "at": 124
+     },
+     {
+      "text": "follow up, not pushy",
+      "emoji": "📨",
+      "at": 129
+     }
+    ]
+   }
+  },
+  {
+   "words": "134-155",
+   "template": "sticker_stage",
+   "purpose": "金句观点",
+   "why": "back to centre; one sticker on the selling point, one hand aside on 'send only when you're happy'",
+   "params": {
+    "bg": "lilac",
+    "from": "left",
+    "badge": "01 ToneBird",
+    "stickers": [
+     {
+      "text": "sounds like you",
+      "emoji": "😊",
+      "at": 142,
+      "until": 145,
+      "pos": "upper-right"
+     },
+     {
+      "text": "send it only when you're happy",
+      "kind": "hand",
+      "at": 150,
+      "pos": "upper-right",
+      "size": 52
+     }
+    ]
+   }
+  },
+  {
+   "words": "156-164",
+   "template": "sticker_stage",
+   "purpose": "对比反差",
+   "why": "the key line on the one blue background: what replying shouldn't cost, both struck in coral; held through 'That's' so 'a free hour' stays readable ≥1 s",
+   "params": {
+    "bg": "blue",
+    "stickers": [
+     {
+      "text": "courage",
+      "kind": "neg",
+      "at": 159,
+      "pos": "upper-left"
+     },
+     {
+      "text": "a free hour",
+      "kind": "neg",
+      "at": 161,
+      "pos": "upper-right"
+     }
+    ]
+   }
+  },
+  {
+   "words": "165-171",
+   "template": "sticker_stage",
+   "purpose": "结尾号召",
+   "why": "ending (a): holo background, the name as hero, her slogan as one hand line",
+   "params": {
+    "bg": "holo",
+    "hero": "ToneBird",
+    "hero_at": 165,
+    "stickers": [
+     {
+      "text": "every reply, easier, and more you",
+      "kind": "hand",
+      "at": 166,
+      "x": 600,
+      "y": 1230,
+      "size": 54
+     }
+    ]
+   }
+  }
+ ]
+}

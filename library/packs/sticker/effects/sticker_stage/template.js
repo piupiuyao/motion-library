@@ -53,7 +53,7 @@ TEMPLATES.sticker_stage = {
     const head = STK.personAt(ctx, this.from, this.layout, k);
     if (!this.laid) this.place(head);
     const out = leave(ctx, .18);
-    if (this.badge) STK.animate(this.badge, ctx.t, -1, out, .2);
+    if (this.badge) STK.animate(this.badge, ctx.t, -1, 1, .2);   // no fade at the shot end: the next shot repeats the same badge, a fade made it blink at every cut
     for (const it of this.items) {
       const gone = it.t1 != null ? 1 - clamp((ctx.t - it.t1) / .16) : 1;
       STK.animate(it.s, ctx.t, it.t0, Math.min(out, gone), 1);

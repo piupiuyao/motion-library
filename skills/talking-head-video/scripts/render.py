@@ -225,7 +225,9 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     pack = load_pack(plan.get('pack'))
     return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'pack': pack, 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
             'captions': plan.get('captions', True), 'captionStyle': plan.get('caption_style') or (pack or {}).get('caption_style'), 'segments': segs, 'lines': lines, 'shots': shots,
-            'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
+            'templateIds': need, 'frames': 'work/frames_src',
+            # last extracted frame: edit.json may end a few frames after it, and asking for a missing frame crashes the page
+            'srcCount': len([f for f in os.listdir(os.path.join(proj, 'work', 'frames_src')) if f.endswith('.jpg')]) if os.path.isdir(os.path.join(proj, 'work', 'frames_src')) else 0, 'matte': 'work/matte_src'}, edit
 
 
 def check_face_time(tl, tmpl, limit=10):

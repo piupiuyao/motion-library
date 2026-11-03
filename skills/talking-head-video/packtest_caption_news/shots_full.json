@@ -1,0 +1,127 @@
+{
+ "pack": "caption_news",
+ "shots": [
+  {
+   "words": "0-19",
+   "purpose": "开场钩子",
+   "template": "caption_news_slam",
+   "params": {
+    "bug": {
+     "name": "TONEBIRD",
+     "topic": "The reply problem"
+    },
+    "lines": [
+     "Ever had|{this happen?}",
+     "You've seen|the message.",
+     "You know|you should reply.",
+     "You just don't know|{how to start.}"
+    ]
+   },
+   "why": "Opening (a): the hook IS the caption card; chunks slam on her words, channel bug opens the film, one keyword on the pain"
+  },
+  {
+   "words": "53-72",
+   "purpose": "情绪吐槽",
+   "template": "push_in",
+   "params": {
+    "to": 1.1,
+    "vignette": false,
+    "keywords": [
+     "half your afternoon"
+    ]
+   },
+   "why": "pain builds (second language, type/delete) to the peak line; slow push without vignette + the cost on the honey block"
+  },
+  {
+   "words": "73-77",
+   "purpose": "转折",
+   "template": "punch_zoom",
+   "params": {
+    "at": "ToneBird",
+    "to": 1.2,
+    "hold": 0.6,
+    "keywords": [
+     "ToneBird"
+    ]
+   },
+   "why": "the turn: one punch-in on the product name, the name on the keyword block; 'It's an AI reply assistant' then plays on a clean face before the grid"
+  },
+  {
+   "words": "83-96",
+   "purpose": "提到具体东西",
+   "template": "caption_news_grid",
+   "params": {
+    "title": "Works right inside",
+    "items": [
+     {
+      "text": "Gmail",
+      "at": "Gmail"
+     },
+     {
+      "text": "Slack",
+      "at": "Slack"
+     },
+     {
+      "text": "WhatsApp",
+      "at": "WhatsApp"
+     }
+    ]
+   },
+   "why": "three tools = lit grid with official logos, each panel lights on its name; no caption keyword while it is up"
+  },
+  {
+   "words": "114-133",
+   "purpose": "清单步骤",
+   "template": "caption_news_lower",
+   "params": {
+    "label": "Tell it what you want",
+    "items": [
+     {
+      "text": "Say no politely",
+      "at": "say"
+     },
+     {
+      "text": "Move a deal forward",
+      "at": "move"
+     },
+     {
+      "text": "Follow up without being pushy",
+      "at": "follow",
+      "size": 46
+     }
+    ]
+   },
+   "why": "a list of three ways as stacked lower thirds, each wiped in on its phrase; 11 s after the grid"
+  },
+  {
+   "words": "139-155",
+   "purpose": "金句观点",
+   "template": "push_in",
+   "params": {
+    "to": 1.08,
+    "vignette": false,
+    "keywords": [
+     "sounds like you",
+     "only when you're happy"
+    ]
+   },
+   "why": "two reassurance lines: slow push, keyword on 'sounds like you' then on 'only when you're happy' (it never sends on its own)",
+   "why_break": "STYLE.md §6/§7: push_in is a signature move used under each pain/verdict line (here the 2nd, 27 s after the 1st); check_plan's no-repeat rule is not pack-aware"
+  },
+  {
+   "words": "156-171",
+   "purpose": "金句观点",
+   "template": "caption_news_slam",
+   "params": {
+    "lines": [
+     "Replying shouldn't|take {courage,}|or a free hour.",
+     "That's|{ToneBird.}",
+     "Every reply,",
+     "!easier,|and {more you.}"
+    ]
+   },
+   "why": "Ending (a): verdict caption card, the tagline's last line set big with the keyword on the block",
+   "why_break": "STYLE.md §6/§10: caption_news_slam is the pack's look — hook AND ending are both slam cards by design"
+  }
+ ]
+}

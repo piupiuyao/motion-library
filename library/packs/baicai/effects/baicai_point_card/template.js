@@ -3,7 +3,7 @@
 TEMPLATES.baicai_point_card = {
   setup(ctx) {
     const P = ctx.params;
-    this.off = !P.title;
+    this.off = !P.title; this.sub = null;
     if (this.off) return;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = a => { if (a == null) return null; const w = typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
@@ -36,9 +36,12 @@ TEMPLATES.baicai_point_card = {
     const B = this.B = { l: 56, r: 1024, t: P.boxTop || 1330, b: (P.boxTop || 1330) + 420 };
     this.box = el('div', `position:absolute;left:${B.l}px;top:${B.t}px;width:${B.r - B.l}px;height:${B.b - B.t}px;box-sizing:border-box;
       border:4px solid rgba(255,255,255,.88);border-radius:14px;background:rgba(38,38,40,.62);box-shadow:0 30px 80px rgba(0,0,0,.6)`);
-    const title = el('div', `position:absolute;left:58px;top:${P.sub ? 120 : 160}px;width:470px;font:500 ${P.size || 84}px/1.05 var(--font-body);color:#fff;letter-spacing:.08em`, P.title);
-    this.box.appendChild(title);
-    if (P.sub) this.box.appendChild(el('div', 'position:absolute;left:60px;bottom:110px;width:460px;font:400 26px/1.3 var(--font-body);color:rgba(255,255,255,.75);letter-spacing:.22em', P.sub));
+    // title + sub in one vertically centred column, so a title that wraps to 2 lines pushes the sub down instead of overlapping it
+    const col = el('div', 'position:absolute;left:58px;top:0;bottom:0;width:470px;display:flex;flex-direction:column;justify-content:center');
+    const title = el('div', `font:500 ${P.size || 84}px/1.05 var(--font-body);color:#fff;letter-spacing:.08em`, P.title);
+    col.appendChild(title);
+    if (P.sub) col.appendChild(this.sub = el('div', 'margin-top:26px;padding-left:2px;width:460px;font:400 26px/1.3 var(--font-body);color:rgba(255,255,255,.75);letter-spacing:.22em', P.sub));
+    this.box.appendChild(col);
     ctx.L.back.appendChild(this.box);
     this.title = title;
     // where the person lands: face just above the box top, right half
@@ -71,6 +74,7 @@ TEMPLATES.baicai_point_card = {
     this.box.style.transform = `translateY(${lerp(40, 0, b)}px)`;
     const q = ease.out(enter(t, this.tTitle, .45));
     this.title.style.opacity = q;
+    if (this.sub) this.sub.style.opacity = q;
     this.title.style.letterSpacing = `${lerp(.24, .08, q)}em`;
     const h = ease.out(enter(t, .2, .4));
     this.head.style.opacity = Math.min(h, out);

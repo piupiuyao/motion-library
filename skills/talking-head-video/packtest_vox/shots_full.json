@@ -1,0 +1,87 @@
+{
+ "pack": "vox",
+ "shots": [
+  {
+   "words": "0-19",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "Ever had this happen?",
+    "title": "You know you should",
+    "key": "reply.",
+    "key_at": "reply.",
+    "card": {
+     "label": "You've seen the message",
+     "icon": "message",
+     "note": "Don't know how to start",
+     "at": "seen"
+    },
+    "size": 92
+   },
+   "why": "opening (a): hook question as kicker, her line as title + key, the card is the seen-but-unanswered message; note is her next line"
+  },
+  {
+   "words": "66-72",
+   "template": "caption_highlighter",
+   "params": {
+    "keywords": [
+     "half your afternoon"
+    ]
+   },
+   "why": "the cost of the pain, the one line worth remembering from the problem section; marker on the caption keeps the face clean (13 s after the hook sheet)"
+  },
+  {
+   "words": "83-100",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "Right inside the tools",
+    "title": "you already",
+    "key": "use.",
+    "key_at": "use,",
+    "apps": [
+     "Gmail",
+     "Slack",
+     "WhatsApp"
+    ]
+   },
+   "why": "proof: she names three apps; official logos land on the sheet as each is said; held through 'reads the conversation' so the WhatsApp tile (said at 29.6 s) stays ~2 s",
+   "why_break": "STYLE §6/§7: vox_split_title is the pack's signature, used for hook, proof and ending; 3–5 paper beats/min is the look (check_plan's once-per-effect / once-per-group / big-count rules are not pack-aware)"
+  },
+  {
+   "words": "114-133",
+   "template": "vox_split_list",
+   "params": {
+    "kicker": "Tell it what you want",
+    "title": "This time:",
+    "items": [
+     {
+      "text": "Say no politely",
+      "at": "say"
+     },
+     {
+      "text": "Move a deal forward",
+      "at": "move"
+     },
+     {
+      "text": "Follow up, not pushy",
+      "at": "follow"
+     }
+    ]
+   },
+   "why": "list: the three things you can ask for; dashed ? slots fill as she says each",
+   "why_break": "4.4 s of face after the apps sheet (STYLE wants ~8 s); the list is the strongest beat and can't move — the sentence starts here; vox_split_list shares group 纸面分屏 with vox_split_title by design (STYLE §7)"
+  },
+  {
+   "words": "164-171",
+   "template": "vox_split_title",
+   "params": {
+    "kicker": "That's ToneBird",
+    "title": "Every reply, easier,",
+    "key": "and more you.",
+    "color": "accent-2",
+    "size": 104
+   },
+   "why": "ending (a): the tagline on the last sheet, green payoff; 8.7 s of face before it; highlighter at the default 1.0 s (51 s) because 'more' is said 0.4 s before the video ends",
+   "why_break": "STYLE §10 ending (a) = green vox_split_title; repeat of the signature is the pack's grammar"
+  }
+ ]
+}

@@ -36,6 +36,7 @@
     "grey": "#8D8B83"
   },
   "caption_style": "pack",
+  "caption_words": 8,
   "brand_font": "none",
   "effects": {
     "signature": ["caption_news_slam", "caption_news_grid", "caption_news_lower", "push_in"],

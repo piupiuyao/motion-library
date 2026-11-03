@@ -4,21 +4,36 @@
   "video_type": "talking-head",
   "status": "ready",
   "category": "版式",
-  "purpose": ["换话题", "引用证据", "提到具体东西", "结尾号召", "清单步骤"],
+  "purpose": [
+    "换话题",
+    "引用证据",
+    "提到具体东西",
+    "结尾号召",
+    "清单步骤"
+  ],
   "weight": "大",
   "covers_face": false,
   "zone": "全屏",
   "group": "抠像换背景",
-  "style": ["网感活泼"],
+  "style": [
+    "网感活泼"
+  ],
   "duration": "2–6 秒",
   "use_for": "段落开头 / 举例 / 结尾：人抠出加粗白边贴在跳色背景上（波点、格子、皱纸、洋红），头顶砸花字，可配一排 app 图标",
-  "needs": ["抠像"],
+  "needs": [
+    "抠像"
+  ],
   "needs_assets": [],
   "fills": {
     "lines": "可选：头顶花字，原话里的词",
     "icons": "可选：说到的 app 名字"
   },
-  "layers": ["跳色图案背景（或虚化原画面）", "人后：可放一行大字（behind:true）", "抠出的人像（粗白边）", "人前：花字 / 图标"],
+  "layers": [
+    "跳色图案背景（或虚化原画面）",
+    "人后：可放一行大字（behind:true）",
+    "抠出的人像（粗白边）",
+    "人前：花字 / 图标"
+  ],
   "params": {
     "background": "可选。dots(薄荷底彩色波点, 默认) | gingham(黑白格) | paper(皱纸) | magenta(洋红) | pink | blur(虚化原画面) | 任意 CSS 背景",
     "outline": "可选。white(默认) | blue(浅蓝) | yellow | #hex",
@@ -29,10 +44,11 @@
     "icons": "可选。[\"Gmail\",\"Slack\",\"WhatsApp\"] 或 [{q, at}]：说到这个词时弹出该 app 图标（白边贴纸）",
     "icons_y": "可选。图标顶边，默认 1330",
     "icon_size": "可选。默认 190",
-    "caption": "可选。true = 保留字幕；默认隐藏"
+    "caption": "可选。默认花字出现时字幕隐藏（meta hide_captions，参考视频花字就是字幕）；要保留字幕，在镜头上写 \"hide_captions\": false"
   },
   "source": {
     "from": "我李哥豆儿「4 套剪辑手法打破扁平画面」（视频号，refs/95_1793056112）",
     "note": "B 全片：人像贴纸白边 / 浅蓝边 + 波点、格子、皱纸、洋红背景 + 头顶花字"
-  }
+  },
+  "hide_captions": true
 }

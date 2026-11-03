@@ -61,9 +61,6 @@ window.SHZ = window.SHZ || {
       it.e.style.transform = `translateX(${it.cx}) ${tr} rotate(${it.rot}deg)`;
     }
   },
-  hideCaption(ctx) {  // removed automatically with the layer when the next shot starts
-    ctx.L.front.appendChild(el('style', '', '#caption{opacity:0 !important}'));
-  },
 };
 
 function shzPattern(name) {
@@ -119,7 +116,6 @@ TEMPLATES.shipinhao_sticker = {
       ctx.L.front.appendChild(box);
       return { e: box, s: SHZ.wordAt(ctx, typeof q === 'string' ? q : q.at, .3 + k * .3) - .05, rot: [-6, 4, -3, 5][k % 4] };
     }).filter(Boolean);
-    if (P.caption !== true) SHZ.hideCaption(ctx);
   },
   frame(ctx) {
     const p = enter(ctx.t, 0, .38);

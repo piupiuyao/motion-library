@@ -15,11 +15,18 @@
 #caption.pack .pill { background: none; box-shadow: none; border-radius: 0; padding: 0; max-width: 936px; text-align: left;
   font: 800 88px/1.06 var(--font-body); letter-spacing: -.02em; color: var(--cap-ink);
   text-shadow: 0 4px 20px rgba(0,0,0,.6), 0 1px 3px rgba(0,0,0,.3); -webkit-text-stroke: 0; }
-/* chunks arrive as they are spoken: unspoken words keep their place but are not drawn yet */
-#caption.pack .pill > span:not(.on):not(.key) { opacity: 0; }
+/* the running caption slams in word by word as she speaks (engine gives each word --age = seconds since it started):
+   unspoken words keep their slot but are invisible (age < 0); on its word the text slams 1.3 → 0.97 in 0.13 s, settles
+   to 1 by 0.2 s (back-ease feel), opacity full in 0.04 s. Same numbers as caption_news_slam. */
+#caption.pack .w { display: inline-block; transform-origin: 0% 80%;
+  opacity: clamp(0, calc(var(--age) * 25), 1);
+  transform: scale(max(calc(1.3 - var(--age) * 2.54), min(1, calc(.97 + (var(--age) - .13) * .43)))); }
 #caption.pack .on { color: var(--cap-on); }
-/* one keyword per caption on a square honey block, ink text */
-#caption.pack .key { background: var(--accent); color: var(--on-accent); border-radius: 0; padding: 0 .14em; margin: 0 -.02em;
-  text-shadow: none; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* one keyword per caption on a square honey block, ink text. The block wipes left → right under each keyword word
+   0.05 s after it starts (0.12 s); the text turns from ivory to ink as the block arrives. Nothing shows before .on. */
+#caption.pack .key { background: none; border-radius: 0; padding: 0 .02em; }
+#caption.pack .key .w, #caption.pack .key .w.on { padding: 0 .14em; margin: 0 -.12em; text-shadow: none;
+  background: linear-gradient(var(--accent), var(--accent)) 0 0 / calc(clamp(0, (var(--age) - .05) * 8.33, 1) * 100%) 100% no-repeat;
+  color: color-mix(in srgb, var(--on-accent) calc(clamp(0, (var(--age) - .09) * 20, 1) * 100%), var(--cap-ink)); }
 /* a slam card is the caption while it is up */
 .pack-caption_news:has(.cn-slam) #caption { visibility: hidden; }

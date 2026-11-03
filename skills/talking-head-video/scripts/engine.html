@@ -274,7 +274,7 @@ window.renderFrame = async function (k) {
   await brandFont; await Promise.all(fontLoads);
   const t = k / TL.fps;
   const seg = segAt(t);
-  const srcFrame = Math.max(1, Math.round((seg.src + (t - seg.out)) * TL.srcFps) + 1);
+  const srcFrame = Math.min(TL.srcCount || Infinity, Math.max(1, Math.round((seg.src + (t - seg.out)) * TL.srcFps) + 1));
   const shot = shotAt(t);
   if (shot !== current) {
     resetLayers();
