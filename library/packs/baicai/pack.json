@@ -138,10 +138,10 @@
     ]
   },
   "budget": {
-    "moves": 4,
-    "backgrounds": 1,
-    "peaks": 1,
-    "cover": 0.4,
-    "gap": 4
+    "moves": 6,
+    "backgrounds": 2,
+    "peaks": 2,
+    "cover": 0.5,
+    "gap": 2.5
   }
 }

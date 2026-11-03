@@ -113,9 +113,9 @@
     ]
   },
   "budget": {
-    "moves": 3,
-    "backgrounds": 2,
-    "peaks": 2,
+    "moves": 4,
+    "backgrounds": 4,
+    "peaks": 3,
     "cover": 1.0,
     "gap": 0,
     "base": [

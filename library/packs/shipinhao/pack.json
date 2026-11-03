@@ -147,6 +147,7 @@
     "backgrounds": 2,
     "peaks": 2,
     "cover": 0.4,
-    "gap": 3
+    "gap": 3,
+    "note": "strict on purpose: the boss found the full-menu edit too busy (5 moves, 4 backgrounds, 67% covered); v2 (2 moves, 2 backgrounds, 1 peak, 38%) was approved"
   }
 }
