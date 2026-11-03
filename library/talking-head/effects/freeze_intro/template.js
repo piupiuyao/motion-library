@@ -4,8 +4,8 @@ TEMPLATES.freeze_intro = {
     this.off = false;
     const P = ctx.params;
     if (!P.name) { this.off = true; return; } // name is required: without it the effect is not shown
-    const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
-    const hit = P.at && ctx.words.find(w => norm(w.w) === norm(P.at));
+    const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
+    const hit = P.at && (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => norm(w.w) === norm(P.at)));
     this.tf = hit ? hit.s : (P.freeze || .6);
     // which source frame is on screen at the freeze moment
     const gt = ctx.shot.start + this.tf;

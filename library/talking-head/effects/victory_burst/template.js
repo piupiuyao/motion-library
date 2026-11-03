@@ -2,7 +2,7 @@
 TEMPLATES.victory_burst = {
   setup(ctx) {
     const P = ctx.params, n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
-    const w = P.at && ctx.words.find(w => n(w.w) === n(P.at));
+    const w = P.at && (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => n(w.w) === n(P.at)));
     this.T = w ? w.s : (P.start != null ? P.start : .3);
     ctx.L.bg.style.background = `repeating-linear-gradient(-9deg, transparent 0 60px, rgba(255,255,255,.06) 60px 64px),
       radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--accent) 70%, #000), #0c0c10 75%)`;

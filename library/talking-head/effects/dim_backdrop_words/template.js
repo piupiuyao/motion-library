@@ -3,7 +3,7 @@ TEMPLATES.dim_backdrop_words = {
   setup(ctx) {
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const at = a => { const w = ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
+    const at = a => { const w = (typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a))); return w ? w.s : null; };
     this.dim = el('div', `position:absolute;inset:0;background:rgba(0,0,0,${P.dark || .72})`);
     ctx.L.back.appendChild(this.dim);
     const lines = P.lines || []; // no lines: just the dimmed background with the bright person

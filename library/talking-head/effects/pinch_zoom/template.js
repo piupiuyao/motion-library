@@ -14,7 +14,7 @@ TEMPLATES.pinch_zoom = {
     this.steps = steps.map((st, k) => ({
       scale: st.scale,
       hand: st.hand || [800, 1050],
-      t: (st.at != null && (ctx.words.find(w => n(w.w) === n(st.at)) || {}).s) || ctx.d * (k + 1) / (steps.length + 1),
+      t: (st.at != null && ((typeof st.at === 'number' ? ctx.words.find(w => w.i === st.at) : ctx.words.find(w => n(w.w) === n(st.at))) || {}).s) || ctx.d * (k + 1) / (steps.length + 1),
     }));
     // two touch points (like a pinch/spread gesture on a phone screen) joined by a thin line
     this.g = el('div', 'position:absolute;left:0;top:0;width:0;height:0;opacity:0');

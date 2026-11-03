@@ -3,7 +3,7 @@ TEMPLATES.stretch_word = {
   setup(ctx) {
     this.off = false;
     const P = ctx.params;
-    const n = s => s.toLowerCase().replace(/[^\w]/g, '');
+    const n = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const w = P.at ? ctx.words.find(x => n(x.w) === n(P.at)) : null;
     const g = ctx.groups[0];
     this.text = (P.text || (w && w.w.replace(/[^\w'-]/g, '')) || (g && g.text) || '').toUpperCase();

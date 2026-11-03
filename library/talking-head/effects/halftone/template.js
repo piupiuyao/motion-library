@@ -16,9 +16,9 @@ TEMPLATES.halftone = {
     this.word.className = 'display';
     ctx.L.back.append(this.cv, this.word);
     // hit times: params.at (words) or highlight phrases
-    const n = s => s.toLowerCase().replace(/[^\w]/g, '');
+    const n = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = [].concat(P.at || []);
-    this.hits = at.length ? at.map(a => (ctx.words.find(w => n(w.w) === n(a)) || {}).s).filter(x => x != null)
+    this.hits = at.length ? at.map(a => ((typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => n(w.w) === n(a))) || {}).s).filter(x => x != null)
       : ctx.groups.map(g => g.s);
   },
   draw(ctx) {

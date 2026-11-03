@@ -3,7 +3,7 @@ TEMPLATES.flicker_text = {
   setup(ctx) {
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const at = a => { const w = ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
+    const at = a => { const w = (typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a))); return w ? w.s : null; };
     const items = P.words || []; // required: nothing is shown without words
     this.row = el('div', `position:absolute;left:30px;right:30px;top:${P.y || 1110}px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 30px;
       font:900 ${P.size || 120}px/1.05 var(--font-body);letter-spacing:-.01em`);

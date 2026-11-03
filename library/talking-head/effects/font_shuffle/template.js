@@ -5,7 +5,7 @@ TEMPLATES.font_shuffle = {
     const P = ctx.params;
     if (!P.text) { this.off = true; return; } // required keyword: not shown without it
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const w = P.at != null ? ctx.words.find(w => norm(w.w) === norm(P.at)) : null;
+    const w = P.at != null ? (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => norm(w.w) === norm(P.at))) : null;
     this.t0 = w ? w.s - .05 : (P.t0 != null ? P.t0 : .1);
     this.dur = P.dur || .8;
     this.fonts = P.fonts || [

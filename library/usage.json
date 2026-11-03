@@ -49,5 +49,23 @@
    "phone_notification",
    "text_sandwich"
   ]
+ },
+ {
+  "project": "tb2_zh",
+  "date": "2026-11-02",
+  "templates": [
+   "cutout_card",
+   "end_title",
+   "equation_build",
+   "icon_cards",
+   "keyword_pop",
+   "mono_shrink",
+   "number_roll",
+   "phone_notification",
+   "split_word_head",
+   "sticker_outline",
+   "tick_cross_tags",
+   "typewriter_card"
+  ]
  }
 ]

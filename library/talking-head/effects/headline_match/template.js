@@ -6,7 +6,7 @@ TEMPLATES.headline_match = {
     // word: required; if missing, take the longest word the speaker says in this shot
     const word = P.word || (ctx.words.map(w => String(w.w).replace(/[^\p{L}\p{N}']/gu, '')).sort((x, y) => y.length - x.length)[0] || '');
     if (!word) { this.off = true; return; }
-    const w = P.at && ctx.words.find(w => n(w.w) === n(P.at));
+    const w = P.at && (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => n(w.w) === n(P.at)));
     this.T = w ? w.s : (P.start != null ? P.start : .3);
     this.step = P.step || .2;
     const fs = 104, Y = P.y || 700;

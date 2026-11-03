@@ -34,6 +34,11 @@
                    color: var(--cap-ink); text-align: center; box-shadow: 0 8px 30px rgba(0, 0, 0, .18); max-width: 900px; }
   #caption .on { color: var(--cap-on); }
   #caption .key { color: var(--on-accent, var(--cap-on)); background: var(--accent); border-radius: 10px; padding: 0 8px; }
+  /* caption_style "plain": no pill — white bold words with a dark outline, like 视频号/抖音 subtitles */
+  #caption.plain .pill { background: none; box-shadow: none; padding: 0; color: #fff; font-size: 54px;
+                         -webkit-text-stroke: 7px #111; paint-order: stroke fill; text-shadow: 0 4px 0 #111; }
+  #caption.plain .on { color: #fff; }
+  #caption.plain .key { background: none; color: var(--accent); padding: 0; }
   .display { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: -.01em; line-height: .92; }
 </style>
 </head>
@@ -150,6 +155,7 @@ const maskImg = new Image(), srcImg = new Image();
 document.getElementById('stage').className = 'skin-' + (TL.skin || 'clean');
 document.getElementById('stage').lang = TL.lang || 'en';
 const SEP = ['zh', 'ja', 'ko'].includes(TL.lang) ? '' : ' ';  // CJK captions have no spaces between words
+if (TL.captionStyle) byId('caption').classList.add(TL.captionStyle);
 // theme: per-video colour overrides on top of the skin, e.g. {"accent": "#ff4d6d"} → --accent (brand / picked from the video)
 for (const [k, v] of Object.entries(TL.theme || {})) document.getElementById('stage').style.setProperty('--' + k, v);
 // brand kit (theme.py --brand): the site's own font for all text (CJK falls back per language), logo for templates

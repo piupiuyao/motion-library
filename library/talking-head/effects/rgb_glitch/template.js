@@ -9,9 +9,9 @@ TEMPLATES.rgb_glitch = {
     this.tmp = document.createElement('canvas'); this.tmp.width = W; this.tmp.height = H;
     this.tg = this.tmp.getContext('2d');
     ctx.L.back.appendChild(this.out);
-    const n = s => s.toLowerCase().replace(/[^\w]/g, '');
+    const n = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const at = [].concat(P.at || []);
-    this.hits = at.length ? at.map(a => (ctx.words.find(w => n(w.w) === n(a)) || {}).s).filter(x => x != null)
+    this.hits = at.length ? at.map(a => ((typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => n(w.w) === n(a))) || {}).s).filter(x => x != null)
       : ctx.groups.map(g => g.s);
     if (!this.hits.length) this.hits = [ctx.d * .3, ctx.d * .7];
   },

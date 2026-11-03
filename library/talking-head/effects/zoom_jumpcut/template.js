@@ -3,7 +3,7 @@ TEMPLATES.zoom_jumpcut = {
   setup(ctx) {
     const P = ctx.params, n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
     if (P.at && P.at.length) {
-      this.cuts = P.at.map(a => (ctx.words.find(w => n(w.w) === n(a)) || {}).s).filter(x => x != null);
+      this.cuts = P.at.map(a => ((typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => n(w.w) === n(a))) || {}).s).filter(x => x != null);
     } else {
       // cut on a word start roughly every `every` seconds
       const every = P.every || 1.0;

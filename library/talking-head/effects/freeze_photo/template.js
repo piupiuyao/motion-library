@@ -2,8 +2,8 @@
 TEMPLATES.freeze_photo = {
   setup(ctx) {
     const P = ctx.params;
-    const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
-    const hit = P.at && ctx.words.find(w => norm(w.w) === norm(P.at));
+    const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
+    const hit = P.at && (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => norm(w.w) === norm(P.at)));
     this.tf = hit ? hit.s : (P.freeze || .6);
     this.hold = P.hold || 1.1;
     const gt = ctx.shot.start + this.tf;

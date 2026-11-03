@@ -4,7 +4,7 @@ TEMPLATES.mono_shrink = {
     ctx.L.bg.style.background = 'radial-gradient(circle at 50% 40%, var(--bg-b), var(--bg-a))';
     ctx.base.style.borderRadius = '48px';
     if (ctx.params.label) {
-      this.label = el('div', 'position:absolute;left:0;right:0;top:120px;text-align:center;font-size:110px;color:var(--paper);letter-spacing:.04em', ctx.params.label);
+      this.label = el('div', 'position:absolute;left:0;right:0;top:120px;text-align:center;font-size:110px;color:var(--on-bg, var(--paper));letter-spacing:.04em', ctx.params.label);
       this.label.className = 'display';
       ctx.L.front.appendChild(this.label);
     }

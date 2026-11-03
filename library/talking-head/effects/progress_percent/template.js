@@ -4,7 +4,7 @@ TEMPLATES.progress_percent = {
     this.off = false;
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const w = P.at != null ? ctx.words.find(w => norm(w.w) === norm(P.at)) : null;
+    const w = P.at != null ? (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => norm(w.w) === norm(P.at))) : null;
     this.t0 = w ? w.s - .1 : (P.t0 != null ? P.t0 : .35);
     if (P.value == null) { this.off = true; return; } // required: without a value the bar is not shown
     this.target = P.value;

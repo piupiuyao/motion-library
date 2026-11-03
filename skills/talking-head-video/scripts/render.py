@@ -204,7 +204,7 @@ def build_timeline(proj, tmpl, shots_file='shots.json'):
     if any(s['matte'] for s in shots) and not os.path.isdir(matte_dir):
         sys.exit('a template needs the cutout: run  scripts/matte PROJECT/raw.mp4 PROJECT/work/matte_src  first')
     return {'fps': FPS, 'srcFps': FPS, 'duration': dur, 'lang': lang, 'skin': plan.get('skin', 'clean'), 'theme': plan.get('theme') or theme_file(proj), 'brand': brand_kit(proj),
-            'captions': plan.get('captions', True), 'segments': segs, 'lines': lines, 'shots': shots,
+            'captions': plan.get('captions', True), 'captionStyle': plan.get('caption_style'), 'segments': segs, 'lines': lines, 'shots': shots,
             'templateIds': need, 'frames': 'work/frames_src', 'matte': 'work/matte_src'}, edit
 
 

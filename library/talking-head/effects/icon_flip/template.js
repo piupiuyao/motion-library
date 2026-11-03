@@ -3,7 +3,7 @@ TEMPLATES.icon_flip = {
   setup(ctx) {
     this.off = false;
     const P = ctx.params;
-    const n = s => s.toLowerCase().replace(/[^\w]/g, '');
+    const n = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     // steps: [{icon, at}] — the first appears at its word, each next one flips in at its word
     // icon = a name/word ('Slack', 'gym', 'ui:wallet'); default = the spoken word itself. No matching icon → that step is left out.
     const tile = q => { const e = iconTile(q, 100); if (!e) return null; e.style.cssText += ';width:100%;height:100%;border-radius:22%;box-shadow:none'; return e.outerHTML; };
@@ -11,7 +11,7 @@ TEMPLATES.icon_flip = {
       .filter(s => s.html);
     if (!steps.length) { this.off = true; return; } // required: not shown without steps
     this.steps = steps.map((s, k) => ({ html: s.html,
-      t: k === 0 ? (s.at ? ((ctx.words.find(w => n(w.w) === n(s.at)) || { s: 0 }).s) : 0)
+      t: k === 0 ? (s.at ? (((typeof s.at === 'number' ? ctx.words.find(w => w.i === s.at) : ctx.words.find(w => n(w.w) === n(s.at))) || { s: 0 }).s) : 0)
         : ((ctx.words.find(w => n(w.w) === n(s.at || '')) || { s: ctx.d * k / steps.length }).s) }));
     this.steps[0].t = Math.max(0, this.steps[0].t - .1);
     const S = this.size = P.size || 280;

@@ -3,7 +3,7 @@ TEMPLATES.clones = {
   setup(ctx) {
     const P = ctx.params, n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
     const labels = P.labels || [];
-    const at = (P.at || []).map(a => (ctx.words.find(w => n(w.w) === n(a)) || {}).s);
+    const at = (P.at || []).map(a => ((typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => n(w.w) === n(a))) || {}).s);
     const dx = P.offset || 390;
     // fade: [from, to] height fractions where the clones fade out (old footage had a laptop hole); false = full body
     const fade = P.fade === false ? null : (P.fade || [.62, .74]);

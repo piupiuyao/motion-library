@@ -11,8 +11,8 @@ TEMPLATES.number_roll = {
     }
     if (to == null || isNaN(to)) { this.off = true; return; }
     this.from = P.from || 0; this.to = to;
-    const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
-    const hit = atW && ctx.words.find(w => norm(w.w) === norm(atW));
+    const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
+    const hit = atW != null && (typeof atW === 'number' ? ctx.words.find(w => w.i === atW) : ctx.words.find(w => norm(w.w) === norm(atW)));
     this.t0 = hit ? hit.s : .25;
     this.dur = P.dur || 1.3;
     const str = Math.round(this.to).toLocaleString('en-US');

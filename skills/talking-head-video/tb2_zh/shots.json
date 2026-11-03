@@ -1,0 +1,183 @@
+{
+ "skin": "clean",
+ "caption_style": "plain",
+ "shots": [
+  {
+   "words": "0-17",
+   "purpose": "开场钩子",
+   "template": "keyword_pop",
+   "why": "李哥豆儿式描边大花字开场",
+   "params": {
+    "text": "比你想的<br>多得多",
+    "hl": "多得多",
+    "look": "stroke",
+    "y": 110,
+    "rot": -3,
+    "size": 170
+   }
+  },
+  {
+   "words": "18-42",
+   "purpose": "数字",
+   "template": "equation_build",
+   "why": "把假设的账算出来",
+   "params": {
+    "title": "假设一天",
+    "terms": [
+     {
+      "text": "40条",
+      "note": "消息",
+      "at": 24
+     },
+     {
+      "text": "3分钟",
+      "op": "×",
+      "note": "每条纠结",
+      "at": 32
+     },
+     {
+      "text": "2小时",
+      "op": "=",
+      "at": 39
+     }
+    ]
+   }
+  },
+  {
+   "words": "43-80",
+   "purpose": "情绪吐槽",
+   "template": "mono_shrink",
+   "why": "白菜：吐槽 → 黑白缩小",
+   "why_break": "参考视频就是一句一种画面处理，大动效紧挨着是这个风格本身",
+   "params": {
+    "label": "不知道怎么开口"
+   }
+  },
+  {
+   "words": "81-93",
+   "purpose": "定义概念",
+   "template": "cutout_card",
+   "why": "白菜：输出观点 → 抠像出镜",
+   "why_break": "同上，产品出场要立刻换画面",
+   "params": {
+    "text": "AI 回复助手",
+    "tag": "ToneBird"
+   }
+  },
+  {
+   "words": "94-109",
+   "purpose": "提到具体东西",
+   "template": "icon_cards",
+   "why": "三个官方 logo",
+   "params": {
+    "items": [
+     {
+      "text": "Gmail",
+      "at": 101
+     },
+     {
+      "text": "Slack",
+      "at": 102
+     },
+     {
+      "text": "WhatsApp",
+      "at": 103
+     }
+    ]
+   }
+  },
+  {
+   "words": "110-132",
+   "purpose": "引用证据",
+   "template": "phone_notification",
+   "why": "老板原话做成 Slack 消息",
+   "params": {
+    "app": "Slack",
+    "sender": "老板",
+    "text": "周五前要看到发布计划，上次已经拖过一次了。",
+    "at": 113
+   }
+  },
+  {
+   "words": "133-164",
+   "purpose": "引用证据",
+   "template": "typewriter_card",
+   "why": "ToneBird 写的回复一个字一个字打出来",
+   "params": {
+    "text": "周五前给你核心版，今天下午三点我们先对一次。",
+    "name": "ToneBird",
+    "light": true,
+    "platform": false,
+    "start": 3.4,
+    "y": 140
+   }
+  },
+  {
+   "words": "165-197",
+   "purpose": "换话题",
+   "template": "sticker_outline",
+   "why": "李哥豆儿：人像描边 + 波点背景，换个空间",
+   "params": {
+    "background": "dots",
+    "width": 14
+   }
+  },
+  {
+   "words": "198-219",
+   "purpose": "对比前后",
+   "template": "split_word_head",
+   "why": "客户 / 同事 分在脸两边",
+   "params": {
+    "left": "客户",
+    "right": "同事",
+    "at": 204,
+    "y": 330,
+    "color": "var(--accent-text)"
+   }
+  },
+  {
+   "words": "220-245",
+   "purpose": "金句观点",
+   "template": "tick_cross_tags",
+   "why": "对错一眼看清",
+   "params": {
+    "items": [
+     {
+      "text": "你来改",
+      "at": 224
+     },
+     {
+      "text": "替你发",
+      "mark": "x",
+      "at": 243
+     }
+    ]
+   }
+  },
+  {
+   "words": "246-259",
+   "purpose": "数字",
+   "template": "number_roll",
+   "why": "免费 15 次",
+   "params": {
+    "to": 15,
+    "suffix": "次/天",
+    "label": "免费版",
+    "at": 251
+   }
+  },
+  {
+   "words": "260-273",
+   "purpose": "结尾号召",
+   "template": "end_title",
+   "why": "白底 logo 结尾卡",
+   "why_break": "结尾卡收尾",
+   "params": {
+    "title": "ToneBird",
+    "sub": "让每一次回复，都更轻松，也更像你",
+    "logo": true,
+    "lines": 1
+   }
+  }
+ ]
+}

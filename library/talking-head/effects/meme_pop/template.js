@@ -4,7 +4,7 @@ TEMPLATES.meme_pop = {
     this.off = false;
     const P = ctx.params;
     if (!P.top && !P.bottom) { this.off = true; return; } // required: a meme needs at least one caption
-    const n = s => s.toLowerCase().replace(/[^\w]/g, '');
+    const n = s => String(s).toLowerCase().replace(/[^\w]/g, '');
     const w = P.at && ctx.words.find(x => n(x.w) === n(P.at));
     this.t0 = w ? w.s - .05 : (P.start ?? ctx.d * .5);
     this.dur = P.dur || 1.3;

@@ -1,0 +1,39 @@
+{
+ "accent": "#a2f47a",
+ "accent-text": "#263a2c",
+ "on-accent": "#263a2c",
+ "accent-2": "#4057cf",
+ "on-accent-2": "#ffffff",
+ "ink": "#252a36",
+ "paper": "#fff",
+ "look": "light",
+ "bg-a": "#f7f8fa",
+ "bg-b": "#fff",
+ "on-bg": "#252a36",
+ "source": "brand https://tonebird.ai",
+ "brand": {
+  "site": "https://tonebird.ai",
+  "name": "ToneBird",
+  "logo": "brand/logo.svg",
+  "font": {
+   "family": "DM Sans",
+   "file": "brand/font.woff2"
+  },
+  "icons": {
+   "slack": "brand/icon-slack.svg",
+   "whatsapp": "brand/icon-whatsapp.svg",
+   "gmail": "brand/icon-gmail.svg",
+   "imessage": "brand/icon-imessage.webp",
+   "googlechat": "brand/icon-google-chat.webp",
+   "x": "brand/icon-x.webp",
+   "reddit": "brand/icon-reddit.webp",
+   "linkedin": "brand/icon-linkedin.webp",
+   "instagram": "brand/icon-instagram.webp",
+   "discord": "brand/icon-discord.webp",
+   "wechat": "brand/icon-wechat.webp",
+   "googlecalendar": "brand/icon-google-calendar.webp",
+   "tiktok": "brand/icon-tiktok.svg",
+   "youtube": "brand/icon-youtube.svg"
+  }
+ }
+}

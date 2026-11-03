@@ -2,8 +2,8 @@
 TEMPLATES.flash_cards = {
   setup(ctx) {
     const P = ctx.params;
-    const norm = s => s.toLowerCase().replace(/[^\w]/g, '');
-    const wordAt = a => a && ctx.words.find(w => norm(w.w) === norm(a));
+    const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
+    const wordAt = a => a && (typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a)));
     const raw = P.cards || ctx.groups.map(g => g.text);
     const step = P.step || .3;
     const hit = wordAt(P.start);

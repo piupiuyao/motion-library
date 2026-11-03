@@ -4,7 +4,7 @@ TEMPLATES.split_flap = {
     this.off = false;
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const w = P.at != null ? ctx.words.find(w => norm(w.w) === norm(P.at)) : null;
+    const w = P.at != null ? (typeof P.at === 'number' ? ctx.words.find(w => w.i === P.at) : ctx.words.find(w => norm(w.w) === norm(P.at))) : null;
     this.t0 = w ? w.s - .15 : (P.t0 != null ? P.t0 : .15);
     if (!P.text) { this.off = true; return; } // required: without text the board is not shown
     const rows = String(P.text).toUpperCase().split('|');

@@ -2,7 +2,7 @@
 TEMPLATES.speed_lines = {
   hit(ctx, a, def) {
     const n = s => String(s).toLowerCase().replace(/[^a-z0-9']/g, '');
-    const w = a != null && ctx.words.find(w => n(w.w) === n(a));
+    const w = a != null && (typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => n(w.w) === n(a)));
     return w ? w.s : ctx.groups[0] ? ctx.groups[0].s : def;
   },
   setup(ctx) {

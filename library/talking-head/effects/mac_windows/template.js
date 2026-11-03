@@ -3,7 +3,7 @@ TEMPLATES.mac_windows = {
   setup(ctx) {
     const P = ctx.params;
     const norm = s => String(s).toLowerCase().replace(/[^\w]/g, '');
-    const at = a => { const w = typeof a === 'number' ? null : ctx.words.find(w => norm(w.w) === norm(a)); return w ? w.s : null; };
+    const at = a => { const w = typeof a === 'number' ? null : (typeof a === 'number' ? ctx.words.find(w => w.i === a) : ctx.words.find(w => norm(w.w) === norm(a))); return w ? w.s : null; };
     const wins = (P.windows || []).filter(w => w && w.image); // material: windows without a screenshot are skipped
     const spots = P.spots || [[60, 110, 600, 430], [420, 210, 600, 430], [200, 330, 640, 450]];
     this.wins = wins.slice(0, 3).map((w, j) => {
